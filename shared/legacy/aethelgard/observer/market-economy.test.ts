@@ -52,3 +52,17 @@ test('full stalls refuse purchases without spending or taking goods',()=>{
  const timber={...createMarket(),timber:1,merchantTimber:20};const a=marketAction(timber,'sell-timber');assert.equal(a.ok,false);assert.strictEqual(a.state,timber);
  const bread={...createMarket(),bread:1,bakeryBread:20};const b=marketAction(bread,'sell-bread');assert.equal(b.ok,false);assert.strictEqual(b.state,bread);
 });
+
+test('a baker can buy fuel from the woodcutter using stall money, but never overdraw or overfill',()=>{
+ const start=createMarket(),price=marketPrices(start).timberBuy;const result=marketAction(start,'broker-bakery');assert.equal(result.ok,true);assert.deepEqual([result.state.merchantTimber,result.state.merchantCoins,result.state.bakeryBread,result.state.bakeryCoins,result.state.timberDemand],[4,36,10,14,1]);assert.equal(result.state.bakeryCoins,start.bakeryCoins-price);assert.equal(result.state.merchantCoins,start.merchantCoins+price);assert.equal(result.state.merchantTimber,start.merchantTimber-1);assert.equal(result.state.bakeryBread,start.bakeryBread+2);assert.equal(result.state.timberDemand,start.timberDemand+1);assert.equal(result.state.coins,start.coins);
+ for(const blocked of [{...start,bakeryCoins:0},{...start,merchantTimber:0},{...start,bakeryBread:19}]){const refused=marketAction(blocked,'broker-bakery');assert.equal(refused.ok,false);assert.strictEqual(refused.state,blocked);}
+});
+test('markets continue beyond the old day limit and lifetime household counters saturate',()=>{
+ const start={...createMarket(),day:1000,households:createMarket().households.map(h=>({...h,meals:1_000_000,missed:1_000_000}))};
+ const r=marketAction(start,'next-day');assert.equal(r.ok,true);assert.equal(r.state.day,1001);assert.ok(r.state.households.every(h=>h.meals<=1_000_000&&h.missed<=1_000_000));
+});
+test('fixed wallet identities cover the existing roster independently of roster order',async()=>{
+ const {MARKET_HOUSEHOLD_IDS}=await import('./market-economy');const {EALDHOLT_VILLAGE_POPULATION}=await import('../characters/village-population');
+ assert.equal(new Set(MARKET_HOUSEHOLD_IDS).size,25);assert.deepEqual([...MARKET_HOUSEHOLD_IDS].sort(),EALDHOLT_VILLAGE_POPULATION.households.map(h=>h.id).sort());
+ const reordered=[...EALDHOLT_VILLAGE_POPULATION.households].reverse();const labels=new Map(reordered.map(h=>[h.id,h.label]));assert.equal(labels.get(MARKET_HOUSEHOLD_IDS[0]),EALDHOLT_VILLAGE_POPULATION.households[0].label);
+});

@@ -30,20 +30,27 @@ pub struct Household { pub coins:u32, pub meals:u32, pub missed:u32 }
 #[derive(Clone)]
 pub struct Listing { pub id:u32, pub seller:AccountId, pub item:String, pub quantity:u32, pub unit_price:u32, pub expires_at_ms:u64 }
 #[near(serializers = [json])]
-pub struct Snapshot { pub player:Option<Player>,pub town:Town,pub timber_bid:u32,pub timber_ask:u32,pub bread_ask:u32,pub bread_bid:u32,pub deliveries:Vec<Delivery>,pub households:Vec<Household>,pub last_fed:u32,pub last_unfed:u32,pub next_day_at_ms:u64,pub listings:Vec<Listing> }
+pub struct Snapshot { pub player:Option<Player>,pub town:Town,pub timber_bid:u32,pub timber_ask:u32,pub bread_ask:u32,pub bread_bid:u32,pub deliveries:Vec<Delivery>,pub households:Vec<Household>,pub household_ids:Vec<String>,pub last_fed:u32,pub last_unfed:u32,pub next_day_at_ms:u64,pub listings:Vec<Listing> }
 
 #[near(contract_state)]
 #[derive(PanicOnDefault)]
-pub struct EaldholtMarket { town:Town, players:BTreeMap<AccountId,Player>, deliveries:BTreeMap<AccountId,Vec<Delivery>>, households:Vec<Household>, supplier_coins:u32, last_fed:u32, last_unfed:u32, last_day_ns:u64, listings:BTreeMap<u32,Listing>, next_listing:u32 }
+pub struct EaldholtMarket { town:Town, players:BTreeMap<AccountId,Player>, deliveries:BTreeMap<AccountId,Vec<Delivery>>, households:Vec<Household>, household_ids:Vec<String>, supplier_coins:u32, last_fed:u32, last_unfed:u32, last_day_ns:u64, listings:BTreeMap<u32,Listing>, next_listing:u32 }
 
 #[near]
 impl EaldholtMarket {
     #[init]
-    pub fn new()->Self {Self{town:Town::default(),players:BTreeMap::new(),deliveries:BTreeMap::new(),households:vec![Household{coins:16,meals:0,missed:0};25],supplier_coins:0,last_fed:0,last_unfed:0,last_day_ns:env::block_timestamp(),listings:BTreeMap::new(),next_listing:1}}
+    pub fn new()->Self {
+        // Freeze identity-to-wallet bindings in state, not in upgradeable view code.
+        let household_ids:Vec<String>=near_sdk::serde_json::from_str(include_str!("../../../shared/legacy/aethelgard/observer/market-household-ids.json"))
+            .unwrap_or_else(|_|env::panic_str("Invalid household ID manifest"));
+        require!(household_ids.len()==25 && household_ids.iter().collect::<std::collections::BTreeSet<_>>().len()==25,"Household manifest mismatch");
+        Self{town:Town::default(),players:BTreeMap::new(),deliveries:BTreeMap::new(),households:vec![Household{coins:16,meals:0,missed:0};25],household_ids,supplier_coins:0,last_fed:0,last_unfed:0,last_day_ns:env::block_timestamp(),listings:BTreeMap::new(),next_listing:1}
+    }
     pub fn get_market(&self,account_id:AccountId)->Snapshot {
         let (bid,ask)=quote(5,self.town.merchant_timber,6,self.town.timber_demand);
         let (bread_bid,bread)=quote(4,self.town.bakery_bread,8,self.town.bread_demand);
-        Snapshot{player:self.players.get(&account_id).cloned(),town:self.town.clone(),timber_bid:bid,timber_ask:ask,bread_ask:bread,bread_bid,deliveries:self.deliveries.get(&account_id).cloned().unwrap_or_default(),households:self.households.clone(),last_fed:self.last_fed,last_unfed:self.last_unfed,next_day_at_ms:self.last_day_ns / 1_000_000 + 60_000,listings:self.listings.values().cloned().collect()}
+        require!(self.household_ids.len()==self.households.len(),"Household state mismatch");
+        Snapshot{player:self.players.get(&account_id).cloned(),town:self.town.clone(),timber_bid:bid,timber_ask:ask,bread_ask:bread,bread_bid,deliveries:self.deliveries.get(&account_id).cloned().unwrap_or_default(),households:self.households.clone(),household_ids:self.household_ids.clone(),last_fed:self.last_fed,last_unfed:self.last_unfed,next_day_at_ms:self.last_day_ns / 1_000_000 + 60_000,listings:self.listings.values().cloned().collect()}
     }
     /// One bounded starter wallet per NEAR account. This is game credit, not NEAR or a transferable token.
     pub fn join(&mut self) {let id=env::predecessor_account_id();require!(!self.players.contains_key(&id),"Already joined");require!(self.players.len()<32,"Market is full");self.players.insert(id,Player::default());}
@@ -56,15 +63,25 @@ impl EaldholtMarket {
             "buy-timber"=>{let (_,price)=quote(5,t.merchant_timber,6,t.timber_demand);require!(price<=limit && t.merchant_timber>=1 && p.coins>=price,"Price changed, stock missing or insufficient coins");p.coins-=price;t.merchant_coins+=price;t.merchant_timber-=1;p.timber+=1;t.timber_demand=t.timber_demand.saturating_add(1).min(1_000_000);},
             "buy-bread"=>{let (_,price)=quote(4,t.bakery_bread,8,t.bread_demand);require!(price<=limit && t.bakery_bread>=1 && p.coins>=price,"Price changed, bread missing or insufficient coins");p.coins-=price;t.bakery_coins+=price;t.bakery_bread-=1;p.bread+=1;t.bread_demand=t.bread_demand.saturating_add(1).min(1_000_000);},
             "sell-bread"=>{let (price,_)=quote(4,t.bakery_bread,8,t.bread_demand);require!(price>=limit && p.bread>=1 && t.bakery_bread<20 && t.bakery_coins>=price,"Price changed, bread missing, stall full or baker cannot pay");p.bread-=1;t.bakery_bread+=1;p.coins+=price;t.bakery_coins-=price;},
+            // The player brokers a trade between two simulated merchant wallets.
+            // No NPC signature or physical delivery is represented by this ledger action.
+            "broker-bakery"=>{let (_,price)=quote(5,t.merchant_timber,6,t.timber_demand);
+                require!(price<=limit,"Timber price changed");
+                require!(t.merchant_timber>=1,"The timber stall has no stock");
+                require!(t.bakery_bread<=18,"The bakery has no room for a batch");
+                require!(t.bakery_coins>=price,"The bakery cannot afford timber");
+                t.merchant_timber-=1;t.merchant_coins+=price;t.bakery_coins-=price;t.bakery_bread+=2;
+                t.timber_demand=t.timber_demand.saturating_add(1).min(1_000_000);
+            },
             "bake"=>{require!(p.timber>=1 && p.coins>=3,"Baking needs timber and 3 coins");p.timber-=1;p.coins-=3;self.supplier_coins+=3;p.bread+=2;},
             "eat"=>{require!(p.bread>=1 && p.energy<=6,"Need bread and room for energy");p.bread-=1;p.energy+=2;},
-            "next-day"=>{require!(t.day<1000,"Market day limit reached");let now=env::block_timestamp();require!(now.saturating_sub(self.last_day_ns)>=60_000_000_000,"Market day cooldown");self.last_day_ns=now;t.day+=1;t.forest=(t.forest+2).min(24);p.energy=(p.energy+1).min(8);t.timber_demand/=2;t.bread_demand/=2;
+            "next-day"=>{require!(t.day<u32::MAX,"Market day limit reached");let now=env::block_timestamp();require!(now.saturating_sub(self.last_day_ns)>=60_000_000_000,"Market day cooldown");self.last_day_ns=now;t.day+=1;t.forest=(t.forest+2).min(24);for player in self.players.values_mut(){player.energy=(player.energy+1).min(8);}t.timber_demand/=2;t.bread_demand/=2;
                 let start=((t.day-2) as usize)%self.households.len();
                 if t.merchant_coins>=2 {t.merchant_coins-=2;self.households[start].coins+=2;}
                 if t.bakery_coins>=3 && t.merchant_timber>=1 && t.bakery_bread<=18 {t.bakery_coins-=3;t.merchant_coins+=3;t.merchant_timber-=1;t.bakery_bread+=2;}
                 self.last_fed=0;self.last_unfed=0;
                 let count=self.households.len();for i in 0..count {let h=&mut self.households[(start+i)%count];let (_,price)=quote(4,t.bakery_bread,8,t.bread_demand);
-                    if t.bakery_bread>0 && h.coins>=price {h.coins-=price;t.bakery_coins+=price;t.bakery_bread-=1;t.bread_demand=t.bread_demand.saturating_add(1).min(1_000_000);h.meals+=1;self.last_fed+=1;} else {h.missed+=1;self.last_unfed+=1;}}
+                    if t.bakery_bread>0 && h.coins>=price {h.coins-=price;t.bakery_coins+=price;t.bakery_bread-=1;t.bread_demand=t.bread_demand.saturating_add(1).min(1_000_000);h.meals=h.meals.saturating_add(1).min(1_000_000);self.last_fed+=1;} else {h.missed=h.missed.saturating_add(1).min(1_000_000);self.last_unfed+=1;}}
             },
             "donate-timber"=>{let world=world_hash.unwrap_or_default();require!(world.len()==64 && world.bytes().all(|c|c.is_ascii_hexdigit() && !c.is_ascii_uppercase()),"Expected lowercase world hash");require!(p.timber>=12,"Need 12 timber");let records=self.deliveries.entry(id).or_default();require!(records.len()<64,"Delivery limit reached");p.timber-=12;p.next_delivery+=1;records.push(Delivery{id:p.next_delivery,world_hash:world,timber:12});},
             _=>env::panic_str("Unknown action"),
@@ -122,6 +139,23 @@ mod tests {
    for (key,value) in checks {assert_eq!(value as u64,row[key].as_u64().unwrap(),"{action}: {key}");}
   }
  }
+ #[test] fn market_exposes_stable_household_ids_in_ledger_order(){
+  caller("alice.testnet");let m=EaldholtMarket::new();let snapshot=m.get_market("alice.testnet".parse().unwrap());
+  assert_eq!(snapshot.household_ids.len(),25);assert_eq!(snapshot.households.len(),snapshot.household_ids.len());
+  assert_eq!(snapshot.household_ids.first().unwrap(),"ealdholt-smithy-household");
+  assert_eq!(snapshot.household_ids.last().unwrap(),"ealdholt-cottage-household");
+  assert_eq!(snapshot.household_ids.iter().collect::<std::collections::BTreeSet<_>>().len(),25);
+ }
+ #[test] fn household_identity_bindings_survive_state_serialization_and_drive_snapshot(){
+  caller("alice.testnet");let mut m=EaldholtMarket::new();
+  // Model an already-initialized state whose original manifest differs from
+  // today’s compiled manifest: views must use persisted bindings, not code.
+  m.household_ids.swap(0,1);m.households[0].coins=7;m.households[1].coins=19;
+  let encoded=near_sdk::borsh::to_vec(&m).unwrap();let restored:EaldholtMarket=near_sdk::borsh::from_slice(&encoded).unwrap();
+  let snapshot=restored.get_market("alice.testnet".parse().unwrap());
+  assert_eq!(snapshot.household_ids[0],"ealdholt-hall-household");assert_eq!(snapshot.households[0].coins,7);
+  assert_eq!(snapshot.household_ids[1],"ealdholt-smithy-household");assert_eq!(snapshot.households[1].coins,19);
+ }
  #[test] fn quote_reacts_to_scarcity_and_demand(){let low=quote(5,1,6,0);let high=quote(5,15,6,0);assert!(low.0>high.0);assert!(quote(5,6,6,6).1>quote(5,6,6,0).1);assert!(low.1>low.0);}
  #[test] fn shared_stock_and_wallets_conserve_trades_and_keep_deliveries_scoped(){
   caller("alice.testnet");let mut market=EaldholtMarket::new();market.join();market.act("gather".into(),0,None);
@@ -133,6 +167,34 @@ mod tests {
   let ask=market.get_market("alice.testnet".parse().unwrap()).timber_ask;market.act("buy-timber".into(),ask,None);
   let world="a".repeat(64);market.act("donate-timber".into(),0,Some(world.clone()));let end=market.get_market("alice.testnet".parse().unwrap());assert_eq!(end.player.unwrap().timber,0);assert_eq!(end.deliveries.len(),1);assert_eq!(end.deliveries[0].world_hash,world);assert_eq!(end.deliveries[0].timber,12);
   assert!(market.get_market("bob.testnet".parse().unwrap()).deliveries.is_empty());
+ }
+ #[test] fn broker_bakery_shared_baseline_vector(){
+  caller("alice.testnet");let mut m=EaldholtMarket::new();m.join();m.act("broker-bakery".into(),6,None);
+  let t=m.town;assert_eq!((t.merchant_timber,t.merchant_coins,t.bakery_bread,t.bakery_coins,t.timber_demand),(4,36,10,14,1));
+ }
+ #[test] fn broker_bakery_transfers_funds_and_produces_only_from_merchant_stock(){
+  caller("alice.testnet");let mut m=EaldholtMarket::new();m.join();m.town.bakery_bread=0;
+  let before=m.get_market("alice.testnet".parse().unwrap());let player_before=before.player.unwrap();
+  m.act("broker-bakery".into(),before.timber_ask,None);
+  let after=m.get_market("alice.testnet".parse().unwrap());let player_after=after.player.unwrap();
+  assert_eq!(after.town.merchant_timber,before.town.merchant_timber-1);
+  assert_eq!(after.town.bakery_bread,before.town.bakery_bread+2);
+  assert_eq!(after.town.merchant_coins,before.town.merchant_coins+before.timber_ask);
+  assert_eq!(after.town.bakery_coins,before.town.bakery_coins-before.timber_ask);
+  assert_eq!(after.town.timber_demand,before.town.timber_demand+1);
+  assert_eq!((player_after.coins,player_after.timber,player_after.bread),(player_before.coins,player_before.timber,player_before.bread));
+ }
+ #[test] #[should_panic(expected="Timber price changed")] fn broker_bakery_rejects_stale_price(){
+  caller("alice.testnet");let mut m=EaldholtMarket::new();m.join();m.act("broker-bakery".into(),0,None);
+ }
+ #[test] #[should_panic(expected="timber stall has no stock")] fn broker_bakery_rejects_empty_timber_stall(){
+  caller("alice.testnet");let mut m=EaldholtMarket::new();m.join();m.town.merchant_timber=0;m.act("broker-bakery".into(),100,None);
+ }
+ #[test] #[should_panic(expected="no room")] fn broker_bakery_rejects_full_bakery(){
+  caller("alice.testnet");let mut m=EaldholtMarket::new();m.join();m.town.bakery_bread=19;m.act("broker-bakery".into(),100,None);
+ }
+ #[test] #[should_panic(expected="bakery cannot afford")] fn broker_bakery_rejects_unfunded_bakery(){
+  caller("alice.testnet");let mut m=EaldholtMarket::new();m.join();m.town.bakery_coins=0;m.act("broker-bakery".into(),100,None);
  }
  #[test] fn marketplace_escrows_transfers_and_returns_inventory_without_minting(){
   caller("alice.testnet");let mut market=EaldholtMarket::new();market.join();market.act("gather".into(),0,None);market.act("gather".into(),0,None);
@@ -175,6 +237,30 @@ mod tests {
   let before=sum(&m);let mut context=VMContextBuilder::new();context.predecessor_account_id("alice.testnet".parse().unwrap()).block_timestamp(60_000_000_000);testing_env!(context.build());m.act("next-day".into(),0,None);assert_eq!(sum(&m),before);assert_eq!((m.last_fed,m.last_unfed),(10,15));assert_eq!(m.town.bakery_bread,0);
   m.act("gather".into(),0,None);m.act("bake".into(),0,None);let price=m.get_market("alice.testnet".parse().unwrap()).bread_bid;
   m.act("sell-bread".into(),price,None);assert_eq!(m.town.bakery_bread,1);assert_eq!(sum(&m),before);
+ }
+ #[test] fn day_advances_past_old_limit_and_restores_each_player_once(){
+  caller("alice.testnet");let mut m=EaldholtMarket::new();m.join();m.act("gather".into(),0,None);
+  caller("bob.testnet");m.join();m.act("gather".into(),0,None);m.act("gather".into(),0,None);
+  m.town.day=1000;let mut context=VMContextBuilder::new();context.predecessor_account_id("alice.testnet".parse().unwrap()).block_timestamp(60_000_000_000);testing_env!(context.build());
+  m.act("next-day".into(),0,None);assert_eq!(m.town.day,1001);
+  assert_eq!(m.players.get(&"alice.testnet".parse::<AccountId>().unwrap()).unwrap().energy,4);
+  assert_eq!(m.players.get(&"bob.testnet".parse::<AccountId>().unwrap()).unwrap().energy,3);
+ }
+ #[test] fn market_day_restores_all_32_bounded_players(){
+  caller("member0.testnet");let mut m=EaldholtMarket::new();
+  for i in 0..32 {let id=format!("member{i}.testnet");caller(&id);m.join();m.players.get_mut(&id.parse::<AccountId>().unwrap()).unwrap().energy=0;}
+  let mut context=VMContextBuilder::new();context.predecessor_account_id("member0.testnet".parse().unwrap()).block_timestamp(60_000_000_000);testing_env!(context.build());m.act("next-day".into(),0,None);
+  assert_eq!(m.players.len(),32);assert!(m.players.values().all(|p|p.energy==1));assert_eq!(m.last_fed+m.last_unfed,25);
+ }
+ #[test] fn market_day_clamps_energy_and_lifetime_household_counters(){
+  caller("alice.testnet");let mut m=EaldholtMarket::new();m.join();m.players.get_mut(&"alice.testnet".parse::<AccountId>().unwrap()).unwrap().energy=8;
+  for h in &mut m.households {h.meals=1_000_000;h.missed=1_000_000;}
+  let mut context=VMContextBuilder::new();context.predecessor_account_id("alice.testnet".parse().unwrap()).block_timestamp(60_000_000_000);testing_env!(context.build());m.act("next-day".into(),0,None);
+  assert_eq!(m.players.get(&"alice.testnet".parse::<AccountId>().unwrap()).unwrap().energy,8);
+  assert!(m.households.iter().all(|h|h.meals==1_000_000&&h.missed==1_000_000));
+ }
+ #[test] #[should_panic(expected="Market day limit reached")] fn last_day_does_not_overflow(){
+  caller("alice.testnet");let mut m=EaldholtMarket::new();m.join();m.town.day=u32::MAX;m.act("next-day".into(),0,None);
  }
  #[test] #[should_panic(expected="Market day cooldown")] fn shared_day_cannot_be_fast_forwarded_without_time_passing(){caller("alice.testnet");let mut m=EaldholtMarket::new();m.join();m.act("next-day".into(),0,None);}
  #[test] #[should_panic(expected="Price changed")] fn stale_buy_quote_rejects(){caller("alice.testnet");let mut market=EaldholtMarket::new();market.join();market.act("buy-bread".into(),0,None);}

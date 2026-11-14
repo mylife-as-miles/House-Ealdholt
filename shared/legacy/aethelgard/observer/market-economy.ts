@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Apache-2.0
-import {EALDHOLT_VILLAGE_POPULATION} from '../characters/village-population';
+import fixedHouseholdIds from './market-household-ids.json';
 
 /** Game credits and goods; household transactions are simulated ledger events. */
 export interface HouseholdWallet {id:string; coins:number; meals:number; missed:number}
@@ -11,22 +11,24 @@ export interface MarketState {
   supplierCoins:number; households:HouseholdWallet[]; lastFed:number; lastUnfed:number;
 }
 export const TIMBER_STALL_CAPACITY=20, BAKERY_STALL_CAPACITY=20;
-export type MarketAction = 'gather'|'sell-timber'|'buy-timber'|'buy-bread'|'sell-bread'|'bake'|'eat'|'donate-timber'|'next-day';
+export type MarketAction = 'gather'|'sell-timber'|'buy-timber'|'buy-bread'|'sell-bread'|'bake'|'eat'|'donate-timber'|'next-day'|'broker-bakery';
 export interface MarketPrices { timberBuy: number; timberSell: number; bread: number; breadSell:number }
 export type MarketResult = {ok:true; state:MarketState; message:string; timberDelivery:number}|{ok:false; state:MarketState; message:string; timberDelivery:0};
 const fields=['coins','timber','bread','energy','forest','merchantTimber','merchantCoins','bakeryBread','bakeryCoins','donatedTimber','trades','timberDemand','breadDemand','day'] as const;
 const additional=['supplierCoins','lastFed','lastUnfed'] as const;
 const bound=(n:number,min:number,max:number)=>Math.max(min,Math.min(max,n));
 const validNumber=(n:unknown)=>Number.isSafeInteger(n) && (n as number)>=0 && (n as number)<=1_000_000;
-const householdIds=EALDHOLT_VILLAGE_POPULATION.households.map(h=>h.id);
+// Immutable contract/save order: never reorder IDs after deployment.
+export const MARKET_HOUSEHOLD_IDS:readonly string[]=Object.freeze([...fixedHouseholdIds]);
+const householdIds=MARKET_HOUSEHOLD_IDS;
 const newHouseholds=():HouseholdWallet[]=>householdIds.map(id=>({id,coins:16,meals:0,missed:0}));
 export function createMarket():MarketState{return {version:2,coins:16,timber:0,bread:0,energy:4,forest:24,merchantTimber:5,merchantCoins:30,bakeryBread:8,bakeryCoins:20,donatedTimber:0,trades:0,timberDemand:0,breadDemand:0,day:1,supplierCoins:0,households:newHouseholds(),lastFed:0,lastUnfed:0};}
 export function parseMarket(value:unknown):MarketState {
   if (!value || typeof value !== 'object' || Array.isArray(value)) throw Error('Market save is invalid.');
   const v=value as Record<string,unknown>, legacy=v.version===1;
   const keys=legacy?['version',...fields]:['version',...fields,...additional,'households'];
-  if((v.version!==2&&!legacy)||Object.keys(v).length!==keys.length||keys.some(k=>!Object.prototype.hasOwnProperty.call(v,k))||fields.some(k=>!validNumber(v[k]))||(!legacy&&additional.some(k=>!validNumber(v[k]))))throw Error('Market save is invalid.');
-  if((v.energy as number)>8 || (v.forest as number)>24 || (v.day as number)<1 || (v.day as number)>1000) throw Error('Market resource limit is invalid.');
+  if((v.version!==2&&!legacy)||Object.keys(v).length!==keys.length||keys.some(k=>!Object.prototype.hasOwnProperty.call(v,k))||fields.some(k=>k==='day'?(!Number.isInteger(v[k])||(v[k] as number)<1||(v[k] as number)>0xffffffff):!validNumber(v[k]))||(!legacy&&additional.some(k=>!validNumber(v[k]))))throw Error('Market save is invalid.');
+  if((v.energy as number)>8 || (v.forest as number)>24) throw Error('Market resource limit is invalid.');
   let households:HouseholdWallet[];
   if(legacy) households=newHouseholds();
   else {
@@ -62,20 +64,26 @@ export function marketAction(old:MarketState,action:MarketAction):MarketResult {
       if(s.timber<1)return fail('You have no timber to sell.');
       if(s.merchantTimber>=TIMBER_STALL_CAPACITY)return fail('The timber merchant has no shelf space.');
       if(s.merchantCoins<p.timberSell)return fail('The timber merchant cannot afford another purchase.');
-      s.timber--;s.merchantTimber++;s.coins+=p.timberSell;s.merchantCoins-=p.timberSell;s.trades++;message=`Sold 1 timber for ${p.timberSell} coins.`;break;
+      s.timber--;s.merchantTimber++;s.coins+=p.timberSell;s.merchantCoins-=p.timberSell;s.trades=Math.min(1_000_000,s.trades+1);message=`Sold 1 timber for ${p.timberSell} coins.`;break;
     case 'buy-timber':
       if(s.merchantTimber<1)return fail('The timber merchant is out of stock.');
       if(s.coins<p.timberBuy)return fail('You cannot afford timber at this price.');
-      s.coins-=p.timberBuy;s.merchantCoins+=p.timberBuy;s.merchantTimber--;s.timber++;s.timberDemand++;s.trades++;message=`Bought 1 timber for ${p.timberBuy} coins.`;break;
+      s.coins-=p.timberBuy;s.merchantCoins+=p.timberBuy;s.merchantTimber--;s.timber++;s.timberDemand=Math.min(1_000_000,s.timberDemand+1);s.trades=Math.min(1_000_000,s.trades+1);message=`Bought 1 timber for ${p.timberBuy} coins.`;break;
     case 'buy-bread':
       if(s.bakeryBread<1)return fail('The bakery is out of bread.');
       if(s.coins<p.bread)return fail('You cannot afford bread at this price.');
-      s.coins-=p.bread;s.bakeryCoins+=p.bread;s.bakeryBread--;s.bread++;s.breadDemand++;s.trades++;message=`Bought 1 bread for ${p.bread} coins.`;break;
+      s.coins-=p.bread;s.bakeryCoins+=p.bread;s.bakeryBread--;s.bread++;s.breadDemand=Math.min(1_000_000,s.breadDemand+1);s.trades=Math.min(1_000_000,s.trades+1);message=`Bought 1 bread for ${p.bread} coins.`;break;
     case 'sell-bread':
       if(s.bread<1)return fail('You have no bread to sell.');
       if(s.bakeryBread>=BAKERY_STALL_CAPACITY)return fail('The bakery has no shelf space.');
       if(s.bakeryCoins<p.breadSell)return fail('The baker cannot afford another purchase.');
-      s.bread--;s.bakeryBread++;s.coins+=p.breadSell;s.bakeryCoins-=p.breadSell;s.trades++;message=`Sold 1 bread for ${p.breadSell} coins.`;break;
+      s.bread--;s.bakeryBread++;s.coins+=p.breadSell;s.bakeryCoins-=p.breadSell;s.trades=Math.min(1_000_000,s.trades+1);message=`Sold 1 bread for ${p.breadSell} coins.`;break;
+    case 'broker-bakery':
+      if(s.merchantTimber<1)return fail('The woodcutter is out of timber for the baker.');
+      if(s.bakeryBread>BAKERY_STALL_CAPACITY-2)return fail('The bakery has no room for another batch.');
+      if(s.bakeryCoins<p.timberBuy)return fail('The baker cannot afford fuel at the current timber price.');
+      s.bakeryCoins-=p.timberBuy;s.merchantCoins+=p.timberBuy;s.merchantTimber--;s.timberDemand=Math.min(1_000_000,s.timberDemand+1);s.bakeryBread+=2;
+      message=`The baker buys fuel from the woodcutter for ${p.timberBuy} coins and bakes 2 bread.`;break;
     case 'bake':
       if(s.timber<1||s.coins<3)return fail('Baking needs 1 timber for fuel and 3 coins for supplies.');
       s.timber--;s.coins-=3;s.supplierCoins+=3;s.bread+=2;message='Used 1 timber and 3 coins of supplies to bake 2 bread.';break;
@@ -83,7 +91,7 @@ export function marketAction(old:MarketState,action:MarketAction):MarketResult {
       if(s.bread<1)return fail('Buy or bake bread before eating.');if(s.energy>6)return fail('You already have enough energy.');
       s.bread--;s.energy+=2;message='Bread restores 2 energy.';break;
     case 'next-day': {
-      if(s.day>=1000)return fail('The market has reached its day limit.');
+      if(s.day>=0xffffffff)return fail('The market has reached its day limit.');
       s.day++;s.energy=Math.min(8,s.energy+1);const regrown=Math.min(2,24-s.forest);s.forest+=regrown;s.timberDemand=Math.floor(s.timberDemand/2);s.breadDemand=Math.floor(s.breadDemand/2);
       // The merchant pays a household wage only from its existing wallet.
       const employee=s.households[(s.day-2)%s.households.length];
@@ -94,8 +102,8 @@ export function marketAction(old:MarketState,action:MarketAction):MarketResult {
       // Rotate first buyer to prevent a permanent advantage to one household.
       for(let i=0;i<s.households.length;i++){
         const h=s.households[(i+s.day-2)%s.households.length],price=marketPrices(s).bread;
-        if(s.bakeryBread>0&&h.coins>=price){h.coins-=price;s.bakeryCoins+=price;s.bakeryBread--;s.breadDemand=Math.min(1_000_000,s.breadDemand+1);h.meals++;s.lastFed++;}
-        else {h.missed++;s.lastUnfed++;}
+        if(s.bakeryBread>0&&h.coins>=price){h.coins-=price;s.bakeryCoins+=price;s.bakeryBread--;s.breadDemand=Math.min(1_000_000,s.breadDemand+1);h.meals=Math.min(1_000_000,h.meals+1);s.lastFed++;}
+        else {h.missed=Math.min(1_000_000,h.missed+1);s.lastUnfed++;}
       }
       message=`Market day ${s.day}: the forest regrew ${regrown} timber, and ${s.lastFed} households bought bread; ${s.lastUnfed} could not afford it or found the stall empty.`;break;
     }

@@ -1,4 +1,4 @@
-import {applyNearMarketDelivery,applyPracticeMarketAction} from '../../../../../shared/legacy/aethelgard/observer/market-village';
+import {applyNearMarketDelivery,applyPracticeMarketAction,marketVillagePricing} from '../../../../../shared/legacy/aethelgard/observer/market-village';
 import {NearMarket} from './NearMarket';
 import {createMarket,marketPrices,quote,type MarketAction} from '../../../../../shared/legacy/aethelgard/observer/market-economy';
 import {advanceObserverRaidRecovery,projectObserverRecoveryResidents,type ObserverRecoveryStatus} from '../../../../../shared/legacy/aethelgard/observer/observer-recovery-runtime';
@@ -63,6 +63,7 @@ import { ResidentWatchList } from "./ResidentWatchList";
 import "./observer-hud.css";
 
 const PEOPLE = new Map(EALDHOLT_VILLAGE_POPULATION.residents.map(resident => [resident.id, resident]));
+const HOUSEHOLD_LABELS = new Map(EALDHOLT_VILLAGE_POPULATION.households.map(h => [h.id, h.label]));
 const PLACES = new Map(EALDHOLT_VILLAGE_POPULATION.places.map(place => [place.id, place]));
 const ROSTER: ChronicleRoster = {
   person: id => { const resident = PEOPLE.get(id); return resident ? { label: resident.label, major: resident.fidelityTier === "major" } : null; },
@@ -464,14 +465,15 @@ export function ObserverHud({ view, sourceReady, worldKey, sky, panel, onPanel, 
     power('Timber is set aside for the local builders. They must reach the worksite before repairs begin.');
   };
   const market = disasterState.market?.status === 'valid' ? disasterState.market.state : disasterState.market ? null : createMarket();
+  const localPricing=useMemo(()=>marketVillagePricing({...disasterState,buildingDamage:damage},worldKey),[disasterState,damage,worldKey]);
   const commitMarket=(result:ReturnType<typeof applyPracticeMarketAction>)=>{
     if(!result.ok){setMarketMessage(result.message);return;}
     if(!writeOwnedSave(result.save)){saveFailedRef.current=true;setSaveFailed(true);setMarketMessage('The market could not be saved. Nothing was committed.');return;}
     disasterSaved.current=result.save;setDisasterState(result.save);damageSaved.current=result.save.buildingDamage;setDamage(result.save.buildingDamage);setMarketMessage(result.message);
   };
-  const trade=(action:MarketAction)=>{
+  const trade=(action:MarketAction,expectedPrice?:number)=>{
     if(saveFailedRef.current||recoveryStatus.current!=='ready'){setMarketMessage('The saved village is not ready for a market action.');return;}
-    commitMarket(applyPracticeMarketAction(currentSave(),worldKey,action));
+    commitMarket(applyPracticeMarketAction(currentSave(),worldKey,action,expectedPrice));
   };
   const claimNearDelivery=(id:string)=>{
     if(saveFailedRef.current||recoveryStatus.current!=='ready'){setMarketMessage('Village repair stores are not ready. The delivery remains unclaimed.');return;}
@@ -547,23 +549,24 @@ export function ObserverHud({ view, sourceReady, worldKey, sky, panel, onPanel, 
         <div role="group" aria-label="Market mode"><button type="button" data-nav aria-pressed={marketMode==='practice'} onClick={()=>setMarketMode('practice')}>Local market</button><button type="button" data-nav aria-pressed={marketMode==='testnet'} onClick={()=>setMarketMode('testnet')}>NEAR testnet</button></div>
         {marketMode==='testnet' ? <><NearMarket worldKey={worldKey} claims={disasterState.nearClaims?.status==='invalid'?null:disasterState.nearClaims?.ids??[]} onClaim={claimNearDelivery}/><p role="status" className="obs-quiet">{marketMessage}</p></> : <><p className="obs-quiet">Local market · game coins, not NEAR tokens. Supply runs and stall activity are abstract; they do not claim a villager performed physical work. Market days do not change the village clock.</p>
         {!market ? <p role="alert">The saved market is invalid and has been preserved. Trading is held.</p> : <>
+          <p className="obs-quiet" role="status" data-market-message>{marketMessage}</p>
           <p className="obs-quiet" data-market-wallet>Day {market.day} · Wallet: <b>{market.coins}</b> coins · {market.timber} timber · {market.bread} bread · {market.energy}/8 energy</p>
           <p className="obs-quiet">Commons: {market.forest} timber remaining. Supply runs use 1 energy and yield 2 timber; 2 regrow per market day, up to 24.</p>
           <button className="obs-row" type="button" data-nav data-market-action="gather" disabled={!ready} onClick={()=>trade('gather')}>Gather 2 timber</button>
           <h4>{PEOPLE.get("ealdholt-woodcutter")?.label ?? "Woodcutter"} · timber stall</h4><p className="obs-quiet">Stock {market.merchantTimber}/20 · budget {market.merchantCoins} coins. Stock adjustment {quote(5,market.merchantTimber,6,market.timberDemand).stockAdjustment}% · demand +{quote(5,market.merchantTimber,6,market.timberDemand).demandAdjustment}%.</p>
-          <button className="obs-row" type="button" data-nav data-market-action="sell-timber" disabled={!ready} onClick={()=>trade('sell-timber')}>Sell timber · {marketPrices(market).timberSell} coins</button>
-          <button className="obs-row" type="button" data-nav data-market-action="buy-timber" disabled={!ready} onClick={()=>trade('buy-timber')}>Buy timber · {marketPrices(market).timberBuy} coins</button>
+          <button className="obs-row" type="button" data-nav data-market-action="sell-timber" disabled={!ready||!localPricing.available} onClick={()=>trade('sell-timber',localPricing.prices.timberSell)}>Sell timber · {localPricing.prices.timberSell} coins</button>
+          <button className="obs-row" type="button" data-nav data-market-action="buy-timber" disabled={!ready||!localPricing.available} onClick={()=>trade('buy-timber',localPricing.prices.timberBuy)}>Buy timber · {localPricing.prices.timberBuy} coins</button>
           <h4>{PEOPLE.get("ealdholt-baker")?.label ?? "Baker"} · bread stall</h4><p className="obs-quiet">Bread {market.bakeryBread}/20 · budget {market.bakeryCoins} coins. Stock adjustment {quote(4,market.bakeryBread,8,market.breadDemand).stockAdjustment}% · demand +{quote(4,market.bakeryBread,8,market.breadDemand).demandAdjustment}%.</p>
           <button className="obs-row" type="button" data-nav data-market-action="buy-bread" disabled={!ready} onClick={()=>trade('buy-bread')}>Buy bread · {marketPrices(market).bread} coins</button>
           <button className="obs-row" type="button" data-nav data-market-action="sell-bread" disabled={!ready} onClick={()=>trade('sell-bread')}>Sell bread · {marketPrices(market).breadSell} coins</button>
           <button className="obs-row" type="button" data-nav data-market-action="bake" disabled={!ready} onClick={()=>trade('bake')}>Bake 2 bread · 1 timber + 3 coins</button>
+          <button className="obs-row" type="button" data-nav data-market-action="broker-bakery" disabled={!ready} onClick={()=>trade('broker-bakery')}>Baker buys fuel and bakes · {marketPrices(market).timberBuy} coins from bakery</button>
           <button className="obs-row" type="button" data-nav data-market-action="eat" disabled={!ready} onClick={()=>trade('eat')}>Eat bread · restore 2 energy</button>
           <button className="obs-row" type="button" data-nav data-market-action="next-day" disabled={!ready} onClick={()=>trade('next-day')}>Next market day</button>
           <h4>Household wallets</h4><p className="obs-quiet">Last market day: {market.lastFed} households bought a bread ration; {market.lastUnfed} could not. These are ledger events, not physical villager interactions.</p>
-          <details><summary>View 25 household balances</summary><ul>{market.households.map((h,i)=><li key={h.id}>{EALDHOLT_VILLAGE_POPULATION.households[i].label}: {h.coins} coins · {h.meals} rations bought · {h.missed} missed</li>)}</ul></details>
-          <h4>Repair stores</h4><p className="obs-quiet">Your deliveries: {market.donatedTimber} timber. The existing rebuilding system still requires a damaged building, qualified workers and 12 timber.</p>
+          <details><summary data-nav>View 25 household balances</summary><ul>{market.households.map(h=><li key={h.id}>{HOUSEHOLD_LABELS.get(h.id) ?? h.id}: {h.coins} coins · {h.meals} rations bought · {h.missed} missed</li>)}</ul></details>
+          <h4>Repair stores</h4><p className="obs-quiet">{localPricing.available ? `Damaged buildings: ${localPricing.damagedBuildings} · unreserved repair timber: ${damage?.status==='valid'?damage.state.timber:0} · shortfall: ${localPricing.timberShortfall}. Player timber trades include +${localPricing.demandBonus} coins per unit for repair demand; the bakery uses its normal quote.` : 'Village damage records are unavailable; player timber trading is held.'}</p><p className="obs-quiet">Your deliveries: {market.donatedTimber} timber. The existing rebuilding system still requires a damaged building, qualified workers and 12 timber.</p>
           <button className="obs-row" type="button" data-nav data-market-action="donate-timber" disabled={!ready} onClick={()=>trade('donate-timber')}>Deliver 12 timber</button>
-          <p className="obs-quiet" role="status" data-market-message>{marketMessage}</p>
         </>}</>}
       </> : panel === "houses" ? <HousesPanel realm={realm} minute={ready?minute.current:null} aid={aid} onAct={actOn} onClose={() => onPanel("powers")} />
       : panel === "watch" ? <>
