@@ -26,3 +26,6 @@ main game/artifacts/
 main game/public/assets/creature.webp
 main game/public/assets/reference.jpg
 main game/public/favicon.png
+
+# Contract build artifacts
+**/target/

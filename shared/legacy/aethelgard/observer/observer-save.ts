@@ -13,6 +13,12 @@ import {restoreBuildingConflagration,serializeBuildingConflagrationRestore,type 
 import {restoreVillagePopulationEmergencyCheckpoint,serializeVillagePopulationEmergencyCheckpointRestore,type VillagePopulationEmergencyCheckpointRestore} from '../characters/village-population-runtime';
 import {restoreBuildingLocalRebuildOrders,serializeBuildingLocalRebuildOrdersRestore,type BuildingLocalRebuildOrdersRestore} from './building-disaster-session';
 
+import {parseMarket,type MarketState} from './market-economy';
+import {restoreNearClaims,type NearClaimsRestore} from './near-delivery-claims';
+
+export type MarketRestore = {readonly status:'valid';readonly state:MarketState}|{readonly status:'invalid';readonly raw:unknown};
+function restoreMarket(raw:unknown):MarketRestore { try { return {status:'valid',state:parseMarket(raw)}; } catch { return {status:'invalid',raw}; } }
+
 export const OBSERVER_SAVE_PREFIX = "crownfall.ealdholt.observer.v1:";
 
 export interface ObserverSave {
@@ -39,6 +45,8 @@ export interface ObserverSave {
   readonly buildingFire?:BuildingConflagrationRestore;
   readonly buildingEmergency?:VillagePopulationEmergencyCheckpointRestore;
   readonly localRebuildOrders?:BuildingLocalRebuildOrdersRestore;
+  readonly market?:MarketRestore;
+  readonly nearClaims?:NearClaimsRestore;
 }
 
 export const EMPTY_OBSERVER_SAVE: ObserverSave = Object.freeze({ version: 1, offsetMilliseconds: 0, speed: 1, weather: null, entries: [], memories: {},
@@ -83,7 +91,9 @@ export function parseObserverSave(json: string | null,worldKey?:string): Observe
     ...(Object.prototype.hasOwnProperty.call(r,'raidCursor')?{raidCursor:restoreObserverRaidCursor(r.raidCursor,worldKey??'')}:{}),
     ...(Object.prototype.hasOwnProperty.call(r,'buildingFire')?{buildingFire:restoreBuildingConflagration(r.buildingFire,worldKey)}:{}),
     ...(Object.prototype.hasOwnProperty.call(r,'buildingEmergency')?{buildingEmergency:restoreVillagePopulationEmergencyCheckpoint(r.buildingEmergency,worldKey)}:{}),
-    ...(Object.prototype.hasOwnProperty.call(r,'localRebuildOrders')?{localRebuildOrders:restoreBuildingLocalRebuildOrders(r.localRebuildOrders,worldKey)}:{})
+    ...(Object.prototype.hasOwnProperty.call(r,'localRebuildOrders')?{localRebuildOrders:restoreBuildingLocalRebuildOrders(r.localRebuildOrders,worldKey)}:{}),
+    ...(Object.prototype.hasOwnProperty.call(r,'market')?{market:restoreMarket(r.market)}:{}),
+    ...(Object.prototype.hasOwnProperty.call(r,'nearClaims')?{nearClaims:restoreNearClaims(r.nearClaims)}:{})
   };
 }
 
@@ -95,7 +105,9 @@ export function serializeObserverSave(save: ObserverSave): string {
     ...(save.raidCursor!==undefined?{raidCursor:serializeObserverRaidCursor(save.raidCursor)}:{}),
     ...(save.buildingFire!==undefined?{buildingFire:serializeBuildingConflagrationRestore(save.buildingFire)}:{}),
     ...(save.buildingEmergency!==undefined?{buildingEmergency:serializeVillagePopulationEmergencyCheckpointRestore(save.buildingEmergency)}:{}),
-    ...(save.localRebuildOrders!==undefined?{localRebuildOrders:serializeBuildingLocalRebuildOrdersRestore(save.localRebuildOrders)}:{}) });
+    ...(save.localRebuildOrders!==undefined?{localRebuildOrders:serializeBuildingLocalRebuildOrdersRestore(save.localRebuildOrders)}:{}),
+    ...(save.market!==undefined?{market:save.market.status==='valid'?parseMarket(save.market.state):save.market.raw}:{}),
+    ...(save.nearClaims!==undefined?{nearClaims:save.nearClaims.status==='valid'?save.nearClaims.ids:save.nearClaims.raw}:{}) });
 }
 
 export function observerSaveKey(worldKey: string): string {

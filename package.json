@@ -11,7 +11,8 @@
     "preview": "npm --prefix \"main game\" run preview:house",
     "typecheck": "npm --prefix \"main game\" run typecheck",
     "test:core": "node --import tsx --test shared/legacy/aethelgard/characters/village-population-runtime.test.ts \"main game/src/legacy/aethelgard/characters/crowd-residents.test.ts\" \"main game/src/legacy/aethelgard/building-emergency-sites.test.ts\"",
-    "assets:house:install": "node scripts/install-house-private.mjs"
+    "assets:house:install": "node scripts/install-house-private.mjs",
+    "test:market": "node --import tsx --test shared/legacy/aethelgard/observer/market-economy.test.ts shared/legacy/aethelgard/observer/market-village.test.ts"
   },
   "dependencies": {
     "chess.js": "1.4.0"

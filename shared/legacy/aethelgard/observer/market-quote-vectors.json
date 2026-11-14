@@ -1,0 +1,422 @@
+[
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 0,
+    "demand": 0,
+    "bid": 5,
+    "ask": 9,
+    "stockAdjustment": 50,
+    "demandAdjustment": 0
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 0,
+    "demand": 2,
+    "bid": 6,
+    "ask": 10,
+    "stockAdjustment": 50,
+    "demandAdjustment": 10
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 0,
+    "demand": 6,
+    "bid": 6,
+    "ask": 10,
+    "stockAdjustment": 50,
+    "demandAdjustment": 30
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 1,
+    "demand": 0,
+    "bid": 5,
+    "ask": 9,
+    "stockAdjustment": 41,
+    "demandAdjustment": 0
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 1,
+    "demand": 2,
+    "bid": 5,
+    "ask": 9,
+    "stockAdjustment": 41,
+    "demandAdjustment": 10
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 1,
+    "demand": 6,
+    "bid": 6,
+    "ask": 10,
+    "stockAdjustment": 41,
+    "demandAdjustment": 30
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 5,
+    "demand": 0,
+    "bid": 4,
+    "ask": 6,
+    "stockAdjustment": 8,
+    "demandAdjustment": 0
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 5,
+    "demand": 2,
+    "bid": 4,
+    "ask": 6,
+    "stockAdjustment": 8,
+    "demandAdjustment": 10
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 5,
+    "demand": 6,
+    "bid": 4,
+    "ask": 8,
+    "stockAdjustment": 8,
+    "demandAdjustment": 30
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 6,
+    "demand": 0,
+    "bid": 4,
+    "ask": 6,
+    "stockAdjustment": 0,
+    "demandAdjustment": 0
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 6,
+    "demand": 2,
+    "bid": 4,
+    "ask": 6,
+    "stockAdjustment": 0,
+    "demandAdjustment": 10
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 6,
+    "demand": 6,
+    "bid": 4,
+    "ask": 8,
+    "stockAdjustment": 0,
+    "demandAdjustment": 30
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 8,
+    "demand": 0,
+    "bid": 3,
+    "ask": 5,
+    "stockAdjustment": -17,
+    "demandAdjustment": 0
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 8,
+    "demand": 2,
+    "bid": 3,
+    "ask": 5,
+    "stockAdjustment": -17,
+    "demandAdjustment": 10
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 8,
+    "demand": 6,
+    "bid": 4,
+    "ask": 6,
+    "stockAdjustment": -17,
+    "demandAdjustment": 30
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 15,
+    "demand": 0,
+    "bid": 1,
+    "ask": 3,
+    "stockAdjustment": -50,
+    "demandAdjustment": 0
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 15,
+    "demand": 2,
+    "bid": 2,
+    "ask": 4,
+    "stockAdjustment": -50,
+    "demandAdjustment": 10
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 15,
+    "demand": 6,
+    "bid": 3,
+    "ask": 5,
+    "stockAdjustment": -50,
+    "demandAdjustment": 30
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 100,
+    "demand": 0,
+    "bid": 1,
+    "ask": 3,
+    "stockAdjustment": -50,
+    "demandAdjustment": 0
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 100,
+    "demand": 2,
+    "bid": 2,
+    "ask": 4,
+    "stockAdjustment": -50,
+    "demandAdjustment": 10
+  },
+  {
+    "base": 5,
+    "target": 6,
+    "stock": 100,
+    "demand": 6,
+    "bid": 3,
+    "ask": 5,
+    "stockAdjustment": -50,
+    "demandAdjustment": 30
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 0,
+    "demand": 0,
+    "bid": 4,
+    "ask": 8,
+    "stockAdjustment": 50,
+    "demandAdjustment": 0
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 0,
+    "demand": 2,
+    "bid": 4,
+    "ask": 8,
+    "stockAdjustment": 50,
+    "demandAdjustment": 10
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 0,
+    "demand": 6,
+    "bid": 5,
+    "ask": 9,
+    "stockAdjustment": 50,
+    "demandAdjustment": 30
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 1,
+    "demand": 0,
+    "bid": 4,
+    "ask": 6,
+    "stockAdjustment": 43,
+    "demandAdjustment": 0
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 1,
+    "demand": 2,
+    "bid": 4,
+    "ask": 8,
+    "stockAdjustment": 43,
+    "demandAdjustment": 10
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 1,
+    "demand": 6,
+    "bid": 4,
+    "ask": 8,
+    "stockAdjustment": 43,
+    "demandAdjustment": 30
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 5,
+    "demand": 0,
+    "bid": 3,
+    "ask": 5,
+    "stockAdjustment": 18,
+    "demandAdjustment": 0
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 5,
+    "demand": 2,
+    "bid": 4,
+    "ask": 6,
+    "stockAdjustment": 18,
+    "demandAdjustment": 10
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 5,
+    "demand": 6,
+    "bid": 4,
+    "ask": 6,
+    "stockAdjustment": 18,
+    "demandAdjustment": 30
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 6,
+    "demand": 0,
+    "bid": 3,
+    "ask": 5,
+    "stockAdjustment": 12,
+    "demandAdjustment": 0
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 6,
+    "demand": 2,
+    "bid": 3,
+    "ask": 5,
+    "stockAdjustment": 12,
+    "demandAdjustment": 10
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 6,
+    "demand": 6,
+    "bid": 4,
+    "ask": 6,
+    "stockAdjustment": 12,
+    "demandAdjustment": 30
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 8,
+    "demand": 0,
+    "bid": 3,
+    "ask": 5,
+    "stockAdjustment": 0,
+    "demandAdjustment": 0
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 8,
+    "demand": 2,
+    "bid": 3,
+    "ask": 5,
+    "stockAdjustment": 0,
+    "demandAdjustment": 10
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 8,
+    "demand": 6,
+    "bid": 4,
+    "ask": 6,
+    "stockAdjustment": 0,
+    "demandAdjustment": 30
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 15,
+    "demand": 0,
+    "bid": 1,
+    "ask": 3,
+    "stockAdjustment": -44,
+    "demandAdjustment": 0
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 15,
+    "demand": 2,
+    "bid": 1,
+    "ask": 3,
+    "stockAdjustment": -44,
+    "demandAdjustment": 10
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 15,
+    "demand": 6,
+    "bid": 2,
+    "ask": 4,
+    "stockAdjustment": -44,
+    "demandAdjustment": 30
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 100,
+    "demand": 0,
+    "bid": 1,
+    "ask": 3,
+    "stockAdjustment": -50,
+    "demandAdjustment": 0
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 100,
+    "demand": 2,
+    "bid": 1,
+    "ask": 3,
+    "stockAdjustment": -50,
+    "demandAdjustment": 10
+  },
+  {
+    "base": 4,
+    "target": 8,
+    "stock": 100,
+    "demand": 6,
+    "bid": 2,
+    "ask": 4,
+    "stockAdjustment": -50,
+    "demandAdjustment": 30
+  }
+]

@@ -48,3 +48,24 @@ A clean copy of the public files, with the authenticated private assets installe
 A fresh headless Chromium session fetched the original model, pond probe, site, resident models and clip libraries successfully. The population reported 100 registered people in 25 households, with three character actors ready in the observed frame. Main-camera diagnostics recorded four resident draw calls, as well as authored architecture and terrain submissions. The clock advanced normally. These counts establish asset loading and render submissions; they do not establish completed work interactions, an end-to-end visible fire and rebuild, smooth animation, or physical-device performance.
 
 For an additional local visibility check, an instrumented copy rendered the same frame at 320×180 with the population on, off and on again. One RGB pixel differed between on and off while matching between both on renders; no pixels changed between the on renders. This establishes a small population contribution in that view, not a recognizable close-up or a motion/occupation proof. The comparison ran locally; no village image was uploaded.
+
+## NEAR Hackathon: Ealdholt market (new work)
+
+The baseline is commit `8537296096c51f3eacdb56be09e847909f666376`; the new work is on `hackathon/near-village-economy` ([compare the branch](https://github.com/mylife-as-miles/House-Ealdholt/compare/8537296096c51f3eacdb56be09e847909f666376...hackathon/near-village-economy) once pushed). The authored village, villagers and pre-existing simulation are Crownfall work. The market, wallet integration, contract and tests on this branch are new. The game still opens the real village and its existing Market panel is available from the village controls.
+
+In the local mode, gather timber from a finite commons, sell or buy at the woodcutter's stall, buy bread and eat it to recover energy. Stalls have finite stock and budgets; prices respond to stock and demand. A 12-timber delivery adds to the existing village repair stores in the same local save. Advance the market day to restock bread and recover some energy. This is an abstract market simulation: these actions do not show physical work by residents, advance the village clock or bypass the existing requirements for repairs.
+
+The NEAR testnet mode uses a separate shared on-chain game ledger. Connect My NEAR Wallet, enter an initialized testnet contract account, join, and approve actions in the wallet. Game coins are contract accounting units, not NEAR or a fungible token. Merchant balances are contract records, not individual NPC NEAR wallets. A finalized delivery bound to this village can be applied to its local repair stores. Receipt use is recorded in that browser save; restoring an older backup can permit a receipt to be applied again. Trust only the contract you deploy and the configured testnet RPC. This prototype has no anti-Sybil protection: registration and commons can be exhausted. Do not use real-value assets.
+
+**The contract has not been deployed and an end-to-end wallet transaction has not been verified.** A NEAR testnet account and testnet gas are needed. Build and test the contract with a current Rust toolchain:
+
+```sh
+rustup target add wasm32-unknown-unknown
+cargo test --locked --manifest-path contracts/ealdholt-market/Cargo.toml --lib
+cargo build --locked --manifest-path contracts/ealdholt-market/Cargo.toml --target wasm32-unknown-unknown --release
+npm run test:market
+```
+
+Deploy the resulting `contracts/ealdholt-market/target/wasm32-unknown-unknown/release/ealdholt_market.wasm` to an account you control on **testnet**, then initialize it with `new` and empty JSON arguments `{}`. See [NEAR's deployment guide](https://docs.near.org/smart-contracts/release/deploy). Transactions and gas are approved in the owner's wallet. No keys belong in this repository.
+
+The market pricing adapts [Copper Acorn](https://github.com/san-npm/copper-acorn) at `e8f3efef18818ca15bff3d18ce1bac890ab84f05`, Apache-2.0; its licence and notice are in [third_party/copper-acorn](third_party/copper-acorn). The market files containing the adapted algorithm and the contract are Apache-2.0. [Bazaar Sovereign](https://github.com/Automationbot24x7/bazaar-sovereign) (`685b68f0b4f7bf7694720e20769c2547a3f7f8f8`, MIT) informed separate merchant budgets and stock. [Hearthmarket](https://github.com/nguyenkhangph/hearthmarket) (`d3076b4e235c75e447b8c955b0ba29241704372e`, MIT) informed the distinction between local simulation and verified contract actions. Wallet connection uses NEAR Wallet Selector; the contract uses near-sdk.

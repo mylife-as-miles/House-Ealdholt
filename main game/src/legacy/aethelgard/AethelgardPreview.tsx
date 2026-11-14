@@ -36,7 +36,7 @@ import "./legacy-menu-theme.css";
 
 type Step = "intro" | "banner" | "village";
 /** "watch" (a villager to follow) and "houses" (the neighbouring houses) open in My Legacy's observer panel (observer/ObserverHud.tsx). */
-type ToolDrawer = "views" | "camera" | "watch" | "houses" | null;
+type ToolDrawer = "views" | "camera" | "watch" | "houses" | "market" | null;
 type InterfaceIconKind = "views" | "people" | "camera" | "home" | "play" | "back" | "close" | "pause" | "banner" | "watch";
 /** Original fine-line interface marks; decorative, with visible text labels. */
 function InterfaceIcon({ kind }: { kind: InterfaceIconKind }) {
@@ -595,6 +595,7 @@ export const AethelgardPreview = forwardRef<LegacyScreenHandle, AethelgardPrevie
           {inherited
             ? <LegacyGlassButton data-nav data-ealdholt-tool="watch" disabled={!session || busy} aria-expanded={toolDrawer === "watch"} onClick={() => openToolDrawer("watch")}><InterfaceIcon kind="watch" />Watch</LegacyGlassButton>
             : <LegacyGlassButton data-nav data-ealdholt-household disabled={!session || busy} aria-expanded={householdOpen} onClick={() => householdOpen ? closeHousehold() : openHousehold()}><InterfaceIcon kind="people" />{UI.people}</LegacyGlassButton>}
+          {inherited && <LegacyGlassButton data-nav data-ealdholt-tool="market" disabled={!session || busy} aria-expanded={toolDrawer === "market"} onClick={() => openToolDrawer("market")}><InterfaceIcon kind="people" />Market</LegacyGlassButton>}
           {inherited && <LegacyGlassButton data-nav data-ealdholt-tool="houses" disabled={!session || busy} aria-expanded={toolDrawer === "houses"} onClick={() => openToolDrawer("houses")}><InterfaceIcon kind="banner" />Houses</LegacyGlassButton>}
           <LegacyGlassButton data-nav data-ealdholt-tool="camera" disabled={loadState !== "ready"} aria-expanded={toolDrawer === "camera"} onClick={() => openToolDrawer("camera")}><InterfaceIcon kind="camera" />{UI.camera}</LegacyGlassButton>
         </nav>}
@@ -610,7 +611,7 @@ export const AethelgardPreview = forwardRef<LegacyScreenHandle, AethelgardPrevie
         </aside>}
         {inherited && !session && saveStatus}
         {inherited && session && householdEntryId && <ObserverHud key={householdEntryId} view={observerView} sourceReady={loadState === "ready"}
-          worldKey={householdEntryId} sky={worldStatus?.weather ?? null} panel={toolDrawer === "watch" || toolDrawer === "houses" ? toolDrawer : "powers"}
+          worldKey={householdEntryId} sky={worldStatus?.weather ?? null} panel={toolDrawer === "watch" || toolDrawer === "houses" || toolDrawer === "market" ? toolDrawer : "powers"}
           onPanel={next => { if (next === "powers") closeToolDrawer(); else if (toolDrawer !== next) openToolDrawer(next); }} reducedMotion={reducedMotion}
           rightPanelFree={toolDrawer !== "views" && toolDrawer !== "camera" && !householdOpen} />}
       </>}
