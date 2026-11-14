@@ -580,7 +580,8 @@ export default function App() {
       const action = (Object.entries(preferences.bindings) as [BindingAction, string][]).find(([, code]) => code === event.code)?.[0];
       // Text fields (the Legacy banner name and motto) keep every key except Escape.
       const typing = event.target instanceof HTMLTextAreaElement || (event.target instanceof HTMLInputElement && (event.target.type === "text" || event.target.type === "search"));
-      if (typing && event.code !== "Escape") return;
+      const marketEditor = event.target instanceof HTMLElement && !!event.target.closest('[data-near-market]') && (event.target instanceof HTMLInputElement || event.target instanceof HTMLSelectElement);
+      if ((typing || marketEditor) && event.code !== "Escape") return;
       if (event.repeat && (action === "select" || action === "back" || event.code === "Escape" || anyFilmOpen && event.code === "Space")) {
         event.preventDefault();
         return;

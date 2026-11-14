@@ -13,6 +13,9 @@
     "preview:house": "vite preview --host 127.0.0.1"
   },
   "dependencies": {
+    "@near-js/transactions": "^2.5.1",
+    "@near-wallet-selector/core": "^10.1.4",
+    "@near-wallet-selector/my-near-wallet": "^10.1.4",
     "jolt-physics": "1.1.1",
     "meshoptimizer": "^1.1.1",
     "react": "^19.2.7",
