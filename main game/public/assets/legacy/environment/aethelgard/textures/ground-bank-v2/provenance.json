@@ -1,0 +1,190 @@
+{
+  "assetId": "brown_mud_rocks_01",
+  "name": "Brown Mud Rocks 01",
+  "layer": "bank",
+  "intakeDate": "2026-11-06",
+  "licence": {
+    "spdx": "CC0-1.0",
+    "officialUrl": "https://polyhaven.com/license",
+    "legalCodeUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt",
+    "officialPageSha256": "6f4f617c936d14d5a80db6a2ebec145c79277a760672501eef51bff7a0d4cbba",
+    "legalCodeSha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+    "quote": "Our assets are all licensed as CC0",
+    "credit": "Powered by Poly Haven",
+    "assetPage": {
+      "url": "https://polyhaven.com/a/brown_mud_rocks_01",
+      "bytes": 206262,
+      "sha256": "8bc03f902487c5117ce6a4d81e1f763bee5ba0739237462d113ab189ec222eb8",
+      "statement": "\"license\":\"https://creativecommons.org/publicdomain/zero/1.0/\""
+    }
+  },
+  "sourceUrl": "https://polyhaven.com/a/brown_mud_rocks_01",
+  "authors": {
+    "Rob Tuytel": "All"
+  },
+  "infoApi": "https://api.polyhaven.com/info/brown_mud_rocks_01",
+  "filesApi": "https://api.polyhaven.com/files/brown_mud_rocks_01",
+  "infoSha256": "eb5a8ffc058907c26984e71cf1773b15f2237055a6358d727b8eab53a24b2096",
+  "filesSha256": "5290459061cb584812480a472bcece38e5dbefc732f6763246814f00ba5f1666",
+  "sources": {
+    "albedo": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_mud_rocks_01/brown_mud_rocks_01_diff_1k.jpg",
+      "bytes": 887215,
+      "md5": "19e4d0066282bd8439bdc713310bbbe4",
+      "sha256": "805675195f875f75b8f34410d8ead8b75c25643cdb2c0a8b0936d0f2698cce8c",
+      "decodedRgbSha256": "093926994a36ede7e0299a2ce007681d7eaca2b0f535597248492fdb57988dfb"
+    },
+    "normal": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_mud_rocks_01/brown_mud_rocks_01_nor_gl_1k.jpg",
+      "bytes": 1400087,
+      "md5": "aea4a53ff5a38070e7dbda4feb81a0b9",
+      "sha256": "755bb531b62b3395879d6df2aeb435d1c97104a0c61b6c0e50a428ce676af738",
+      "decodedRgbSha256": "8d70a8fe5799ee3175f90e88fdbc8e477f0a8d1d3c85fda28e133ab45fee7448"
+    },
+    "orm": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_mud_rocks_01/brown_mud_rocks_01_arm_1k.jpg",
+      "bytes": 514636,
+      "md5": "05bdb8c8ebb8e53e09a1207b48fc0abf",
+      "sha256": "c09dab941481c0cbc33a77901d87f8785f4b8e62aea42bb577cf0f252410cb5d",
+      "decodedRgbSha256": "6b751bb387fe5b63d8e24200ae66bb421c8969621124c3666994c1bfc0522388"
+    }
+  },
+  "modifications": "ARM roughness remapped to 0.7 + 0.27 x source (dry bank soil is matte; the shader adds wet gloss). AO, metallic, albedo and normal unmodified.",
+  "modificationRecord": {
+    "orm": {
+      "method": "ARM green (roughness) remap; R (AO) and B (metallic) untouched",
+      "offset": 0.7,
+      "scale": 0.27
+    }
+  },
+  "sourceAnalysis": {
+    "meanLuminance": 0.08185723,
+    "meanSrgb8": [
+      90,
+      79,
+      63
+    ],
+    "meanColourHue": 35.56,
+    "meanSaturation": 0.3759,
+    "shares": {
+      "green": 0.0116,
+      "olive": 0.0212,
+      "warm": 0.9252,
+      "neutral": 0.0413,
+      "other": 0.0007
+    },
+    "luminanceWeightedShares": {
+      "green": 0.0156,
+      "olive": 0.0238,
+      "warm": 0.8954,
+      "neutral": 0.0651,
+      "other": 0.0001
+    },
+    "luminancePercentiles": {
+      "p05": 0.009644,
+      "p25": 0.029419,
+      "p50": 0.057495,
+      "p75": 0.10437,
+      "p95": 0.237915
+    },
+    "linearChromaticity": [
+      0.4456,
+      0.342,
+      0.2124
+    ],
+    "valleyGrassIndex": -0.2922,
+    "macroVariation": 0.1145,
+    "macroLuminanceVariation16": 0.1729,
+    "macroChromaVariation8": 0.0505,
+    "macroChromaVariation16": 0.0668
+  },
+  "processing": "Decoded official 8-bit JPEG RGB directly. Linear-light box reduction for albedo; linear ARM reduction; normal vectors averaged and renormalized. Deterministic lossless WebP (effort 6) verified by exact decode. Opaque surface; no geometry, displacement or alpha blades.",
+  "tools": {
+    "generator": "scripts/prepare-ealdholt-woodland-ground.mjs",
+    "node": "v22.23.4",
+    "sharp": {
+      "aom": "3.15.0",
+      "archive": "3.8.9",
+      "cairo": "1.18.4",
+      "cgif": "0.5.3",
+      "exif": "0.6.26",
+      "expat": "2.8.3",
+      "ffi": "3.8.0",
+      "fontconfig": "2.18.3",
+      "freetype": "2.14.3",
+      "fribidi": "1.0.16",
+      "glib": "2.89.4",
+      "harfbuzz": "14.3.1",
+      "heif": "1.23.2",
+      "highway": "1.4.0",
+      "imagequant": "2.4.1",
+      "lcms": "2.19.1",
+      "mozjpeg": "0826579",
+      "pango": "1.58.2",
+      "pixman": "0.46.4",
+      "png": "1.6.58",
+      "proxy-libintl": "0.5",
+      "rsvg": "2.62.91",
+      "tiff": "4.7.2",
+      "uhdr": "2.0.2",
+      "vips": "8.18.6",
+      "webp": "1.6.0",
+      "xml2": "2.15.3",
+      "zlib-ng": "2.3.3",
+      "sharp": "0.35.4"
+    }
+  },
+  "files": [
+    {
+      "file": "bank-desktop-albedo-1024.webp",
+      "size": 1024,
+      "bytes": 1849536,
+      "sha256": "5d9149257b26d326e0a95f041ee488ed6913b5c588caad5a48383f94481b183a"
+    },
+    {
+      "file": "bank-desktop-normal-1024.webp",
+      "size": 1024,
+      "bytes": 2508962,
+      "sha256": "3d2e16c93f5cf040da16e29ccdce4186683496f2201b5b3bea6f313f7940db9d"
+    },
+    {
+      "file": "bank-desktop-orm-1024.webp",
+      "size": 1024,
+      "bytes": 2010678,
+      "sha256": "c126cc9f1be82b4317ba99c4880794144f2762141eccdc9671d0a948721bbae8"
+    },
+    {
+      "file": "bank-quest-albedo-512.webp",
+      "size": 512,
+      "bytes": 480556,
+      "sha256": "1d9865cf240ec006a6d4d7ce312504de4c98e0f63934bc81872b27de93c75903"
+    },
+    {
+      "file": "bank-quest-normal-256.webp",
+      "size": 256,
+      "bytes": 155200,
+      "sha256": "cbf6d759595f64c1be38ef980971551ff073c0469459db2d458741403d241013"
+    },
+    {
+      "file": "bank-quest-orm-256.webp",
+      "size": 256,
+      "bytes": 123098,
+      "sha256": "6a509a2c1016fea44aeff320c32dcc4c3ff72cf5ad5b1c6f70fdc6b48b3bed7f"
+    },
+    {
+      "file": "CC0-1.0.txt",
+      "bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "file": "manifest.json",
+      "bytes": 3365,
+      "sha256": "2d8660546dde3366c051ebd8cc4a8a060dc73f45852f7398f0982730841f0259"
+    },
+    {
+      "file": "SOURCES.md",
+      "bytes": 1490,
+      "sha256": "0c06f92bca9fcaf4015a799f918641cd3616580f1eace7ac9737cf2322412dc4"
+    }
+  ]
+}

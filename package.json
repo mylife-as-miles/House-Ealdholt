@@ -1,0 +1,24 @@
+{
+  "name": "house-ealdholt",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "assets:village:verify": "node scripts/install-private-village.mjs --verify-only",
+    "build": "npm --prefix \"main game\" run build:house",
+    "preview": "npm --prefix \"main game\" run preview:house",
+    "typecheck": "npm --prefix \"main game\" run typecheck",
+    "test:core": "node --import tsx --test shared/legacy/aethelgard/characters/village-population-runtime.test.ts \"main game/src/legacy/aethelgard/characters/crowd-residents.test.ts\" \"main game/src/legacy/aethelgard/building-emergency-sites.test.ts\"",
+    "assets:house:install": "node scripts/install-house-private.mjs"
+  },
+  "dependencies": {
+    "chess.js": "1.4.0"
+  },
+  "devDependencies": {
+    "meshoptimizer": "1.1.1",
+    "sharp": "0.35.4",
+    "tsx": "4.21.0"
+  }
+}

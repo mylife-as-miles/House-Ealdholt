@@ -1,0 +1,375 @@
+/* The match HUD (MatchHud.tsx) in the match setup's design (MatchSetup.css), as My Legacy's observer wears it
+   (observer-hud.css): the blurred panel under a fading orange rule, quiet uppercase headings after small orange glyphs,
+   tiles with condensed numerals, rows with a kingdom's stripe, the diamond medallion, the menu's key chips, the one
+   orange call to action with its slow shine, the motes and the shared swing and rise (ui-motion.css). The values are
+   the setup's own.
+
+   Everything keeps to the top of the stage: the board fills the middle and the bottom of every screen shape, and the
+   fallen stand beside it. The HUD is sized by the stage (data-tier, set from its measured size), not the window, so a
+   pillarboxed phone is laid out as the 16:9 picture it shows.
+
+   Buttons are written as ".match-experience .hud button.x" to outrank play.css's plain ".play-route button". */
+
+.match-experience .hud {
+  --hud-accent: var(--menu-accent, #bf791a);
+  --hud-active: var(--menu-active-tab, #f87b00);
+  --hud-focus: var(--menu-focus, #df8a26);
+  --hud-text: var(--menu-text, #cdc6b8);
+  --hud-heading: var(--menu-inactive-heading, #b5b2ac);
+  --hud-quiet: #98958e;
+  --hud-panel: #100d08b8;
+  --hud-line: #ffffff14;
+  --hud-condensed: var(--menu-font-condensed, "Barlow Condensed"), "Arial Narrow", sans-serif;
+  --hud-edge: clamp(12px, 1.1cqw, 18px);
+  --hud-medal: 44px;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  color: var(--hud-text);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+/* ------------------------------------------------------------------ shared pieces */
+.hud .hud-panel { position: relative; background: var(--hud-panel); backdrop-filter: blur(14px) saturate(1.15); -webkit-backdrop-filter: blur(14px) saturate(1.15); box-shadow: inset 0 0 0 1px var(--hud-line), 0 24px 60px #0007; pointer-events: auto; }
+.hud .hud-panel::before { content: ""; position: absolute; z-index: 1; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--hud-active), #f87b0033 60%, transparent); pointer-events: none; }
+.hud .hud-heading { display: flex; align-items: center; margin: 0 0 10px; padding: 0; color: var(--hud-heading); font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; white-space: nowrap; }
+.hud .hud-heading .hud-glyph { width: 14px; height: 14px; margin-right: 8px; flex: 0 0 auto; color: var(--hud-active); }
+.hud .hud-heading em { margin-left: auto; padding-left: 18px; font-style: normal; color: var(--hud-quiet); }
+.hud .hud-glyph, .hud .hud-piece { display: block; flex: 0 0 auto; }
+.hud kbd { display: inline-grid; place-items: center; min-width: 28px; height: 20px; padding: 0 6px; border-radius: 3px; background: #9a541e; color: #1e1007; font: 700 11px Arial, sans-serif; box-shadow: 0 0 3px #88551f33; }
+
+.match-experience .hud button { margin: 0; padding: 0; min-height: 0; border: 0; background: none; color: inherit; font: inherit; cursor: pointer; pointer-events: auto; }
+.match-experience .hud button:is(:hover, :focus-visible) { background: none; }
+.match-experience .hud button:disabled { opacity: .35; cursor: default; }
+.match-experience .hud :is(button, input):focus-visible { outline: 2px solid var(--hud-focus); outline-offset: 3px; }
+/* A controller's focus is shown always: it moves it without a key press. */
+.match-experience .hud[data-hud-input="gamepad"] :is(button, input):focus { outline: 2px solid var(--hud-focus); outline-offset: 3px; }
+
+/* A tile: the setup's choice face. */
+.match-experience .hud button.hud-tile { position: relative; display: flex; align-items: center; gap: 8px; min-height: 46px; padding: 8px 12px; background: #ffffff0a; color: var(--hud-heading); font-size: 14px; font-weight: 500; line-height: 1.2; white-space: nowrap; box-shadow: inset 0 0 0 1px var(--hud-line); transition: color .16s, box-shadow .16s, background .16s, transform .1s; }
+.match-experience .hud button.hud-tile:hover:not(:disabled) { background: #ffffff14; color: #e6dacc; }
+.match-experience .hud button.hud-tile[aria-expanded="true"] { background: #bf791a24; color: var(--hud-active); box-shadow: inset 0 0 0 2px var(--hud-focus); }
+.match-experience .hud button.hud-tile:is(:active, [data-hud-pressed]):not(:disabled) { background: #bf791a40; transform: scale(.985); }
+.hud .hud-tile .hud-glyph { width: 18px; height: 18px; }
+.hud .hud-tile--sound[aria-pressed="false"] { color: var(--hud-quiet); }
+/* A tile that shows only its mark keeps its name for screen readers. */
+.hud .hud-tile--icon .hud-label, .hud[data-crowded] .hud-bar-group--play .hud-label, .hud:is([data-tier="mid"], [data-tier="small"]) .hud-tile--sound .hud-label, .hud[data-tier="small"] .hud-bar .hud-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.match-experience .hud button.hud-tile--icon { justify-content: center; min-width: 46px; padding-inline: 10px; }
+
+/* The one call to action: the setup's Start, with its arrow and its slow shine. */
+:is(.match-experience .hud, .hud.match-pause) button.hud-cta { position: relative; overflow: hidden; display: flex; justify-content: space-between; align-items: center; gap: 24px; min-height: 52px; padding: 12px 22px; background: var(--hud-active); color: #19120a; font-size: 17px; font-weight: 500; text-transform: uppercase; letter-spacing: .04em; text-align: left; box-shadow: 0 0 10px #d269001c; transition: background .16s, transform .16s, filter .16s; }
+:is(.match-experience .hud, .hud.match-pause) button.hud-cta::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(105deg, transparent 35%, #fff6 50%, transparent 65%); transform: translateX(-120%); animation: hud-shine 4.2s 1s ease-in-out infinite; }
+@keyframes hud-shine { 0%, 62% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
+.hud .hud-cta > * { position: relative; z-index: 1; }
+:is(.match-experience .hud, .hud.match-pause) button.hud-cta:hover { background: var(--hud-active); filter: brightness(1.08); }
+:is(.match-experience .hud, .hud.match-pause) button.hud-cta:is(:active, [data-hud-pressed]) { transform: translateY(1px); }
+.match-experience .hud button.hud-cta:focus-visible, .match-experience .hud[data-hud-input="gamepad"] button.hud-cta:focus { outline-offset: 4px; }
+.hud.match-pause button.hud-cta:focus-visible { outline: 2px solid var(--hud-focus); outline-offset: 4px; }
+.hud .hud-arrow { width: 32px; height: 12px; flex: 0 0 auto; }
+/* The setup's Back: a key chip and quiet words. */
+:is(.match-experience .hud, .hud.match-pause) button.hud-quiet { display: flex; align-items: center; gap: 9px; min-height: 44px; padding: 8px 0; color: #b9b3a4c4; font-size: 15px; font-weight: 300; transition: color .16s; }
+:is(.match-experience .hud, .hud.match-pause) button.hud-quiet:hover { color: #e5d7bd; }
+
+/* A tile of condensed numerals with a small unit: the setup's clock tiles. */
+.hud .hud-stat { display: grid; grid-auto-flow: column; place-content: center; align-items: baseline; gap: 4px; min-width: 84px; min-height: 64px; padding: 8px 12px; background: #ffffff0a; color: var(--hud-heading); box-shadow: inset 0 0 0 1px var(--hud-line); }
+.hud .hud-stat b { font-family: var(--hud-condensed); font-size: 30px; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; }
+.hud .hud-stat i { font-style: normal; text-transform: lowercase; font-size: 12px; color: var(--hud-quiet); }
+
+/* The setup's medallion: a diamond in the kingdom's colour holding its sigil. */
+.hud .hud-medal { position: relative; display: grid; place-items: center; flex: 0 0 auto; width: var(--hud-medal); height: var(--hud-medal); transition: opacity .25s; }
+.hud .hud-medal::before { content: ""; position: absolute; inset: 15%; transform: rotate(45deg); border: 1.5px solid var(--army-tint); background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--army-tint) 26%, transparent), #100d08d9 72%); box-shadow: 0 0 26px color-mix(in srgb, var(--army-tint) 38%, transparent), inset 0 0 12px color-mix(in srgb, var(--army-tint) 22%, transparent); transition: box-shadow .25s; }
+.hud .hud-medal::after { content: ""; position: absolute; inset: 4.5%; transform: rotate(45deg); border: 1px solid color-mix(in srgb, var(--army-tint) 30%, transparent); }
+.hud .hud-medal .setup-sigil { position: relative; z-index: 1; width: 48%; height: 48%; }
+
+/* ------------------------------------------------------------------ the two kingdoms (top left) */
+.hud .hud-left { position: absolute; top: var(--hud-edge); left: var(--hud-edge); display: flex; flex-direction: column; align-items: flex-start; gap: 8px; max-width: calc(100% - 2 * var(--hud-edge)); }
+.hud .hud-sides { width: max-content; max-width: 100%; padding: 14px; transform-origin: 0 50%; animation: cf-swing-from-left .62s .04s var(--cf-ease-swing, ease-out) both; }
+/* The heading never widens the panel: the plates set its width (an untimed match's plates, which have no clock, no
+   narrower than a timed one's on a wide screen), and a long battlefield name is cut short before the mode is. */
+.hud .hud-sides > .hud-heading { width: 0; min-width: 100%; }
+.hud .hud-sides > .hud-heading span { flex: none; }
+.hud .hud-sides > .hud-heading em { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.hud[data-tier="wide"] .hud-sides { min-width: 300px; }
+.hud .hud-plates { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+/* A plate: the kingdom row of the setup, with its stripe. The clock stands the plate's whole height at its right. */
+.hud .hud-plate { position: relative; overflow: hidden; display: grid; grid-template-columns: var(--hud-medal) minmax(0, 1fr) auto; grid-template-areas: "medal id clock" "foot foot clock"; align-items: center; column-gap: 12px; row-gap: 4px; padding: 8px 8px 8px 16px; background: #ffffff0a; box-shadow: inset 3px 0 0 var(--army-tint), inset 0 0 0 1px var(--hud-line); transition: background .25s, box-shadow .25s; animation: cf-rise .4s var(--cf-ease-out, ease-out) both; }
+.hud .hud-plate:nth-child(1) { animation-delay: .3s; } .hud .hud-plate:nth-child(2) { animation-delay: .37s; }
+.hud .hud-plate .hud-medal { grid-area: medal; }
+.hud .hud-plate-id { grid-area: id; display: grid; gap: 4px; min-width: 0; }
+.hud .hud-plate-name { font-family: var(--hud-condensed); font-size: 20px; font-weight: 600; line-height: 1; letter-spacing: .07em; text-transform: uppercase; white-space: nowrap; color: var(--hud-heading); text-shadow: 0 2px 10px #000b; transition: color .25s; }
+.hud .hud-plate-id small { font-size: 10px; font-weight: 500; line-height: 1.2; letter-spacing: .2em; text-transform: uppercase; white-space: nowrap; color: color-mix(in srgb, var(--army-tint) 70%, #b5b2ac); }
+/* The side to move (or the winner): framed and washed in its kingdom's colour, its medallion alight. */
+.hud .hud-plate[data-lit] { background: color-mix(in srgb, var(--army-tint) 15%, #ffffff05); box-shadow: inset 3px 0 0 var(--army-tint), inset 0 0 0 2px var(--army-tint), 0 0 26px color-mix(in srgb, var(--army-tint) 24%, transparent); }
+.hud .hud-plate[data-lit] .hud-plate-name { color: #efe9dc; }
+.hud .hud-plate:not([data-lit]) .hud-medal { opacity: .6; }
+.hud .hud-plate:not([data-lit]) .hud-medal::before { box-shadow: none; }
+/* The shared light crosses a plate as the move comes to it. */
+.hud .hud-plate[data-lit]::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(102deg, transparent 0 34%, #ffe9c026 44%, #fff6dc73 50%, color-mix(in srgb, var(--army-tint) 40%, transparent) 56%, transparent 66% 100%); transform: translateX(-125%); animation: cf-sweep .7s var(--cf-ease-out, ease-out) both; }
+
+.hud .hud-clock { grid-area: clock; align-self: stretch; display: grid; grid-auto-flow: column; place-content: center; align-items: baseline; gap: 4px; min-width: 96px; padding: 6px 10px; background: #ffffff0a; color: var(--hud-quiet); box-shadow: inset 0 0 0 1px var(--hud-line); transition: color .25s, background .25s; }
+.hud .hud-clock b { font-family: var(--hud-condensed); font-size: 30px; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; }
+.hud .hud-clock i { font-style: normal; font-size: 12px; color: var(--hud-quiet); }
+.hud .hud-plate[data-lit] .hud-clock { color: #efe9dc; background: #ffffff12; }
+/* The last half minute: the setup's orange, beating. */
+.hud .hud-clock[data-low] { color: var(--hud-active); }
+.hud .hud-plate[data-lit] .hud-clock[data-low] { background: #bf791a24; color: var(--hud-active); box-shadow: inset 0 0 0 2px var(--hud-focus); }
+.hud .hud-plate[data-lit] .hud-clock[data-low] b { animation: hud-held 1s ease-in-out infinite; }
+
+.hud .hud-plate-foot { grid-area: foot; display: flex; align-items: center; gap: 8px; min-width: 0; min-height: 20px; }
+.hud .hud-chip { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto; padding: 2px 7px; font-family: var(--hud-condensed); font-size: 13px; font-weight: 600; line-height: 16px; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; color: var(--army-tint); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--army-tint) 55%, transparent); }
+/* A diamond beats before the words, slowly while a player is to move, quickly while the computer thinks; the words
+   themselves stay at full strength so they read at any moment. */
+.hud .hud-chip:is([data-state="move"], [data-state="thinking"])::before { content: ""; width: 6px; height: 6px; transform: rotate(45deg); background: currentColor; animation: hud-held 1.6s ease-in-out infinite; }
+.hud .hud-chip[data-state="thinking"]::before { animation-duration: .8s; }
+.hud .hud-chip[data-state="check"] { background: var(--hud-active); color: #19120a; box-shadow: 0 0 14px #f87b0066; }
+.hud .hud-chip[data-state="paused"] { color: #ece6da; box-shadow: inset 0 0 0 1px #ffffff40; }
+.hud .hud-chip[data-state="won"] { background: var(--army-tint); color: #19120a; box-shadow: 0 0 14px color-mix(in srgb, var(--army-tint) 50%, transparent); }
+.hud .hud-chip .hud-glyph { width: 13px; height: 13px; stroke-width: 2; }
+@keyframes hud-held { 50% { opacity: .45; } }
+/* What the side has taken, in the colour of the kingdom it was taken from, and how far ahead that puts it. */
+.hud .hud-taken { display: flex; align-items: center; gap: 5px; min-width: 0; margin-left: auto; overflow: hidden; color: color-mix(in srgb, var(--foe-tint) 80%, #b5b2ac); font-size: 11px; font-weight: 600; line-height: 1; font-variant-numeric: tabular-nums; }
+.hud .hud-taken > span { display: inline-flex; align-items: flex-end; gap: 1px; flex: 0 0 auto; }
+.hud .hud-taken .hud-piece { width: 17px; height: 17px; filter: drop-shadow(0 1px 2px #000a); }
+.hud .hud-taken b { flex: 0 0 auto; margin-left: 2px; font-family: var(--hud-condensed); font-size: 15px; font-weight: 600; color: #ece6da; }
+
+/* A computer that failed: what happened, and the way on. */
+.hud .hud-alert { display: grid; gap: 10px; width: 0; min-width: 100%; margin-top: 10px; padding: 12px 14px; background: linear-gradient(90deg, #f87b001f, #ffffff08); box-shadow: inset 3px 0 0 var(--hud-active), inset 0 0 0 1px var(--hud-line); animation: hud-rise .35s both cubic-bezier(.2, .7, .2, 1); }
+.hud .hud-alert small { display: flex; align-items: flex-start; gap: 8px; color: #ece6da; font-size: 14px; line-height: 1.4; }
+.hud .hud-alert small .hud-glyph { width: 16px; height: 16px; margin-top: 2px; color: var(--hud-active); }
+.match-experience .hud .hud-alert button.hud-cta { min-height: 44px; padding: 8px 16px; font-size: 15px; }
+@keyframes hud-rise { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: none; } }
+
+/* ------------------------------------------------------------------ the actions and the move record (top right) */
+.hud .hud-right { position: absolute; top: var(--hud-edge); right: var(--hud-edge); display: flex; flex-direction: column; align-items: flex-end; gap: 8px; max-width: calc(100% - 2 * var(--hud-edge)); }
+.hud .hud-controls { position: relative; max-width: 100%; }
+.hud .hud-bar { display: flex; align-items: stretch; gap: 4px; padding: 10px; transform-origin: 100% 50%; animation: cf-swing-from-right .62s .08s var(--cf-ease-swing, ease-out) both; }
+.hud .hud-bar-group { display: flex; gap: 4px; }
+/* Resigning, starting again and leaving stand apart from the actions of play. */
+.hud .hud-bar-group--match { margin-left: 8px; padding-left: 12px; box-shadow: inset 1px 0 0 var(--hud-line); }
+/* The pause tile opens the bar, set apart from the actions of play. */
+.hud .hud-bar-group--pause { margin-right: 8px; padding-right: 12px; box-shadow: inset -1px 0 0 var(--hud-line); }
+.hud .hud-pad-hint { display: flex; align-items: center; padding: 0 6px 0 2px; }
+/* The tiles arrive after the bar. Their keyframes name only where they start, so each lands on its own look: a tile
+   that cannot be pressed stays dimmed (a filled animation's last frame would hold it at full strength). */
+.hud .hud-bar .hud-tile { animation: hud-arrive .4s .34s var(--cf-ease-out, ease-out) backwards; }
+@keyframes hud-arrive { from { opacity: 0; transform: translate3d(0, 10px, 0); } }
+.hud .hud-bar .hud-bar-group--match .hud-tile { animation-delay: .42s; }
+
+/* What a tile opens hangs under the bar. It is the bar's sibling, not its child: a blurred panel inside a blurred
+   panel would have nothing behind it to blur. */
+.hud .hud-pop { position: absolute; z-index: 3; top: calc(100% + 8px); right: 0; min-width: 260px; padding: 14px; animation: hud-rise .25s both cubic-bezier(.2, .7, .2, 1); }
+.hud[data-tier="wide"] .hud-pop--brightness { right: auto; left: 0; }
+.hud .hud-pop--menu { display: grid; gap: 4px; }
+.hud .hud-pop--menu .hud-heading { margin-bottom: 6px; }
+.match-experience .hud .hud-pop--menu button.hud-tile { min-height: 52px; padding-inline: 14px; gap: 10px; }
+.hud .hud-brightness { display: grid; grid-template-columns: minmax(150px, 1fr) auto; align-items: center; gap: 12px; }
+.hud .hud-brightness input { appearance: none; -webkit-appearance: none; width: 100%; height: 44px; margin: 0; padding: 0; border: 0; background: transparent; cursor: pointer; pointer-events: auto; }
+.hud .hud-brightness input::-webkit-slider-runnable-track { height: 4px; background: linear-gradient(90deg, var(--hud-active) var(--fill, 50%), #ffffff24 var(--fill, 50%)); }
+.hud .hud-brightness input::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 10px; height: 22px; margin-top: -9px; border: 0; border-radius: 0; background: #ece6da; box-shadow: 0 0 0 1px #100d08, 0 0 10px #f87b0066; }
+.hud .hud-brightness input::-moz-range-track { height: 4px; background: #ffffff24; }
+.hud .hud-brightness input::-moz-range-progress { height: 4px; background: var(--hud-active); }
+.hud .hud-brightness input::-moz-range-thumb { width: 10px; height: 22px; border: 0; border-radius: 0; background: #ece6da; }
+
+/* The move record: numbered pairs under each kingdom's sigil, the latest move chosen as a tile is. */
+.hud .match-ledger { width: clamp(270px, 19cqw, 300px); transform-origin: 100% 50%; animation: cf-swing-from-right .62s .14s var(--cf-ease-swing, ease-out) both; }
+.hud .match-ledger.is-folded { width: auto; }
+.hud .hud-ledger-head { margin: 0; font: inherit; }
+.match-experience .hud button.hud-ledger-toggle { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 44px; padding: 0 12px 0 14px; color: var(--hud-heading); font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; text-align: left; white-space: nowrap; transition: color .16s; }
+.match-experience .hud button.hud-ledger-toggle:hover { color: #e6dacc; }
+.hud .hud-ledger-toggle .hud-glyph { width: 14px; height: 14px; }
+.hud .hud-ledger-toggle .hud-glyph:first-child { color: var(--hud-active); }
+.hud .hud-ledger-toggle .hud-glyph:last-child { margin-left: auto; transition: transform .2s; }
+.hud .hud-ledger-toggle[aria-expanded="true"] .hud-glyph:last-child { transform: rotate(180deg); }
+/* Folded, the heading carries the latest move. */
+.hud .hud-ledger-toggle em { margin-left: 6px; font-family: var(--hud-condensed); font-size: 16px; font-weight: 600; font-style: normal; letter-spacing: .04em; text-transform: none; color: #ece6da; font-variant-numeric: tabular-nums; }
+.hud .hud-ledger-toggle[aria-expanded="true"] em { display: none; }
+.hud .hud-ledger-body { padding: 0 10px 10px; }
+.hud .hud-ledger-sides, .hud .hud-ledger-body li { display: grid; grid-template-columns: 30px minmax(0, 1fr) minmax(0, 1fr); gap: 4px; align-items: center; }
+.hud .hud-ledger-sides { margin: 0 4px 6px 0; }
+.hud .hud-ledger-sides span { display: flex; align-items: center; gap: 6px; min-width: 0; padding-left: 8px; overflow: hidden; font-size: 10px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; color: color-mix(in srgb, var(--army-tint, #b5b2ac) 70%, #b5b2ac); }
+.hud .hud-ledger-sides .setup-sigil { width: 14px; height: 14px; }
+/* The list scrolls rather than grow down to the board: on 16:9 a long one ends above the board's far corner. */
+.hud .hud-ledger-body ol { display: grid; gap: 2px; max-height: min(238px, 25cqh); margin: 0; padding: 0 4px 0 0; list-style: none; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--hud-accent) transparent; }
+.hud .hud-ledger-body ol::-webkit-scrollbar { width: 5px; }
+.hud .hud-ledger-body ol::-webkit-scrollbar-thumb { background: var(--hud-accent); }
+.hud .hud-ply-number { padding-right: 4px; text-align: right; color: var(--hud-quiet); font-size: 12px; font-variant-numeric: tabular-nums; }
+.hud .hud-ply { display: flex; align-items: center; min-height: 28px; padding: 0 8px 0 10px; background: #ffffff0a; color: #ddd5c6; font-size: 14px; font-weight: 500; font-variant-numeric: tabular-nums; transition: color .16s, background .16s, box-shadow .16s; }
+.hud .hud-ply[aria-current] { background: #bf791a24; color: var(--hud-active); box-shadow: inset 3px 0 0 var(--army-tint), inset 0 0 0 2px var(--hud-focus); animation: hud-rise .3s both cubic-bezier(.2, .7, .2, 1); }
+.hud .hud-ledger-empty { margin: 0; padding: 2px 4px 4px; color: var(--hud-quiet); font-size: 13px; }
+
+/* ------------------------------------------------------------------ skipping a fight or the ending (bottom left) */
+.match-experience .hud button.hud-skip { position: absolute; left: var(--hud-edge); bottom: var(--hud-edge); display: flex; align-items: center; gap: 9px; min-height: 44px; padding: 8px 16px 8px 12px; background: var(--hud-panel); backdrop-filter: blur(14px) saturate(1.15); -webkit-backdrop-filter: blur(14px) saturate(1.15); box-shadow: inset 0 0 0 1px var(--hud-line); color: #e6dfd2; font-size: 15px; font-weight: 400; transition: color .16s, background .16s; animation: hud-rise .3s both cubic-bezier(.2, .7, .2, 1); }
+.match-experience .hud button.hud-skip:hover { background: #2a2116d9; color: #f6c48a; }
+.hud .hud-skip .hud-glyph { width: 16px; height: 16px; color: var(--hud-active); }
+/* The same prompt calls off a move queued while the board was busy, and names it. */
+.hud .hud-skip em { margin-left: 2px; font-family: var(--hud-condensed); font-size: 17px; font-weight: 600; font-style: normal; letter-spacing: .05em; color: #b9c0ff; font-variant-numeric: tabular-nums; }
+
+/* ------------------------------------------------------------------ how the view is turned */
+/* A quiet line of key chips as wide as the move record, under it (until the view has been turned once: MatchHud.tsx),
+   and beside the pause menu's prompts (MatchPause.css). It is not a control: presses go through it to the board. */
+.hud .hud-view-hints { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; width: clamp(270px, 19cqw, 300px); margin: 0; padding: 8px 12px; background: #100d0885; box-shadow: inset 0 0 0 1px var(--hud-line); color: var(--hud-quiet); font-size: 12px; line-height: 1; white-space: nowrap; pointer-events: none; animation: hud-rise .3s .5s both cubic-bezier(.2, .7, .2, 1); }
+.hud .hud-view-title { display: inline-flex; align-items: center; gap: 6px; color: var(--hud-heading); font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; }
+.hud .hud-view-title .hud-glyph { width: 14px; height: 14px; color: var(--hud-active); }
+.hud .hud-view-hint { display: inline-flex; align-items: center; gap: 3px; }
+.hud .hud-view-hint kbd { min-width: 20px; height: 18px; padding: 0 5px; font-size: 10px; white-space: nowrap; }
+.hud .hud-view-hint i { font-style: normal; }
+.hud .hud-view-hint > span { margin-left: 3px; }
+
+/* ------------------------------------------------------------------ promoting a pawn */
+/* The board's own picker stands its four figures over the far side of the board, so this one keeps away from there.
+   On a wide stage it is a list under the kingdoms, beside the board (rows with the mover's stripe, as the setup lists
+   kingdoms). A narrower stage has no room beside the board: there it is four tiles low in the middle, over the mover's
+   own back ranks and above the subtitles. */
+.hud .match-promotion { padding: 12px 14px 14px; animation: hud-rise .3s both cubic-bezier(.2, .7, .2, 1); }
+.hud .hud-promotion-choices { display: grid; gap: 4px; }
+/* Backing out of it, quietly under the four choices. */
+.match-experience .hud button.hud-promotion-back { min-height: 36px; margin-top: 6px; padding: 4px 0 0; font-size: 14px; }
+.match-experience .hud button.hud-choice { display: flex; align-items: center; gap: 10px; min-height: 46px; padding: 6px 10px 6px 14px; background: #ffffff0a; color: var(--hud-heading); font-size: 14px; font-weight: 500; text-align: left; box-shadow: inset 3px 0 0 var(--army-tint), inset 0 0 0 1px var(--hud-line); transition: color .16s, box-shadow .16s, background .16s, transform .1s; }
+.match-experience .hud button.hud-choice:hover { background: #ffffff14; color: #e6dacc; }
+.match-experience .hud button.hud-choice:is(:focus-visible, :active, [data-hud-pressed]), .match-experience .hud[data-hud-input="gamepad"] button.hud-choice:focus { background: #bf791a24; color: var(--hud-active); box-shadow: inset 3px 0 0 var(--army-tint), inset 0 0 0 2px var(--hud-focus); }
+/* The candidate in focus on the board's picker (its arrows, a pointer over its figure or its row, the controller). */
+.match-experience .hud button.hud-choice[data-focused] { background: #bf791a24; color: var(--hud-active); box-shadow: inset 3px 0 0 var(--army-tint), inset 0 0 0 2px var(--hud-focus); }
+.match-experience .hud:not([data-tier="wide"]) button.hud-choice[data-focused] { box-shadow: inset 0 0 0 2px var(--hud-focus); }
+.hud .hud-choice .hud-piece { width: 24px; height: 24px; color: var(--army-tint); filter: drop-shadow(0 0 6px #0009); }
+.hud .hud-choice kbd { margin-left: auto; }
+.hud[data-tier="wide"] .match-promotion { width: 226px; }
+.hud:not([data-tier="wide"]) .match-promotion { position: absolute; left: 0; right: 0; bottom: clamp(88px, 13cqh, 132px); width: max-content; max-width: calc(100% - 2 * var(--hud-edge)); margin: 0 auto; }
+.hud:not([data-tier="wide"]) .hud-promotion-choices { grid-template-columns: repeat(4, minmax(100px, 1fr)); }
+.match-experience .hud:not([data-tier="wide"]) button.hud-choice { display: grid; justify-items: center; align-content: center; gap: 5px; min-height: 80px; padding: 8px; text-align: center; box-shadow: inset 0 0 0 1px var(--hud-line); }
+.match-experience .hud:not([data-tier="wide"]) button.hud-choice:is(:focus-visible, :active, [data-hud-pressed]), .match-experience .hud[data-hud-input="gamepad"]:not([data-tier="wide"]) button.hud-choice:focus { box-shadow: inset 0 0 0 2px var(--hud-focus); }
+.hud:not([data-tier="wide"]) .hud-choice .hud-piece { width: 30px; height: 30px; }
+.hud:not([data-tier="wide"]) .hud-choice kbd { margin-left: 0; }
+
+/* ------------------------------------------------------------------ the result */
+.hud .match-result { position: absolute; inset: 0; z-index: 2; width: min(600px, calc(100% - 2 * var(--hud-edge))); height: max-content; max-height: calc(100% - 2 * var(--hud-edge)); margin: auto; padding: 26px 28px 24px; overflow: hidden auto; text-align: center; animation: hud-rise .45s both cubic-bezier(.2, .7, .2, 1); }
+.hud .match-result > :not(.hud-motes) { position: relative; z-index: 1; }
+.hud .hud-result-head { display: grid; justify-items: center; }
+/* The winner's flag beside the words, as the opening's kingdom cards have it: only the cloth and the head of the pole
+   (the picture is 480 by 672 with its whole pole), unfurled as the panel arrives. */
+.hud .hud-result-head[data-flag] { grid-template-columns: auto minmax(0, 1fr); align-items: center; justify-items: start; column-gap: 22px; text-align: left; }
+.hud .hud-flag { display: block; height: 150px; aspect-ratio: 480 / 500; overflow: hidden; filter: drop-shadow(0 12px 14px #000a); mask-image: linear-gradient(180deg, #000 80%, transparent 100%); -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent 100%); }
+.hud .hud-flag img { display: block; width: 100%; height: auto; animation: hud-unfurl .6s .2s both cubic-bezier(.25, .7, .3, 1); }
+@keyframes hud-unfurl { from { clip-path: inset(-6% 79% -6% -6%); } to { clip-path: inset(-6% -6% -6% -6%); } }
+.hud .hud-result-head[data-flag] strong::after { margin-left: 0; }
+.hud .hud-result-crest { display: flex; gap: 22px; margin: 2px 0 14px; --hud-medal: 66px; animation: hud-crest .5s .15s both cubic-bezier(.2, .8, .2, 1.2); }
+@keyframes hud-crest { from { opacity: 0; transform: translateY(6px) scale(.92); } to { opacity: 1; transform: none; } }
+.hud .hud-eyebrow { margin: 0; color: color-mix(in srgb, var(--army-tint, #b5b2ac) 62%, #b5b2ac); font-size: 12px; font-weight: 500; letter-spacing: .26em; text-transform: uppercase; }
+.hud .match-result strong { display: block; margin-top: 8px; font-family: var(--hud-condensed); font-size: clamp(38px, 3.4cqw, 54px); font-weight: 600; line-height: 1; letter-spacing: .02em; text-transform: uppercase; color: #efe9dc; text-shadow: 0 2px 18px #0009; }
+.hud .match-result strong::after { content: ""; display: block; width: 56px; height: 3px; margin: 12px auto 0; background: var(--army-tint, var(--hud-active)); box-shadow: 0 0 12px color-mix(in srgb, var(--army-tint, #f87b00) 60%, transparent); }
+.hud .hud-result-line { margin: 12px 0 0; color: #c2bcae; font-size: 15px; font-weight: 300; }
+.hud .hud-result-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; width: 100%; margin-top: 18px; }
+/* The chronicle under the result: a few quiet lines, read left to right, between two faint rules. */
+.hud .match-chronicle { width: 100%; margin: 16px 0 0; padding: 12px 4px 4px; border-block: 1px solid color-mix(in srgb, var(--army-tint, #b5b2ac) 34%, transparent); text-align: left; }
+.hud .match-chronicle h3 { margin: 0 0 8px; font-family: var(--hud-condensed); font-size: 13px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: color-mix(in srgb, var(--army-tint, #b5b2ac) 55%, #d8cfbd); }
+.hud .match-chronicle p { margin: 0 0 8px; color: var(--hud-text); font-size: 14px; font-weight: 300; line-height: 1.45; }
+.hud .hud-result-notice { margin: 10px 0 0; color: var(--hud-heading); font-size: 13px; }
+.hud .hud-result-notice:empty { margin: 0; }
+.hud .hud-result-actions { display: flex; flex-wrap: wrap; gap: 4px; width: 100%; margin-top: 16px; }
+.match-experience .hud .hud-result-actions button.hud-tile { flex: 1 1 auto; justify-content: center; }
+.match-experience .hud .hud-result-actions button.hud-cta { flex: 1 0 100%; margin-top: 4px; }
+/* Motes drifting up through the panel, like the setup's. */
+.hud .hud-motes { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.hud .hud-motes i { position: absolute; bottom: -12px; border-radius: 50%; background: var(--mote-color); box-shadow: 0 0 6px var(--mote-color), 0 0 14px var(--mote-color); opacity: 0; animation: hud-mote linear infinite; }
+@keyframes hud-mote { 0% { opacity: 0; transform: translate3d(0, 0, 0); } 12% { opacity: .6; } 80% { opacity: .4; } 100% { opacity: 0; transform: translate3d(var(--mote-drift), -460px, 0); } }
+
+/* ------------------------------------------------------------------ the confirm dialog */
+:is(.match-experience .hud, .hud.match-pause) dialog.match-confirm { width: min(460px, calc(100vw - 32px)); max-width: none; padding: 0; border: 0; background: transparent; color: var(--hud-text); overflow: visible; pointer-events: auto; }
+:is(.match-experience .hud, .hud.match-pause) dialog.match-confirm::backdrop { background: #0a0805b8; backdrop-filter: blur(5px) saturate(.9); -webkit-backdrop-filter: blur(5px) saturate(.9); }
+/* The pause menu's question is drawn with it, outside the match: its buttons start from nothing, as the HUD's do. */
+.hud.match-pause :where(dialog.match-confirm button) { margin: 0; padding: 0; min-height: 0; border: 0; background: none; color: inherit; font: inherit; cursor: pointer; }
+.hud .hud-confirm { padding: 22px 26px 18px; animation: hud-rise .3s both cubic-bezier(.2, .7, .2, 1); }
+.hud .hud-confirm h2 { margin: 0; font-family: var(--hud-condensed); font-size: 34px; font-weight: 600; line-height: 1; letter-spacing: .02em; text-transform: uppercase; color: #efe9dc; text-shadow: 0 2px 18px #0009; }
+.hud .hud-confirm h2::after { content: ""; display: block; width: 56px; height: 3px; margin-top: 12px; background: var(--hud-active); box-shadow: 0 0 12px #f87b0066; }
+.hud .hud-confirm-body { margin: 14px 0 0; color: #b9b3a4; font-size: 16px; font-weight: 300; line-height: 1.45; }
+.hud .hud-confirm-actions { display: flex; justify-content: space-between; align-items: center; gap: 24px; margin-top: 20px; }
+:is(.match-experience .hud, .hud.match-pause) .hud-confirm-actions button.hud-cta { min-width: min(210px, 52%); }
+
+/* ------------------------------------------------------------------ a narrower stage (4:3, 16:10 below 1260 wide) */
+.hud[data-tier="mid"] { --hud-edge: 12px; --hud-medal: 36px; }
+.hud:is([data-tier="mid"], [data-tier="small"]) .hud-sides > .hud-heading { display: none; }
+/* On 4:3 the far rooks' badges stand just under the kingdoms' corner: the panel is kept short. */
+.hud[data-tier="mid"] .hud-sides { padding: 6px; }
+.hud[data-tier="mid"] .hud-plate { column-gap: 10px; row-gap: 3px; padding: 4px 6px 4px 14px; }
+.hud[data-tier="mid"] .hud-plate-name { font-size: 17px; }
+.hud[data-tier="mid"] .hud-clock { min-width: 72px; padding: 4px 8px; }
+.hud[data-tier="mid"] .hud-clock b { font-size: 25px; }
+.hud:is([data-tier="mid"], [data-tier="small"]) .hud-clock i { display: none; }
+.hud[data-tier="mid"] .hud-plate-foot { min-height: 18px; }
+.hud[data-tier="mid"] .hud-bar { padding: 8px; }
+/* On 4:3 the board's far corner is just under the bar: an open record shows its last three moves and scrolls. */
+.hud[data-tier="mid"] .hud-ledger-body ol { max-height: 94px; }
+
+/* ------------------------------------------------------------------ a phone in landscape */
+.hud[data-tier="small"] { --hud-edge: 8px; --hud-medal: 24px; }
+/* The far rank's badges stand under a quarter of the way down a phone's picture: the kingdoms keep above that line,
+   on the shortest landscape phones too (375 high). */
+.hud[data-tier="small"] .hud-left { top: 6px; }
+.hud[data-tier="small"] .hud-sides { padding: 4px; }
+.hud[data-tier="small"] .hud-plates { gap: 3px; }
+/* One line to a kingdom: medallion, name over who leads it, whose move it is, the clock. */
+.hud[data-tier="small"] .hud-plate { grid-template-columns: var(--hud-medal) auto minmax(0, 1fr) auto; grid-template-areas: "medal id foot clock"; column-gap: 8px; min-height: 30px; padding: 2px 4px 2px 12px; }
+.hud[data-tier="small"] .hud-plate-id { gap: 1px; }
+.hud[data-tier="small"] .hud-plate-name { font-size: 14px; }
+.hud[data-tier="small"] .hud-plate-id small { font-size: 8.5px; line-height: 1.1; letter-spacing: .16em; }
+.hud[data-tier="small"] .hud-plate-foot { justify-content: flex-end; min-height: 0; gap: 6px; }
+.hud[data-tier="small"] .hud-chip { padding: 1px 5px; font-size: 11px; line-height: 15px; }
+/* Of what was taken, only the lead is kept: the fallen stand beside the board. */
+.hud[data-tier="small"] .hud-taken > span { display: none; }
+.hud[data-tier="small"] .hud-taken b { font-size: 13px; }
+.hud[data-tier="small"] .hud-clock { min-width: 46px; padding: 0 6px; }
+.hud[data-tier="small"] .hud-clock b { font-size: 19px; }
+.hud[data-tier="small"] .hud-right { gap: 6px; }
+.hud[data-tier="small"] .hud-bar { padding: 6px; }
+.match-experience .hud[data-tier="small"] .hud-bar button.hud-tile { justify-content: center; min-width: 44px; min-height: 44px; padding: 0 10px; }
+.hud[data-tier="small"] .hud-bar-group--match { margin-left: 4px; padding-left: 8px; }
+.hud[data-tier="small"] .hud-bar-group--pause { margin-right: 4px; padding-right: 8px; }
+.match-experience .hud[data-tier="small"] button.hud-ledger-toggle { min-height: 40px; }
+.hud[data-tier="small"] .match-ledger:not(.is-folded) { width: 270px; }
+/* A phone has no room beside the board: opened, the record keeps to its last two moves. */
+.hud[data-tier="small"] .hud-ledger-body ol { max-height: 62px; }
+.hud[data-tier="small"] .hud-pop { min-width: 230px; padding: 10px; }
+.match-experience .hud[data-tier="small"] .hud-pop--menu button.hud-tile { min-height: 46px; }
+.hud[data-tier="small"] .match-promotion { bottom: 62px; padding: 10px; }
+.hud[data-tier="small"] .match-promotion .hud-heading { margin-bottom: 6px; }
+.hud[data-tier="small"] .hud-promotion-choices { grid-template-columns: repeat(4, minmax(84px, 1fr)); }
+.match-experience .hud[data-tier="small"] button.hud-choice { min-height: 64px; gap: 3px; padding: 6px; }
+.hud[data-tier="small"] .hud-choice .hud-piece { width: 26px; height: 26px; }
+/* The result keeps to two columns so it fits a phone's height: who won on the left, what to do on the right. */
+/* It stands under the bar and the folded record rather than in the exact middle, where it would cover them. */
+.hud[data-tier="small"] .match-result { inset: 116px 0 auto 0; max-height: calc(100% - 124px); display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); column-gap: 20px; align-items: center; width: min(640px, calc(100% - 16px)); padding: 14px 16px; text-align: left; }
+.hud[data-tier="small"] .hud-result-head { justify-items: start; }
+.hud[data-tier="small"] .hud-result-crest { --hud-medal: 44px; margin: 0 0 8px; }
+.hud[data-tier="small"] .match-result strong { margin-top: 5px; font-size: 34px; }
+.hud[data-tier="small"] .match-result strong::after { margin: 9px 0 0; }
+.hud[data-tier="small"] .hud-result-line { margin-top: 9px; font-size: 14px; }
+.hud[data-tier="small"] .hud-result-stats { margin-top: 0; }
+.hud[data-tier="small"] .hud-result-stats .hud-stat { min-height: 50px; }
+.hud[data-tier="small"] .hud-result-stats .hud-stat b { font-size: 25px; }
+.hud[data-tier="small"] .hud-result-actions { margin-top: 6px; }
+.hud[data-tier="small"] .match-chronicle { margin-top: 8px; padding-top: 8px; }
+.hud[data-tier="small"] .match-chronicle p { font-size: 13px; margin-bottom: 5px; }
+.match-experience .hud[data-tier="small"] .hud-result-actions button.hud-tile { min-height: 44px; padding-inline: 8px; }
+.match-experience .hud[data-tier="small"] .hud-result-actions button.hud-cta { min-height: 48px; }
+.hud[data-tier="small"] .hud-confirm { padding: 16px 18px 12px; }
+.hud[data-tier="small"] .hud-confirm h2 { font-size: 28px; }
+
+/* A touch screen: every control a finger's width. */
+.match-experience .hud[data-touch] button.hud-tile { min-height: 48px; }
+.match-experience .hud[data-touch][data-tier="small"] .hud-bar button.hud-tile { min-height: 44px; }
+
+/* ------------------------------------------------------------------ behind the pause menu */
+/* The pause menu (MatchPause.css) is drawn over the dimmed match; the HUD and the subtitles step out of sight, all
+   but a question asked from the menu (Leave this match?). */
+.match-experience .hud[data-paused] > :not(dialog):not(.match-pause) { visibility: hidden; }
+.match-experience[data-match-paused="true"] .match-subtitles { visibility: hidden; }
+
+/* ------------------------------------------------------------------ reduced motion */
+.hud.is-reduced-motion, .hud.is-reduced-motion *, .hud.is-reduced-motion *::before, .hud.is-reduced-motion *::after { animation: none !important; transition: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .hud, .hud *, .hud *::before, .hud *::after { animation: none !important; transition: none !important; }
+}
+/* With the light's sweep off, its band must not stay parked over a plate. */
+.hud.is-reduced-motion .hud-plate[data-lit]::after { display: none; }
+@media (prefers-reduced-motion: reduce) { .hud .hud-plate[data-lit]::after { display: none; } }

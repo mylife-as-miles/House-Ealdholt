@@ -1,0 +1,4 @@
+html, body, #root { width: 100%; height: 100%; margin: 0; }
+.house-missing { padding: 3rem; color: #f5ead2; background: #17201e; min-height: 100%; font: 1rem system-ui; }
+/* These controls leave My Legacy for Crownfall's other modes, which this standalone does not provide. */
+[data-ealdholt-play], [data-ealdholt-home] { display: none !important; }

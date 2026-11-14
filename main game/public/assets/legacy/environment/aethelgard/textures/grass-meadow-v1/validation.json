@@ -1,0 +1,21 @@
+{
+  "assetId": "Grass001",
+  "desktopAlbedoSourceRgbExact": true,
+  "ormMetallicZero": true,
+  "losslessWebpRoundtrip": true,
+  "sourceScaleMetres": 1.4,
+  "profiles": {
+    "desktop": {
+      "maxEncodedNormalUnitLengthError": 0.006650333382466123,
+      "totalMapBytes": 6015244,
+      "meanLinearLuminance": 0.0924916793342196,
+      "gpuBytesWithMipsEstimate": 16777212
+    },
+    "quest": {
+      "maxEncodedNormalUnitLengthError": 0.006392486168711242,
+      "totalMapBytes": 1509166,
+      "meanLinearLuminance": 0.09254919547400063,
+      "gpuBytesWithMipsEstimate": 4194300
+    }
+  }
+}

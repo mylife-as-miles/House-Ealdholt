@@ -1,0 +1,705 @@
+{
+ "archetype": "adolescent",
+ "build": {
+  "seconds": 8.4,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.3,
+   "shape": 4,
+   "texture": 3.8
+  }
+ },
+ "clipLibrary": "crowd-clips-adolescent-v1.glb",
+ "envelopeGate": {
+  "clips": 15,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0212,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.155,
+ "envelopes": {
+  "carry_basket_walk": {
+   "max": [
+    0.515,
+    1.6,
+    0.824
+   ],
+   "min": [
+    -0.515,
+    -0.339,
+    -0.861
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.45,
+    1.562,
+    0.668
+   ],
+   "min": [
+    -0.392,
+    -0.175,
+    -0.632
+   ]
+  },
+  "sit": {
+   "max": [
+    0.474,
+    1.167,
+    0.444
+   ],
+   "min": [
+    -0.465,
+    -0.476,
+    -0.975
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.586,
+    1.594,
+    1.133
+   ],
+   "min": [
+    -0.552,
+    -0.715,
+    -1.191
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.63,
+    1.609,
+    1.136
+   ],
+   "min": [
+    -0.606,
+    -0.702,
+    -1.194
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.455,
+    1.561,
+    0.668
+   ],
+   "min": [
+    -0.417,
+    -0.179,
+    -0.623
+   ]
+  },
+  "walk": {
+   "max": [
+    0.515,
+    1.597,
+    0.824
+   ],
+   "min": [
+    -0.515,
+    -0.339,
+    -0.861
+   ]
+  },
+  "walk_start": {
+   "max": [
+    0.504,
+    1.585,
+    0.805
+   ],
+   "min": [
+    -0.479,
+    -0.216,
+    -0.721
+   ]
+  },
+  "walk_stop": {
+   "max": [
+    0.501,
+    1.572,
+    0.781
+   ],
+   "min": [
+    -0.474,
+    -0.297,
+    -0.778
+   ]
+  },
+  "work_card_wool": {
+   "max": [
+    0.474,
+    1.085,
+    0.441
+   ],
+   "min": [
+    -0.487,
+    -0.476,
+    -0.975
+   ]
+  },
+  "work_card_wool_enter": {
+   "max": [
+    0.519,
+    1.274,
+    0.441
+   ],
+   "min": [
+    -0.465,
+    -0.476,
+    -0.975
+   ]
+  },
+  "work_card_wool_exit": {
+   "max": [
+    0.519,
+    1.274,
+    0.441
+   ],
+   "min": [
+    -0.465,
+    -0.476,
+    -0.975
+   ]
+  },
+  "work_weave": {
+   "max": [
+    0.564,
+    1.575,
+    0.652
+   ],
+   "min": [
+    -0.534,
+    -0.163,
+    -0.611
+   ]
+  },
+  "work_weave_enter": {
+   "max": [
+    0.441,
+    1.603,
+    0.652
+   ],
+   "min": [
+    -0.428,
+    -0.162,
+    -0.611
+   ]
+  },
+  "work_weave_exit": {
+   "max": [
+    0.437,
+    1.601,
+    0.652
+   ],
+   "min": [
+    -0.425,
+    -0.162,
+    -0.611
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.69,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.237,
+  "lipGapMm": {
+   "aa": 15.3,
+   "full": 18.8,
+   "rest": 0.4
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 9.91,
+   "r": 9.87
+  },
+  "upperLidClosed": 0.637,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.637
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-weaver-apprentice.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.224,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   947,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3402,
+   4500,
+   true
+  ]
+ },
+ "group": "children-apprentices",
+ "hair": {
+  "colour": "mid-brown",
+  "facialHair": "none",
+  "style": "twin-braids"
+ },
+ "headwear": "none",
+ "headwearGate": {
+  "headwear": "none",
+  "pass": true
+ },
+ "headwearStyle": {
+  "colour": null,
+  "shape": "plain",
+  "tone": "none"
+ },
+ "householdId": "ealdholt-weaver-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.04,
+  "coreMaxCm": 1.04,
+  "coreMeanCm": 0.59,
+  "coreWorstJoint": "thigh_l"
+ },
+ "label": "Weaver's apprentice",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 234872,
+  "fileMiB": 0.224,
+  "headTriangles": 947,
+  "images": [
+   {
+    "bytes": 29258,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3402,
+  "vertices": 3135
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adolescent-v1",
+  "rate": 0.942,
+  "roleClips": [
+   "work_card_wool",
+   "work_weave",
+   "carry_basket_walk"
+  ],
+  "talk": "talk_b",
+  "walk": "walk"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "standard",
+  "kit": "apprentice-f",
+  "palette": {
+   "accent": "woad-blue",
+   "main": "madder-rose",
+   "secondary": "undyed-cream"
+  },
+  "wear": "clean"
+ },
+ "placementScale": 0.9578,
+ "presentation": {
+  "clips": {
+   "carry_basket_walk": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.7188,
+       -0.3516,
+       0.3377,
+       0,
+       0.4628,
+       -0.3031,
+       0.6696,
+       0,
+       -0.1532,
+       0.7341,
+       0.4382,
+       0,
+       0.0442,
+       0.0694,
+       0.0856,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.8527,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3445,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.8527,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3445,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.8527,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3445,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_card_wool": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "textile",
+      "matrix": [
+       -0.2732,
+       0.8173,
+       0.1091,
+       0,
+       -0.3739,
+       -0.0204,
+       -0.7837,
+       0,
+       -0.7348,
+       -0.2935,
+       0.3582,
+       0,
+       -0.0054,
+       0.0738,
+       0.0252,
+       1
+      ],
+      "node": "prop_carding_combs_left",
+      "prop": "carding-combs"
+     },
+     {
+      "bone": "hand_r",
+      "kit": "textile",
+      "matrix": [
+       -0.399,
+       0.6821,
+       -0.3606,
+       0,
+       0.581,
+       -0.0015,
+       -0.6457,
+       0,
+       -0.5077,
+       -0.5378,
+       -0.4555,
+       0,
+       -0.0425,
+       0.0644,
+       -0.0065,
+       1
+      ],
+      "node": "prop_carding_combs_right",
+      "prop": "carding-combs"
+     }
+    ],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.8527,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3445,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_card_wool_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "textile",
+      "matrix": [
+       -0.2732,
+       0.8173,
+       0.1091,
+       0,
+       -0.3739,
+       -0.0204,
+       -0.7837,
+       0,
+       -0.7348,
+       -0.2935,
+       0.3582,
+       0,
+       -0.0054,
+       0.0738,
+       0.0252,
+       1
+      ],
+      "node": "prop_carding_combs_left",
+      "prop": "carding-combs"
+     },
+     {
+      "bone": "hand_r",
+      "kit": "textile",
+      "matrix": [
+       -0.399,
+       0.6821,
+       -0.3606,
+       0,
+       0.581,
+       -0.0015,
+       -0.6457,
+       0,
+       -0.5077,
+       -0.5378,
+       -0.4555,
+       0,
+       -0.0425,
+       0.0644,
+       -0.0065,
+       1
+      ],
+      "node": "prop_carding_combs_right",
+      "prop": "carding-combs"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_card_wool_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "textile",
+      "matrix": [
+       -0.2732,
+       0.8173,
+       0.1091,
+       0,
+       -0.3739,
+       -0.0204,
+       -0.7837,
+       0,
+       -0.7348,
+       -0.2935,
+       0.3582,
+       0,
+       -0.0054,
+       0.0738,
+       0.0252,
+       1
+      ],
+      "node": "prop_carding_combs_left",
+      "prop": "carding-combs"
+     },
+     {
+      "bone": "hand_r",
+      "kit": "textile",
+      "matrix": [
+       -0.399,
+       0.6821,
+       -0.3606,
+       0,
+       0.581,
+       -0.0015,
+       -0.6457,
+       0,
+       -0.5077,
+       -0.5378,
+       -0.4555,
+       0,
+       -0.0425,
+       0.0644,
+       -0.0065,
+       1
+      ],
+      "node": "prop_carding_combs_right",
+      "prop": "carding-combs"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_weave": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.3648,
+       1
+      ],
+      "node": "prop_loom",
+      "prop": "loom"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "textile": "crowd-v1/props/crowd-props-textile-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "carding-combs",
+   "kit": "textile",
+   "socket": "both-hands",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 234872,
+  "sha256": "2107aff4aa2cfb7720b3f406ff50232225528ed4058fee26a906b28f145d52ab"
+ },
+ "recipeSha256": "db226646e75ff3148a639687e60a236995fc13c900327b3f61a0f7bfa47f2824",
+ "referenceStatureCm": 150.7,
+ "residentId": "ealdholt-weaver-apprentice",
+ "restRadiusMetres": 0.485,
+ "roleId": "weaver-apprentice",
+ "statureCm": 145,
+ "status": "working-placeholder"
+}

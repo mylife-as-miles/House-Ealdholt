@@ -1,0 +1,648 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 8.4,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.6,
+   "shape": 3.1,
+   "texture": 4.3
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 15,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0218,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.189,
+ "envelopes": {
+  "carry_basket_walk": {
+   "max": [
+    0.527,
+    1.677,
+    0.816
+   ],
+   "min": [
+    -0.511,
+    -0.332,
+    -0.868
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.439,
+    1.644,
+    0.728
+   ],
+   "min": [
+    -0.391,
+    -0.168,
+    -0.624
+   ]
+  },
+  "sit": {
+   "max": [
+    0.467,
+    1.244,
+    0.423
+   ],
+   "min": [
+    -0.467,
+    -0.47,
+    -1.016
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.574,
+    1.697,
+    1.126
+   ],
+   "min": [
+    -0.559,
+    -0.692,
+    -1.22
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.575,
+    1.715,
+    1.129
+   ],
+   "min": [
+    -0.582,
+    -0.679,
+    -1.224
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.439,
+    1.653,
+    0.728
+   ],
+   "min": [
+    -0.376,
+    -0.168,
+    -0.613
+   ]
+  },
+  "walk": {
+   "max": [
+    0.527,
+    1.672,
+    0.816
+   ],
+   "min": [
+    -0.511,
+    -0.332,
+    -0.868
+   ]
+  },
+  "walk_start": {
+   "max": [
+    0.521,
+    1.664,
+    0.813
+   ],
+   "min": [
+    -0.478,
+    -0.306,
+    -0.712
+   ]
+  },
+  "walk_stop": {
+   "max": [
+    0.518,
+    1.662,
+    0.753
+   ],
+   "min": [
+    -0.473,
+    -0.273,
+    -0.798
+   ]
+  },
+  "work_knead": {
+   "max": [
+    0.416,
+    1.579,
+    0.767
+   ],
+   "min": [
+    -0.416,
+    -0.18,
+    -0.603
+   ]
+  },
+  "work_knead_enter": {
+   "max": [
+    0.462,
+    1.753,
+    0.725
+   ],
+   "min": [
+    -0.427,
+    -0.182,
+    -0.603
+   ]
+  },
+  "work_knead_exit": {
+   "max": [
+    0.462,
+    1.753,
+    0.726
+   ],
+   "min": [
+    -0.427,
+    -0.181,
+    -0.603
+   ]
+  },
+  "work_stir": {
+   "max": [
+    0.597,
+    1.641,
+    0.708
+   ],
+   "min": [
+    -0.428,
+    -0.168,
+    -0.636
+   ]
+  },
+  "work_stir_enter": {
+   "max": [
+    0.476,
+    1.725,
+    0.712
+   ],
+   "min": [
+    -0.428,
+    -0.171,
+    -0.622
+   ]
+  },
+  "work_stir_exit": {
+   "max": [
+    0.477,
+    1.725,
+    0.712
+   ],
+   "min": [
+    -0.428,
+    -0.171,
+    -0.622
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.22,
+  "lipGapMm": {
+   "aa": 14.7,
+   "full": 17.9,
+   "rest": 1
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.8,
+   "r": 7.8
+  },
+  "upperLidClosed": 0.536,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.536
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "major",
+ "file": "ealdholt-hall-cook.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.225,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   908,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3388,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "greying-mid-brown",
+  "facialHair": "none",
+  "style": "tied-back"
+ },
+ "headwear": "kerchief",
+ "headwearGate": {
+  "headwear": "kerchief",
+  "pass": true,
+  "shells": {
+   "Kerchief": {
+    "faces": 332,
+    "islands": 1,
+    "maxReachRadii": 1.036,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#a7803e",
+  "shape": "knot-back",
+  "tone": "accent"
+ },
+ "householdId": "ealdholt-hall-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.98,
+  "coreMaxCm": 1.8,
+  "coreMeanCm": 0.92,
+  "coreWorstJoint": "head"
+ },
+ "label": "Hall cook",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 236180,
+  "fileMiB": 0.225,
+  "headTriangles": 908,
+  "images": [
+   {
+    "bytes": 23630,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3388,
+  "vertices": 3271
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 0.962,
+  "roleClips": [
+   "work_stir",
+   "work_knead",
+   "carry_basket_walk"
+  ],
+  "talk": "talk_b",
+  "walk": "walk"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "standard",
+  "kit": "hall-livery",
+  "palette": {
+   "accent": "ochre",
+   "main": "undyed-grey",
+   "secondary": "undyed-brown"
+  },
+  "wear": "stained"
+ },
+ "placementScale": 1.0021,
+ "presentation": {
+  "clips": {
+   "carry_basket_walk": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.7116,
+       -0.3841,
+       0.4397,
+       0,
+       0.5259,
+       -0.1203,
+       0.7459,
+       0,
+       -0.2538,
+       0.8278,
+       0.3124,
+       0,
+       0.0519,
+       0.0759,
+       0.0796,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_knead": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.4418,
+       1
+      ],
+      "node": "prop_bread_trough",
+      "prop": "bread-trough"
+     }
+    ]
+   },
+   "work_stir": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       0.043,
+       0.0883,
+       0.0721,
+       1
+      ],
+      "node": "prop_ladle",
+      "prop": "ladle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.4602,
+       1
+      ],
+      "node": "prop_brew_tub",
+      "prop": "brew-tub"
+     }
+    ]
+   },
+   "work_stir_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       0.043,
+       0.0883,
+       0.0721,
+       1
+      ],
+      "node": "prop_ladle",
+      "prop": "ladle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_stir_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       0.043,
+       0.0883,
+       0.0721,
+       1
+      ],
+      "node": "prop_ladle",
+      "prop": "ladle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "craft": "crowd-v1/props/crowd-props-craft-v1.glb",
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "ladle",
+   "kit": "craft",
+   "socket": "hand_r",
+   "source": "project-original"
+  },
+  {
+   "id": "brew-tub",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 236180,
+  "sha256": "e871d01e8ef49b4ee0eef0c36c02223a8f319d5bb50ff44242415fd72ce3ac1d"
+ },
+ "recipeSha256": "5f9861136fee6861ae69c56f9d711f10cec5a38eb33762a44a2787a07c65b7dd",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-hall-cook",
+ "restRadiusMetres": 0.519,
+ "roleId": "hall-cook",
+ "statureCm": 158.9,
+ "status": "working-placeholder"
+}

@@ -1,0 +1,77 @@
+{
+  "tag": "elderbloom-village-2026-11-06",
+  "assets": [
+    {
+      "id": 717068933,
+      "name": "ealdholt-polyhaven-1k-source-kit-v1.tar.gz",
+      "size": 11595062,
+      "digest": "sha256:bf5e89fbd295f25227c40532998a55a31545c5d2b7ff8451eccb8c1e9cb23765"
+    },
+    {
+      "id": 717069091,
+      "name": "ealdholt-polyhaven-selected-models-v1.tar.gz",
+      "size": 13666161,
+      "digest": "sha256:94006f9f851e8d85d7c28b7f870e426ce8fd9b8f9b961e52013a113bf54624b3"
+    },
+    {
+      "id": 717068856,
+      "name": "ealdholt-pond-desktop-balanced-r1.hdr",
+      "size": 2115634,
+      "digest": "sha256:37f3801b0864ca9c8ac9bec3ce04d84dbde1ad7a63829034f22bffebb021d243"
+    },
+    {
+      "id": 717068900,
+      "name": "ealdholt-pond-desktop-balanced-r1.metadata.json",
+      "size": 483,
+      "digest": "sha256:51c42945382e38ff7fa196c942dd2d1356b2a33dad9bbffdddf588b00e9216b3"
+    },
+    {
+      "id": 717068887,
+      "name": "ealdholt-pond-quest-balanced-r1.hdr",
+      "size": 529457,
+      "digest": "sha256:992e71b5e172a8792b6606b79c801633cf84ad9f449ac6d4168bb518c24fa20a"
+    },
+    {
+      "id": 717068924,
+      "name": "ealdholt-pond-quest-balanced-r1.metadata.json",
+      "size": 497,
+      "digest": "sha256:a8577290600757055962e5e8db2d7b235cee3057fb1ec3bb787c3abf1ca5b545"
+    },
+    {
+      "id": 717068443,
+      "name": "elderbloom-village-desktop-coastal-full-woodland-candidate-v5.glb",
+      "size": 174285136,
+      "digest": "sha256:3b02834505642a5a9e7535e92812df8e565b99005e9921d41be83be4f5da3b28"
+    },
+    {
+      "id": 717068771,
+      "name": "elderbloom-village-quest-coastal-pond-foliage-candidate-v2-normal16.glb",
+      "size": 35577900,
+      "digest": "sha256:71ed6b23e363e26369164aec387d68e6178850a861eadd8d9b5482f1e50f8e67"
+    },
+    {
+      "id": 717069056,
+      "name": "INSTALL.md",
+      "size": 1310,
+      "digest": "sha256:3aaab5c4fd5a3f6e8279b1a7539195cb368a4e7694345e728f447a5db09aad63"
+    },
+    {
+      "id": 717069076,
+      "name": "LICENSE-USE.md",
+      "size": 1034,
+      "digest": "sha256:2e7b8cc614881676af7697543630d3e8c68efab1826f1f05ad1d19eb1b9a716d"
+    },
+    {
+      "id": 717069037,
+      "name": "manifest.json",
+      "size": 4578,
+      "digest": "sha256:2c85e5b0284906e8cae7a43ee19a46a5a95f8869e6c9af1119b2f3502de52a61"
+    },
+    {
+      "id": 717069150,
+      "name": "SHA256SUMS",
+      "size": 1160,
+      "digest": "sha256:904ae887b6dd53c83956a79f328410bf54e3936462028cad8aa158279bffefb4"
+    }
+  ]
+}

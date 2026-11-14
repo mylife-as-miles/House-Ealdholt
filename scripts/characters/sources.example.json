@@ -1,0 +1,11 @@
+{
+  "_comment": "Copy outside the repository and point each entry at a private intake directory. Nothing here is fetched at runtime.",
+  "mpfbData": "/path/to/mpfb2@6ff1eb358f6c1959ced77e79e6dd2406d9a71f49/src/mpfb/data",
+  "systemAssets": "/path/to/unzipped/makehuman_system_assets_cc0",
+  "facePacks": {
+    "faceunits01": "/path/to/unzipped/faceunits01",
+    "visemes02": "/path/to/unzipped/visemes02"
+  },
+  "style100": "/path/to/unzipped/100STYLE",
+  "polyhaven": "/path/to/output-of-intake_polyhaven.py"
+}

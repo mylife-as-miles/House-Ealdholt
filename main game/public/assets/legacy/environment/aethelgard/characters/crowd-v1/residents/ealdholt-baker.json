@@ -1,0 +1,669 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 8.3,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.3,
+   "lod": 0.5,
+   "shape": 3.2,
+   "texture": 4.2
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 15,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0221,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.187,
+ "envelopes": {
+  "carry_basket_walk": {
+   "max": [
+    0.512,
+    1.678,
+    0.761
+   ],
+   "min": [
+    -0.502,
+    -0.306,
+    -0.877
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.424,
+    1.645,
+    0.727
+   ],
+   "min": [
+    -0.381,
+    -0.172,
+    -0.629
+   ]
+  },
+  "sit": {
+   "max": [
+    0.459,
+    1.244,
+    0.417
+   ],
+   "min": [
+    -0.463,
+    -0.473,
+    -1.024
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.573,
+    1.703,
+    1.108
+   ],
+   "min": [
+    -0.538,
+    -0.7,
+    -1.226
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.591,
+    1.722,
+    1.111
+   ],
+   "min": [
+    -0.54,
+    -0.688,
+    -1.23
+   ]
+  },
+  "talk": {
+   "max": [
+    0.454,
+    1.657,
+    0.727
+   ],
+   "min": [
+    -0.4,
+    -0.171,
+    -0.618
+   ]
+  },
+  "walk_c": {
+   "max": [
+    0.523,
+    1.657,
+    0.771
+   ],
+   "min": [
+    -0.479,
+    -0.3,
+    -0.881
+   ]
+  },
+  "walk_c_start": {
+   "max": [
+    0.456,
+    1.65,
+    0.822
+   ],
+   "min": [
+    -0.427,
+    -0.211,
+    -0.734
+   ]
+  },
+  "walk_c_stop": {
+   "max": [
+    0.493,
+    1.65,
+    0.766
+   ],
+   "min": [
+    -0.415,
+    -0.254,
+    -0.764
+   ]
+  },
+  "work_knead": {
+   "max": [
+    0.41,
+    1.591,
+    0.766
+   ],
+   "min": [
+    -0.41,
+    -0.185,
+    -0.608
+   ]
+  },
+  "work_knead_enter": {
+   "max": [
+    0.448,
+    1.766,
+    0.713
+   ],
+   "min": [
+    -0.421,
+    -0.178,
+    -0.611
+   ]
+  },
+  "work_knead_exit": {
+   "max": [
+    0.448,
+    1.766,
+    0.713
+   ],
+   "min": [
+    -0.421,
+    -0.177,
+    -0.612
+   ]
+  },
+  "work_oven_peel": {
+   "max": [
+    0.447,
+    1.595,
+    0.901
+   ],
+   "min": [
+    -0.44,
+    -0.194,
+    -0.601
+   ]
+  },
+  "work_oven_peel_enter": {
+   "max": [
+    0.458,
+    1.705,
+    0.72
+   ],
+   "min": [
+    -0.445,
+    -0.192,
+    -0.608
+   ]
+  },
+  "work_oven_peel_exit": {
+   "max": [
+    0.458,
+    1.705,
+    0.72
+   ],
+   "min": [
+    -0.445,
+    -0.193,
+    -0.608
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.89,
+   "r": -0.92
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.212,
+  "lipGapMm": {
+   "aa": 13.7,
+   "full": 16.8,
+   "rest": 0.8
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7,
+   "r": 6.98
+  },
+  "upperLidClosed": 0.566,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 7,
+    "upper": 0.539
+   },
+   {
+    "l": 0,
+    "r": 7,
+    "upper": 0.539
+   },
+   {
+    "l": 0,
+    "r": 5,
+    "upper": 0.539
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.566
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-baker.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.219,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   919,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3371,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "mid-brown",
+  "facialHair": "none",
+  "style": "long-braid"
+ },
+ "headwear": "kerchief",
+ "headwearGate": {
+  "headwear": "kerchief",
+  "pass": true,
+  "shells": {
+   "Kerchief": {
+    "faces": 261,
+    "islands": 1,
+    "maxReachRadii": 1.028,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#3e5876",
+  "shape": "knot-back",
+  "tone": "accent"
+ },
+ "householdId": "ealdholt-mason-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.67,
+  "coreMaxCm": 1.5,
+  "coreMeanCm": 0.91,
+  "coreWorstJoint": "head"
+ },
+ "label": "Baker",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 230124,
+  "fileMiB": 0.219,
+  "headTriangles": 919,
+  "images": [
+   {
+    "bytes": 29450,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3371,
+  "vertices": 3045
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 1.004,
+  "roleClips": [
+   "work_knead",
+   "work_oven_peel",
+   "carry_basket_walk"
+  ],
+  "talk": "talk",
+  "walk": "walk_c"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "bib-apron",
+  "kit": "workshop-apron-f",
+  "palette": {
+   "accent": "woad-blue",
+   "main": "weld-yellow",
+   "secondary": "undyed-cream"
+  },
+  "wear": "flour-dusted"
+ },
+ "placementScale": 1.0751,
+ "presentation": {
+  "clips": {
+   "carry_basket_walk": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.7116,
+       -0.3841,
+       0.4397,
+       0,
+       0.5259,
+       -0.1203,
+       0.7459,
+       0,
+       -0.2538,
+       0.8278,
+       0.3124,
+       0,
+       0.0519,
+       0.0759,
+       0.0796,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_knead": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.4418,
+       1
+      ],
+      "node": "prop_bread_trough",
+      "prop": "bread-trough"
+     }
+    ]
+   },
+   "work_oven_peel": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       0.3579,
+       0.132,
+       0.3789,
+       1
+      ],
+      "node": "prop_oven_peel",
+      "prop": "oven-peel"
+     }
+    ],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       1.3807,
+       1
+      ],
+      "node": "prop_bakehouse_oven",
+      "prop": "bakehouse-oven"
+     }
+    ]
+   },
+   "work_oven_peel_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       0.3579,
+       0.132,
+       0.3789,
+       1
+      ],
+      "node": "prop_oven_peel",
+      "prop": "oven-peel"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_oven_peel_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       0.3579,
+       0.132,
+       0.3789,
+       1
+      ],
+      "node": "prop_oven_peel",
+      "prop": "oven-peel"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "craft": "crowd-v1/props/crowd-props-craft-v1.glb",
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "oven-peel",
+   "kit": "craft",
+   "socket": "both-hands",
+   "source": "project-original"
+  },
+  {
+   "id": "bread-trough",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  },
+  {
+   "id": "bakehouse-oven",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 230124,
+  "sha256": "3d338389829efe8fba53184c81d2666a691087c32a1adb8e82184fb4ba806330"
+ },
+ "recipeSha256": "a7edb4e0431f7eef8b3b09215f858e9aa922ba82bd8eb472dff55eaa3ad30ec7",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-baker",
+ "restRadiusMetres": 0.517,
+ "roleId": "baker",
+ "statureCm": 170.7,
+ "status": "working-placeholder"
+}

@@ -1,0 +1,119 @@
+{
+  "assets": [
+    {
+      "path": "look/agx_mhc.bin",
+      "bytes": 1098500,
+      "sha256": "6235a916d726ee35a461c78c79ec69380fa7e33e61972c94e65aa4032fd67413"
+    },
+    {
+      "path": "look/agx_mhc.json",
+      "bytes": 492,
+      "sha256": "cebccc7573589ffc8b6ebd3c1c96cb7f7cf57dfef1d1576a415f7e97de12654a"
+    },
+    {
+      "path": "look/setting1_inspect.json",
+      "bytes": 216486,
+      "sha256": "f554c24f155bc021ab2bdde71f5a5bcc480276a1271f08ea3e90731edded81f8"
+    },
+    {
+      "path": "look/setting2_inspect.json",
+      "bytes": 254536,
+      "sha256": "fc9c018b90215bea33ed4520e1679c134f8f730642d3158a44e9c275516d224a"
+    },
+    {
+      "path": "look/setting1_pano.exr",
+      "bytes": 21228013,
+      "sha256": "62fb90b6f45151838fcca5a6ed05be1978159a3cf07b106dd0eb5be704407fd1"
+    },
+    {
+      "path": "look/setting2_pano.exr",
+      "bytes": 18583785,
+      "sha256": "73200172fa882cf3d86328d32cb916d84841969cfdefb1f8f82158a5e26cc465"
+    },
+    {
+      "path": "look/setting1_pano_depth.exr",
+      "bytes": 2960210,
+      "sha256": "ed2a5cb7cacb14453efc2d473aa777339d8444bba4fb5a32ea6da903b7e9544a"
+    },
+    {
+      "path": "look/setting2_pano_depth.exr",
+      "bytes": 10560734,
+      "sha256": "aa0212eaf882013f2524b5fb122e18f7ed1ff82589ebed48656e531ff39e265a"
+    },
+    {
+      "path": "look/setting2_fx.json",
+      "bytes": 2778,
+      "sha256": "53fad2e3eef8715645e734999a8ee5c520be0b99a432693c8d01906e4692b890"
+    },
+    {
+      "path": "look/setting-01/extras.glb",
+      "bytes": 36146664,
+      "sha256": "cdd3970b98c9f3045e204afe3a9997b36daf107f2f638dc74e85665e15617078"
+    },
+    {
+      "path": "optimized/scene-01/arena.glb",
+      "bytes": 16887688,
+      "sha256": "8b60b11f44ce87689eb9ebb16fea568cbe75553b92f72d1486b92d16af293f9d"
+    },
+    {
+      "path": "optimized/scene-01/environment.glb",
+      "bytes": 44226760,
+      "sha256": "c77e8ffdc41960fab7ec8ba9c0aba3b2e7c5bb5387508dedd76ab789c9686c11"
+    },
+    {
+      "path": "look/setting-02/extras.glb",
+      "bytes": 36397280,
+      "sha256": "94666d3c42a9c4c1bbc874c3e1223297357f8dae5904063dc76bef3a7d176ad7"
+    },
+    {
+      "path": "look/setting-02/rune_atlas.png",
+      "bytes": 134945,
+      "sha256": "39fe3ff857b8058427e221a9e46c755d77693ede7efea57c8b4d4293eb644031"
+    },
+    {
+      "path": "look/board/board.glb",
+      "bytes": 6031344,
+      "sha256": "7256004a90063f27d54465309a881ec5ecaa4e929b9131905e81f008b8b8aff2"
+    },
+    {
+      "path": "optimized/scene-02/arena.glb",
+      "bytes": 16947680,
+      "sha256": "71085aaa7d53b503e9043f6d45440d70c81908105610718b53e107289dab5d09"
+    },
+    {
+      "path": "optimized/scene-02/environment.glb",
+      "bytes": 54153432,
+      "sha256": "796a374c5326f58063b09348a08974723faa9a31a6d77dcce0ac01096f3b4b78"
+    },
+    {
+      "path": "basis/basis_transcoder.js",
+      "bytes": 57529,
+      "sha256": "8478b5b6d6b74e7d3082b89f6417321d8d1dc0307f2b30d4484bb11b441696a1"
+    },
+    {
+      "path": "basis/basis_transcoder.wasm",
+      "bytes": 527333,
+      "sha256": "6cf17dc889352c42e9acf8897107978d127005fe3386c36a0e3845e27967630a"
+    },
+    {
+      "path": "basis/README.md",
+      "bytes": 1388,
+      "sha256": "a578df416c1e0852e9c36a1cf91b4d28d91a251294f87ce610a3bc7ca4df15e0"
+    },
+    {
+      "path": "draco/draco_decoder.js",
+      "bytes": 512465,
+      "sha256": "8625489da79a805f4f2a7d511c3e52d8b4085608a9d2a4d5f4f9de5db0aea04f"
+    },
+    {
+      "path": "draco/draco_decoder.wasm",
+      "bytes": 192420,
+      "sha256": "a680d927bed9cb864ddbd63521868891af2bfbe755092761b4837487618df8ac"
+    },
+    {
+      "path": "draco/draco_wasm_wrapper.js",
+      "bytes": 58456,
+      "sha256": "8bb2952d2ba7d67e1414f8df819410cb0434a666be53f671fff75f68843d76f6"
+    }
+  ]
+}

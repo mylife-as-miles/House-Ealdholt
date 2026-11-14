@@ -1,0 +1,560 @@
+{
+ "archetype": "adult-male",
+ "build": {
+  "seconds": 10.1,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.3,
+   "lod": 0.5,
+   "shape": 4.1,
+   "texture": 5.1
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-male-v1.glb",
+ "envelopeGate": {
+  "clips": 12,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0271,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.282,
+ "envelopes": {
+  "carry_bundle_walk": {
+   "max": [
+    0.537,
+    1.839,
+    0.971
+   ],
+   "min": [
+    -0.657,
+    -0.408,
+    -0.894
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.55,
+    1.807,
+    0.54
+   ],
+   "min": [
+    -0.374,
+    -0.179,
+    -0.468
+   ]
+  },
+  "sit": {
+   "max": [
+    0.491,
+    1.343,
+    0.388
+   ],
+   "min": [
+    -0.478,
+    -0.179,
+    -0.807
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.635,
+    1.859,
+    1.084
+   ],
+   "min": [
+    -0.576,
+    -0.52,
+    -1.16
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.659,
+    1.876,
+    1.087
+   ],
+   "min": [
+    -0.672,
+    -0.507,
+    -1.164
+   ]
+  },
+  "talk": {
+   "max": [
+    0.605,
+    1.809,
+    0.606
+   ],
+   "min": [
+    -0.482,
+    -0.179,
+    -0.468
+   ]
+  },
+  "walk": {
+   "max": [
+    0.537,
+    1.837,
+    0.971
+   ],
+   "min": [
+    -0.51,
+    -0.408,
+    -0.894
+   ]
+  },
+  "walk_start": {
+   "max": [
+    0.506,
+    1.828,
+    0.844
+   ],
+   "min": [
+    -0.503,
+    -0.244,
+    -0.585
+   ]
+  },
+  "walk_stop": {
+   "max": [
+    0.511,
+    1.82,
+    0.772
+   ],
+   "min": [
+    -0.497,
+    -0.274,
+    -0.681
+   ]
+  },
+  "work_herd": {
+   "max": [
+    0.867,
+    1.764,
+    0.904
+   ],
+   "min": [
+    -0.607,
+    -0.214,
+    -0.5
+   ]
+  },
+  "work_herd_enter": {
+   "max": [
+    0.513,
+    1.82,
+    0.722
+   ],
+   "min": [
+    -0.548,
+    -0.182,
+    -0.501
+   ]
+  },
+  "work_herd_exit": {
+   "max": [
+    0.513,
+    1.82,
+    0.726
+   ],
+   "min": [
+    -0.547,
+    -0.182,
+    -0.503
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.62,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.211,
+  "lipGapMm": {
+   "aa": 15.1,
+   "full": 18.6,
+   "rest": 0.4
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.51,
+   "r": 7.54
+  },
+  "upperLidClosed": 0.489,
+  "visibilityPasses": [
+   {
+    "l": 32,
+    "r": 50,
+    "upper": 0.489
+   },
+   {
+    "l": 4,
+    "r": 11,
+    "upper": 0.489
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.489
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-shepherd.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.236,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   910,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3417,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "black",
+  "facialHair": "none",
+  "style": "tied-back"
+ },
+ "headwear": "felt-cap",
+ "headwearGate": {
+  "headwear": "felt-cap",
+  "pass": true,
+  "shells": {
+   "Cap": {
+    "faces": 264,
+    "islands": 1,
+    "maxReachRadii": 0.996,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#6a5a48",
+  "shape": "rolled-brim",
+  "tone": "secondary"
+ },
+ "householdId": "ealdholt-shepherd-household",
+ "jointResidualCm": {
+  "allMaxCm": 0.97,
+  "coreMaxCm": 0.97,
+  "coreMeanCm": 0.39,
+  "coreWorstJoint": "calf_l"
+ },
+ "label": "Shepherd",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 247384,
+  "fileMiB": 0.236,
+  "headTriangles": 910,
+  "images": [
+   {
+    "bytes": 27120,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3417,
+  "vertices": 3410
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-male-v1",
+  "rate": 1.003,
+  "roleClips": [
+   "work_herd",
+   "carry_bundle_walk"
+  ],
+  "talk": "talk",
+  "walk": "walk"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "standard",
+  "kit": "herder-cloak",
+  "palette": {
+   "accent": "ochre",
+   "main": "walnut-brown",
+   "secondary": "undyed-brown"
+  },
+  "wear": "muddy-hems"
+ },
+ "placementScale": 0.9689,
+ "presentation": {
+  "clips": {
+   "carry_bundle_walk": {
+    "held": [
+     {
+      "bone": "spine_03",
+      "kit": "textile",
+      "matrix": [
+       0.9993,
+       -0.0301,
+       0.0213,
+       0,
+       0.0312,
+       0.9981,
+       -0.0529,
+       0,
+       -0.0197,
+       0.0535,
+       0.9984,
+       0,
+       0,
+       0.0833,
+       0.2702,
+       1
+      ],
+      "node": "prop_linen_bundle",
+      "prop": "linen-bundle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_herd": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.8146,
+       0.0996,
+       0.5714,
+       0,
+       0.0521,
+       -0.9937,
+       0.099,
+       0,
+       -0.0635,
+       0.0864,
+       -0.0177,
+       1
+      ],
+      "node": "prop_crook",
+      "prop": "crook"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_herd_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.8146,
+       0.0996,
+       0.5714,
+       0,
+       0.0521,
+       -0.9937,
+       0.099,
+       0,
+       -0.0635,
+       0.0864,
+       -0.0177,
+       1
+      ],
+      "node": "prop_crook",
+      "prop": "crook"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_herd_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.8146,
+       0.0996,
+       0.5714,
+       0,
+       0.0521,
+       -0.9937,
+       0.099,
+       0,
+       -0.0635,
+       0.0864,
+       -0.0177,
+       1
+      ],
+      "node": "prop_crook",
+      "prop": "crook"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "farm": "crowd-v1/props/crowd-props-farm-v1.glb",
+   "textile": "crowd-v1/props/crowd-props-textile-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "crook",
+   "kit": "farm",
+   "socket": "hand_r",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 247384,
+  "sha256": "9f66637a7cc205ff36adfde2e8bf5ece9205f3caabcbf6a9b2f22e2b9a7397fd"
+ },
+ "recipeSha256": "8c9ea7d511fb1657e403bf0325d455520c60e9b660de629eef77bfb7946940b3",
+ "referenceStatureCm": 173.5,
+ "residentId": "ealdholt-shepherd",
+ "restRadiusMetres": 0.612,
+ "roleId": "shepherd",
+ "statureCm": 168.3,
+ "status": "working-placeholder"
+}

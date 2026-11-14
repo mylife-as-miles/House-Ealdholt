@@ -1,0 +1,2592 @@
+{
+ "version": 2,
+ "set": "smithy-child-v1",
+ "status": "working-placeholder",
+ "residentId": "ealdholt-smithy-child",
+ "label": "Household child",
+ "levels": {
+  "desktop-lod0": {
+   "file": "smithy-child-desktop-lod0.glb",
+   "bytes": 4012472,
+   "triangles": 24885,
+   "vertices": 20392,
+   "materialCount": 4,
+   "joints": 64,
+   "maxMorphTargets": 44,
+   "textureBytes": 1108568,
+   "decodedTextureBytesEstimate": 70254589,
+   "materials": [
+    {
+     "alphaMode": "OPAQUE",
+     "doubleSided": false,
+     "name": "skin"
+    },
+    {
+     "alphaMode": "OPAQUE",
+     "doubleSided": true,
+     "name": "cloth"
+    },
+    {
+     "alphaMode": "OPAQUE",
+     "doubleSided": false,
+     "name": "eyes_mouth"
+    },
+    {
+     "alphaMode": "BLEND",
+     "doubleSided": true,
+     "name": "hair.001"
+    }
+   ],
+   "morphTextureBytesEstimate": 7672032,
+   "morphNormals": false,
+   "doubleSidedMaterials": 2,
+   "textures": [
+    {
+     "name": "skin_normal_final",
+     "width": 1024,
+     "height": 1024,
+     "bytes": 66178
+    },
+    {
+     "name": "skin_albedo",
+     "width": 2048,
+     "height": 2048,
+     "bytes": 193186
+    },
+    {
+     "name": "skin_orm_final",
+     "width": 512,
+     "height": 512,
+     "bytes": 4662
+    },
+    {
+     "name": "cloth_normal_final",
+     "width": 1024,
+     "height": 1024,
+     "bytes": 76536
+    },
+    {
+     "name": "cloth_albedo",
+     "width": 2048,
+     "height": 2048,
+     "bytes": 374794
+    },
+    {
+     "name": "cloth_orm_final",
+     "width": 512,
+     "height": 512,
+     "bytes": 56136
+    },
+    {
+     "name": "eyes_mouth_albedo",
+     "width": 1024,
+     "height": 1024,
+     "bytes": 24418
+    },
+    {
+     "name": "eyes_mouth_orm_final",
+     "width": 256,
+     "height": 256,
+     "bytes": 362
+    },
+    {
+     "name": "strands",
+     "width": 1024,
+     "height": 1024,
+     "bytes": 312296
+    }
+   ],
+   "meshes": [
+    {
+     "mesh": "Body",
+     "material": "skin",
+     "triangles": 9712,
+     "vertices": 5628,
+     "morphTargets": 44
+    },
+    {
+     "mesh": "Clothes",
+     "material": "cloth",
+     "triangles": 8477,
+     "vertices": 7634,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "EyesMouth",
+     "material": "eyes_mouth",
+     "triangles": 2368,
+     "vertices": 1540,
+     "morphTargets": 9
+    },
+    {
+     "mesh": "Groom",
+     "material": "hair.001",
+     "triangles": 4328,
+     "vertices": 5590,
+     "morphTargets": 39
+    }
+   ]
+  },
+  "desktop-lod1": {
+   "file": "smithy-child-desktop-lod1.glb",
+   "bytes": 1467140,
+   "triangles": 7823,
+   "vertices": 7693,
+   "materialCount": 2,
+   "joints": 64,
+   "maxMorphTargets": 44,
+   "textureBytes": 278310,
+   "decodedTextureBytesEstimate": 8738132,
+   "materials": [
+    {
+     "alphaMode": "OPAQUE",
+     "doubleSided": true,
+     "name": "lod1_body"
+    },
+    {
+     "alphaMode": "MASK",
+     "doubleSided": true,
+     "name": "lod1_hair"
+    }
+   ],
+   "morphTextureBytesEstimate": 5301152,
+   "morphNormals": false,
+   "doubleSidedMaterials": 2,
+   "textures": [
+    {
+     "name": "lod1_normal",
+     "width": 512,
+     "height": 512,
+     "bytes": 10274
+    },
+    {
+     "name": "lod1_albedo",
+     "width": 1024,
+     "height": 1024,
+     "bytes": 119640
+    },
+    {
+     "name": "lod1_orm",
+     "width": 256,
+     "height": 256,
+     "bytes": 12242
+    },
+    {
+     "name": "lod1_strands",
+     "width": 512,
+     "height": 512,
+     "bytes": 136154
+    }
+   ],
+   "meshes": [
+    {
+     "mesh": "Lod1Body",
+     "material": "lod1_body",
+     "triangles": 6825,
+     "vertices": 6259,
+     "morphTargets": 44
+    },
+    {
+     "mesh": "Lod1Hair",
+     "material": "lod1_hair",
+     "triangles": 998,
+     "vertices": 1434,
+     "morphTargets": 39
+    }
+   ]
+  },
+  "props": {
+   "file": "smithy-child-props.glb",
+   "bytes": 632472,
+   "triangles": 6180,
+   "vertices": 12681,
+   "materialCount": 1,
+   "joints": 0,
+   "maxMorphTargets": 0,
+   "textureBytes": 155676,
+   "decodedTextureBytesEstimate": 7689556,
+   "materials": [
+    {
+     "alphaMode": "OPAQUE",
+     "doubleSided": true,
+     "name": "props_desktop"
+    }
+   ],
+   "morphTextureBytesEstimate": 0,
+   "morphNormals": false,
+   "doubleSidedMaterials": 1,
+   "textures": [
+    {
+     "name": "props_desktop_emissive",
+     "width": 256,
+     "height": 256,
+     "bytes": 2790
+    },
+    {
+     "name": "props_desktop_normal",
+     "width": 512,
+     "height": 512,
+     "bytes": 26098
+    },
+    {
+     "name": "props_desktop_albedo",
+     "width": 1024,
+     "height": 1024,
+     "bytes": 114546
+    },
+    {
+     "name": "props_desktop_orm",
+     "width": 256,
+     "height": 256,
+     "bytes": 12242
+    }
+   ],
+   "meshes": [
+    {
+     "mesh": "bellows_boards",
+     "material": "props_desktop",
+     "triangles": 148,
+     "vertices": 210,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_bellows_chain.001",
+     "material": "props_desktop",
+     "triangles": 20,
+     "vertices": 36,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "lever_pole",
+     "material": "props_desktop",
+     "triangles": 112,
+     "vertices": 126,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_bellows_lid",
+     "material": "props_desktop",
+     "triangles": 12,
+     "vertices": 24,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_bellows_pleats",
+     "material": "props_desktop",
+     "triangles": 36,
+     "vertices": 48,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_bellows_pleats_1",
+     "material": "props_desktop",
+     "triangles": 36,
+     "vertices": 56,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_bellows_pleats_2",
+     "material": "props_desktop",
+     "triangles": 36,
+     "vertices": 56,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_bellows_pleats_3",
+     "material": "props_desktop",
+     "triangles": 36,
+     "vertices": 56,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_bellows_pleats_4",
+     "material": "props_desktop",
+     "triangles": 36,
+     "vertices": 56,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_bellows_post.001",
+     "material": "props_desktop",
+     "triangles": 5708,
+     "vertices": 12013,
+     "morphTargets": 0
+    }
+   ]
+  },
+  "props-quest": {
+   "file": "smithy-child-props-quest.glb",
+   "bytes": 322628,
+   "triangles": 3326,
+   "vertices": 6926,
+   "materialCount": 1,
+   "joints": 0,
+   "maxMorphTargets": 0,
+   "textureBytes": 47180,
+   "decodedTextureBytesEstimate": 1922388,
+   "materials": [
+    {
+     "alphaMode": "OPAQUE",
+     "doubleSided": true,
+     "name": "props_quest"
+    }
+   ],
+   "morphTextureBytesEstimate": 0,
+   "morphNormals": false,
+   "doubleSidedMaterials": 1,
+   "textures": [
+    {
+     "name": "props_quest_emissive",
+     "width": 128,
+     "height": 128,
+     "bytes": 872
+    },
+    {
+     "name": "props_quest_normal",
+     "width": 256,
+     "height": 256,
+     "bytes": 7188
+    },
+    {
+     "name": "props_quest_albedo",
+     "width": 512,
+     "height": 512,
+     "bytes": 35976
+    },
+    {
+     "name": "props_quest_orm",
+     "width": 128,
+     "height": 128,
+     "bytes": 3144
+    }
+   ],
+   "meshes": [
+    {
+     "mesh": "bellows_boards",
+     "material": "props_quest",
+     "triangles": 148,
+     "vertices": 210,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_bellows_chain.001",
+     "material": "props_quest",
+     "triangles": 20,
+     "vertices": 36,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "lever_pole",
+     "material": "props_quest",
+     "triangles": 112,
+     "vertices": 126,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_bellows_lid",
+     "material": "props_quest",
+     "triangles": 12,
+     "vertices": 24,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_bellows_pleats",
+     "material": "props_quest",
+     "triangles": 36,
+     "vertices": 48,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_bellows_pleats_1",
+     "material": "props_quest",
+     "triangles": 36,
+     "vertices": 56,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_bellows_pleats_2",
+     "material": "props_quest",
+     "triangles": 36,
+     "vertices": 56,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_bellows_pleats_3",
+     "material": "props_quest",
+     "triangles": 36,
+     "vertices": 56,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_bellows_pleats_4",
+     "material": "props_quest",
+     "triangles": 36,
+     "vertices": 56,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_bellows_post.001",
+     "material": "props_quest",
+     "triangles": 2854,
+     "vertices": 6258,
+     "morphTargets": 0
+    }
+   ]
+  },
+  "quest": {
+   "file": "smithy-child-quest.glb",
+   "bytes": 1244872,
+   "triangles": 5770,
+   "vertices": 5720,
+   "materialCount": 2,
+   "joints": 64,
+   "maxMorphTargets": 44,
+   "textureBytes": 251958,
+   "decodedTextureBytesEstimate": 8738132,
+   "materials": [
+    {
+     "alphaMode": "OPAQUE",
+     "doubleSided": true,
+     "name": "quest_body"
+    },
+    {
+     "alphaMode": "MASK",
+     "doubleSided": true,
+     "name": "quest_hair"
+    }
+   ],
+   "morphTextureBytesEstimate": 3961920,
+   "morphNormals": false,
+   "doubleSidedMaterials": 2,
+   "textures": [
+    {
+     "name": "quest_normal",
+     "width": 512,
+     "height": 512,
+     "bytes": 8926
+    },
+    {
+     "name": "quest_albedo",
+     "width": 1024,
+     "height": 1024,
+     "bytes": 100984
+    },
+    {
+     "name": "quest_orm",
+     "width": 256,
+     "height": 256,
+     "bytes": 10548
+    },
+    {
+     "name": "quest_strands",
+     "width": 512,
+     "height": 512,
+     "bytes": 131500
+    }
+   ],
+   "meshes": [
+    {
+     "mesh": "QuestBody",
+     "material": "quest_body",
+     "triangles": 5208,
+     "vertices": 4908,
+     "morphTargets": 44
+    },
+    {
+     "mesh": "QuestHair",
+     "material": "quest_hair",
+     "triangles": 562,
+     "vertices": 812,
+     "morphTargets": 39
+    }
+   ]
+  }
+ },
+ "clips": {
+  "idle": {
+   "seconds": 5.0,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 54,
+   "sourceSeamDegrees": 1.24,
+   "swayCm": 0.9,
+   "swayCycles": 3,
+   "weightShifts": [
+    [
+     0.04,
+     0.28,
+     "r",
+     3.0
+    ],
+    [
+     0.38,
+     0.6,
+     "l",
+     3.2
+    ],
+    [
+     0.7,
+     0.93,
+     "r",
+     2.2
+    ]
+   ]
+  },
+  "walk": {
+   "seconds": 1.0,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 57,
+   "speedMetresPerSecond": 1.082,
+   "strideMetres": 1.082,
+   "sourceSeamDegrees": 9.29,
+   "contactFrames": {
+    "l": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19
+    ],
+    "r": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30
+    ]
+   },
+   "stanceWindows": {
+    "l": [
+     [
+      2,
+      19
+     ]
+    ],
+    "r": [
+     [
+      16,
+      34
+     ]
+    ]
+   },
+   "stanceShare": {
+    "l": 0.6,
+    "r": 0.633
+   },
+   "swingLiftCm": {
+    "l": 0.0,
+    "r": 0.0
+   },
+   "toeOutDegrees": 7.0,
+   "facingCorrectionDegrees": 1.9,
+   "pelvisDropCm": 1.03
+  },
+  "walk_start": {
+   "seconds": 0.5333,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 57,
+   "rootTravelMetres": [
+    0.0,
+    0.0004,
+    0.0017,
+    0.0041,
+    0.0079,
+    0.0131,
+    0.0201,
+    0.029,
+    0.0401,
+    0.0534,
+    0.0693,
+    0.0879,
+    0.1095,
+    0.1341,
+    0.1621,
+    0.1937,
+    0.2289
+   ],
+   "endsOnWalkFrame": 0,
+   "startDistanceMetres": 0.229,
+   "accelerationSeconds": 0.53,
+   "firstStepLiftFrame": 5,
+   "lateralMismatchCm": 0.0
+  },
+  "walk_stop": {
+   "seconds": 0.9667,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 57,
+   "rootTravelMetres": [
+    0.0,
+    0.0347,
+    0.0667,
+    0.0959,
+    0.1226,
+    0.1467,
+    0.1682,
+    0.1873,
+    0.204,
+    0.2182,
+    0.2302,
+    0.2398,
+    0.2473,
+    0.2525,
+    0.2556,
+    0.2567,
+    0.2567,
+    0.2567,
+    0.2567,
+    0.2567,
+    0.2567,
+    0.2567,
+    0.2567,
+    0.2567,
+    0.2567,
+    0.2567,
+    0.2567,
+    0.2567,
+    0.2567,
+    0.2567
+   ],
+   "stopDistanceMetres": 0.257,
+   "decelerationSeconds": 0.5,
+   "leftLandsFrame": 2,
+   "closingStepFrames": [
+    4,
+    19
+   ],
+   "lateralMismatchCm": -0.0
+  },
+  "work_bellows": {
+   "seconds": 2.8,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 55,
+   "pumpsPerLoop": 2,
+   "leverDegrees": [
+    -6.0,
+    -27.0
+   ],
+   "lidMaxDegrees": 13.0,
+   "chainLengthMetres": 0.571,
+   "palmToBarErrorCm": 0.0,
+   "mechanismNodes": [
+    "prop_bellows_lever",
+    "prop_bellows_lid",
+    "prop_bellows_chain",
+    "prop_bellows_pleats",
+    "prop_bellows_pleats_1",
+    "prop_bellows_pleats_2",
+    "prop_bellows_pleats_3",
+    "prop_bellows_pleats_4"
+   ]
+  },
+  "work_enter": {
+   "seconds": 1.1,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 55,
+   "propSwaps": [],
+   "from": "idle"
+  },
+  "work_exit": {
+   "seconds": 1.0,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 55,
+   "propSwaps": [],
+   "from": "idle"
+  },
+  "talk": {
+   "seconds": 5.0,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 54
+  },
+  "face_blink": {
+   "seconds": 0.6,
+   "interpolations": [
+    "LINEAR"
+   ],
+   "paths": [
+    "rotation"
+   ],
+   "channels": 4
+  },
+  "face_gaze": {
+   "seconds": 3.6,
+   "interpolations": [
+    "LINEAR"
+   ],
+   "paths": [
+    "rotation"
+   ],
+   "channels": 4
+  },
+  "face_jaw": {
+   "seconds": 1.2,
+   "interpolations": [
+    "LINEAR"
+   ],
+   "paths": [
+    "rotation"
+   ],
+   "channels": 1
+  }
+ },
+ "faceRig": {
+  "joints": [
+   "face_jaw",
+   "face_eye_l",
+   "face_eye_r",
+   "face_lid_upper_l",
+   "face_lid_upper_r",
+   "face_lid_lower_l",
+   "face_lid_lower_r"
+  ],
+  "convention": "Local +X points to the character's left: +X pitch looks down / closes the upper lid / opens the lower lid / opens the jaw; +Z yaws the eyes toward the character's right. Same frames in Blender and in the exported glTF.",
+  "morphTargets": [
+   "eyeBlinkLeft",
+   "eyeBlinkRight",
+   "eyeSquintLeft",
+   "eyeSquintRight",
+   "eyeWideLeft",
+   "eyeWideRight",
+   "browDownLeft",
+   "browDownRight",
+   "browInnerUp",
+   "browOuterUpLeft",
+   "browOuterUpRight",
+   "cheekSquintLeft",
+   "cheekSquintRight",
+   "noseSneerLeft",
+   "noseSneerRight",
+   "jawOpen",
+   "mouthClose",
+   "mouthFunnel",
+   "mouthPucker",
+   "mouthSmileLeft",
+   "mouthSmileRight",
+   "mouthFrownLeft",
+   "mouthFrownRight",
+   "mouthPressLeft",
+   "mouthPressRight",
+   "mouthStretchLeft",
+   "mouthStretchRight",
+   "mouthRollLower",
+   "mouthUpperUpLeft",
+   "mouthUpperUpRight",
+   "viseme_PP",
+   "viseme_FF",
+   "viseme_TH",
+   "viseme_DD",
+   "viseme_kk",
+   "viseme_CH",
+   "viseme_SS",
+   "viseme_nn",
+   "viseme_RR",
+   "viseme_aa",
+   "viseme_E",
+   "viseme_I",
+   "viseme_O",
+   "viseme_U"
+  ],
+  "morphLevels": [
+   "desktop-lod0",
+   "desktop-lod1",
+   "quest"
+  ],
+  "lodCalibration": {
+   "closureAtBlinkMm": {
+    "l": -0.6,
+    "r": -0.63
+   },
+   "eyeballVisibleAtBlink": {
+    "l": 0.0,
+    "r": 0.0
+   },
+   "jawOpen": 0.201,
+   "lipGapMm": {
+    "aa": 12.2,
+    "full": 15.0,
+    "rest": 0.4
+   },
+   "lowerLidClosed": -0.15,
+   "openingAtRestMm": {
+    "l": 9.9,
+    "r": 9.9
+   },
+   "upperLidClosed": 0.636,
+   "visibilityPasses": [
+    {
+     "l": 0,
+     "r": 0,
+     "upper": 0.636
+    }
+   ],
+   "method": "scripts/characters/lib/face_rig.py: LOD1/Quest head lid and jaw weights authored from the eye and mouth loops; upperLidClosed found by bisection so the closed lids overlap 0.6 mm everywhere with the lower lid at lowerLidClosed; jawOpen parts the lips lipGapMm.full at full opening. Radians. Since round 2 the LOD1 and Quest levels also carry the face morphs, so the shared adapters blink and speak by morph there and these joint angles drive only the face clips and joints-only consumers."
+  },
+  "calibration": "shared/legacy/aethelgard/characters/household-art-sets.ts (faceCalibration of this resident)",
+  "contract": "shared/legacy/aethelgard/characters/face-performance.ts"
+ },
+ "props": {
+  "file": "smithy-child-props.glb",
+  "questFile": "smithy-child-props-quest.glb",
+  "sockets": {},
+  "workplace": "node 'workplace' (already Y-up) holds prop_bellows, prop_bellows_chain, prop_bellows_lever, prop_bellows_lid, prop_bellows_pleats, prop_bellows_pleats_1, prop_bellows_pleats_2, prop_bellows_pleats_3, prop_bellows_pleats_4, workplace_static relative to the resident root in the work pose",
+  "loose": [],
+  "aside": [],
+  "recipe": {
+   "lever": {
+    "pivot": [
+     0.0,
+     -0.95,
+     1.0
+    ],
+    "length": 0.62,
+    "backLength": 0.36,
+    "upDegrees": -6.0,
+    "downDegrees": -27.0
+   },
+   "bellows": {
+    "back": -0.05,
+    "base": 0.34,
+    "length": 0.62,
+    "width": 0.36
+   },
+   "hearth": {
+    "centre": [
+     0.95,
+     -1.3,
+     0.0
+    ],
+    "size": [
+     0.7,
+     0.62,
+     0.64
+    ],
+    "courses": 5,
+    "stonesPerCourse": 6,
+    "sideStones": 3,
+    "coalLumps": 64,
+    "bevelSegments": 1
+   },
+   "hearthLook": [
+    0.95,
+    -1.3,
+    0.7
+   ],
+   "bucketAt": [
+    -0.38,
+    -0.22,
+    0.0
+   ],
+   "bucketHeight": 0.26,
+   "bucketTris": 1300
+  }
+ },
+ "actorMotions": {
+  "idle": "idle",
+  "walk": "walk",
+  "talk": "talk",
+  "sit": null,
+  "work": "work_bellows",
+  "extra": {
+   "start": "walk_start",
+   "stop": "walk_stop",
+   "workEnter": "work_enter",
+   "workExit": "work_exit"
+  }
+ },
+ "propsByClip": {},
+ "workstation": {
+  "node": "workplace"
+ },
+ "restingProps": {},
+ "workTransitions": {
+  "enter": "work_enter",
+  "exit": "work_exit",
+  "from": "idle",
+  "swaps": {
+   "work_enter": [],
+   "work_exit": []
+  }
+ },
+ "events": {
+  "work_bellows": {
+   "pullSeconds": [
+    0.0,
+    1.4
+   ]
+  }
+ },
+ "faceCues": {},
+ "propClips": {
+  "work_bellows": "work_bellows"
+ },
+ "mechanisms": [
+  "prop_bellows",
+  "prop_bellows_chain",
+  "prop_bellows_lever",
+  "prop_bellows_lid",
+  "prop_bellows_pleats",
+  "prop_bellows_pleats_1",
+  "prop_bellows_pleats_2",
+  "prop_bellows_pleats_3",
+  "prop_bellows_pleats_4"
+ ],
+ "animationPrune": {
+  "tool": "scripts/characters/lib/glb_prune.py",
+  "rotationToleranceDegrees": 0.03,
+  "positionToleranceMetres": 0.0001,
+  "files": {
+   "smithy-child-desktop-lod0.glb": {
+    "face_blink": {
+     "channels": 4,
+     "channelsBefore": 192,
+     "keys": 42
+    },
+    "face_gaze": {
+     "channels": 4,
+     "channelsBefore": 192,
+     "keys": 80
+    },
+    "face_jaw": {
+     "channels": 1,
+     "channelsBefore": 192,
+     "keys": 20
+    },
+    "idle": {
+     "channels": 54,
+     "channelsBefore": 192,
+     "keys": 1266
+    },
+    "talk": {
+     "channels": 54,
+     "channelsBefore": 192,
+     "keys": 2138
+    },
+    "walk": {
+     "channels": 57,
+     "channelsBefore": 192,
+     "keys": 830
+    },
+    "walk_start": {
+     "channels": 57,
+     "channelsBefore": 192,
+     "keys": 470
+    },
+    "walk_stop": {
+     "channels": 57,
+     "channelsBefore": 192,
+     "keys": 704
+    },
+    "work_bellows": {
+     "channels": 55,
+     "channelsBefore": 192,
+     "keys": 1195
+    },
+    "work_enter": {
+     "channels": 55,
+     "channelsBefore": 192,
+     "keys": 1301
+    },
+    "work_exit": {
+     "channels": 55,
+     "channelsBefore": 192,
+     "keys": 1221
+    }
+   },
+   "smithy-child-desktop-lod1.glb": {
+    "face_blink": {
+     "channels": 4,
+     "channelsBefore": 192,
+     "keys": 42
+    },
+    "face_gaze": {
+     "channels": 4,
+     "channelsBefore": 192,
+     "keys": 80
+    },
+    "face_jaw": {
+     "channels": 1,
+     "channelsBefore": 192,
+     "keys": 20
+    },
+    "idle": {
+     "channels": 54,
+     "channelsBefore": 192,
+     "keys": 1266
+    },
+    "talk": {
+     "channels": 54,
+     "channelsBefore": 192,
+     "keys": 2138
+    },
+    "walk": {
+     "channels": 57,
+     "channelsBefore": 192,
+     "keys": 830
+    },
+    "walk_start": {
+     "channels": 57,
+     "channelsBefore": 192,
+     "keys": 470
+    },
+    "walk_stop": {
+     "channels": 57,
+     "channelsBefore": 192,
+     "keys": 704
+    },
+    "work_bellows": {
+     "channels": 55,
+     "channelsBefore": 192,
+     "keys": 1195
+    },
+    "work_enter": {
+     "channels": 55,
+     "channelsBefore": 192,
+     "keys": 1301
+    },
+    "work_exit": {
+     "channels": 55,
+     "channelsBefore": 192,
+     "keys": 1221
+    }
+   },
+   "smithy-child-props-quest.glb": {
+    "work_bellows": {
+     "channels": 16,
+     "channelsBefore": 16,
+     "keys": 1067
+    }
+   },
+   "smithy-child-props.glb": {
+    "work_bellows": {
+     "channels": 16,
+     "channelsBefore": 16,
+     "keys": 1067
+    }
+   },
+   "smithy-child-quest.glb": {
+    "face_blink": {
+     "channels": 4,
+     "channelsBefore": 192,
+     "keys": 42
+    },
+    "face_gaze": {
+     "channels": 4,
+     "channelsBefore": 192,
+     "keys": 80
+    },
+    "face_jaw": {
+     "channels": 1,
+     "channelsBefore": 192,
+     "keys": 20
+    },
+    "idle": {
+     "channels": 54,
+     "channelsBefore": 192,
+     "keys": 1266
+    },
+    "talk": {
+     "channels": 54,
+     "channelsBefore": 192,
+     "keys": 2138
+    },
+    "walk": {
+     "channels": 57,
+     "channelsBefore": 192,
+     "keys": 830
+    },
+    "walk_start": {
+     "channels": 57,
+     "channelsBefore": 192,
+     "keys": 470
+    },
+    "walk_stop": {
+     "channels": 57,
+     "channelsBefore": 192,
+     "keys": 704
+    },
+    "work_bellows": {
+     "channels": 55,
+     "channelsBefore": 192,
+     "keys": 1195
+    },
+    "work_enter": {
+     "channels": 55,
+     "channelsBefore": 192,
+     "keys": 1301
+    },
+    "work_exit": {
+     "channels": 55,
+     "channelsBefore": 192,
+     "keys": 1221
+    }
+   }
+  }
+ },
+ "work": {
+  "chainLengthMetres": 0.571,
+  "feet": {
+   "l": [
+    0.09000000357627869,
+    -0.05999999865889549,
+    0.06905806064605713
+   ],
+   "r": [
+    -0.10000000149011612,
+    0.11999999731779099,
+    0.06905806064605713
+   ]
+  },
+  "hingeBlender": [
+   0.569,
+   -1.31,
+   0.534
+  ],
+  "leverDegrees": [
+   -6.0,
+   -27.0
+  ],
+  "lidMaxDegrees": 13.0,
+  "mechanismNodes": [
+   "prop_bellows_lever",
+   "prop_bellows_lid",
+   "prop_bellows_chain",
+   "prop_bellows_pleats",
+   "prop_bellows_pleats_1",
+   "prop_bellows_pleats_2",
+   "prop_bellows_pleats_3",
+   "prop_bellows_pleats_4"
+  ],
+  "palmToBarErrorCm": 0.0,
+  "pivotBlender": [
+   0.0,
+   -0.949999988079071,
+   1.0
+  ],
+  "pumpsPerLoop": 2,
+  "seconds": 2.8
+ },
+ "budgets": {
+  "desktop-lod0": {
+   "maxTriangles": 25000,
+   "maxMaterials": 4,
+   "maxMorphTargets": 45,
+   "maxTextureSize": 2048
+  },
+  "desktop-lod1": {
+   "maxTriangles": 8000,
+   "maxMaterials": 2,
+   "maxMorphTargets": 45,
+   "maxTextureSize": 1024
+  },
+  "quest": {
+   "maxTriangles": 6000,
+   "maxMaterials": 2,
+   "maxMorphTargets": 45,
+   "maxTextureSize": 1024
+  },
+  "props": {
+   "maxMaterials": 1,
+   "maxTextureSize": 1024,
+   "note": "desktop props atlas"
+  },
+  "props-quest": {
+   "maxMaterials": 1,
+   "maxTextureSize": 512,
+   "note": "Quest props atlas; with the household at work each set adds one draw per hand prop plus one for its static workplace"
+  }
+ },
+ "propsAtlas": {
+  "desktopAtlas": 1024,
+  "emission": true,
+  "materialsAfter": 1,
+  "materialsBefore": 7,
+  "mergedStatic": [
+   "workplace_static"
+  ],
+  "questAtlas": 512,
+  "questHalved": [
+   "workplace_static"
+  ]
+ },
+ "envelopes": {
+  "desktop-lod0": {
+   "idle": {
+    "frames": 151,
+    "marginMetres": 0.0097,
+    "max": [
+     0.2484,
+     1.3977,
+     0.3521
+    ],
+    "min": [
+     -0.2214,
+     -0.0077,
+     -0.2017
+    ]
+   },
+   "talk": {
+    "frames": 151,
+    "marginMetres": 0.0429,
+    "max": [
+     0.3017,
+     1.432,
+     0.4384
+    ],
+    "min": [
+     -0.2711,
+     -0.0409,
+     -0.2367
+    ]
+   },
+   "walk": {
+    "frames": 31,
+    "marginMetres": 0.0773,
+    "max": [
+     0.3347,
+     1.4892,
+     0.5152
+    ],
+    "min": [
+     -0.3589,
+     -0.0767,
+     -0.4418
+    ]
+   },
+   "walk_start": {
+    "frames": 17,
+    "marginMetres": 0.0473,
+    "max": [
+     0.2534,
+     1.4564,
+     0.5044
+    ],
+    "min": [
+     -0.3228,
+     -0.0458,
+     -0.3287
+    ]
+   },
+   "walk_stop": {
+    "frames": 30,
+    "marginMetres": 0.039,
+    "max": [
+     0.3028,
+     1.4358,
+     0.4503
+    ],
+    "min": [
+     -0.2895,
+     -0.0377,
+     -0.4184
+    ]
+   },
+   "work_bellows": {
+    "frames": 85,
+    "marginMetres": 0.02,
+    "max": [
+     0.2543,
+     1.3404,
+     0.5707
+    ],
+    "min": [
+     -0.2573,
+     -0.018,
+     -0.1872
+    ]
+   },
+   "work_enter": {
+    "frames": 34,
+    "marginMetres": 0.0249,
+    "max": [
+     0.3032,
+     1.4112,
+     0.4436
+    ],
+    "min": [
+     -0.2827,
+     -0.0229,
+     -0.2128
+    ]
+   },
+   "work_exit": {
+    "frames": 31,
+    "marginMetres": 0.0289,
+    "max": [
+     0.3066,
+     1.4152,
+     0.4476
+    ],
+    "min": [
+     -0.2862,
+     -0.0269,
+     -0.2168
+    ]
+   }
+  },
+  "desktop-lod1": {
+   "idle": {
+    "frames": 151,
+    "marginMetres": 0.0097,
+    "max": [
+     0.2484,
+     1.3977,
+     0.352
+    ],
+    "min": [
+     -0.2214,
+     -0.0077,
+     -0.2017
+    ]
+   },
+   "talk": {
+    "frames": 151,
+    "marginMetres": 0.0427,
+    "max": [
+     0.2969,
+     1.4318,
+     0.434
+    ],
+    "min": [
+     -0.2627,
+     -0.0407,
+     -0.2364
+    ]
+   },
+   "walk": {
+    "frames": 31,
+    "marginMetres": 0.0773,
+    "max": [
+     0.3342,
+     1.4877,
+     0.5152
+    ],
+    "min": [
+     -0.358,
+     -0.0767,
+     -0.4418
+    ]
+   },
+   "walk_start": {
+    "frames": 17,
+    "marginMetres": 0.0473,
+    "max": [
+     0.2499,
+     1.4553,
+     0.5051
+    ],
+    "min": [
+     -0.322,
+     -0.0458,
+     -0.3287
+    ]
+   },
+   "walk_stop": {
+    "frames": 30,
+    "marginMetres": 0.0386,
+    "max": [
+     0.3021,
+     1.4341,
+     0.4503
+    ],
+    "min": [
+     -0.2891,
+     -0.0373,
+     -0.418
+    ]
+   },
+   "work_bellows": {
+    "frames": 85,
+    "marginMetres": 0.0199,
+    "max": [
+     0.2519,
+     1.338,
+     0.5705
+    ],
+    "min": [
+     -0.2487,
+     -0.0179,
+     -0.1871
+    ]
+   },
+   "work_enter": {
+    "frames": 34,
+    "marginMetres": 0.0249,
+    "max": [
+     0.2943,
+     1.4112,
+     0.4434
+    ],
+    "min": [
+     -0.2771,
+     -0.0229,
+     -0.2128
+    ]
+   },
+   "work_exit": {
+    "frames": 31,
+    "marginMetres": 0.0289,
+    "max": [
+     0.2978,
+     1.4152,
+     0.4474
+    ],
+    "min": [
+     -0.2804,
+     -0.0269,
+     -0.2168
+    ]
+   }
+  },
+  "quest": {
+   "idle": {
+    "frames": 151,
+    "marginMetres": 0.0097,
+    "max": [
+     0.2469,
+     1.394,
+     0.3515
+    ],
+    "min": [
+     -0.2211,
+     -0.0077,
+     -0.1978
+    ]
+   },
+   "talk": {
+    "frames": 151,
+    "marginMetres": 0.0427,
+    "max": [
+     0.3028,
+     1.4286,
+     0.434
+    ],
+    "min": [
+     -0.2682,
+     -0.0407,
+     -0.2326
+    ]
+   },
+   "walk": {
+    "frames": 31,
+    "marginMetres": 0.0774,
+    "max": [
+     0.3337,
+     1.4859,
+     0.5144
+    ],
+    "min": [
+     -0.3581,
+     -0.0771,
+     -0.4436
+    ]
+   },
+   "walk_start": {
+    "frames": 17,
+    "marginMetres": 0.0473,
+    "max": [
+     0.249,
+     1.4532,
+     0.5059
+    ],
+    "min": [
+     -0.322,
+     -0.0461,
+     -0.3278
+    ]
+   },
+   "walk_stop": {
+    "frames": 30,
+    "marginMetres": 0.0387,
+    "max": [
+     0.3024,
+     1.4319,
+     0.4508
+    ],
+    "min": [
+     -0.2889,
+     -0.0378,
+     -0.419
+    ]
+   },
+   "work_bellows": {
+    "frames": 85,
+    "marginMetres": 0.0199,
+    "max": [
+     0.273,
+     1.338,
+     0.5705
+    ],
+    "min": [
+     -0.2487,
+     -0.0179,
+     -0.187
+    ]
+   },
+   "work_enter": {
+    "frames": 34,
+    "marginMetres": 0.0249,
+    "max": [
+     0.2986,
+     1.4074,
+     0.4432
+    ],
+    "min": [
+     -0.2771,
+     -0.0229,
+     -0.209
+    ]
+   },
+   "work_exit": {
+    "frames": 31,
+    "marginMetres": 0.0289,
+    "max": [
+     0.3021,
+     1.4114,
+     0.4472
+    ],
+    "min": [
+     -0.2804,
+     -0.0269,
+     -0.213
+    ]
+   }
+  },
+  "note": "glTF model frame (Y up, +Z forward), metres. Every body clip skinned at every frame from Blender's own pose evaluation (scripts/characters/lib/envelopes.py), face-morph vertices padded by the sum of their 16 largest deltas, widened by half the largest per-frame vertex travel plus 5 mm. Pass envelopes[level][clip] to the owner (patch 5), which checks each at 9 times."
+ },
+ "penetration": {
+  "marginMetres": 0.003,
+  "backReachMetres": 0.025,
+  "check": "scripts/characters/review/penetration_check.py",
+  "note": "maxThroughMm is capped at backReach + margin; hand pairs (gloves, mitts and skin weighted to the hands) are listed under handClips because a swinging hand meets a skirt from beside, not from under it; inner shell faces (normal facing the body) are not paired",
+  "pairedVertices": 1377,
+  "clips": {
+   "idle": {
+    "Vest->Tunic": {
+     "throughVertices": 14,
+     "maxThroughMm": 23.2,
+     "restCentre": [
+      0.018,
+      -0.007,
+      1.002
+     ]
+    },
+    "Shirt->Tunic": {
+     "throughVertices": 3,
+     "maxThroughMm": 8.7,
+     "restCentre": [
+      0.042,
+      -0.024,
+      1.012
+     ]
+    },
+    "BeltEnd-1->TunicSkirt": {
+     "throughVertices": 3,
+     "maxThroughMm": 7.2,
+     "restCentre": [
+      0.048,
+      -0.157,
+      0.706
+     ]
+    },
+    "KindlingCord1->Vest": {
+     "throughVertices": 2,
+     "maxThroughMm": 6.2,
+     "restCentre": [
+      0.031,
+      0.079,
+      1.056
+     ]
+    },
+    "BeltEnd1->TunicSkirt": {
+     "throughVertices": 2,
+     "maxThroughMm": 4.3,
+     "restCentre": [
+      0.052,
+      -0.158,
+      0.706
+     ]
+    },
+    "Body->Shirt": {
+     "throughVertices": 1,
+     "maxThroughMm": 4.1,
+     "restCentre": [
+      0.058,
+      -0.055,
+      1.126
+     ]
+    },
+    "Pouch->Leggings": {
+     "throughVertices": 1,
+     "maxThroughMm": 15.3,
+     "restCentre": [
+      -0.134,
+      -0.074,
+      0.673
+     ]
+    },
+    "KindlingStrap->Tunic": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.0,
+     "restCentre": [
+      -0.07,
+      -0.058,
+      1.131
+     ]
+    },
+    "KindlingStrap->VestFleece": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.1,
+     "restCentre": [
+      0.064,
+      -0.128,
+      0.852
+     ]
+    }
+   },
+   "walk": {
+    "Vest->Tunic": {
+     "throughVertices": 15,
+     "maxThroughMm": 23.3,
+     "restCentre": [
+      -0.009,
+      -0.006,
+      1.002
+     ]
+    },
+    "Leggings->TunicSkirt": {
+     "throughVertices": 5,
+     "maxThroughMm": 20.4,
+     "restCentre": [
+      -0.126,
+      0.007,
+      0.494
+     ]
+    },
+    "Shirt->Tunic": {
+     "throughVertices": 4,
+     "maxThroughMm": 8.9,
+     "restCentre": [
+      0.001,
+      -0.029,
+      1.017
+     ]
+    },
+    "BeltEnd-1->TunicSkirt": {
+     "throughVertices": 3,
+     "maxThroughMm": 6.7,
+     "restCentre": [
+      0.048,
+      -0.157,
+      0.706
+     ]
+    },
+    "KindlingCord1->Vest": {
+     "throughVertices": 2,
+     "maxThroughMm": 6.1,
+     "restCentre": [
+      0.031,
+      0.079,
+      1.056
+     ]
+    },
+    "Vest->Shirt": {
+     "throughVertices": 1,
+     "maxThroughMm": 9.3,
+     "restCentre": [
+      -0.125,
+      -0.019,
+      0.79
+     ]
+    },
+    "Body->Shirt": {
+     "throughVertices": 1,
+     "maxThroughMm": 4.4,
+     "restCentre": [
+      0.058,
+      -0.055,
+      1.126
+     ]
+    },
+    "Pouch->Leggings": {
+     "throughVertices": 1,
+     "maxThroughMm": 22.4,
+     "restCentre": [
+      -0.134,
+      -0.074,
+      0.673
+     ]
+    },
+    "KindlingStrap->Tunic": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.7,
+     "restCentre": [
+      -0.07,
+      -0.058,
+      1.131
+     ]
+    },
+    "KindlingStrap->VestFleece": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.0,
+     "restCentre": [
+      0.064,
+      -0.128,
+      0.852
+     ]
+    },
+    "Vest->VestFleece": {
+     "throughVertices": 1,
+     "maxThroughMm": 9.7,
+     "restCentre": [
+      -0.094,
+      -0.087,
+      1.064
+     ]
+    },
+    "Shirt->Leggings": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.0,
+     "restCentre": [
+      -0.081,
+      -0.101,
+      0.748
+     ]
+    },
+    "BeltEnd1->TunicSkirt": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.7,
+     "restCentre": [
+      0.053,
+      -0.157,
+      0.706
+     ]
+    },
+    "Tunic->Vest": {
+     "throughVertices": 1,
+     "maxThroughMm": 18.7,
+     "restCentre": [
+      -0.0,
+      0.071,
+      0.796
+     ]
+    }
+   },
+   "walk_start": {
+    "Vest->Tunic": {
+     "throughVertices": 14,
+     "maxThroughMm": 23.3,
+     "restCentre": [
+      0.018,
+      -0.007,
+      1.002
+     ]
+    },
+    "Shirt->Tunic": {
+     "throughVertices": 3,
+     "maxThroughMm": 8.6,
+     "restCentre": [
+      0.033,
+      -0.042,
+      1.025
+     ]
+    },
+    "BeltEnd-1->TunicSkirt": {
+     "throughVertices": 3,
+     "maxThroughMm": 5.1,
+     "restCentre": [
+      0.048,
+      -0.157,
+      0.706
+     ]
+    },
+    "KindlingCord1->Vest": {
+     "throughVertices": 2,
+     "maxThroughMm": 5.9,
+     "restCentre": [
+      0.031,
+      0.079,
+      1.056
+     ]
+    },
+    "Leggings->TunicSkirt": {
+     "throughVertices": 2,
+     "maxThroughMm": 5.9,
+     "restCentre": [
+      0.125,
+      -0.104,
+      0.477
+     ]
+    },
+    "Body->Shirt": {
+     "throughVertices": 1,
+     "maxThroughMm": 4.4,
+     "restCentre": [
+      0.058,
+      -0.055,
+      1.126
+     ]
+    },
+    "Pouch->Leggings": {
+     "throughVertices": 1,
+     "maxThroughMm": 18.2,
+     "restCentre": [
+      -0.134,
+      -0.074,
+      0.673
+     ]
+    },
+    "KindlingStrap->Tunic": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.0,
+     "restCentre": [
+      -0.07,
+      -0.058,
+      1.131
+     ]
+    },
+    "KindlingStrap->VestFleece": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.1,
+     "restCentre": [
+      0.064,
+      -0.128,
+      0.852
+     ]
+    },
+    "Vest->VestFleece": {
+     "throughVertices": 1,
+     "maxThroughMm": 17.0,
+     "restCentre": [
+      0.094,
+      -0.087,
+      1.064
+     ]
+    }
+   },
+   "walk_stop": {
+    "Vest->Tunic": {
+     "throughVertices": 15,
+     "maxThroughMm": 23.3,
+     "restCentre": [
+      -0.009,
+      -0.003,
+      1.006
+     ]
+    },
+    "Shirt->Tunic": {
+     "throughVertices": 4,
+     "maxThroughMm": 8.6,
+     "restCentre": [
+      0.001,
+      -0.029,
+      1.017
+     ]
+    },
+    "Leggings->TunicSkirt": {
+     "throughVertices": 4,
+     "maxThroughMm": 27.8,
+     "restCentre": [
+      -0.114,
+      0.018,
+      0.604
+     ]
+    },
+    "Pouch->Leggings": {
+     "throughVertices": 2,
+     "maxThroughMm": 24.9,
+     "restCentre": [
+      -0.123,
+      -0.077,
+      0.673
+     ]
+    },
+    "KindlingCord1->Vest": {
+     "throughVertices": 2,
+     "maxThroughMm": 5.9,
+     "restCentre": [
+      0.031,
+      0.079,
+      1.056
+     ]
+    },
+    "Body->Shirt": {
+     "throughVertices": 1,
+     "maxThroughMm": 4.3,
+     "restCentre": [
+      0.058,
+      -0.055,
+      1.126
+     ]
+    },
+    "KindlingStrap->Tunic": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.5,
+     "restCentre": [
+      -0.07,
+      -0.058,
+      1.131
+     ]
+    },
+    "KindlingStrap->VestFleece": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.1,
+     "restCentre": [
+      0.064,
+      -0.128,
+      0.852
+     ]
+    },
+    "Shirt->Leggings": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.2,
+     "restCentre": [
+      -0.081,
+      -0.101,
+      0.748
+     ]
+    }
+   },
+   "work_bellows": {
+    "Vest->Tunic": {
+     "throughVertices": 15,
+     "maxThroughMm": 23.5,
+     "restCentre": [
+      0.008,
+      -0.006,
+      1.002
+     ]
+    },
+    "Shirt->Tunic": {
+     "throughVertices": 12,
+     "maxThroughMm": 23.1,
+     "restCentre": [
+      -0.005,
+      -0.038,
+      0.934
+     ]
+    },
+    "Tunic->Shirt": {
+     "throughVertices": 4,
+     "maxThroughMm": 3.8,
+     "restCentre": [
+      0.347,
+      -0.104,
+      0.88
+     ]
+    },
+    "Vest->KindlingStrap": {
+     "throughVertices": 2,
+     "maxThroughMm": 5.1,
+     "restCentre": [
+      0.012,
+      -0.119,
+      0.916
+     ]
+    },
+    "KindlingCord1->Vest": {
+     "throughVertices": 2,
+     "maxThroughMm": 8.0,
+     "restCentre": [
+      0.031,
+      0.079,
+      1.056
+     ]
+    },
+    "Body->Shirt": {
+     "throughVertices": 1,
+     "maxThroughMm": 4.9,
+     "restCentre": [
+      0.058,
+      -0.055,
+      1.126
+     ]
+    },
+    "Pouch->Leggings": {
+     "throughVertices": 1,
+     "maxThroughMm": 19.2,
+     "restCentre": [
+      -0.134,
+      -0.074,
+      0.673
+     ]
+    },
+    "KindlingStrap->Tunic": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.7,
+     "restCentre": [
+      -0.07,
+      -0.058,
+      1.131
+     ]
+    },
+    "KindlingStrap->VestFleece": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.7,
+     "restCentre": [
+      0.064,
+      -0.128,
+      0.852
+     ]
+    },
+    "Leggings->TunicSkirt": {
+     "throughVertices": 1,
+     "maxThroughMm": 5.4,
+     "restCentre": [
+      -0.145,
+      0.018,
+      0.346
+     ]
+    },
+    "Tunic->VestFleece": {
+     "throughVertices": 1,
+     "maxThroughMm": 4.5,
+     "restCentre": [
+      -0.128,
+      0.023,
+      1.033
+     ]
+    },
+    "Vest->VestFleece": {
+     "throughVertices": 1,
+     "maxThroughMm": 14.1,
+     "restCentre": [
+      -0.094,
+      -0.087,
+      1.064
+     ]
+    }
+   },
+   "work_enter": {
+    "Vest->Tunic": {
+     "throughVertices": 15,
+     "maxThroughMm": 23.8,
+     "restCentre": [
+      0.008,
+      -0.006,
+      1.002
+     ]
+    },
+    "Shirt->Tunic": {
+     "throughVertices": 13,
+     "maxThroughMm": 25.4,
+     "restCentre": [
+      0.015,
+      -0.04,
+      0.933
+     ]
+    },
+    "Leggings->TunicSkirt": {
+     "throughVertices": 4,
+     "maxThroughMm": 12.8,
+     "restCentre": [
+      -0.129,
+      0.003,
+      0.463
+     ]
+    },
+    "BeltEnd-1->TunicSkirt": {
+     "throughVertices": 3,
+     "maxThroughMm": 5.1,
+     "restCentre": [
+      0.048,
+      -0.157,
+      0.706
+     ]
+    },
+    "Tunic->Shirt": {
+     "throughVertices": 3,
+     "maxThroughMm": 5.1,
+     "restCentre": [
+      0.206,
+      -0.064,
+      0.969
+     ]
+    },
+    "KindlingCord1->Vest": {
+     "throughVertices": 2,
+     "maxThroughMm": 8.0,
+     "restCentre": [
+      0.031,
+      0.079,
+      1.056
+     ]
+    },
+    "Vest->VestFleece": {
+     "throughVertices": 2,
+     "maxThroughMm": 10.5,
+     "restCentre": [
+      -0.0,
+      -0.087,
+      1.064
+     ]
+    },
+    "Tunic->VestFleece": {
+     "throughVertices": 2,
+     "maxThroughMm": 5.6,
+     "restCentre": [
+      0.0,
+      0.024,
+      1.033
+     ]
+    },
+    "Body->Shirt": {
+     "throughVertices": 1,
+     "maxThroughMm": 4.1,
+     "restCentre": [
+      0.058,
+      -0.055,
+      1.126
+     ]
+    },
+    "Pouch->Leggings": {
+     "throughVertices": 1,
+     "maxThroughMm": 15.7,
+     "restCentre": [
+      -0.134,
+      -0.074,
+      0.673
+     ]
+    },
+    "KindlingStrap->Tunic": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.0,
+     "restCentre": [
+      -0.07,
+      -0.058,
+      1.131
+     ]
+    },
+    "KindlingStrap->VestFleece": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.3,
+     "restCentre": [
+      0.064,
+      -0.128,
+      0.852
+     ]
+    },
+    "Body->Shoes": {
+     "throughVertices": 1,
+     "maxThroughMm": 23.4,
+     "restCentre": [
+      -0.14,
+      0.021,
+      0.093
+     ]
+    }
+   },
+   "work_exit": {
+    "Vest->Tunic": {
+     "throughVertices": 15,
+     "maxThroughMm": 23.8,
+     "restCentre": [
+      0.008,
+      -0.006,
+      1.002
+     ]
+    },
+    "Shirt->Tunic": {
+     "throughVertices": 12,
+     "maxThroughMm": 24.8,
+     "restCentre": [
+      -0.005,
+      -0.038,
+      0.934
+     ]
+    },
+    "Tunic->Shirt": {
+     "throughVertices": 3,
+     "maxThroughMm": 5.0,
+     "restCentre": [
+      0.349,
+      -0.101,
+      0.877
+     ]
+    },
+    "BeltEnd-1->TunicSkirt": {
+     "throughVertices": 3,
+     "maxThroughMm": 5.1,
+     "restCentre": [
+      0.048,
+      -0.157,
+      0.706
+     ]
+    },
+    "KindlingCord1->Vest": {
+     "throughVertices": 2,
+     "maxThroughMm": 7.9,
+     "restCentre": [
+      0.031,
+      0.079,
+      1.056
+     ]
+    },
+    "Leggings->TunicSkirt": {
+     "throughVertices": 2,
+     "maxThroughMm": 14.7,
+     "restCentre": [
+      -0.131,
+      0.004,
+      0.465
+     ]
+    },
+    "Vest->VestFleece": {
+     "throughVertices": 2,
+     "maxThroughMm": 10.3,
+     "restCentre": [
+      -0.0,
+      -0.087,
+      1.064
+     ]
+    },
+    "Body->Shirt": {
+     "throughVertices": 1,
+     "maxThroughMm": 4.1,
+     "restCentre": [
+      0.058,
+      -0.055,
+      1.126
+     ]
+    },
+    "Pouch->Leggings": {
+     "throughVertices": 1,
+     "maxThroughMm": 14.5,
+     "restCentre": [
+      -0.134,
+      -0.074,
+      0.673
+     ]
+    },
+    "KindlingStrap->Tunic": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.0,
+     "restCentre": [
+      -0.07,
+      -0.058,
+      1.131
+     ]
+    },
+    "KindlingStrap->VestFleece": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.3,
+     "restCentre": [
+      0.064,
+      -0.128,
+      0.852
+     ]
+    },
+    "Tunic->VestFleece": {
+     "throughVertices": 1,
+     "maxThroughMm": 4.5,
+     "restCentre": [
+      -0.128,
+      0.023,
+      1.033
+     ]
+    }
+   },
+   "talk": {
+    "Vest->Tunic": {
+     "throughVertices": 16,
+     "maxThroughMm": 23.5,
+     "restCentre": [
+      -0.0,
+      -0.009,
+      1.003
+     ]
+    },
+    "Shirt->Tunic": {
+     "throughVertices": 3,
+     "maxThroughMm": 8.7,
+     "restCentre": [
+      0.042,
+      -0.024,
+      1.012
+     ]
+    },
+    "BeltEnd-1->TunicSkirt": {
+     "throughVertices": 3,
+     "maxThroughMm": 7.2,
+     "restCentre": [
+      0.048,
+      -0.157,
+      0.706
+     ]
+    },
+    "Vest->Shirt": {
+     "throughVertices": 2,
+     "maxThroughMm": 4.3,
+     "restCentre": [
+      -0.0,
+      -0.057,
+      0.79
+     ]
+    },
+    "Body->Shirt": {
+     "throughVertices": 2,
+     "maxThroughMm": 4.3,
+     "restCentre": [
+      -0.022,
+      -0.01,
+      1.128
+     ]
+    },
+    "KindlingCord1->Vest": {
+     "throughVertices": 2,
+     "maxThroughMm": 6.6,
+     "restCentre": [
+      0.031,
+      0.079,
+      1.056
+     ]
+    },
+    "BeltEnd1->TunicSkirt": {
+     "throughVertices": 2,
+     "maxThroughMm": 4.2,
+     "restCentre": [
+      0.052,
+      -0.158,
+      0.706
+     ]
+    },
+    "Pouch->Leggings": {
+     "throughVertices": 1,
+     "maxThroughMm": 15.5,
+     "restCentre": [
+      -0.134,
+      -0.074,
+      0.673
+     ]
+    },
+    "KindlingStrap->Tunic": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.1,
+     "restCentre": [
+      -0.07,
+      -0.058,
+      1.131
+     ]
+    },
+    "KindlingStrap->VestFleece": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.1,
+     "restCentre": [
+      0.064,
+      -0.128,
+      0.852
+     ]
+    }
+   }
+  },
+  "handClips": {
+   "idle": {},
+   "walk": {},
+   "walk_start": {},
+   "walk_stop": {},
+   "work_bellows": {},
+   "work_enter": {},
+   "work_exit": {},
+   "talk": {}
+  },
+  "posedHands": {
+   "note": "per frame, each hand's skin and mitt or glove vertices are tested against the posed outer garments (Tunic): a vertex is inside a garment when a horizontal ray from the body axis through it meets the garment beyond it; a hand with at least 3 vertices on each side crosses the cloth (it comes out through it). Counts are the vertices on the minority side.",
+   "clips": {
+    "idle": {
+     "left": {
+      "framesCrossing": 0,
+      "framesSampled": 51,
+      "minorityVertices": 0,
+      "frame": 0
+     },
+     "right": {
+      "framesCrossing": 0,
+      "framesSampled": 51,
+      "minorityVertices": 0,
+      "frame": 0
+     }
+    },
+    "walk": {
+     "left": {
+      "framesCrossing": 0,
+      "framesSampled": 11,
+      "minorityVertices": 0,
+      "frame": 0
+     },
+     "right": {
+      "framesCrossing": 0,
+      "framesSampled": 11,
+      "minorityVertices": 0,
+      "frame": 0
+     }
+    },
+    "walk_start": {
+     "left": {
+      "framesCrossing": 0,
+      "framesSampled": 6,
+      "minorityVertices": 0,
+      "frame": 0
+     },
+     "right": {
+      "framesCrossing": 0,
+      "framesSampled": 6,
+      "minorityVertices": 0,
+      "frame": 0
+     }
+    },
+    "walk_stop": {
+     "left": {
+      "framesCrossing": 0,
+      "framesSampled": 10,
+      "minorityVertices": 0,
+      "frame": 0
+     },
+     "right": {
+      "framesCrossing": 0,
+      "framesSampled": 10,
+      "minorityVertices": 0,
+      "frame": 0
+     }
+    },
+    "work_bellows": {
+     "left": {
+      "framesCrossing": 0,
+      "framesSampled": 29,
+      "minorityVertices": 0,
+      "frame": 0
+     },
+     "right": {
+      "framesCrossing": 0,
+      "framesSampled": 29,
+      "minorityVertices": 0,
+      "frame": 0
+     }
+    },
+    "work_enter": {
+     "left": {
+      "framesCrossing": 0,
+      "framesSampled": 12,
+      "minorityVertices": 0,
+      "frame": 0
+     },
+     "right": {
+      "framesCrossing": 0,
+      "framesSampled": 12,
+      "minorityVertices": 0,
+      "frame": 0
+     }
+    },
+    "work_exit": {
+     "left": {
+      "framesCrossing": 0,
+      "framesSampled": 11,
+      "minorityVertices": 0,
+      "frame": 0
+     },
+     "right": {
+      "framesCrossing": 0,
+      "framesSampled": 11,
+      "minorityVertices": 0,
+      "frame": 0
+     }
+    },
+    "talk": {
+     "left": {
+      "framesCrossing": 0,
+      "framesSampled": 51,
+      "minorityVertices": 0,
+      "frame": 0
+     },
+     "right": {
+      "framesCrossing": 0,
+      "framesSampled": 51,
+      "minorityVertices": 0,
+      "frame": 0
+     }
+    }
+   }
+  }
+ },
+ "textureMemoryNote": "decodedTextureBytesEstimate assumes RGBA8 with full mips; not a GPU measurement."
+}

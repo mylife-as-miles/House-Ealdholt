@@ -1,0 +1,856 @@
+import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState, type CSSProperties, type KeyboardEvent as ReactKeyboardEvent } from "react";
+
+import { ARMY_SKINS, DEFAULT_ARMY_SKINS, type ArmySkinId } from "../assets/generated";
+import { audio, type AudioScene } from "../audio/audioManager";
+import { CampaignController } from "../campaign/campaignController";
+import { selectCampaignMenuSummary } from "../campaign/menuSummary";
+import type { CampaignDifficulty } from "../campaign/types";
+import { useCampaignSnapshot } from "../campaign/useCampaignSnapshot";
+import { GameController } from "../core/gameController";
+import { PIECE_LABEL, type Faction, type LedgerMove, type PieceKind } from "../core/types";
+import { Clapperboard } from "lucide-react";
+import { ARENA_LOOKS, DEFAULT_ARENA, type ArenaTheme } from "../scene/arena";
+import { detectQualityPreset, type QualityPreset } from "../scene/quality";
+import type { CameraPreset, SceneEngine, ShowcaseCamera } from "../scene/sceneEngine";
+import { MainMenu, type MatchConfig } from "./MainMenu";
+import type { MusterChoice } from "./Muster";
+import type { GameSettings } from "./SettingsPanel";
+import { useGameSnapshot } from "./useGameSnapshot";
+import "./crownfall.css";
+import "./medieval.css";
+
+const CampaignExperience = lazy(() =>
+  import("./CampaignExperience").then((module) => ({ default: module.CampaignExperience })),
+);
+const GameOverModal = lazy(() => import("./GameOverModal").then((module) => ({ default: module.GameOverModal })));
+const Hud = lazy(() => import("./Hud").then((module) => ({ default: module.Hud })));
+const SettingsPanel = lazy(() => import("./SettingsPanel").then((module) => ({ default: module.SettingsPanel })));
+
+type Phase = "loading" | "menu" | "playing" | "campaign";
+
+const RENDER_PREFS_KEY = "kg.render";
+const MENU_PRESENTATION_FEN = "7k/8/5n2/4P3/8/2K5/8/8 w - - 0 1";
+const ARMY_PREFS_KEY = "kg.armies";
+/**
+ * How long a finished showcase is left alone before the verdict card rises.
+ * The end cinematic dollies onto the fallen king for ~2.4s — in a duel that is
+ * being watched (or recorded) that shot is the point, so the card waits for it
+ * instead of landing on top of it.
+ */
+const SHOWCASE_VERDICT_DELAY_MS = 2200;
+
+interface RenderPrefs {
+  safeMode: boolean;
+  brightness: number;
+}
+
+/** The armies chosen last visit — a skin is a taste, not a session setting. */
+function loadArmyPrefs(): Record<Faction, ArmySkinId> {
+  const fallback: Record<Faction, ArmySkinId> = { ...DEFAULT_ARMY_SKINS };
+  if (typeof window === "undefined") return fallback;
+  try {
+    const raw = window.localStorage.getItem(ARMY_PREFS_KEY);
+    if (!raw) return fallback;
+    const stored = JSON.parse(raw) as Partial<Record<Faction, string>>;
+    const pick = (value: string | undefined, side: Faction): ArmySkinId =>
+      value && value in ARMY_SKINS ? (value as ArmySkinId) : fallback[side];
+    return { w: pick(stored.w, "w"), b: pick(stored.b, "b") };
+  } catch {
+    return fallback;
+  }
+}
+
+function saveArmyPrefs(skins: Record<Faction, ArmySkinId>): void {
+  try {
+    window.localStorage.setItem(ARMY_PREFS_KEY, JSON.stringify(skins));
+  } catch {
+    // Private browsing — the choice just will not survive the reload.
+  }
+}
+
+/**
+ * Safe rendering and brightness are remembered across visits, and `?safe=1`
+ * forces them on — a player whose driver blacks the hall out must not have to
+ * find the toggle again on every reload.
+ */
+function loadRenderPrefs(): RenderPrefs {
+  const fallback: RenderPrefs = { safeMode: false, brightness: 1 };
+  if (typeof window === "undefined") return fallback;
+  try {
+    const forced = new URLSearchParams(window.location.search).has("safe");
+    const raw = window.localStorage.getItem(RENDER_PREFS_KEY);
+    const stored = raw ? (JSON.parse(raw) as Partial<RenderPrefs>) : {};
+    return {
+      safeMode: forced || stored.safeMode === true,
+      brightness: typeof stored.brightness === "number" ? Math.min(1.8, Math.max(0.6, stored.brightness)) : 1,
+    };
+  } catch {
+    return fallback;
+  }
+}
+
+function saveRenderPrefs(prefs: RenderPrefs): void {
+  try {
+    window.localStorage.setItem(RENDER_PREFS_KEY, JSON.stringify(prefs));
+  } catch {
+    // Private browsing — the session still works, it just will not be remembered.
+  }
+}
+
+export function GameShell() {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const engineRef = useRef<SceneEngine | null>(null);
+
+  const controller = useMemo(() => new GameController(), []);
+  const snapshot = useGameSnapshot(controller);
+  const campaign = useMemo(() => new CampaignController(), []);
+  const campaignSnapshot = useCampaignSnapshot(campaign);
+  const campaignMenuSummary = useMemo(
+    () => selectCampaignMenuSummary(campaignSnapshot.save),
+    [campaignSnapshot.save],
+  );
+
+  const detected = useMemo<QualityPreset>(() => detectQualityPreset(), []);
+  const initialRender = useMemo<RenderPrefs>(() => loadRenderPrefs(), []);
+  const initialArmies = useMemo<Record<Faction, ArmySkinId>>(() => loadArmyPrefs(), []);
+  const [settings, setSettings] = useState<GameSettings>(() => ({
+    quality: detected,
+    arena: DEFAULT_ARENA,
+    skins: initialArmies,
+    captureCinematics: true,
+    rotateBoard: true,
+    rankBadges: true,
+    muted: false,
+    safeMode: initialRender.safeMode,
+    brightness: initialRender.brightness,
+  }));
+  const [gpu, setGpu] = useState<string>("");
+
+  const [phase, setPhase] = useState<Phase>("loading");
+  const [progress, setProgress] = useState(0);
+  const [showSettings, setShowSettings] = useState(false);
+  const [introPlaying, setIntroPlaying] = useState(false);
+  const [promotionOpen, setPromotionOpen] = useState(false);
+  const [fps, setFps] = useState(0);
+  const [contextLost, setContextLost] = useState(false);
+  const [cameraFlipped, setCameraFlipped] = useState(false);
+  /** Flat overhead map: no 3D figure can hide a square. */
+  const [tactical, setTactical] = useState(false);
+  const [unsupported, setUnsupported] = useState(false);
+  const [notice, setNotice] = useState<string | null>(null);
+  const [boardAnnouncement, setBoardAnnouncement] = useState("Board ready. Use the arrow keys to explore squares.");
+  /** Showcase recording: strips every panel so the capture is board-only. */
+  const [cinema, setCinema] = useState(false);
+  /** How the camera behaves during a showcase duel: held, orbiting or following. */
+  const [showcaseCamera, setShowcaseCamera] = useState<ShowcaseCamera>("follow");
+  const [reducedMotion, setReducedMotion] = useState(() =>
+    typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
+  const initialReducedMotion = useRef(reducedMotion);
+
+  // ------------------------------------------------------------ boot the scene
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    // Headless/blocked environments cannot create a WebGL context — fail loudly
+    // with a readable message instead of a black screen.
+    const probe = document.createElement("canvas");
+    const supported = Boolean(probe.getContext("webgl2") ?? probe.getContext("webgl"));
+    if (!supported) {
+      setUnsupported(true);
+      return;
+    }
+
+    let engine: SceneEngine | null = null;
+    let cancelled = false;
+
+    void import("../scene/sceneEngine").then(async ({ SceneEngine: SceneEngineConstructor }) => {
+      if (cancelled) return;
+      try {
+        engine = new SceneEngineConstructor(
+        canvas,
+        controller,
+        {
+          onLoadProgress: (ratio) => setProgress(ratio),
+          onReady: () => setPhase("menu"),
+          onPromotionOpen: (open) => setPromotionOpen(open),
+          onQualityAdjusted: (preset) => {
+            setSettings((current) => ({ ...current, quality: preset }));
+            setNotice(`Graphics stepped down to ${preset} to hold a smooth frame rate.`);
+            setTimeout(() => setNotice(null), 5000);
+          },
+          onFps: (value) => setFps(value),
+          onContextLost: () => setContextLost(true),
+          onCameraFlipped: (flipped) => setCameraFlipped(flipped),
+          onTacticalView: (active) => setTactical(active),
+          onRenderFallback: (message, safe) => {
+            if (safe) setSettings((current) => ({ ...current, safeMode: true }));
+            setNotice(message);
+            setTimeout(() => setNotice(null), 9000);
+          },
+        },
+        detected,
+        DEFAULT_ARENA,
+        );
+      } catch (error) {
+        console.error("[ui] could not start the renderer", error);
+        setUnsupported(true);
+        return;
+      }
+
+      if (cancelled || !engine) {
+        engine?.dispose();
+        return;
+      }
+      const activeEngine = engine;
+      engineRef.current = activeEngine;
+      controller.start({ mode: "hotseat", difficulty: "easy", playerColor: "w", clockMinutes: null, startingFen: MENU_PRESENTATION_FEN });
+      activeEngine.setInteractive(false);
+      // Set before the first load so the chosen armies are the ones downloaded.
+      activeEngine.setArmySkins(initialArmies);
+      activeEngine.setMenuPresentation(true, false);
+      activeEngine.setReducedMotion(initialReducedMotion.current);
+      activeEngine.setSafeMode(initialRender.safeMode);
+      activeEngine.setBrightness(initialRender.brightness);
+      campaign.setResolutionPresenter((result) => activeEngine.playMissionResolution(result));
+      setGpu(activeEngine.getGpuSummary());
+      activeEngine.start();
+
+      await activeEngine.load();
+      if (cancelled) return;
+      setIntroPlaying(true);
+      await activeEngine.playIntro();
+      if (!cancelled) setIntroPlaying(false);
+    }).catch((error: unknown) => {
+      console.error("[ui] could not load the renderer", error);
+      if (!cancelled) setUnsupported(true);
+    });
+
+    return () => {
+      cancelled = true;
+      engineRef.current = null;
+      campaign.setResolutionPresenter(null);
+      engine?.dispose();
+    };
+  }, [campaign, controller, detected, initialArmies, initialRender]);
+
+  useEffect(() => campaign.connectGame(controller), [campaign, controller]);
+  useEffect(
+    () => () => {
+      campaign.dispose();
+      controller.dispose();
+    },
+    [campaign, controller],
+  );
+
+  useEffect(() => {
+    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = (): void => setReducedMotion(media.matches);
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
+  useEffect(() => {
+    engineRef.current?.setReducedMotion(reducedMotion);
+  }, [reducedMotion]);
+
+  // ----------------------------------------------------- audio unlock on input
+  useEffect(() => {
+    const unlock = (): void => {
+      void audio.unlock();
+    };
+    const unlockFromKeyboard = (event: KeyboardEvent): void => {
+      if (event.key === "Enter" || event.key === " ") unlock();
+    };
+    window.addEventListener("pointerdown", unlock, { once: true });
+    window.addEventListener("keydown", unlockFromKeyboard);
+    return () => {
+      window.removeEventListener("pointerdown", unlock);
+      window.removeEventListener("keydown", unlockFromKeyboard);
+    };
+  }, []);
+
+  // ----------------------------------------------------------- apply settings
+  //
+  // The muster (armies + battleground) is deliberately pushed only outside a
+  // live duel. The pickers are already locked in the interface while playing;
+  // this is the second lock, so no future caller can swap an army out from under
+  // figures that are mid-fight.
+  useEffect(() => {
+    const engine = engineRef.current;
+    if (!engine) return;
+    engine.setQuality(settings.quality);
+    if (phase !== "playing") {
+      engine.setArena(settings.arena);
+      engine.setArmySkins(settings.skins);
+    }
+    engine.setCaptureCinematics(settings.captureCinematics);
+    engine.setRotateBoard(settings.rotateBoard);
+    engine.setRankBadges(settings.rankBadges);
+    engine.setSafeMode(settings.safeMode);
+    engine.setBrightness(settings.brightness);
+    audio.setMuted(settings.muted);
+    saveRenderPrefs({ safeMode: settings.safeMode, brightness: settings.brightness });
+    saveArmyPrefs(settings.skins);
+  }, [settings, phase]);
+
+  useEffect(() => {
+    let scene: AudioScene = phase === "menu" ? "menu" : "battle";
+    const screen = campaignSnapshot.save?.screen;
+    if (phase === "campaign" && screen) {
+      if (promotionOpen) scene = "promotion";
+      else if (screen === "consequence") scene = campaignSnapshot.save?.lastConsequence?.victory ? "consequence-win" : "consequence-loss";
+      else if (screen === "chapter-complete") scene = "finale";
+      else if (screen === "battle") scene = "battle";
+      else if (screen === "gambit") scene = "gambit";
+      else if (screen === "formation") scene = "formation";
+      else if (screen === "briefing") scene = "briefing";
+      else if (screen === "hub") scene = "hub";
+      else scene = "prologue";
+    }
+    audio.setScene(scene);
+  }, [campaignSnapshot.save?.lastConsequence?.victory, campaignSnapshot.save?.screen, phase, promotionOpen]);
+
+  useEffect(() => {
+    if (promotionOpen) audio.campaignCue("promotion-open");
+  }, [promotionOpen]);
+
+  // ------------------------------------------------------------------ actions
+  const startMatch = useCallback(
+    (config: MatchConfig) => {
+      void audio.unlock();
+      audio.blip("press");
+      const engine = engineRef.current;
+      const showcase = config.mode === "demo";
+      engine?.setAttract(false);
+      engine?.setMenuPresentation(false);
+      engine?.setCampaignBattle(false);
+      engine?.setInteractive(true);
+      // A showcase brings its own framing (and its own crisp grade) with it.
+      engine?.setShowcase(showcase, showcaseCamera);
+      if (!showcase) {
+        engine?.setCameraPreset(config.mode === "ai" && config.playerColor === "b" ? "black" : "white");
+      }
+      controller.start({
+        mode: config.mode,
+        difficulty: config.difficulty,
+        playerColor: config.playerColor,
+        clockMinutes: config.clockMinutes,
+        demo: config.demo,
+      });
+      setPhase("playing");
+    },
+    [controller, showcaseCamera],
+  );
+
+  const startCampaignBattle = useCallback(() => {
+    const save = campaign.getSnapshot().save;
+    if (!save?.activeBattle) campaign.launchBattle();
+    const options = campaign.getBattleStartOptions();
+    const mission = campaign.getCurrentMission();
+    if (!options || !mission) return;
+    void audio.unlock();
+    audio.blip("press");
+    const engine = engineRef.current;
+    engine?.setAttract(false);
+    engine?.setMenuPresentation(false);
+    engine?.setCampaignBattle(true);
+    engine?.setShowcase(false);
+    engine?.setTacticalView(false);
+    engine?.setInteractive(true);
+    engine?.setCameraPreset("white");
+    if (["dawn", "dusk", "frost", "jungle"].includes(mission.battlefieldId)) {
+      engine?.setArena(mission.battlefieldId as ArenaTheme);
+      setSettings((current) => ({ ...current, arena: mission.battlefieldId as ArenaTheme }));
+    }
+    controller.start(options);
+    setPhase("campaign");
+  }, [campaign, controller]);
+
+  const beginCampaign = useCallback(
+    (difficulty: CampaignDifficulty) => {
+      controller.stop();
+      campaign.newCampaign(difficulty);
+      const engine = engineRef.current;
+      engine?.setAttract(false);
+      engine?.setMenuPresentation(false);
+      engine?.setCampaignBattle(false);
+      engine?.setShowcase(false);
+      engine?.setInteractive(false);
+      engine?.setCameraPreset("cinematic");
+      setPhase("campaign");
+    },
+    [campaign, controller],
+  );
+
+  const continueCampaign = useCallback(() => {
+    controller.stop();
+    if (!campaign.continueCampaign()) return;
+    setPhase("campaign");
+    const loaded = campaign.getSnapshot().save;
+    if (loaded?.screen === "battle" && loaded.activeBattle) startCampaignBattle();
+    else {
+      engineRef.current?.setMenuPresentation(false);
+      engineRef.current?.setCampaignBattle(false);
+      engineRef.current?.setShowcase(false);
+      engineRef.current?.setInteractive(false);
+      engineRef.current?.setCameraPreset("cinematic");
+    }
+  }, [campaign, controller, startCampaignBattle]);
+
+  const returnToMenu = useCallback(() => {
+    controller.start({ mode: "hotseat", difficulty: "easy", playerColor: "w", clockMinutes: null, startingFen: MENU_PRESENTATION_FEN });
+    const engine = engineRef.current;
+    engine?.setTacticalView(false);
+    engine?.setInteractive(false);
+    engine?.setShowcase(false);
+    engine?.setCampaignBattle(false);
+    engine?.setMenuPresentation(true);
+    setCinema(false);
+    setPhase("menu");
+  }, [controller]);
+
+  const returnCampaignToMenu = useCallback(() => {
+    controller.start({ mode: "hotseat", difficulty: "easy", playerColor: "w", clockMinutes: null, startingFen: MENU_PRESENTATION_FEN });
+    const engine = engineRef.current;
+    engine?.setTacticalView(false);
+    engine?.setInteractive(false);
+    engine?.setShowcase(false);
+    engine?.setCampaignBattle(false);
+    engine?.setMenuPresentation(true);
+    setPhase("menu");
+  }, [controller]);
+
+  useEffect(() => {
+    if (phase !== "campaign" || campaignSnapshot.save?.screen === "battle") return;
+    engineRef.current?.setInteractive(false);
+  }, [campaignSnapshot.save?.screen, phase]);
+
+  // -------------------------------------------------------- showcase controls
+  const handleTogglePause = useCallback(() => {
+    audio.blip("press");
+    controller.togglePaused();
+  }, [controller]);
+
+  const handleDemoSpeed = useCallback(
+    (speed: number) => {
+      audio.blip("press");
+      controller.setDemoSpeed(speed);
+    },
+    [controller],
+  );
+
+  const handleDemoLoop = useCallback(
+    (loop: boolean) => {
+      audio.blip("press");
+      controller.setDemoAutoRematch(loop);
+    },
+    [controller],
+  );
+
+  const handleDemoRestart = useCallback(() => {
+    audio.blip("press");
+    controller.restartDemo();
+  }, [controller]);
+
+  const handleShowcaseCamera = useCallback((mode: ShowcaseCamera) => {
+    audio.blip("press");
+    setShowcaseCamera(mode);
+    engineRef.current?.setShowcaseCamera(mode);
+  }, []);
+
+  const handleUndo = useCallback(() => {
+    if (controller.undo()) {
+      audio.blip("press");
+    } else {
+      audio.blip("deny");
+    }
+  }, [controller]);
+
+  const handleResign = useCallback(() => {
+    audio.blip("deny");
+    controller.resign();
+  }, [controller]);
+
+  const handleRematch = useCallback(() => {
+    const current = controller.getSnapshot();
+    // A showcase restarts through the controller so the two engine strengths,
+    // the pacing and the duel counter all survive — routing it through
+    // `startMatch` would quietly demote the duel to a game against the computer.
+    if (current.mode === "demo") {
+      audio.blip("press");
+      controller.restartDemo();
+      return;
+    }
+    startMatch({
+      mode: current.mode === "hotseat" ? "hotseat" : "ai",
+      difficulty: current.difficulty,
+      playerColor: current.playerColor,
+      clockMinutes: current.clock.enabled ? current.clock.initialMs / 60_000 : null,
+    });
+  }, [controller, startMatch]);
+
+  const handleFullscreen = useCallback(() => {
+    const element = document.documentElement;
+    if (document.fullscreenElement) void document.exitFullscreen();
+    else void element.requestFullscreen().catch((error) => console.warn("[ui] fullscreen refused", error));
+  }, []);
+
+  const handleCamera = useCallback((preset: CameraPreset) => {
+    audio.blip("press");
+    engineRef.current?.setCameraPreset(preset);
+  }, []);
+
+  const handleFlipCamera = useCallback(() => {
+    audio.blip("press");
+    engineRef.current?.flipCamera();
+  }, []);
+
+  const handleToggleTactical = useCallback(() => {
+    const engine = engineRef.current;
+    if (!engine) return;
+    audio.blip("press");
+    engine.setTacticalView(!engine.isTacticalView());
+  }, []);
+
+  /** War-table choice from the menu — armies and ground, before the first move. */
+  const handleMuster = useCallback((choice: MusterChoice) => {
+    audio.blip("press");
+    setSettings((current) =>
+      current.arena === choice.arena && current.skins.w === choice.skins.w && current.skins.b === choice.skins.b
+        ? current
+        : { ...current, arena: choice.arena, skins: choice.skins },
+    );
+  }, []);
+
+  /** Live per-side clock for the tally, read on its own tick. */
+  const getElapsed = useCallback(() => controller.getElapsed(), [controller]);
+
+  /** Live countdown on the queued showcase rematch, read on the dialog's tick. */
+  const getRematchRemaining = useCallback(() => controller.getDemoRematchRemaining(), [controller]);
+
+  /** Stop the showcase loop so the final position stays on the board. */
+  const holdShowcase = useCallback(() => {
+    audio.blip("press");
+    controller.setDemoAutoRematch(false);
+  }, [controller]);
+
+  const handlePreviewMove = useCallback((move: LedgerMove | null) => {
+    engineRef.current?.previewMove(move ? { from: move.from, to: move.to } : null);
+  }, []);
+
+  const handleBoardKeyDown = useCallback((event: ReactKeyboardEvent<HTMLCanvasElement>) => {
+    const engine = engineRef.current;
+    if (!engine) return;
+    if (promotionOpen) {
+      const promotionKeys: Partial<Record<string, PieceKind>> = { q: "q", r: "r", b: "b", n: "n" };
+      const choice = promotionKeys[event.key.toLowerCase()];
+      if (choice) {
+        event.preventDefault();
+        engine.chooseKeyboardPromotion(choice);
+        setBoardAnnouncement(`${PIECE_LABEL[choice]} chosen for promotion.`);
+      } else if (event.key === "Escape") {
+        // Backs out of the promotion: nothing is played, and the Pawn is in hand again.
+        event.preventDefault();
+        engine.cancelPromotion();
+        setBoardAnnouncement("Promotion cancelled. The pawn is selected again.");
+      }
+      return;
+    }
+
+    if (event.key === "Escape") {
+      engine.cancelKeyboardSelection();
+      setBoardAnnouncement("Selection cleared.");
+      return;
+    }
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      // The cursor is the board's own (SceneEngine): it goes on from the square the pointer was last over, and in a
+      // duel each player finds it where they left it.
+      const square = engine.keyboardCursor;
+      engine.activateKeyboardSquare();
+      const piece = controller.pieceAt(square);
+      const detail = piece ? `${piece.color === "w" ? "Aethelgard" : "Solforiz"} ${PIECE_LABEL[piece.kind]}` : "empty square";
+      setBoardAnnouncement(`${square.toUpperCase()}, ${detail}, activated.`);
+      return;
+    }
+
+    const direction = ({ ArrowLeft: "left", ArrowRight: "right", ArrowUp: "up", ArrowDown: "down" } as const)[event.key];
+    if (!direction) return;
+    event.preventDefault();
+    // It steps as the player sees the board: Up is away from them wherever the camera stands (boardInput.ts,
+    // stepCursor). The arrows used to move in White's directions, so every one was reversed when playing Black,
+    // after Flip board, and for the second player of a duel.
+    const next = engine.moveKeyboardCursor(direction);
+    const piece = controller.pieceAt(next);
+    setBoardAnnouncement(`${next.toUpperCase()}, ${piece ? `${piece.color === "w" ? "Aethelgard" : "Solforiz"} ${PIECE_LABEL[piece.kind]}` : "empty"}.`);
+  }, [controller, promotionOpen]);
+
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent): void => {
+      if (event.key === "Escape") setShowSettings(false);
+      const target = event.target as HTMLElement | null;
+      const typing = target ? /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName) || target.isContentEditable : false;
+      const campaignBattle = phase === "campaign" && campaignSnapshot.save?.screen === "battle";
+      if (typing || event.metaKey || event.ctrlKey || event.altKey || (phase !== "playing" && !campaignBattle)) return;
+      if (event.key === "f" || event.key === "F") handleFlipCamera();
+      if (event.key === "t" || event.key === "T") handleToggleTactical();
+      if (event.key === "c" || event.key === "C") setCinema((hidden) => !hidden);
+      if (event.key === " " && snapshot.mode === "demo") {
+        event.preventDefault();
+        controller.togglePaused();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [campaignSnapshot.save?.screen, controller, handleFlipCamera, handleToggleTactical, phase, snapshot.mode]);
+
+  const skipIntro = useCallback(() => {
+    engineRef.current?.skipIntro();
+  }, []);
+
+  // ------------------------------------------------------- showcase verdict
+  const showcaseFinished = phase === "playing" && snapshot.mode === "demo" && snapshot.status === "over";
+  const [verdictReady, setVerdictReady] = useState(false);
+
+  useEffect(() => {
+    if (!showcaseFinished) {
+      setVerdictReady(false);
+      return;
+    }
+    const timer = setTimeout(() => setVerdictReady(true), SHOWCASE_VERDICT_DELAY_MS);
+    return () => clearTimeout(timer);
+  }, [showcaseFinished]);
+
+  return (
+    <div
+      className="mc-root fixed inset-0 select-none overflow-hidden bg-[#05060a]"
+      data-arena={settings.arena}
+      data-phase={phase}
+      style={{ "--mc-vignette": phase === "menu" ? 0 : ARENA_LOOKS[settings.arena].screenVignette } as CSSProperties}
+    >
+      <div className="mc-canvas-wrap">
+        <canvas
+          ref={canvasRef}
+          tabIndex={phase === "playing" || (phase === "campaign" && campaignSnapshot.save?.screen === "battle") ? 0 : -1}
+          role="application"
+          aria-label="Crownfall chessboard"
+          aria-describedby="cf-board-instructions"
+          onKeyDown={handleBoardKeyDown}
+        />
+      </div>
+      <p id="cf-board-instructions" className="sr-only">Use arrow keys to explore the board. Press Enter or Space to select a piece and confirm a destination. Press Escape to clear selection. During promotion, press Q, R, B, or N, or Escape to take the pawn back in hand.</p>
+      <div className="sr-only" aria-live="polite" aria-atomic="true">{boardAnnouncement}</div>
+      <div className="mc-vignette" />
+
+      {/* The screen half of the check alarm — the 3D half is the red lamp over
+          the king itself. Keyed on the ply count so every checking move replays
+          the surge instead of only the first check of the game. It stays out in
+          the menu and the attract loop, where no player is under threat. */}
+      {phase === "playing" && snapshot.status === "playing" && snapshot.inCheck ? (
+        <div key={snapshot.moves.length} className="mc-check-wash" aria-hidden="true" />
+      ) : null}
+
+      {/* Overlay layer */}
+      <div className="pointer-events-none absolute inset-0">
+        <Suspense fallback={null}>
+        {phase === "loading" && !unsupported ? <LoadingScreen progress={progress} /> : null}
+
+        {unsupported ? (
+          <div className="pointer-events-auto absolute inset-0 z-40 flex items-center justify-center px-6 text-center">
+            <div className="mc-slate mc-goldleaf max-w-sm p-6">
+              <h2 className="mc-display text-lg text-[#f2e2bd]">The hall needs WebGL</h2>
+              <p className="mt-2 text-sm text-[#b7a88a]">
+                This browser or preview surface cannot open a 3D context. Open the game in a desktop or tablet browser
+                with hardware acceleration enabled.
+              </p>
+            </div>
+          </div>
+        ) : null}
+
+        {phase === "menu" && !introPlaying ? (
+          <MainMenu
+            onStart={startMatch}
+            onNewCampaign={beginCampaign}
+            onContinueCampaign={continueCampaign}
+            campaignSummary={campaignMenuSummary}
+            campaignError={campaignSnapshot.loadError ?? campaignSnapshot.saveError}
+            onOpenSettings={() => setShowSettings(true)}
+            muster={{ skins: settings.skins, arena: settings.arena }}
+            onMuster={handleMuster}
+          />
+        ) : null}
+
+        {phase === "campaign" ? (
+          <Suspense
+            fallback={(
+              <div className="cf-campaign-loading" role="status" aria-live="polite">
+                <span className="cf-spinner" aria-hidden="true" />
+                <span>Opening the chapter&hellip;</span>
+              </div>
+            )}
+          >
+            <CampaignExperience
+              controller={campaign}
+              snapshot={campaignSnapshot}
+              game={snapshot}
+              onLaunchBattle={startCampaignBattle}
+              onReturnToTitle={returnCampaignToMenu}
+              onOpenSettings={() => setShowSettings(true)}
+              onToggleTactical={handleToggleTactical}
+              tactical={tactical}
+              promotionOpen={promotionOpen}
+            />
+          </Suspense>
+        ) : null}
+
+        {phase === "playing" && !cinema ? (
+          <Hud
+            snapshot={snapshot}
+            muted={settings.muted}
+            fps={fps}
+            onNewGame={returnToMenu}
+            onUndo={handleUndo}
+            onResign={handleResign}
+            onToggleSound={() => setSettings((current) => ({ ...current, muted: !current.muted }))}
+            onFullscreen={handleFullscreen}
+            onSettings={() => setShowSettings(true)}
+            onCamera={handleCamera}
+            onFlipCamera={handleFlipCamera}
+            cameraFlipped={cameraFlipped}
+            tactical={tactical}
+            onToggleTactical={handleToggleTactical}
+            onPreviewMove={handlePreviewMove}
+            onTogglePause={handleTogglePause}
+            onDemoSpeed={handleDemoSpeed}
+            onDemoLoop={handleDemoLoop}
+            onDemoRestart={handleDemoRestart}
+            showcaseCamera={showcaseCamera}
+            onShowcaseCamera={handleShowcaseCamera}
+            onToggleCinema={() => setCinema(true)}
+            getElapsed={getElapsed}
+          />
+        ) : null}
+
+        {phase === "playing" && cinema ? (
+          <button
+            type="button"
+            className="mc-cinema-restore pointer-events-auto"
+            onClick={() => setCinema(false)}
+            title="Show the interface again (C)"
+            aria-label="Show the interface again"
+          >
+            <Clapperboard size={15} />
+          </button>
+        ) : null}
+
+        {promotionOpen ? (
+          <div className="mc-fade pointer-events-none absolute inset-x-0 top-1/2 flex justify-center">
+            <p className="mc-display mc-slate px-4 py-2 text-xs tracking-[0.28em] text-[#f0dfb6]">
+              CHOOSE THE NEW CHAMPION
+            </p>
+          </div>
+        ) : null}
+
+        {introPlaying ? (
+          <button
+            type="button"
+            onClick={skipIntro}
+            className="pointer-events-auto absolute inset-0 flex cursor-pointer items-end justify-center bg-transparent pb-10"
+          >
+            <span className="mc-display mc-pulse text-[0.68rem] tracking-[0.4em] text-[#c8ab74]">CLICK TO SKIP</span>
+          </button>
+        ) : null}
+
+        {showSettings ? (
+          <SettingsPanel
+            settings={settings}
+            autoDetected={detected}
+            gpu={gpu}
+            fps={fps}
+            matchInProgress={phase === "playing"}
+            onChange={setSettings}
+            onClose={() => setShowSettings(false)}
+          />
+        ) : null}
+
+        {/* The result dialog is shown for a showcase too, looping or not: the
+            viewer is told who won and given the way out. Only a clean capture
+            (cinema) keeps it off screen. */}
+        {phase === "playing" &&
+        !cinema &&
+        snapshot.status === "over" &&
+        snapshot.result &&
+        (snapshot.mode !== "demo" || verdictReady) ? (
+          <GameOverModal
+            result={snapshot.result}
+            pgn={snapshot.pgn}
+            playerColor={snapshot.playerColor}
+            versusComputer={snapshot.mode === "ai"}
+            moveCount={snapshot.history.length}
+            showcase={
+              snapshot.demo
+                ? {
+                    round: snapshot.demoRound,
+                    white: snapshot.demo.white,
+                    black: snapshot.demo.black,
+                    autoRematch: snapshot.demo.autoRematch,
+                    getRematchRemaining,
+                    onHold: holdShowcase,
+                  }
+                : null
+            }
+            onRematch={handleRematch}
+            onMenu={returnToMenu}
+          />
+        ) : null}
+
+        {snapshot.engineError ? (
+          <div role="alert" className="mc-slate pointer-events-auto absolute bottom-20 left-1/2 -translate-x-1/2 px-4 py-2 text-xs text-[#e4d3ac]">
+            {snapshot.engineError}
+            <button type="button" className="mc-btn ml-3" onClick={() => controller.setPaused(false)}>Retry computer</button>
+          </div>
+        ) : null}
+
+        {notice ? (
+          <div className="mc-fade mc-slate pointer-events-none absolute bottom-20 left-1/2 -translate-x-1/2 px-4 py-2 text-xs text-[#e4d3ac]">
+            {notice}
+          </div>
+        ) : null}
+
+        {contextLost ? (
+          <div className="pointer-events-auto absolute inset-0 z-40 flex items-center justify-center bg-black/80 px-6 text-center">
+            <div className="mc-slate mc-goldleaf max-w-sm p-6">
+              <h2 className="mc-display text-lg text-[#f2e2bd]">The hall went dark</h2>
+              <p className="mt-2 text-sm text-[#b7a88a]">
+                The graphics context was lost. Reload to relight the torches.
+              </p>
+              <button type="button" className="mc-btn mc-btn-primary mt-4 w-full" onClick={() => window.location.reload()}>
+                Reload
+              </button>
+            </div>
+          </div>
+        ) : null}
+        </Suspense>
+      </div>
+    </div>
+  );
+}
+
+function LoadingScreen({ progress }: { progress: number }) {
+  return (
+    <div className="mc-fade absolute inset-0 flex flex-col items-center justify-center gap-5 bg-[#05060a]/85 px-6">
+      <p className="mc-display text-[0.62rem] tracking-[0.5em] text-[#a89268]">MUSTERING THE NAMED PIECES</p>
+      <h1 className="mc-display mc-title-glow text-4xl text-[#f4e3bd]">CROWNFALL</h1>
+      <p className="mc-display -mt-4 text-[0.54rem] tracking-[0.3em] text-[#76664b]">A KING&apos;S GAMBIT STORY</p>
+      <div className="h-[3px] w-64 overflow-hidden rounded-full bg-[#2a251c]" role="progressbar" aria-label="Loading Crownfall" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(progress * 100)}>
+        <div
+          className="h-full rounded-full bg-gradient-to-r from-[#8a6522] via-[#f6dfa5] to-[#8a6522] transition-[width] duration-300"
+          style={{ width: `${Math.round(progress * 100)}%` }}
+        />
+      </div>
+      <p className="text-xs italic text-[#7d6f57]">Carving {Math.round(progress * 6)} of 6 figures…</p>
+    </div>
+  );
+}

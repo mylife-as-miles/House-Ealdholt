@@ -1,0 +1,254 @@
+{
+  "schema": 1,
+  "source": {
+    "repository": "https://github.com/SamG-Coder/BakedVoxelLighting",
+    "revision": "22f3dc468c951707ef46e07113758336e98257d5",
+    "license": "MIT",
+    "sourceHashes": {
+      "growth.js": "2830b28683f3fd202a9aa445d4ce908b1e512257812f2bdc722c0e9b6aa1aa87",
+      "plant-growth.js": "337670c8089a62647a05cb01e3d6fb65cedd7eb246ccaedadabc4c9d5f51cd8a",
+      "plant-appearance.js": "d701a0ebba70e9b78d6cb6444cf244b324c2996d5414ac532b2b148f47fa9252",
+      "wood-union.js": "d67a31f94c0aacd809108febd8fef7b3d8f3cd37a7885935c93d6a9a9ff7814d",
+      "plant-catalog.js": "807a6aabfd76c1114eb6b36ac0eb45a6e108f55ccfe4f8a9e16d3733bda66fe3"
+    }
+  },
+  "textures": {
+    "bark": {
+      "sourceSha256": "e4b034e3c7b03ce859a1fc984c95cdbb8196fa57d25d298b86d4f0cb34582014",
+      "sha256": "675286cbb16caaf790effd140e77f3c876b1d4d8999cee4c511f406c57665196",
+      "bytes": 785386
+    },
+    "bark-birch": {
+      "sourceSha256": "a39ffc18ae8d06d734f000a72f47cd2084d29dce25d375cdfa9397a8d9622012",
+      "sha256": "5d69ce56de8fbafd96c7f335f4deb7c8b4489593c87182646b0824431e8caa74",
+      "bytes": 655398
+    },
+    "bark-ash": {
+      "sourceSha256": "bbe6bae1a79fdb588e7bcb705facbf5d0e54e0253661f872784397b50cefefeb",
+      "sha256": "a9f611fa68ca42829ca15edf18582f35af3e7c00ef528b09f1af738ccd40b729",
+      "bytes": 747363
+    },
+    "oak": {
+      "sourceSha256": "59067f5df44618063999994b2228ce6034d8380cc42d981ba31f934bbf2ca940",
+      "sha256": "e5bc028617c40ed9f59230c2c532e58e34eba22267177889e95738e0e471bb51",
+      "bytes": 531589
+    },
+    "birch": {
+      "sourceSha256": "31b675b7fbe893f487445760f3d695c79185c593ad8fc9f79ed257d49ad23d36",
+      "sha256": "cf8a946858b62aa353ee45e2a23c65a4d56c6a54729e7f5e652e3015d7da2a57",
+      "bytes": 320882
+    },
+    "ash": {
+      "sourceSha256": "a19c458efc8c81c3506fa1f975c2eb8b60d7d35038d08ce59eda60dc57d25f49",
+      "sha256": "27a09e9ffca0b21c849d1898f8d2d48f3a939749f383d3aa8e255d6fdca80fb6",
+      "bytes": 381135
+    },
+    "pine": {
+      "sourceSha256": "64e563b6f3a372a1d3ab42460b5959b3c24dd7c529e374a5efd51a7bc8a03197",
+      "sha256": "90979c7be101e9d9e8cad83899fd03e10758622dd926c83636cbc81733d91180",
+      "bytes": 556577
+    },
+    "hazel": {
+      "sourceSha256": "e7b0969ce526497acfa68c6edeb360f1c8bfc6e68160544e76d84d136e3958bf",
+      "sha256": "5130e2e0ac83e1615edb53a21918ff12521cc65c8e04adcd87cc5dff3137372a",
+      "bytes": 440277
+    },
+    "bramble": {
+      "sourceSha256": "438ec037bc196e32de781723f8341760fbac4b337109d14a8e58b86161310b3e",
+      "sha256": "ded37a1e216af75de22fde0f97563cfc267900146cf3edc9733203bd6c206719",
+      "bytes": 413286
+    }
+  },
+  "files": {
+    "vegetation-desktop.glb": {
+      "bytes": 12105552,
+      "sha256": "c90f2e95c9c3a4c8404b0c92969d680300143653b85e9142173f3182bb4bc881"
+    },
+    "vegetation-quest.glb": {
+      "bytes": 4247216,
+      "sha256": "118106d70aff3d4e8f77753342f93c821ad673eb2ec23df2d9e25cf50acfddfe"
+    }
+  },
+  "prototypes": [
+    {
+      "id": "tree-oak-0",
+      "species": 0,
+      "age": 0,
+      "shrub": false,
+      "seed": 17,
+      "height": 7.290957182645798,
+      "canopyRadius": 2.721101616767098,
+      "highTriangles": 9984,
+      "lowTriangles": 1622,
+      "foliageTriangles": 746
+    },
+    {
+      "id": "tree-oak-1",
+      "species": 0,
+      "age": 1,
+      "shrub": false,
+      "seed": 30,
+      "height": 14.70606204867363,
+      "canopyRadius": 5.771577559106059,
+      "highTriangles": 27272,
+      "lowTriangles": 7260,
+      "foliageTriangles": 1066
+    },
+    {
+      "id": "tree-oak-2",
+      "species": 0,
+      "age": 2,
+      "shrub": false,
+      "seed": 43,
+      "height": 17.215330809354782,
+      "canopyRadius": 9.053982069438216,
+      "highTriangles": 42682,
+      "lowTriangles": 13150,
+      "foliageTriangles": 1146
+    },
+    {
+      "id": "tree-birch-0",
+      "species": 1,
+      "age": 0,
+      "shrub": false,
+      "seed": 88,
+      "height": 8.592271536588669,
+      "canopyRadius": 2.4450254600147847,
+      "highTriangles": 10532,
+      "lowTriangles": 1028,
+      "foliageTriangles": 906
+    },
+    {
+      "id": "tree-birch-1",
+      "species": 1,
+      "age": 1,
+      "shrub": false,
+      "seed": 101,
+      "height": 15.222060889005661,
+      "canopyRadius": 4.05321435508128,
+      "highTriangles": 21850,
+      "lowTriangles": 4476,
+      "foliageTriangles": 1226
+    },
+    {
+      "id": "tree-birch-2",
+      "species": 1,
+      "age": 2,
+      "shrub": false,
+      "seed": 114,
+      "height": 18.06154701113701,
+      "canopyRadius": 5.6392828453135735,
+      "highTriangles": 29552,
+      "lowTriangles": 7094,
+      "foliageTriangles": 1386
+    },
+    {
+      "id": "tree-ash-0",
+      "species": 2,
+      "age": 0,
+      "shrub": false,
+      "seed": 159,
+      "height": 7.51011535525322,
+      "canopyRadius": 2.4293654945507197,
+      "highTriangles": 10648,
+      "lowTriangles": 1888,
+      "foliageTriangles": 826
+    },
+    {
+      "id": "tree-ash-1",
+      "species": 2,
+      "age": 1,
+      "shrub": false,
+      "seed": 172,
+      "height": 14.312490195035934,
+      "canopyRadius": 3.6132934127171175,
+      "highTriangles": 24098,
+      "lowTriangles": 6006,
+      "foliageTriangles": 1146
+    },
+    {
+      "id": "tree-ash-2",
+      "species": 2,
+      "age": 2,
+      "shrub": false,
+      "seed": 185,
+      "height": 18.067547529935837,
+      "canopyRadius": 6.022004094267112,
+      "highTriangles": 35454,
+      "lowTriangles": 10230,
+      "foliageTriangles": 1226
+    },
+    {
+      "id": "tree-pine-0",
+      "species": 3,
+      "age": 0,
+      "shrub": false,
+      "seed": 230,
+      "height": 8.52924320101738,
+      "canopyRadius": 2.5398212758675207,
+      "highTriangles": 7112,
+      "lowTriangles": 1866,
+      "foliageTriangles": 494
+    },
+    {
+      "id": "tree-pine-1",
+      "species": 3,
+      "age": 1,
+      "shrub": false,
+      "seed": 243,
+      "height": 16.702133864164352,
+      "canopyRadius": 5.035129681642194,
+      "highTriangles": 19732,
+      "lowTriangles": 6306,
+      "foliageTriangles": 676
+    },
+    {
+      "id": "tree-pine-2",
+      "species": 3,
+      "age": 2,
+      "shrub": false,
+      "seed": 256,
+      "height": 20.570433348417282,
+      "canopyRadius": 8.518191143198802,
+      "highTriangles": 35288,
+      "lowTriangles": 12114,
+      "foliageTriangles": 754
+    },
+    {
+      "id": "hazel",
+      "species": 0,
+      "age": 0,
+      "shrub": true,
+      "seed": 301,
+      "height": 3.033214505761862,
+      "canopyRadius": 3.354300824420898,
+      "highTriangles": 3440,
+      "lowTriangles": 1680,
+      "foliageTriangles": 480
+    },
+    {
+      "id": "bramble",
+      "species": 1,
+      "age": 0,
+      "shrub": true,
+      "seed": 372,
+      "height": 1.6338517218828201,
+      "canopyRadius": 4.4845632122847565,
+      "highTriangles": 4422,
+      "lowTriangles": 1254,
+      "foliageTriangles": 660
+    },
+    {
+      "id": "elder",
+      "species": 2,
+      "age": 0,
+      "shrub": true,
+      "seed": 443,
+      "height": 2.656064972281456,
+      "canopyRadius": 3.581062077683944,
+      "highTriangles": 4300,
+      "lowTriangles": 2100,
+      "foliageTriangles": 600
+    }
+  ]
+}

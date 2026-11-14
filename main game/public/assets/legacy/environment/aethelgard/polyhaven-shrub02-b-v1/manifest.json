@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "assetId": "polyhaven-shrub02-b-pbr-v1",
+  "version": "crownfall-polyhaven-shrub02b-alpha8-draco-lossless-v1",
+  "license": "CC0-1.0",
+  "sourceUrl": "https://polyhaven.com/a/shrub_02",
+  "collection": "Verdant Trail",
+  "variant": "shrub_02_b",
+  "sourceGltfSha256": "99de0a70fe88ad414615cc8d8e020617c8512e2abfe08b911b153a6fcc40d93e",
+  "derivatives": [
+    {
+      "filename": "shrub02-b-desktop-1024-draco.glb",
+      "preset": "desktop-1024",
+      "bytes": 2161916,
+      "sha256": "dac726332205f4712a36caa571ce22c1d845148514b8adb13978476f24916958",
+      "textureDecodedRgbaMipBytesConservativeEstimate": 16777212,
+      "geometryGpuBytesConservativeDecodedU32Indices": 178104
+    },
+    {
+      "filename": "shrub02-b-native-512-draco.glb",
+      "preset": "native-512",
+      "bytes": 1023936,
+      "sha256": "9f50ad5da831f7fe1deaf22f4400e399a6f50a2a5aeac1229a2a4f98655afbd3",
+      "textureDecodedRgbaMipBytesConservativeEstimate": 4194300,
+      "geometryGpuBytesConservativeDecodedU32Indices": 178104
+    }
+  ],
+  "material": {
+    "alphaMode": "MASK",
+    "alphaCutoff": 0.5,
+    "doubleSided": true,
+    "embeddedPbr": true,
+    "occlusion": "ARM red"
+  },
+  "geometry": {
+    "vertices": 3600,
+    "triangles": 5242,
+    "losslessDraco": true,
+    "naturalHeightMetres": 1.506312655167515,
+    "sourceTrsPreserved": true
+  },
+  "limits": [
+    "Ordinary embedded image mip chains; source alpha coverage at far runtime mips still needs actual scene review.",
+    "Decoded GPU estimates exclude driver overhead and owned HLOD derivatives.",
+    "No terrain contact, collision, navigation or performance acceptance is granted by asset provenance."
+  ],
+  "authors": {
+    "Rico Cilliers": "All (original Poly Haven source)"
+  },
+  "sourceAlphaSha256": "5c2c31bac311051db77443e1780078403c2df0a832c40fe6ed7bcd982695cdf0"
+}

@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "source": {
+    "repository": "https://github.com/SamG-Coder/solstice",
+    "revision": "32e0279901379592fff06a785fcc0d45a7cbe17d",
+    "codeLicense": "MIT",
+    "fortModels": "Poly Haven CC0"
+  },
+  "files": {
+    "temple-ruins-desktop.glb": {
+      "bytes": 13701020,
+      "sha256": "794c5eda6281f8927d53f080f4e4ec6b1e70809e3d8b2585090bdf0ace50b96e"
+    },
+    "temple-ruins-quest.glb": {
+      "bytes": 9260432,
+      "sha256": "3846bfa968c5eecf4edffaffb0fbb6ba092635867776c3b9659a4e017832df7c"
+    },
+    "western-fort-quest.glb": {
+      "bytes": 2766416,
+      "sha256": "2f43bacd956b797ef8abf21e05a9ef4f327b1588f5323017798fc8af4a399712"
+    },
+    "western-fort-desktop.glb": {
+      "bytes": 6690312,
+      "sha256": "a4eefee51eef8ff4e6d66e61183c31a34fff71357cd8fe4c466efc77d76c7a5f"
+    }
+  }
+}

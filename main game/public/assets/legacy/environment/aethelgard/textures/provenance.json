@@ -1,0 +1,186 @@
+{
+  "licence": {
+    "spdx": "CC0-1.0",
+    "officialUrl": "https://polyhaven.com/license",
+    "legalCodeUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt",
+    "officialPageSha256": "46158a6b319ae8ef55acd18bd96d986c9261fb0cc8086124e97bcbefe779a623",
+    "legalCodeSha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+    "quote": "Our assets are all licensed as CC0",
+    "credit": "Powered by Poly Haven"
+  },
+  "assets": {
+    "earth": {
+      "assetId": "stony_dirt_path",
+      "name": "Stony Dirt Path",
+      "authors": {
+        "eye-candy.xyz": "All"
+      },
+      "sourceUrl": "https://polyhaven.com/a/stony_dirt_path",
+      "infoApi": "https://api.polyhaven.com/info/stony_dirt_path",
+      "filesApi": "https://api.polyhaven.com/files/stony_dirt_path",
+      "infoSha256": "7392b9ab7f742aecc63d1a0f10ceca1dd0b18c12cf84ba7b10aea6a76a880482",
+      "filesSha256": "e7df0b903d53fd11e11c905c7b4c9363bec9b2722977abca108ae87da9547023",
+      "apiDimensions": [
+        2170.0000762939453,
+        2170.0000762939453
+      ],
+      "sourceDownloads": {
+        "albedo": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/stony_dirt_path/stony_dirt_path_diff_1k.png",
+          "bytes": 5972446,
+          "md5": "9f42ac501ca132722c7f6866a5a81518",
+          "sha256": "a06614fbca9109d8dad2ccc68c4b4a4ddec4a0eedca851628b256044b51dd819"
+        },
+        "normal": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/stony_dirt_path/stony_dirt_path_nor_gl_1k.png",
+          "bytes": 6084952,
+          "md5": "eb40eb94c7a6f9200a3bd0dafbb1d347",
+          "sha256": "c3a508ccb665ab9ba4dc93a7ce565b44c2e9cd276ae4d60c7885bd1de860aed7"
+        },
+        "ao": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/stony_dirt_path/stony_dirt_path_ao_1k.png",
+          "bytes": 2620577,
+          "md5": "5bc616196355143acdeac5d9c4fb4d53",
+          "sha256": "62cf786840a26d45a0e8b03bcf6bffaf89a46cba0496a14d099340b9c108a1be"
+        },
+        "roughness": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/stony_dirt_path/stony_dirt_path_rough_1k.png",
+          "bytes": 2382192,
+          "md5": "4c5cc4b01707c52763cfc2a6a2336e09",
+          "sha256": "08903323679b6ecae4ce32f8b189a5c064d25225305f73e1019b5d3df187e6f1"
+        }
+      }
+    },
+    "rock": {
+      "assetId": "rock_surface",
+      "name": "Rock Surface",
+      "authors": {
+        "Amal Kumar": "All"
+      },
+      "sourceUrl": "https://polyhaven.com/a/rock_surface",
+      "infoApi": "https://api.polyhaven.com/info/rock_surface",
+      "filesApi": "https://api.polyhaven.com/files/rock_surface",
+      "infoSha256": "e9442c23eb2227593abef896eb98cf8627ef3c822bb858616963ba1faade8237",
+      "filesSha256": "ac6c8d68f4e943cf50b7dfcf9e34dfa893a4b2018f360f54231dc87e809ef2e2",
+      "apiDimensions": [
+        2000,
+        2000
+      ],
+      "sourceDownloads": {
+        "albedo": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/rock_surface/rock_surface_diff_1k.png",
+          "bytes": 5690986,
+          "md5": "a2cbe1ea8c241ecba920239bd8a26498",
+          "sha256": "3581fe9abecdf2e2afc0b7d64a7af4f05b4dc01f3058ac02b90f39977466df5c"
+        },
+        "normal": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/rock_surface/rock_surface_nor_gl_1k.png",
+          "bytes": 5865641,
+          "md5": "13b443535b42f9b6809ecf211bfe4bf0",
+          "sha256": "a9e14af4267b6c512987575bd1120f5fba5d6b1a178e4e58d3bab44be8895ffa"
+        },
+        "ao": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/rock_surface/rock_surface_ao_1k.png",
+          "bytes": 1802295,
+          "md5": "94d04bb6d3f52449c13955f741b314ee",
+          "sha256": "f698b752ff2ab978042e22c1ad869de620f1ecee3c2d2211be010964dfd66f06"
+        },
+        "roughness": {
+          "url": "https://dl.polyhaven.org/file/ph-assets/Textures/png/1k/rock_surface/rock_surface_rough_1k.png",
+          "bytes": 1861150,
+          "md5": "a788943087cf8fc1be659f5f20519bed",
+          "sha256": "01061a50b9f356580966f4d2c124c6c688bd11c27fd945be00e78c9712056e09"
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "file": "earth-desktop-albedo-1024.webp",
+      "size": 1024,
+      "bytes": 1679790,
+      "sha256": "033e09d1f83e6ad2a8366eab911152d15cb6bd69aafb9aeddf33b87e28b4cb3e"
+    },
+    {
+      "file": "earth-desktop-normal-1024.png",
+      "size": 1024,
+      "bytes": 3093461,
+      "sha256": "503189d8eedf043d93f47456f7f2a792839055c6ae960adc150df10def6891a6"
+    },
+    {
+      "file": "earth-desktop-orm-1024.png",
+      "size": 1024,
+      "bytes": 1662474,
+      "sha256": "b24c8a3046b4544b2f8c2e9d006abf5326320b45ca4b239d87ec11a8472746d9"
+    },
+    {
+      "file": "earth-quest-albedo-512.webp",
+      "size": 512,
+      "bytes": 492778,
+      "sha256": "f7a92c25de5dab7f577f19e65c8269c0f9030da847b5bba591867e37fe2bf822"
+    },
+    {
+      "file": "earth-quest-normal-256.png",
+      "size": 256,
+      "bytes": 155141,
+      "sha256": "a94c4895b00e21e538961a429d7bb1c73bda788a8ca71ca9fc91dd808b4f1ff8"
+    },
+    {
+      "file": "earth-quest-orm-256.png",
+      "size": 256,
+      "bytes": 96434,
+      "sha256": "7277c2214960b7a3eed7157eb5bff310ebc8c25674ab001ff04dc71fd0b6de54"
+    },
+    {
+      "file": "rock-desktop-albedo-1024.webp",
+      "size": 1024,
+      "bytes": 1477216,
+      "sha256": "c43199ea21f77e20df58106268f0abe0f849620f558c8688ddb6086f492b823a"
+    },
+    {
+      "file": "rock-desktop-normal-1024.png",
+      "size": 1024,
+      "bytes": 2569752,
+      "sha256": "9dd82b130a701c7f8377a3669979a8e9986f67792d9af4cee32a577ef0b6e525"
+    },
+    {
+      "file": "rock-desktop-orm-1024.png",
+      "size": 1024,
+      "bytes": 1882282,
+      "sha256": "8d1c6b42711db5c998d47123c5674312ea72790e16c63cf70d662dcea23ff4ce"
+    },
+    {
+      "file": "rock-quest-albedo-512.webp",
+      "size": 512,
+      "bytes": 333278,
+      "sha256": "d71ea5a91fa26c85970e713be50639c3b6c691d4cd8620ec40148545995e521f"
+    },
+    {
+      "file": "rock-quest-normal-256.png",
+      "size": 256,
+      "bytes": 138450,
+      "sha256": "d706ed80b4fbd52530d9bc132bc29407b0d33992625b62fe4198076c4463db1e"
+    },
+    {
+      "file": "rock-quest-orm-256.png",
+      "size": 256,
+      "bytes": 105653,
+      "sha256": "60b1d777c90974a8982d8f3a17d2739a53d12ff7a6c64fa4f891d400de0c5f93"
+    },
+    {
+      "file": "CC0-1.0.txt",
+      "bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "file": "manifest.json",
+      "bytes": 4352,
+      "sha256": "bf99249bcfd353dd98fa7d56b5d8af13d2a427de45c9827fdbf6634890460ed7"
+    },
+    {
+      "file": "SOURCES.md",
+      "bytes": 1403,
+      "sha256": "4912268b1f759c107f20ddec864b867d67af5e6c1f5c3c343bce5db26a2fdcf0"
+    }
+  ]
+}

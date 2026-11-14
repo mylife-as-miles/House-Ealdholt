@@ -1,0 +1,525 @@
+{
+ "archetype": "adult-male",
+ "build": {
+  "seconds": 8.2,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.4,
+   "lod": 0.6,
+   "shape": 3.1,
+   "texture": 4
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-male-v1.glb",
+ "envelopeGate": {
+  "clips": 12,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0225,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.272,
+ "envelopes": {
+  "carry_sack_walk": {
+   "max": [
+    0.454,
+    1.812,
+    0.882
+   ],
+   "min": [
+    -0.641,
+    -0.399,
+    -0.867
+   ]
+  },
+  "idle": {
+   "max": [
+    0.388,
+    1.788,
+    0.46
+   ],
+   "min": [
+    -0.408,
+    -0.174,
+    -0.46
+   ]
+  },
+  "sit": {
+   "max": [
+    0.479,
+    1.341,
+    0.379
+   ],
+   "min": [
+    -0.425,
+    -0.174,
+    -0.804
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.726,
+    1.844,
+    0.848
+   ],
+   "min": [
+    -0.632,
+    -0.352,
+    -1.067
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.736,
+    1.859,
+    0.85
+   ],
+   "min": [
+    -0.68,
+    -0.341,
+    -1.07
+   ]
+  },
+  "talk": {
+   "max": [
+    0.691,
+    1.805,
+    0.6
+   ],
+   "min": [
+    -0.517,
+    -0.174,
+    -0.46
+   ]
+  },
+  "walk_c": {
+   "max": [
+    0.536,
+    1.812,
+    0.869
+   ],
+   "min": [
+    -0.486,
+    -0.386,
+    -0.883
+   ]
+  },
+  "walk_c_start": {
+   "max": [
+    0.505,
+    1.808,
+    0.874
+   ],
+   "min": [
+    -0.462,
+    -0.344,
+    -0.573
+   ]
+  },
+  "walk_c_stop": {
+   "max": [
+    0.529,
+    1.802,
+    0.765
+   ],
+   "min": [
+    -0.457,
+    -0.256,
+    -0.621
+   ]
+  },
+  "work_tend_mill": {
+   "max": [
+    0.618,
+    1.966,
+    0.821
+   ],
+   "min": [
+    -0.521,
+    -0.321,
+    -0.646
+   ]
+  },
+  "work_tend_mill_enter": {
+   "max": [
+    0.39,
+    1.868,
+    0.532
+   ],
+   "min": [
+    -0.353,
+    -0.179,
+    -0.506
+   ]
+  },
+  "work_tend_mill_exit": {
+   "max": [
+    0.389,
+    1.868,
+    0.527
+   ],
+   "min": [
+    -0.353,
+    -0.179,
+    -0.501
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -1.1,
+   "r": -0.99
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.213,
+  "lipGapMm": {
+   "aa": 15.2,
+   "full": 18.7,
+   "rest": 0.4
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.62,
+   "r": 7.62
+  },
+  "upperLidClosed": 0.531,
+  "visibilityPasses": [
+   {
+    "l": 12,
+    "r": 53,
+    "upper": 0.482
+   },
+   {
+    "l": 0,
+    "r": 23,
+    "upper": 0.482
+   },
+   {
+    "l": 0,
+    "r": 21,
+    "upper": 0.482
+   },
+   {
+    "l": 0,
+    "r": 24,
+    "upper": 0.506
+   },
+   {
+    "l": 0,
+    "r": 25,
+    "upper": 0.506
+   },
+   {
+    "l": 0,
+    "r": 15,
+    "upper": 0.506
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.531
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "major",
+ "file": "ealdholt-miller.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.234,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   908,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3417,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "greying-black",
+  "facialHair": "short-beard",
+  "style": "short-tousled"
+ },
+ "headwear": "felt-cap",
+ "headwearGate": {
+  "headwear": "felt-cap",
+  "pass": true,
+  "shells": {
+   "Cap": {
+    "faces": 298,
+    "islands": 1,
+    "maxReachRadii": 1.017,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#d8cdb5",
+  "shape": "plain",
+  "tone": "main"
+ },
+ "householdId": "ealdholt-mill-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.54,
+  "coreMaxCm": 1.54,
+  "coreMeanCm": 0.55,
+  "coreWorstJoint": "calf_l"
+ },
+ "label": "Miller",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 245716,
+  "fileMiB": 0.234,
+  "headTriangles": 908,
+  "images": [
+   {
+    "bytes": 35230,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3417,
+  "vertices": 3222
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-adult-male-v1",
+  "rate": 1.05,
+  "roleClips": [
+   "work_tend_mill",
+   "carry_sack_walk"
+  ],
+  "talk": "talk",
+  "walk": "walk_c"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "standard",
+  "kit": "miller-smock",
+  "palette": {
+   "accent": "russet",
+   "main": "undyed-cream",
+   "secondary": "undyed-brown"
+  },
+  "wear": "flour-dusted"
+ },
+ "placementScale": 0.9644,
+ "presentation": {
+  "clips": {
+   "carry_sack_walk": {
+    "held": [
+     {
+      "bone": "spine_03",
+      "kit": "farm",
+      "matrix": [
+       0.9984,
+       0.0557,
+       0.0061,
+       0,
+       -0.0176,
+       0.209,
+       0.9778,
+       0,
+       0.0532,
+       -0.9763,
+       0.2097,
+       0,
+       -0.156,
+       0.3276,
+       0.098,
+       1
+      ],
+      "node": "prop_sack",
+      "prop": "sack"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_tend_mill": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.55,
+       1
+      ],
+      "node": "prop_mill_hopper",
+      "prop": "mill-hopper"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "farm": "crowd-v1/props/crowd-props-farm-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "sack",
+   "kit": "farm",
+   "socket": "shoulder_r",
+   "source": "project-original"
+  },
+  {
+   "id": "mill-hopper",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 245716,
+  "sha256": "3149ed4250db57bcfaca6ed2e6da68f12bbf8ce2e22ca1a3b7dac651d9aa4814"
+ },
+ "recipeSha256": "204d325f369622756cc771449732fb0abdb94dcea30b5cc8b1d685229a96dc39",
+ "referenceStatureCm": 173.5,
+ "residentId": "ealdholt-miller",
+ "restRadiusMetres": 0.602,
+ "roleId": "miller",
+ "statureCm": 167.2,
+ "status": "working-placeholder"
+}

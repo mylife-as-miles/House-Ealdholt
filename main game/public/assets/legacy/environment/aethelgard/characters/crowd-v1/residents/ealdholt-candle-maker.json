@@ -1,0 +1,581 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 9.1,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.4,
+   "shape": 3.6,
+   "texture": 4.9
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 12,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0167,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.191,
+ "envelopes": {
+  "carry_basket_walk": {
+   "max": [
+    0.664,
+    1.708,
+    0.869
+   ],
+   "min": [
+    -0.661,
+    -0.416,
+    -1.026
+   ]
+  },
+  "idle": {
+   "max": [
+    0.553,
+    1.66,
+    0.713
+   ],
+   "min": [
+    -0.518,
+    -0.192,
+    -0.648
+   ]
+  },
+  "sit": {
+   "max": [
+    0.579,
+    1.272,
+    0.458
+   ],
+   "min": [
+    -0.575,
+    -0.482,
+    -1.055
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.738,
+    1.74,
+    1.224
+   ],
+   "min": [
+    -0.707,
+    -0.82,
+    -1.369
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.738,
+    1.761,
+    1.227
+   ],
+   "min": [
+    -0.708,
+    -0.802,
+    -1.373
+   ]
+  },
+  "talk": {
+   "max": [
+    0.554,
+    1.687,
+    0.712
+   ],
+   "min": [
+    -0.519,
+    -0.192,
+    -0.648
+   ]
+  },
+  "walk": {
+   "max": [
+    0.664,
+    1.702,
+    0.869
+   ],
+   "min": [
+    -0.661,
+    -0.416,
+    -1.026
+   ]
+  },
+  "walk_start": {
+   "max": [
+    0.605,
+    1.694,
+    0.887
+   ],
+   "min": [
+    -0.644,
+    -0.269,
+    -0.861
+   ]
+  },
+  "walk_stop": {
+   "max": [
+    0.602,
+    1.691,
+    0.816
+   ],
+   "min": [
+    -0.639,
+    -0.363,
+    -0.932
+   ]
+  },
+  "work_dip_candles": {
+   "max": [
+    0.644,
+    1.721,
+    0.877
+   ],
+   "min": [
+    -0.647,
+    -0.389,
+    -0.72
+   ]
+  },
+  "work_dip_candles_enter": {
+   "max": [
+    0.604,
+    1.755,
+    0.833
+   ],
+   "min": [
+    -0.604,
+    -0.276,
+    -0.812
+   ]
+  },
+  "work_dip_candles_exit": {
+   "max": [
+    0.604,
+    1.755,
+    0.833
+   ],
+   "min": [
+    -0.604,
+    -0.276,
+    -0.812
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.62,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.236,
+  "lipGapMm": {
+   "aa": 16.3,
+   "full": 19.9,
+   "rest": 0.8
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 9.13,
+   "r": 9.23
+  },
+  "upperLidClosed": 0.558,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.558
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-candle-maker.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.221,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   918,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3191,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "black",
+  "facialHair": "none",
+  "style": "long-braid"
+ },
+ "headwear": "kerchief",
+ "headwearGate": {
+  "headwear": "kerchief",
+  "pass": true,
+  "shells": {
+   "Kerchief": {
+    "faces": 269,
+    "islands": 1,
+    "maxReachRadii": 0.947,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#963a2e",
+  "shape": "knot-back",
+  "tone": "accent"
+ },
+ "householdId": "ealdholt-cooper-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.16,
+  "coreMaxCm": 1.16,
+  "coreMeanCm": 0.66,
+  "coreWorstJoint": "calf_l"
+ },
+ "label": "Candle maker",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 231608,
+  "fileMiB": 0.221,
+  "headTriangles": 918,
+  "images": [
+   {
+    "bytes": 28434,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3191,
+  "vertices": 3112
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 1.004,
+  "roleClips": [
+   "work_dip_candles",
+   "carry_basket_walk"
+  ],
+  "talk": "talk",
+  "walk": "walk"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "overgown",
+  "kit": "workshop-apron-f",
+  "palette": {
+   "accent": "madder-red",
+   "main": "russet",
+   "secondary": "undyed-cream"
+  },
+  "wear": "stained"
+ },
+ "placementScale": 0.9044,
+ "presentation": {
+  "clips": {
+   "carry_basket_walk": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.7116,
+       -0.3841,
+       0.4397,
+       0,
+       0.5259,
+       -0.1203,
+       0.7459,
+       0,
+       -0.2538,
+       0.8278,
+       0.3124,
+       0,
+       0.0519,
+       0.0759,
+       0.0796,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_dip_candles": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       -0.6451,
+       0.0521,
+       0.6545,
+       0,
+       0.4164,
+       -0.677,
+       0.4643,
+       0,
+       0.5076,
+       0.6215,
+       0.4508,
+       0,
+       -0.1538,
+       0.0779,
+       0.1429,
+       1
+      ],
+      "node": "prop_candle_rod",
+      "prop": "candle-rod"
+     }
+    ],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.4142,
+       1
+      ],
+      "node": "prop_tallow_pot",
+      "prop": "tallow-pot"
+     }
+    ]
+   },
+   "work_dip_candles_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       -0.6451,
+       0.0521,
+       0.6545,
+       0,
+       0.4164,
+       -0.677,
+       0.4643,
+       0,
+       0.5076,
+       0.6215,
+       0.4508,
+       0,
+       -0.1538,
+       0.0779,
+       0.1429,
+       1
+      ],
+      "node": "prop_candle_rod",
+      "prop": "candle-rod"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_dip_candles_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       -0.6451,
+       0.0521,
+       0.6545,
+       0,
+       0.4164,
+       -0.677,
+       0.4643,
+       0,
+       0.5076,
+       0.6215,
+       0.4508,
+       0,
+       -0.1538,
+       0.0779,
+       0.1429,
+       1
+      ],
+      "node": "prop_candle_rod",
+      "prop": "candle-rod"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "craft": "crowd-v1/props/crowd-props-craft-v1.glb",
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "candle-rod",
+   "kit": "craft",
+   "socket": "both-hands",
+   "source": "project-original"
+  },
+  {
+   "id": "tallow-pot",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 231608,
+  "sha256": "20b31ed175e41546f660d6a7b47c5e7ef605bf8796097ff88958850ae9383a7a"
+ },
+ "recipeSha256": "e38f0c788bca67b982e3e3bbd29ef32c81a5e17d7abb4fcb826d3ea1e8cd3a93",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-candle-maker",
+ "restRadiusMetres": 0.521,
+ "roleId": "candle-maker",
+ "statureCm": 145.6,
+ "status": "working-placeholder"
+}

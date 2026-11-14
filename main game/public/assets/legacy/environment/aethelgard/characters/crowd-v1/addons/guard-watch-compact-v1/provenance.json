@@ -1,0 +1,143 @@
+{
+  "schemaVersion": 1,
+  "generator": "scripts/characters/build_guard_watch_addon.py",
+  "generatorSha256": "4f1f98de3159008629192bbc9afceaccdb7109e29d23af3da062d39e6f4f106a",
+  "keyframesSha256": "c664605cf233dabf1a67b462d631c35201ba8e65accebbb064138e9e05cc44d3",
+  "authoringHelpers": {
+    "motion.py": "30da633bdc74499f28216db8ace0dcf5a424083c8fb462bc6c066ddbad07ad58",
+    "transitions.py": "84c9fb2f5e5804a116fcbba5ac3da48d92de3bae14799fd4484121287dff55e5",
+    "locomotion.py": "438330d4c2933d6c28a7546b841493f8ff3ce8b7122243fcd0615f679bc887ec",
+    "glb_prune.py": "8a92eb5ee13c0a90ac7f3f17d37965a520dc476ac12ad75ac40319c7f97317f9",
+    "motion_library_export.py": "be71c9eeea8afe0eee80a602fb1dd6e0aaeaf0d06cfb14078a10c13539e2062e",
+    "motion_household.py": "11b3e8931f1d79a46ffe818dccfe8947d604b7b0850a167d4ba7446dc11fe4e9"
+  },
+  "sources": {
+    "crowd-v1/clips/crowd-clips-adult-male-v1.glb": "ecbb7f4646cb008ea06b02fa46029948e37ff826dd00bdcb6cac021a70d124e5",
+    "crowd-v1/residents/ealdholt-garrison-spearman.glb": "faee99f94a1b49f022dd8363945ea3d91c9db5536adcedecd035fb0246ffbce5",
+    "crowd-v1/residents/ealdholt-garrison-spearman.json": "36f23cef1d2ec6be40570f000df30c41303f48de4bf5b96f137561b95ce7f762",
+    "crowd-v1/props/crowd-props-guard-v1.glb": "d9c0148847ef17fa1479e2339224dacce8e7833d3f2ec199dd6c312abfe33ccd"
+  },
+  "output": {
+    "file": "guard-watch-adult-male-compact-v1.glb",
+    "sha256": "3bcd07e9f86a1574e3ff139a37730f43fdbc91cff8f5e7e3a943ab612071cb0a",
+    "bytes": 98804
+  },
+  "clips": [
+    "guard_stand_watch_d_compact_enter_v1",
+    "guard_stand_watch_d_compact_exit_v1"
+  ],
+  "helper": "guard_watch_spear_pose",
+  "loopTransportTracks": {
+    "guard_patrol_walk": "guard_patrol_walk_spear_pose_v1",
+    "guard_stand_watch_d": "guard_stand_watch_d_spear_pose_v1"
+  },
+  "handoff": {
+    "leftClosedByPhase": 0.32,
+    "rightReleaseAfterPhase": 0.34
+  },
+  "soles": {
+    "l": [
+      {
+        "bone": "foot_l",
+        "point": [
+          -0.0021213055588304996,
+          0.0035072173923254013,
+          0.09096220880746841
+        ]
+      },
+      {
+        "bone": "foot_l",
+        "point": [
+          -0.0001968173310160637,
+          0.1507275402545929,
+          0.018141284584999084
+        ]
+      },
+      {
+        "bone": "toes_l",
+        "point": [
+          0.014588342979550362,
+          0.05981430411338806,
+          0.020265989005565643
+        ]
+      }
+    ],
+    "r": [
+      {
+        "bone": "foot_r",
+        "point": [
+          -0.009128215722739697,
+          0.0023344201035797596,
+          0.09166451543569565
+        ]
+      },
+      {
+        "bone": "foot_r",
+        "point": [
+          0.0001968173310160637,
+          0.1507275402545929,
+          0.018141284584999084
+        ]
+      },
+      {
+        "bone": "toes_r",
+        "point": [
+          -0.0034990981221199036,
+          0.058707620948553085,
+          0.026079220697283745
+        ]
+      }
+    ]
+  },
+  "grips": {
+    "r": [
+      0.5777,
+      -0.0509,
+      -0.8147,
+      0,
+      0.8146,
+      0.0996,
+      0.5714,
+      0,
+      0.0521,
+      -0.9937,
+      0.099,
+      0,
+      0.466,
+      0.1512,
+      0.3537,
+      1
+    ],
+    "l": [
+      0.5777,
+      0.0509,
+      0.8147,
+      0,
+      -0.8146,
+      0.0996,
+      0.5714,
+      0,
+      -0.0521,
+      -0.9937,
+      0.099,
+      0,
+      0.202,
+      0.0695,
+      -0.1148,
+      1
+    ]
+  },
+  "fromClip": "guard_patrol_walk",
+  "fromSeconds": 0,
+  "toClip": "guard_stand_watch_d",
+  "toSeconds": 0,
+  "seconds": 1.2,
+  "fps": 30,
+  "props": "one original licensed guard-kit spear, explicit right-to-left handoff",
+  "sourceLicences": [
+    "CC0 MakeHuman geometry",
+    "CC BY 4.0 100STYLE (existing published attribution)",
+    "Crownfall original guard keyframes and spear"
+  ],
+  "qualification": "unqualified: full skinned body, actual held kit, floor, contact and blend measurement still required"
+}

@@ -1,0 +1,1141 @@
+{
+ "frames": "see scripts/characters/lib/crowd_props.py: hand props have their origin at the grip; origin 'contract' props and every part node (prop_<id>_<part>, matching a clip grip's `part`) are modelled in the clip contract frame (kit alignment identity); workplace props stand on their base with the resident on their +Y side (glTF -Z); goods (`placedWith`) share their workplace prop's base frame; carry goods (`replaces`) take the replaced prop's grip",
+ "kits": {
+  "craft": {
+   "bytes": 70536,
+   "file": "crowd-props-craft-v1.glb",
+   "props": {
+    "awl": {
+     "node": "prop_awl",
+     "origin": "grip",
+     "sizeMetres": [
+      0.038,
+      0.038,
+      0.132
+     ],
+     "source": "project-original",
+     "triangles": 76,
+     "trianglesBudget": 60,
+     "withinBudget": false
+    },
+    "axe": {
+     "node": "prop_axe",
+     "origin": "grip",
+     "sizeMetres": [
+      0.174,
+      0.032,
+      0.8
+     ],
+     "source": "project-original",
+     "triangles": 32,
+     "trianglesBudget": 160,
+     "withinBudget": true
+    },
+    "candle-rod": {
+     "node": "prop_candle_rod",
+     "origin": "grip",
+     "sizeMetres": [
+      0.8,
+      0.021,
+      0.23
+     ],
+     "source": "project-original",
+     "triangles": 112,
+     "trianglesBudget": 140,
+     "withinBudget": true
+    },
+    "chisel": {
+     "node": "prop_chisel",
+     "origin": "grip",
+     "sizeMetres": [
+      0.021,
+      0.024,
+      0.22
+     ],
+     "source": "project-original",
+     "triangles": 32,
+     "trianglesBudget": 60,
+     "withinBudget": true
+    },
+    "cleaver": {
+     "node": "prop_cleaver",
+     "origin": "grip",
+     "sizeMetres": [
+      0.117,
+      0.028,
+      0.3
+     ],
+     "source": "project-original",
+     "triangles": 32,
+     "trianglesBudget": 80,
+     "withinBudget": true
+    },
+    "hammer-small": {
+     "node": "prop_hammer_small",
+     "origin": "contract",
+     "sizeMetres": [
+      0.024,
+      0.3,
+      0.098
+     ],
+     "source": "polyhaven:cross_pein_hammer",
+     "triangles": 160,
+     "trianglesBudget": 160,
+     "withinBudget": true
+    },
+    "hide-bundle": {
+     "node": "prop_hide_bundle",
+     "origin": "grip",
+     "replaces": "linen-bundle",
+     "sizeMetres": [
+      0.4,
+      0.216,
+      0.205
+     ],
+     "source": "project-original",
+     "triangles": 184,
+     "trianglesBudget": 200,
+     "withinBudget": true
+    },
+    "hide-scraper": {
+     "node": "prop_hide_scraper",
+     "origin": "contract",
+     "sizeMetres": [
+      0.11,
+      0.428,
+      0.076
+     ],
+     "source": "project-original",
+     "triangles": 60,
+     "trianglesBudget": 100,
+     "withinBudget": true
+    },
+    "ladle": {
+     "node": "prop_ladle",
+     "origin": "grip",
+     "sizeMetres": [
+      0.1,
+      0.024,
+      1.05
+     ],
+     "source": "project-original",
+     "triangles": 32,
+     "trianglesBudget": 90,
+     "withinBudget": true
+    },
+    "mallet": {
+     "node": "prop_mallet",
+     "origin": "grip",
+     "sizeMetres": [
+      0.16,
+      0.1,
+      0.39
+     ],
+     "source": "project-original",
+     "triangles": 48,
+     "trianglesBudget": 200,
+     "withinBudget": true
+    },
+    "oven-peel": {
+     "node": "prop_oven_peel",
+     "origin": "grip",
+     "sizeMetres": [
+      0.32,
+      0.028,
+      1.46
+     ],
+     "source": "project-original",
+     "triangles": 32,
+     "trianglesBudget": 80,
+     "withinBudget": true
+    },
+    "plane": {
+     "node": "prop_plane",
+     "origin": "contract",
+     "sizeMetres": [
+      0.065,
+      0.26,
+      0.081
+     ],
+     "source": "project-original",
+     "triangles": 56,
+     "trianglesBudget": 140,
+     "withinBudget": true
+    },
+    "saw": {
+     "node": "prop_saw",
+     "origin": "contract",
+     "sizeMetres": [
+      0.03,
+      0.121,
+      0.675
+     ],
+     "source": "project-original",
+     "triangles": 36,
+     "trianglesBudget": 120,
+     "withinBudget": true
+    }
+   }
+  },
+  "everyday": {
+   "bytes": 104824,
+   "file": "crowd-props-everyday-v1.glb",
+   "props": {
+    "basket": {
+     "node": "prop_basket",
+     "origin": "grip",
+     "sizeMetres": [
+      0.392,
+      0.392,
+      0.327
+     ],
+     "source": "polyhaven:wicker_basket_01 (albedo) on a project-original shape",
+     "triangles": 204,
+     "trianglesBudget": 400,
+     "withinBudget": true
+    },
+    "bowl": {
+     "node": "prop_bowl",
+     "origin": "base",
+     "sizeMetres": [
+      0.265,
+      0.266,
+      0.08
+     ],
+     "source": "polyhaven:wooden_bowl_01",
+     "triangles": 200,
+     "trianglesBudget": 200,
+     "withinBudget": true
+    },
+    "broom": {
+     "node": "prop_broom",
+     "origin": "grip",
+     "sizeMetres": [
+      0.18,
+      0.18,
+      1.65
+     ],
+     "source": "project-original",
+     "triangles": 48,
+     "trianglesBudget": 200,
+     "withinBudget": true
+    },
+    "bucket": {
+     "node": "prop_bucket",
+     "origin": "grip",
+     "sizeMetres": [
+      0.231,
+      0.222,
+      0.358
+     ],
+     "source": "polyhaven:wooden_bucket_01",
+     "triangles": 300,
+     "trianglesBudget": 300,
+     "withinBudget": true
+    },
+    "crutch": {
+     "node": "prop_crutch",
+     "origin": "grip",
+     "sizeMetres": [
+      0.18,
+      0.04,
+      1.485
+     ],
+     "source": "project-original",
+     "triangles": 48,
+     "trianglesBudget": 90,
+     "withinBudget": true
+    },
+    "kindling-bundle": {
+     "node": "prop_kindling_bundle",
+     "origin": "grip",
+     "sizeMetres": [
+      0.152,
+      0.152,
+      0.6
+     ],
+     "source": "project-original",
+     "triangles": 144,
+     "trianglesBudget": 200,
+     "withinBudget": true
+    },
+    "pebbles": {
+     "node": "prop_pebbles",
+     "origin": "grip",
+     "sizeMetres": [
+      0.067,
+      0.036,
+      0.022
+     ],
+     "source": "project-original",
+     "triangles": 60,
+     "trianglesBudget": 40,
+     "withinBudget": false
+    },
+    "small-bucket": {
+     "node": "prop_small_bucket",
+     "origin": "grip",
+     "sizeMetres": [
+      0.167,
+      0.161,
+      0.258
+     ],
+     "source": "polyhaven:wooden_bucket_01",
+     "triangles": 300,
+     "trianglesBudget": 300,
+     "withinBudget": true
+    },
+    "walking-staff": {
+     "node": "prop_walking_staff",
+     "origin": "grip",
+     "sizeMetres": [
+      0.031,
+      0.036,
+      1.75
+     ],
+     "source": "project-original",
+     "triangles": 20,
+     "trianglesBudget": 60,
+     "withinBudget": true
+    },
+    "walking-stick": {
+     "node": "prop_walking_stick",
+     "origin": "grip",
+     "sizeMetres": [
+      0.096,
+      0.028,
+      0.965
+     ],
+     "source": "project-original",
+     "triangles": 40,
+     "trianglesBudget": 60,
+     "withinBudget": true
+    },
+    "whittling-knife": {
+     "node": "prop_whittling_knife",
+     "origin": "grip",
+     "sizeMetres": [
+      0.021,
+      0.02,
+      0.17
+     ],
+     "source": "project-original",
+     "triangles": 28,
+     "trianglesBudget": 60,
+     "withinBudget": true
+    }
+   }
+  },
+  "farm": {
+   "bytes": 101652,
+   "file": "crowd-props-farm-v1.glb",
+   "props": {
+    "crook": {
+     "node": "prop_crook",
+     "origin": "grip",
+     "sizeMetres": [
+      0.165,
+      0.03,
+      1.583
+     ],
+     "source": "project-original",
+     "triangles": 100,
+     "trianglesBudget": 140,
+     "withinBudget": true
+    },
+    "feed-basket": {
+     "node": "prop_feed_basket",
+     "origin": "grip",
+     "sizeMetres": [
+      0.369,
+      0.369,
+      0.307
+     ],
+     "source": "polyhaven:wicker_basket_01 (albedo) on a project-original shape",
+     "triangles": 204,
+     "trianglesBudget": 400,
+     "withinBudget": true
+    },
+    "hoe": {
+     "node": "prop_hoe",
+     "origin": "grip",
+     "sizeMetres": [
+      0.16,
+      0.153,
+      1.376
+     ],
+     "source": "project-original",
+     "triangles": 32,
+     "trianglesBudget": 160,
+     "withinBudget": true
+    },
+    "milk-pail": {
+     "node": "prop_milk_pail",
+     "origin": "grip",
+     "sizeMetres": [
+      0.205,
+      0.198,
+      0.318
+     ],
+     "source": "polyhaven:wooden_bucket_01",
+     "triangles": 300,
+     "trianglesBudget": 300,
+     "withinBudget": true
+    },
+    "pitchfork": {
+     "node": "prop_pitchfork",
+     "origin": "grip",
+     "sizeMetres": [
+      0.14,
+      0.028,
+      1.75
+     ],
+     "source": "project-original",
+     "triangles": 68,
+     "trianglesBudget": 160,
+     "withinBudget": true
+    },
+    "sack": {
+     "node": "prop_sack",
+     "origin": "grip",
+     "sizeMetres": [
+      0.342,
+      0.255,
+      0.518
+     ],
+     "source": "project-original",
+     "triangles": 148,
+     "trianglesBudget": 260,
+     "withinBudget": true
+    },
+    "seed-bag": {
+     "node": "prop_seed_bag",
+     "origin": "hang",
+     "sizeMetres": [
+      0.211,
+      0.134,
+      0.265
+     ],
+     "source": "project-original",
+     "triangles": 140,
+     "trianglesBudget": 220,
+     "withinBudget": true
+    },
+    "sickle": {
+     "node": "prop_sickle",
+     "origin": "grip",
+     "sizeMetres": [
+      0.15,
+      0.032,
+      0.366
+     ],
+     "source": "project-original",
+     "triangles": 92,
+     "trianglesBudget": 120,
+     "withinBudget": true
+    },
+    "straw-bundle": {
+     "node": "prop_straw_bundle",
+     "origin": "contract",
+     "sizeMetres": [
+      0.167,
+      0.62,
+      0.165
+     ],
+     "source": "project-original",
+     "triangles": 144,
+     "trianglesBudget": 160,
+     "withinBudget": true
+    },
+    "water-yoke": {
+     "node": "prop_water_yoke",
+     "origin": "grip",
+     "sizeMetres": [
+      1.125,
+      0.3,
+      0.78
+     ],
+     "source": "project-original",
+     "triangles": 108,
+     "trianglesBudget": 520,
+     "withinBudget": true
+    }
+   }
+  },
+  "guard": {
+   "bytes": 53748,
+   "file": "crowd-props-guard-v1.glb",
+   "props": {
+    "arrow-bundle": {
+     "node": "prop_arrow_bundle",
+     "origin": "grip",
+     "sizeMetres": [
+      0.066,
+      0.066,
+      0.76
+     ],
+     "source": "project-original",
+     "triangles": 104,
+     "trianglesBudget": 160,
+     "withinBudget": true
+    },
+    "bow": {
+     "node": "prop_bow",
+     "origin": "grip",
+     "sizeMetres": [
+      0.151,
+      0.048,
+      1.606
+     ],
+     "source": "project-original",
+     "triangles": 92,
+     "trianglesBudget": 140,
+     "withinBudget": true
+    },
+    "quiver": {
+     "node": "prop_quiver",
+     "origin": "hang",
+     "sizeMetres": [
+      0.12,
+      0.12,
+      0.67
+     ],
+     "source": "project-original",
+     "triangles": 68,
+     "trianglesBudget": 220,
+     "withinBudget": true
+    },
+    "round-shield": {
+     "node": "prop_round_shield",
+     "origin": "hang",
+     "sizeMetres": [
+      0.741,
+      0.083,
+      0.76
+     ],
+     "source": "project-original",
+     "triangles": 116,
+     "trianglesBudget": 160,
+     "withinBudget": true
+    },
+    "shaft-bundle": {
+     "node": "prop_shaft_bundle",
+     "origin": "grip",
+     "replaces": "linen-bundle",
+     "sizeMetres": [
+      0.76,
+      0.084,
+      0.084
+     ],
+     "source": "project-original",
+     "triangles": 168,
+     "trianglesBudget": 140,
+     "withinBudget": true
+    },
+    "sheathed-sword": {
+     "node": "prop_sheathed_sword",
+     "origin": "hang",
+     "sizeMetres": [
+      0.2,
+      0.052,
+      1.032
+     ],
+     "source": "project-original",
+     "triangles": 116,
+     "trianglesBudget": 120,
+     "withinBudget": true
+    },
+    "spear": {
+     "node": "prop_spear",
+     "origin": "grip",
+     "sizeMetres": [
+      0.044,
+      0.044,
+      2.38
+     ],
+     "source": "project-original",
+     "triangles": 26,
+     "trianglesBudget": 140,
+     "withinBudget": true
+    }
+   }
+  },
+  "letters-and-care": {
+   "bytes": 57616,
+   "file": "crowd-props-letters-and-care-v1.glb",
+   "props": {
+    "book": {
+     "node": "prop_book",
+     "origin": "grip",
+     "sizeMetres": [
+      0.18,
+      0.05,
+      0.24
+     ],
+     "source": "project-original",
+     "triangles": 12,
+     "trianglesBudget": 80,
+     "withinBudget": true
+    },
+    "herb-basket": {
+     "node": "prop_herb_basket",
+     "origin": "grip",
+     "sizeMetres": [
+      0.322,
+      0.322,
+      0.267
+     ],
+     "source": "polyhaven:wicker_basket_01 (albedo) on a project-original shape",
+     "triangles": 204,
+     "trianglesBudget": 400,
+     "withinBudget": true
+    },
+    "keys": {
+     "node": "prop_keys",
+     "origin": "hang",
+     "sizeMetres": [
+      0.09,
+      0.009,
+      0.163
+     ],
+     "source": "project-original",
+     "triangles": 96,
+     "trianglesBudget": 60,
+     "withinBudget": false
+    },
+    "mortar-pestle": {
+     "node": "prop_mortar_pestle",
+     "origin": "grip",
+     "parts": {
+      "mortar": {
+       "node": "prop_mortar_pestle_mortar",
+       "origin": "contract",
+       "triangles": 72
+      },
+      "pestle": {
+       "node": "prop_mortar_pestle_pestle",
+       "origin": "contract",
+       "triangles": 48
+      }
+     },
+     "sizeMetres": [
+      0.19,
+      0.2,
+      0.244
+     ],
+     "source": "project-original",
+     "triangles": 52,
+     "trianglesBudget": 160,
+     "withinBudget": true
+    },
+    "satchel": {
+     "node": "prop_satchel",
+     "origin": "hang",
+     "sizeMetres": [
+      0.26,
+      0.087,
+      0.21
+     ],
+     "source": "project-original",
+     "triangles": 24,
+     "trianglesBudget": 180,
+     "withinBudget": true
+    },
+    "tally-sticks": {
+     "node": "prop_tally_sticks",
+     "origin": "grip",
+     "sizeMetres": [
+      0.09,
+      0.09,
+      0.25
+     ],
+     "source": "project-original",
+     "triangles": 120,
+     "trianglesBudget": 80,
+     "withinBudget": false
+    },
+    "wax-tablet": {
+     "node": "prop_wax_tablet",
+     "origin": "grip",
+     "sizeMetres": [
+      0.14,
+      0.023,
+      0.2
+     ],
+     "source": "project-original",
+     "triangles": 24,
+     "trianglesBudget": 60,
+     "withinBudget": true
+    }
+   }
+  },
+  "textile": {
+   "bytes": 73176,
+   "file": "crowd-props-textile-v1.glb",
+   "props": {
+    "carding-combs": {
+     "node": "prop_carding_combs",
+     "origin": "grip",
+     "parts": {
+      "left": {
+       "node": "prop_carding_combs_left",
+       "origin": "contract",
+       "triangles": 44
+      },
+      "right": {
+       "node": "prop_carding_combs_right",
+       "origin": "contract",
+       "triangles": 44
+      }
+     },
+     "sizeMetres": [
+      0.22,
+      0.022,
+      0.2
+     ],
+     "source": "project-original",
+     "triangles": 56,
+     "trianglesBudget": 120,
+     "withinBudget": true
+    },
+    "distaff": {
+     "node": "prop_distaff",
+     "origin": "contract",
+     "sizeMetres": [
+      0.105,
+      0.9,
+      0.106
+     ],
+     "source": "project-original",
+     "triangles": 100,
+     "trianglesBudget": 160,
+     "withinBudget": true
+    },
+    "linen-bundle": {
+     "node": "prop_linen_bundle",
+     "origin": "grip",
+     "sizeMetres": [
+      0.29,
+      0.214,
+      0.248
+     ],
+     "source": "project-original",
+     "triangles": 172,
+     "trianglesBudget": 180,
+     "withinBudget": true
+    },
+    "net-shuttle": {
+     "node": "prop_net_shuttle",
+     "origin": "grip",
+     "sizeMetres": [
+      0.183,
+      0.18,
+      0.25
+     ],
+     "source": "project-original",
+     "triangles": 76,
+     "trianglesBudget": 120,
+     "withinBudget": true
+    },
+    "osier-armful": {
+     "node": "prop_osier_armful",
+     "origin": "grip",
+     "replaces": "linen-bundle",
+     "sizeMetres": [
+      1.0,
+      0.114,
+      0.114
+     ],
+     "source": "project-original",
+     "triangles": 128,
+     "trianglesBudget": 140,
+     "withinBudget": true
+    },
+    "osier-bundle": {
+     "node": "prop_osier_bundle",
+     "origin": "grip",
+     "sizeMetres": [
+      0.102,
+      0.102,
+      1.2
+     ],
+     "source": "project-original",
+     "triangles": 120,
+     "trianglesBudget": 160,
+     "withinBudget": true
+    },
+    "rope-coil": {
+     "node": "prop_rope_coil",
+     "origin": "hang",
+     "sizeMetres": [
+      0.25,
+      0.04,
+      0.25
+     ],
+     "source": "project-original",
+     "triangles": 192,
+     "trianglesBudget": 200,
+     "withinBudget": true
+    },
+    "twisting-stick": {
+     "node": "prop_twisting_stick",
+     "origin": "contract",
+     "sizeMetres": [
+      0.056,
+      0.296,
+      0.024
+     ],
+     "source": "project-original",
+     "triangles": 32,
+     "trianglesBudget": 60,
+     "withinBudget": true
+    }
+   }
+  },
+  "workplace": {
+   "bytes": 266040,
+   "file": "crowd-props-workplace-v1.glb",
+   "props": {
+    "bakehouse-oven": {
+     "node": "prop_bakehouse_oven",
+     "origin": "base",
+     "sizeMetres": [
+      1.3,
+      1.092,
+      1.18
+     ],
+     "source": "project-original",
+     "triangles": 152,
+     "trianglesBudget": 320,
+     "withinBudget": true
+    },
+    "bread-trough": {
+     "node": "prop_bread_trough",
+     "origin": "base",
+     "sizeMetres": [
+      1.0,
+      0.45,
+      0.89
+     ],
+     "source": "project-original",
+     "triangles": 100,
+     "trianglesBudget": 220,
+     "withinBudget": true
+    },
+    "brew-tub": {
+     "node": "prop_brew_tub",
+     "origin": "base",
+     "sizeMetres": [
+      0.904,
+      0.9,
+      0.55
+     ],
+     "source": "project-original",
+     "triangles": 136,
+     "trianglesBudget": 260,
+     "withinBudget": true
+    },
+    "butter-churn": {
+     "node": "prop_butter_churn",
+     "origin": "base",
+     "sizeMetres": [
+      0.323,
+      0.34,
+      1.15
+     ],
+     "source": "project-original",
+     "triangles": 52,
+     "trianglesBudget": 220,
+     "withinBudget": true
+    },
+    "chopping-block": {
+     "node": "prop_chopping_block",
+     "origin": "base",
+     "sizeMetres": [
+      0.457,
+      0.48,
+      0.5
+     ],
+     "source": "project-original",
+     "triangles": 36,
+     "trianglesBudget": 160,
+     "withinBudget": true
+    },
+    "fulling-trough": {
+     "node": "prop_fulling_trough",
+     "origin": "base",
+     "sizeMetres": [
+      1.4,
+      0.6,
+      0.505
+     ],
+     "source": "project-original",
+     "triangles": 24,
+     "trianglesBudget": 220,
+     "withinBudget": true
+    },
+    "goods-ale": {
+     "node": "prop_goods_ale",
+     "origin": "base",
+     "placedWith": "market-trestle",
+     "sizeMetres": [
+      1.17,
+      0.43,
+      0.34
+     ],
+     "source": "project-original",
+     "triangles": 400,
+     "trianglesBudget": 450,
+     "withinBudget": true
+    },
+    "goods-dairy": {
+     "node": "prop_goods_dairy",
+     "origin": "base",
+     "placedWith": "market-trestle",
+     "sizeMetres": [
+      1.102,
+      0.26,
+      0.155
+     ],
+     "source": "project-original",
+     "triangles": 348,
+     "trianglesBudget": 450,
+     "withinBudget": true
+    },
+    "goods-eggs": {
+     "node": "prop_goods_eggs",
+     "origin": "base",
+     "placedWith": "market-trestle",
+     "sizeMetres": [
+      1.12,
+      0.37,
+      0.29
+     ],
+     "source": "project-original",
+     "triangles": 408,
+     "trianglesBudget": 450,
+     "withinBudget": true
+    },
+    "goods-flour": {
+     "node": "prop_goods_flour",
+     "origin": "base",
+     "placedWith": "market-trestle",
+     "sizeMetres": [
+      1.12,
+      0.51,
+      0.268
+     ],
+     "source": "project-original",
+     "triangles": 392,
+     "trianglesBudget": 450,
+     "withinBudget": true
+    },
+    "goods-sausages": {
+     "node": "prop_goods_sausages",
+     "origin": "base",
+     "placedWith": "market-trestle",
+     "sizeMetres": [
+      1.28,
+      0.47,
+      0.564
+     ],
+     "source": "project-original",
+     "triangles": 322,
+     "trianglesBudget": 450,
+     "withinBudget": true
+    },
+    "goods-wares": {
+     "node": "prop_goods_wares",
+     "origin": "base",
+     "placedWith": "market-trestle",
+     "sizeMetres": [
+      1.09,
+      0.42,
+      0.16
+     ],
+     "source": "project-original",
+     "triangles": 204,
+     "trianglesBudget": 450,
+     "withinBudget": true
+    },
+    "hide-beam": {
+     "node": "prop_hide_beam",
+     "origin": "base",
+     "sizeMetres": [
+      0.5,
+      1.161,
+      1.078
+     ],
+     "source": "project-original",
+     "triangles": 72,
+     "trianglesBudget": 400,
+     "withinBudget": true
+    },
+    "lectern": {
+     "node": "prop_lectern",
+     "origin": "base",
+     "sizeMetres": [
+      0.55,
+      0.448,
+      1.183
+     ],
+     "source": "project-original",
+     "triangles": 48,
+     "trianglesBudget": 240,
+     "withinBudget": true
+    },
+    "loom": {
+     "node": "prop_loom",
+     "origin": "base",
+     "sizeMetres": [
+      1.3,
+      0.42,
+      1.888
+     ],
+     "source": "project-original",
+     "triangles": 208,
+     "trianglesBudget": 900,
+     "withinBudget": true
+    },
+    "market-trestle": {
+     "node": "prop_market_trestle",
+     "origin": "base",
+     "sizeMetres": [
+      1.44,
+      0.646,
+      0.811
+     ],
+     "source": "project-original",
+     "triangles": 84,
+     "trianglesBudget": 300,
+     "withinBudget": true
+    },
+    "mill-hopper": {
+     "node": "prop_mill_hopper",
+     "origin": "base",
+     "sizeMetres": [
+      0.9,
+      0.98,
+      1.42
+     ],
+     "source": "project-original",
+     "triangles": 216,
+     "trianglesBudget": 300,
+     "withinBudget": true
+    },
+    "potter-wheel": {
+     "node": "prop_potter_wheel",
+     "origin": "base",
+     "sizeMetres": [
+      0.6,
+      0.6,
+      0.75
+     ],
+     "source": "project-original",
+     "triangles": 136,
+     "trianglesBudget": 500,
+     "withinBudget": true
+    },
+    "sawhorse": {
+     "node": "prop_sawhorse",
+     "origin": "base",
+     "sizeMetres": [
+      1.5,
+      0.513,
+      0.734
+     ],
+     "source": "project-original",
+     "triangles": 72,
+     "trianglesBudget": 260,
+     "withinBudget": true
+    },
+    "stitching-clam": {
+     "node": "prop_stitching_clam",
+     "origin": "base",
+     "sizeMetres": [
+      0.14,
+      0.193,
+      0.983
+     ],
+     "source": "project-original",
+     "triangles": 48,
+     "trianglesBudget": 160,
+     "withinBudget": true
+    },
+    "stone-block": {
+     "node": "prop_stone_block",
+     "origin": "base",
+     "sizeMetres": [
+      0.5,
+      0.5,
+      0.96
+     ],
+     "source": "project-original",
+     "triangles": 24,
+     "trianglesBudget": 220,
+     "withinBudget": true
+    },
+    "stool": {
+     "node": "prop_stool",
+     "origin": "base",
+     "sizeMetres": [
+      0.424,
+      0.451,
+      0.448
+     ],
+     "source": "polyhaven:wooden_stool_01",
+     "triangles": 300,
+     "trianglesBudget": 300,
+     "withinBudget": true
+    },
+    "tallow-pot": {
+     "node": "prop_tallow_pot",
+     "origin": "base",
+     "sizeMetres": [
+      0.84,
+      0.44,
+      0.915
+     ],
+     "source": "project-original",
+     "triangles": 224,
+     "trianglesBudget": 200,
+     "withinBudget": true
+    },
+    "washing-board": {
+     "node": "prop_washing_board",
+     "origin": "base",
+     "parts": {
+      "beetle": {
+       "node": "prop_washing_board_beetle",
+       "origin": "contract",
+       "triangles": 32
+      }
+     },
+     "sizeMetres": [
+      1.165,
+      0.5,
+      0.36
+     ],
+     "source": "project-original",
+     "triangles": 80,
+     "trianglesBudget": 220,
+     "withinBudget": true
+    },
+    "workbench": {
+     "node": "prop_workbench",
+     "origin": "base",
+     "sizeMetres": [
+      1.6,
+      0.6,
+      0.84
+     ],
+     "source": "project-original",
+     "triangles": 72,
+     "trianglesBudget": 300,
+     "withinBudget": true
+    }
+   }
+  }
+ },
+ "status": "working-placeholder"
+}

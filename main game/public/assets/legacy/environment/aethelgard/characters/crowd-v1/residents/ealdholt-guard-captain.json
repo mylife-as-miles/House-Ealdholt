@@ -1,0 +1,612 @@
+{
+ "archetype": "adult-male",
+ "build": {
+  "seconds": 10.6,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.3,
+   "lod": 0.5,
+   "shape": 3.8,
+   "texture": 5.8
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-male-v1.glb",
+ "envelopeGate": {
+  "clips": 15,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0272,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.261,
+ "envelopes": {
+  "guard_patrol_walk": {
+   "max": [
+    0.551,
+    1.807,
+    0.91
+   ],
+   "min": [
+    -0.61,
+    -0.369,
+    -0.839
+   ]
+  },
+  "guard_stand_watch_b": {
+   "max": [
+    0.56,
+    1.757,
+    0.52
+   ],
+   "min": [
+    -0.592,
+    -0.175,
+    -0.494
+   ]
+  },
+  "guard_stand_watch_b_enter": {
+   "max": [
+    0.573,
+    1.787,
+    0.677
+   ],
+   "min": [
+    -0.607,
+    -0.176,
+    -0.493
+   ]
+  },
+  "guard_stand_watch_b_exit": {
+   "max": [
+    0.573,
+    1.787,
+    0.677
+   ],
+   "min": [
+    -0.607,
+    -0.175,
+    -0.493
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.542,
+    1.782,
+    0.506
+   ],
+   "min": [
+    -0.367,
+    -0.175,
+    -0.505
+   ]
+  },
+  "sit": {
+   "max": [
+    0.523,
+    1.318,
+    0.358
+   ],
+   "min": [
+    -0.487,
+    -0.175,
+    -0.867
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.717,
+    1.833,
+    0.995
+   ],
+   "min": [
+    -0.685,
+    -0.498,
+    -1.194
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.734,
+    1.85,
+    0.997
+   ],
+   "min": [
+    -0.743,
+    -0.489,
+    -1.196
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.532,
+    1.783,
+    0.69
+   ],
+   "min": [
+    -0.549,
+    -0.175,
+    -0.505
+   ]
+  },
+  "walk_b": {
+   "max": [
+    0.575,
+    1.787,
+    0.905
+   ],
+   "min": [
+    -0.446,
+    -0.376,
+    -0.868
+   ]
+  },
+  "walk_b_start": {
+   "max": [
+    0.497,
+    1.783,
+    0.798
+   ],
+   "min": [
+    -0.401,
+    -0.261,
+    -0.705
+   ]
+  },
+  "walk_b_stop": {
+   "max": [
+    0.539,
+    1.771,
+    0.73
+   ],
+   "min": [
+    -0.41,
+    -0.238,
+    -0.747
+   ]
+  },
+  "work_address": {
+   "max": [
+    0.609,
+    1.784,
+    0.785
+   ],
+   "min": [
+    -0.488,
+    -0.175,
+    -0.526
+   ]
+  },
+  "work_address_enter": {
+   "max": [
+    0.485,
+    1.764,
+    0.478
+   ],
+   "min": [
+    -0.335,
+    -0.175,
+    -0.492
+   ]
+  },
+  "work_address_exit": {
+   "max": [
+    0.485,
+    1.764,
+    0.478
+   ],
+   "min": [
+    -0.335,
+    -0.175,
+    -0.492
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.198,
+  "lipGapMm": {
+   "aa": 13.7,
+   "full": 16.8,
+   "rest": 0.3
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.28,
+   "r": 7.28
+  },
+  "upperLidClosed": 0.481,
+  "visibilityPasses": [
+   {
+    "l": 24,
+    "r": 6,
+    "upper": 0.481
+   },
+   {
+    "l": 4,
+    "r": 0,
+    "upper": 0.481
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.481
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "major",
+ "file": "ealdholt-guard-captain.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.231,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   913,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3317,
+   4500,
+   true
+  ]
+ },
+ "group": "guards-military",
+ "hair": {
+  "colour": "fair",
+  "facialHair": "full-beard",
+  "style": "tied-back"
+ },
+ "headwear": "none",
+ "headwearGate": {
+  "headwear": "none",
+  "pass": true
+ },
+ "headwearStyle": {
+  "colour": null,
+  "shape": "plain",
+  "tone": "none"
+ },
+ "householdId": "ealdholt-captain-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.26,
+  "coreMaxCm": 0.91,
+  "coreMeanCm": 0.57,
+  "coreWorstJoint": "foot_l"
+ },
+ "label": "Guard captain",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 242652,
+  "fileMiB": 0.231,
+  "headTriangles": 913,
+  "images": [
+   {
+    "bytes": 29040,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3317,
+  "vertices": 3294
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-male-v1",
+  "rate": 0.981,
+  "roleClips": [
+   "guard_stand_watch_b",
+   "guard_patrol_walk",
+   "work_address"
+  ],
+  "talk": "talk_b",
+  "walk": "walk_b"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "standard",
+  "kit": "guard-captain",
+  "palette": {
+   "accent": "oak-gall-black",
+   "main": "undyed-grey",
+   "secondary": "undyed-brown"
+  },
+  "wear": "worn"
+ },
+ "placementScale": 1.0697,
+ "presentation": {
+  "clips": {
+   "guard_patrol_walk": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "guard",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.8146,
+       0.0996,
+       0.5714,
+       0,
+       0.0521,
+       -0.9937,
+       0.099,
+       0,
+       0.466,
+       0.1512,
+       0.3537,
+       1
+      ],
+      "node": "prop_spear",
+      "prop": "spear"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "guard_stand_watch_b": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "guard",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.8146,
+       0.0996,
+       0.5714,
+       0,
+       0.0521,
+       -0.9937,
+       0.099,
+       0,
+       -0.2672,
+       0.0615,
+       -0.1606,
+       1
+      ],
+      "node": "prop_spear",
+      "prop": "spear"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "guard_stand_watch_b_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "guard",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.8146,
+       0.0996,
+       0.5714,
+       0,
+       0.0521,
+       -0.9937,
+       0.099,
+       0,
+       -0.2672,
+       0.0615,
+       -0.1606,
+       1
+      ],
+      "node": "prop_spear",
+      "prop": "spear"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "guard_stand_watch_b_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "guard",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.8146,
+       0.0996,
+       0.5714,
+       0,
+       0.0521,
+       -0.9937,
+       0.099,
+       0,
+       -0.2672,
+       0.0615,
+       -0.1606,
+       1
+      ],
+      "node": "prop_spear",
+      "prop": "spear"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "guard": "crowd-v1/props/crowd-props-guard-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [
+   {
+    "bone": "hips",
+    "kit": "guard",
+    "matrix": [
+     0,
+     0.718051,
+     -0.69599,
+     0,
+     0,
+     0.69599,
+     0.718051,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0.247469,
+     0.094428,
+     -0.0543,
+     1
+    ],
+    "node": "prop_sheathed_sword",
+    "prop": "sheathed-sword"
+   }
+  ],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "sheathed-sword",
+   "kit": "guard",
+   "socket": "hips",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 242652,
+  "sha256": "ac92e07c8baf087e535df396856feabf4e62cd9708b5ec9e1725f94e1ff2ef3c"
+ },
+ "recipeSha256": "cc3b31bcb034df618226809b2ae49212b53b2b38748fcc3bcf5ea089573910ac",
+ "referenceStatureCm": 173.5,
+ "residentId": "ealdholt-guard-captain",
+ "restRadiusMetres": 0.591,
+ "roleId": "guard-captain",
+ "statureCm": 184.8,
+ "status": "working-placeholder"
+}

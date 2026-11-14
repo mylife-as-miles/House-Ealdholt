@@ -1,0 +1,614 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 8.8,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.5,
+   "shape": 3.2,
+   "texture": 4.8
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 12,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0209,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.194,
+ "envelopes": {
+  "carry_bundle_walk": {
+   "max": [
+    0.519,
+    1.738,
+    0.808
+   ],
+   "min": [
+    -0.508,
+    -0.338,
+    -0.878
+   ]
+  },
+  "idle": {
+   "max": [
+    0.427,
+    1.651,
+    0.738
+   ],
+   "min": [
+    -0.377,
+    -0.179,
+    -0.676
+   ]
+  },
+  "sit": {
+   "max": [
+    0.471,
+    1.261,
+    0.424
+   ],
+   "min": [
+    -0.468,
+    -0.482,
+    -1.061
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.597,
+    1.721,
+    1.119
+   ],
+   "min": [
+    -0.54,
+    -0.704,
+    -1.228
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.627,
+    1.741,
+    1.122
+   ],
+   "min": [
+    -0.541,
+    -0.691,
+    -1.231
+   ]
+  },
+  "talk": {
+   "max": [
+    0.485,
+    1.688,
+    0.737
+   ],
+   "min": [
+    -0.475,
+    -0.179,
+    -0.676
+   ]
+  },
+  "walk": {
+   "max": [
+    0.519,
+    1.74,
+    0.808
+   ],
+   "min": [
+    -0.508,
+    -0.338,
+    -0.878
+   ]
+  },
+  "walk_start": {
+   "max": [
+    0.512,
+    1.721,
+    0.8
+   ],
+   "min": [
+    -0.476,
+    -0.211,
+    -0.773
+   ]
+  },
+  "walk_stop": {
+   "max": [
+    0.509,
+    1.718,
+    0.763
+   ],
+   "min": [
+    -0.47,
+    -0.268,
+    -0.775
+   ]
+  },
+  "work_weave_basket": {
+   "max": [
+    0.471,
+    1.206,
+    0.421
+   ],
+   "min": [
+    -0.529,
+    -0.482,
+    -1.061
+   ]
+  },
+  "work_weave_basket_enter": {
+   "max": [
+    0.497,
+    1.403,
+    0.421
+   ],
+   "min": [
+    -0.491,
+    -0.482,
+    -1.061
+   ]
+  },
+  "work_weave_basket_exit": {
+   "max": [
+    0.497,
+    1.402,
+    0.421
+   ],
+   "min": [
+    -0.491,
+    -0.482,
+    -1.061
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.62,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.23,
+  "lipGapMm": {
+   "aa": 15.4,
+   "full": 18.9,
+   "rest": 0.7
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.74,
+   "r": 7.81
+  },
+  "upperLidClosed": 0.515,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.515
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-basket-weaver.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.235,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   902,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3506,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "mid-brown",
+  "facialHair": "none",
+  "style": "long-braid"
+ },
+ "headwear": "veil-wimple",
+ "headwearGate": {
+  "headwear": "veil-wimple",
+  "pass": true,
+  "scalpCovered": 1,
+  "scalpRays": 940,
+  "shells": {
+   "Wimple": {
+    "faces": 341,
+    "islands": 2,
+    "maxReachRadii": 1.833,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#ddd8cc",
+  "shape": "plain",
+  "tone": "bleached"
+ },
+ "householdId": "ealdholt-carpenter-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.11,
+  "coreMaxCm": 1.06,
+  "coreMeanCm": 0.61,
+  "coreWorstJoint": "calf_l"
+ },
+ "label": "Basket weaver",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 246436,
+  "fileMiB": 0.235,
+  "headTriangles": 902,
+  "images": [
+   {
+    "bytes": 31896,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3506,
+  "vertices": 3298
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 0.942,
+  "roleClips": [
+   "work_weave_basket",
+   "carry_bundle_walk"
+  ],
+  "talk": "talk",
+  "walk": "walk"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "bib-apron",
+  "kit": "workshop-apron-f",
+  "palette": {
+   "accent": "woad-blue",
+   "main": "woad-blue",
+   "secondary": "undyed-grey"
+  },
+  "wear": "worn"
+ },
+ "placementScale": 0.9512,
+ "presentation": {
+  "clips": {
+   "carry_bundle_walk": {
+    "held": [
+     {
+      "bone": "spine_03",
+      "kit": "textile",
+      "matrix": [
+       0.9198,
+       -0.0277,
+       0.0197,
+       0,
+       0.0287,
+       0.9187,
+       -0.0487,
+       0,
+       -0.0182,
+       0.0492,
+       0.919,
+       0,
+       0,
+       0.0881,
+       0.2135,
+       1
+      ],
+      "node": "prop_osier_armful",
+      "prop": "osier-armful"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_weave_basket": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       -0.53,
+       -0.5002,
+       0.5622,
+       0,
+       -0.3875,
+       0.7709,
+       0.3205,
+       0,
+       0.1063,
+       0.0832,
+       0.0728,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_weave_basket_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       -0.53,
+       -0.5002,
+       0.5622,
+       0,
+       -0.3875,
+       0.7709,
+       0.3205,
+       0,
+       0.1063,
+       0.0832,
+       0.0728,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_weave_basket_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       -0.53,
+       -0.5002,
+       0.5622,
+       0,
+       -0.3875,
+       0.7709,
+       0.3205,
+       0,
+       0.1063,
+       0.0832,
+       0.0728,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "textile": "crowd-v1/props/crowd-props-textile-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [
+   {
+    "bone": "spine_03",
+    "kit": "textile",
+    "matrix": [
+     0.852525,
+     0.522669,
+     -0.004332,
+     0,
+     -0.522687,
+     0.852495,
+     -0.007065,
+     0,
+     0,
+     0.008288,
+     0.999966,
+     0,
+     0,
+     -0.120495,
+     -0.100301,
+     1
+    ],
+    "node": "prop_osier_bundle",
+    "prop": "osier-bundle"
+   }
+  ],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "osier-bundle",
+   "kit": "textile",
+   "socket": "back",
+   "source": "project-original"
+  },
+  {
+   "id": "stool",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "polyhaven:wooden_stool_01"
+  },
+  {
+   "id": "osier-armful",
+   "kit": "textile",
+   "socket": "carry",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 246436,
+  "sha256": "c26b3556d3c202a318c9e17b9dd1d1057f396df0bf551e22e45456e0a76f6a9a"
+ },
+ "recipeSha256": "3de9b9267d33b0aa0f0f9b8a94fc0c54d5a6c32a8b19dcc40b701fe5276fb889",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-basket-weaver",
+ "restRadiusMetres": 0.524,
+ "roleId": "basket-weaver",
+ "statureCm": 151.8,
+ "status": "working-placeholder"
+}

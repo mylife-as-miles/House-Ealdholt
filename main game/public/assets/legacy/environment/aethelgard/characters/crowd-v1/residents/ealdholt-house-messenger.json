@@ -1,0 +1,454 @@
+{
+ "archetype": "adult-male",
+ "build": {
+  "seconds": 7.8,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.3,
+   "shape": 3.2,
+   "texture": 4
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-male-v1.glb",
+ "envelopeGate": {
+  "clips": 11,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0201,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.274,
+ "envelopes": {
+  "idle_b": {
+   "max": [
+    0.554,
+    1.792,
+    0.607
+   ],
+   "min": [
+    -0.434,
+    -0.105,
+    -0.485
+   ]
+  },
+  "sit": {
+   "max": [
+    0.553,
+    1.327,
+    0.382
+   ],
+   "min": [
+    -0.507,
+    -0.123,
+    -0.843
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.776,
+    1.9,
+    1.022
+   ],
+   "min": [
+    -0.667,
+    -0.437,
+    -1.155
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.804,
+    1.929,
+    1.025
+   ],
+   "min": [
+    -0.718,
+    -0.422,
+    -1.158
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.529,
+    1.791,
+    0.646
+   ],
+   "min": [
+    -0.49,
+    -0.104,
+    -0.484
+   ]
+  },
+  "walk_b": {
+   "max": [
+    0.664,
+    1.798,
+    0.888
+   ],
+   "min": [
+    -0.517,
+    -0.39,
+    -0.925
+   ]
+  },
+  "walk_b_start": {
+   "max": [
+    0.584,
+    1.794,
+    0.845
+   ],
+   "min": [
+    -0.462,
+    -0.276,
+    -0.676
+   ]
+  },
+  "walk_b_stop": {
+   "max": [
+    0.57,
+    1.782,
+    0.798
+   ],
+   "min": [
+    -0.481,
+    -0.192,
+    -0.736
+   ]
+  },
+  "work_address_b": {
+   "max": [
+    0.823,
+    2.037,
+    0.797
+   ],
+   "min": [
+    -0.819,
+    -0.105,
+    -0.531
+   ]
+  },
+  "work_address_b_enter": {
+   "max": [
+    0.57,
+    1.786,
+    0.722
+   ],
+   "min": [
+    -0.47,
+    -0.108,
+    -0.548
+   ]
+  },
+  "work_address_b_exit": {
+   "max": [
+    0.57,
+    1.786,
+    0.722
+   ],
+   "min": [
+    -0.47,
+    -0.108,
+    -0.548
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.196,
+  "lipGapMm": {
+   "aa": 13.9,
+   "full": 17.1,
+   "rest": 0.3
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.54,
+   "r": 7.54
+  },
+  "upperLidClosed": 0.518,
+  "visibilityPasses": [
+   {
+    "l": 31,
+    "r": 28,
+    "upper": 0.518
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.518
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "major",
+ "file": "ealdholt-house-messenger.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.228,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   942,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3462,
+   4500,
+   true
+  ]
+ },
+ "group": "leaders-clergy-specialists",
+ "hair": {
+  "colour": "dark-brown",
+  "facialHair": "none",
+  "style": "short-tousled"
+ },
+ "headwear": "hood",
+ "headwearGate": {
+  "headwear": "hood",
+  "pass": true,
+  "scalpCovered": 1,
+  "scalpRays": 926,
+  "shells": {
+   "Hood": {
+    "faces": 379,
+    "islands": 2,
+    "maxReachRadii": 1.8,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#56402f",
+  "shape": "plain",
+  "tone": "secondary"
+ },
+ "householdId": "ealdholt-hall-household",
+ "jointResidualCm": {
+  "allMaxCm": 0.99,
+  "coreMaxCm": 0.99,
+  "coreMeanCm": 0.48,
+  "coreWorstJoint": "thigh_l"
+ },
+ "label": "House messenger",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 238656,
+  "fileMiB": 0.228,
+  "headTriangles": 942,
+  "images": [
+   {
+    "bytes": 24068,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3462,
+  "vertices": 3297
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-male-v1",
+  "rate": 1.028,
+  "roleClips": [
+   "work_address_b"
+  ],
+  "talk": "talk_b",
+  "walk": "walk_b"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "standard",
+  "kit": "messenger-travel",
+  "palette": {
+   "accent": "undyed-cream",
+   "main": "weld-green",
+   "secondary": "walnut-brown"
+  },
+  "wear": "travel-worn"
+ },
+ "placementScale": 1.0487,
+ "presentation": {
+  "clips": {
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "letters-and-care": "crowd-v1/props/crowd-props-letters-and-care-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [
+   {
+    "bone": "hips",
+    "kit": "letters-and-care",
+    "matrix": [
+     0,
+     -0.343836,
+     0.93903,
+     0,
+     0,
+     0.93903,
+     0.343836,
+     0,
+     -1,
+     0,
+     0,
+     0,
+     -0.165908,
+     0.07825,
+     -0.010119,
+     1
+    ],
+    "node": "prop_satchel",
+    "prop": "satchel"
+   }
+  ],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "satchel",
+   "kit": "letters-and-care",
+   "socket": "hips",
+   "source": "project-original"
+  },
+  {
+   "id": "walking-staff",
+   "kit": "everyday",
+   "socket": "hand_r",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 238656,
+  "sha256": "09f1cc549693c1a502c9b88c80808e08292c926471803ac4280ebf7c372e688f"
+ },
+ "recipeSha256": "e8c7d574e88511c02631650b7eb621dfa07fde5ab3a9a81359c27ecd321b2333",
+ "referenceStatureCm": 173.5,
+ "residentId": "ealdholt-house-messenger",
+ "restRadiusMetres": 0.604,
+ "roleId": "house-messenger",
+ "statureCm": 182,
+ "status": "working-placeholder"
+}

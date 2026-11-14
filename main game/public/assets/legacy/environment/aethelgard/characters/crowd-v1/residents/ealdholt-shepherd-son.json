@@ -1,0 +1,583 @@
+{
+ "archetype": "child",
+ "build": {
+  "seconds": 8.8,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.4,
+   "lod": 0.5,
+   "shape": 3.8,
+   "texture": 4
+  }
+ },
+ "clipLibrary": "crowd-clips-child-v1.glb",
+ "envelopeGate": {
+  "clips": 13,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0189,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.054,
+ "envelopes": {
+  "crouch_gather": {
+   "max": [
+    0.436,
+    1.328,
+    0.647
+   ],
+   "min": [
+    -0.369,
+    -0.365,
+    -0.53
+   ]
+  },
+  "crouch_gather_enter": {
+   "max": [
+    0.4,
+    1.21,
+    0.41
+   ],
+   "min": [
+    -0.283,
+    -0.119,
+    -0.342
+   ]
+  },
+  "crouch_gather_exit": {
+   "max": [
+    0.4,
+    1.21,
+    0.406
+   ],
+   "min": [
+    -0.283,
+    -0.119,
+    -0.342
+   ]
+  },
+  "fetch_carry": {
+   "max": [
+    0.318,
+    1.253,
+    0.663
+   ],
+   "min": [
+    -0.319,
+    -0.277,
+    -0.593
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.318,
+    1.218,
+    0.399
+   ],
+   "min": [
+    -0.283,
+    -0.116,
+    -0.356
+   ]
+  },
+  "play_chase_b": {
+   "max": [
+    0.496,
+    1.248,
+    0.608
+   ],
+   "min": [
+    -0.542,
+    -0.261,
+    -0.54
+   ]
+  },
+  "sit": {
+   "max": [
+    0.293,
+    0.921,
+    0.26
+   ],
+   "min": [
+    -0.308,
+    -0.116,
+    -0.614
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.44,
+    1.246,
+    0.647
+   ],
+   "min": [
+    -0.417,
+    -0.296,
+    -0.761
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.478,
+    1.259,
+    0.648
+   ],
+   "min": [
+    -0.457,
+    -0.289,
+    -0.763
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.328,
+    1.223,
+    0.488
+   ],
+   "min": [
+    -0.292,
+    -0.117,
+    -0.35
+   ]
+  },
+  "walk_b": {
+   "max": [
+    0.355,
+    1.255,
+    0.699
+   ],
+   "min": [
+    -0.359,
+    -0.288,
+    -0.629
+   ]
+  },
+  "walk_b_start": {
+   "max": [
+    0.286,
+    1.244,
+    0.639
+   ],
+   "min": [
+    -0.346,
+    -0.229,
+    -0.412
+   ]
+  },
+  "walk_b_stop": {
+   "max": [
+    0.321,
+    1.228,
+    0.56
+   ],
+   "min": [
+    -0.297,
+    -0.225,
+    -0.519
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.93,
+   "r": -0.93
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.181,
+  "lipGapMm": {
+   "aa": 9.9,
+   "full": 12.1,
+   "rest": 0.6
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 8.01,
+   "r": 8.01
+  },
+  "upperLidClosed": 0.647,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 11,
+    "upper": 0.587
+   },
+   {
+    "l": 0,
+    "r": 12,
+    "upper": 0.587
+   },
+   {
+    "l": 0,
+    "r": 12,
+    "upper": 0.587
+   },
+   {
+    "l": 0,
+    "r": 8,
+    "upper": 0.616
+   },
+   {
+    "l": 0,
+    "r": 4,
+    "upper": 0.616
+   },
+   {
+    "l": 0,
+    "r": 6,
+    "upper": 0.616
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.647
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-shepherd-son.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.233,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   913,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3427,
+   4500,
+   true
+  ]
+ },
+ "group": "children-apprentices",
+ "hair": {
+  "colour": "sandy",
+  "facialHair": "none",
+  "style": "cropped-child"
+ },
+ "headwear": "none",
+ "headwearGate": {
+  "headwear": "none",
+  "pass": true
+ },
+ "headwearStyle": {
+  "colour": null,
+  "shape": "plain",
+  "tone": "none"
+ },
+ "householdId": "ealdholt-shepherd-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.11,
+  "coreMaxCm": 1.11,
+  "coreMeanCm": 0.63,
+  "coreWorstJoint": "thigh_l"
+ },
+ "label": "Shepherd's son",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 243844,
+  "fileMiB": 0.233,
+  "headTriangles": 913,
+  "images": [
+   {
+    "bytes": 30116,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3427,
+  "vertices": 3287
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-child-v1",
+  "rate": 0.97,
+  "roleClips": [
+   "play_chase_b",
+   "fetch_carry",
+   "crouch_gather"
+  ],
+  "talk": "talk_b",
+  "walk": "walk_b"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "knee-tunic",
+  "kit": "child-tunic",
+  "palette": {
+   "accent": "ochre",
+   "main": "weld-green",
+   "secondary": "undyed-brown"
+  },
+  "wear": "muddy-hems"
+ },
+ "placementScale": 1.2388,
+ "presentation": {
+  "clips": {
+   "crouch_gather": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.0206,
+       0.3088,
+       -0.6153,
+       0,
+       -0.5951,
+       -0.3175,
+       -0.1395,
+       0,
+       -0.3462,
+       0.5275,
+       0.2763,
+       0,
+       0.0128,
+       0.0391,
+       0.044,
+       1
+      ],
+      "node": "prop_kindling_bundle",
+      "prop": "kindling-bundle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "crouch_gather_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.0206,
+       0.3088,
+       -0.6153,
+       0,
+       -0.5951,
+       -0.3175,
+       -0.1395,
+       0,
+       -0.3462,
+       0.5275,
+       0.2763,
+       0,
+       0.0128,
+       0.0391,
+       0.044,
+       1
+      ],
+      "node": "prop_kindling_bundle",
+      "prop": "kindling-bundle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "crouch_gather_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.0206,
+       0.3088,
+       -0.6153,
+       0,
+       -0.5951,
+       -0.3175,
+       -0.1395,
+       0,
+       -0.3462,
+       0.5275,
+       0.2763,
+       0,
+       0.0128,
+       0.0391,
+       0.044,
+       1
+      ],
+      "node": "prop_kindling_bundle",
+      "prop": "kindling-bundle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "fetch_carry": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.4083,
+       -0.0345,
+       -0.5536,
+       0,
+       0.0355,
+       -0.6844,
+       0.0688,
+       0,
+       -0.5536,
+       -0.0693,
+       -0.4039,
+       0,
+       -0.0202,
+       0.0644,
+       0.013,
+       1
+      ],
+      "node": "prop_small_bucket",
+      "prop": "small-bucket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "crook",
+   "kit": "farm",
+   "socket": "hand_r",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 243844,
+  "sha256": "8f738f7931b77d1dcd9a125311054a36595f4193c95998877630facb6274b976"
+ },
+ "recipeSha256": "eac9f7fda531325fef0f19c8fe4cec93712096e293a28b8932c47dcf69632381",
+ "referenceStatureCm": 119.5,
+ "residentId": "ealdholt-shepherd-son",
+ "restRadiusMetres": 0.384,
+ "roleId": "shepherd-child",
+ "statureCm": 146.1,
+ "status": "working-placeholder"
+}

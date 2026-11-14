@@ -1,0 +1,507 @@
+{
+ "archetype": "child",
+ "build": {
+  "seconds": 9.3,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.5,
+   "shape": 4.2,
+   "texture": 4.3
+  }
+ },
+ "clipLibrary": "crowd-clips-child-v1.glb",
+ "envelopeGate": {
+  "clips": 15,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0217,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.055,
+ "envelopes": {
+  "fetch_carry": {
+   "max": [
+    0.351,
+    1.266,
+    0.671
+   ],
+   "min": [
+    -0.348,
+    -0.282,
+    -0.618
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.326,
+    1.231,
+    0.509
+   ],
+   "min": [
+    -0.306,
+    -0.065,
+    -0.433
+   ]
+  },
+  "play_chase": {
+   "max": [
+    0.53,
+    1.174,
+    0.605
+   ],
+   "min": [
+    -0.512,
+    -0.186,
+    -0.465
+   ]
+  },
+  "play_chase_enter": {
+   "max": [
+    0.429,
+    1.237,
+    0.518
+   ],
+   "min": [
+    -0.389,
+    -0.116,
+    -0.466
+   ]
+  },
+  "play_chase_exit": {
+   "max": [
+    0.429,
+    1.237,
+    0.518
+   ],
+   "min": [
+    -0.389,
+    -0.116,
+    -0.466
+   ]
+  },
+  "play_skip": {
+   "max": [
+    0.345,
+    1.266,
+    0.472
+   ],
+   "min": [
+    -0.392,
+    -0.111,
+    -0.42
+   ]
+  },
+  "play_skip_enter": {
+   "max": [
+    0.355,
+    1.25,
+    0.508
+   ],
+   "min": [
+    -0.341,
+    -0.143,
+    -0.441
+   ]
+  },
+  "play_skip_exit": {
+   "max": [
+    0.355,
+    1.25,
+    0.508
+   ],
+   "min": [
+    -0.341,
+    -0.143,
+    -0.441
+   ]
+  },
+  "sit": {
+   "max": [
+    0.341,
+    0.935,
+    0.317
+   ],
+   "min": [
+    -0.339,
+    -0.298,
+    -0.699
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.454,
+    1.265,
+    0.816
+   ],
+   "min": [
+    -0.409,
+    -0.479,
+    -0.874
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.489,
+    1.28,
+    0.818
+   ],
+   "min": [
+    -0.454,
+    -0.47,
+    -0.876
+   ]
+  },
+  "talk": {
+   "max": [
+    0.319,
+    1.234,
+    0.509
+   ],
+   "min": [
+    -0.306,
+    -0.07,
+    -0.424
+   ]
+  },
+  "walk": {
+   "max": [
+    0.351,
+    1.264,
+    0.671
+   ],
+   "min": [
+    -0.348,
+    -0.282,
+    -0.618
+   ]
+  },
+  "walk_start": {
+   "max": [
+    0.322,
+    1.253,
+    0.591
+   ],
+   "min": [
+    -0.323,
+    -0.199,
+    -0.498
+   ]
+  },
+  "walk_stop": {
+   "max": [
+    0.323,
+    1.239,
+    0.577
+   ],
+   "min": [
+    -0.321,
+    -0.213,
+    -0.576
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.198,
+  "lipGapMm": {
+   "aa": 10.9,
+   "full": 13.4,
+   "rest": 0.5
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 8.57,
+   "r": 8.57
+  },
+  "upperLidClosed": 0.617,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 1,
+    "upper": 0.617
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.617
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-captain-daughter.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.228,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   914,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3433,
+   4500,
+   true
+  ]
+ },
+ "group": "children-apprentices",
+ "hair": {
+  "colour": "red-brown",
+  "facialHair": "none",
+  "style": "twin-braids"
+ },
+ "headwear": "kerchief",
+ "headwearGate": {
+  "headwear": "kerchief",
+  "pass": true,
+  "shells": {
+   "Kerchief": {
+    "faces": 259,
+    "islands": 1,
+    "maxReachRadii": 1.017,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#963a2e",
+  "shape": "knot-back",
+  "tone": "accent"
+ },
+ "householdId": "ealdholt-captain-household",
+ "jointResidualCm": {
+  "allMaxCm": 0.95,
+  "coreMaxCm": 0.95,
+  "coreMeanCm": 0.45,
+  "coreWorstJoint": "hips"
+ },
+ "label": "Captain's daughter",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 239376,
+  "fileMiB": 0.228,
+  "headTriangles": 914,
+  "images": [
+   {
+    "bytes": 30778,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3433,
+  "vertices": 3187
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-child-v1",
+  "rate": 1.033,
+  "roleClips": [
+   "play_chase",
+   "play_skip",
+   "fetch_carry"
+  ],
+  "talk": "talk",
+  "walk": "walk"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "short-dress",
+  "kit": "child-dress",
+  "palette": {
+   "accent": "madder-red",
+   "main": "madder-rose",
+   "secondary": "undyed-cream"
+  },
+  "wear": "muddy-hems"
+ },
+ "placementScale": 1.1203,
+ "presentation": {
+  "clips": {
+   "fetch_carry": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.4083,
+       -0.0345,
+       -0.5536,
+       0,
+       0.0355,
+       -0.6844,
+       0.0688,
+       0,
+       -0.5536,
+       -0.0693,
+       -0.4039,
+       0,
+       -0.0202,
+       0.0644,
+       0.013,
+       1
+      ],
+      "node": "prop_small_bucket",
+      "prop": "small-bucket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "small-bucket",
+   "kit": "everyday",
+   "socket": "both-hands",
+   "source": "polyhaven:wooden_bucket_01"
+  },
+  {
+   "id": "pebbles",
+   "kit": "everyday",
+   "socket": "hand_r",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 239376,
+  "sha256": "c391b23a077d5d3679a40fdfbdafe3c490300258341b9f57659f6b3028185588"
+ },
+ "recipeSha256": "5c5be145a3bf95f9352ddc885cd0331a8cfdf5067e6dffef8e5096bef4af1841",
+ "referenceStatureCm": 119.5,
+ "residentId": "ealdholt-captain-daughter",
+ "restRadiusMetres": 0.385,
+ "roleId": "village-child",
+ "statureCm": 133,
+ "status": "working-placeholder"
+}

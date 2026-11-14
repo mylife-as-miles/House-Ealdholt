@@ -1,0 +1,686 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 8.7,
+  "stageSeconds": {
+   "export": 0.2,
+   "faceRig": 0.2,
+   "lod": 0.7,
+   "shape": 3.3,
+   "texture": 4.4
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 15,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0244,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.196,
+ "envelopes": {
+  "carry_bucket_walk": {
+   "max": [
+    0.509,
+    1.713,
+    0.8
+   ],
+   "min": [
+    -0.496,
+    -0.343,
+    -0.843
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.421,
+    1.67,
+    0.72
+   ],
+   "min": [
+    -0.379,
+    -0.17,
+    -0.667
+   ]
+  },
+  "sit": {
+   "max": [
+    0.437,
+    1.265,
+    0.416
+   ],
+   "min": [
+    -0.441,
+    -0.46,
+    -1.04
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.581,
+    1.724,
+    1.103
+   ],
+   "min": [
+    -0.539,
+    -0.67,
+    -1.196
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.615,
+    1.744,
+    1.106
+   ],
+   "min": [
+    -0.578,
+    -0.658,
+    -1.2
+   ]
+  },
+  "talk": {
+   "max": [
+    0.474,
+    1.692,
+    0.721
+   ],
+   "min": [
+    -0.436,
+    -0.17,
+    -0.657
+   ]
+  },
+  "walk_b": {
+   "max": [
+    0.504,
+    1.704,
+    0.805
+   ],
+   "min": [
+    -0.458,
+    -0.338,
+    -0.857
+   ]
+  },
+  "walk_b_start": {
+   "max": [
+    0.45,
+    1.688,
+    0.827
+   ],
+   "min": [
+    -0.417,
+    -0.253,
+    -0.765
+   ]
+  },
+  "walk_b_stop": {
+   "max": [
+    0.475,
+    1.68,
+    0.738
+   ],
+   "min": [
+    -0.39,
+    -0.266,
+    -0.802
+   ]
+  },
+  "work_sell": {
+   "max": [
+    0.465,
+    1.876,
+    0.77
+   ],
+   "min": [
+    -0.461,
+    -0.203,
+    -0.65
+   ]
+  },
+  "work_sell_enter": {
+   "max": [
+    0.391,
+    1.785,
+    0.712
+   ],
+   "min": [
+    -0.388,
+    -0.17,
+    -0.647
+   ]
+  },
+  "work_sell_exit": {
+   "max": [
+    0.391,
+    1.785,
+    0.712
+   ],
+   "min": [
+    -0.388,
+    -0.17,
+    -0.647
+   ]
+  },
+  "work_stir": {
+   "max": [
+    0.635,
+    1.663,
+    0.701
+   ],
+   "min": [
+    -0.404,
+    -0.17,
+    -0.68
+   ]
+  },
+  "work_stir_enter": {
+   "max": [
+    0.491,
+    1.756,
+    0.705
+   ],
+   "min": [
+    -0.436,
+    -0.173,
+    -0.666
+   ]
+  },
+  "work_stir_exit": {
+   "max": [
+    0.491,
+    1.756,
+    0.705
+   ],
+   "min": [
+    -0.435,
+    -0.173,
+    -0.666
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.61
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.224,
+  "lipGapMm": {
+   "aa": 15.4,
+   "full": 18.8,
+   "rest": 1
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.9,
+   "r": 7.89
+  },
+  "upperLidClosed": 0.528,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.528
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "major",
+ "file": "ealdholt-brewster.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.249,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   919,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3711,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "red-brown",
+  "facialHair": "none",
+  "style": "long-braid"
+ },
+ "headwear": "veil-wimple",
+ "headwearGate": {
+  "headwear": "veil-wimple",
+  "pass": true,
+  "scalpCovered": 1,
+  "scalpRays": 890,
+  "shells": {
+   "Wimple": {
+    "faces": 339,
+    "islands": 2,
+    "maxReachRadii": 1.771,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#c4b89c",
+  "shape": "folded-crown",
+  "tone": "unbleached"
+ },
+ "householdId": "ealdholt-captain-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.4,
+  "coreMaxCm": 1.22,
+  "coreMeanCm": 0.78,
+  "coreWorstJoint": "calf_l"
+ },
+ "label": "Brewster and alewife",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 261428,
+  "fileMiB": 0.249,
+  "headTriangles": 919,
+  "images": [
+   {
+    "bytes": 39156,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3711,
+  "vertices": 3418
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 1.006,
+  "roleClips": [
+   "work_stir",
+   "work_sell",
+   "carry_bucket_walk"
+  ],
+  "talk": "talk",
+  "walk": "walk_b"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "apron-gown",
+  "kit": "market-f",
+  "palette": {
+   "accent": "oak-gall-black",
+   "main": "weld-yellow",
+   "secondary": "undyed-cream"
+  },
+  "wear": "stained"
+ },
+ "placementScale": 0.9577,
+ "presentation": {
+  "clips": {
+   "carry_bucket_walk": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       -0.656,
+       -0.091,
+       -0.6393,
+       0,
+       -0.0226,
+       0.0792,
+       0.0082,
+       1
+      ],
+      "node": "prop_bucket",
+      "prop": "bucket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_sell": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.6075,
+       1
+      ],
+      "node": "prop_market_trestle",
+      "prop": "market-trestle"
+     },
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.6075,
+       1
+      ],
+      "node": "prop_goods_ale",
+      "prop": "goods-ale"
+     }
+    ]
+   },
+   "work_stir": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       0.043,
+       0.0883,
+       0.0721,
+       1
+      ],
+      "node": "prop_ladle",
+      "prop": "ladle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.4602,
+       1
+      ],
+      "node": "prop_brew_tub",
+      "prop": "brew-tub"
+     }
+    ]
+   },
+   "work_stir_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       0.043,
+       0.0883,
+       0.0721,
+       1
+      ],
+      "node": "prop_ladle",
+      "prop": "ladle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_stir_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       0.043,
+       0.0883,
+       0.0721,
+       1
+      ],
+      "node": "prop_ladle",
+      "prop": "ladle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "craft": "crowd-v1/props/crowd-props-craft-v1.glb",
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "ladle",
+   "kit": "craft",
+   "socket": "hand_r",
+   "source": "project-original"
+  },
+  {
+   "id": "brew-tub",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  },
+  {
+   "id": "market-trestle",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  },
+  {
+   "id": "goods-ale",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 261428,
+  "sha256": "dceb7b3ad2c00775e61eb35cf71082daa50fd14314a96e2885abec98d1a193f9"
+ },
+ "recipeSha256": "102f2f29603a76bbf7875e6b3aa05f7340040f4dee18b0d960401a9d5dc32523",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-brewster",
+ "restRadiusMetres": 0.526,
+ "roleId": "brewster",
+ "statureCm": 153.1,
+ "status": "working-placeholder"
+}

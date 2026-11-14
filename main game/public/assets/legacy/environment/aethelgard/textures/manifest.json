@@ -1,0 +1,130 @@
+{
+  "version": 2,
+  "provenance": "Poly Haven CC0 photographic terrain reconstruction for Crownfall",
+  "licence": "CC0-1.0",
+  "generator": "scripts/prepare-aethelgard-photographic-ground.mjs",
+  "colour": {
+    "albedo": "sRGB; measured linear luminance after quantization",
+    "normal": "OpenGL +Y, linear data",
+    "orm": "R=source AO; G=source roughness; B=0 dielectric",
+    "orientation": "All files preserve source rows; configure flipY=false together"
+  },
+  "sets": {
+    "earth": {
+      "assetId": "stony_dirt_path",
+      "sourceUrl": "https://polyhaven.com/a/stony_dirt_path",
+      "authors": {
+        "eye-candy.xyz": "All"
+      },
+      "licence": "CC0-1.0",
+      "profiles": {
+        "desktop": {
+          "meanLuminance": 0.05332260056997813,
+          "files": {
+            "albedo": {
+              "file": "earth-desktop-albedo-1024.webp",
+              "size": 1024,
+              "bytes": 1679790,
+              "sha256": "033e09d1f83e6ad2a8366eab911152d15cb6bd69aafb9aeddf33b87e28b4cb3e"
+            },
+            "normal": {
+              "file": "earth-desktop-normal-1024.png",
+              "size": 1024,
+              "bytes": 3093461,
+              "sha256": "503189d8eedf043d93f47456f7f2a792839055c6ae960adc150df10def6891a6"
+            },
+            "orm": {
+              "file": "earth-desktop-orm-1024.png",
+              "size": 1024,
+              "bytes": 1662474,
+              "sha256": "b24c8a3046b4544b2f8c2e9d006abf5326320b45ca4b239d87ec11a8472746d9"
+            }
+          }
+        },
+        "quest": {
+          "meanLuminance": 0.053322350106490495,
+          "files": {
+            "albedo": {
+              "file": "earth-quest-albedo-512.webp",
+              "size": 512,
+              "bytes": 492778,
+              "sha256": "f7a92c25de5dab7f577f19e65c8269c0f9030da847b5bba591867e37fe2bf822"
+            },
+            "normal": {
+              "file": "earth-quest-normal-256.png",
+              "size": 256,
+              "bytes": 155141,
+              "sha256": "a94c4895b00e21e538961a429d7bb1c73bda788a8ca71ca9fc91dd808b4f1ff8"
+            },
+            "orm": {
+              "file": "earth-quest-orm-256.png",
+              "size": 256,
+              "bytes": 96434,
+              "sha256": "7277c2214960b7a3eed7157eb5bff310ebc8c25674ab001ff04dc71fd0b6de54"
+            }
+          }
+        }
+      }
+    },
+    "rock": {
+      "assetId": "rock_surface",
+      "sourceUrl": "https://polyhaven.com/a/rock_surface",
+      "authors": {
+        "Amal Kumar": "All"
+      },
+      "licence": "CC0-1.0",
+      "profiles": {
+        "desktop": {
+          "meanLuminance": 0.125407876560458,
+          "files": {
+            "albedo": {
+              "file": "rock-desktop-albedo-1024.webp",
+              "size": 1024,
+              "bytes": 1477216,
+              "sha256": "c43199ea21f77e20df58106268f0abe0f849620f558c8688ddb6086f492b823a"
+            },
+            "normal": {
+              "file": "rock-desktop-normal-1024.png",
+              "size": 1024,
+              "bytes": 2569752,
+              "sha256": "9dd82b130a701c7f8377a3669979a8e9986f67792d9af4cee32a577ef0b6e525"
+            },
+            "orm": {
+              "file": "rock-desktop-orm-1024.png",
+              "size": 1024,
+              "bytes": 1882282,
+              "sha256": "8d1c6b42711db5c998d47123c5674312ea72790e16c63cf70d662dcea23ff4ce"
+            }
+          }
+        },
+        "quest": {
+          "meanLuminance": 0.12540796154156014,
+          "files": {
+            "albedo": {
+              "file": "rock-quest-albedo-512.webp",
+              "size": 512,
+              "bytes": 333278,
+              "sha256": "d71ea5a91fa26c85970e713be50639c3b6c691d4cd8620ec40148545995e521f"
+            },
+            "normal": {
+              "file": "rock-quest-normal-256.png",
+              "size": 256,
+              "bytes": 138450,
+              "sha256": "d706ed80b4fbd52530d9bc132bc29407b0d33992625b62fe4198076c4463db1e"
+            },
+            "orm": {
+              "file": "rock-quest-orm-256.png",
+              "size": 256,
+              "bytes": 105653,
+              "sha256": "60b1d777c90974a8982d8f3a17d2739a53d12ff7a6c64fa4f891d400de0c5f93"
+            }
+          }
+        }
+      }
+    }
+  },
+  "gpuBytesWithMipsEstimate": {
+    "desktop": 33554436,
+    "quest": 4194308
+  }
+}

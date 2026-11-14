@@ -1,0 +1,682 @@
+{
+ "archetype": "adult-male",
+ "build": {
+  "seconds": 8.4,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.5,
+   "shape": 3.1,
+   "texture": 4.5
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-male-v1.glb",
+ "envelopeGate": {
+  "clips": 17,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0198,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.271,
+ "envelopes": {
+  "idle_b": {
+   "max": [
+    0.437,
+    1.786,
+    0.382
+   ],
+   "min": [
+    -0.277,
+    -0.097,
+    -0.345
+   ]
+  },
+  "sit": {
+   "max": [
+    0.529,
+    1.322,
+    0.368
+   ],
+   "min": [
+    -0.392,
+    -0.097,
+    -0.685
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.71,
+    1.822,
+    0.845
+   ],
+   "min": [
+    -0.6,
+    -0.327,
+    -1.024
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.723,
+    1.836,
+    0.847
+   ],
+   "min": [
+    -0.638,
+    -0.318,
+    -1.027
+   ]
+  },
+  "talk": {
+   "max": [
+    0.682,
+    1.785,
+    0.584
+   ],
+   "min": [
+    -0.49,
+    -0.097,
+    -0.346
+   ]
+  },
+  "walk": {
+   "max": [
+    0.452,
+    1.809,
+    0.861
+   ],
+   "min": [
+    -0.407,
+    -0.385,
+    -0.871
+   ]
+  },
+  "walk_start": {
+   "max": [
+    0.411,
+    1.802,
+    0.779
+   ],
+   "min": [
+    -0.402,
+    -0.226,
+    -0.48
+   ]
+  },
+  "walk_stop": {
+   "max": [
+    0.418,
+    1.795,
+    0.679
+   ],
+   "min": [
+    -0.396,
+    -0.215,
+    -0.636
+   ]
+  },
+  "work_address": {
+   "max": [
+    0.577,
+    1.786,
+    0.717
+   ],
+   "min": [
+    -0.401,
+    -0.098,
+    -0.36
+   ]
+  },
+  "work_address_enter": {
+   "max": [
+    0.371,
+    1.768,
+    0.368
+   ],
+   "min": [
+    -0.256,
+    -0.097,
+    -0.335
+   ]
+  },
+  "work_address_exit": {
+   "max": [
+    0.371,
+    1.768,
+    0.368
+   ],
+   "min": [
+    -0.256,
+    -0.097,
+    -0.335
+   ]
+  },
+  "work_hoe": {
+   "max": [
+    0.528,
+    1.561,
+    0.86
+   ],
+   "min": [
+    -0.434,
+    -0.129,
+    -0.438
+   ]
+  },
+  "work_hoe_enter": {
+   "max": [
+    0.602,
+    1.853,
+    0.762
+   ],
+   "min": [
+    -0.43,
+    -0.162,
+    -0.509
+   ]
+  },
+  "work_hoe_exit": {
+   "max": [
+    0.602,
+    1.853,
+    0.762
+   ],
+   "min": [
+    -0.43,
+    -0.162,
+    -0.51
+   ]
+  },
+  "work_tally": {
+   "max": [
+    0.537,
+    1.867,
+    0.524
+   ],
+   "min": [
+    -0.334,
+    -0.097,
+    -0.335
+   ]
+  },
+  "work_tally_enter": {
+   "max": [
+    0.607,
+    1.86,
+    0.502
+   ],
+   "min": [
+    -0.467,
+    -0.097,
+    -0.335
+   ]
+  },
+  "work_tally_exit": {
+   "max": [
+    0.607,
+    1.86,
+    0.502
+   ],
+   "min": [
+    -0.467,
+    -0.097,
+    -0.335
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.21,
+  "lipGapMm": {
+   "aa": 14.7,
+   "full": 18,
+   "rest": 0.4
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.44,
+   "r": 7.44
+  },
+  "upperLidClosed": 0.478,
+  "visibilityPasses": [
+   {
+    "l": 17,
+    "r": 0,
+    "upper": 0.478
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.478
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "major",
+ "file": "ealdholt-village-reeve.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.238,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   913,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3465,
+   4500,
+   true
+  ]
+ },
+ "group": "leaders-clergy-specialists",
+ "hair": {
+  "colour": "greying-red-brown",
+  "facialHair": "moustache",
+  "style": "balding-crop"
+ },
+ "headwear": "felt-cap",
+ "headwearGate": {
+  "headwear": "felt-cap",
+  "pass": true,
+  "shells": {
+   "Cap": {
+    "faces": 306,
+    "islands": 1,
+    "maxReachRadii": 0.978,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#8b867c",
+  "shape": "plain",
+  "tone": "main"
+ },
+ "householdId": "ealdholt-reeve-farm-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.39,
+  "coreMaxCm": 0.93,
+  "coreMeanCm": 0.45,
+  "coreWorstJoint": "hand_l"
+ },
+ "label": "Village reeve",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 249568,
+  "fileMiB": 0.238,
+  "headTriangles": 913,
+  "images": [
+   {
+    "bytes": 29980,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3465,
+  "vertices": 3393
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-male-v1",
+  "rate": 1.012,
+  "roleClips": [
+   "work_address",
+   "work_tally",
+   "work_hoe"
+  ],
+  "talk": "talk",
+  "walk": "walk"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "sleeveless-jerkin",
+  "kit": "field-tunic",
+  "palette": {
+   "accent": "ochre",
+   "main": "undyed-grey",
+   "secondary": "undyed-brown"
+  },
+  "wear": "muddy-hems"
+ },
+ "placementScale": 1.0004,
+ "presentation": {
+  "clips": {
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_hoe": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       -0.5777,
+       0.0509,
+       0.8147,
+       0,
+       0.8146,
+       0.0996,
+       0.5714,
+       0,
+       -0.0521,
+       0.9937,
+       -0.099,
+       0,
+       0.2399,
+       0.1235,
+       0.1951,
+       1
+      ],
+      "node": "prop_hoe",
+      "prop": "hoe"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_hoe_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       -0.5777,
+       0.0509,
+       0.8147,
+       0,
+       0.8146,
+       0.0996,
+       0.5714,
+       0,
+       -0.0521,
+       0.9937,
+       -0.099,
+       0,
+       0.2399,
+       0.1235,
+       0.1951,
+       1
+      ],
+      "node": "prop_hoe",
+      "prop": "hoe"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_hoe_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       -0.5777,
+       0.0509,
+       0.8147,
+       0,
+       0.8146,
+       0.0996,
+       0.5714,
+       0,
+       -0.0521,
+       0.9937,
+       -0.099,
+       0,
+       0.2399,
+       0.1235,
+       0.1951,
+       1
+      ],
+      "node": "prop_hoe",
+      "prop": "hoe"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_tally": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.2823,
+       -0.9489,
+       -0.1409,
+       0,
+       0.8996,
+       0.3129,
+       -0.3047,
+       0,
+       0.3333,
+       -0.0407,
+       0.942,
+       0,
+       -0.0187,
+       0.0689,
+       0.0017,
+       1
+      ],
+      "node": "prop_tally_sticks",
+      "prop": "tally-sticks"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_tally_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.2823,
+       -0.9489,
+       -0.1409,
+       0,
+       0.8996,
+       0.3129,
+       -0.3047,
+       0,
+       0.3333,
+       -0.0407,
+       0.942,
+       0,
+       -0.0187,
+       0.0689,
+       0.0017,
+       1
+      ],
+      "node": "prop_tally_sticks",
+      "prop": "tally-sticks"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_tally_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.2823,
+       -0.9489,
+       -0.1409,
+       0,
+       0.8996,
+       0.3129,
+       -0.3047,
+       0,
+       0.3333,
+       -0.0407,
+       0.942,
+       0,
+       -0.0187,
+       0.0689,
+       0.0017,
+       1
+      ],
+      "node": "prop_tally_sticks",
+      "prop": "tally-sticks"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "farm": "crowd-v1/props/crowd-props-farm-v1.glb",
+   "letters-and-care": "crowd-v1/props/crowd-props-letters-and-care-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "tally-sticks",
+   "kit": "letters-and-care",
+   "socket": "hand_l",
+   "source": "project-original"
+  },
+  {
+   "id": "walking-staff",
+   "kit": "everyday",
+   "socket": "hand_r",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 249568,
+  "sha256": "c17b5220440936e3b7cf8b91bc197e74f17b711756aff2e0268a0f43cf226d40"
+ },
+ "recipeSha256": "da988ab72e1679d3bac8b7585838c28eec07fa3cb916a2a6ed7ded071efd731a",
+ "referenceStatureCm": 173.5,
+ "residentId": "ealdholt-village-reeve",
+ "restRadiusMetres": 0.601,
+ "roleId": "village-reeve",
+ "statureCm": 172.7,
+ "status": "working-placeholder"
+}

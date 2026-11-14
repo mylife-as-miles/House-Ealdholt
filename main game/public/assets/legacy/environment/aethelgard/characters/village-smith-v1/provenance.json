@@ -1,0 +1,978 @@
+{
+ "set": "village-smith-v1",
+ "status": "working-placeholder",
+ "residentId": "ealdholt-village-smith",
+ "downloaded": "2026-11-06",
+ "builtWith": {
+  "pipeline": "scripts/characters/build_resident.py",
+  "recipe": "scripts/characters/recipes/village-smith.json",
+  "blender": "Blender 5.2.3 LTS (bpy module)",
+  "note": "Original Crownfall code reading the data below; no MPFB2 code executed."
+ },
+ "sources": {
+  "makehuman": {
+   "source": "https://github.com/makehumancommunity/mpfb2/tree/6ff1eb358f6c1959ced77e79e6dd2406d9a71f49/src/mpfb/data",
+   "author": "MakeHuman team (Data Collection AB, Joel Palmius, Jonas Hauquier)",
+   "licence": {
+    "spdx": "CC0-1.0",
+    "legalCodeUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode"
+   },
+   "evidence": "LICENSE.md section C and LICENSE.ASSETS.md: base mesh, proxies, targets, textures, rigs and mesh JSON are CC0 1.0. MPFB2 program code (GPL-3.0) was not executed, copied or redistributed.",
+   "files": [
+    {
+     "path": "3dobjs/base.obj",
+     "bytes": 1749303,
+     "sha256": "8e761e6624b8f54536409135d1636da63b32486a90d4897f84e121d144f6fb4c"
+    },
+    {
+     "path": "rigs/standard/rig.mixamo_unity.json",
+     "bytes": 50905,
+     "sha256": "c991d9e61090c6d94a8fd4605ca5285b1b087aa73177a6374169b9b034643ea8"
+    },
+    {
+     "path": "rigs/standard/weights.mixamo_unity.json",
+     "bytes": 3342705,
+     "sha256": "0cfa562682fe27dab69cd3abd287cc971fbe576e03297d702798ac85813fb102"
+    },
+    {
+     "path": "uv_layers/lips_solid.json.gz",
+     "bytes": 22073,
+     "sha256": "efc7e7a093db2bf42cc1c680ce009a807b1afd740dd5dc3927b4e244b30b5929"
+    },
+    {
+     "path": "targets/arms/l-lowerarm-muscle-incr.target.gz",
+     "bytes": 1613,
+     "sha256": "29077b022632174656b8404ae12f68f62059f2fbc774b24885ec5b7460b72992"
+    },
+    {
+     "path": "targets/arms/l-upperarm-muscle-incr.target.gz",
+     "bytes": 2078,
+     "sha256": "2b1ae2af00eabddadc298fd22b8af17966f13e65931636b36c2d77d2b9540dcd"
+    },
+    {
+     "path": "targets/arms/r-lowerarm-muscle-incr.target.gz",
+     "bytes": 1598,
+     "sha256": "84777a42af2cefbabcea15820c61dfd23a800d9a2583b23d063a1566052da226"
+    },
+    {
+     "path": "targets/arms/r-upperarm-muscle-incr.target.gz",
+     "bytes": 2089,
+     "sha256": "24f3486b3fe48bb8127f48c2eae53e48930c32b7ae2a221ec2c9afafc60b453d"
+    },
+    {
+     "path": "targets/asym/asym-eye-3-r.target.gz",
+     "bytes": 1944,
+     "sha256": "c28ae0f0ca6ffef3b93988b0d63a4e6519a108d51d3937acf5503097c2524950"
+    },
+    {
+     "path": "targets/asym/asym-jaw-1-l.target.gz",
+     "bytes": 1174,
+     "sha256": "0f051091b5e84116f7bfa49cdfc8ad31477aca2916af0e67f74ccb77022b4704"
+    },
+    {
+     "path": "targets/asym/asym-nose-1-r.target.gz",
+     "bytes": 1132,
+     "sha256": "6d48de11517a8651fd8b5e8b07161f58f8517f292bcf193bbfd4d3cf0203a19d"
+    },
+    {
+     "path": "targets/asym/asym-nose-2-l.target.gz",
+     "bytes": 1243,
+     "sha256": "2b6da9c13d91d0552d91c7eea37795709549e284a81897a956598f8326d43466"
+    },
+    {
+     "path": "targets/cheek/l-cheek-bones-incr.target.gz",
+     "bytes": 305,
+     "sha256": "ea5aa60abcc2926e61cdabf5d40701c2b23b3f8027f949cea0b80bcbc55df301"
+    },
+    {
+     "path": "targets/cheek/r-cheek-bones-incr.target.gz",
+     "bytes": 310,
+     "sha256": "c608528b9e5e1c670179cfb502dab3d9478a77bb942f7c8186cd072a7369e9b9"
+    },
+    {
+     "path": "targets/chin/chin-jaw-drop-incr.target.gz",
+     "bytes": 288,
+     "sha256": "b750b941a75badd7281db378356438dd8647ef043e3470f9e34bbf873e711e71"
+    },
+    {
+     "path": "targets/chin/chin-prominent-incr.target.gz",
+     "bytes": 565,
+     "sha256": "e0d5ec5e213b88719def0f43ddaa7107796fc02f7447e2b2f140d9fe513a6ac8"
+    },
+    {
+     "path": "targets/chin/chin-width-incr.target.gz",
+     "bytes": 1110,
+     "sha256": "68764b6ec7c923597beaaf643f71c41f00c93639d9bb522c169c279db2ad299e"
+    },
+    {
+     "path": "targets/eyebrows/eyebrows-trans-down.target.gz",
+     "bytes": 1574,
+     "sha256": "9f5bbb848e40d3a320492dd08ef8d1a926b50c7fd1ca279cf8f573e0f0cdd589"
+    },
+    {
+     "path": "targets/eyes/l-eye-bag-incr.target.gz",
+     "bytes": 355,
+     "sha256": "45bd5a9415b7da13e42fb1b8f33e8023d2948cdfa27e40cf393496e827d754b4"
+    },
+    {
+     "path": "targets/eyes/l-eye-eyefold-down.target.gz",
+     "bytes": 405,
+     "sha256": "b7b1589f224ed9f12bbb8ece904144023fde8ffe85355304299d24f5f6d292e5"
+    },
+    {
+     "path": "targets/eyes/r-eye-bag-incr.target.gz",
+     "bytes": 274,
+     "sha256": "552483d9b4cd846d5bc864e6866d8bc9db79fdf44233cb30be2d084e5d4373d0"
+    },
+    {
+     "path": "targets/eyes/r-eye-eyefold-down.target.gz",
+     "bytes": 385,
+     "sha256": "a9225e4841241ef7a2d1f4db3b65d9caf09e23287f169f2d657a4bf9a95ff690"
+    },
+    {
+     "path": "targets/forehead/forehead-nubian-incr.target.gz",
+     "bytes": 2593,
+     "sha256": "5039c1af5309eb9cf12333d9a37dc0e3a189a6fcf6d10316df0b34ab043f5baf"
+    },
+    {
+     "path": "targets/hands/l-hand-fingers-diameter-incr.target.gz",
+     "bytes": 7373,
+     "sha256": "12e169467e9407856a275971981666e1f8bbe636dafa7fb59f17e7793b788f43"
+    },
+    {
+     "path": "targets/hands/l-hand-scale-incr.target.gz",
+     "bytes": 13462,
+     "sha256": "6b274978f762b5ed3ae9101615194c139e260b506f0ca24c47c1a6589b7715f5"
+    },
+    {
+     "path": "targets/hands/r-hand-fingers-diameter-incr.target.gz",
+     "bytes": 7368,
+     "sha256": "58beddaa9c8097ab7addfe2ae638c6c8c578eb8b7e5ac5ada542fce000d0f7da"
+    },
+    {
+     "path": "targets/hands/r-hand-scale-incr.target.gz",
+     "bytes": 13576,
+     "sha256": "33d4f09b9c7cf1559503dde7b4e40f882a2bb81ec9bc71324c9edbe3655cda34"
+    },
+    {
+     "path": "targets/head/head-age-incr.target.gz",
+     "bytes": 13932,
+     "sha256": "ea5b7b9404daa1f6b8ea14a11a0e8ae6a082e98d0d65f63cc2150057a168e396"
+    },
+    {
+     "path": "targets/head/head-square.target.gz",
+     "bytes": 3350,
+     "sha256": "94b484ae145970e5368706d4f42711f50e18fcbf7d9f1ee800572c3fa69f855a"
+    },
+    {
+     "path": "targets/macrodetails/african-male-old.target.gz",
+     "bytes": 127252,
+     "sha256": "fb3477ab3c05d6ea421d82717c3df89ff23f926d1e5148092e30c0efe2ea96de"
+    },
+    {
+     "path": "targets/macrodetails/african-male-young.target.gz",
+     "bytes": 132860,
+     "sha256": "05ed84d6df36e788cdfa8da0be15376850524b960cf2f17f3e592b9cf7d21c85"
+    },
+    {
+     "path": "targets/macrodetails/asian-male-old.target.gz",
+     "bytes": 130281,
+     "sha256": "8f931e96529904375a442c77be0c31d60ace6c0461645ed7ab1a43a3c378a247"
+    },
+    {
+     "path": "targets/macrodetails/asian-male-young.target.gz",
+     "bytes": 130005,
+     "sha256": "0928ed8b9f08f60afb9884cf9e9f33a939ed3a85d7f136de9ccc88a76981d6d7"
+    },
+    {
+     "path": "targets/macrodetails/caucasian-male-old.target.gz",
+     "bytes": 112944,
+     "sha256": "123cb7758c86aa2aa71d80ea0c8f5f4b3e96f394180edc1682e34720c4949df6"
+    },
+    {
+     "path": "targets/macrodetails/caucasian-male-young.target.gz",
+     "bytes": 127922,
+     "sha256": "ffe69537e53148edff2776204ba48cf3bf1f3cbc72966592c8a562ab80b07333"
+    },
+    {
+     "path": "targets/macrodetails/proportions/male-old-averagemuscle-averageweight-idealproportions.target.gz",
+     "bytes": 38093,
+     "sha256": "65cfc244948e8dff2ccf899d595d403f26fba3c6b5ece3ec78812816248b54a9"
+    },
+    {
+     "path": "targets/macrodetails/proportions/male-old-averagemuscle-maxweight-idealproportions.target.gz",
+     "bytes": 38089,
+     "sha256": "d8a506d51a36b3f32c6f8d95345f1b8d6848ed5c89a9d5e790f743a0bb58629e"
+    },
+    {
+     "path": "targets/macrodetails/proportions/male-old-maxmuscle-averageweight-idealproportions.target.gz",
+     "bytes": 38089,
+     "sha256": "456ed4fcd20130dd660f6aeca984d2f73879374b36b913e09d848f42659da8c7"
+    },
+    {
+     "path": "targets/macrodetails/proportions/male-old-maxmuscle-maxweight-idealproportions.target.gz",
+     "bytes": 38085,
+     "sha256": "a618ba54a7ff64262ae148b1dcd7d105d60ef13fcca24b7b8658994dde0f3ae8"
+    },
+    {
+     "path": "targets/macrodetails/proportions/male-young-averagemuscle-averageweight-idealproportions.target.gz",
+     "bytes": 39334,
+     "sha256": "b6cccc61b5f5af2e7c668b0a18013e5f3fa8ff082bf8513dcb9578c41275baeb"
+    },
+    {
+     "path": "targets/macrodetails/proportions/male-young-averagemuscle-maxweight-idealproportions.target.gz",
+     "bytes": 39136,
+     "sha256": "89e85432718a5cb0b0d57ce0837eec05ebf114cc139f00da344ba1012e8d8ebe"
+    },
+    {
+     "path": "targets/macrodetails/proportions/male-young-maxmuscle-averageweight-idealproportions.target.gz",
+     "bytes": 38091,
+     "sha256": "6a6dee42f9acddd3cf4c29eb498757e4cde1b694ade455298d38ee56dbe7f25a"
+    },
+    {
+     "path": "targets/macrodetails/proportions/male-young-maxmuscle-maxweight-idealproportions.target.gz",
+     "bytes": 38087,
+     "sha256": "4f0c94305105ab3578f52027de3678bac3f4c101fb7894f7c8b5c26099a34d67"
+    },
+    {
+     "path": "targets/macrodetails/universal-male-old-averagemuscle-averageweight.target.gz",
+     "bytes": 74,
+     "sha256": "3721ecc3f7a6af1d7c22ef20c709b1d37402445b3d203fe31e762b12356b59a6"
+    },
+    {
+     "path": "targets/macrodetails/universal-male-old-averagemuscle-maxweight.target.gz",
+     "bytes": 44277,
+     "sha256": "185c7fba104d170770240e8700f0ff8ea03b348412af7f3496d6f047d50beb39"
+    },
+    {
+     "path": "targets/macrodetails/universal-male-old-maxmuscle-averageweight.target.gz",
+     "bytes": 46209,
+     "sha256": "d2443e0ce0b3acc60ee68e5617ab15c9ee2dffc646ef4ea2411ab4d123310327"
+    },
+    {
+     "path": "targets/macrodetails/universal-male-old-maxmuscle-maxweight.target.gz",
+     "bytes": 57285,
+     "sha256": "d62997eae51a94b30ab91fb04c34698e2a019c43a36c21b975b8024649eed941"
+    },
+    {
+     "path": "targets/macrodetails/universal-male-young-averagemuscle-averageweight.target.gz",
+     "bytes": 76,
+     "sha256": "e814651195c53971503d9823d6841216718a561951ef064f81d132297f4fa494"
+    },
+    {
+     "path": "targets/macrodetails/universal-male-young-averagemuscle-maxweight.target.gz",
+     "bytes": 45230,
+     "sha256": "13b79074ecf00a0d028495a51865ae9e86c06b5801b6a614257b455ffbec7d10"
+    },
+    {
+     "path": "targets/macrodetails/universal-male-young-maxmuscle-averageweight.target.gz",
+     "bytes": 45597,
+     "sha256": "833caafc302bd9306de494f32ee1bc51d3a2e6641183329b031ac06ef0f4277e"
+    },
+    {
+     "path": "targets/macrodetails/universal-male-young-maxmuscle-maxweight.target.gz",
+     "bytes": 57195,
+     "sha256": "4c88d7850d64ae8a455bd375755769a2153cce98a7e0b1acce6fa0454083d14d"
+    },
+    {
+     "path": "targets/mouth/mouth-laugh-lines-in.target.gz",
+     "bytes": 334,
+     "sha256": "2151f7c8dc19be3b8ac015a06b312edc657ebe92f6df6870555c43cf729b3c7f"
+    },
+    {
+     "path": "targets/mouth/mouth-upperlip-volume-decr.target.gz",
+     "bytes": 580,
+     "sha256": "b2f940f8187112ee233ddfcdfb4a025fa01ee878b17dc44c64971c96583e7caf"
+    },
+    {
+     "path": "targets/neck/neck-scale-horiz-incr.target.gz",
+     "bytes": 2830,
+     "sha256": "8428be2a7c0e1554dbf6bb516e6ffbdfa564a8cc94d6a9ff08580c0127e44aeb"
+    },
+    {
+     "path": "targets/nose/nose-flaring-incr.target.gz",
+     "bytes": 778,
+     "sha256": "36413e04c15c2672d1b158621381c793c6fc2228ea4626cec70afbbf746528a2"
+    },
+    {
+     "path": "targets/nose/nose-hump-incr.target.gz",
+     "bytes": 1368,
+     "sha256": "ca6649d78752cca02fdb37f10804e021713b4fbfe2f85136e12b5787cc654aa6"
+    },
+    {
+     "path": "targets/nose/nose-point-width-incr.target.gz",
+     "bytes": 322,
+     "sha256": "bf5f782b014675be57aba4c840261308cc0d408660ecdfd22a42d47a756a016c"
+    },
+    {
+     "path": "targets/nose/nose-scale-depth-incr.target.gz",
+     "bytes": 1384,
+     "sha256": "49f63b72f04f637ed38061acce579c0948d29175d949bf21e6bfed354c0a10bf"
+    },
+    {
+     "path": "targets/torso/torso-muscle-dorsi-incr.target.gz",
+     "bytes": 5003,
+     "sha256": "db0e47dd5138a0b397cc4304c529e1ad6ed704f13f9ee5c24aa91c0798c4382f"
+    },
+    {
+     "path": "targets/torso/torso-scale-depth-incr.target.gz",
+     "bytes": 11212,
+     "sha256": "80abc3d1725bdf7f82cb1804fed3bc10e01a58b38b24f986e1f8083c5f3c68f1"
+    },
+    {
+     "path": "targets/torso/torso-vshape-incr.target.gz",
+     "bytes": 19019,
+     "sha256": "e1fb879d1a59229f0127af161f7dcdb6a476b734ed3bcf84bea2b379590ce371"
+    }
+   ]
+  },
+  "makehumanSystemAssets": {
+   "source": "https://files.makehumancommunity.org/asset_packs/makehuman_system_assets/makehuman_system_assets_cc0.zip",
+   "archiveSha256": "b542127a8e25547c7c29c19f2d1d2adb9a664c80396ecd694095dbc8028a0107",
+   "author": "makehuman_system",
+   "licence": {
+    "spdx": "CC0-1.0",
+    "legalCodeUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode"
+   },
+   "evidence": "Pack manifest lists 94/94 assets CC0; every mhclo/mhmat/obj used carries the CC0 release header.",
+   "files": [
+    {
+     "path": "skins/middleage_caucasian_male/middleage_lightskinned_male_diffuse.png",
+     "bytes": 3668589,
+     "sha256": "3f94f3f6a5cab92dedf5cce392a87332312fc435f1cb44c6e7b897daef9a5fbb"
+    },
+    {
+     "path": "eyes/high-poly/high-poly.mhclo",
+     "bytes": 72490,
+     "sha256": "b183cfe37120ab726f9b3f2ea6cd3a64c44ce7b4bd91a77c841cf70c04f83a0d"
+    },
+    {
+     "path": "eyes/high-poly/high-poly.obj",
+     "bytes": 100882,
+     "sha256": "da2493215b708a344c33dc72f2a9a5b8fa985dcc5a70ad3b208995cf871da8e1"
+    },
+    {
+     "path": "eyes/materials/grey_eye.png",
+     "bytes": 669883,
+     "sha256": "ecb05613126036a3d017880fabbd570501c5f14032c186462d8f6e2d719f6c4f"
+    },
+    {
+     "path": "teeth/teeth_base/teeth_base.mhclo",
+     "bytes": 263220,
+     "sha256": "9edc3deff3bb97a95c791878064dd069a74a38f95ea6d9707a9ba68d888b3b5c"
+    },
+    {
+     "path": "teeth/teeth_base/teeth_base.obj",
+     "bytes": 313110,
+     "sha256": "f55198069e55d360c4b4cc7ecb1cc292b2c7665753ab8b65eabf46a8783f2875"
+    },
+    {
+     "path": "tongue/tongue01/tongue01.mhclo",
+     "bytes": 2113,
+     "sha256": "61d825899cd78ff3146fa1324118060cb44b095fae1427d408c199ade74e3c9e"
+    },
+    {
+     "path": "tongue/tongue01/tongue01.obj",
+     "bytes": 17155,
+     "sha256": "12f4a6a9f85abae2ce3b4aa42d8119e1f679a437e0e89cb928ec68b29a7a1587"
+    },
+    {
+     "path": "tongue/tongue01/tongue01_diffuse.png",
+     "bytes": 625419,
+     "sha256": "3150be398e48e8ba1feac164c3143c16c0b2e959d9ffb6155f0171f59cfb4ea9"
+    },
+    {
+     "path": "eyelashes/eyelashes04/eyelashes04.mhclo",
+     "bytes": 8271,
+     "sha256": "d63a2449072ce96a5d074ed8490970cd1476d4f4773b47c4523ae0c6a00a4aeb"
+    },
+    {
+     "path": "eyelashes/eyelashes04/eyelashes04.obj",
+     "bytes": 16389,
+     "sha256": "2a9737362e993cf027be88fffbbf531dab42699682c571cda3e7e6f914be17da"
+    },
+    {
+     "path": "eyelashes/eyelashes04/eyelashes04.png",
+     "bytes": 93914,
+     "sha256": "e08c934091e227b38239f993427062f9006c7cf8f2f62cbef10076bd345dcb4a"
+    }
+   ]
+  },
+  "faceMorphPacks": {
+   "faceunits01": {
+    "source": "https://files.makehumancommunity.org/functional/faceunits01.zip",
+    "archiveSha256": "d113107bd7eb59f3af4df6fc0ec29bfcc593f496d0b336aec14f086a80ce7146",
+    "author": "Mika Suominen",
+    "licence": {
+     "spdx": "CC0-1.0",
+     "legalCodeUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode"
+    },
+    "evidence": "packs/faceunits01.json lists licence CC0 for every target.",
+    "files": [
+     {
+      "path": "targets/faceunits/eyeBlinkLeft.target",
+      "bytes": 16277,
+      "sha256": "53d35e0a8357140d4e37277a674f211bdaf97be011b61cfcdff618f0bfea0ec8"
+     },
+     {
+      "path": "targets/faceunits/eyeBlinkRight.target",
+      "bytes": 16075,
+      "sha256": "00d159a70fad650b336eb6f739a1a6a47f916da4331ef9848fb0eef989ca5cc5"
+     },
+     {
+      "path": "targets/faceunits/eyeSquintLeft.target",
+      "bytes": 8918,
+      "sha256": "4f7298dec327d91f53fe9525bf07ef17cf02776c4228da8baaef4b19079fd311"
+     },
+     {
+      "path": "targets/faceunits/eyeSquintRight.target",
+      "bytes": 8360,
+      "sha256": "f8563d6a34269f97110b1b0513b79bf98153125a7d179135f1ef206d0b0f2504"
+     },
+     {
+      "path": "targets/faceunits/eyeWideLeft.target",
+      "bytes": 9345,
+      "sha256": "40c1f1ba32e511609828e1da2280158db4e515fa0294892c08b4a6a863f08fab"
+     },
+     {
+      "path": "targets/faceunits/eyeWideRight.target",
+      "bytes": 8880,
+      "sha256": "be06515fd73d078639871d33ae4770a61bee41ffacd06d619913319054832839"
+     },
+     {
+      "path": "targets/faceunits/browDownLeft.target",
+      "bytes": 11474,
+      "sha256": "095b8e45fc918aa17f845ea6490561644e10d83d3a5aa42790488a6806b2ccf1"
+     },
+     {
+      "path": "targets/faceunits/browDownRight.target",
+      "bytes": 11014,
+      "sha256": "f092d3c8446b9e1bdf523b039465796e629b6cf9e20ac3f8fb853f98e890f105"
+     },
+     {
+      "path": "targets/faceunits/browInnerUp.target",
+      "bytes": 11346,
+      "sha256": "84c8be8c1cade46a51486786244c1a80dfbf6e1915bf1f5a72b74ef8eb951f6d"
+     },
+     {
+      "path": "targets/faceunits/browOuterUpLeft.target",
+      "bytes": 6834,
+      "sha256": "9821d5a8279c0ba8751d4595e0333ef5d1a041fad6d85ffffdae7b5044908fa0"
+     },
+     {
+      "path": "targets/faceunits/browOuterUpRight.target",
+      "bytes": 6775,
+      "sha256": "770fd5cb608adbeb778e17ab39e085f9472191d65056cebe0df5f3e4d6cab364"
+     },
+     {
+      "path": "targets/faceunits/cheekSquintLeft.target",
+      "bytes": 14657,
+      "sha256": "2ec68e1aca9ecd24019db58af53d7998f10e4964dda2729fd0f319597f734d75"
+     },
+     {
+      "path": "targets/faceunits/cheekSquintRight.target",
+      "bytes": 14359,
+      "sha256": "7daf855b7d23d2b95ae4e75ed0994b4951d8d9ec6d82a9a6aec8742df033bdbc"
+     },
+     {
+      "path": "targets/faceunits/noseSneerLeft.target",
+      "bytes": 21184,
+      "sha256": "c205f9972e41f5147525b74d543b7617e51bba80dbfe601456711cb2f265b9c8"
+     },
+     {
+      "path": "targets/faceunits/noseSneerRight.target",
+      "bytes": 20467,
+      "sha256": "51039beca77f3ccaf505645ec9db19438b96102ddd3fba6cbd72ec9280dee685"
+     },
+     {
+      "path": "targets/faceunits/jawOpen.target",
+      "bytes": 51426,
+      "sha256": "2439e703e434f999b58a1d26cffdb6b2fd5f30941b8ff19cac70b75392d4de6f"
+     },
+     {
+      "path": "targets/faceunits/mouthClose.target",
+      "bytes": 38826,
+      "sha256": "965135637c90019c9f91ddd7540405124da7274b3a5b6b6a2201fa97956773f5"
+     },
+     {
+      "path": "targets/faceunits/mouthFunnel.target",
+      "bytes": 34011,
+      "sha256": "b273e870938c798357b314dac22f388b4030d9f4b782fd2179991c9f7831d32a"
+     },
+     {
+      "path": "targets/faceunits/mouthPucker.target",
+      "bytes": 33524,
+      "sha256": "3d90b495088fac29e5db4022842860d0b0f10f875e201670d559e37db4da67ae"
+     },
+     {
+      "path": "targets/faceunits/mouthSmileLeft.target",
+      "bytes": 32657,
+      "sha256": "11cabf2fa6f9664c4d0b9f8f0cadaf4b2a1a9625b72c7593262465ce8d4cb9a2"
+     },
+     {
+      "path": "targets/faceunits/mouthSmileRight.target",
+      "bytes": 33258,
+      "sha256": "70578981892db13c02512455583c2f9743683d5c571c1e2624b09638cf37bedd"
+     },
+     {
+      "path": "targets/faceunits/mouthFrownLeft.target",
+      "bytes": 16454,
+      "sha256": "39d0c7cc1305ac62bdf989522f00f1b820ade8e1762a738f7398926bf6f91cd4"
+     },
+     {
+      "path": "targets/faceunits/mouthFrownRight.target",
+      "bytes": 16382,
+      "sha256": "a14b45427d3f78ddb8a05604b6c353bddcda49376588097809797c4a51714767"
+     },
+     {
+      "path": "targets/faceunits/mouthPressLeft.target",
+      "bytes": 21555,
+      "sha256": "00613a25981f172decf2f95f0871dda1cb775bfcba65088e9e0978b441ca5b5a"
+     },
+     {
+      "path": "targets/faceunits/mouthPressRight.target",
+      "bytes": 21610,
+      "sha256": "27d1cf1610d2565be0fb99e1ff2e96dc8e58531e05309a69f961a638fa1a39a2"
+     },
+     {
+      "path": "targets/faceunits/mouthStretchLeft.target",
+      "bytes": 24684,
+      "sha256": "0b3622bfc1d922c9d686523800babd217e06d865338cb979485c2b22efd63c4d"
+     },
+     {
+      "path": "targets/faceunits/mouthStretchRight.target",
+      "bytes": 25253,
+      "sha256": "b866286fc0b607b07c6191c36c458c6f197ad19ce26c66218b8df37c1a283b38"
+     },
+     {
+      "path": "targets/faceunits/mouthRollLower.target",
+      "bytes": 11003,
+      "sha256": "69cff9c045c3c461eee4be855883c2f1b79ddb645ca7bf499c35a95b3adbb055"
+     },
+     {
+      "path": "targets/faceunits/mouthUpperUpLeft.target",
+      "bytes": 16255,
+      "sha256": "db4e4f0d22b5488c139a6a6434e0ba1599e30211fbd577796b071a409a19b075"
+     },
+     {
+      "path": "targets/faceunits/mouthUpperUpRight.target",
+      "bytes": 15896,
+      "sha256": "5919a0772f665cb275097e0d291d3e7a9269ee2ffd3a4340e8f1c3093b78e6c4"
+     }
+    ]
+   },
+   "visemes02": {
+    "source": "https://files.makehumancommunity.org/functional/visemes02.zip",
+    "archiveSha256": "a69ab6fb95ddd5f56f70acc7e859f5f9c6ae613c527d577ea1571eff2183d29e",
+    "author": "Mika Suominen",
+    "licence": {
+     "spdx": "CC0-1.0",
+     "legalCodeUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode"
+    },
+    "evidence": "packs/visemes02.json lists licence CC0 for every target.",
+    "files": [
+     {
+      "path": "targets/visemes/viseme_PP.target",
+      "bytes": 41071,
+      "sha256": "1e32c261d6133b08580c82d5af6fbff975a4ca3b9c9bca7569f7f65fe92e5c83"
+     },
+     {
+      "path": "targets/visemes/viseme_FF.target",
+      "bytes": 30401,
+      "sha256": "5ae0e3bddb3a7237b87db672efbe30813d582b75560878e6812b2db53cc19246"
+     },
+     {
+      "path": "targets/visemes/viseme_TH.target",
+      "bytes": 30912,
+      "sha256": "6d2ad65d43f8a3ed83d76a0fb440641fc6a8d3078f3457a463486e47a38462a7"
+     },
+     {
+      "path": "targets/visemes/viseme_DD.target",
+      "bytes": 30399,
+      "sha256": "4c603e04938b429c5fc8e5905439076aa4decb22cb90b32dd88f6817f58e22fd"
+     },
+     {
+      "path": "targets/visemes/viseme_kk.target",
+      "bytes": 39553,
+      "sha256": "b9bacabbd4ee822c7ab337367408ad4b7fe220cecb29e37cf0c9abc57c07bc41"
+     },
+     {
+      "path": "targets/visemes/viseme_CH.target",
+      "bytes": 33032,
+      "sha256": "4ceb620a3b43a4742c7414234489a76a8e7f16e4e359b9d953c4469d768a9dd6"
+     },
+     {
+      "path": "targets/visemes/viseme_SS.target",
+      "bytes": 40906,
+      "sha256": "6ca1d8a6d10d3fd70639f8b225a2e2fc272d5b188fbfdd6afccc0dfff4e3de09"
+     },
+     {
+      "path": "targets/visemes/viseme_nn.target",
+      "bytes": 47566,
+      "sha256": "4c49aa3cc280dee27353361f2917e48ea8528b3a2cda5cf66603b1958ac6abd9"
+     },
+     {
+      "path": "targets/visemes/viseme_RR.target",
+      "bytes": 31579,
+      "sha256": "a4e6f2678574c5ab55d9f7e7251d6504e7cc68820a92d5b5a42c2db1f5ec6242"
+     },
+     {
+      "path": "targets/visemes/viseme_aa.target",
+      "bytes": 49470,
+      "sha256": "8e0889de627ea651a2dbb2f42287599431571b816ea8b610b4d76d925ced323f"
+     },
+     {
+      "path": "targets/visemes/viseme_E.target",
+      "bytes": 52261,
+      "sha256": "e420f4a320d3aa89d8e7d0cb62207344c9c8c2120bbfb760902ce60f7bdebcb5"
+     },
+     {
+      "path": "targets/visemes/viseme_I.target",
+      "bytes": 31315,
+      "sha256": "1bde425e1ff8b294a38a120a4b1b011814e2b0b582c9f9262b700960b07c06ea"
+     },
+     {
+      "path": "targets/visemes/viseme_O.target",
+      "bytes": 43249,
+      "sha256": "1a42ced31204d96e83be1d0f9e6bc9490823bc2cd23293aad1c5f1742500c332"
+     },
+     {
+      "path": "targets/visemes/viseme_U.target",
+      "bytes": 30470,
+      "sha256": "06a6c07f7ccd3b2cff5ed97755bc8b0a8d6a688a69ccc0a7e486858cf33628eb"
+     }
+    ]
+   }
+  },
+  "style100": {
+   "source": "https://zenodo.org/records/8127870",
+   "author": "Ian Mason, Sebastian Starke, Taku Komura",
+   "licence": {
+    "spdx": "CC-BY-4.0",
+    "legalCodeUrl": "https://creativecommons.org/licenses/by/4.0/legalcode"
+   },
+   "attribution": "100STYLE dataset by Ian Mason, Sebastian Starke and Taku Komura (2022), CC BY 4.0, doi:10.1145/3522618. Retargeted, trimmed, straightened, loop-closed and foot-locked.",
+   "evidence": "Zenodo record licence cc-by-4.0 covers 100STYLE.zip (1,468,515,354 bytes, md5 3cf627852fd8192024c04a8d0ef49583); members read by HTTP range requests.",
+   "files": [
+    {
+     "path": "Neutral/Neutral_FW.bvh",
+     "bytes": 5504825,
+     "sha256": "2f28800baa299547c42c257d1c926172542a1e69b46a3d3e6aa0aded0e9b40f6"
+    },
+    {
+     "path": "Neutral/Neutral_ID.bvh",
+     "bytes": 1465227,
+     "sha256": "71aead2e3246bdb47a5b839cb3e60e0574e9a1a046c071cc147e2922a35f259f"
+    }
+   ],
+   "clips": {
+    "idle": "100STYLE Neutral_ID frames 700-1060 (60 fps), every second frame; feet planted flat on the walk's stance, sway and a weight shift added (Crownfall)",
+    "walk": "100STYLE Neutral_FW frames 4507-4591 (60 fps), every second frame"
+   }
+  },
+  "polyhaven": {
+   "licence": {
+    "spdx": "CC0-1.0",
+    "legalCodeUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode",
+    "officialUrl": "https://polyhaven.com/license",
+    "officialPageSha256": "46158a6b319ae8ef55acd18bd96d986c9261fb0cc8086124e97bcbefe779a623"
+   },
+   "assets": {
+    "brown_leather": {
+     "authors": {
+      "Rob Tuytel": "All"
+     },
+     "files": {
+      "Diffuse": {
+       "bytes": 503348,
+       "md5": "080b3bf1372766ff2c7ff121ed07b5e8",
+       "sha256": "7e9e1d6566d1fd91d4ceb4966c4820361e85d53a7a828b6bab3b2a093a876cd1",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_leather/brown_leather_albedo_1k.jpg"
+      },
+      "arm": {
+       "bytes": 436931,
+       "md5": "40778465932d0a0816a9fbdab00e2a5d",
+       "sha256": "8f40d242830b2c1310470abfaf2df15f52658d01c21d97dd96f0679589677de1",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_leather/brown_leather_arm_1k.jpg"
+      },
+      "nor_gl": {
+       "bytes": 863280,
+       "md5": "b63ae0121a415c23d74eed0b07fc6065",
+       "sha256": "506a0b7650c2dea285e247f26ed2d0d6ec38fc10dd584359f0d203e9c082236d",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/brown_leather/brown_leather_nor_gl_1k.jpg"
+      }
+     },
+     "filesApi": "https://api.polyhaven.com/files/brown_leather",
+     "filesSha256": "c988de9b099cc47ac170a2fdb55622684be5df102323a447bdc511a5525a6baa",
+     "infoApi": "https://api.polyhaven.com/info/brown_leather",
+     "infoSha256": "e3b893e61bc5c76b5fcd2e04475d9ba6d615078f8cda5b15d5ffe82b0880f590",
+     "kind": "texture",
+     "name": "Brown Leather",
+     "sourceUrl": "https://polyhaven.com/a/brown_leather"
+    },
+    "caban": {
+     "authors": {
+      "Rico Cilliers": "Processing",
+      "colormass": "Photography"
+     },
+     "files": {
+      "Diffuse": {
+       "bytes": 715554,
+       "md5": "4b9ff6f1c315df49e04b24ea5ad73975",
+       "sha256": "e6502a2516772c3158d11fc447a4d0972900dc81347334465b99b18f3b09524c",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/caban/caban_diff_1k.jpg"
+      },
+      "arm": {
+       "bytes": 1197680,
+       "md5": "c2e9578427fa32f8ad575a9040b792b7",
+       "sha256": "3b224cc489ae7ed5a5e3c2e4e3c3310ffb974e872b852f9acc12f6ad3ef17add",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/caban/caban_arm_1k.jpg"
+      },
+      "nor_gl": {
+       "bytes": 616486,
+       "md5": "d49000ceacc82e0a9626b304924bf482",
+       "sha256": "27cd0f98d833648c43d2c85db2e23a151b1ec2b74feaf56964a16b6c0c892f84",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/caban/caban_nor_gl_1k.jpg"
+      }
+     },
+     "filesApi": "https://api.polyhaven.com/files/caban",
+     "filesSha256": "8a6d1a5d26281d1d36cbf637c3dc591d9e475c9b14256097ddad522dd0563442",
+     "infoApi": "https://api.polyhaven.com/info/caban",
+     "infoSha256": "9fa6f4b2749c83cd3e1ec4a8c382a76fabe626e25eb3c0be86352dc46624c459",
+     "kind": "texture",
+     "name": "Caban",
+     "sourceUrl": "https://polyhaven.com/a/caban"
+    },
+    "cross_pein_hammer": {
+     "authors": {
+      "Tics": "All"
+     },
+     "files": {
+      "cross_pein_hammer.bin": {
+       "bytes": 58568,
+       "md5": "0eac8ed75a04d4e522ec8364152ba212",
+       "sha256": "dbf5c3691425c75ae60cbba13455125daddc51b05ebe7dad93e4a05875394c9c",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/8k/cross_pein_hammer/cross_pein_hammer.bin"
+      },
+      "gltf": {
+       "bytes": 2819,
+       "md5": "40fb1bea51971e9bfed6dd5a1900e4d7",
+       "sha256": "c198c0d9213a7ee9d6872f8c1edd7e2c0cad3814d173d31127ff2812c8895a6c",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Models/gltf/1k/cross_pein_hammer/cross_pein_hammer_1k.gltf"
+      },
+      "textures/cross_pein_hammer_arm_1k.jpg": {
+       "bytes": 535251,
+       "md5": "e23646279fb6c6da1d27e12f55b4d6e4",
+       "sha256": "0c99266770bc95bb7df76db7fd65dde581ffcb3ad6434869dde4954f152257a7",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/cross_pein_hammer/cross_pein_hammer_arm_1k.jpg"
+      },
+      "textures/cross_pein_hammer_diff_1k.jpg": {
+       "bytes": 444806,
+       "md5": "33ad385e7a34e15afdb79fd663e70305",
+       "sha256": "911025292459eacbcaa0a0b07265e96c6562152339fc0c727369dfe9ef45d9b1",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/cross_pein_hammer/cross_pein_hammer_diff_1k.jpg"
+      },
+      "textures/cross_pein_hammer_nor_gl_1k.jpg": {
+       "bytes": 467255,
+       "md5": "1e14a6855fca3de58e666a1500cb4ade",
+       "sha256": "cab11318330482b997c51be786b7ca9f627634478408aaa08ac745bed704b2cc",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Models/jpg/1k/cross_pein_hammer/cross_pein_hammer_nor_gl_1k.jpg"
+      }
+     },
+     "filesApi": "https://api.polyhaven.com/files/cross_pein_hammer",
+     "filesSha256": "92ada6ca0c23e50b1857fbd189814141c3f41419bc855a9f9b95cdc815cdb526",
+     "infoApi": "https://api.polyhaven.com/info/cross_pein_hammer",
+     "infoSha256": "fdee84490c10bea1b0158edd67b6f3d53bbf9fd0ec2b913315575fcf762a45df",
+     "kind": "model",
+     "name": "Cross Pein Hammer",
+     "sourceUrl": "https://polyhaven.com/a/cross_pein_hammer"
+    },
+    "fabric_leather_02": {
+     "authors": {
+      "Rob Tuytel": "All"
+     },
+     "files": {
+      "Diffuse": {
+       "bytes": 663390,
+       "md5": "35256026fcf2734d558ee2aa8f939c10",
+       "sha256": "97ba9480c7619efc9b8c08202c3e3773d1dd532dacce4dfe97f86e95339cf132",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/fabric_leather_02/fabric_leather_02_diff_1k.jpg"
+      },
+      "arm": {
+       "bytes": 353873,
+       "md5": "a1e746c80203a76940eb8aa7fec8d4cf",
+       "sha256": "f382e758ffe898725a8df81b8a244461889bca24592a909c7ad7196368e0c67e",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/fabric_leather_02/fabric_leather_02_arm_1k.jpg"
+      },
+      "nor_gl": {
+       "bytes": 170918,
+       "md5": "1600b3fed674702eaa350cd627278a0f",
+       "sha256": "2652ece55bd2780be1e16fb5ebc4171b139da45bcf9839a161b9ae236534e471",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/fabric_leather_02/fabric_leather_02_nor_gl_1k.jpg"
+      }
+     },
+     "filesApi": "https://api.polyhaven.com/files/fabric_leather_02",
+     "filesSha256": "f3d1a12db36221b9744deda5d5246cbc6d04df38d38e255b80cd68c0899d5a48",
+     "infoApi": "https://api.polyhaven.com/info/fabric_leather_02",
+     "infoSha256": "0970f46d3616aee490275e49c1645a0a73e4e83b57ea346f671efd150ebd973b",
+     "kind": "texture",
+     "name": "Fabric Leather 02",
+     "sourceUrl": "https://polyhaven.com/a/fabric_leather_02"
+    },
+    "poly_wool_herringbone": {
+     "authors": {
+      "Rico Cilliers": "Processing",
+      "colormass": "Photography"
+     },
+     "files": {
+      "Diffuse": {
+       "bytes": 942966,
+       "md5": "5c0981092ba0129d5951720ea23d50c2",
+       "sha256": "fd889a46f617efd331e522e36b8ad2548e16e1cb018c001872f17537d7666af5",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/poly_wool_herringbone/poly_wool_herringbone_diff_1k.jpg"
+      },
+      "arm": {
+       "bytes": 1223522,
+       "md5": "30cb990f0569e90c5e7e7ef81f0e3b6f",
+       "sha256": "f565985fe68d42b6638080c52628f13312b178001d758ef89fe76adb773fb227",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/poly_wool_herringbone/poly_wool_herringbone_arm_1k.jpg"
+      },
+      "nor_gl": {
+       "bytes": 1045151,
+       "md5": "a6371d03b033a1c20e1c2758136ac757",
+       "sha256": "314ac7c1b7c101a48106e05199bfdb24e33671e58a6ccb334249b441d8e8ac98",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/poly_wool_herringbone/poly_wool_herringbone_nor_gl_1k.jpg"
+      }
+     },
+     "filesApi": "https://api.polyhaven.com/files/poly_wool_herringbone",
+     "filesSha256": "4fcdb7cee772205baf892df1cd6e03eaf78d019f6a19e2afe850b24ed4fa52ee",
+     "infoApi": "https://api.polyhaven.com/info/poly_wool_herringbone",
+     "infoSha256": "d2a709c35e8fb25e07a12e5105d3cbb8bb7e3dc296e957af3eaf29684073ffc2",
+     "kind": "texture",
+     "name": "Poly Wool Herringbone",
+     "sourceUrl": "https://polyhaven.com/a/poly_wool_herringbone"
+    },
+    "rough_linen": {
+     "authors": {
+      "Rico Cilliers": "Processing",
+      "colormass": "Photography"
+     },
+     "files": {
+      "Diffuse": {
+       "bytes": 835801,
+       "md5": "663db789fb075462b685c1f740e58930",
+       "sha256": "04897d7611d7390ddf5b2c6f7273f448dfc48341fdbd1f4f207fa30b331d7f57",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rough_linen/rough_linen_diff_1k.jpg"
+      },
+      "arm": {
+       "bytes": 1191393,
+       "md5": "ffe777973056d79d6b2a1324e8451295",
+       "sha256": "e1ca6b51ed62834063253e08f8f2e23836aa00d72675b960ddd8e608d9f0c7e6",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rough_linen/rough_linen_arm_1k.jpg"
+      },
+      "nor_gl": {
+       "bytes": 916843,
+       "md5": "3350269a2e9c472aa406bd3cc1eaf2c8",
+       "sha256": "e2402166d1a489f7414814e69e1836ab672aa24e30bec2d41fea356f81687e53",
+       "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/rough_linen/rough_linen_nor_gl_1k.jpg"
+      }
+     },
+     "filesApi": "https://api.polyhaven.com/files/rough_linen",
+     "filesSha256": "14d222418e4dbe1a0fc3e6bbf9776694474cac43fd531b5f77f8da819616cd49",
+     "infoApi": "https://api.polyhaven.com/info/rough_linen",
+     "infoSha256": "decca7c9eda35324bc386c0514a848db6c2ea761f7492542152c3b463265f5bb",
+     "kind": "texture",
+     "name": "Rough Linen",
+     "sourceUrl": "https://polyhaven.com/a/rough_linen"
+    }
+   }
+  }
+ },
+ "original": "Garments, hair/beard/brow cards and strand atlas, weathering, tongs, anvil, stump, workpiece, the hammering loop, the work entry and exit, talk gestures, face clips and all procedural materials are original Crownfall work authored by the pipeline (repository licence).",
+ "modifications": [
+  "MakeHuman body shaped with the macro and detail targets listed above; rig bones renamed to neutral Crownfall names; breast and buttock weights folded into parents; four skirt bones added.",
+  "Face joints re-rolled so local +X pitches and local +Z yaws; 30 ARKit-style and 14 viseme targets added as morphs and propagated to eyes, teeth, tongue, lashes and cards.",
+  "Teeth: the MakeHuman teeth only place the arches; the runtime teeth are authored arches (original crowns, gums and texture) fitted to those positions and lowered so the upper incisal edge sits just below the relaxed upper-lip line, with rigid per-arch face morphs; the tongue follows the lower arch down and back. The eye cornea shell and the never-visible back of each eyeball removed and the recessed iris disc lifted onto the eyeball sphere; eye maps recoloured with widened pupils, a lifted, warmer sclera and a soft limbal ring.",
+  "Skin diffuse re-baked into a repacked atlas with weathering, painted crop/stubble, the brow base painted per texel in the brow's shape, the whole lid-to-brow area recoloured to the forehead's tone (each texel keeps its relative luminance), a lid crease, lash line and toned waterline, pores and age-line bump; eye maps recoloured and packed. Round 2: the mouth bag darkened with depth toward the throat (no occluder card), the lid-to-brow area tone-gated against the forehead and cheek, the upper lids evened.",
+  "LOD1 and Quest heads: the resident's own LOD0 head decimated with its lid, lip and atlas-seam loops kept (lod_head.py), eye sockets and mouth bag removed (a separate dark cavity piece and a light tongue are kept), welded to the decimated body at a neck seam; the LOD0 skin atlas projected onto it with the LOD0 brow, beard and scalp cards rasterised into it (groom_bake.py), shaded with its own vertex normals (no normal bake), and the LOD0 face morphs transferred (blink closed exactly at the lid loops).",
+  "Poly Haven fabrics recoloured (luminance detail times target colour), worn and baked through box projection into the cloth atlas; the hammer re-pivoted.",
+  "100STYLE takes retargeted onto the rig (pelvis matched frame to frame), the capture path straightened (heading drift removed), made in-place, loop-closed, head pitch corrected and foot-locked with two-bone IK (one anchor per contact, eased in and out in the air); walk re-aimed along the chord of its travelled path and the pelvis and shoulder facing (no crab walk), feet turned out 7 degrees, stance windows detected from the sole heights and an authored heel-to-toe roll locked to the ground (heel rocker, flat foot, heel rise about the ball), the pelvis lowered where a leg would over-reach, swing clearance at least 1.8 cm; idle grounded on the walk's stance with sway and a weight shift; walk_start synthesized from the second half of the walk faded in over the idle with real steps from the idle stance (begins exactly on idle, ends exactly on walk); walk_stop synthesized from the walk with a planted last step and a closing step onto the idle stance (begins exactly on walk, ends exactly on idle); talk built from the idle with head and open-hand gestures.",
+  "LOD1 and Quest meshes: inner layers hidden under whole garments removed or sunk, decimated with the face region protected while keeping the LOD0 texture coordinates, islands rescaled (face and eyes denser) and repacked, and the LOD0 maps transferred through the kept coordinates (emission and normal bakes, no ray transfer); card hair thinned.",
+  "Clips exported with forced sampling and then pruned (scripts/characters/lib/glb_prune.py): channels that stay at the rest pose removed and keys that linear or spherical interpolation reproduces within 0.03 degrees / 0.1 mm dropped, first and last keys kept; body clips never key the face joints and face clips key only them. Mechanism clips (the bellows' lever, top board, pleats and chain; the spindle's spin) are exported in the props files under the body clip's name.",
+  "Props: every prop's material baked into one atlas material per platform (1k desktop, 512 px Quest in the -props-quest file), static workplace props merged into one mesh, large models halved for Quest; the hammer and spoon frames chosen by the geometry of their ends.",
+  "Poly Haven models imported from the 1k glTF and decimated for runtime (cross_pein_hammer)."
+ ],
+ "clips": {
+  "idle": {
+   "origin": "100STYLE capture (CC BY 4.0), retargeted; feet grounded on the walk's stance, sway and weight shift added by Crownfall",
+   "source": "100STYLE Neutral_ID frames 700-1060 (60 fps), every second frame; feet planted flat on the walk's stance, sway and a weight shift added (Crownfall)"
+  },
+  "walk": {
+   "origin": "100STYLE capture (CC BY 4.0), retargeted, straightened, re-aimed, loop-closed and foot-locked by Crownfall",
+   "source": "100STYLE Neutral_FW frames 4507-4591 (60 fps), every second frame"
+  },
+  "walk_start": {
+   "origin": "Crownfall-built from this resident's 100STYLE-derived idle and walk (CC BY 4.0 attribution applies)",
+   "source": "the second half of the resident's walk cycle faded in over its idle with real steps from the idle stance (Crownfall); see locomotion.synth_start"
+  },
+  "walk_stop": {
+   "origin": "Crownfall-built from this resident's 100STYLE-derived walk and idle (CC BY 4.0 attribution applies)",
+   "source": "the resident's walk with a planted last step and a closing step onto the idle stance (Crownfall); see locomotion.synth_stop"
+  },
+  "work_hammer": {
+   "origin": "original Crownfall keyframes and IK; the standing or seated base pose starts from this resident's 100STYLE-derived idle",
+   "source": "original keyframes (Crownfall), IK at the anvil"
+  },
+  "work_enter": {
+   "origin": "original Crownfall keyframes and IK (round 2) from this resident's 100STYLE-derived idle (or the seated rest) into the work loop",
+   "source": "original keyframes (Crownfall): from the idle into the striking stance, the tongs and hammer taken from the anvil"
+  },
+  "work_exit": {
+   "origin": "original Crownfall keyframes and IK (round 2) from the work loop back to this resident's 100STYLE-derived idle (or the seated rest)",
+   "source": "original keyframes (Crownfall): from the work loop's first frame back to the idle, the hammer and tongs laid on the anvil"
+  },
+  "talk": {
+   "origin": "Crownfall-built from this resident's 100STYLE-derived idle with original head and open-hand gestures (CC BY 4.0 attribution applies)",
+   "source": "Crownfall-built from this resident's 100STYLE-derived idle with original head and open-hand gestures (CC BY 4.0 attribution applies)"
+  },
+  "face_blink": {
+   "origin": "original Crownfall face clips (face joints only)",
+   "source": "original Crownfall face clips (face joints only)"
+  },
+  "face_gaze": {
+   "origin": "original Crownfall face clips (face joints only)",
+   "source": "original Crownfall face clips (face joints only)"
+  },
+  "face_jaw": {
+   "origin": "original Crownfall face clips (face joints only)",
+   "source": "original Crownfall face clips (face joints only)"
+  }
+ },
+ "files": [
+  {
+   "file": "village-smith-desktop-lod0.glb",
+   "bytes": 5102488,
+   "sha256": "7489f4011930d5e39da03e6bb19f756fc3a7613ceb640bebb910b898c12c39a5"
+  },
+  {
+   "file": "village-smith-desktop-lod1.glb",
+   "bytes": 1228332,
+   "sha256": "11043daf434c42727906591a48772e18ead7a4f32175c2705cc6a2a7320e8dee"
+  },
+  {
+   "file": "village-smith-props-quest.glb",
+   "bytes": 155844,
+   "sha256": "3cd00b60b5d9205921b41c40353c1475732d405709bb3c0830c0ac6c0f56f659"
+  },
+  {
+   "file": "village-smith-props.glb",
+   "bytes": 260032,
+   "sha256": "c9cd5b7036920ebfbc64395c903bcc185198cc3576d4f3b85729f04f1d7c8664"
+  },
+  {
+   "file": "village-smith-quest.glb",
+   "bytes": 1056768,
+   "sha256": "36fde571ce19ce278d18d6431322efc7a9749eb9cb423022cf2fc8f58db3e317"
+  }
+ ]
+}

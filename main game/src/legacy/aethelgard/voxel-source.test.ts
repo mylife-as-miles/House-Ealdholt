@@ -1,0 +1,25 @@
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import {BoxGeometry, Group, InstancedMesh, Matrix4, Mesh, MeshStandardMaterial, PlaneGeometry} from 'three';
+import {collectVoxelRegionSource} from './voxel-source';
+const identity = {worldRegion: 'test-region', sourceSha256: 'a'.repeat(64), generatorVersion: '1', backend: 'webgl2-rgba8'};
+test('lighting snapshot retains original CPU buffers, full authored instances and source coordinates under display scale', async () => {
+  const root = new Group(); root.position.set(100, 40, -50); root.scale.setScalar(.01); root.rotation.y = .4;
+  const geometry = new BoxGeometry(2, 8, 2), material = new MeshStandardMaterial({metalness: .25}); material.color.setRGB(.2, .4, .6);
+  const trees = new InstancedMesh(geometry, material, 2); trees.name = 'SM_BlackAlder_test';
+  trees.setMatrixAt(0, new Matrix4().makeTranslation(10, 4, 10)); trees.setMatrixAt(1, new Matrix4().makeTranslation(20, 4, 10)); trees.count = 1;
+  root.add(trees); const highMatrices = Array.from(trees.instanceMatrix.array), sourcePositions = Array.from(geometry.getAttribute('position').array);
+  const ground = new PlaneGeometry(40, 40, 2, 2); ground.rotateX(-Math.PI / 2);
+  const terrain = new Mesh(ground, material); terrain.name = 'LandscapeComponent_0'; root.add(terrain);
+  const hidden = new Mesh(geometry, material); hidden.visible = false; root.add(hidden);
+  const visual = new Mesh(geometry, material); visual.userData.crownfallTerrainVisualOnly = true; root.add(visual);
+  const waterMaterial = material.clone(); waterMaterial.name = 'Crownfall_Pond_Water_Review'; const water = new Mesh(geometry, waterMaterial); root.add(water);
+  const {source, diagnostics} = await collectVoxelRegionSource(root, identity, new AbortController().signal);
+  assert.equal(source.proxies.length, 2); assert.equal(source.terrain.length, 1); assert.equal(diagnostics.materialFallbacks, 0);
+  assert.deepEqual(source.proxies[0].min, [9, 0, 9]); assert.deepEqual(source.proxies[1].min, [19, 0, 9]);
+  source.proxies[0].albedo.forEach((n, i) => assert.ok(Math.abs(n - [.15, .3, .45][i]) < 1e-12));
+  assert.equal(trees.count, 1); assert.equal(trees.visible, true); assert.deepEqual(Array.from(trees.instanceMatrix.array), highMatrices);
+  assert.deepEqual(Array.from(geometry.getAttribute('position').array), sourcePositions);
+  const abort = new AbortController(); abort.abort(); await assert.rejects(collectVoxelRegionSource(root, identity, abort.signal));
+  trees.dispose(); geometry.dispose(); ground.dispose(); material.dispose(); waterMaterial.dispose();
+});

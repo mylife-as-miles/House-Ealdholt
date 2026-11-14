@@ -1,0 +1,37 @@
+# Combined Crownfall estate source kit
+
+This kit composes selected, actual source generators inside one Bannerhold estate. The dominant Banner Hall is the original Crownfall compound manor from `environment/settlement/buildings.ts`, emitted by the shared worker with its existing stone, dark timber and steep-roof material keys. The approved theme amendment splits its lower stone/upper plaster walls within the existing masses, adds a low entrance threshold and moves the actual player/crown standards in front. Its geometry hash therefore intentionally differs from the earlier cream-plaster version; the original steep roofs, authored site, protected lot, four Legacy destinations and navigation remain the host. The individual whole-world previews also remain available.
+
+| Source | Pinned commit | Code used in the combined estate |
+| --- | --- | --- |
+| [Golden Temple](https://github.com/Leonxlnx/golden-temple) | `97fd9ec35ee5c0f02769addb4e35cb5e22f951dd` | `world/buildings-halls.js` `hallBuilding`, original joinery/curved tiled roof and procedural materials; an actual open pavilion in the manor court and the player-placeable pavilion. The compact source hall remains available in the factory but does not replace or duplicate the Crownfall manor. |
+| [Monolith Wilds](https://github.com/Leonxlnx/monolithwilds) | `02dbcd3e790c21861dfecb47f4d9e23cccee35ec` | `rocks-geo.js` rock recipes; `ruins-parts.js` voussoir arches; `vegetation-geo.js` source aspens, pines and conifers plus grass tufts, reeds and dwarf shrubs, with original wind/instancing attributes and materials |
+| [Athenaion](https://github.com/Leonxlnx/athenaion) | `9b8bd23b39c458a50fb1201037360047781c45b5` | `city/buildings.js` actual house generator and facade/terracotta/stone/wood shaders; unchanged custom facade/roof attributes |
+
+All three are MIT licensed. Full notices and upstream provenance remain in their respective sibling directories. Upstream generator names here are technical provenance, not approved Crownfall place or character names.
+
+The fourth requested source, [procedural-alpine-lake](https://github.com/Leonxlnx/procedural-alpine-lake), is **not included** because a written redistribution grant has not been recorded. The public estate uses original Crownfall PBR water and the separately licensed shared ripple filter. The earlier local adaptation is preserved privately outside the repository. The standalone lake preview also remains an independent Crownfall rebuild. See [alpine-SOURCE.md](./alpine-SOURCE.md) for the public water implementation and limits.
+
+`createCombinedWorldKit` uses the consuming application's `crownfall-world-three` namespace. It creates no renderer, animation loop or upstream UI/audio system. Source procedural material coordinates are maintained when Quest displays the estate as a stationary miniature. Locally owned material hooks disable upstream global fog installation. No source global shader chunks are changed.
+
+Golden Temple's ordinary UV/normal/colour microgeometry uses the existing conservative Athenaion geometry compactor. City facade payloads are never compacted. Fixed non-landmark city meshes are concatenated by cached source material and exact attribute layout; all source channels remain, with original per-lot provenance and bounds recorded in the batch metadata. The four interactive landmark lots remain separately addressable.
+
+The Athenaion city generator has an optional, default-off `ctx.crownfallArchitecture` adapter profile for compact steep-gabled, one/two-storey houses. Its absent-profile output is regression checked against the source behavior. The combined kit uses that profile and the source's existing warm facade palettes. Golden Temple uses its own `woodRaw`, `woodDark` and bronze material families for the Crownfall timber palette. Monolith leaf vertices receive an autumn copper/rust palette; compressed lower trunk coordinates also update source wind anchors and normals. Fifteen nearby trees use actual source LOD0 geometry, with the remaining forest using the source's low-detail geometry. This changes the source assets rather than substituting unrelated models.
+
+The same source building factory draws fixed source buildings, player previews and saved estate buildings. The original Crownfall manor is the explicit worker-rendered exception; it is not attributed to upstream code. Its front-right recess contains a real source pavilion with a 4×4m protected footprint, height fitted to 4.25m and local placement `(6.55, 4.12)`. The recess terrain is about 0.193m above the manor datum, so its crown still stays below 4.5m relative to the original hall ground. CPU verification checks the shelter against the actual manor wall/roof triangles, the unchanged lot, and the existing Banner Hall semantic landmark. The original court bench remains furniture in the open recess. No original manor wall/roof mass is moved to make room. Returned source geometries belong to the caller. Cached source materials and prototype geometries belong to the kit. Removing a player placement does not mutate the fixed world or house state.
+
+The source ornament cache repair in Golden Temple `buildings-arch.js` clones the cached onigawara rim before translating it and disposes the temporary clone after copying it into the builder. This fixes accumulated displacement within a hall and across kit lifecycles. A regression compares complete geometry hashes and bounds over four kit lifecycles; it does not claim a redesigned original source ornament.
+
+Both platform adapters provide their actual uploaded static worker meshes through `hostManorObjects`. The read-only `.fixed` diagnostic isolates only triangles whose three `landmarkId` values are 1, records a FNV-1a geometry-data hash, physical bounds and actual per-part matrices, and labels ownership `Crownfall` with no external-source provenance. The source-root inverse normalizes Native tabletop transforms into blueprint metres. This record is absent until actual host geometry exists; it is never synthesized from the authored landmark box. Its triangles are already included in the worker budget and are not counted again as external-source components.
+
+CPU verification:
+
+```sh
+node --import ./main-game-vr/node_modules/tsx/dist/loader.mjs \
+  --loader ./shared/legacy/worlds/golden-temple/cpu-loader.mjs \
+  ./shared/legacy/worlds/combined/verify-cpu.mjs
+```
+
+This verifies actual geometry, indices, source attributes, namespaces, source provenance, bounds, deterministic previews, material/geometry ownership, fixed-world immutability and baseline budgets. It does not verify shader pixels, physical Quest frame rate, comfort or hands interaction. Those need runtime evidence and device testing.
+
+The compact ground-cover pass calls the actual Monolith `grassTuft`, `reeds` and `shrub` generators with their original geometry, colour/wind channels and source instancing materials. Four bounded source draws cover only authored shore, existing tree-foot and reserved path-verge sites. These small plants are passable visual dressing, never placement obstacles or a farming system. The two starter building clearings and former field clearings remain free of this new dressing. Terrain keeps the exact host heightfield, with metre-space texture coordinates and continuous palette patches; worn three-sample road cross-sections remain inside the unchanged authored walking corridors. No new renderer, source noise texture, render target or animation loop is introduced.

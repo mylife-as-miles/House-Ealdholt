@@ -1,0 +1,559 @@
+{
+ "archetype": "adult-male",
+ "build": {
+  "seconds": 9.7,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.3,
+   "lod": 0.6,
+   "shape": 3.4,
+   "texture": 5.3
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-male-v1.glb",
+ "envelopeGate": {
+  "clips": 12,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0245,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.263,
+ "envelopes": {
+  "carry_basket_walk": {
+   "max": [
+    0.463,
+    1.824,
+    0.895
+   ],
+   "min": [
+    -0.488,
+    -0.407,
+    -0.885
+   ]
+  },
+  "idle": {
+   "max": [
+    0.371,
+    1.767,
+    0.447
+   ],
+   "min": [
+    -0.383,
+    -0.156,
+    -0.404
+   ]
+  },
+  "sit": {
+   "max": [
+    0.483,
+    1.319,
+    0.406
+   ],
+   "min": [
+    -0.434,
+    -0.156,
+    -0.745
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.69,
+    1.836,
+    1.06
+   ],
+   "min": [
+    -0.53,
+    -0.557,
+    -1.143
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.7,
+    1.853,
+    1.062
+   ],
+   "min": [
+    -0.593,
+    -0.548,
+    -1.146
+   ]
+  },
+  "talk": {
+   "max": [
+    0.654,
+    1.787,
+    0.59
+   ],
+   "min": [
+    -0.449,
+    -0.156,
+    -0.404
+   ]
+  },
+  "walk_c": {
+   "max": [
+    0.535,
+    1.794,
+    0.9
+   ],
+   "min": [
+    -0.485,
+    -0.391,
+    -0.9
+   ]
+  },
+  "walk_c_start": {
+   "max": [
+    0.508,
+    1.789,
+    0.905
+   ],
+   "min": [
+    -0.455,
+    -0.345,
+    -0.537
+   ]
+  },
+  "walk_c_stop": {
+   "max": [
+    0.509,
+    1.783,
+    0.79
+   ],
+   "min": [
+    -0.432,
+    -0.259,
+    -0.692
+   ]
+  },
+  "work_prune": {
+   "max": [
+    0.93,
+    2.16,
+    0.915
+   ],
+   "min": [
+    -0.551,
+    -0.156,
+    -0.572
+   ]
+  },
+  "work_prune_enter": {
+   "max": [
+    0.422,
+    1.997,
+    0.843
+   ],
+   "min": [
+    -0.465,
+    -0.156,
+    -0.417
+   ]
+  },
+  "work_prune_exit": {
+   "max": [
+    0.422,
+    1.997,
+    0.845
+   ],
+   "min": [
+    -0.465,
+    -0.156,
+    -0.418
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.2,
+  "lipGapMm": {
+   "aa": 13.8,
+   "full": 16.9,
+   "rest": 0.4
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.37,
+   "r": 7.37
+  },
+  "upperLidClosed": 0.48,
+  "visibilityPasses": [
+   {
+    "l": 24,
+    "r": 36,
+    "upper": 0.48
+   },
+   {
+    "l": 0,
+    "r": 7,
+    "upper": 0.48
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.48
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-orchard-keeper.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.245,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   912,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3528,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "greying-sandy",
+  "facialHair": "short-beard",
+  "style": "cropped"
+ },
+ "headwear": "straw-hat",
+ "headwearGate": {
+  "headwear": "straw-hat",
+  "pass": true,
+  "shells": {
+   "HatCrown": {
+    "faces": 278,
+    "islands": 1,
+    "maxReachRadii": 0.917,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#b49a5a",
+  "shape": "narrow",
+  "tone": "straw"
+ },
+ "householdId": "ealdholt-orchard-household",
+ "jointResidualCm": {
+  "allMaxCm": 2.06,
+  "coreMaxCm": 1.41,
+  "coreMeanCm": 0.74,
+  "coreWorstJoint": "foot_l"
+ },
+ "label": "Orchard keeper and beekeeper",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 256700,
+  "fileMiB": 0.245,
+  "headTriangles": 912,
+  "images": [
+   {
+    "bytes": 31928,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3528,
+  "vertices": 3486
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-adult-male-v1",
+  "rate": 1.018,
+  "roleClips": [
+   "work_prune",
+   "carry_basket_walk"
+  ],
+  "talk": "talk",
+  "walk": "walk_c"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "shoulder-cape",
+  "kit": "field-tunic",
+  "palette": {
+   "accent": "woad-pale",
+   "main": "undyed-grey",
+   "secondary": "walnut-brown"
+  },
+  "wear": "worn"
+ },
+ "placementScale": 1.0663,
+ "presentation": {
+  "clips": {
+   "carry_basket_walk": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.8415,
+       -0.4116,
+       0.3499,
+       0,
+       0.4813,
+       -0.2769,
+       0.8317,
+       0,
+       -0.2454,
+       0.8683,
+       0.4311,
+       0,
+       0.0474,
+       0.0861,
+       0.099,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_prune": {
+    "held": [
+     {
+      "bone": "hips",
+      "kit": "everyday",
+      "matrix": [
+       1,
+       -0.0005,
+       0.0019,
+       0,
+       -0.0003,
+       0.8987,
+       0.4386,
+       0,
+       -0.002,
+       -0.4386,
+       0.8987,
+       0,
+       0.2117,
+       0.0329,
+       0.1532,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_prune_enter": {
+    "held": [
+     {
+      "bone": "hips",
+      "kit": "everyday",
+      "matrix": [
+       1,
+       -0.0005,
+       0.0019,
+       0,
+       -0.0003,
+       0.8987,
+       0.4386,
+       0,
+       -0.002,
+       -0.4386,
+       0.8987,
+       0,
+       0.2117,
+       0.0329,
+       0.1532,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_prune_exit": {
+    "held": [
+     {
+      "bone": "hips",
+      "kit": "everyday",
+      "matrix": [
+       1,
+       -0.0005,
+       0.0019,
+       0,
+       -0.0003,
+       0.8987,
+       0.4386,
+       0,
+       -0.002,
+       -0.4386,
+       0.8987,
+       0,
+       0.2117,
+       0.0329,
+       0.1532,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "basket",
+   "kit": "everyday",
+   "socket": "hand_l",
+   "source": "polyhaven:wicker_basket_01"
+  }
+ ],
+ "published": {
+  "bytes": 256700,
+  "sha256": "35ebddb4d64a8daa890c6bb93787728a00711095007228c3586c15897ead0951"
+ },
+ "recipeSha256": "2bada26495a121b9d5dca8947e5a8ae73ea2eb3a4ec326f225286bf8d4d75975",
+ "referenceStatureCm": 173.5,
+ "residentId": "ealdholt-orchard-keeper",
+ "restRadiusMetres": 0.593,
+ "roleId": "orchard-keeper",
+ "statureCm": 183.9,
+ "status": "working-placeholder"
+}

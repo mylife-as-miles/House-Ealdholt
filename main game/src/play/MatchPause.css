@@ -1,0 +1,195 @@
+/* The match's pause menu (MatchPause.tsx), laid out as in the creator's picture: the list a little in from the left,
+   the chosen entry a solid orange bar, the Settings grid (or the Stats) beside it, the Select and Back prompts low on
+   the left. It is drawn into the menu's stage, where the main menu draws its Settings, so the Settings pages keep their
+   own look (the match screen's button rules would otherwise reach them); the root also carries the HUD's class, so the
+   HUD's headings, tiles and chips (MatchHud.css) apply here as they do over the match. Sizes are shares of the stage
+   (cqw, cqh), as the Settings pages' own are. */
+
+.hud.match-pause {
+  --hud-accent: var(--menu-accent, #bf791a);
+  --hud-active: var(--menu-active-tab, #f87b00);
+  --hud-focus: var(--menu-focus, #df8a26);
+  --hud-text: var(--menu-text, #cdc6b8);
+  --hud-heading: var(--menu-inactive-heading, #b5b2ac);
+  --hud-quiet: #98958e;
+  --hud-panel: #100d08b8;
+  --hud-line: #ffffff14;
+  --hud-condensed: var(--menu-font-condensed, "Barlow Condensed"), "Arial Narrow", sans-serif;
+  --hud-medal: 40px;
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  color: var(--hud-text);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+/* The match stays behind, dimmed: darkest under the list, as the picture's backdrop. */
+.match-pause .pause-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, #0d0a07f2 0%, #0d0a07d9 26%, #0d0a07b8 55%, #0d0a07cc 100%),
+    radial-gradient(ellipse at 50% 45%, transparent 35%, #000000a6 100%);
+  animation: pause-in .22s both ease-out;
+}
+/* The setup screen's fine film grain over it. */
+.match-pause .pause-scrim::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .08;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+@keyframes pause-in { from { opacity: 0; } }
+
+/* ------------------------------------------------------------------ the list */
+.match-pause .pause-list {
+  position: absolute;
+  z-index: 2;
+  left: 12.3cqw;
+  top: 10.7cqh;
+  display: grid;
+  gap: .9cqh;
+  width: max(10.4cqw, 116px);
+  animation: pause-rise .3s .04s both cubic-bezier(.2, .7, .2, 1);
+}
+.match-pause .pause-item {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 1.05cqh 1.55cqw;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: #cfc8b9;
+  font: inherit;
+  font-size: clamp(13px, 1.45cqw, 26px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: .03em;
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color .14s, background .14s;
+}
+.match-pause .pause-item:hover { color: #efe6d4; }
+.match-pause .pause-item.is-selected { background: var(--hud-active); color: #19120a; box-shadow: 0 0 14px #f87b0033; }
+/* The focus is always on the chosen entry, whose orange bar shows it; an entry focused otherwise gets the ring. */
+.match-pause .pause-item:focus-visible { outline: 2px solid var(--hud-focus); outline-offset: 3px; }
+.match-pause .pause-item.is-selected:focus-visible { outline: none; }
+/* Keys walking the grid or the Stats: the list's chosen entry stays lit, a step back. */
+.match-pause:is([data-pause-zone="grid"], [data-pause-zone="stats"]) .pause-item.is-selected { background: color-mix(in srgb, var(--hud-active) 78%, #100d08); }
+
+/* ------------------------------------------------------------------ beside it: the grid, or the Stats */
+/* The game's own Settings grid, moved right of the list and scaled to the picture's proportions; its icons stay
+   centred in the narrower tiles. */
+.match-pause .settings-grid {
+  left: 30.2cqw;
+  top: 10.7cqh;
+  width: 54.9cqw;
+  height: 56cqh;
+  animation: pause-rise .3s .08s both cubic-bezier(.2, .7, .2, 1);
+}
+.match-pause .settings-tile-icon { left: calc(50% - 4.21875cqw); }
+
+.match-pause .pause-stats {
+  position: absolute;
+  z-index: 2;
+  left: 30.2cqw;
+  top: 10.7cqh;
+  width: 54.9cqw;
+  max-height: 72cqh;
+  overflow-y: auto;
+  padding: clamp(14px, 1.6cqw, 28px);
+  background: #100d08a8;
+  backdrop-filter: blur(14px) saturate(1.15);
+  -webkit-backdrop-filter: blur(14px) saturate(1.15);
+  box-shadow: inset 0 0 0 1px var(--hud-line), 0 24px 60px #0007;
+  outline: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--hud-accent) transparent;
+  animation: pause-rise .3s .08s both cubic-bezier(.2, .7, .2, 1);
+}
+/* The setup's orange rule along its top. */
+.match-pause .pause-stats::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--hud-active), #f87b0033 60%, transparent); }
+.match-pause .pause-stats:focus-visible { box-shadow: inset 0 0 0 2px var(--hud-focus), 0 24px 60px #0007; }
+.match-pause .pause-stats-totals { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; margin-bottom: 14px; }
+.match-pause .pause-stats-sides { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.match-pause .pause-stats-side { padding: 12px 14px 10px 16px; background: #ffffff08; box-shadow: inset 3px 0 0 var(--army-tint), inset 0 0 0 1px var(--hud-line); }
+.match-pause .pause-stats-kingdom { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.match-pause .pause-stats-kingdom strong { display: block; font-family: var(--hud-condensed); font-size: 20px; font-weight: 600; line-height: 1; letter-spacing: .07em; text-transform: uppercase; color: #efe9dc; }
+.match-pause .pause-stats-kingdom small { display: block; margin-top: 4px; font-size: 10px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: color-mix(in srgb, var(--army-tint) 70%, #b5b2ac); }
+.match-pause .pause-stats-side dl { display: grid; gap: 2px; margin: 0; }
+.match-pause .pause-stats-side dl > div { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 30px; padding: 0 10px; background: #ffffff06; }
+.match-pause .pause-stats-side dt { color: var(--hud-heading); font-size: 13px; }
+.match-pause .pause-stats-side dd { margin: 0; color: #ece6da; font-family: var(--hud-condensed); font-size: 19px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.match-pause .pause-taken { display: inline-flex; align-items: flex-end; gap: 6px; color: color-mix(in srgb, var(--army-tint) 55%, #ece6da); font-size: 13px; }
+.match-pause .pause-taken > span { display: inline-flex; align-items: flex-end; gap: 1px; }
+.match-pause .pause-taken .hud-piece { width: 18px; height: 18px; }
+
+/* ------------------------------------------------------------------ the prompts, low on the left */
+.match-pause .pause-prompts {
+  position: absolute;
+  z-index: 2;
+  left: 12.3cqw;
+  bottom: 11.5cqh;
+  display: flex;
+  gap: 2.2cqw;
+  animation: pause-rise .3s .12s both cubic-bezier(.2, .7, .2, 1);
+}
+.match-pause .pause-prompts button {
+  display: inline-flex;
+  align-items: center;
+  gap: .55cqw;
+  min-height: 44px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #b9b3a4c4;
+  font: inherit;
+  font-size: clamp(13px, 1.15cqw, 20px);
+  font-weight: 300;
+  cursor: pointer;
+}
+.match-pause .pause-prompts button:hover { color: #e5d7bd; }
+.match-pause .pause-prompts button:focus-visible { outline: 2px solid var(--hud-focus); outline-offset: 4px; }
+/* The picture's round orange chips; a key's name widens one to a pill. */
+.match-pause .pause-chip { display: inline-grid; place-items: center; min-width: 1.6em; height: 1.6em; padding: 0 .4em; border-radius: 999px; background: #c8781a; color: #1e1007; font: 700 11px Arial, sans-serif; box-shadow: 0 0 3px #88551f33; }
+
+/* How the view over the board is turned, after the two prompts: the HUD's quiet line (MatchHud.css), bare here. */
+.match-pause .pause-prompts .hud-view-hints { align-self: center; width: auto; margin-left: 1.4cqw; padding: 0 0 0 2cqw; background: none; box-shadow: inset 1px 0 0 #ffffff1f; color: #b9b3a4c4; font-size: clamp(12px, .95cqw, 17px); font-weight: 300; animation: none; }
+.match-pause .pause-prompts .hud-view-hint kbd { height: 1.7em; min-width: 1.9em; font-size: clamp(10px, .75cqw, 13px); }
+
+@keyframes pause-rise { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: none; } }
+
+/* ------------------------------------------------------------------ a phone */
+.hud.match-pause[data-tier="small"] { --hud-medal: 28px; }
+.match-pause[data-tier="small"] .pause-list { left: 6cqw; top: 9cqh; gap: .4cqh; width: 25cqw; }
+.match-pause[data-tier="small"] .pause-item { padding: 1.6cqh 2.2cqw; font-size: 13px; }
+.match-pause[data-tier="small"] .settings-grid,
+.match-pause[data-tier="small"] .pause-stats { left: 34cqw; top: 9cqh; width: 60cqw; }
+.match-pause[data-tier="small"] .settings-grid { height: 66cqh; }
+.match-pause[data-tier="small"] .pause-stats { max-height: 82cqh; padding: 10px; }
+.match-pause[data-tier="small"] .pause-stats-totals { margin-bottom: 8px; }
+.match-pause[data-tier="small"] .pause-stats-totals .hud-stat { min-height: 44px; }
+.match-pause[data-tier="small"] .pause-stats-totals .hud-stat b { font-size: 22px; }
+.match-pause[data-tier="small"] .pause-stats-side { padding: 8px 8px 6px 10px; }
+.match-pause[data-tier="small"] .pause-stats-kingdom { gap: 8px; margin-bottom: 4px; }
+.match-pause[data-tier="small"] .pause-stats-kingdom strong { font-size: 15px; }
+.match-pause[data-tier="small"] .pause-stats-kingdom small { display: none; }
+.match-pause[data-tier="small"] .pause-stats-side dl > div { min-height: 22px; padding: 0 6px; }
+.match-pause[data-tier="small"] .pause-stats-side dt { font-size: 11px; }
+.match-pause[data-tier="small"] .pause-stats-side dd { font-size: 15px; }
+.match-pause[data-tier="small"] .pause-prompts { left: 6cqw; bottom: 6cqh; }
+/* No room beside the prompts under a phone-sized stage's list. */
+.match-pause[data-tier="small"] .pause-prompts .hud-view-hints { display: none; }
+
+/* ------------------------------------------------------------------ reduced motion */
+.match-pause.is-reduced-motion, .match-pause.is-reduced-motion *, .match-pause.is-reduced-motion *::before, .match-pause.is-reduced-motion *::after { animation: none !important; transition: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  .match-pause, .match-pause *, .match-pause *::before, .match-pause *::after { animation: none !important; transition: none !important; }
+}

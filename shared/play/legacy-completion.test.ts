@@ -1,0 +1,35 @@
+import assert from 'node:assert/strict';
+import { test } from 'node:test';
+import { GameController } from '../../web/src/core/gameController';
+import { createMusterRecorder } from '../../web/src/legacy/musterBridge';
+import { defaultHeraldry } from '../legacy/content/heraldry';
+import { getRivalHouse } from '../legacy/content/houses';
+import { createMusterFormation } from '../legacy/domain/formation';
+import { createLegacyState } from '../legacy/domain/state';
+import { reduceLegacy } from '../legacy/domain/reducer';
+import { saveLegacy, loadLegacy } from '../legacy/domain/persistence';
+import { commitOriginalLegacyMatch } from './legacy-completion';
+const at = '2026-11-03T10:00:00.000Z';
+
+test('original Legacy match commits once; repeated completion and replay seeking cannot duplicate consequences', async () => {
+  const founded = reduceLegacy(createLegacyState({ at }), { type: 'found-banner', name: 'Test Banner', nationId: 'korvenia', heraldry: defaultHeraldry('korvenia'), motto: null, at, seed: 5 });
+  assert.equal(founded.error, null);
+  const storage = { raw: null as string | null, writes: 0, getItem() { return this.raw; }, setItem(_key: string, raw: string) { this.raw = raw; this.writes++; }, removeItem() { this.raw = null; } };
+  assert.equal(saveLegacy(storage, founded.state).ok, true);
+  const opponentNationId = getRivalHouse('korvenia').nationId;
+  const game = new GameController();
+  const recorder = createMusterRecorder(game, { matchId: 'original-only', stakes: 'classic', challengeId: null, playerSide: 'w', opponentNationId, ...createMusterFormation(founded.state, { playerSide: 'w', opponentNationId }) }, { now: () => at });
+  game.start({ mode: 'hotseat', difficulty: 'easy', playerColor: 'w', clockMinutes: null });
+  await game.tryMove('e2','e4'); game.resign();
+  const record = await recorder.whenComplete();
+  assert.equal(commitOriginalLegacyMatch(storage, record).ok, true);
+  const raw = storage.raw, writes = storage.writes;
+  assert.equal(commitOriginalLegacyMatch(storage, record).ok, true);
+  assert.equal(storage.writes, writes);
+  game.showReplayPosition(game.getSnapshot().fen); game.showReplayPosition(new GameController().getSnapshot().fen);
+  assert.equal(storage.raw, raw);
+  const loaded = loadLegacy(storage); assert.equal(loaded.status, 'loaded');
+  if (loaded.status === 'loaded') assert.deepEqual(loaded.state.processedMatchIds, ['original-only']);
+  storage.raw = '{broken'; assert.equal(commitOriginalLegacyMatch(storage, record).ok, false); assert.equal(storage.raw, '{broken');
+  recorder.dispose(); game.dispose();
+});

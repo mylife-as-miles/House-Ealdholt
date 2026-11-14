@@ -1,0 +1,361 @@
+/* My Legacy's observer (ObserverHud.tsx) in the Local Duel setup screen's design (play/MatchSetup.css): its blurred
+   panel under a fading orange rule, quiet uppercase headings after small orange glyphs, large tiles with condensed
+   numerals, rows with a colour stripe, a diamond medallion, the menu's key chips, its motes and its reveal. The
+   chronicle stands under the house's name on the left; the observer's panel where the setup screen keeps its terms. */
+
+.ealdholt-preview .obs {
+  --obs-accent: var(--menu-accent, #bf791a);
+  --obs-active: var(--menu-active-tab, #f87b00);
+  --obs-focus: var(--menu-focus, #df8a26);
+  --obs-text: var(--menu-text, #cdc6b8);
+  --obs-heading: var(--menu-inactive-heading, #b5b2ac);
+  --obs-quiet: #98958e;
+  --obs-line: #ffffff14;
+  --obs-condensed: var(--menu-font-condensed, "Barlow Condensed"), "Arial Narrow", sans-serif;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  color: var(--obs-text);
+}
+.ealdholt-preview .obs :is(section, button, ol) { pointer-events: auto; }
+.ealdholt-preview .obs-bubble-host { position: absolute; inset: 0; pointer-events: none; }
+/* The panel's medallion shows the hour and the sky; the village's own small status chip steps aside. */
+.ealdholt-preview:has(.obs-panel) .ealdholt-world-status { display: none; }
+
+/* ------------------------------------------------------------------ motes */
+.ealdholt-preview .obs-motes { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.ealdholt-preview .obs-motes i { position: absolute; bottom: -12px; border-radius: 50%; background: var(--mote-color); box-shadow: 0 0 6px var(--mote-color), 0 0 14px var(--mote-color); opacity: 0; animation: obs-mote linear infinite; }
+@keyframes obs-mote { 0% { opacity: 0; transform: translate3d(0, 0, 0); } 12% { opacity: .6; } 80% { opacity: .4; } 100% { opacity: 0; transform: translate3d(var(--mote-drift), -105vh, 0); } }
+
+/* ------------------------------------------------------------------ shared pieces */
+.ealdholt-preview .obs-legend {
+  display: flex;
+  align-items: center;
+  margin: 0 0 10px;
+  padding: 0;
+  color: var(--obs-heading);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.ealdholt-preview .obs-legend-icon { width: 14px; height: 14px; margin-right: 8px; flex: 0 0 auto; color: var(--obs-active); }
+.ealdholt-preview .obs-legend-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+.ealdholt-preview .obs-legend-row .obs-legend { margin: 0; }
+.ealdholt-preview .obs-quiet { margin: 6px 0 0; color: var(--obs-quiet); font-size: 13px; line-height: 1.5; }
+.ealdholt-preview .obs-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 32px;
+  padding: 4px 2px;
+  border: 0;
+  background: none;
+  color: #b9b3a4c4;
+  font-size: 13px;
+  letter-spacing: .04em;
+  transition: color .16s;
+}
+.ealdholt-preview .obs-link:hover { color: #f6c48a; }
+.ealdholt-preview .obs-link-icon { width: 14px; height: 14px; }
+.ealdholt-preview .obs-icon-button { display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border: 0; background: #ffffff0a; color: var(--obs-heading); box-shadow: inset 0 0 0 1px var(--obs-line); transition: color .16s, background .16s; }
+.ealdholt-preview .obs-icon-button:hover { color: #ece6da; background: #ffffff14; }
+.ealdholt-preview .obs-icon-button .obs-glyph { width: 16px; height: 16px; }
+.ealdholt-preview .obs :is(button, [data-nav]):focus-visible { outline: 2px solid var(--obs-focus); outline-offset: 3px; }
+
+/* ------------------------------------------------------------------ the chronicle */
+.ealdholt-preview .obs-chronicle {
+  position: absolute;
+  z-index: 4;
+  left: 40px;
+  top: 150px;
+  width: min(372px, 28vw);
+  max-height: calc(100% - 150px - 96px);
+  display: flex;
+  flex-direction: column;
+  animation: obs-reveal .4s .045s both cubic-bezier(.2, .7, .2, 1);
+}
+.ealdholt-preview .obs-chronicle.is-folded { max-height: none; }
+.ealdholt-preview .obs-feed {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  align-content: start;
+  gap: 4px;
+  margin: 0;
+  padding: 0 6px 0 0;
+  list-style: none;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--obs-accent) transparent;
+  /* Older lines fade into the village below, as a chronicle read from the top. */
+  mask-image: linear-gradient(180deg, #000 72%, transparent);
+}
+.ealdholt-preview .obs-feed li {
+  display: grid;
+  grid-template-columns: 18px minmax(0, 1fr);
+  gap: 10px;
+  padding: 10px 12px 10px 12px;
+  background: #100d08b8;
+  backdrop-filter: blur(10px);
+  box-shadow: inset 3px 0 0 var(--obs-tint), inset 0 0 0 1px var(--obs-line);
+  animation: obs-entry .55s both cubic-bezier(.2, .7, .2, 1);
+}
+.ealdholt-preview .obs-feed li[data-kind=power] { background: linear-gradient(90deg, #f87b0021, #100d08b8 60%); }
+.ealdholt-preview .obs-feed-icon { width: 18px; height: 18px; margin-top: 1px; color: var(--obs-tint); }
+.ealdholt-preview .obs-feed-meta { display: flex; gap: 8px; color: var(--obs-quiet); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; font-variant-numeric: tabular-nums; }
+.ealdholt-preview .obs-feed-meta b { color: var(--obs-tint); font-weight: 600; }
+.ealdholt-preview .obs-feed-text { display: block; margin-top: 3px; padding: 0; border: 0; background: none; color: #e6dfd2; font: inherit; font-size: 14.5px; line-height: 1.42; text-align: left; }
+.ealdholt-preview button.obs-feed-text { cursor: pointer; transition: color .16s; }
+.ealdholt-preview button.obs-feed-text:hover { color: #f6c48a; }
+@keyframes obs-entry {
+  from { opacity: 0; transform: translateX(-10px); box-shadow: inset 3px 0 0 var(--obs-tint), inset 0 0 0 1px var(--obs-tint), 0 0 24px color-mix(in srgb, var(--obs-tint) 40%, transparent); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ------------------------------------------------------------------ the panel */
+.ealdholt-preview .obs-panel {
+  position: absolute;
+  z-index: 4;
+  right: 40px;
+  top: 112px;
+  width: min(440px, 34vw);
+  max-height: calc(100% - 112px - 24px);
+  display: grid;
+  align-content: start;
+  gap: 20px;
+  padding: 24px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: var(--obs-accent) transparent;
+  background: #100d08b3;
+  backdrop-filter: blur(14px) saturate(1.15);
+  box-shadow: inset 0 0 0 1px var(--obs-line), 0 24px 60px #0007;
+  animation: obs-reveal .4s .09s both cubic-bezier(.2, .7, .2, 1);
+}
+.ealdholt-preview .obs-panel::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--obs-active), #f87b0033 60%, transparent); pointer-events: none; }
+.ealdholt-preview .obs-group { min-width: 0; margin: 0; padding: 0; border: 0; }
+@keyframes obs-reveal { from { opacity: 0; transform: translateY(7px); } to { opacity: 1; transform: none; } }
+
+/* The hour and the sky: a medallion in the sky's colour, the hour in the condensed numerals. */
+.ealdholt-preview .obs-readout { display: grid; grid-template-columns: 62px minmax(0, 1fr) auto; align-items: center; gap: 14px; padding-bottom: 18px; border-bottom: 1px solid var(--obs-line); }
+.ealdholt-preview .obs-medal { position: relative; display: grid; place-items: center; width: 62px; height: 62px; }
+.ealdholt-preview .obs-medal::before { content: ""; position: absolute; inset: 10px; transform: rotate(45deg); border: 1.5px solid var(--obs-tint); background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--obs-tint) 26%, transparent), #100d08d9 72%); box-shadow: 0 0 26px color-mix(in srgb, var(--obs-tint) 38%, transparent), inset 0 0 12px color-mix(in srgb, var(--obs-tint) 22%, transparent); transition: border-color .6s, box-shadow .6s; }
+.ealdholt-preview .obs-medal::after { content: ""; position: absolute; inset: 3px; transform: rotate(45deg); border: 1px solid color-mix(in srgb, var(--obs-tint) 30%, transparent); }
+.ealdholt-preview .obs-medal-icon { position: relative; z-index: 1; width: 26px; height: 26px; color: var(--obs-tint); filter: drop-shadow(0 0 6px color-mix(in srgb, var(--obs-tint) 60%, transparent)); }
+.ealdholt-preview .obs-readout strong { display: block; font-family: var(--obs-condensed); font-size: 40px; font-weight: 600; line-height: 1; letter-spacing: .02em; color: #ece6da; font-variant-numeric: tabular-nums; text-shadow: 0 2px 14px #000a; }
+.ealdholt-preview .obs-readout small { display: block; margin-top: 6px; font-size: 11px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; color: color-mix(in srgb, var(--obs-tint) 70%, #b5b2ac); }
+.ealdholt-preview .obs-flow { align-self: start; padding: 4px 8px; font-family: var(--obs-condensed); font-size: 14px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--obs-active); box-shadow: inset 0 0 0 1px #f87b0055; }
+.ealdholt-preview .obs-flow.is-held { color: #ece6da; box-shadow: inset 0 0 0 1px var(--obs-line); animation: obs-held 2.4s ease-in-out infinite; }
+@keyframes obs-held { 50% { opacity: .45; } }
+
+/* Time: the setup screen's clock tiles. */
+.ealdholt-preview .obs-tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; }
+.ealdholt-preview .obs-tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  min-height: 72px;
+  padding: 8px 6px;
+  border: 0;
+  background: #ffffff0a;
+  color: var(--obs-heading);
+  box-shadow: inset 0 0 0 1px var(--obs-line);
+  transition: color .16s, box-shadow .16s, background .16s;
+}
+.ealdholt-preview .obs-tile strong { font-family: var(--obs-condensed); font-size: 30px; font-weight: 600; line-height: 1; }
+.ealdholt-preview .obs-tile span { align-self: flex-end; padding-bottom: 8px; font-size: 12px; color: var(--obs-quiet); }
+.ealdholt-preview .obs-tile-glyph { width: 24px; height: 24px; stroke-width: 2.4; }
+.ealdholt-preview .obs-tile:hover { background: #ffffff14; color: #e6dacc; }
+.ealdholt-preview .obs-tile[aria-pressed=true] { background: #bf791a24; color: var(--obs-active); box-shadow: inset 0 0 0 2px var(--obs-focus); }
+.ealdholt-preview .obs-tile:active { background: #bf791a40; }
+
+/* Sky and Watch: the setup screen's kingdom rows, a stripe in each one's colour. */
+.ealdholt-preview .obs-sky { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
+.ealdholt-preview .obs-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 8px 14px;
+  border: 0;
+  background: #ffffff0a;
+  color: var(--obs-heading);
+  text-align: left;
+  box-shadow: inset 3px 0 0 var(--obs-tint, #5c5548), inset 0 0 0 1px var(--obs-line);
+  transition: color .16s, box-shadow .16s, background .16s;
+}
+.ealdholt-preview .obs-row:hover:not(:disabled) { background: #ffffff14; color: #e6dacc; }
+.ealdholt-preview .obs-row[aria-pressed=true] { background: #bf791a24; color: var(--obs-active); box-shadow: inset 3px 0 0 var(--obs-tint, var(--obs-active)), inset 0 0 0 2px var(--obs-focus); }
+.ealdholt-preview .obs-row:disabled { opacity: .35; }
+.ealdholt-preview .obs-row-icon { width: 22px; height: 22px; flex: 0 0 auto; color: var(--obs-tint); filter: drop-shadow(0 0 6px #0009); }
+.ealdholt-preview .obs-row-name { font-size: 14.5px; font-weight: 500; letter-spacing: .02em; }
+.ealdholt-preview .obs-sky-note { margin-top: 10px; }
+/* How long a commanded sky still holds, as a bar that runs down. */
+.ealdholt-preview .obs-hold { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 4px 12px; margin-top: 12px; }
+.ealdholt-preview .obs-hold-bar { grid-column: 1 / -1; height: 2px; background: #ffffff14; overflow: hidden; }
+.ealdholt-preview .obs-hold-bar i { display: block; height: 100%; background: var(--obs-tint); box-shadow: 0 0 10px var(--obs-tint); transition: width 1s linear; }
+.ealdholt-preview .obs-hold-text { color: color-mix(in srgb, var(--obs-tint) 65%, #b5b2ac); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-variant-numeric: tabular-nums; }
+
+/* The followed villager. */
+.ealdholt-preview .obs-follow-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.ealdholt-preview .obs-follow-head strong { display: block; font-family: var(--obs-condensed); font-size: 26px; font-weight: 600; line-height: 1.05; letter-spacing: .04em; text-transform: uppercase; color: #ece6da; }
+.ealdholt-preview .obs-follow-head small { display: block; margin-top: 4px; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--obs-accent); }
+.ealdholt-preview .obs-follow-now { display: grid; gap: 4px; margin: 12px 0 0; padding: 12px 14px; background: linear-gradient(90deg, #f87b001f, #ffffff08); box-shadow: inset 3px 0 0 var(--obs-active), inset 0 0 0 1px var(--obs-line); color: #ece6da; font-size: 15px; line-height: 1.4; }
+.ealdholt-preview .obs-follow-now small { color: var(--obs-heading); font-size: 13px; }
+.ealdholt-preview .obs-sub { margin: 16px 0 6px; color: var(--obs-heading); font-size: 11px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; }
+.ealdholt-preview .obs-memories { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+.ealdholt-preview .obs-memories li { padding: 8px 12px; background: #ffffff08; box-shadow: inset 2px 0 0 #e7d39a88; font-size: 13.5px; line-height: 1.4; color: #ddd5c6; }
+
+/* The panel's one call to action: the setup screen's Start, with its slow shine. */
+.ealdholt-preview .obs-cta {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  min-height: 52px;
+  padding: 12px 20px;
+  border: 0;
+  background: var(--obs-active);
+  color: #19120a;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px #d269001c;
+  transition: filter .16s, transform .16s;
+}
+.ealdholt-preview .obs-cta::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(105deg, transparent 35%, #fff6 50%, transparent 65%); transform: translateX(-120%); animation: obs-shine 4.2s 1s ease-in-out infinite; }
+@keyframes obs-shine { 0%, 62% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
+.ealdholt-preview .obs-cta > * { position: relative; z-index: 1; }
+.ealdholt-preview .obs-cta:hover { filter: brightness(1.08); }
+.ealdholt-preview .obs-cta:active { transform: translateY(1px); }
+.ealdholt-preview .obs-cta-arrow { width: 32px; height: 24px; }
+
+.ealdholt-preview .obs-watch-list { display: grid; gap: 4px; }
+.ealdholt-preview .obs-watch-list .obs-row { flex-direction: column; align-items: flex-start; justify-content: center; gap: 2px; min-height: 56px; }
+.ealdholt-preview .obs-row-note { color: var(--obs-quiet); font-size: 12.5px; line-height: 1.3; }
+
+/* ------------------------------------------------------------------ bandits */
+.ealdholt-preview .obs-legend-icon--raid { color: var(--obs-tint); }
+/* Lure: a kingdom row in the raid's red, with the setup screen's arrow. */
+.ealdholt-preview .obs-lure { width: 100%; --obs-tint: #e0533d; }
+.ealdholt-preview .obs-lure .obs-row-name { flex: 1; }
+.ealdholt-preview .obs-lure-arrow { width: 28px; height: 22px; color: var(--obs-tint); opacity: .7; transition: transform .16s, opacity .16s; }
+.ealdholt-preview .obs-lure:hover:not(:disabled) .obs-lure-arrow { opacity: 1; transform: translateX(3px); }
+.ealdholt-preview .obs-lure:hover:not(:disabled) { color: #f3b1a6; background: linear-gradient(90deg, #e0533d1f, #ffffff0a); }
+.ealdholt-preview .obs-raid-live { display: grid; gap: 12px; padding: 14px; background: linear-gradient(180deg, #e0533d14, #ffffff06); box-shadow: inset 3px 0 0 var(--obs-tint), inset 0 0 0 1px #e0533d40; animation: obs-reveal .35s both cubic-bezier(.2, .7, .2, 1); }
+.ealdholt-preview .obs-raid-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.ealdholt-preview .obs-raid-head strong { display: block; font-family: var(--obs-condensed); font-size: 24px; font-weight: 600; line-height: 1.05; letter-spacing: .04em; text-transform: uppercase; color: #f1c9c0; text-shadow: 0 0 18px #e0533d55; }
+.ealdholt-preview .obs-raid-head small { display: block; margin-top: 4px; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #c48b80; }
+.ealdholt-preview .obs-raid-outcome { flex: 0 0 auto; padding: 4px 8px; font-family: var(--obs-condensed); font-size: 14px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; box-shadow: inset 0 0 0 1px currentColor; }
+.ealdholt-preview .obs-raid-outcome[data-outcome=repelled] { color: #9fcf86; }
+.ealdholt-preview .obs-raid-outcome[data-outcome=plundered] { color: #f2b84b; }
+.ealdholt-preview .obs-raid-outcome[data-outcome=burned] { color: #ff7a52; }
+/* The four phases as a segmented track, the current one filling. */
+.ealdholt-preview .obs-raid-track { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; margin: 0; padding: 0; list-style: none; }
+.ealdholt-preview .obs-raid-track li { display: grid; gap: 6px; color: var(--obs-quiet); font-size: 11px; letter-spacing: .12em; text-transform: uppercase; }
+.ealdholt-preview .obs-raid-track li[data-state=now] { color: #f1c9c0; }
+.ealdholt-preview .obs-raid-track li[data-state=done] { color: #c48b80; }
+.ealdholt-preview .obs-raid-bar { display: block; height: 3px; background: #ffffff14; overflow: hidden; }
+.ealdholt-preview .obs-raid-bar i { display: block; height: 100%; background: var(--obs-tint); box-shadow: 0 0 10px var(--obs-tint); transition: width 1s linear; }
+.ealdholt-preview .obs-raid-odds { display: flex; align-items: baseline; gap: 10px; color: var(--obs-heading); font-size: 13px; }
+.ealdholt-preview .obs-raid-odds b { margin-right: 4px; font-family: var(--obs-condensed); font-size: 26px; font-weight: 600; color: #ece6da; font-variant-numeric: tabular-nums; }
+.ealdholt-preview .obs-raid-vs { color: var(--obs-quiet); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; }
+.ealdholt-preview .obs-warn[aria-pressed=true] { color: #f6d58e; background: #f2b84b1f; box-shadow: inset 3px 0 0 var(--obs-tint), inset 0 0 0 2px #f2b84b88; opacity: 1; }
+/* While the band is at the gate: the panel's rule and the hour turn red, and the screen's edge pulses. */
+.ealdholt-preview .obs-panel:is([data-raid=approach], [data-raid=clash])::before { background: linear-gradient(90deg, #e0533d, #e0533d33 60%, transparent); }
+.ealdholt-preview .obs-flow.is-alarm { color: #ff8a73; box-shadow: inset 0 0 0 1px #e0533d88; animation: obs-held 1.2s ease-in-out infinite; }
+.ealdholt-preview .obs-follow-now[data-alarm] { background: linear-gradient(90deg, #e0533d22, #ffffff08); box-shadow: inset 3px 0 0 #e0533d, inset 0 0 0 1px var(--obs-line); }
+.ealdholt-preview .obs-alarm { position: absolute; inset: 0; z-index: 3; pointer-events: none; box-shadow: inset 0 0 160px 30px #8a1a0d55; animation: obs-alarm 2.8s ease-in-out infinite; }
+.ealdholt-preview .obs-alarm[data-phase=clash] { box-shadow: inset 0 0 200px 50px #a1200f70; animation-duration: 1.6s; }
+@keyframes obs-alarm { 50% { opacity: .45; } }
+
+/* ------------------------------------------------------------------ the neighbouring houses */
+.ealdholt-preview .obs-houses-lead { margin: -8px 0 0; }
+.ealdholt-preview .obs-panel[data-observer-panel=houses] { gap: 14px; }
+/* The village dock sits midway between the chronicle and the panel, clear of both. */
+.ealdholt-preview:has(.obs-panel) .wf-village-dock { left: calc(50% + (min(372px, 28vw) - min(440px, 34vw)) / 2); }
+.ealdholt-preview .obs-houses { display: grid; gap: 6px; }
+.ealdholt-preview .obs-house { display: grid; background: #ffffff06; box-shadow: inset 0 0 0 1px var(--obs-line); transition: background .2s, box-shadow .2s; }
+.ealdholt-preview .obs-house[data-open] { background: linear-gradient(180deg, color-mix(in srgb, var(--obs-tint) 9%, transparent), #ffffff05); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--obs-tint) 45%, transparent); }
+/* The row: arms, name and road, and how the house regards Ealdholt, in the regard's colour. */
+.ealdholt-preview .obs-house-row { width: 100%; min-height: 58px; padding: 6px 12px 6px 14px; gap: 12px; background: transparent; box-shadow: inset 3px 0 0 var(--obs-tint); }
+.ealdholt-preview .obs-house-row[aria-pressed=true] { background: transparent; color: #ece6da; box-shadow: inset 3px 0 0 var(--obs-tint); }
+.ealdholt-preview .obs-house-row:hover:not(:disabled) { background: #ffffff0d; }
+.ealdholt-preview .obs-house-crest { width: 36px; height: 44px; flex: 0 0 auto; filter: drop-shadow(0 3px 8px #000a); }
+.ealdholt-preview .obs-house-id { display: grid; gap: 2px; flex: 1; min-width: 0; }
+.ealdholt-preview .obs-house-name { font-family: var(--obs-condensed); font-size: 21px; font-weight: 600; line-height: 1.05; letter-spacing: .05em; text-transform: uppercase; color: #ece6da; }
+.ealdholt-preview .obs-house-band { flex: 0 0 auto; padding: 3px 8px; color: var(--obs-tint); font-family: var(--obs-condensed); font-size: 14px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--obs-tint) 55%, transparent); }
+/* Regard: feud on the left, sworn friendship on the right, filling out from the middle. */
+.ealdholt-preview .obs-regard { position: relative; display: block; height: 3px; margin: 0 12px 0 14px; background: #ffffff14; }
+.ealdholt-preview .obs-regard::after { content: ""; position: absolute; left: 50%; top: -3px; width: 1px; height: 9px; background: #ffffff55; }
+.ealdholt-preview .obs-regard i { position: absolute; top: 0; height: 100%; background: var(--obs-tint); box-shadow: 0 0 10px var(--obs-tint); transition: left .6s cubic-bezier(.2, .7, .2, 1), width .6s cubic-bezier(.2, .7, .2, 1); }
+.ealdholt-preview .obs-house:not([data-open]) .obs-regard { margin-bottom: 10px; }
+.ealdholt-preview .obs-house-detail { display: grid; gap: 8px; padding: 12px 14px 12px; animation: obs-reveal .3s both cubic-bezier(.2, .7, .2, 1); }
+.ealdholt-preview .obs-house-detail .obs-quiet { margin: 0; }
+.ealdholt-preview .obs-house-seat { color: #ddd5c6; }
+.ealdholt-preview .obs-house-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; margin: 0; }
+.ealdholt-preview .obs-house-facts > div { padding: 6px 10px; background: #ffffff08; box-shadow: inset 0 0 0 1px var(--obs-line); }
+.ealdholt-preview .obs-house-facts dt { color: var(--obs-quiet); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; }
+.ealdholt-preview .obs-house-facts dd { margin: 3px 0 0; color: #ece6da; font-family: var(--obs-condensed); font-size: 17px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+.ealdholt-preview .obs-house-facts dd[data-fortune=lean] { color: #e58f7c; }
+.ealdholt-preview .obs-house-facts dd[data-fortune=thriving] { color: #e3b75a; }
+.ealdholt-preview .obs-house-news { margin: 0; padding: 8px 12px; background: #ffffff08; box-shadow: inset 2px 0 0 var(--obs-tint); color: #ddd5c6; font-size: 13.5px; line-height: 1.4; }
+.ealdholt-preview .obs-house-news b { display: block; margin-bottom: 2px; color: var(--obs-quiet); font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; font-variant-numeric: tabular-nums; }
+/* The observer's hand over the house: four tiles, each in its own colour. */
+.ealdholt-preview .obs-acts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; }
+.ealdholt-preview .obs-act { display: flex; align-items: center; gap: 10px; min-height: 44px; padding: 6px 12px; border: 0; background: #ffffff0a; color: var(--obs-heading); font-size: 14px; font-weight: 500; text-align: left; box-shadow: inset 3px 0 0 var(--obs-tint), inset 0 0 0 1px var(--obs-line); transition: color .16s, background .16s, box-shadow .16s; }
+.ealdholt-preview .obs-act:hover:not(:disabled) { color: #ece6da; background: color-mix(in srgb, var(--obs-tint) 14%, #ffffff0a); box-shadow: inset 3px 0 0 var(--obs-tint), inset 0 0 0 1px color-mix(in srgb, var(--obs-tint) 60%, transparent); }
+.ealdholt-preview .obs-act:active:not(:disabled) { background: color-mix(in srgb, var(--obs-tint) 26%, #ffffff0a); }
+.ealdholt-preview .obs-act:disabled { opacity: .38; }
+.ealdholt-preview .obs-act-icon { width: 20px; height: 20px; flex: 0 0 auto; color: var(--obs-tint); }
+.ealdholt-preview .obs-house-outing { display: flex; align-items: center; gap: 8px; margin: 0; padding: 10px 12px; background: #9fb38a14; box-shadow: inset 3px 0 0 #9fb38a; color: #d5dccb; font-size: 13.5px; line-height: 1.4; }
+.ealdholt-preview .obs-house-outing .obs-link-icon { flex: 0 0 auto; color: #9fb38a; }
+/* Riders answering the beacon, in their lanterns' pale blue. */
+.ealdholt-preview .obs-raid-allies { display: flex; align-items: center; gap: 8px; margin: 0; padding: 8px 10px; background: #6fa8ff14; box-shadow: inset 3px 0 0 #8cc0ff; color: #cfe2f7; font-size: 13.5px; }
+.ealdholt-preview .obs-raid-allies b { font-family: var(--obs-condensed); font-size: 20px; font-weight: 600; color: #e6f1ff; }
+.ealdholt-preview .obs-raid-allies .obs-link-icon { width: 18px; height: 18px; flex: 0 0 auto; color: #8cc0ff; }
+.ealdholt-preview .obs-follow-now[data-away] { background: linear-gradient(90deg, #9fb38a22, #ffffff08); box-shadow: inset 3px 0 0 #9fb38a, inset 0 0 0 1px var(--obs-line); }
+
+/* ------------------------------------------------------------------ the menu's key chips */
+.ealdholt-preview .obs-keys { position: absolute; z-index: 4; left: 40px; bottom: 34px; display: flex; gap: 26px; animation: obs-reveal .4s .12s both cubic-bezier(.2, .7, .2, 1); }
+.ealdholt-preview .obs-keys span { display: flex; align-items: center; gap: 9px; color: #b9b3a4c4; font-size: 15px; font-weight: 300; text-shadow: 0 1px 8px #000; }
+.ealdholt-preview .obs-keys kbd { display: inline-grid; place-items: center; min-width: 28px; height: 20px; padding: 0 6px; border-radius: 3px; background: #9a541e; color: #1e1007; font: 700 11px Arial, sans-serif; box-shadow: 0 0 3px #88551f33; }
+
+/* ------------------------------------------------------------------ smaller screens */
+@media (max-width: 1180px) {
+  .ealdholt-preview .obs-panel { width: min(380px, 40vw); max-height: calc(100% - 112px - 96px); padding: 18px; gap: 16px; }
+  .ealdholt-preview:has(.obs-panel) .wf-village-dock { left: calc(50% + (min(320px, 30vw) - min(380px, 40vw)) / 2); }
+  .ealdholt-preview .obs-chronicle { width: min(320px, 30vw); max-height: calc(100% - 150px - 170px); }
+  .ealdholt-preview .obs-keys { display: none; }
+}
+@media (max-height: 760px) {
+  .ealdholt-preview .obs-tile { min-height: 56px; }
+  .ealdholt-preview .obs-tile strong { font-size: 25px; }
+  .ealdholt-preview .obs-row { min-height: 44px; }
+  .ealdholt-preview .obs-house-row { min-height: 54px; }
+  .ealdholt-preview .obs-act { min-height: 42px; }
+  .ealdholt-preview .obs-readout strong { font-size: 32px; }
+  .ealdholt-preview .obs-panel { gap: 14px; padding: 18px; }
+}
+@media (max-height: 560px) {
+  .ealdholt-preview .obs-chronicle { top: 100px; max-height: calc(100% - 100px - 90px); }
+  .ealdholt-preview .obs-panel { top: 72px; max-height: calc(100% - 72px - 16px); }
+  .ealdholt-preview .obs-keys { display: none; }
+}
+@media (max-width: 700px) {
+  .ealdholt-preview .obs-chronicle { left: 16px; width: min(300px, 80vw); }
+  .ealdholt-preview .obs-panel { right: 16px; width: min(340px, 86vw); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ealdholt-preview .obs *, .ealdholt-preview .obs *::before, .ealdholt-preview .obs *::after { animation: none !important; transition: none !important; }
+}
+.ealdholt-preview .obs.is-reduced *, .ealdholt-preview .obs.is-reduced *::before, .ealdholt-preview .obs.is-reduced *::after { animation: none !important; transition: none !important; }

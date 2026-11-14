@@ -1,0 +1,709 @@
+{
+ "archetype": "elder-female",
+ "build": {
+  "seconds": 8.6,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.3,
+   "shape": 3.6,
+   "texture": 4.3
+  }
+ },
+ "clipLibrary": "crowd-clips-elder-female-v1.glb",
+ "envelopeGate": {
+  "clips": 12,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0134,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.187,
+ "envelopes": {
+  "carry_bundle_walk": {
+   "max": [
+    0.468,
+    1.569,
+    0.705
+   ],
+   "min": [
+    -0.515,
+    -0.347,
+    -0.754
+   ]
+  },
+  "idle_stick": {
+   "max": [
+    0.388,
+    1.542,
+    0.708
+   ],
+   "min": [
+    -0.338,
+    -0.189,
+    -0.656
+   ]
+  },
+  "sit": {
+   "max": [
+    0.437,
+    1.204,
+    0.367
+   ],
+   "min": [
+    -0.434,
+    -0.439,
+    -1.007
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.585,
+    1.641,
+    1.03
+   ],
+   "min": [
+    -0.535,
+    -0.632,
+    -1.144
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.594,
+    1.661,
+    1.032
+   ],
+   "min": [
+    -0.566,
+    -0.62,
+    -1.147
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.495,
+    1.591,
+    0.705
+   ],
+   "min": [
+    -0.413,
+    -0.189,
+    -0.648
+   ]
+  },
+  "walk_stick": {
+   "max": [
+    0.466,
+    1.57,
+    0.812
+   ],
+   "min": [
+    -0.468,
+    -0.368,
+    -0.781
+   ]
+  },
+  "walk_stick_start": {
+   "max": [
+    0.447,
+    1.57,
+    0.796
+   ],
+   "min": [
+    -0.433,
+    -0.203,
+    -0.699
+   ]
+  },
+  "walk_stick_stop": {
+   "max": [
+    0.455,
+    1.567,
+    0.748
+   ],
+   "min": [
+    -0.448,
+    -0.325,
+    -0.688
+   ]
+  },
+  "work_shell_peas": {
+   "max": [
+    0.643,
+    1.153,
+    0.371
+   ],
+   "min": [
+    -0.631,
+    -0.444,
+    -1.009
+   ]
+  },
+  "work_shell_peas_enter": {
+   "max": [
+    0.455,
+    1.349,
+    0.367
+   ],
+   "min": [
+    -0.447,
+    -0.439,
+    -1.007
+   ]
+  },
+  "work_shell_peas_exit": {
+   "max": [
+    0.455,
+    1.349,
+    0.367
+   ],
+   "min": [
+    -0.447,
+    -0.439,
+    -1.007
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.217,
+  "lipGapMm": {
+   "aa": 15.7,
+   "full": 18.8,
+   "rest": 2.4
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.22,
+   "r": 7.22
+  },
+  "upperLidClosed": 0.492,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.492
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-miller-mother.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.23,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   946,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3468,
+   4500,
+   true
+  ]
+ },
+ "group": "elders-dependents",
+ "hair": {
+  "colour": "white",
+  "facialHair": "none",
+  "style": "thinning-white"
+ },
+ "headwear": "head-cloth",
+ "headwearGate": {
+  "headwear": "head-cloth",
+  "pass": true,
+  "scalpCovered": 1,
+  "scalpRays": 875,
+  "shells": {
+   "HeadCloth": {
+    "faces": 380,
+    "islands": 2,
+    "maxReachRadii": 0.979,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#a19e96",
+  "shape": "knotted-tails",
+  "tone": "greyed"
+ },
+ "householdId": "ealdholt-mill-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.24,
+  "coreMaxCm": 1.24,
+  "coreMeanCm": 0.66,
+  "coreWorstJoint": "calf_l"
+ },
+ "label": "Miller's mother",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 241148,
+  "fileMiB": 0.23,
+  "headTriangles": 946,
+  "images": [
+   {
+    "bytes": 27406,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3468,
+  "vertices": 3282
+ },
+ "motion": {
+  "idle": "idle_stick",
+  "library": "crowd-clips-elder-female-v1",
+  "rate": 0.977,
+  "roleClips": [
+   "work_shell_peas",
+   "carry_bundle_walk"
+  ],
+  "talk": "talk_b",
+  "walk": "walk_stick"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "shoulder-cape",
+  "kit": "elder-f",
+  "palette": {
+   "accent": "ochre",
+   "main": "russet",
+   "secondary": "undyed-grey"
+  },
+  "wear": "worn"
+ },
+ "placementScale": 0.9594,
+ "presentation": {
+  "clips": {
+   "carry_bundle_walk": {
+    "held": [
+     {
+      "bone": "spine_03",
+      "kit": "textile",
+      "matrix": [
+       0.8733,
+       -0.0153,
+       0.0273,
+       0,
+       0.026,
+       0.7806,
+       -0.3916,
+       0,
+       -0.0176,
+       0.3922,
+       0.7806,
+       0,
+       0,
+       0.0863,
+       0.2019,
+       1
+      ],
+      "node": "prop_linen_bundle",
+      "prop": "linen-bundle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "idle_stick": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       0.6953,
+       0.0838,
+       0.6989,
+       0,
+       -0.7038,
+       0.0995,
+       0.6882,
+       0,
+       -0.012,
+       -0.9808,
+       0.1296,
+       0,
+       0.007,
+       0.0818,
+       0.0203,
+       1
+      ],
+      "node": "prop_walking_stick",
+      "prop": "walking-stick"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.8571,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3475,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.8571,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3475,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.8571,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3475,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "walk_stick": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       0.6953,
+       0.0838,
+       0.6989,
+       0,
+       -0.7038,
+       0.0995,
+       0.6882,
+       0,
+       -0.012,
+       -0.9808,
+       0.1296,
+       0,
+       0.007,
+       0.0818,
+       0.0203,
+       1
+      ],
+      "node": "prop_walking_stick",
+      "prop": "walking-stick"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "walk_stick_start": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       0.6953,
+       0.0838,
+       0.6989,
+       0,
+       -0.7038,
+       0.0995,
+       0.6882,
+       0,
+       -0.012,
+       -0.9808,
+       0.1296,
+       0,
+       0.007,
+       0.0818,
+       0.0203,
+       1
+      ],
+      "node": "prop_walking_stick",
+      "prop": "walking-stick"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "walk_stick_stop": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       0.6953,
+       0.0838,
+       0.6989,
+       0,
+       -0.7038,
+       0.0995,
+       0.6882,
+       0,
+       -0.012,
+       -0.9808,
+       0.1296,
+       0,
+       0.007,
+       0.0818,
+       0.0203,
+       1
+      ],
+      "node": "prop_walking_stick",
+      "prop": "walking-stick"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_shell_peas": {
+    "held": [
+     {
+      "bone": "hips",
+      "kit": "everyday",
+      "matrix": [
+       0.8738,
+       0,
+       0,
+       0,
+       0,
+       0.7958,
+       0.3607,
+       0,
+       0,
+       -0.3607,
+       0.7958,
+       0,
+       0,
+       -0.0721,
+       0.2551,
+       1
+      ],
+      "node": "prop_bowl",
+      "prop": "bowl"
+     }
+    ],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.8571,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3475,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_shell_peas_enter": {
+    "held": [
+     {
+      "bone": "hips",
+      "kit": "everyday",
+      "matrix": [
+       0.8738,
+       0,
+       0,
+       0,
+       0,
+       0.7958,
+       0.3607,
+       0,
+       0,
+       -0.3607,
+       0.7958,
+       0,
+       0,
+       -0.0721,
+       0.2551,
+       1
+      ],
+      "node": "prop_bowl",
+      "prop": "bowl"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_shell_peas_exit": {
+    "held": [
+     {
+      "bone": "hips",
+      "kit": "everyday",
+      "matrix": [
+       0.8738,
+       0,
+       0,
+       0,
+       0,
+       0.7958,
+       0.3607,
+       0,
+       0,
+       -0.3607,
+       0.7958,
+       0,
+       0,
+       -0.0721,
+       0.2551,
+       1
+      ],
+      "node": "prop_bowl",
+      "prop": "bowl"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "textile": "crowd-v1/props/crowd-props-textile-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "walking-stick",
+   "kit": "everyday",
+   "socket": "hand_l",
+   "source": "household-set"
+  },
+  {
+   "id": "bowl",
+   "kit": "everyday",
+   "socket": "hand_r",
+   "source": "polyhaven:wooden_bowl_01"
+  },
+  {
+   "id": "stool",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "polyhaven:wooden_stool_01"
+  }
+ ],
+ "published": {
+  "bytes": 241148,
+  "sha256": "fa406ff9aabfff5d8b7f5db905046f42e21ce40ac7f9ae558ea958b76d817636"
+ },
+ "recipeSha256": "45551fcdc5f0e07a7de720cd5128cfa10e88b8bb0cc8bcd8de51aa74d1dc28e0",
+ "referenceStatureCm": 151.6,
+ "residentId": "ealdholt-miller-mother",
+ "restRadiusMetres": 0.517,
+ "roleId": "village-elder",
+ "statureCm": 145.9,
+ "status": "working-placeholder"
+}

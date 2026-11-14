@@ -1,0 +1,680 @@
+{
+ "archetype": "adolescent",
+ "build": {
+  "seconds": 8.9,
+  "stageSeconds": {
+   "export": 0.2,
+   "faceRig": 0.2,
+   "lod": 0.4,
+   "shape": 4.3,
+   "texture": 3.9
+  }
+ },
+ "clipLibrary": "crowd-clips-adolescent-v1.glb",
+ "envelopeGate": {
+  "clips": 15,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0205,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.157,
+ "envelopes": {
+  "carry_basket_walk": {
+   "max": [
+    0.455,
+    1.587,
+    0.757
+   ],
+   "min": [
+    -0.448,
+    -0.265,
+    -0.786
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.397,
+    1.557,
+    0.657
+   ],
+   "min": [
+    -0.332,
+    -0.108,
+    -0.584
+   ]
+  },
+  "sit": {
+   "max": [
+    0.414,
+    1.162,
+    0.404
+   ],
+   "min": [
+    -0.402,
+    -0.405,
+    -0.925
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.611,
+    1.588,
+    1.044
+   ],
+   "min": [
+    -0.534,
+    -0.628,
+    -1.146
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.666,
+    1.603,
+    1.047
+   ],
+   "min": [
+    -0.599,
+    -0.617,
+    -1.149
+   ]
+  },
+  "talk": {
+   "max": [
+    0.595,
+    1.553,
+    0.658
+   ],
+   "min": [
+    -0.422,
+    -0.108,
+    -0.576
+   ]
+  },
+  "walk": {
+   "max": [
+    0.455,
+    1.586,
+    0.757
+   ],
+   "min": [
+    -0.448,
+    -0.265,
+    -0.786
+   ]
+  },
+  "walk_start": {
+   "max": [
+    0.446,
+    1.576,
+    0.728
+   ],
+   "min": [
+    -0.427,
+    -0.208,
+    -0.666
+   ]
+  },
+  "walk_stop": {
+   "max": [
+    0.442,
+    1.563,
+    0.704
+   ],
+   "min": [
+    -0.421,
+    -0.235,
+    -0.719
+   ]
+  },
+  "work_gather_herbs": {
+   "max": [
+    0.591,
+    0.876,
+    0.707
+   ],
+   "min": [
+    -0.509,
+    -0.542,
+    -0.699
+   ]
+  },
+  "work_gather_herbs_enter": {
+   "max": [
+    0.67,
+    1.651,
+    1.012
+   ],
+   "min": [
+    -0.606,
+    -0.745,
+    -0.847
+   ]
+  },
+  "work_gather_herbs_exit": {
+   "max": [
+    0.67,
+    1.651,
+    1.012
+   ],
+   "min": [
+    -0.606,
+    -0.745,
+    -0.847
+   ]
+  },
+  "work_grind_herbs": {
+   "max": [
+    0.404,
+    1.498,
+    0.643
+   ],
+   "min": [
+    -0.335,
+    -0.107,
+    -0.565
+   ]
+  },
+  "work_grind_herbs_enter": {
+   "max": [
+    0.457,
+    1.625,
+    0.643
+   ],
+   "min": [
+    -0.472,
+    -0.107,
+    -0.565
+   ]
+  },
+  "work_grind_herbs_exit": {
+   "max": [
+    0.457,
+    1.625,
+    0.643
+   ],
+   "min": [
+    -0.472,
+    -0.107,
+    -0.565
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.22,
+  "lipGapMm": {
+   "aa": 13.6,
+   "full": 16.7,
+   "rest": 0.4
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 9.19,
+   "r": 9.19
+  },
+  "upperLidClosed": 0.629,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.629
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "major",
+ "file": "ealdholt-healer-apprentice.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.22,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   924,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3435,
+   4500,
+   true
+  ]
+ },
+ "group": "children-apprentices",
+ "hair": {
+  "colour": "black",
+  "facialHair": "none",
+  "style": "loose-long"
+ },
+ "headwear": "none",
+ "headwearGate": {
+  "headwear": "none",
+  "pass": true
+ },
+ "headwearStyle": {
+  "colour": null,
+  "shape": "plain",
+  "tone": "none"
+ },
+ "householdId": "ealdholt-healer-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.68,
+  "coreMaxCm": 1.68,
+  "coreMeanCm": 0.85,
+  "coreWorstJoint": "hips"
+ },
+ "label": "Healer's apprentice",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 230716,
+  "fileMiB": 0.22,
+  "headTriangles": 924,
+  "images": [
+   {
+    "bytes": 28808,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3435,
+  "vertices": 3061
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adolescent-v1",
+  "rate": 0.957,
+  "roleClips": [
+   "work_grind_herbs",
+   "work_gather_herbs",
+   "carry_basket_walk"
+  ],
+  "talk": "talk",
+  "walk": "walk"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "apron-shawl",
+  "kit": "healer-kirtle",
+  "palette": {
+   "accent": "walnut-brown",
+   "main": "russet",
+   "secondary": "undyed-cream"
+  },
+  "wear": "clean"
+ },
+ "placementScale": 1.079,
+ "presentation": {
+  "clips": {
+   "carry_basket_walk": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.7188,
+       -0.3516,
+       0.3377,
+       0,
+       0.4628,
+       -0.3031,
+       0.6696,
+       0,
+       -0.1532,
+       0.7341,
+       0.4382,
+       0,
+       0.0442,
+       0.0694,
+       0.0856,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.8527,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3445,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.8527,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3445,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.8527,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3445,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_gather_herbs": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "letters-and-care",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0.3127,
+       0,
+       0.2085,
+       1
+      ],
+      "node": "prop_herb_basket",
+      "prop": "herb-basket"
+     }
+    ]
+   },
+   "work_grind_herbs": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       -0.4813,
+       -0.6076,
+       0.3919,
+       0,
+       0.5194,
+       0.0369,
+       0.6951,
+       0,
+       -0.503,
+       0.6196,
+       0.3429,
+       0,
+       0.025,
+       0.0652,
+       0.0183,
+       1
+      ],
+      "node": "prop_mortar_pestle_mortar",
+      "prop": "mortar-pestle"
+     },
+     {
+      "bone": "hand_r",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.5707,
+       0.3924,
+       -0.5242,
+       0,
+       -0.5863,
+       -0.0034,
+       -0.6408,
+       0,
+       -0.2916,
+       0.7749,
+       0.2627,
+       0,
+       -0.0603,
+       0.2059,
+       0.0421,
+       1
+      ],
+      "node": "prop_mortar_pestle_pestle",
+      "prop": "mortar-pestle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_grind_herbs_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       -0.4813,
+       -0.6076,
+       0.3919,
+       0,
+       0.5194,
+       0.0369,
+       0.6951,
+       0,
+       -0.503,
+       0.6196,
+       0.3429,
+       0,
+       0.025,
+       0.0652,
+       0.0183,
+       1
+      ],
+      "node": "prop_mortar_pestle_mortar",
+      "prop": "mortar-pestle"
+     },
+     {
+      "bone": "hand_r",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.5707,
+       0.3924,
+       -0.5242,
+       0,
+       -0.5863,
+       -0.0034,
+       -0.6408,
+       0,
+       -0.2916,
+       0.7749,
+       0.2627,
+       0,
+       -0.0603,
+       0.2059,
+       0.0421,
+       1
+      ],
+      "node": "prop_mortar_pestle_pestle",
+      "prop": "mortar-pestle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_grind_herbs_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       -0.4813,
+       -0.6076,
+       0.3919,
+       0,
+       0.5194,
+       0.0369,
+       0.6951,
+       0,
+       -0.503,
+       0.6196,
+       0.3429,
+       0,
+       0.025,
+       0.0652,
+       0.0183,
+       1
+      ],
+      "node": "prop_mortar_pestle_mortar",
+      "prop": "mortar-pestle"
+     },
+     {
+      "bone": "hand_r",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.5707,
+       0.3924,
+       -0.5242,
+       0,
+       -0.5863,
+       -0.0034,
+       -0.6408,
+       0,
+       -0.2916,
+       0.7749,
+       0.2627,
+       0,
+       -0.0603,
+       0.2059,
+       0.0421,
+       1
+      ],
+      "node": "prop_mortar_pestle_pestle",
+      "prop": "mortar-pestle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "letters-and-care": "crowd-v1/props/crowd-props-letters-and-care-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "herb-basket",
+   "kit": "letters-and-care",
+   "socket": "hand_l",
+   "source": "polyhaven:wicker_basket_01"
+  }
+ ],
+ "published": {
+  "bytes": 230716,
+  "sha256": "7624920b7f0ae56a06f0a60cb0c34f7f1f8ad603eae4da2cbee61eb0e0ffc396"
+ },
+ "recipeSha256": "ba316692c620b600cc13e2174e8c7f480d0e80794940b388e6d154ee3dc03366",
+ "referenceStatureCm": 150.7,
+ "residentId": "ealdholt-healer-apprentice",
+ "restRadiusMetres": 0.487,
+ "roleId": "healer-apprentice",
+ "statureCm": 162.3,
+ "status": "working-placeholder"
+}

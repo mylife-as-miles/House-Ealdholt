@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "source": "Six user-supplied soundtrack files, authorized for Crownfall game assets.",
+  "transformation": "None. MP3 bytes and embedded tags are preserved without re-encoding.",
+  "durationSource": "ffprobe format.duration",
+  "tracks": [
+    {
+      "id": "sanguis-et-terra",
+      "title": "Sanguis et Terra",
+      "src": "audio/soundtrack/sanguis-et-terra.mp3",
+      "durationSeconds": 182.282375,
+      "sourceFileName": "1-sanguis_et_terra-1-.mp3",
+      "bytes": 4380902,
+      "sha256": "234f9f2af1889a25803143bc4ec2b50f5ed2caefd2e82d6e2ca71da5f9ff5a68"
+    },
+    {
+      "id": "le-roi-muet",
+      "title": "Le Roi Muet",
+      "src": "audio/soundtrack/le-roi-muet.mp3",
+      "durationSeconds": 163.448125,
+      "sourceFileName": "2-le_roi_muet-1-.mp3",
+      "bytes": 3928880,
+      "sha256": "1f0c2ffed5eebd12efb7a10af94df4fec465d4cc4bc1d48c49156bf7fb7d7379"
+    },
+    {
+      "id": "la-felure-demure",
+      "title": "La Felure Demure",
+      "src": "audio/soundtrack/la-felure-demure.mp3",
+      "durationSeconds": 168.84,
+      "sourceFileName": "3-La-Fêlure-Demeure-1-.mp3",
+      "bytes": 3795431,
+      "sha256": "d961f13a2207179d8b008f03fe466d7722694ea3a6c6b36c5fbbea8579afcba2",
+      "originalTags": {
+        "title": "La Fêlure Demeure",
+        "artist": "myles4miles"
+      },
+      "artist": "myles4miles"
+    },
+    {
+      "id": "krom-shahid",
+      "title": "Krom Shahid",
+      "src": "audio/soundtrack/krom-shahid.mp3",
+      "durationSeconds": 127.738708,
+      "sourceFileName": "4-krom-shahid.mp3",
+      "bytes": 3071854,
+      "sha256": "4a8a88685f4494b0f693d2409c5b210c3f85eb01e445f76fc12ad5d9dec34aab"
+    },
+    {
+      "id": "cyning-slieht",
+      "title": "Cyning Slieht",
+      "src": "audio/soundtrack/cyning-slieht.mp3",
+      "durationSeconds": 176.1175,
+      "sourceFileName": "5-cyning-slieht.mp3",
+      "bytes": 4232945,
+      "sha256": "feed6d0e751e1bed883c7f86e62527a0d89d5af31b2dcb27d15b4251b900986b"
+    },
+    {
+      "id": "slay-the-iron-slave",
+      "title": "Slay the Iron Slave",
+      "src": "audio/soundtrack/slay-the-iron-slave.mp3",
+      "durationSeconds": 155.872583,
+      "sourceFileName": "1-slay_the_iron-slave-1-.mp3",
+      "bytes": 3747067,
+      "sha256": "05f48d646dc3ab035c5652770f6a604bfa1561c3734c570318440f4f3fd5f17c"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "ThreeUI Community SectionButton adaptation",
+  "repository": "https://github.com/MengTo/threeui",
+  "commit": "68802d5428071ada5c20db8094b1649e6bb770ed",
+  "license": "MIT",
+  "licenseFile": "LICENSE",
+  "sources": [
+    {
+      "path": "src/shaders/section-elements/SectionElements.tsx",
+      "url": "https://github.com/MengTo/threeui/blob/68802d5428071ada5c20db8094b1649e6bb770ed/src/shaders/section-elements/SectionElements.tsx",
+      "sha256": "8ff44a15ffc6f9e8b2495b9f1700f6682d39f987c733ea45b4b29b393f13c451"
+    },
+    {
+      "path": "src/shaders/section-elements/section-elements.css",
+      "url": "https://github.com/MengTo/threeui/blob/68802d5428071ada5c20db8094b1649e6bb770ed/src/shaders/section-elements/section-elements.css",
+      "sha256": "a9fbf07b60340aa59a1d4610dd9412897e456d5dcfd96507e426fbe3d68de31e"
+    }
+  ],
+  "adaptedFiles": [
+    "LegacyGlassButton.tsx",
+    "legacy-glass.css"
+  ],
+  "changes": [
+    "Preserved SectionButton title and decorative circle structure plus layered pseudo-element styling.",
+    "Added native React button props and ref forwarding, accessible decoration and Crownfall event/data attributes.",
+    "Applied shared Ealdholt forest and brass visual values, responsive controls and visible focus states.",
+    "Replaced continuous reflection animation with a static reflection and brief hover/focus transitions."
+  ],
+  "assetScope": "Only the MIT component and CSS pattern are adapted; no upstream illustrations, preview scenes or shader modules are bundled."
+}

@@ -1,0 +1,97 @@
+import assert from 'node:assert/strict';
+import { mkdir, writeFile } from 'node:fs/promises';
+import { chromium } from 'playwright';
+import { tinyGlb } from './loading-fixtures.mjs';
+import { waitForBootReady } from './boot-helpers.mjs';
+const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || chromium.executablePath(), headless: true });
+const page = await browser.newPage({ viewport: { width: 1280, height: 800 }, reducedMotion: 'reduce' });
+page.setDefaultTimeout(45000);
+const fixturePieces = process.env.CROWNFALL_PIECE_FIXTURE === '1';
+if (fixturePieces) {
+  console.log('TEST SCOPE: lightweight piece fixtures; real installed arena GLB/EXR files and real gameplay controllers.');
+  const body = tinyGlb();
+  await page.route('https://r2-pub.rork.com/generated-3d-models/**/*.glb', route => route.fulfill({ status: 200, body, contentType: 'model/gltf-binary', headers: { 'access-control-allow-origin': '*' } }));
+}
+await page.addInitScript(() => { if (!localStorage.getItem('crownfall.main-game.preferences')) localStorage.setItem('crownfall.main-game.preferences', JSON.stringify({ quality: 'low', motion: false, renderScale: 50, frameLimit: 30 })); });
+const checks = [], errors = [];
+page.on('requestfailed', r => console.log(`FAILED ${r.url()} ${r.failure()?.errorText}`));
+page.on('response', r => { if (r.url().includes('/gameport/')) console.log(`ASSET ${r.status()} ${new URL(r.url()).pathname}`); });
+page.on('pageerror', e => errors.push(e.message));
+page.on('console', m => { if (m.type() === 'error') console.log(`BROWSER ${m.text()}`); });
+const pass = s => { checks.push(s); console.log(`PASS ${s}`); };
+const button = name => page.getByRole('button', { name, exact: true });
+const ready = s => Promise.race([page.locator(s).waitFor({ timeout: 240000 }), page.locator('.play-route .loading-screen[data-loading-state="degraded"], .gameplay-stage .loading-screen[data-loading-state="degraded"]').waitFor({ timeout: 240000 }).then(async () => { throw new Error(await page.locator('.loading-status-line').last().innerText()); })]);
+await mkdir('../artifacts/match-replays', { recursive: true });
+let failure;
+const diagnostics = setInterval(async () => { try { console.log('STATE', await page.locator('.loading-status-line, .match-hud strong, .showcase-detail h1').allTextContents()); } catch {} }, 10000);
+try {
+  console.log('NAVIGATE');
+  await page.goto(`${process.env.CROWNFALL_TEST_URL || 'http://127.0.0.1:5173'}/?model=none`); await waitForBootReady(page, { continueOnFailure: true }); console.log('MENU READY');
+  const legacy = await page.evaluate(() => localStorage.getItem('crownfall.legacy.save'));
+  await button('Local Duel').click(); await page.getByRole('button', { name: /Setting 1 Eclipse/ }).click(); await button('Start match').click();
+  await ready('.match-experience[data-match-ready="true"]');
+  await page.locator('canvas[aria-label="Crownfall chessboard"]').focus();
+  for (const key of ['Enter','ArrowUp','ArrowUp','Enter']) await page.keyboard.press(key);
+  await ready('.match-experience[data-match-plies="1"][data-match-busy="false"]');
+  await button('Resign').click(); await button('Confirm').click();
+  await button('Save Replay').click(); await page.getByText('Saved on this device.', { exact: true }).waitFor();
+  const entry = await page.evaluate(() => JSON.parse(localStorage.getItem('crownfall.showcase.replays.v1')).entries[0]);
+  assert.equal(entry.match.mode, 'local-duel'); assert.equal(entry.match.setting, 'scene-01'); assert.equal(entry.plies, 1); assert.equal(entry.result, '1-0');
+  await button('Save Replay').click(); await page.getByText('Saved on this device.', { exact: true }).waitFor();
+  assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('crownfall.showcase.replays.v1')).entries.length), 1);
+  pass('Finished match offers Watch/Save; saving twice keeps one correct durable replay');
+  await button('Watch Replay').click(); assert.equal(await page.getByRole('tab', { name: 'Showcase', exact: true }).getAttribute('aria-selected'), 'true'); await ready('.gameplay-stage[data-replay-ready="true"]');
+  await button('Next move').click(); await ready('.gameplay-stage[data-replay-fen*="4P3"]');
+  assert.match(await page.locator('.showcase-replay-row strong').first().innerText(), /Player 1 vs Player 2/);
+  assert.match(await page.locator('.showcase-replay-row small').first().innerText(), /Local Duel.*1-0.*2026/);
+  await button('Previous move').click(); await ready('.gameplay-stage[data-replay-fen*="PPPPPPPP"]');
+  await button('4×').click(); await button('Board').click(); await ready('.gameplay-stage[data-replay-camera="top"]');
+  await button('Play').click(); await ready('.gameplay-stage[data-replay-fen*="4P3"]');
+  assert.equal(await page.evaluate(() => localStorage.getItem('crownfall.legacy.save')), legacy);
+  await page.screenshot({ path: '../artifacts/match-replays/recorded-match.png' });
+  pass(`${fixturePieces ? 'Fixture pieces and real arena' : 'Actual arena/pieces'} replay e4 correctly; step, rewind, speed and camera work without Legacy writes`);
+  await page.reload(); await waitForBootReady(page, { continueOnFailure: true }); console.log('MENU READY');
+  await page.getByRole('tab', { name: 'Showcase', exact: true }).click(); await button('Match Replays').click(); await ready('.showcase-replay-row');
+  pass('Replay survives reload in Showcase Match Replays');
+  await button('Back').click(); await button('AI Battles').click();
+  await ready('.match-experience[data-match-ready="true"][data-match-mode="demo"]');
+  assert.equal(await page.getByRole('tab', { name: 'Showcase', exact: true }).isVisible(), true);
+  assert.equal(await page.locator('.showcase-detail--battles .showcase-stage-wrap .match-experience').count(), 1);
+  assert.equal(await page.locator('.gameplay-showcase-controls, .match-hud, .match-ledger').count(), 0);
+  const shell = await page.locator('.menu-shell').boundingBox();
+  const stage = await page.locator('.showcase-detail--battles .showcase-stage-wrap').boundingBox();
+  const panel = await page.locator('.showcase-detail--battles .showcase-information').boundingBox();
+  const canvasBox = await page.locator('.match-experience canvas').boundingBox();
+  assert.ok(Math.abs(stage.width / shell.width - .5625) < .005, 'approved stage width');
+  assert.ok(stage.x + stage.width < panel.x, 'information panel remains beside stage');
+  assert.ok(Math.abs(canvasBox.width - stage.width) < 4 && Math.abs(canvasBox.height - stage.height) < 4, 'game is contained in approved stage');
+
+  await page.waitForFunction(() => Number(document.querySelector('.match-experience')?.getAttribute('data-match-plies')) > 0);
+  await button('Pause').click(); await ready('.match-experience[data-match-busy="false"]');
+  const ply = await page.locator('.match-experience').getAttribute('data-match-plies'); await page.waitForTimeout(2000);
+  assert.equal(await page.locator('.match-experience').getAttribute('data-match-plies'), ply);
+  await page.screenshot({ path: '../artifacts/match-replays/ai-battle.png' });
+  pass('AI Battles retains the approved framed stage, sidebar and transport with real gameplay and pause');
+  await button('Back').click(); await button('Arenas').click();
+  await ready('.gameplay-stage[data-replay-ready="true"][data-replay-setting="scene-01"]');
+  assert.equal(await page.getByRole('group', { name: 'Choose an arena', exact: true }).locator('button').count(), 2);
+  assert.equal(await page.locator('.showcase-detail--arenas .showcase-stage-wrap .gameplay-stage').count(), 1);
+  assert.equal(await page.getByRole('tab', { name: 'Showcase', exact: true }).isVisible(), true);
+  await button('Board').click(); await ready('.gameplay-stage[data-replay-camera="top"]');
+  await page.screenshot({ path: '../artifacts/match-replays/match-arena.png' });
+
+  await page.getByRole('button', { name: /Violet Night/ }).click();
+  await ready('.gameplay-stage[data-replay-ready="true"][data-replay-setting="scene-02"]');
+  await page.setViewportSize({ width: 844, height: 390 });
+  await page.screenshot({ path: '../artifacts/match-replays/arena-landscape.png' });
+  const smallShell = await page.locator('.menu-shell').boundingBox();
+  const smallStage = await page.locator('.showcase-detail--arenas .showcase-stage-wrap').boundingBox();
+  assert.ok(Math.abs(smallStage.width / smallShell.width - .5625) < .005);
+  await button('View original artwork').click(); await page.locator('.showcase-artwork img').waitFor();
+  await button('Return to 3D stage').click(); await button('Back').click();
+  await page.getByRole('region', { name: 'Showcase options', exact: true }).waitFor();
+  pass('Arenas retains approved desktop/landscape framing, both environment selectors, artwork, cameras and Back'); assert.deepEqual(errors, []);
+
+} catch (e) { failure = e; await page.screenshot({ path: '../artifacts/match-replays/failure.png' }); console.log((await page.locator('body').innerText()).slice(-1600)); }
+finally { clearInterval(diagnostics); await writeFile('../artifacts/match-replays/verification.json', JSON.stringify({ passed: !failure, fixturePieces, checks, errors, failure: failure?.stack }, null, 2)); await browser.close(); }
+if (failure) throw failure;

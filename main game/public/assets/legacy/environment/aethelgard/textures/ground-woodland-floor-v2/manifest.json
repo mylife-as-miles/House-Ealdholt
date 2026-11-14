@@ -1,0 +1,93 @@
+{
+  "version": 2,
+  "set": "ealdholt-woodland-ground",
+  "layer": "woodland",
+  "assetId": "forest_leaves_03",
+  "name": "Forest Leaves 03",
+  "sourceUrl": "https://polyhaven.com/a/forest_leaves_03",
+  "licence": "CC0-1.0",
+  "authors": {
+    "Rob Tuytel": "Processing",
+    "Dimitrios Savva": "Photography"
+  },
+  "tileMetres": 2.3,
+  "laasWeight": "forestFloor",
+  "modified": true,
+  "intakeDate": "2026-11-06",
+  "roles": [
+    "albedo"
+  ],
+  "colour": {
+    "albedo": "sRGB RGB; opaque; chroma graded as recorded in provenance.json, luminance photographic",
+    "normal": "OpenGL tangent-space +Y; linear; vectors renormalized",
+    "orm": "Linear R=source AO, G=source roughness, B=source metallic",
+    "orientation": "Source rows preserved; configure flipY=false for every map"
+  },
+  "profiles": {
+    "desktop": {
+      "meanLuminance": 0.049904389701702405,
+      "files": {
+        "albedo": {
+          "file": "woodland-desktop-albedo-1024.webp",
+          "size": 1024,
+          "bytes": 1395184,
+          "sha256": "02567ac1419e9af7bf292be14b7a9c95615ac855e7483e85cef2654aa3ffa085"
+        }
+      },
+      "gpuBytesWithMipsEstimate": 5592404,
+      "analysis": {
+        "meanLuminance": 0.04990439,
+        "meanSrgb8": [
+          72,
+          62,
+          43
+        ],
+        "meanColourHue": 39.31,
+        "meanSaturation": 0.4862,
+        "shares": {
+          "green": 0.0031,
+          "olive": 0.0421,
+          "warm": 0.9528,
+          "neutral": 0.0019,
+          "other": 0
+        },
+        "luminanceWeightedShares": {
+          "green": 0.0034,
+          "olive": 0.0848,
+          "warm": 0.9116,
+          "neutral": 0.0003,
+          "other": 0
+        },
+        "luminancePercentiles": {
+          "p05": 0.005981,
+          "p25": 0.017212,
+          "p50": 0.036011,
+          "p75": 0.069946,
+          "p95": 0.1427
+        },
+        "linearChromaticity": [
+          0.4769,
+          0.3479,
+          0.1752
+        ],
+        "valleyGrassIndex": -0.3556,
+        "macroVariation": 0.0973,
+        "macroLuminanceVariation16": 0.1532,
+        "macroChromaVariation8": 0.0294,
+        "macroChromaVariation16": 0.0545
+      }
+    },
+    "quest": {
+      "meanLuminance": 0.049944162427899494,
+      "files": {
+        "albedo": {
+          "file": "woodland-quest-albedo-512.webp",
+          "size": 512,
+          "bytes": 394072,
+          "sha256": "98b5080c88cf2bc42b5e0263389a53f29ce11fbbd7fde56c328c691f1560ad2b"
+        }
+      },
+      "gpuBytesWithMipsEstimate": 1398100
+    }
+  }
+}

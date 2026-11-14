@@ -1,0 +1,518 @@
+{
+ "archetype": "child",
+ "build": {
+  "seconds": 8.5,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.3,
+   "lod": 0.3,
+   "shape": 3.8,
+   "texture": 4
+  }
+ },
+ "clipLibrary": "crowd-clips-child-v1.glb",
+ "envelopeGate": {
+  "clips": 15,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0146,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.056,
+ "envelopes": {
+  "fetch_carry": {
+   "max": [
+    0.441,
+    1.27,
+    0.728
+   ],
+   "min": [
+    -0.419,
+    -0.306,
+    -0.65
+   ]
+  },
+  "idle": {
+   "max": [
+    0.398,
+    1.219,
+    0.515
+   ],
+   "min": [
+    -0.379,
+    -0.116,
+    -0.473
+   ]
+  },
+  "play_hop": {
+   "max": [
+    0.431,
+    1.235,
+    0.585
+   ],
+   "min": [
+    -0.388,
+    -0.309,
+    -0.495
+   ]
+  },
+  "play_hop_enter": {
+   "max": [
+    0.441,
+    1.271,
+    0.677
+   ],
+   "min": [
+    -0.463,
+    -0.363,
+    -0.651
+   ]
+  },
+  "play_hop_exit": {
+   "max": [
+    0.441,
+    1.271,
+    0.677
+   ],
+   "min": [
+    -0.463,
+    -0.362,
+    -0.647
+   ]
+  },
+  "play_tag": {
+   "max": [
+    0.578,
+    1.199,
+    0.822
+   ],
+   "min": [
+    -0.484,
+    -0.257,
+    -0.551
+   ]
+  },
+  "play_tag_enter": {
+   "max": [
+    0.357,
+    1.25,
+    0.526
+   ],
+   "min": [
+    -0.328,
+    -0.153,
+    -0.514
+   ]
+  },
+  "play_tag_exit": {
+   "max": [
+    0.357,
+    1.25,
+    0.526
+   ],
+   "min": [
+    -0.328,
+    -0.153,
+    -0.514
+   ]
+  },
+  "sit": {
+   "max": [
+    0.365,
+    0.939,
+    0.353
+   ],
+   "min": [
+    -0.355,
+    -0.307,
+    -0.74
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.459,
+    1.265,
+    0.832
+   ],
+   "min": [
+    -0.442,
+    -0.45,
+    -0.886
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.492,
+    1.278,
+    0.834
+   ],
+   "min": [
+    -0.466,
+    -0.438,
+    -0.889
+   ]
+  },
+  "talk": {
+   "max": [
+    0.392,
+    1.238,
+    0.515
+   ],
+   "min": [
+    -0.38,
+    -0.116,
+    -0.472
+   ]
+  },
+  "walk": {
+   "max": [
+    0.441,
+    1.267,
+    0.728
+   ],
+   "min": [
+    -0.419,
+    -0.306,
+    -0.65
+   ]
+  },
+  "walk_start": {
+   "max": [
+    0.384,
+    1.257,
+    0.689
+   ],
+   "min": [
+    -0.396,
+    -0.184,
+    -0.547
+   ]
+  },
+  "walk_stop": {
+   "max": [
+    0.385,
+    1.242,
+    0.651
+   ],
+   "min": [
+    -0.396,
+    -0.272,
+    -0.635
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.8,
+   "r": -0.8
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.204,
+  "lipGapMm": {
+   "aa": 12.2,
+   "full": 15,
+   "rest": 0.8
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 8.96,
+   "r": 8.96
+  },
+  "upperLidClosed": 0.564,
+  "visibilityPasses": [
+   {
+    "l": 6,
+    "r": 5,
+    "upper": 0.537
+   },
+   {
+    "l": 12,
+    "r": 4,
+    "upper": 0.537
+   },
+   {
+    "l": 19,
+    "r": 7,
+    "upper": 0.537
+   },
+   {
+    "l": 17,
+    "r": 6,
+    "upper": 0.564
+   },
+   {
+    "l": 8,
+    "r": 2,
+    "upper": 0.564
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.564
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-clerk-daughter.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.227,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   918,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3335,
+   4500,
+   true
+  ]
+ },
+ "group": "children-apprentices",
+ "hair": {
+  "colour": "black",
+  "facialHair": "none",
+  "style": "twin-braids"
+ },
+ "headwear": "none",
+ "headwearGate": {
+  "headwear": "none",
+  "pass": true
+ },
+ "headwearStyle": {
+  "colour": null,
+  "shape": "plain",
+  "tone": "none"
+ },
+ "householdId": "ealdholt-clerk-household",
+ "jointResidualCm": {
+  "allMaxCm": 0.99,
+  "coreMaxCm": 0.99,
+  "coreMeanCm": 0.52,
+  "coreWorstJoint": "calf_l"
+ },
+ "label": "Clerk's daughter",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 238048,
+  "fileMiB": 0.227,
+  "headTriangles": 918,
+  "images": [
+   {
+    "bytes": 33846,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3335,
+  "vertices": 3114
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-child-v1",
+  "rate": 0.973,
+  "roleClips": [
+   "play_tag",
+   "play_hop",
+   "fetch_carry"
+  ],
+  "talk": "talk",
+  "walk": "walk"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "apron-dress",
+  "kit": "child-dress",
+  "palette": {
+   "accent": "woad-blue",
+   "main": "russet",
+   "secondary": "undyed-cream"
+  },
+  "wear": "muddy-hems"
+ },
+ "placementScale": 1.0036,
+ "presentation": {
+  "clips": {
+   "fetch_carry": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.4083,
+       -0.0345,
+       -0.5536,
+       0,
+       0.0355,
+       -0.6844,
+       0.0688,
+       0,
+       -0.5536,
+       -0.0693,
+       -0.4039,
+       0,
+       -0.0202,
+       0.0644,
+       0.013,
+       1
+      ],
+      "node": "prop_small_bucket",
+      "prop": "small-bucket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "small-bucket",
+   "kit": "everyday",
+   "socket": "both-hands",
+   "source": "polyhaven:wooden_bucket_01"
+  },
+  {
+   "id": "pebbles",
+   "kit": "everyday",
+   "socket": "hand_r",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 238048,
+  "sha256": "f7816895bde238b4f631ed617251d80bc0473bf7ee0b1045a752df785260aba4"
+ },
+ "recipeSha256": "94044263220a9327099251c1b12f18cd287ebf114033c29e0168f34a93adf2d0",
+ "referenceStatureCm": 119.5,
+ "residentId": "ealdholt-clerk-daughter",
+ "restRadiusMetres": 0.386,
+ "roleId": "village-child",
+ "statureCm": 119.8,
+ "status": "working-placeholder"
+}

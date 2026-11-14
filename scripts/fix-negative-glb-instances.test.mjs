@@ -1,0 +1,32 @@
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import { createRequire } from 'node:module';
+import { repairNegativeGlbInstances } from './fix-negative-glb-instances.mjs';
+const require=createRequire(new URL('../main game/package.json',import.meta.url));
+const { Matrix4,Vector3,Quaternion,Euler,Box3 }=require('three');
+function fixture(scales){
+ const parts=[],g={asset:{version:'2.0'},scene:0,scenes:[{nodes:[0]}],nodes:[],meshes:[],materials:[{name:'Retained',pbrMetallicRoughness:{baseColorFactor:[.2,.3,.4,1]}}],accessors:[],bufferViews:[],buffers:[{byteLength:0}],extensionsUsed:['EXT_mesh_gpu_instancing'],extensionsRequired:['EXT_mesh_gpu_instancing']};let length=0;
+ function add(data,type,count,stride){const pad=(4-length%4)%4;if(pad){parts.push(Buffer.alloc(pad));length+=pad;}const index=g.accessors.length;g.accessors.push({bufferView:g.bufferViews.length,count,type,componentType:data instanceof Uint16Array?5123:5126});g.bufferViews.push({buffer:0,byteOffset:length,byteLength:data.byteLength,...(stride?{byteStride:stride}:{})});parts.push(Buffer.from(data.buffer,data.byteOffset,data.byteLength));length+=data.byteLength;return index;}
+ const p=add(Float32Array.from([0,0,0,1,0,0,0,2,0]),'VEC3',3),ix=add(Uint16Array.from([0,1,2]),'SCALAR',3),translations=add(Float32Array.from(scales.flatMap((_,i)=>[i*2,.3*i,-i])),'VEC3',scales.length),rotations=add(Float32Array.from(scales.flatMap((_,i)=>new Quaternion().setFromEuler(new Euler(.1*i,-.2*i,.3*i)).toArray())),'VEC4',scales.length),scale=add(Float32Array.from(scales.flatMap(s=>[...s,123])),'VEC3',scales.length,16);
+ g.meshes.push({name:'SharedGeometry',primitives:[{attributes:{POSITION:p},indices:ix,material:0}]});g.nodes.push({name:'TransformedParent',matrix:new Matrix4().compose(new Vector3(10,2,-3),new Quaternion().setFromEuler(new Euler(.2,-.4,.1)),new Vector3(2,1.5,.75)).toArray(),children:[1]},{name:'MixedInstances',mesh:0,translation:[1,.5,2],rotation:new Quaternion().setFromEuler(new Euler(-.1,.5,.3)).toArray(),scale:[1.2,.8,1.1],children:[2],extensions:{EXT_mesh_gpu_instancing:{attributes:{TRANSLATION:translations,ROTATION:rotations,SCALE:scale}}}},{name:'ExistingChild',mesh:0,translation:[-3,2,1]});
+ const pad=(4-length%4)%4;if(pad){parts.push(Buffer.alloc(pad));length+=pad;}g.buffers[0].byteLength=length;return encode(g,Buffer.concat(parts));
+}
+function encode(g,bin){const raw=Buffer.from(JSON.stringify(g)),padding=(4-raw.length%4)%4,json=Buffer.concat([raw,Buffer.alloc(padding,32)]),header=Buffer.alloc(20),bh=Buffer.alloc(8);header.writeUInt32LE(0x46546c67,0);header.writeUInt32LE(2,4);header.writeUInt32LE(28+json.length+bin.length,8);header.writeUInt32LE(json.length,12);header.writeUInt32LE(0x4e4f534a,16);bh.writeUInt32LE(bin.length,0);bh.writeUInt32LE(0x004e4942,4);return Buffer.concat([header,json,bh,bin]);}
+function decode(b){const length=b.readUInt32LE(12);return {g:JSON.parse(b.subarray(20,20+length)),bin:b.subarray(28+length)};}
+function values(g,bin,id){const a=g.accessors[id],v=g.bufferViews[a.bufferView],width={SCALAR:1,VEC3:3,VEC4:4}[a.type],size=a.componentType===5123?2:4,out=[];for(let i=0;i<a.count;i++)for(let j=0;j<width;j++){const p=(v.byteOffset??0)+(a.byteOffset??0)+i*(v.byteStride??width*size)+j*size;out.push(size===2?bin.readUInt16LE(p):bin.readFloatLE(p));}return out;}
+function worldVertices(bytes){
+ const{g,bin}=decode(bytes),result=[],bounds=new Box3();
+ function local(n){return n.matrix?new Matrix4().fromArray(n.matrix):new Matrix4().compose(new Vector3().fromArray(n.translation??[0,0,0]),new Quaternion().fromArray(n.rotation??[0,0,0,1]),new Vector3().fromArray(n.scale??[1,1,1]));}
+ function walk(id,parent){const n=g.nodes[id],world=parent.clone().multiply(local(n));if(n.mesh!==undefined){const a=n.extensions?.EXT_mesh_gpu_instancing?.attributes,trans=a?values(g,bin,a.TRANSLATION):null,rot=a?values(g,bin,a.ROTATION):null,scale=a?values(g,bin,a.SCALE):null,count=a?g.accessors[a.SCALE].count:1;for(let i=0;i<count;i++){const m=a?world.clone().multiply(new Matrix4().compose(new Vector3().fromArray(trans,i*3),new Quaternion().fromArray(rot,i*4),new Vector3().fromArray(scale,i*3))):world;for(const p of g.meshes[n.mesh].primitives){const pos=values(g,bin,p.attributes.POSITION);for(let j=0;j<pos.length;j+=3){const v=new Vector3().fromArray(pos,j).applyMatrix4(m);bounds.expandByPoint(v);result.push(JSON.stringify(v.toArray()));}}}}for(const child of n.children??[])walk(child,world);}
+ for(const id of g.scenes[g.scene].nodes)walk(id,new Matrix4());return{vertices:result.sort(),bounds:[bounds.min.toArray(),bounds.max.toArray()]};
+}
+test('mixed signs preserve exact world vertices, parent transforms, original geometry and existing children',()=>{
+ const source=fixture([[1,2,1],[-1,2,1],[1,1,-2]]),before=decode(source),result=repairNegativeGlbInstances(source),after=decode(result.bytes);
+ assert.equal(result.report.ordinaryNegativeMeshesCreated,2);assert.equal(result.report.negativeInstancedScales,0);assert.deepEqual(result.report.before,result.report.after);assert.deepEqual(worldVertices(result.bytes),worldVertices(source));assert.deepEqual(after.g.meshes,before.g.meshes);assert.deepEqual(after.g.materials,before.g.materials);assert.deepEqual(after.g.accessors.slice(0,before.g.accessors.length),before.g.accessors);assert.deepEqual(after.g.bufferViews.slice(0,before.g.bufferViews.length),before.g.bufferViews);assert(after.bin.subarray(0,before.bin.length).equals(before.bin));assert.equal(after.g.nodes[1].children[0],2);assert.equal(after.g.accessors[after.g.nodes[1].extensions.EXT_mesh_gpu_instancing.attributes.SCALE].count,1);
+});
+test('all negative instances turn the original node into a transformed group without zero-count instancing',()=>{
+ const source=fixture([[-1,2,1],[1,1,-2]]),result=repairNegativeGlbInstances(source),{g}=decode(result.bytes);assert.equal(g.nodes[1].mesh,undefined);assert.equal(g.nodes[1].extensions,undefined);assert(!g.extensionsUsed.includes('EXT_mesh_gpu_instancing'));assert.equal(result.report.ordinaryNegativeMeshesCreated,2);assert.deepEqual(worldVertices(result.bytes),worldVertices(source));
+});
+test('positive-only input stays byte-identical and zero-scale input is refused',()=>{
+ const source=fixture([[1,2,1],[1,1,2]]),result=repairNegativeGlbInstances(source);assert.equal(result.bytes,source);assert.equal(result.report.changed,false);assert.throws(()=>repairNegativeGlbInstances(fixture([[1,0,1]])),/zero instance determinant/);
+});

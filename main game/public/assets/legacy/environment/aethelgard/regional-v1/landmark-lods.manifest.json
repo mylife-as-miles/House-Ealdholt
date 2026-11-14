@@ -1,0 +1,20 @@
+{
+  "source": "Solstice MIT recipes / Poly Haven CC0 models",
+  "generator": "crownfall-landmark-index-lod-v1",
+  "files": {
+    "western-fort-far.glb": {
+      "bytes": 2916028,
+      "sha256": "5c153cc2ea304eb4d847c019926b1a381bb91d2f8a769be817a08fa91cbdc0b2",
+      "sourceSha256": "2f43bacd956b797ef8abf21e05a9ef4f327b1588f5323017798fc8af4a399712",
+      "triangles": 12303,
+      "originalTriangles": 47702
+    },
+    "temple-ruins-far.glb": {
+      "bytes": 10497028,
+      "sha256": "8e950884f0d8bf4cf7fd7c2b1d86827650ca23419b0a746db1aa932d3154fda8",
+      "sourceSha256": "3846bfa968c5eecf4edffaffb0fbb6ba092635867776c3b9659a4e017832df7c",
+      "triangles": 103022,
+      "originalTriangles": 154124
+    }
+  }
+}

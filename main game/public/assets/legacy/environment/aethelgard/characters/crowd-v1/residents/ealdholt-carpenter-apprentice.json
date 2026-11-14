@@ -1,0 +1,739 @@
+{
+ "archetype": "adolescent",
+ "build": {
+  "seconds": 9,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.4,
+   "lod": 0.5,
+   "shape": 4.2,
+   "texture": 3.8
+  }
+ },
+ "clipLibrary": "crowd-clips-adolescent-v1.glb",
+ "envelopeGate": {
+  "clips": 15,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0163,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.167,
+ "envelopes": {
+  "carry_bundle_walk": {
+   "max": [
+    0.428,
+    1.613,
+    0.772
+   ],
+   "min": [
+    -0.477,
+    -0.329,
+    -0.746
+   ]
+  },
+  "idle": {
+   "max": [
+    0.384,
+    1.563,
+    0.455
+   ],
+   "min": [
+    -0.331,
+    -0.107,
+    -0.385
+   ]
+  },
+  "sit": {
+   "max": [
+    0.371,
+    1.186,
+    0.325
+   ],
+   "min": [
+    -0.349,
+    -0.107,
+    -0.705
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.536,
+    1.615,
+    0.783
+   ],
+   "min": [
+    -0.514,
+    -0.307,
+    -0.914
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.584,
+    1.63,
+    0.785
+   ],
+   "min": [
+    -0.573,
+    -0.298,
+    -0.917
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.383,
+    1.581,
+    0.553
+   ],
+   "min": [
+    -0.404,
+    -0.107,
+    -0.385
+   ]
+  },
+  "walk_c": {
+   "max": [
+    0.402,
+    1.588,
+    0.759
+   ],
+   "min": [
+    -0.396,
+    -0.319,
+    -0.741
+   ]
+  },
+  "walk_c_start": {
+   "max": [
+    0.374,
+    1.583,
+    0.781
+   ],
+   "min": [
+    -0.376,
+    -0.304,
+    -0.464
+   ]
+  },
+  "walk_c_stop": {
+   "max": [
+    0.382,
+    1.582,
+    0.68
+   ],
+   "min": [
+    -0.366,
+    -0.214,
+    -0.542
+   ]
+  },
+  "work_saw": {
+   "max": [
+    0.35,
+    1.268,
+    0.642
+   ],
+   "min": [
+    -0.53,
+    -0.108,
+    -0.418
+   ]
+  },
+  "work_saw_enter": {
+   "max": [
+    0.392,
+    1.681,
+    0.713
+   ],
+   "min": [
+    -0.531,
+    -0.173,
+    -0.442
+   ]
+  },
+  "work_saw_exit": {
+   "max": [
+    0.392,
+    1.681,
+    0.713
+   ],
+   "min": [
+    -0.531,
+    -0.173,
+    -0.442
+   ]
+  },
+  "work_sweep": {
+   "max": [
+    0.565,
+    1.353,
+    0.684
+   ],
+   "min": [
+    -0.417,
+    -0.175,
+    -0.397
+   ]
+  },
+  "work_sweep_enter": {
+   "max": [
+    0.434,
+    1.658,
+    0.641
+   ],
+   "min": [
+    -0.351,
+    -0.142,
+    -0.422
+   ]
+  },
+  "work_sweep_exit": {
+   "max": [
+    0.434,
+    1.658,
+    0.641
+   ],
+   "min": [
+    -0.351,
+    -0.141,
+    -0.422
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.98,
+   "r": -0.98
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.227,
+  "lipGapMm": {
+   "aa": 15.6,
+   "full": 19.1,
+   "rest": 0.6
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 10,
+   "r": 10
+  },
+  "upperLidClosed": 0.622,
+  "visibilityPasses": [
+   {
+    "l": 10,
+    "r": 0,
+    "upper": 0.564
+   },
+   {
+    "l": 11,
+    "r": 0,
+    "upper": 0.564
+   },
+   {
+    "l": 10,
+    "r": 0,
+    "upper": 0.564
+   },
+   {
+    "l": 5,
+    "r": 0,
+    "upper": 0.593
+   },
+   {
+    "l": 4,
+    "r": 0,
+    "upper": 0.593
+   },
+   {
+    "l": 3,
+    "r": 0,
+    "upper": 0.593
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.622
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-carpenter-apprentice.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.229,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   922,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3380,
+   4500,
+   true
+  ]
+ },
+ "group": "children-apprentices",
+ "hair": {
+  "colour": "sandy",
+  "facialHair": "none",
+  "style": "cropped"
+ },
+ "headwear": "felt-cap",
+ "headwearGate": {
+  "headwear": "felt-cap",
+  "pass": true,
+  "shells": {
+   "Cap": {
+    "faces": 298,
+    "islands": 1,
+    "maxReachRadii": 1.04,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#56402f",
+  "shape": "peaked",
+  "tone": "secondary"
+ },
+ "householdId": "ealdholt-carpenter-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.62,
+  "coreMaxCm": 1.62,
+  "coreMeanCm": 0.7,
+  "coreWorstJoint": "hips"
+ },
+ "label": "Carpenter's apprentice",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 240424,
+  "fileMiB": 0.229,
+  "headTriangles": 922,
+  "images": [
+   {
+    "bytes": 29106,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3380,
+  "vertices": 3248
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-adolescent-v1",
+  "rate": 1.022,
+  "roleClips": [
+   "work_saw",
+   "work_sweep",
+   "carry_bundle_walk"
+  ],
+  "talk": "talk_b",
+  "walk": "walk_c"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "small-apron",
+  "kit": "apprentice-m",
+  "palette": {
+   "accent": "ochre",
+   "main": "weld-green",
+   "secondary": "walnut-brown"
+  },
+  "wear": "worn"
+ },
+ "placementScale": 0.9398,
+ "presentation": {
+  "clips": {
+   "carry_bundle_walk": {
+    "held": [
+     {
+      "bone": "spine_03",
+      "kit": "textile",
+      "matrix": [
+       0.8682,
+       -0.0102,
+       0.0261,
+       0,
+       0.0122,
+       0.866,
+       -0.0659,
+       0,
+       -0.0253,
+       0.0663,
+       0.8657,
+       0,
+       0,
+       0.0633,
+       0.2254,
+       1
+      ],
+      "node": "prop_linen_bundle",
+      "prop": "linen-bundle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.8527,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3445,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.8527,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3445,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.8527,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3445,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_saw": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.5194,
+       -0.0369,
+       -0.6951,
+       0,
+       0.0478,
+       -0.8635,
+       0.0816,
+       0,
+       -0.6945,
+       -0.087,
+       -0.5143,
+       0,
+       -0.0218,
+       0.0768,
+       0.0121,
+       1
+      ],
+      "node": "prop_saw",
+      "prop": "saw"
+     }
+    ],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       -0.0434,
+       0,
+       0.4343,
+       1
+      ],
+      "node": "prop_sawhorse",
+      "prop": "sawhorse"
+     }
+    ]
+   },
+   "work_saw_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.5194,
+       -0.0369,
+       -0.6951,
+       0,
+       0.0478,
+       -0.8635,
+       0.0816,
+       0,
+       -0.6945,
+       -0.087,
+       -0.5143,
+       0,
+       -0.0218,
+       0.0768,
+       0.0121,
+       1
+      ],
+      "node": "prop_saw",
+      "prop": "saw"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_saw_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.5194,
+       -0.0369,
+       -0.6951,
+       0,
+       0.0478,
+       -0.8635,
+       0.0816,
+       0,
+       -0.6945,
+       -0.087,
+       -0.5143,
+       0,
+       -0.0218,
+       0.0768,
+       0.0121,
+       1
+      ],
+      "node": "prop_saw",
+      "prop": "saw"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_sweep": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.5194,
+       -0.0369,
+       -0.6951,
+       0,
+       -0.6945,
+       -0.087,
+       -0.5143,
+       0,
+       -0.0478,
+       0.8635,
+       -0.0816,
+       0,
+       -0.1051,
+       0.0664,
+       -0.0496,
+       1
+      ],
+      "node": "prop_broom",
+      "prop": "broom"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_sweep_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.5194,
+       -0.0369,
+       -0.6951,
+       0,
+       -0.6945,
+       -0.087,
+       -0.5143,
+       0,
+       -0.0478,
+       0.8635,
+       -0.0816,
+       0,
+       -0.1051,
+       0.0664,
+       -0.0496,
+       1
+      ],
+      "node": "prop_broom",
+      "prop": "broom"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_sweep_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.5194,
+       -0.0369,
+       -0.6951,
+       0,
+       -0.6945,
+       -0.087,
+       -0.5143,
+       0,
+       -0.0478,
+       0.8635,
+       -0.0816,
+       0,
+       -0.1051,
+       0.0664,
+       -0.0496,
+       1
+      ],
+      "node": "prop_broom",
+      "prop": "broom"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "craft": "crowd-v1/props/crowd-props-craft-v1.glb",
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "textile": "crowd-v1/props/crowd-props-textile-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "saw",
+   "kit": "craft",
+   "socket": "hand_r",
+   "source": "project-original"
+  },
+  {
+   "id": "broom",
+   "kit": "everyday",
+   "socket": "hand_r",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 240424,
+  "sha256": "a6c8f68ccf7e163462ba08c415e6a5019948abfc62ab82f7ce4888a16a012ac8"
+ },
+ "recipeSha256": "6a221b5101048430b19cdd9397e2536b78c8c803d249730ac289fb19f02787c5",
+ "referenceStatureCm": 150.7,
+ "residentId": "ealdholt-carpenter-apprentice",
+ "restRadiusMetres": 0.497,
+ "roleId": "carpenter-apprentice",
+ "statureCm": 142,
+ "status": "working-placeholder"
+}

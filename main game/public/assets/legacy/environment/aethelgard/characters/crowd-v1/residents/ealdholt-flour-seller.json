@@ -1,0 +1,527 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 7.7,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.3,
+   "lod": 0.6,
+   "shape": 3.1,
+   "texture": 3.7
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 12,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0217,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.188,
+ "envelopes": {
+  "carry_sack_walk": {
+   "max": [
+    0.5,
+    1.685,
+    0.781
+   ],
+   "min": [
+    -0.594,
+    -0.305,
+    -0.867
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.423,
+    1.659,
+    0.746
+   ],
+   "min": [
+    -0.376,
+    -0.165,
+    -0.682
+   ]
+  },
+  "sit": {
+   "max": [
+    0.464,
+    1.257,
+    0.407
+   ],
+   "min": [
+    -0.464,
+    -0.469,
+    -1.054
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.58,
+    1.712,
+    1.099
+   ],
+   "min": [
+    -0.542,
+    -0.684,
+    -1.226
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.604,
+    1.73,
+    1.102
+   ],
+   "min": [
+    -0.542,
+    -0.672,
+    -1.229
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.412,
+    1.669,
+    0.746
+   ],
+   "min": [
+    -0.393,
+    -0.163,
+    -0.671
+   ]
+  },
+  "walk_c": {
+   "max": [
+    0.513,
+    1.671,
+    0.789
+   ],
+   "min": [
+    -0.471,
+    -0.3,
+    -0.867
+   ]
+  },
+  "walk_c_start": {
+   "max": [
+    0.445,
+    1.664,
+    0.823
+   ],
+   "min": [
+    -0.447,
+    -0.23,
+    -0.754
+   ]
+  },
+  "walk_c_stop": {
+   "max": [
+    0.479,
+    1.664,
+    0.785
+   ],
+   "min": [
+    -0.433,
+    -0.253,
+    -0.763
+   ]
+  },
+  "work_sell": {
+   "max": [
+    0.495,
+    1.823,
+    0.786
+   ],
+   "min": [
+    -0.498,
+    -0.214,
+    -0.664
+   ]
+  },
+  "work_sell_enter": {
+   "max": [
+    0.4,
+    1.763,
+    0.737
+   ],
+   "min": [
+    -0.407,
+    -0.174,
+    -0.661
+   ]
+  },
+  "work_sell_exit": {
+   "max": [
+    0.4,
+    1.763,
+    0.737
+   ],
+   "min": [
+    -0.407,
+    -0.174,
+    -0.661
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.224,
+  "lipGapMm": {
+   "aa": 14.7,
+   "full": 18,
+   "rest": 0.7
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.83,
+   "r": 7.83
+  },
+  "upperLidClosed": 0.538,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.538
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-flour-seller.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.242,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   906,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3597,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "light-brown",
+  "facialHair": "none",
+  "style": "long-braid"
+ },
+ "headwear": "head-cloth",
+ "headwearGate": {
+  "headwear": "head-cloth",
+  "pass": true,
+  "scalpCovered": 1,
+  "scalpRays": 884,
+  "shells": {
+   "HeadCloth": {
+    "faces": 380,
+    "islands": 1,
+    "maxReachRadii": 1.081,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#c4b89c",
+  "shape": "rolled-band",
+  "tone": "unbleached"
+ },
+ "householdId": "ealdholt-mill-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.77,
+  "coreMaxCm": 1.63,
+  "coreMeanCm": 0.82,
+  "coreWorstJoint": "head"
+ },
+ "label": "Flour and meal seller",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 253936,
+  "fileMiB": 0.242,
+  "headTriangles": 906,
+  "images": [
+   {
+    "bytes": 36538,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3597,
+  "vertices": 3341
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 0.953,
+  "roleClips": [
+   "work_sell",
+   "carry_sack_walk"
+  ],
+  "talk": "talk_b",
+  "walk": "walk_c"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "mantle",
+  "kit": "market-f",
+  "palette": {
+   "accent": "ochre",
+   "main": "lichen-violet",
+   "secondary": "madder-rose"
+  },
+  "wear": "flour-dusted"
+ },
+ "placementScale": 1.0026,
+ "presentation": {
+  "clips": {
+   "carry_sack_walk": {
+    "held": [
+     {
+      "bone": "spine_03",
+      "kit": "farm",
+      "matrix": [
+       0.919,
+       0.0513,
+       0.0057,
+       0,
+       -0.0163,
+       0.1924,
+       0.9,
+       0,
+       0.049,
+       -0.8986,
+       0.193,
+       0,
+       -0.1269,
+       0.304,
+       0.0092,
+       1
+      ],
+      "node": "prop_sack",
+      "prop": "sack"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_sell": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.6075,
+       1
+      ],
+      "node": "prop_market_trestle",
+      "prop": "market-trestle"
+     },
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.6075,
+       1
+      ],
+      "node": "prop_goods_flour",
+      "prop": "goods-flour"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "farm": "crowd-v1/props/crowd-props-farm-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "sack",
+   "kit": "farm",
+   "socket": "shoulder_r",
+   "source": "project-original"
+  },
+  {
+   "id": "market-trestle",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  },
+  {
+   "id": "goods-flour",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 253936,
+  "sha256": "26da4882fbfe4d60435ce2d5971269c6251af52ddf263f1fb4aa1005fcf04438"
+ },
+ "recipeSha256": "41468d861e55b9b6898d0141fcfb7823ca118152035549bba5a85e019ae249c8",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-flour-seller",
+ "restRadiusMetres": 0.518,
+ "roleId": "flour-seller",
+ "statureCm": 159.2,
+ "status": "working-placeholder"
+}

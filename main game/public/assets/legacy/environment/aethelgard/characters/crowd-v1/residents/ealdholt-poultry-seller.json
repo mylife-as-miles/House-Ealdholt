@@ -1,0 +1,673 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 8.3,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.4,
+   "lod": 0.6,
+   "shape": 3,
+   "texture": 4.2
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 15,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0202,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.191,
+ "envelopes": {
+  "carry_basket_walk": {
+   "max": [
+    0.482,
+    1.663,
+    0.778
+   ],
+   "min": [
+    -0.478,
+    -0.316,
+    -0.854
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.397,
+    1.631,
+    0.713
+   ],
+   "min": [
+    -0.359,
+    -0.163,
+    -0.649
+   ]
+  },
+  "sit": {
+   "max": [
+    0.451,
+    1.231,
+    0.414
+   ],
+   "min": [
+    -0.449,
+    -0.467,
+    -1.032
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.613,
+    1.679,
+    1.088
+   ],
+   "min": [
+    -0.573,
+    -0.683,
+    -1.204
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.644,
+    1.696,
+    1.09
+   ],
+   "min": [
+    -0.605,
+    -0.672,
+    -1.208
+   ]
+  },
+  "talk": {
+   "max": [
+    0.494,
+    1.642,
+    0.714
+   ],
+   "min": [
+    -0.454,
+    -0.162,
+    -0.638
+   ]
+  },
+  "walk_b": {
+   "max": [
+    0.478,
+    1.646,
+    0.755
+   ],
+   "min": [
+    -0.44,
+    -0.287,
+    -0.868
+   ]
+  },
+  "walk_b_start": {
+   "max": [
+    0.425,
+    1.639,
+    0.795
+   ],
+   "min": [
+    -0.399,
+    -0.23,
+    -0.749
+   ]
+  },
+  "walk_b_stop": {
+   "max": [
+    0.45,
+    1.634,
+    0.731
+   ],
+   "min": [
+    -0.371,
+    -0.239,
+    -0.812
+   ]
+  },
+  "work_scatter_feed": {
+   "max": [
+    0.557,
+    1.66,
+    0.725
+   ],
+   "min": [
+    -0.735,
+    -0.156,
+    -0.642
+   ]
+  },
+  "work_scatter_feed_enter": {
+   "max": [
+    0.558,
+    1.679,
+    0.708
+   ],
+   "min": [
+    -0.411,
+    -0.155,
+    -0.638
+   ]
+  },
+  "work_scatter_feed_exit": {
+   "max": [
+    0.558,
+    1.679,
+    0.708
+   ],
+   "min": [
+    -0.411,
+    -0.155,
+    -0.638
+   ]
+  },
+  "work_sell": {
+   "max": [
+    0.465,
+    1.776,
+    0.808
+   ],
+   "min": [
+    -0.433,
+    -0.212,
+    -0.631
+   ]
+  },
+  "work_sell_enter": {
+   "max": [
+    0.367,
+    1.725,
+    0.705
+   ],
+   "min": [
+    -0.392,
+    -0.173,
+    -0.629
+   ]
+  },
+  "work_sell_exit": {
+   "max": [
+    0.367,
+    1.725,
+    0.705
+   ],
+   "min": [
+    -0.392,
+    -0.173,
+    -0.629
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.87,
+   "r": -0.87
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.208,
+  "lipGapMm": {
+   "aa": 13.4,
+   "full": 16.4,
+   "rest": 0.9
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.17,
+   "r": 7.17
+  },
+  "upperLidClosed": 0.592,
+  "visibilityPasses": [
+   {
+    "l": 15,
+    "r": 3,
+    "upper": 0.564
+   },
+   {
+    "l": 8,
+    "r": 0,
+    "upper": 0.564
+   },
+   {
+    "l": 3,
+    "r": 0,
+    "upper": 0.564
+   },
+   {
+    "l": 3,
+    "r": 0,
+    "upper": 0.592
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.592
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-poultry-seller.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.242,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   904,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3598,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "greying-red-brown",
+  "facialHair": "none",
+  "style": "bun"
+ },
+ "headwear": "kerchief",
+ "headwearGate": {
+  "headwear": "kerchief",
+  "pass": true,
+  "shells": {
+   "Kerchief": {
+    "faces": 346,
+    "islands": 1,
+    "maxReachRadii": 1.12,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#2f2c29",
+  "shape": "nape-tails",
+  "tone": "accent"
+ },
+ "householdId": "ealdholt-gate-ward-household",
+ "jointResidualCm": {
+  "allMaxCm": 2.74,
+  "coreMaxCm": 2.46,
+  "coreMeanCm": 1.37,
+  "coreWorstJoint": "head"
+ },
+ "label": "Poultry and egg seller",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 254000,
+  "fileMiB": 0.242,
+  "headTriangles": 904,
+  "images": [
+   {
+    "bytes": 33842,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3598,
+  "vertices": 3393
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 0.987,
+  "roleClips": [
+   "work_sell",
+   "work_scatter_feed",
+   "carry_basket_walk"
+  ],
+  "talk": "talk",
+  "walk": "walk_b"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "plain-gown",
+  "kit": "market-f",
+  "palette": {
+   "accent": "oak-gall-black",
+   "main": "lichen-violet",
+   "secondary": "woad-pale"
+  },
+  "wear": "worn"
+ },
+ "placementScale": 1.0998,
+ "presentation": {
+  "clips": {
+   "carry_basket_walk": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.7116,
+       -0.3841,
+       0.4397,
+       0,
+       0.5259,
+       -0.1203,
+       0.7459,
+       0,
+       -0.2538,
+       0.8278,
+       0.3124,
+       0,
+       0.0519,
+       0.0759,
+       0.0796,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_scatter_feed": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "farm",
+      "matrix": [
+       -0.6895,
+       -0.4027,
+       0.4578,
+       0,
+       0.52,
+       -0.0274,
+       0.759,
+       0,
+       -0.3185,
+       0.8272,
+       0.248,
+       0,
+       0.0574,
+       0.0632,
+       0.0683,
+       1
+      ],
+      "node": "prop_feed_basket",
+      "prop": "feed-basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_scatter_feed_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "farm",
+      "matrix": [
+       -0.6895,
+       -0.4027,
+       0.4578,
+       0,
+       0.52,
+       -0.0274,
+       0.759,
+       0,
+       -0.3185,
+       0.8272,
+       0.248,
+       0,
+       0.0574,
+       0.0632,
+       0.0683,
+       1
+      ],
+      "node": "prop_feed_basket",
+      "prop": "feed-basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_scatter_feed_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "farm",
+      "matrix": [
+       -0.6895,
+       -0.4027,
+       0.4578,
+       0,
+       0.52,
+       -0.0274,
+       0.759,
+       0,
+       -0.3185,
+       0.8272,
+       0.248,
+       0,
+       0.0574,
+       0.0632,
+       0.0683,
+       1
+      ],
+      "node": "prop_feed_basket",
+      "prop": "feed-basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_sell": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.6075,
+       1
+      ],
+      "node": "prop_market_trestle",
+      "prop": "market-trestle"
+     },
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.6075,
+       1
+      ],
+      "node": "prop_goods_eggs",
+      "prop": "goods-eggs"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "farm": "crowd-v1/props/crowd-props-farm-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "basket",
+   "kit": "everyday",
+   "socket": "hand_l",
+   "source": "polyhaven:wicker_basket_01"
+  },
+  {
+   "id": "market-trestle",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  },
+  {
+   "id": "goods-eggs",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 254000,
+  "sha256": "bc710feaf372b8256dcd80fd2880740f9c68d01d5726ae2c05c60cc97befa487"
+ },
+ "recipeSha256": "fa8245ad5bdc05a19398503142db9d1664b342b4c1cdcf9f6443e2b3f9681719",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-poultry-seller",
+ "restRadiusMetres": 0.521,
+ "roleId": "poultry-seller",
+ "statureCm": 173.3,
+ "status": "working-placeholder"
+}

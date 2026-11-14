@@ -1,0 +1,1100 @@
+{
+ "status": "working-placeholder",
+ "residentId": "ealdholt-smithy-spinner",
+ "set": "smithy-spinner-v1",
+ "label": "Spinner and dyer",
+ "note": "Pipeline recipe for the smithy household's spinner and dyer (working placeholder). It realizes the casting profile in shared/legacy/aethelgard/characters/household-casting.ts; extra detail targets refine the same face (long oval, high cheekbones, long straight nose, a raised appraising brow). Role label only; no names or lore.",
+ "soleThicknessMetres": 0.012,
+ "skirtBoneLength": 0.62,
+ "macro": {
+  "gender": 0.0,
+  "ageYears": 38,
+  "muscle": 0.52,
+  "weight": 0.4,
+  "height": 0.55,
+  "proportions": 0.6,
+  "macroShapeFamilies": {
+   "african": 0.1,
+   "asian": 0.05,
+   "caucasian": 0.85
+  }
+ },
+ "detailTargets": {
+  "cheek/l-cheek-bones-incr": 0.4,
+  "cheek/r-cheek-bones-incr": 0.4,
+  "nose/nose-scale-vert-incr": 0.35,
+  "head/head-oval": 0.4,
+  "eyebrows/eyebrows-angle-up": 0.2,
+  "head/head-scale-vert-incr": 0.2,
+  "chin/chin-height-incr": 0.2,
+  "nose/nose-hump-decr": 0.25,
+  "nose/nose-scale-depth-incr": 0.15,
+  "nose/nose-point-width-decr": 0.2,
+  "cheek/l-cheek-volume-decr": 0.25,
+  "cheek/r-cheek-volume-decr": 0.25,
+  "mouth/mouth-upperlip-volume-decr": 0.1,
+  "mouth/mouth-scale-horiz-decr": 0.1,
+  "forehead/forehead-scale-vert-incr": 0.15,
+  "eyes/l-eye-height2-decr": 0.15,
+  "eyes/r-eye-height2-decr": 0.1,
+  "asym/asym-brown-1-l": 0.6,
+  "asym/asym-eye-2-r": 0.25,
+  "asym/asym-mouth-1-l": 0.3,
+  "asym/asym-nose-3-r": 0.3,
+  "head/head-age-incr": 0.15,
+  "neck/neck-scale-vert-incr": 0.25,
+  "neck/neck-scale-horiz-decr": 0.15,
+  "torso/torso-scale-horiz-decr": 0.1,
+  "hip/hip-scale-horiz-decr": 0.05,
+  "hands/l-hand-fingers-length-incr": 0.25,
+  "hands/r-hand-fingers-length-incr": 0.25,
+  "arms/l-lowerarm-muscle-incr": 0.2,
+  "arms/r-lowerarm-muscle-incr": 0.25
+ },
+ "parts": {
+  "eyesMesh": "high-poly",
+  "eyeTexture": "brownlight_eye.png",
+  "eyelashes": "eyelashes02",
+  "skin": "middleage_caucasian_female"
+ },
+ "rig": "mixamo_unity",
+ "faceMorphs": {
+  "arkit": [
+   "eyeBlinkLeft",
+   "eyeBlinkRight",
+   "eyeSquintLeft",
+   "eyeSquintRight",
+   "eyeWideLeft",
+   "eyeWideRight",
+   "browDownLeft",
+   "browDownRight",
+   "browInnerUp",
+   "browOuterUpLeft",
+   "browOuterUpRight",
+   "cheekSquintLeft",
+   "cheekSquintRight",
+   "noseSneerLeft",
+   "noseSneerRight",
+   "jawOpen",
+   "mouthClose",
+   "mouthFunnel",
+   "mouthPucker",
+   "mouthSmileLeft",
+   "mouthSmileRight",
+   "mouthFrownLeft",
+   "mouthFrownRight",
+   "mouthPressLeft",
+   "mouthPressRight",
+   "mouthStretchLeft",
+   "mouthStretchRight",
+   "mouthRollLower",
+   "mouthUpperUpLeft",
+   "mouthUpperUpRight"
+  ],
+  "visemes": [
+   "viseme_PP",
+   "viseme_FF",
+   "viseme_TH",
+   "viseme_DD",
+   "viseme_kk",
+   "viseme_CH",
+   "viseme_SS",
+   "viseme_nn",
+   "viseme_RR",
+   "viseme_aa",
+   "viseme_E",
+   "viseme_I",
+   "viseme_O",
+   "viseme_U"
+  ]
+ },
+ "eyesMouthAtlasSize": 1024,
+ "lods": [
+  {
+   "id": "desktop-lod0",
+   "meshes": [
+    "Body",
+    "Clothes",
+    "EyesMouth",
+    "Groom"
+   ],
+   "morphs": true,
+   "imageQuality": 88,
+   "tangents": true
+  },
+  {
+   "id": "desktop-lod1",
+   "meshes": [
+    "Lod1Body",
+    "Lod1Hair"
+   ],
+   "morphs": true,
+   "imageQuality": 85,
+   "tangents": true
+  },
+  {
+   "id": "quest",
+   "meshes": [
+    "QuestBody",
+    "QuestHair"
+   ],
+   "morphs": true,
+   "imageQuality": 82,
+   "tangents": false
+  }
+ ],
+ "lodBuild": {
+  "lod0LimbRatio": 0.28,
+  "levels": [
+   {
+    "id": "desktop-lod1",
+    "prefix": "Lod1",
+    "opaqueTriangles": 7150,
+    "albedoSize": 1024,
+    "auxSize": 512,
+    "cardFraction": 0.4,
+    "hairSize": 512,
+    "eyeProtect": 0.034,
+    "ormSize": 256,
+    "mouthProtect": 0.038,
+    "protectedWeight": 0.06,
+    "loosePartVertices": 450,
+    "eyeTriangles": 300,
+    "irisKeepDeg": 38.0,
+    "hairAlphaCutoff": 0.28,
+    "faceDensity": 7.0,
+    "eyeDensity": 12.0,
+    "headClothWeight": 0.2,
+    "ribbonPasses": 1,
+    "cavityTriangles": 280,
+    "headNormals": "none"
+   },
+   {
+    "id": "quest",
+    "prefix": "Quest",
+    "opaqueTriangles": 5300,
+    "albedoSize": 1024,
+    "auxSize": 512,
+    "cardFraction": 0.18,
+    "hairSize": 512,
+    "eyeProtect": 0.034,
+    "ormSize": 256,
+    "mouthProtect": 0.038,
+    "protectedWeight": 0.06,
+    "loosePartVertices": 450,
+    "eyeTriangles": 300,
+    "irisKeepDeg": 38.0,
+    "hairAlphaCutoff": 0.28,
+    "faceDensity": 7.0,
+    "eyeDensity": 12.0,
+    "headClothWeight": 0.2,
+    "ribbonPasses": 1,
+    "cavityTriangles": 220,
+    "headTriangles": 1600,
+    "headEyeRings": 1,
+    "headMouthRings": 2,
+    "headNormals": "none"
+   }
+  ],
+  "lod0Triangles": 24900
+ },
+ "mapSizes": {
+  "skinNormal": 1024,
+  "skinOrm": 512,
+  "clothNormal": 1024,
+  "clothOrm": 512,
+  "eyesOrm": 256
+ },
+ "groom": {
+  "seed": 23,
+  "atlasSize": 1024,
+  "colours": {
+   "hair": [
+    0.24,
+    0.085,
+    0.038
+   ],
+   "hairTip": [
+    0.32,
+    0.13,
+    0.06
+   ],
+   "brow": [
+    0.17,
+    0.065,
+    0.03
+   ],
+   "lash": [
+    0.045,
+    0.028,
+    0.02
+   ],
+   "grey": [
+    0.4,
+    0.385,
+    0.36
+   ]
+  },
+  "hair": {
+   "style": "covered",
+   "cards": 240,
+   "hairlineAboveEye": 0.058,
+   "templeDrop": 0.02,
+   "bandDepth": 0.023,
+   "napeBelowEye": 0.06,
+   "length": [
+    0.03,
+    0.045
+   ],
+   "width": [
+    0.01,
+    0.016
+   ],
+   "loose": {
+    "perSide": 0,
+    "length": [
+     0.05,
+     0.075
+    ],
+    "x": [
+     0.056,
+     0.068
+    ],
+    "zAboveEye": [
+     0.015,
+     0.04
+    ],
+    "offset": [
+     0.004,
+     0.008
+    ],
+    "width": [
+     0.005,
+     0.008
+    ],
+    "clearX": 0.066
+   }
+  },
+  "brows": {
+   "hairCards": 193,
+   "layers": 3,
+   "aboveEye": 0.0175,
+   "innerX": -0.011,
+   "tailX": 0.025,
+   "thickness": 0.0085,
+   "arch": 0.003,
+   "slope": 0.002,
+   "length": [
+    0.0045,
+    0.0085
+   ],
+   "hairWidth": [
+    0.00098,
+    0.00164
+   ],
+   "rootLift": 0.0004
+  },
+  "roughness": 0.7,
+  "specular": 0.5,
+  "alphaCutoff": 0.3,
+  "alphaMode": "blend"
+ },
+ "garments": {
+  "outfit": "spinner",
+  "neckRadius": 0.068,
+  "offset": 0.011,
+  "sleeveEnd": 0.96,
+  "hemAboveAnkle": 0.07,
+  "underHemAboveAnkle": 0.012,
+  "hemEase": 0.022,
+  "flare": 0.02,
+  "apronBelowKnee": 0.04,
+  "apronWidths": [
+   0.28,
+   0.36,
+   0.4
+  ],
+  "shawlKnotAboveChest": 0.13,
+  "shawlPointAboveWaist": 0.1,
+  "headCloth": {
+   "offset": 0.012,
+   "earBackFromEye": 0.085,
+   "napeBelowEye": 0.07,
+   "templeDrop": 0.022,
+   "sideEdgeAboveEye": -0.016,
+   "bunBack": 0.075,
+   "bunUp": 0.05,
+   "bunRadius": 0.05,
+   "bunHeight": 0.03,
+   "tailLength": 0.08,
+   "looseBack": 0.011,
+   "foldAmplitude": 0.0075,
+   "folds": 9,
+   "hemOut": 0.0065,
+   "hemBack": 0.017,
+   "hemLip": 0.0065,
+   "thickness": 0.0038,
+   "rolledHem": true,
+   "hemRadius": 0.0042,
+   "hemInset": 0.0025
+  },
+  "shoes": {
+   "allowance": 0.007,
+   "voxel": 0.008,
+   "topAboveAnkle": 0.03
+  },
+  "decimate": {
+   "Underdress": 0.15,
+   "Overdress": 0.42,
+   "HeadCloth": 0.5,
+   "Shoes": 0.15,
+   "LegWraps": 0.45,
+   "Shawl": 0.75,
+   "OverdressSkirt": 0.8,
+   "UnderdressHem": 0.7,
+   "Apron": 0.85
+  },
+  "skirtRings": 14,
+  "skirtSegments": 52,
+  "shawlSideBelowShoulder": 0.1,
+  "shawlTopAboveNeck": 0.02,
+  "shawlNeckOpeningDeg": 42.0,
+  "shawlSegments": 48,
+  "shawlRings": 12,
+  "shawlBackPower": 1.1,
+  "shinKeptAboveAnkle": 0.05,
+  "drape": {
+   "Apron": {
+    "mass": 0.15,
+    "tension": 30.0,
+    "bending": 0.25,
+    "frames": 35
+   },
+   "Shawl": {
+    "mass": 0.25,
+    "tension": 35.0,
+    "bending": 0.5,
+    "frames": 35
+   }
+  },
+  "wrapHeight": 0.34
+ },
+ "cloth": {
+  "atlasSize": 2048,
+  "bakeSamples": 4,
+  "pieces": {
+   "Underdress": {
+    "fabric": "rough_linen",
+    "tileMetres": 0.22,
+    "colour": [
+     0.5,
+     0.46,
+     0.38
+    ],
+    "contrast": 1.45,
+    "fade": 0.2,
+    "grime": 0.25,
+    "grimeTop": 1.5,
+    "grimeBottom": 1.2,
+    "bump": 0.45,
+    "fadeColour": [
+     0.44,
+     0.41,
+     0.34
+    ]
+   },
+   "UnderdressHem": {
+    "fabric": "rough_linen",
+    "tileMetres": 0.22,
+    "colour": [
+     0.5,
+     0.46,
+     0.38
+    ],
+    "contrast": 1.45,
+    "fade": 0.2,
+    "grime": 0.85,
+    "grimeTop": 0.16,
+    "grimeBottom": 0.02,
+    "bump": 0.45,
+    "fadeColour": [
+     0.44,
+     0.41,
+     0.34
+    ],
+    "grimeColour": [
+     0.12,
+     0.1,
+     0.075
+    ]
+   },
+   "Overdress": {
+    "fabric": "caban",
+    "tileMetres": 0.34,
+    "colour": [
+     0.19,
+     0.05,
+     0.034
+    ],
+    "contrast": 1.5,
+    "fade": 0.4,
+    "grime": 0.2,
+    "grimeTop": 1.3,
+    "grimeBottom": 1.0,
+    "bump": 0.5,
+    "fadeColour": [
+     0.24,
+     0.1,
+     0.07
+    ],
+    "roughOffset": 0.1,
+    "marks": [
+     {
+      "shape": "patch",
+      "centre": [
+       0.2,
+       0.06,
+       1.12
+      ],
+      "size": [
+       0.07,
+       0.06,
+       0.06
+      ],
+      "colour": [
+       0.13,
+       0.045,
+       0.03
+      ],
+      "amount": 0.9
+     },
+     {
+      "shape": "patch",
+      "centre": [
+       -0.2,
+       0.06,
+       1.12
+      ],
+      "size": [
+       0.07,
+       0.06,
+       0.06
+      ],
+      "colour": [
+       0.15,
+       0.06,
+       0.04
+      ],
+      "amount": 0.9
+     }
+    ]
+   },
+   "OverdressSkirt": {
+    "fabric": "caban",
+    "tileMetres": 0.34,
+    "colour": [
+     0.19,
+     0.05,
+     0.034
+    ],
+    "contrast": 1.5,
+    "fade": 0.4,
+    "grime": 0.6,
+    "grimeTop": 0.42,
+    "grimeBottom": 0.12,
+    "bump": 0.5,
+    "fadeColour": [
+     0.24,
+     0.1,
+     0.07
+    ],
+    "roughOffset": 0.1
+   },
+   "Shawl": {
+    "fabric": "poly_wool_herringbone",
+    "tileMetres": 0.26,
+    "colour": [
+     0.17,
+     0.16,
+     0.14
+    ],
+    "contrast": 1.5,
+    "fade": 0.2,
+    "grime": 0.15,
+    "grimeTop": 1.6,
+    "grimeBottom": 1.3,
+    "bump": 0.6,
+    "fadeColour": [
+     0.2,
+     0.19,
+     0.17
+    ]
+   },
+   "ShawlKnot": {
+    "fabric": "poly_wool_herringbone",
+    "tileMetres": 0.26,
+    "colour": [
+     0.17,
+     0.16,
+     0.14
+    ],
+    "contrast": 1.5,
+    "fade": 0.25,
+    "grime": 0.1,
+    "grimeTop": 0.8,
+    "grimeBottom": 0.3,
+    "bump": 0.6
+   },
+   "ShawlEndL": {
+    "fabric": "poly_wool_herringbone",
+    "tileMetres": 0.26,
+    "colour": [
+     0.17,
+     0.16,
+     0.14
+    ],
+    "contrast": 1.5,
+    "fade": 0.25,
+    "grime": 0.1,
+    "grimeTop": 0.8,
+    "grimeBottom": 0.3,
+    "bump": 0.6
+   },
+   "ShawlEndR": {
+    "fabric": "poly_wool_herringbone",
+    "tileMetres": 0.26,
+    "colour": [
+     0.17,
+     0.16,
+     0.14
+    ],
+    "contrast": 1.5,
+    "fade": 0.25,
+    "grime": 0.1,
+    "grimeTop": 0.8,
+    "grimeBottom": 0.3,
+    "bump": 0.6
+   },
+   "Apron": {
+    "fabric": "rough_linen",
+    "tileMetres": 0.24,
+    "colour": [
+     0.42,
+     0.38,
+     0.3
+    ],
+    "contrast": 1.4,
+    "fade": 0.2,
+    "grime": 0.35,
+    "grimeTop": 0.7,
+    "grimeBottom": 0.4,
+    "bump": 0.45,
+    "marks": [
+     {
+      "shape": "noise",
+      "scale": 9.0,
+      "threshold": 0.66,
+      "colour": [
+       0.05,
+       0.09,
+       0.24
+      ],
+      "amount": 0.75,
+      "zLow": 0.55,
+      "zHigh": 0.95
+     },
+     {
+      "shape": "noise",
+      "scale": 11.0,
+      "threshold": 0.7,
+      "colour": [
+       0.3,
+       0.06,
+       0.05
+      ],
+      "amount": 0.7,
+      "zLow": 0.5,
+      "zHigh": 0.9,
+      "seed": 3.0
+     }
+    ]
+   },
+   "ApronTie": {
+    "fabric": "rough_linen",
+    "tileMetres": 0.2,
+    "colour": [
+     0.42,
+     0.38,
+     0.3
+    ],
+    "contrast": 1.3,
+    "fade": 0.25,
+    "grime": 0.2,
+    "grimeTop": 0.8,
+    "grimeBottom": 0.3,
+    "bump": 0.4
+   },
+   "Belt": {
+    "fabric": "poly_wool_herringbone",
+    "tileMetres": 0.12,
+    "colour": [
+     0.05,
+     0.09,
+     0.2
+    ],
+    "contrast": 1.2,
+    "fade": 0.2,
+    "grime": 0.15,
+    "grimeTop": 0.8,
+    "grimeBottom": 0.3,
+    "bump": 0.5,
+    "marks": [
+     {
+      "shape": "stripes",
+      "axis": "z",
+      "scale": 160.0,
+      "colour": [
+       0.45,
+       0.42,
+       0.34
+      ],
+      "amount": 0.9,
+      "duty": 0.35
+     }
+    ]
+   },
+   "BannerBand": {
+    "fabric": "poly_wool_herringbone",
+    "tileMetres": 0.12,
+    "colour": [
+     0.42,
+     0.39,
+     0.31
+    ],
+    "contrast": 1.2,
+    "fade": 0.25,
+    "grime": 0.1,
+    "grimeTop": 0.8,
+    "grimeBottom": 0.3,
+    "bump": 0.4
+   },
+   "HeadCloth": {
+    "fabric": "rough_linen",
+    "tileMetres": 0.2,
+    "colour": [
+     0.47,
+     0.43,
+     0.34
+    ],
+    "contrast": 1.35,
+    "fade": 0.25,
+    "grime": 0.1,
+    "grimeTop": 1.9,
+    "grimeBottom": 1.7,
+    "bump": 0.4,
+    "fadeColour": [
+     0.48,
+     0.42,
+     0.3
+    ]
+   },
+   "HeadClothKnot": {
+    "fabric": "rough_linen",
+    "tileMetres": 0.2,
+    "colour": [
+     0.47,
+     0.43,
+     0.34
+    ],
+    "contrast": 1.35,
+    "fade": 0.25,
+    "grime": 0.1,
+    "grimeTop": 0.8,
+    "grimeBottom": 0.3,
+    "bump": 0.4
+   },
+   "HeadClothTailL": {
+    "fabric": "rough_linen",
+    "tileMetres": 0.2,
+    "colour": [
+     0.47,
+     0.43,
+     0.34
+    ],
+    "contrast": 1.35,
+    "fade": 0.25,
+    "grime": 0.1,
+    "grimeTop": 0.8,
+    "grimeBottom": 0.3,
+    "bump": 0.4
+   },
+   "HeadClothTailR": {
+    "fabric": "rough_linen",
+    "tileMetres": 0.2,
+    "colour": [
+     0.47,
+     0.43,
+     0.34
+    ],
+    "contrast": 1.35,
+    "fade": 0.25,
+    "grime": 0.1,
+    "grimeTop": 0.8,
+    "grimeBottom": 0.3,
+    "bump": 0.4
+   },
+   "Shoes": {
+    "fabric": "fabric_leather_02",
+    "tileMetres": 0.25,
+    "colour": [
+     0.06,
+     0.04,
+     0.026
+    ],
+    "contrast": 1.3,
+    "fade": 0.2,
+    "grime": 0.7,
+    "grimeTop": 0.08,
+    "grimeBottom": 0.0,
+    "bump": 0.45,
+    "roughOffset": -0.05,
+    "grimeColour": [
+     0.035,
+     0.03,
+     0.025
+    ]
+   },
+   "Sheath": {
+    "fabric": "brown_leather",
+    "tileMetres": 0.3,
+    "colour": [
+     0.08,
+     0.05,
+     0.03
+    ],
+    "contrast": 1.2,
+    "fade": 0.25,
+    "grime": 0.2,
+    "grimeTop": 0.8,
+    "grimeBottom": 0.3,
+    "bump": 0.45
+   },
+   "KeyRing": {
+    "fabric": "brown_leather",
+    "tileMetres": 0.3,
+    "colour": [
+     0.035,
+     0.034,
+     0.032
+    ],
+    "contrast": 1.0,
+    "fade": 0.25,
+    "grime": 0.1,
+    "grimeTop": 0.8,
+    "grimeBottom": 0.3,
+    "bump": 0.2,
+    "roughOffset": -0.25
+   },
+   "Key0": {
+    "fabric": "brown_leather",
+    "tileMetres": 0.3,
+    "colour": [
+     0.04,
+     0.038,
+     0.035
+    ],
+    "contrast": 1.0,
+    "fade": 0.25,
+    "grime": 0.1,
+    "grimeTop": 0.8,
+    "grimeBottom": 0.3,
+    "bump": 0.2,
+    "roughOffset": -0.25
+   },
+   "Key1": {
+    "fabric": "brown_leather",
+    "tileMetres": 0.3,
+    "colour": [
+     0.04,
+     0.038,
+     0.035
+    ],
+    "contrast": 1.0,
+    "fade": 0.25,
+    "grime": 0.1,
+    "grimeTop": 0.8,
+    "grimeBottom": 0.3,
+    "bump": 0.2,
+    "roughOffset": -0.25
+   },
+   "SkeinBlue": {
+    "fabric": "curly_teddy_natural",
+    "tileMetres": 0.08,
+    "colour": [
+     0.05,
+     0.09,
+     0.22
+    ],
+    "contrast": 1.3,
+    "fade": 0.25,
+    "grime": 0.0,
+    "grimeTop": 0.8,
+    "grimeBottom": 0.3,
+    "bump": 0.7
+   },
+   "SkeinRed": {
+    "fabric": "curly_teddy_natural",
+    "tileMetres": 0.08,
+    "colour": [
+     0.3,
+     0.06,
+     0.04
+    ],
+    "contrast": 1.3,
+    "fade": 0.25,
+    "grime": 0.0,
+    "grimeTop": 0.8,
+    "grimeBottom": 0.3,
+    "bump": 0.7
+   },
+   "LegWraps": {
+    "fabric": "caban",
+    "tileMetres": 0.25,
+    "colour": [
+     0.1,
+     0.085,
+     0.065
+    ],
+    "contrast": 1.4,
+    "fade": 0.25,
+    "grime": 0.5,
+    "grimeTop": 0.25,
+    "grimeBottom": 0.05,
+    "bump": 0.6,
+    "bands": {
+     "scale": 26.0,
+     "colour": [
+      0.05,
+      0.045,
+      0.035
+     ],
+     "amount": 0.5
+    }
+   },
+   "HeadClothHem": {
+    "fabric": "rough_linen",
+    "tileMetres": 0.2,
+    "colour": [
+     0.47,
+     0.43,
+     0.34
+    ],
+    "contrast": 1.35,
+    "fade": 0.25,
+    "grime": 0.1,
+    "grimeTop": 1.9,
+    "grimeBottom": 1.7,
+    "bump": 0.4,
+    "fadeColour": [
+     0.48,
+     0.42,
+     0.3
+    ]
+   }
+  }
+ },
+ "props": {
+  "kit": "spinner",
+  "fibreAxis": [
+   0.0,
+   0.35,
+   1.0
+  ],
+  "basketAt": [
+   0.34,
+   -0.1,
+   0.0
+  ],
+  "basketYaw": 25.0,
+  "basketTris": 7000,
+  "bucketTris": 1500
+ },
+ "motion": {
+  "kit": "spinner",
+  "walk": {
+   "style": "Proud",
+   "frames": [
+    2463,
+    2539
+   ],
+   "blend": {
+    "style": "Neutral",
+    "frames": [
+     4507,
+     4591
+    ],
+    "weight": 0.5
+   },
+   "headPitch": 5.0,
+   "narrow": 0.25
+  },
+  "idle": {
+   "style": "Proud",
+   "frames": [
+    760,
+    1120
+   ],
+   "headPitch": 4.0,
+   "narrow": 0.2
+  },
+  "walkStop": {
+   "style": "Proud",
+   "frames": [
+    100,
+    380
+   ],
+   "headingFrames": [
+    340,
+    380
+   ],
+   "headPitch": 5.0,
+   "narrow": 0.2
+  },
+  "walkStart": {
+   "style": "Proud",
+   "frames": [
+    1220,
+    1460
+   ],
+   "headingFrames": [
+    1220,
+    1260
+   ],
+   "headPitch": 5.0,
+   "narrow": 0.2
+  },
+  "work": {
+   "seconds": 4.0,
+   "yarnDrop": 0.46,
+   "fibreForward": 0.34,
+   "fibreBelowShoulder": 0.11,
+   "fibreInward": 0.0,
+   "twirlFibreShift": [
+    0.0,
+    -0.02,
+    0.02
+   ],
+   "twirlLeanDeg": 20.0,
+   "twirlKneeDipM": 0.06,
+   "twirlTurnDeg": 40.0
+  }
+ },
+ "faceRig": {
+  "lidUpperClosedDeg": 31.0,
+  "lidLowerClosedDeg": -9.0,
+  "jawOpenDeg": 15.0
+ },
+ "skin": {
+  "atlasSize": 2048,
+  "headScale": 1.3,
+  "bakeSamples": 4,
+  "toneTint": [
+   0.97,
+   0.88,
+   0.82
+  ],
+  "toneAmount": 0.5,
+  "ruddyTint": [
+   1.0,
+   0.78,
+   0.72
+  ],
+  "freckleColour": [
+   0.45,
+   0.25,
+   0.15
+  ],
+  "freckles": 0.55,
+  "stubbleColour": [
+   0.018,
+   0.014,
+   0.011
+  ],
+  "stubble": 0.0,
+  "beardShadow": [
+   0.028,
+   0.022,
+   0.018
+  ],
+  "beardShadowAmount": 0.0,
+  "scalpColour": [
+   0.17,
+   0.06,
+   0.028
+  ],
+  "grimeColour": [
+   0.09,
+   0.07,
+   0.13
+  ],
+  "burnColour": [
+   0.6,
+   0.36,
+   0.33
+  ],
+  "burns": 0.0,
+  "aoAmount": 0.0,
+  "roughness": 0.5,
+  "foreheadLines": 0.05,
+  "eyeLines": 0.2,
+  "foldDepth": 0.2,
+  "bumpStrength": 0.5,
+  "handGrime": 0.5,
+  "neckGrime": 0.0,
+  "browColour": [
+   0.17,
+   0.065,
+   0.03
+  ],
+  "browPaint": 0.774
+ },
+ "eyes": {
+  "saturation": 0.55,
+  "brightness": 0.88,
+  "tint": [
+   0.97,
+   0.94,
+   0.9
+  ],
+  "irisDarken": 0.18,
+  "pupilScale": 1.12,
+  "scleraShade": 0.2
+ },
+ "teeth": {
+  "ivory": [
+   0.94,
+   0.91,
+   0.82
+  ],
+  "gum": [
+   0.58,
+   0.29,
+   0.28
+  ],
+  "brightness": 1.0,
+  "overlap": {
+   "upper_r_1": {
+    "turnDeg": 9.0,
+    "forward": 0.0007
+   }
+  },
+  "upperShowMm": 2.4,
+  "overbiteMm": 2.0
+ },
+ "lodHead": {
+  "source": "lod0",
+  "triangles": 2100,
+  "eyeRings": 2,
+  "mouthRings": 4
+ }
+}

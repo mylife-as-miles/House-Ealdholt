@@ -1,0 +1,235 @@
+/* My Legacy in the main menu's look (shared/menu/theme.ts), as the Play setup screen wears it: the menu's bronze
+   wash, its condensed uppercase titles under a short orange bar, quiet grey labels, dark outlined tiles that turn
+   orange when chosen, and one solid orange call to action. A layer over AethelgardPreview.css and legacy-glass.css:
+   it restyles their classes and leaves layout, behaviour and the world-first composition to them. */
+
+.ealdholt-preview.ealdholt-threeui {
+  /* The village's palette arrives as inline custom properties; these take precedence over them. */
+  --ealdholt-ui-accent: var(--menu-active-tab, #f87b00) !important;
+  --ealdholt-ui-accentInk: #1b1206 !important;
+  --ealdholt-ui-ink: #ece6da !important;
+  --ealdholt-ui-body: var(--menu-text, #cdc6b8) !important;
+  --ealdholt-ui-muted: #98958e !important;
+  --legacy-accent: var(--menu-accent, #bf791a);
+  --legacy-active: var(--menu-active-tab, #f87b00);
+  --legacy-focus: var(--menu-focus, #df8a26);
+  --legacy-heading: var(--menu-inactive-heading, #b5b2ac);
+  --legacy-panel: #100d08d9;
+  --legacy-tile: #17120cc7;
+  --legacy-line: #ffffff17;
+  --legacy-condensed: var(--menu-font-condensed, "Barlow Condensed"), "Arial Narrow", sans-serif;
+  --ealdholt-line: var(--legacy-line);
+  background: #110d09;
+}
+
+/* The menu's wash over the world: bronze, darker at the top and foot and toward the left where the title sits. */
+.ealdholt-preview.ealdholt-threeui .ealdholt-grade {
+  background:
+    linear-gradient(90deg, #0b0805b0, transparent 38%),
+    linear-gradient(180deg, #0b0805c4, transparent 24%, transparent 56%, #0b0805e8);
+}
+
+/* ------------------------------------------------------------------ titles */
+.ealdholt-preview.ealdholt-threeui .ealdholt-eyebrow {
+  color: var(--legacy-heading);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: .2em;
+}
+.ealdholt-preview.ealdholt-threeui .ealdholt-header h1 {
+  font-family: var(--legacy-condensed);
+  font-size: clamp(34px, 3.4vw, 56px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .01em;
+  text-transform: uppercase;
+  color: #ece6da;
+  text-shadow: 0 2px 18px #000c;
+}
+/* The menu's active-tab orange, as a short bar under the title. */
+.ealdholt-preview.ealdholt-threeui .ealdholt-header h1::after,
+.ealdholt-preview.ealdholt-threeui .wf-banner-heading h2::after,
+.ealdholt-preview.ealdholt-threeui .ealdholt-pause h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin-top: 12px;
+  background: var(--legacy-active);
+  box-shadow: 0 0 12px #f87b0066;
+}
+.ealdholt-preview.ealdholt-threeui .wf-banner-heading h2::after,
+.ealdholt-preview.ealdholt-threeui .ealdholt-pause h2::after { margin: 12px auto 0; }
+.ealdholt-preview.ealdholt-threeui .wf-banner-heading h2,
+.ealdholt-preview.ealdholt-threeui .ealdholt-pause h2 {
+  font-family: var(--legacy-condensed);
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: #ece6da;
+}
+.ealdholt-preview.ealdholt-threeui .wf-banner-heading h2 { font-size: clamp(30px, 3vw, 46px); }
+.ealdholt-preview.ealdholt-threeui :is(.wf-drawer h3, .ealdholt-household-activity h4) {
+  font-family: var(--legacy-condensed);
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #ece6da;
+}
+.ealdholt-preview.ealdholt-threeui .ealdholt-conversation > header h3,
+.ealdholt-preview.ealdholt-threeui .ealdholt-household-activity dt { color: var(--legacy-accent); letter-spacing: .16em; }
+.ealdholt-preview.ealdholt-threeui .ealdholt-world-status {
+  border: 1px solid var(--legacy-line);
+  border-radius: 0;
+  background: var(--legacy-panel);
+  color: var(--legacy-heading);
+}
+
+/* ------------------------------------------------------------------ panels */
+/* The steward and the conversation: the setup screen's right-hand panel, an orange rule across its top. */
+.ealdholt-preview.ealdholt-threeui .wf-cinematic {
+  background: linear-gradient(180deg, #100d08cc, var(--legacy-panel));
+  border: 1px solid var(--legacy-line);
+  border-top: 2px solid var(--legacy-accent);
+  box-shadow: 0 18px 50px #0008;
+  backdrop-filter: blur(6px);
+}
+.ealdholt-preview.ealdholt-threeui .wf-steward-line { color: #ece6da; font-size: 21px; }
+.ealdholt-preview.ealdholt-threeui .ealdholt-speech { color: #ece6da; }
+.ealdholt-preview.ealdholt-threeui .wf-drawer {
+  background: var(--legacy-panel);
+  border: 1px solid var(--legacy-line);
+  border-top: 2px solid var(--legacy-accent);
+  box-shadow: -16px 0 40px #0006;
+  backdrop-filter: blur(6px);
+  scrollbar-color: var(--legacy-accent) #17120c;
+}
+.ealdholt-preview.ealdholt-threeui .wf-info-sheet,
+.ealdholt-preview.ealdholt-threeui .ealdholt-load-state {
+  background: var(--legacy-panel);
+  border: 1px solid var(--legacy-line);
+  border-left: 2px solid var(--legacy-accent);
+}
+.ealdholt-preview.ealdholt-threeui .ealdholt-pause { background: #0b0805eb; }
+.ealdholt-preview.ealdholt-threeui .wf-village-dock {
+  gap: 6px;
+  padding: 6px;
+  border: 1px solid var(--legacy-line);
+  border-top: 2px solid var(--legacy-accent);
+  background: var(--legacy-panel);
+  backdrop-filter: blur(6px);
+}
+.ealdholt-preview.ealdholt-threeui ::-webkit-scrollbar-thumb { background: var(--legacy-accent); }
+.ealdholt-preview.ealdholt-threeui [data-nav]:focus-visible { outline-color: var(--legacy-focus); }
+
+/* ------------------------------------------------------------------- tiles */
+/* Every control is a dark outlined tile: grey at rest, the menu's focus orange under the pointer or the pad. */
+.ealdholt-preview.ealdholt-threeui .ealdholt-threeui-button {
+  border: 1px solid var(--legacy-line);
+  border-radius: 0;
+  background: var(--legacy-tile);
+  color: var(--menu-text, #cdc6b8);
+  font-size: 15px;
+  letter-spacing: .02em;
+}
+.ealdholt-preview.ealdholt-threeui .ealdholt-threeui-button::before { background: none; box-shadow: none; }
+.ealdholt-preview.ealdholt-threeui .ealdholt-threeui-button::after { border: 0; }
+.ealdholt-preview.ealdholt-threeui .ealdholt-threeui-button__circle { display: none; }
+.ealdholt-preview.ealdholt-threeui .ealdholt-threeui-button:hover:not(:disabled),
+.ealdholt-preview.ealdholt-threeui .ealdholt-threeui-button:focus-visible {
+  color: #ece6da;
+  border-color: var(--legacy-focus);
+  background: #2a1e10d9;
+}
+.ealdholt-preview.ealdholt-threeui .ealdholt-threeui-button:focus-visible { outline: 2px solid var(--legacy-focus); outline-offset: 2px; }
+.ealdholt-preview.ealdholt-threeui .ealdholt-threeui-button.is-quiet { color: #98958e; }
+/* Chosen: an orange frame and a warm tint, as on the setup screen's choices. */
+.ealdholt-preview.ealdholt-threeui .ealdholt-threeui-button:is([aria-pressed=true], [aria-expanded=true]) {
+  color: #f6c48a;
+  border-color: var(--legacy-active);
+  background: linear-gradient(180deg, #f87b0010, #f87b0026);
+  box-shadow: inset 0 0 0 1px #f87b0055;
+}
+/* The one call to action: solid orange, dark ink, the condensed uppercase of START MATCH. */
+.ealdholt-preview.ealdholt-threeui .ealdholt-threeui-button.is-primary {
+  color: #1b1206;
+  border-color: var(--legacy-active);
+  background: var(--legacy-active);
+  font-family: var(--legacy-condensed);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  box-shadow: 0 6px 22px #f87b0033;
+}
+.ealdholt-preview.ealdholt-threeui .ealdholt-threeui-button.is-primary::before,
+.ealdholt-preview.ealdholt-threeui .ealdholt-threeui-button.is-primary:hover:not(:disabled)::before,
+.ealdholt-preview.ealdholt-threeui .ealdholt-threeui-button.is-primary:focus-visible::before { background: none; }
+.ealdholt-preview.ealdholt-threeui .ealdholt-threeui-button.is-primary:hover:not(:disabled),
+.ealdholt-preview.ealdholt-threeui .ealdholt-threeui-button.is-primary:focus-visible {
+  color: #1b1206;
+  border-color: #ff9a33;
+  background: #ff9a33;
+}
+
+/* The header's actions (Choose banner, Home, Play, pause) sit as a row of small tiles. */
+.ealdholt-preview.ealdholt-threeui .wf-global-actions { gap: 6px; }
+.ealdholt-preview.ealdholt-threeui .wf-global-actions .ealdholt-threeui-button { min-height: 40px; padding: 8px 14px; font-size: 14px; }
+
+/* Banner choices: tiles with the heraldry above an uppercase name; the chosen one framed in orange with a check. */
+.ealdholt-preview.ealdholt-threeui .ealdholt-presets { gap: 8px; }
+.ealdholt-preview.ealdholt-threeui .ealdholt-presets .ealdholt-threeui-button {
+  border: 1px solid var(--legacy-line);
+  background: var(--legacy-tile);
+  backdrop-filter: blur(6px);
+}
+.ealdholt-preview.ealdholt-threeui .ealdholt-presets .ealdholt-threeui-button .ealdholt-threeui-button__title > span {
+  font-family: var(--legacy-condensed);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.ealdholt-preview.ealdholt-threeui .ealdholt-presets .ealdholt-threeui-button[aria-pressed=true] {
+  color: #f6c48a;
+  border-color: var(--legacy-active);
+  background: linear-gradient(180deg, #f87b0012, #f87b002e);
+}
+.ealdholt-preview.ealdholt-threeui .ealdholt-presets .ealdholt-threeui-button[aria-pressed=true]::after {
+  content: "\2713";
+  inset: 6px 6px auto auto;
+  z-index: 3;
+  width: 20px;
+  height: 20px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: var(--legacy-active);
+  color: #1b1206;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* The village dock: three tiles, the open one framed in orange. */
+.ealdholt-preview.ealdholt-threeui .wf-village-dock .ealdholt-threeui-button {
+  border: 1px solid var(--legacy-line);
+  background: var(--legacy-tile);
+}
+.ealdholt-preview.ealdholt-threeui .wf-village-dock .ealdholt-threeui-button[aria-expanded=true] {
+  color: #f6c48a;
+  border-color: var(--legacy-active);
+  background: linear-gradient(180deg, #f87b0010, #f87b0026);
+}
+/* Lists inside the drawers: the chosen row marked by an orange bar, like the setup screen's army stripe. */
+.ealdholt-preview.ealdholt-threeui :is(.ealdholt-view-picker, .ealdholt-role-picker) .ealdholt-threeui-button {
+  border: 1px solid transparent;
+  border-bottom-color: var(--legacy-line);
+  background: transparent;
+}
+.ealdholt-preview.ealdholt-threeui .ealdholt-view-picker .ealdholt-threeui-button[aria-pressed=true] {
+  color: #f6c48a;
+  background: linear-gradient(90deg, #f87b0024, transparent);
+  box-shadow: inset 3px 0 var(--legacy-active);
+}
+.ealdholt-preview.ealdholt-threeui .wf-commit-note .ealdholt-threeui-button { border-color: transparent; background: transparent; }

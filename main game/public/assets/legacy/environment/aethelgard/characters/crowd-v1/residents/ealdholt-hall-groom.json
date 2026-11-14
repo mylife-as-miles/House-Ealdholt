@@ -1,0 +1,595 @@
+{
+ "archetype": "adult-male",
+ "build": {
+  "seconds": 7.7,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.5,
+   "shape": 3.1,
+   "texture": 3.9
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-male-v1.glb",
+ "envelopeGate": {
+  "clips": 13,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0254,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.273,
+ "envelopes": {
+  "carry_bucket_walk": {
+   "max": [
+    0.455,
+    1.817,
+    0.852
+   ],
+   "min": [
+    -0.451,
+    -0.373,
+    -0.851
+   ]
+  },
+  "carry_bundle_walk": {
+   "max": [
+    0.539,
+    1.836,
+    0.852
+   ],
+   "min": [
+    -0.587,
+    -0.373,
+    -0.851
+   ]
+  },
+  "idle": {
+   "max": [
+    0.404,
+    1.788,
+    0.469
+   ],
+   "min": [
+    -0.42,
+    -0.097,
+    -0.444
+   ]
+  },
+  "sit": {
+   "max": [
+    0.462,
+    1.34,
+    0.364
+   ],
+   "min": [
+    -0.427,
+    -0.097,
+    -0.789
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.682,
+    1.85,
+    0.905
+   ],
+   "min": [
+    -0.651,
+    -0.374,
+    -1.074
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.694,
+    1.865,
+    0.907
+   ],
+   "min": [
+    -0.696,
+    -0.367,
+    -1.076
+   ]
+  },
+  "talk": {
+   "max": [
+    0.651,
+    1.806,
+    0.625
+   ],
+   "min": [
+    -0.525,
+    -0.097,
+    -0.444
+   ]
+  },
+  "walk": {
+   "max": [
+    0.455,
+    1.833,
+    0.852
+   ],
+   "min": [
+    -0.497,
+    -0.373,
+    -0.851
+   ]
+  },
+  "walk_start": {
+   "max": [
+    0.437,
+    1.825,
+    0.766
+   ],
+   "min": [
+    -0.486,
+    -0.221,
+    -0.541
+   ]
+  },
+  "walk_stop": {
+   "max": [
+    0.436,
+    1.818,
+    0.676
+   ],
+   "min": [
+    -0.472,
+    -0.256,
+    -0.693
+   ]
+  },
+  "work_sweep": {
+   "max": [
+    0.634,
+    1.564,
+    0.834
+   ],
+   "min": [
+    -0.498,
+    -0.234,
+    -0.451
+   ]
+  },
+  "work_sweep_enter": {
+   "max": [
+    0.569,
+    1.896,
+    0.742
+   ],
+   "min": [
+    -0.45,
+    -0.179,
+    -0.498
+   ]
+  },
+  "work_sweep_exit": {
+   "max": [
+    0.569,
+    1.896,
+    0.743
+   ],
+   "min": [
+    -0.45,
+    -0.179,
+    -0.496
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.63
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.196,
+  "lipGapMm": {
+   "aa": 13.5,
+   "full": 16.7,
+   "rest": 0.2
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 6.67,
+   "r": 6.62
+  },
+  "upperLidClosed": 0.459,
+  "visibilityPasses": [
+   {
+    "l": 9,
+    "r": 18,
+    "upper": 0.459
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.459
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-hall-groom.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.229,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   919,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3410,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "mid-brown",
+  "facialHair": "moustache",
+  "style": "short-tousled"
+ },
+ "headwear": "none",
+ "headwearGate": {
+  "headwear": "none",
+  "pass": true
+ },
+ "headwearStyle": {
+  "colour": null,
+  "shape": "plain",
+  "tone": "none"
+ },
+ "householdId": "ealdholt-hall-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.12,
+  "coreMaxCm": 1.12,
+  "coreMeanCm": 0.56,
+  "coreWorstJoint": "calf_l"
+ },
+ "label": "Hall groom",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 239720,
+  "fileMiB": 0.229,
+  "headTriangles": 919,
+  "images": [
+   {
+    "bytes": 29624,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3410,
+  "vertices": 3214
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-adult-male-v1",
+  "rate": 1.058,
+  "roleClips": [
+   "work_sweep",
+   "carry_bundle_walk",
+   "carry_bucket_walk"
+  ],
+  "talk": "talk",
+  "walk": "walk"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "standard",
+  "kit": "hall-livery",
+  "palette": {
+   "accent": "undyed-cream",
+   "main": "undyed-grey",
+   "secondary": "undyed-cream"
+  },
+  "wear": "muddy-hems"
+ },
+ "placementScale": 1.0774,
+ "presentation": {
+  "clips": {
+   "carry_bucket_walk": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.0521,
+       -0.9937,
+       0.099,
+       0,
+       -0.8146,
+       -0.0996,
+       -0.5714,
+       0,
+       -0.0228,
+       0.0914,
+       0.0109,
+       1
+      ],
+      "node": "prop_bucket",
+      "prop": "bucket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "carry_bundle_walk": {
+    "held": [
+     {
+      "bone": "spine_03",
+      "kit": "textile",
+      "matrix": [
+       0.9993,
+       -0.0301,
+       0.0213,
+       0,
+       0.0312,
+       0.9981,
+       -0.0529,
+       0,
+       -0.0197,
+       0.0535,
+       0.9984,
+       0,
+       0,
+       0.0833,
+       0.2702,
+       1
+      ],
+      "node": "prop_linen_bundle",
+      "prop": "linen-bundle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_sweep": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       -0.8146,
+       -0.0996,
+       -0.5714,
+       0,
+       -0.0521,
+       0.9937,
+       -0.099,
+       0,
+       -0.1205,
+       0.0795,
+       -0.0577,
+       1
+      ],
+      "node": "prop_broom",
+      "prop": "broom"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_sweep_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       -0.8146,
+       -0.0996,
+       -0.5714,
+       0,
+       -0.0521,
+       0.9937,
+       -0.099,
+       0,
+       -0.1205,
+       0.0795,
+       -0.0577,
+       1
+      ],
+      "node": "prop_broom",
+      "prop": "broom"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_sweep_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       -0.8146,
+       -0.0996,
+       -0.5714,
+       0,
+       -0.0521,
+       0.9937,
+       -0.099,
+       0,
+       -0.1205,
+       0.0795,
+       -0.0577,
+       1
+      ],
+      "node": "prop_broom",
+      "prop": "broom"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "textile": "crowd-v1/props/crowd-props-textile-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "pitchfork",
+   "kit": "farm",
+   "socket": "hand_r",
+   "source": "project-original"
+  },
+  {
+   "id": "broom",
+   "kit": "everyday",
+   "socket": "hand_r",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 239720,
+  "sha256": "3949b658d38ebe331d6e3912c4cd2c0a36a2f871be285cb2de326774bc2d0053"
+ },
+ "recipeSha256": "6567aff6012c4e99ddb9e00f41cb52e4019efa2f5fe87b05470130f4a0a59d3c",
+ "referenceStatureCm": 173.5,
+ "residentId": "ealdholt-hall-groom",
+ "restRadiusMetres": 0.603,
+ "roleId": "hall-groom",
+ "statureCm": 186.5,
+ "status": "working-placeholder"
+}

@@ -1,0 +1,711 @@
+{
+ "archetype": "adult-male",
+ "build": {
+  "seconds": 8.3,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.3,
+   "lod": 0.6,
+   "shape": 3.5,
+   "texture": 3.8
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-male-v1.glb",
+ "envelopeGate": {
+  "clips": 17,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0254,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.256,
+ "envelopes": {
+  "idle": {
+   "max": [
+    0.467,
+    1.779,
+    0.637
+   ],
+   "min": [
+    -0.407,
+    -0.169,
+    -0.618
+   ]
+  },
+  "sit": {
+   "max": [
+    0.605,
+    1.332,
+    0.467
+   ],
+   "min": [
+    -0.515,
+    -0.429,
+    -0.972
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.751,
+    1.874,
+    1.21
+   ],
+   "min": [
+    -0.681,
+    -0.725,
+    -1.296
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.835,
+    1.906,
+    1.213
+   ],
+   "min": [
+    -0.744,
+    -0.711,
+    -1.299
+   ]
+  },
+  "talk": {
+   "max": [
+    0.691,
+    1.813,
+    0.656
+   ],
+   "min": [
+    -0.52,
+    -0.169,
+    -0.618
+   ]
+  },
+  "walk_b": {
+   "max": [
+    0.592,
+    1.803,
+    0.864
+   ],
+   "min": [
+    -0.47,
+    -0.351,
+    -0.953
+   ]
+  },
+  "walk_b_start": {
+   "max": [
+    0.503,
+    1.798,
+    0.856
+   ],
+   "min": [
+    -0.412,
+    -0.247,
+    -0.75
+   ]
+  },
+  "walk_b_stop": {
+   "max": [
+    0.513,
+    1.786,
+    0.828
+   ],
+   "min": [
+    -0.425,
+    -0.251,
+    -0.9
+   ]
+  },
+  "work_address": {
+   "max": [
+    0.655,
+    1.8,
+    0.792
+   ],
+   "min": [
+    -0.561,
+    -0.169,
+    -0.638
+   ]
+  },
+  "work_address_enter": {
+   "max": [
+    0.462,
+    1.778,
+    0.618
+   ],
+   "min": [
+    -0.343,
+    -0.168,
+    -0.603
+   ]
+  },
+  "work_address_exit": {
+   "max": [
+    0.462,
+    1.778,
+    0.618
+   ],
+   "min": [
+    -0.343,
+    -0.168,
+    -0.603
+   ]
+  },
+  "work_read": {
+   "max": [
+    0.476,
+    1.761,
+    0.618
+   ],
+   "min": [
+    -0.529,
+    -0.168,
+    -0.603
+   ]
+  },
+  "work_read_enter": {
+   "max": [
+    0.548,
+    1.886,
+    0.618
+   ],
+   "min": [
+    -0.512,
+    -0.169,
+    -0.603
+   ]
+  },
+  "work_read_exit": {
+   "max": [
+    0.548,
+    1.886,
+    0.618
+   ],
+   "min": [
+    -0.512,
+    -0.169,
+    -0.603
+   ]
+  },
+  "work_tally": {
+   "max": [
+    0.519,
+    1.9,
+    0.618
+   ],
+   "min": [
+    -0.41,
+    -0.168,
+    -0.603
+   ]
+  },
+  "work_tally_enter": {
+   "max": [
+    0.569,
+    1.89,
+    0.618
+   ],
+   "min": [
+    -0.505,
+    -0.168,
+    -0.603
+   ]
+  },
+  "work_tally_exit": {
+   "max": [
+    0.569,
+    1.89,
+    0.618
+   ],
+   "min": [
+    -0.505,
+    -0.168,
+    -0.603
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.202,
+  "lipGapMm": {
+   "aa": 13.8,
+   "full": 16.9,
+   "rest": 0.3
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.25,
+   "r": 7.25
+  },
+  "upperLidClosed": 0.472,
+  "visibilityPasses": [
+   {
+    "l": 28,
+    "r": 48,
+    "upper": 0.472
+   },
+   {
+    "l": 1,
+    "r": 19,
+    "upper": 0.472
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.472
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "major",
+ "file": "ealdholt-house-steward.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.249,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   906,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3667,
+   4500,
+   true
+  ]
+ },
+ "group": "leaders-clergy-specialists",
+ "hair": {
+  "colour": "greying-red-brown",
+  "facialHair": "full-beard",
+  "style": "short-tousled"
+ },
+ "headwear": "felt-cap",
+ "headwearGate": {
+  "headwear": "felt-cap",
+  "pass": true,
+  "shells": {
+   "Cap": {
+    "faces": 294,
+    "islands": 1,
+    "maxReachRadii": 0.992,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#3e5876",
+  "shape": "rolled-brim",
+  "tone": "main"
+ },
+ "householdId": "ealdholt-hall-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.92,
+  "coreMaxCm": 1.22,
+  "coreMeanCm": 0.68,
+  "coreWorstJoint": "foot_l"
+ },
+ "label": "House steward",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 261052,
+  "fileMiB": 0.249,
+  "headTriangles": 906,
+  "images": [
+   {
+    "bytes": 31468,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3667,
+  "vertices": 3562
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-adult-male-v1",
+  "rate": 1.026,
+  "roleClips": [
+   "work_tally",
+   "work_address",
+   "work_read"
+  ],
+  "talk": "talk",
+  "walk": "walk_b"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "standard",
+  "kit": "steward-gown",
+  "palette": {
+   "accent": "ochre",
+   "main": "woad-blue",
+   "secondary": "walnut-brown"
+  },
+  "wear": "clean"
+ },
+ "placementScale": 1.0618,
+ "presentation": {
+  "clips": {
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_read": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.7583,
+       0.336,
+       -0.5587,
+       0,
+       0.1055,
+       -0.9089,
+       -0.4035,
+       0,
+       -0.6434,
+       0.247,
+       -0.7246,
+       0,
+       0.0602,
+       0.1046,
+       -0.0107,
+       1
+      ],
+      "node": "prop_book",
+      "prop": "book"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_read_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.7583,
+       0.336,
+       -0.5587,
+       0,
+       0.1055,
+       -0.9089,
+       -0.4035,
+       0,
+       -0.6434,
+       0.247,
+       -0.7246,
+       0,
+       0.0602,
+       0.1046,
+       -0.0107,
+       1
+      ],
+      "node": "prop_book",
+      "prop": "book"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_read_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.7583,
+       0.336,
+       -0.5587,
+       0,
+       0.1055,
+       -0.9089,
+       -0.4035,
+       0,
+       -0.6434,
+       0.247,
+       -0.7246,
+       0,
+       0.0602,
+       0.1046,
+       -0.0107,
+       1
+      ],
+      "node": "prop_book",
+      "prop": "book"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_tally": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.2823,
+       -0.9489,
+       -0.1409,
+       0,
+       0.8996,
+       0.3129,
+       -0.3047,
+       0,
+       0.3333,
+       -0.0407,
+       0.942,
+       0,
+       -0.0187,
+       0.0689,
+       0.0017,
+       1
+      ],
+      "node": "prop_tally_sticks",
+      "prop": "tally-sticks"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_tally_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.2823,
+       -0.9489,
+       -0.1409,
+       0,
+       0.8996,
+       0.3129,
+       -0.3047,
+       0,
+       0.3333,
+       -0.0407,
+       0.942,
+       0,
+       -0.0187,
+       0.0689,
+       0.0017,
+       1
+      ],
+      "node": "prop_tally_sticks",
+      "prop": "tally-sticks"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_tally_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.2823,
+       -0.9489,
+       -0.1409,
+       0,
+       0.8996,
+       0.3129,
+       -0.3047,
+       0,
+       0.3333,
+       -0.0407,
+       0.942,
+       0,
+       -0.0187,
+       0.0689,
+       0.0017,
+       1
+      ],
+      "node": "prop_tally_sticks",
+      "prop": "tally-sticks"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "letters-and-care": "crowd-v1/props/crowd-props-letters-and-care-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [
+   {
+    "bone": "hips",
+    "kit": "letters-and-care",
+    "matrix": [
+     0,
+     0.343836,
+     -0.93903,
+     0,
+     0,
+     0.93903,
+     0.343836,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0.297722,
+     0.033171,
+     0.08391,
+     1
+    ],
+    "node": "prop_keys",
+    "prop": "keys"
+   }
+  ],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "keys",
+   "kit": "letters-and-care",
+   "socket": "hips",
+   "source": "project-original"
+  },
+  {
+   "id": "tally-sticks",
+   "kit": "letters-and-care",
+   "socket": "hand_l",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 261052,
+  "sha256": "acefa51ce4568f58e802340fa97400736b296c894a75524b614bdf0f16e5c1dc"
+ },
+ "recipeSha256": "db7842abf1cc33155c05e4823675302a629a20ecf3f650aa51383b319a472e48",
+ "referenceStatureCm": 173.5,
+ "residentId": "ealdholt-house-steward",
+ "restRadiusMetres": 0.586,
+ "roleId": "house-steward",
+ "statureCm": 183,
+ "status": "working-placeholder"
+}

@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "assetId": "Grass001",
+  "sourceUrl": "https://ambientcg.com/a/Grass001",
+  "licence": "CC0-1.0",
+  "authors": {
+    "ambientCG": "Official source publisher"
+  },
+  "tileMetres": 1.4,
+  "sourceTechnique": "Authored procedural PBR material; not a photograph or scan.",
+  "colour": {
+    "albedo": "sRGBRGB;opaque,untinted authored source colour;procedural,not photographic",
+    "normal": "OpenGL tangent-space +Y;linear;vectors renormalized",
+    "orm": "Linear R=source ambient occlusion,G=source roughness,B=0 dielectric",
+    "orientation": "Source rows preserved;configure flipY=false for all three maps"
+  },
+  "profiles": {
+    "desktop": {
+      "size": 1024,
+      "meanLuminance": 0.0924916793342196,
+      "files": {
+        "albedo": {
+          "file": "grass-desktop-albedo-1024.webp",
+          "size": 1024,
+          "bytes": 1799866,
+          "sha256": "aad615046dbc811777faa1fd602486fda48f5b34126e7f2fa9bec9699d50c853"
+        },
+        "normal": {
+          "file": "grass-desktop-normal-1024.webp",
+          "size": 1024,
+          "bytes": 2500656,
+          "sha256": "c492c14f91929aa84f25b29e807f5f336db8291d9e770ecb40603928a9513974"
+        },
+        "orm": {
+          "file": "grass-desktop-orm-1024.webp",
+          "size": 1024,
+          "bytes": 1714722,
+          "sha256": "b813951f6d7ec425ae25d9581354da8e511acc723857aa5b862f2e1a80d3f205"
+        }
+      },
+      "gpuBytesWithMipsEstimate": 16777212
+    },
+    "quest": {
+      "size": 512,
+      "meanLuminance": 0.09254919547400063,
+      "files": {
+        "albedo": {
+          "file": "grass-quest-albedo-512.webp",
+          "size": 512,
+          "bytes": 527292,
+          "sha256": "7df5f79f5627164890861c81654dd62626c901efc0a0c0af202cc3328109c6a9"
+        },
+        "normal": {
+          "file": "grass-quest-normal-512.webp",
+          "size": 512,
+          "bytes": 578700,
+          "sha256": "c17e11ca0b2c02a572d82c92265520962eb1fb6a0cc47116db219844768875e1"
+        },
+        "orm": {
+          "file": "grass-quest-orm-512.webp",
+          "size": 512,
+          "bytes": 403174,
+          "sha256": "97e5800c3134897f46a43932f5d52c50756b8b29de577d88102b1cd52fbf0333"
+        }
+      },
+      "gpuBytesWithMipsEstimate": 4194300
+    }
+  }
+}

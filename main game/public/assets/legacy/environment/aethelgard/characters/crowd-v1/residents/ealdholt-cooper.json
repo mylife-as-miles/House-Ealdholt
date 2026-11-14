@@ -1,0 +1,748 @@
+{
+ "archetype": "adult-male",
+ "build": {
+  "seconds": 9,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.3,
+   "lod": 0.7,
+   "shape": 3.3,
+   "texture": 4.5
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-male-v1.glb",
+ "envelopeGate": {
+  "clips": 15,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0218,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.253,
+ "envelopes": {
+  "carry_bundle_walk": {
+   "max": [
+    0.524,
+    1.829,
+    0.98
+   ],
+   "min": [
+    -0.562,
+    -0.461,
+    -0.922
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.417,
+    1.8,
+    0.53
+   ],
+   "min": [
+    -0.325,
+    -0.164,
+    -0.437
+   ]
+  },
+  "sit": {
+   "max": [
+    0.457,
+    1.336,
+    0.431
+   ],
+   "min": [
+    -0.406,
+    -0.218,
+    -0.805
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.674,
+    1.838,
+    1.013
+   ],
+   "min": [
+    -0.626,
+    -0.473,
+    -1.131
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.686,
+    1.852,
+    1.015
+   ],
+   "min": [
+    -0.675,
+    -0.465,
+    -1.134
+   ]
+  },
+  "talk": {
+   "max": [
+    0.641,
+    1.8,
+    0.608
+   ],
+   "min": [
+    -0.508,
+    -0.164,
+    -0.437
+   ]
+  },
+  "walk_c": {
+   "max": [
+    0.513,
+    1.807,
+    0.988
+   ],
+   "min": [
+    -0.456,
+    -0.441,
+    -0.939
+   ]
+  },
+  "walk_c_start": {
+   "max": [
+    0.486,
+    1.803,
+    0.991
+   ],
+   "min": [
+    -0.455,
+    -0.389,
+    -0.627
+   ]
+  },
+  "walk_c_stop": {
+   "max": [
+    0.495,
+    1.798,
+    0.858
+   ],
+   "min": [
+    -0.45,
+    -0.277,
+    -0.65
+   ]
+  },
+  "work_hammer_bench": {
+   "max": [
+    0.386,
+    1.69,
+    0.529
+   ],
+   "min": [
+    -0.427,
+    -0.163,
+    -0.425
+   ]
+  },
+  "work_hammer_bench_enter": {
+   "max": [
+    0.44,
+    1.868,
+    0.666
+   ],
+   "min": [
+    -0.498,
+    -0.168,
+    -0.509
+   ]
+  },
+  "work_hammer_bench_exit": {
+   "max": [
+    0.44,
+    1.868,
+    0.666
+   ],
+   "min": [
+    -0.498,
+    -0.168,
+    -0.51
+   ]
+  },
+  "work_plane": {
+   "max": [
+    0.41,
+    1.677,
+    0.952
+   ],
+   "min": [
+    -0.409,
+    -0.165,
+    -0.46
+   ]
+  },
+  "work_plane_enter": {
+   "max": [
+    0.477,
+    1.862,
+    0.73
+   ],
+   "min": [
+    -0.461,
+    -0.168,
+    -0.58
+   ]
+  },
+  "work_plane_exit": {
+   "max": [
+    0.477,
+    1.862,
+    0.73
+   ],
+   "min": [
+    -0.461,
+    -0.168,
+    -0.58
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.87,
+   "r": -0.87
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.2,
+  "lipGapMm": {
+   "aa": 13.7,
+   "full": 16.8,
+   "rest": 0.4
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.29,
+   "r": 7.29
+  },
+  "upperLidClosed": 0.496,
+  "visibilityPasses": [
+   {
+    "l": 2,
+    "r": 10,
+    "upper": 0.472
+   },
+   {
+    "l": 2,
+    "r": 0,
+    "upper": 0.472
+   },
+   {
+    "l": 1,
+    "r": 0,
+    "upper": 0.472
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.496
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-cooper.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.24,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   910,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3485,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "greying-auburn",
+  "facialHair": "full-beard",
+  "style": "short-tousled"
+ },
+ "headwear": "felt-cap",
+ "headwearGate": {
+  "headwear": "felt-cap",
+  "pass": true,
+  "shells": {
+   "Cap": {
+    "faces": 293,
+    "islands": 1,
+    "maxReachRadii": 0.985,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#8b867c",
+  "shape": "peaked",
+  "tone": "secondary"
+ },
+ "householdId": "ealdholt-cooper-household",
+ "jointResidualCm": {
+  "allMaxCm": 2.15,
+  "coreMaxCm": 1.43,
+  "coreMeanCm": 0.77,
+  "coreWorstJoint": "hand_l"
+ },
+ "label": "Cooper",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 251308,
+  "fileMiB": 0.24,
+  "headTriangles": 910,
+  "images": [
+   {
+    "bytes": 29686,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3485,
+  "vertices": 3429
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-male-v1",
+  "rate": 1.009,
+  "roleClips": [
+   "work_hammer_bench",
+   "work_plane",
+   "carry_bundle_walk"
+  ],
+  "talk": "talk",
+  "walk": "walk_c"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "long-waist-apron",
+  "kit": "workshop-apron-m",
+  "palette": {
+   "accent": "ochre",
+   "main": "ochre",
+   "secondary": "undyed-grey"
+  },
+  "wear": "worn"
+ },
+ "placementScale": 1.0704,
+ "presentation": {
+  "clips": {
+   "carry_bundle_walk": {
+    "held": [
+     {
+      "bone": "spine_03",
+      "kit": "textile",
+      "matrix": [
+       0.9993,
+       -0.0301,
+       0.0213,
+       0,
+       0.0312,
+       0.9981,
+       -0.0529,
+       0,
+       -0.0197,
+       0.0535,
+       0.9984,
+       0,
+       0,
+       0.0833,
+       0.2702,
+       1
+      ],
+      "node": "prop_linen_bundle",
+      "prop": "linen-bundle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_hammer_bench": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.0521,
+       -0.9937,
+       0.099,
+       0,
+       -0.8146,
+       -0.0996,
+       -0.5714,
+       0,
+       -0.0717,
+       0.0854,
+       -0.0234,
+       1
+      ],
+      "node": "prop_hammer_small",
+      "prop": "hammer-small"
+     }
+    ],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.48,
+       1
+      ],
+      "node": "prop_workbench",
+      "prop": "workbench"
+     }
+    ]
+   },
+   "work_hammer_bench_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.0521,
+       -0.9937,
+       0.099,
+       0,
+       -0.8146,
+       -0.0996,
+       -0.5714,
+       0,
+       -0.0717,
+       0.0854,
+       -0.0234,
+       1
+      ],
+      "node": "prop_hammer_small",
+      "prop": "hammer-small"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_hammer_bench_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.0521,
+       -0.9937,
+       0.099,
+       0,
+       -0.8146,
+       -0.0996,
+       -0.5714,
+       0,
+       -0.0717,
+       0.0854,
+       -0.0234,
+       1
+      ],
+      "node": "prop_hammer_small",
+      "prop": "hammer-small"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_plane": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.0521,
+       -0.9937,
+       0.099,
+       0,
+       -0.8146,
+       -0.0996,
+       -0.5714,
+       0,
+       -0.0228,
+       0.0914,
+       0.0109,
+       1
+      ],
+      "node": "prop_plane",
+      "prop": "plane"
+     }
+    ],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.55,
+       1
+      ],
+      "node": "prop_workbench",
+      "prop": "workbench"
+     }
+    ]
+   },
+   "work_plane_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.0521,
+       -0.9937,
+       0.099,
+       0,
+       -0.8146,
+       -0.0996,
+       -0.5714,
+       0,
+       -0.0228,
+       0.0914,
+       0.0109,
+       1
+      ],
+      "node": "prop_plane",
+      "prop": "plane"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_plane_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.0521,
+       -0.9937,
+       0.099,
+       0,
+       -0.8146,
+       -0.0996,
+       -0.5714,
+       0,
+       -0.0228,
+       0.0914,
+       0.0109,
+       1
+      ],
+      "node": "prop_plane",
+      "prop": "plane"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "craft": "crowd-v1/props/crowd-props-craft-v1.glb",
+   "textile": "crowd-v1/props/crowd-props-textile-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "hammer-small",
+   "kit": "craft",
+   "socket": "hand_r",
+   "source": "polyhaven:cross_pein_hammer"
+  },
+  {
+   "id": "workbench",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 251308,
+  "sha256": "ec1d60f03ca615fe8b0bb7a74997cdbf0d45732afadcfa6a521dcbc718b3eaea"
+ },
+ "recipeSha256": "5c85b93cd5594380d8b8f19f0fe349977a37fc5e307d637dd180b73cc75964ce",
+ "referenceStatureCm": 173.5,
+ "residentId": "ealdholt-cooper",
+ "restRadiusMetres": 0.583,
+ "roleId": "cooper",
+ "statureCm": 184.7,
+ "status": "working-placeholder"
+}

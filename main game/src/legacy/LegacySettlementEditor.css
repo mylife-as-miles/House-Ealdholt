@@ -1,0 +1,78 @@
+.legacy-estate-editor { position:absolute; inset:0; pointer-events:none; }
+.legacy-estate-panel,.legacy-estate-chooser { position:absolute; right:var(--settlement-edge); top:13cqh; max-height:73cqh; width:clamp(280px,23cqw,350px); display:flex; flex-direction:column; overflow:auto; scrollbar-width:thin; scrollbar-color:#9b8f5a #1c2019; pointer-events:auto; animation:legacy-settlement-pane .18s ease both; }
+.legacy-estate-chooser { width:clamp(220px,18cqw,280px); }
+.legacy-estate-chooser.has-context { right:calc(var(--settlement-edge) + clamp(280px,23cqw,350px) + 12px); }
+.legacy-estate-panel > * { flex-shrink:0; }
+.legacy-estate-panel { overflow:hidden; }
+.legacy-estate-body { flex:1 1 auto; min-height:0; overflow:auto; scrollbar-width:thin; scrollbar-color:#9b8f5a #1c2019; }
+.legacy-estate-emblem { height:76px; display:grid; place-items:center; margin:4px 15px; background:radial-gradient(ellipse,#9fa25b1f,transparent 70%); }
+.legacy-estate-emblem svg { width:58px; height:58px; fill:none; stroke:#bab184; stroke-width:1.15; stroke-linecap:round; stroke-linejoin:round; }
+.legacy-estate-detail { margin:0 15px!important; padding:4px 0 12px; color:#b8b49c; font-size:max(11px,.78cqw); line-height:1.45; }
+.legacy-estate-measures { display:flex; gap:4px; margin:0 15px; padding:10px 0; border-block:1px solid #8b825044; }
+.legacy-estate-measures > span { flex:1; display:grid; gap:4px; font-size:max(10px,.7cqw); color:#a6a184; text-transform:uppercase; letter-spacing:.05em; }
+.legacy-estate-measures strong { color:#d5cdad; font-size:max(12px,.88cqw); font-weight:500; text-transform:none; letter-spacing:0; }
+.legacy-estate-validity { margin:10px 15px!important; padding:7px 9px; border:1px solid #9b775b55; background:#62442c21; color:#d8b897; font-size:max(11px,.76cqw); line-height:1.4; }
+.legacy-estate-validity.is-valid { color:#b7c28c; border-color:#8e9a4f55; background:#51613729; }
+.legacy-estate-placement-controls { margin:0 15px 10px; display:flex; gap:8px; align-items:center; }
+.legacy-estate-nudges { display:grid; grid-template-columns:repeat(3,44px); grid-template-rows:repeat(2,44px); gap:3px; }
+.legacy-estate-nudges [data-settlement-nudge=north] { grid-column:2; }
+.legacy-estate-nudges [data-settlement-nudge=west] { grid-row:2; }
+.legacy-estate-nudges [data-settlement-nudge=south] { grid-row:2; grid-column:2; }
+.legacy-estate-nudges [data-settlement-nudge=east] { grid-row:2; grid-column:3; }
+.legacy-estate-placement-controls button { min-height:44px; padding:5px 8px; border:1px solid #8c81534d; background:#33382166; color:#c7bf98; font-size:12px; }
+.legacy-estate-nudges button { width:44px; height:44px; font-size:20px; }
+.legacy-estate-placement-controls > button { flex:1; display:grid; place-items:center; gap:3px; }
+.legacy-estate-placement-controls > button span { font-size:24px; }
+.legacy-estate-primary { margin:0 15px 12px; display:flex; gap:8px; }
+.legacy-estate-primary button { min-height:44px; padding:7px 10px; background:#333a2280; border:1px solid #9f94595e; color:#cec49c; font-size:12px; }
+.legacy-estate-primary [data-settlement-confirm] { flex:1; display:flex; justify-content:space-between; align-items:center; color:#e0d399; background:linear-gradient(145deg,#8b834b59,#4a593d59); border-color:#c0ac6599; }
+.legacy-estate-primary button:disabled { opacity:.4; cursor:default; }
+.legacy-estate-recovery { margin:0 15px 8px; }
+.legacy-estate-recovery button { display:flex; align-items:center; justify-content:space-between; width:100%; min-height:44px; padding:8px 10px; border:1px solid #ac9c6270; background:#6b724133; color:#d6cc9f; font-size:12px; }
+.legacy-estate-note { margin:0 15px 12px!important; padding-top:8px; border-top:1px solid #88834c33; color:#93977e; font-size:max(10px,.68cqw); line-height:1.35; }
+.legacy-estate-message,.legacy-estate-error { margin:0 15px 10px!important; color:#c4bb91; font-size:11px; line-height:1.4; }
+.legacy-estate-error { color:#d7a587; }
+.legacy-estate-selected { margin:12px 15px; display:grid; gap:10px; }
+.legacy-estate-selected p { color:#abb294; font-size:12px; }
+.legacy-estate-selected button { min-height:44px; display:flex; justify-content:space-between; align-items:center; padding:8px 10px; border:1px solid #9b775a70; background:#563f2d2e; color:#d2bba1; font-size:12px; }
+.legacy-estate-choices { display:grid; gap:5px; padding:9px; min-height:0; overflow:auto; }
+.legacy-estate-choices button { display:flex; align-items:center; gap:9px; min-height:60px; padding:8px; text-align:left; background:#262d205e; color:#d1c9a9; border:1px solid #88834c42; }
+.legacy-estate-choices button[aria-pressed=true] { border-color:#c5ac66; background:#73723a42; }
+.legacy-estate-choices button > svg { width:34px; height:34px; flex:none; stroke:#bbb17e; stroke-width:1.35; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+.legacy-estate-choices button > span:not(:last-child),.legacy-estate-choices button > span:only-of-type { display:grid; gap:4px; }
+.legacy-estate-choices strong { font-size:max(12px,.88cqw); font-weight:500; }
+.legacy-estate-choices button > span > span { color:#989c80; font-size:11px; }
+.legacy-estate-choices button > span:last-child:not(:only-of-type) { margin-left:auto; font-size:18px; color:#b7a66b; }
+.legacy-estate-list-heading { padding:9px 4px 4px; color:#a99e72; font-size:10px; letter-spacing:.08em; text-transform:uppercase; }
+.legacy-estate-instruction { position:absolute; bottom:calc(max(10px,1.7cqh) + 58px); left:50%; transform:translateX(-50%); max-width:38cqw; padding:7px 12px; text-align:center; font-size:max(11px,.78cqw); color:#d0caad; pointer-events:none; }
+.legacy-settlement-hud.is-editing .legacy-landmark-context,.legacy-settlement-hud.is-editing .legacy-party { display:none; }
+@media(max-height:520px) and (orientation:landscape) {
+ .legacy-estate-panel,.legacy-estate-chooser { top:21cqh; bottom:18cqh; max-height:none; width:clamp(260px,38cqw,295px); }
+ .legacy-estate-chooser { top:17cqh; }
+ .legacy-estate-chooser > .legacy-context-heading { flex-shrink:0; min-height:44px; box-sizing:border-box; padding:4px 40px 4px 10px; }
+ .legacy-estate-chooser > .legacy-context-heading h2 { margin-top:2px; }
+ .legacy-estate-chooser.has-context { right:var(--settlement-edge); }
+ .legacy-estate-editor.has-chooser .legacy-estate-panel { display:none; }
+ .legacy-estate-emblem,.legacy-estate-detail,.legacy-estate-note { display:none; }
+ .legacy-estate-measures { margin:0 10px; padding:6px 0; }
+ .legacy-estate-measures > span { font-size:9px; gap:2px; }
+ .legacy-estate-measures strong { font-size:11px; }
+ .legacy-estate-validity { margin:6px 10px!important; padding:4px 6px; font-size:11px; }
+ .legacy-estate-placement-controls { margin:0 10px 6px; }
+ .legacy-estate-nudges { grid-template-columns:repeat(4,44px); grid-template-rows:44px; }
+ .legacy-estate-nudges [data-settlement-nudge] { grid-row:1; grid-column:auto; }
+ .legacy-estate-placement-controls > button { min-width:44px; padding:4px; font-size:10px; }
+ .legacy-estate-placement-controls > button span { font-size:17px; }
+ .legacy-estate-primary { margin:0 10px 8px; }
+ .legacy-estate-recovery { margin:0 10px 6px; }
+ .legacy-estate-selected { margin:8px 10px; }
+ .legacy-estate-choices { padding:7px; gap:4px; }
+ .legacy-estate-choices button { min-height:47px; padding:5px 7px; }
+ .legacy-estate-chooser .legacy-estate-choices { padding:6px; }
+ .legacy-estate-chooser .legacy-estate-choices button { min-height:44px; }
+ .legacy-estate-choices button > svg { width:28px; height:28px; }
+ .legacy-estate-instruction { bottom:calc(max(10px,1.7cqh) + 53px); left:var(--settlement-edge); transform:none; max-width:43cqw; padding:5px 8px; font-size:10px; }
+ .legacy-settlement-hud .legacy-settlement-journal { width:44px; height:44px; padding:9px; }
+ .legacy-settlement-hud .legacy-settlement-journal > span { display:none!important; }
+ .legacy-settlement-hud .legacy-settlement-journal > svg { width:24px; height:24px; }
+}

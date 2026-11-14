@@ -1,0 +1,519 @@
+{
+ "archetype": "child",
+ "build": {
+  "seconds": 9.2,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.3,
+   "lod": 0.4,
+   "shape": 4.3,
+   "texture": 4
+  }
+ },
+ "clipLibrary": "crowd-clips-child-v1.glb",
+ "envelopeGate": {
+  "clips": 15,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0235,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.06,
+ "envelopes": {
+  "fetch_carry": {
+   "max": [
+    0.304,
+    1.275,
+    0.666
+   ],
+   "min": [
+    -0.303,
+    -0.286,
+    -0.6
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.302,
+    1.241,
+    0.412
+   ],
+   "min": [
+    -0.288,
+    -0.117,
+    -0.36
+   ]
+  },
+  "play_chase": {
+   "max": [
+    0.5,
+    1.186,
+    0.522
+   ],
+   "min": [
+    -0.471,
+    -0.159,
+    -0.374
+   ]
+  },
+  "play_chase_enter": {
+   "max": [
+    0.438,
+    1.254,
+    0.419
+   ],
+   "min": [
+    -0.409,
+    -0.117,
+    -0.373
+   ]
+  },
+  "play_chase_exit": {
+   "max": [
+    0.438,
+    1.254,
+    0.419
+   ],
+   "min": [
+    -0.409,
+    -0.117,
+    -0.373
+   ]
+  },
+  "play_skip": {
+   "max": [
+    0.381,
+    1.281,
+    0.389
+   ],
+   "min": [
+    -0.398,
+    -0.119,
+    -0.344
+   ]
+  },
+  "play_skip_enter": {
+   "max": [
+    0.365,
+    1.265,
+    0.411
+   ],
+   "min": [
+    -0.354,
+    -0.12,
+    -0.36
+   ]
+  },
+  "play_skip_exit": {
+   "max": [
+    0.365,
+    1.265,
+    0.41
+   ],
+   "min": [
+    -0.354,
+    -0.12,
+    -0.36
+   ]
+  },
+  "sit": {
+   "max": [
+    0.33,
+    0.946,
+    0.266
+   ],
+   "min": [
+    -0.331,
+    -0.117,
+    -0.605
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.483,
+    1.283,
+    0.602
+   ],
+   "min": [
+    -0.426,
+    -0.243,
+    -0.73
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.514,
+    1.299,
+    0.604
+   ],
+   "min": [
+    -0.47,
+    -0.237,
+    -0.732
+   ]
+  },
+  "talk": {
+   "max": [
+    0.294,
+    1.245,
+    0.44
+   ],
+   "min": [
+    -0.295,
+    -0.117,
+    -0.354
+   ]
+  },
+  "walk_c": {
+   "max": [
+    0.326,
+    1.253,
+    0.642
+   ],
+   "min": [
+    -0.342,
+    -0.252,
+    -0.574
+   ]
+  },
+  "walk_c_start": {
+   "max": [
+    0.311,
+    1.249,
+    0.603
+   ],
+   "min": [
+    -0.323,
+    -0.21,
+    -0.404
+   ]
+  },
+  "walk_c_stop": {
+   "max": [
+    0.311,
+    1.247,
+    0.524
+   ],
+   "min": [
+    -0.309,
+    -0.186,
+    -0.491
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.78,
+   "r": -0.78
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.194,
+  "lipGapMm": {
+   "aa": 11.2,
+   "full": 13.8,
+   "rest": 0.7
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 8.58,
+   "r": 8.58
+  },
+  "upperLidClosed": 0.592,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 9,
+    "upper": 0.563
+   },
+   {
+    "l": 0,
+    "r": 5,
+    "upper": 0.563
+   },
+   {
+    "l": 0,
+    "r": 2,
+    "upper": 0.563
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.592
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-tanner-son.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.237,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   927,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3393,
+   4500,
+   true
+  ]
+ },
+ "group": "children-apprentices",
+ "hair": {
+  "colour": "auburn",
+  "facialHair": "none",
+  "style": "tousled-child"
+ },
+ "headwear": "hood",
+ "headwearGate": {
+  "headwear": "hood",
+  "pass": true,
+  "scalpCovered": 1,
+  "scalpRays": 884,
+  "shells": {
+   "Hood": {
+    "faces": 379,
+    "islands": 2,
+    "maxReachRadii": 1.621,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#8b867c",
+  "shape": "liripipe",
+  "tone": "secondary"
+ },
+ "householdId": "ealdholt-tanner-household",
+ "jointResidualCm": {
+  "allMaxCm": 0.65,
+  "coreMaxCm": 0.65,
+  "coreMeanCm": 0.38,
+  "coreWorstJoint": "head"
+ },
+ "label": "Tanner's son",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 249020,
+  "fileMiB": 0.237,
+  "headTriangles": 927,
+  "images": [
+   {
+    "bytes": 29142,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3393,
+  "vertices": 3408
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-child-v1",
+  "rate": 0.993,
+  "roleClips": [
+   "play_chase",
+   "play_skip",
+   "fetch_carry"
+  ],
+  "talk": "talk",
+  "walk": "walk_c"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "short-tunic",
+  "kit": "child-tunic",
+  "palette": {
+   "accent": "russet",
+   "main": "undyed-brown",
+   "secondary": "undyed-grey"
+  },
+  "wear": "muddy-hems"
+ },
+ "placementScale": 1.0926,
+ "presentation": {
+  "clips": {
+   "fetch_carry": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.4083,
+       -0.0345,
+       -0.5536,
+       0,
+       0.0355,
+       -0.6844,
+       0.0688,
+       0,
+       -0.5536,
+       -0.0693,
+       -0.4039,
+       0,
+       -0.0202,
+       0.0644,
+       0.013,
+       1
+      ],
+      "node": "prop_small_bucket",
+      "prop": "small-bucket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "small-bucket",
+   "kit": "everyday",
+   "socket": "both-hands",
+   "source": "polyhaven:wooden_bucket_01"
+  },
+  {
+   "id": "pebbles",
+   "kit": "everyday",
+   "socket": "hand_r",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 249020,
+  "sha256": "f0caf3f57b48178dfe58d893d22379c8c6d5ade5c7ffeac06ade6f0d9acd3c08"
+ },
+ "recipeSha256": "eba830e17a16a695f76a340614a438fe1fa993b54069fad46ed84764f0b632a1",
+ "referenceStatureCm": 119.5,
+ "residentId": "ealdholt-tanner-son",
+ "restRadiusMetres": 0.39,
+ "roleId": "village-child",
+ "statureCm": 130,
+ "status": "working-placeholder"
+}

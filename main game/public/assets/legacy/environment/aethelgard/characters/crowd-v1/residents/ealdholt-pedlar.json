@@ -1,0 +1,571 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 8.8,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.6,
+   "shape": 3.4,
+   "texture": 4.5
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 13,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0218,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.196,
+ "envelopes": {
+  "carry_basket_walk": {
+   "max": [
+    0.676,
+    1.698,
+    0.877
+   ],
+   "min": [
+    -0.664,
+    -0.41,
+    -1.021
+   ]
+  },
+  "carry_bundle_walk": {
+   "max": [
+    0.676,
+    1.69,
+    0.877
+   ],
+   "min": [
+    -0.664,
+    -0.41,
+    -1.021
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.587,
+    1.664,
+    0.736
+   ],
+   "min": [
+    -0.534,
+    -0.202,
+    -0.662
+   ]
+  },
+  "sit": {
+   "max": [
+    0.587,
+    1.263,
+    0.471
+   ],
+   "min": [
+    -0.581,
+    -0.495,
+    -1.055
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.748,
+    1.718,
+    1.227
+   ],
+   "min": [
+    -0.711,
+    -0.817,
+    -1.361
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.748,
+    1.732,
+    1.23
+   ],
+   "min": [
+    -0.712,
+    -0.8,
+    -1.365
+   ]
+  },
+  "talk": {
+   "max": [
+    0.563,
+    1.676,
+    0.735
+   ],
+   "min": [
+    -0.526,
+    -0.202,
+    -0.649
+   ]
+  },
+  "walk_b": {
+   "max": [
+    0.672,
+    1.68,
+    0.881
+   ],
+   "min": [
+    -0.608,
+    -0.392,
+    -1.025
+   ]
+  },
+  "walk_b_start": {
+   "max": [
+    0.612,
+    1.672,
+    0.947
+   ],
+   "min": [
+    -0.561,
+    -0.306,
+    -0.889
+   ]
+  },
+  "walk_b_stop": {
+   "max": [
+    0.588,
+    1.667,
+    0.855
+   ],
+   "min": [
+    -0.574,
+    -0.331,
+    -0.961
+   ]
+  },
+  "work_sell": {
+   "max": [
+    0.564,
+    1.82,
+    0.774
+   ],
+   "min": [
+    -0.509,
+    -0.274,
+    -0.661
+   ]
+  },
+  "work_sell_enter": {
+   "max": [
+    0.55,
+    1.763,
+    0.725
+   ],
+   "min": [
+    -0.491,
+    -0.208,
+    -0.655
+   ]
+  },
+  "work_sell_exit": {
+   "max": [
+    0.55,
+    1.763,
+    0.725
+   ],
+   "min": [
+    -0.491,
+    -0.208,
+    -0.655
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.62,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.224,
+  "lipGapMm": {
+   "aa": 15.2,
+   "full": 18.6,
+   "rest": 1
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.88,
+   "r": 7.96
+  },
+  "upperLidClosed": 0.531,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.531
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-pedlar.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.235,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   908,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3322,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "greying-black",
+  "facialHair": "none",
+  "style": "bun"
+ },
+ "headwear": "head-cloth",
+ "headwearGate": {
+  "headwear": "head-cloth",
+  "pass": true,
+  "scalpCovered": 1,
+  "scalpRays": 874,
+  "shells": {
+   "HeadCloth": {
+    "faces": 380,
+    "islands": 1,
+    "maxReachRadii": 1.073,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#d6ccab",
+  "shape": "plain-knot",
+  "tone": "yellowed"
+ },
+ "householdId": "ealdholt-cooper-household",
+ "jointResidualCm": {
+  "allMaxCm": 2.12,
+  "coreMaxCm": 1.73,
+  "coreMeanCm": 1.08,
+  "coreWorstJoint": "hand_l"
+ },
+ "label": "Pedlar and market trader",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 246832,
+  "fileMiB": 0.235,
+  "headTriangles": 908,
+  "images": [
+   {
+    "bytes": 36344,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3322,
+  "vertices": 3238
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 0.947,
+  "roleClips": [
+   "work_sell",
+   "carry_bundle_walk",
+   "carry_basket_walk"
+  ],
+  "talk": "talk",
+  "walk": "walk_b"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "overgown",
+  "kit": "market-f",
+  "palette": {
+   "accent": "ochre",
+   "main": "weld-green",
+   "secondary": "woad-pale"
+  },
+  "wear": "travel-worn"
+ },
+ "placementScale": 0.9683,
+ "presentation": {
+  "clips": {
+   "carry_basket_walk": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.7116,
+       -0.3841,
+       0.4397,
+       0,
+       0.5259,
+       -0.1203,
+       0.7459,
+       0,
+       -0.2538,
+       0.8278,
+       0.3124,
+       0,
+       0.0519,
+       0.0759,
+       0.0796,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "carry_bundle_walk": {
+    "held": [
+     {
+      "bone": "spine_03",
+      "kit": "textile",
+      "matrix": [
+       0.9198,
+       -0.0277,
+       0.0197,
+       0,
+       0.0287,
+       0.9187,
+       -0.0487,
+       0,
+       -0.0182,
+       0.0492,
+       0.919,
+       0,
+       0,
+       0.0881,
+       0.2135,
+       1
+      ],
+      "node": "prop_linen_bundle",
+      "prop": "linen-bundle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_sell": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.6075,
+       1
+      ],
+      "node": "prop_market_trestle",
+      "prop": "market-trestle"
+     },
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.6075,
+       1
+      ],
+      "node": "prop_goods_wares",
+      "prop": "goods-wares"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "textile": "crowd-v1/props/crowd-props-textile-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "basket",
+   "kit": "everyday",
+   "socket": "hand_l",
+   "source": "polyhaven:wicker_basket_01"
+  },
+  {
+   "id": "market-trestle",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  },
+  {
+   "id": "goods-wares",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 246832,
+  "sha256": "c355573fa14e6f3d8c4862c775ebf478636c1a4a5091bedac942008baa89a95d"
+ },
+ "recipeSha256": "50d3c2172bb63c7f7791eb25983f3741cf0f61de9a04201ebf271910b7b2cb81",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-pedlar",
+ "restRadiusMetres": 0.526,
+ "roleId": "pedlar",
+ "statureCm": 154.3,
+ "status": "working-placeholder"
+}

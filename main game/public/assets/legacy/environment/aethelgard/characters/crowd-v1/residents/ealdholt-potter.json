@@ -1,0 +1,530 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 8.5,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.3,
+   "lod": 0.6,
+   "shape": 3.5,
+   "texture": 4
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 12,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0164,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.184,
+ "envelopes": {
+  "carry_basket_walk": {
+   "max": [
+    0.504,
+    1.701,
+    0.787
+   ],
+   "min": [
+    -0.506,
+    -0.326,
+    -0.849
+   ]
+  },
+  "idle": {
+   "max": [
+    0.414,
+    1.652,
+    0.7
+   ],
+   "min": [
+    -0.376,
+    -0.164,
+    -0.617
+   ]
+  },
+  "sit": {
+   "max": [
+    0.451,
+    1.264,
+    0.41
+   ],
+   "min": [
+    -0.447,
+    -0.388,
+    -0.989
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.61,
+    1.729,
+    1.097
+   ],
+   "min": [
+    -0.546,
+    -0.658,
+    -1.23
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.642,
+    1.75,
+    1.1
+   ],
+   "min": [
+    -0.563,
+    -0.645,
+    -1.233
+   ]
+  },
+  "talk": {
+   "max": [
+    0.495,
+    1.679,
+    0.7
+   ],
+   "min": [
+    -0.424,
+    -0.164,
+    -0.616
+   ]
+  },
+  "walk": {
+   "max": [
+    0.504,
+    1.696,
+    0.787
+   ],
+   "min": [
+    -0.506,
+    -0.326,
+    -0.849
+   ]
+  },
+  "walk_start": {
+   "max": [
+    0.498,
+    1.687,
+    0.797
+   ],
+   "min": [
+    -0.493,
+    -0.242,
+    -0.707
+   ]
+  },
+  "walk_stop": {
+   "max": [
+    0.495,
+    1.684,
+    0.728
+   ],
+   "min": [
+    -0.487,
+    -0.252,
+    -0.777
+   ]
+  },
+  "work_throw_pot": {
+   "max": [
+    0.45,
+    1.183,
+    0.421
+   ],
+   "min": [
+    -0.462,
+    -0.388,
+    -0.989
+   ]
+  },
+  "work_throw_pot_enter": {
+   "max": [
+    0.527,
+    1.389,
+    0.414
+   ],
+   "min": [
+    -0.472,
+    -0.388,
+    -0.989
+   ]
+  },
+  "work_throw_pot_exit": {
+   "max": [
+    0.527,
+    1.388,
+    0.414
+   ],
+   "min": [
+    -0.472,
+    -0.388,
+    -0.989
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.71,
+   "r": -0.72
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.224,
+  "lipGapMm": {
+   "aa": 14.6,
+   "full": 17.9,
+   "rest": 0.7
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.39,
+   "r": 7.38
+  },
+  "upperLidClosed": 0.527,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 3,
+    "upper": 0.502
+   },
+   {
+    "l": 0,
+    "r": 3,
+    "upper": 0.502
+   },
+   {
+    "l": 0,
+    "r": 2,
+    "upper": 0.502
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.527
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-potter.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.226,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   908,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3460,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "auburn",
+  "facialHair": "none",
+  "style": "bun"
+ },
+ "headwear": "head-cloth",
+ "headwearGate": {
+  "headwear": "head-cloth",
+  "pass": true,
+  "scalpCovered": 1,
+  "scalpRays": 889,
+  "shells": {
+   "HeadCloth": {
+    "faces": 380,
+    "islands": 1,
+    "maxReachRadii": 1.067,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#963a2e",
+  "shape": "knotted-tails",
+  "tone": "accent"
+ },
+ "householdId": "ealdholt-serjeant-household",
+ "jointResidualCm": {
+  "allMaxCm": 0.73,
+  "coreMaxCm": 0.69,
+  "coreMeanCm": 0.33,
+  "coreWorstJoint": "head"
+ },
+ "label": "Potter",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 236960,
+  "fileMiB": 0.226,
+  "headTriangles": 908,
+  "images": [
+   {
+    "bytes": 27442,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3460,
+  "vertices": 3204
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 0.99,
+  "roleClips": [
+   "work_throw_pot",
+   "carry_basket_walk"
+  ],
+  "talk": "talk",
+  "walk": "walk"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "shawl-apron",
+  "kit": "workshop-apron-f",
+  "palette": {
+   "accent": "madder-red",
+   "main": "madder-red",
+   "secondary": "undyed-grey"
+  },
+  "wear": "stained"
+ },
+ "placementScale": 1.0056,
+ "presentation": {
+  "clips": {
+   "carry_basket_walk": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.7116,
+       -0.3841,
+       0.4397,
+       0,
+       0.5259,
+       -0.1203,
+       0.7459,
+       0,
+       -0.2538,
+       0.8278,
+       0.3124,
+       0,
+       0.0519,
+       0.0759,
+       0.0796,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_throw_pot": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.4602,
+       1
+      ],
+      "node": "prop_potter_wheel",
+      "prop": "potter-wheel"
+     },
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "potter-wheel",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 236960,
+  "sha256": "b24235acd81b5ff8af2a2d4e9fa635801726ba2f49227dc26230eaf01d38d2b7"
+ },
+ "recipeSha256": "98859919b6c3cb2158d3eaf8fabc14226ab3374edcf83071252324689cd8a8d1",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-potter",
+ "restRadiusMetres": 0.514,
+ "roleId": "potter",
+ "statureCm": 160.1,
+ "status": "working-placeholder"
+}

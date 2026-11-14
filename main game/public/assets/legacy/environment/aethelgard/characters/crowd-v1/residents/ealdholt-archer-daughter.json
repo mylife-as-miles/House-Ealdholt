@@ -1,0 +1,548 @@
+{
+ "archetype": "child",
+ "build": {
+  "seconds": 8.7,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.5,
+   "lod": 0.3,
+   "shape": 3.7,
+   "texture": 4
+  }
+ },
+ "clipLibrary": "crowd-clips-child-v1.glb",
+ "envelopeGate": {
+  "clips": 15,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0186,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.063,
+ "envelopes": {
+  "fetch_carry": {
+   "max": [
+    0.47,
+    1.324,
+    0.792
+   ],
+   "min": [
+    -0.448,
+    -0.36,
+    -0.64
+   ]
+  },
+  "idle": {
+   "max": [
+    0.415,
+    1.269,
+    0.59
+   ],
+   "min": [
+    -0.408,
+    -0.103,
+    -0.41
+   ]
+  },
+  "play_hop": {
+   "max": [
+    0.447,
+    1.296,
+    0.643
+   ],
+   "min": [
+    -0.416,
+    -0.367,
+    -0.495
+   ]
+  },
+  "play_hop_enter": {
+   "max": [
+    0.45,
+    1.344,
+    0.742
+   ],
+   "min": [
+    -0.479,
+    -0.423,
+    -0.653
+   ]
+  },
+  "play_hop_exit": {
+   "max": [
+    0.45,
+    1.344,
+    0.742
+   ],
+   "min": [
+    -0.479,
+    -0.423,
+    -0.649
+   ]
+  },
+  "play_tag": {
+   "max": [
+    0.58,
+    1.268,
+    0.89
+   ],
+   "min": [
+    -0.514,
+    -0.31,
+    -0.517
+   ]
+  },
+  "play_tag_enter": {
+   "max": [
+    0.374,
+    1.313,
+    0.602
+   ],
+   "min": [
+    -0.358,
+    -0.179,
+    -0.453
+   ]
+  },
+  "play_tag_exit": {
+   "max": [
+    0.374,
+    1.313,
+    0.602
+   ],
+   "min": [
+    -0.358,
+    -0.179,
+    -0.453
+   ]
+  },
+  "sit": {
+   "max": [
+    0.359,
+    0.99,
+    0.419
+   ],
+   "min": [
+    -0.363,
+    -0.319,
+    -0.686
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.48,
+    1.334,
+    0.879
+   ],
+   "min": [
+    -0.465,
+    -0.441,
+    -0.887
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.514,
+    1.353,
+    0.882
+   ],
+   "min": [
+    -0.497,
+    -0.428,
+    -0.889
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.434,
+    1.299,
+    0.59
+   ],
+   "min": [
+    -0.422,
+    -0.106,
+    -0.41
+   ]
+  },
+  "walk_c": {
+   "max": [
+    0.467,
+    1.301,
+    0.746
+   ],
+   "min": [
+    -0.444,
+    -0.359,
+    -0.652
+   ]
+  },
+  "walk_c_start": {
+   "max": [
+    0.415,
+    1.297,
+    0.743
+   ],
+   "min": [
+    -0.417,
+    -0.201,
+    -0.495
+   ]
+  },
+  "walk_c_stop": {
+   "max": [
+    0.409,
+    1.295,
+    0.689
+   ],
+   "min": [
+    -0.43,
+    -0.317,
+    -0.609
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -1.59,
+   "r": -1.59
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0.002,
+   "r": 0
+  },
+  "jawOpen": 0.229,
+  "lipGapMm": {
+   "aa": 15.7,
+   "full": 19.1,
+   "rest": 1.1
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 10.5,
+   "r": 10.5
+  },
+  "upperLidClosed": 0.612,
+  "visibilityPasses": [
+   {
+    "l": 9,
+    "r": 1,
+    "upper": 0.504
+   },
+   {
+    "l": 8,
+    "r": 0,
+    "upper": 0.504
+   },
+   {
+    "l": 8,
+    "r": 0,
+    "upper": 0.504
+   },
+   {
+    "l": 8,
+    "r": 0,
+    "upper": 0.529
+   },
+   {
+    "l": 8,
+    "r": 0,
+    "upper": 0.529
+   },
+   {
+    "l": 7,
+    "r": 0,
+    "upper": 0.529
+   },
+   {
+    "l": 5,
+    "r": 0,
+    "upper": 0.556
+   },
+   {
+    "l": 5,
+    "r": 0,
+    "upper": 0.556
+   },
+   {
+    "l": 5,
+    "r": 0,
+    "upper": 0.556
+   },
+   {
+    "l": 2,
+    "r": 0,
+    "upper": 0.583
+   },
+   {
+    "l": 2,
+    "r": 0,
+    "upper": 0.583
+   },
+   {
+    "l": 2,
+    "r": 0,
+    "upper": 0.583
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-archer-daughter.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.226,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   996,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3377,
+   4500,
+   true
+  ]
+ },
+ "group": "children-apprentices",
+ "hair": {
+  "colour": "light-brown",
+  "facialHair": "none",
+  "style": "tousled-child"
+ },
+ "headwear": "ribbon",
+ "headwearGate": {
+  "headwear": "ribbon",
+  "pass": true
+ },
+ "headwearStyle": {
+  "colour": "#3e5876",
+  "shape": "plain",
+  "tone": "accent"
+ },
+ "householdId": "ealdholt-archer-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.02,
+  "coreMaxCm": 1.02,
+  "coreMeanCm": 0.57,
+  "coreWorstJoint": "thigh_l"
+ },
+ "label": "Archer's daughter",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 236492,
+  "fileMiB": 0.226,
+  "headTriangles": 996,
+  "images": [
+   {
+    "bytes": 32032,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3377,
+  "vertices": 3114
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-child-v1",
+  "rate": 1.051,
+  "roleClips": [
+   "play_tag",
+   "play_hop",
+   "fetch_carry"
+  ],
+  "talk": "talk_b",
+  "walk": "walk_c"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "shawl",
+  "kit": "child-dress",
+  "palette": {
+   "accent": "woad-blue",
+   "main": "russet",
+   "secondary": "undyed-cream"
+  },
+  "wear": "muddy-hems"
+ },
+ "placementScale": 0.7835,
+ "presentation": {
+  "clips": {
+   "fetch_carry": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.4083,
+       -0.0345,
+       -0.5536,
+       0,
+       0.0355,
+       -0.6844,
+       0.0688,
+       0,
+       -0.5536,
+       -0.0693,
+       -0.4039,
+       0,
+       -0.0202,
+       0.0644,
+       0.013,
+       1
+      ],
+      "node": "prop_small_bucket",
+      "prop": "small-bucket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "small-bucket",
+   "kit": "everyday",
+   "socket": "both-hands",
+   "source": "polyhaven:wooden_bucket_01"
+  },
+  {
+   "id": "pebbles",
+   "kit": "everyday",
+   "socket": "hand_r",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 236492,
+  "sha256": "0b897b1234d7ade64e868b95f376dce141c63084d659bd17d49ad594cd1793c1"
+ },
+ "recipeSha256": "5e37304bfab0b9ac864185ec01edbca1522403da6471d889e11f8b2287b21ff2",
+ "referenceStatureCm": 119.5,
+ "residentId": "ealdholt-archer-daughter",
+ "restRadiusMetres": 0.393,
+ "roleId": "village-child",
+ "statureCm": 95.4,
+ "status": "working-placeholder"
+}

@@ -1,0 +1,35 @@
+.play-route { position: absolute; inset: 0; z-index: 20; color: #d5c8ac; background: #100f0d; font-family: var(--menu-font-primary, "Barlow"), sans-serif; }
+.play-route button, .play-route select { font: inherit; color: inherit; border: 1px solid #6b5735; background: #191710; padding: .65rem 1rem; min-height: 44px; cursor: pointer; }
+.play-route button:hover, .play-route button:focus-visible { border-color: #dbac59; background: #2c2418; }
+.play-route button:focus-visible, .play-route select:focus-visible { outline: 2px solid #dbac59; outline-offset: 3px; }
+.play-route button:disabled { opacity: .45; cursor: default; }
+.match-eyebrow { text-transform: uppercase; letter-spacing: .16em; color: #d9a657; }
+.match-eyebrow { font-size: .8rem; }
+.play-route .match-primary { background: #76551e; color: #fff0cf; }
+.match-experience { position: absolute; inset: 0; }
+.match-experience > canvas { width: 100%; height: 100%; display: block; touch-action: none; }
+.match-loading { position: absolute; inset: 0; z-index: 5; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .8rem; padding: 2rem; background: #100f0d; text-align: center; }
+.match-loading h1 { font-size: 1.6rem; font-weight: 500; margin: 0; }
+.match-loading p { max-width: 36rem; line-height: 1.5; margin: 0; }
+.match-loading button { margin: .5rem; }
+/* The chronicle of the battle: a short record, left-aligned and quiet, under a match's result (MatchHud, which
+   sizes it to its panel) and over a replay's end once the ending has played (ReplayStage). */
+.match-chronicle { margin: .5rem 0 .6rem; padding: .5rem .9rem .1rem; border-top: 1px solid #bf975166; border-bottom: 1px solid #bf975166; text-align: left; }
+.match-chronicle h3 { margin: 0 0 .4rem; font-family: "Barlow Condensed", var(--menu-font-primary, "Barlow"), sans-serif; font-size: .85rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: #d8b571; text-align: center; }
+.match-chronicle p { margin: 0 0 .4rem; font-size: .9rem; line-height: 1.35; color: #e9dfc9; }
+.replay-chronicle { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(30rem, calc(100% - 2rem)); max-height: calc(100% - 4rem); overflow-y: auto; margin: 0; padding: .7rem 1rem .3rem; background: #100f0df0; border: 1px solid #bf9751; z-index: 3; }
+.match-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+/* The interface over a match in play (the kingdoms, the actions, the move record, the promotion picker, the result
+   and the confirm dialog) is MatchHud.tsx, styled in MatchHud.css. */
+/* Voice subtitles: centred under the board, the speaker in the army's highlight colour. The HUD keeps nothing at the
+   bottom but the prompt that skips a fight or the ending, in the left corner: the subtitles stop short of it. */
+.match-subtitles { position: absolute; left: 50%; bottom: 1rem; transform: translateX(-50%); width: min(42rem, calc(100% - 2 * 11.5rem)); display: flex; flex-direction: column; align-items: center; gap: .3rem; pointer-events: none; text-align: center; }
+.match-subtitles p { margin: 0; padding: .3rem .75rem .35rem; background: #100f0dd9; color: #f1e8d4; font-size: 1.15rem; line-height: 1.35; text-shadow: 0 1px 2px #000; }
+.match-subtitles b { display: block; font-size: .68em; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+.match-subtitles [data-side="w"] b { color: #9cc4ff; }
+.match-subtitles [data-side="b"] b { color: #ff9384; }
+.match-subtitles [data-side="fallen"] { color: #c9c0ae; font-style: italic; }
+.match-subtitles [data-side="fallen"] b { color: #a59c8a; }
+.match-subtitles[data-size="small"] p { font-size: .95rem; }
+.match-subtitles[data-size="large"] p { font-size: 1.5rem; }
+@media (max-width: 760px) { .match-subtitles { width: calc(100% - 1.5rem); bottom: 3.75rem; } }

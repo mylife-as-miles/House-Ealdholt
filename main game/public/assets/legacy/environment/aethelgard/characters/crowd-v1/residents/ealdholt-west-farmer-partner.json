@@ -1,0 +1,793 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 9,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.6,
+   "shape": 3.9,
+   "texture": 4.2
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 16,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0145,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.196,
+ "envelopes": {
+  "carry_sack_walk": {
+   "max": [
+    0.585,
+    1.677,
+    0.829
+   ],
+   "min": [
+    -0.589,
+    -0.368,
+    -0.932
+   ]
+  },
+  "idle": {
+   "max": [
+    0.483,
+    1.644,
+    0.663
+   ],
+   "min": [
+    -0.456,
+    -0.168,
+    -0.588
+   ]
+  },
+  "sit": {
+   "max": [
+    0.533,
+    1.254,
+    0.429
+   ],
+   "min": [
+    -0.529,
+    -0.437,
+    -0.989
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.656,
+    1.702,
+    1.148
+   ],
+   "min": [
+    -0.632,
+    -0.726,
+    -1.281
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.656,
+    1.718,
+    1.151
+   ],
+   "min": [
+    -0.642,
+    -0.711,
+    -1.285
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.484,
+    1.663,
+    0.663
+   ],
+   "min": [
+    -0.457,
+    -0.168,
+    -0.587
+   ]
+  },
+  "walk_b": {
+   "max": [
+    0.585,
+    1.67,
+    0.831
+   ],
+   "min": [
+    -0.534,
+    -0.354,
+    -0.958
+   ]
+  },
+  "walk_b_start": {
+   "max": [
+    0.528,
+    1.663,
+    0.867
+   ],
+   "min": [
+    -0.49,
+    -0.251,
+    -0.799
+   ]
+  },
+  "walk_b_stop": {
+   "max": [
+    0.515,
+    1.658,
+    0.779
+   ],
+   "min": [
+    -0.502,
+    -0.294,
+    -0.89
+   ]
+  },
+  "work_hoe": {
+   "max": [
+    0.558,
+    1.462,
+    0.874
+   ],
+   "min": [
+    -0.693,
+    -0.324,
+    -0.703
+   ]
+  },
+  "work_hoe_enter": {
+   "max": [
+    0.584,
+    1.741,
+    0.856
+   ],
+   "min": [
+    -0.66,
+    -0.297,
+    -0.766
+   ]
+  },
+  "work_hoe_exit": {
+   "max": [
+    0.584,
+    1.741,
+    0.857
+   ],
+   "min": [
+    -0.66,
+    -0.298,
+    -0.766
+   ]
+  },
+  "work_reap": {
+   "max": [
+    0.7,
+    1.162,
+    0.853
+   ],
+   "min": [
+    -0.747,
+    -0.395,
+    -0.666
+   ]
+  },
+  "work_reap_enter": {
+   "max": [
+    0.694,
+    1.793,
+    1.086
+   ],
+   "min": [
+    -0.681,
+    -0.626,
+    -0.841
+   ]
+  },
+  "work_reap_exit": {
+   "max": [
+    0.694,
+    1.793,
+    1.084
+   ],
+   "min": [
+    -0.681,
+    -0.625,
+    -0.84
+   ]
+  },
+  "work_sow": {
+   "max": [
+    0.579,
+    1.683,
+    0.806
+   ],
+   "min": [
+    -0.761,
+    -0.354,
+    -0.911
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.231,
+  "lipGapMm": {
+   "aa": 15.3,
+   "full": 18.8,
+   "rest": 0.7
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 8.04,
+   "r": 8.04
+  },
+  "upperLidClosed": 0.536,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 1,
+    "upper": 0.536
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.536
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-west-farmer-partner.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.223,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   912,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3241,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "mid-brown",
+  "facialHair": "none",
+  "style": "bun"
+ },
+ "headwear": "kerchief",
+ "headwearGate": {
+  "headwear": "kerchief",
+  "pass": true,
+  "shells": {
+   "Kerchief": {
+    "faces": 345,
+    "islands": 1,
+    "maxReachRadii": 0.987,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#3e5876",
+  "shape": "knot-back",
+  "tone": "accent"
+ },
+ "householdId": "ealdholt-farm-west-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.64,
+  "coreMaxCm": 1.25,
+  "coreMeanCm": 0.89,
+  "coreWorstJoint": "forearm_r"
+ },
+ "label": "West farm farmer's partner",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 233524,
+  "fileMiB": 0.223,
+  "headTriangles": 912,
+  "images": [
+   {
+    "bytes": 28116,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3241,
+  "vertices": 3152
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 0.969,
+  "roleClips": [
+   "work_hoe",
+   "work_sow",
+   "work_reap",
+   "carry_sack_walk"
+  ],
+  "talk": "talk_b",
+  "walk": "walk_b"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "overgown",
+  "kit": "field-kirtle",
+  "palette": {
+   "accent": "woad-blue",
+   "main": "russet",
+   "secondary": "undyed-cream"
+  },
+  "wear": "muddy-hems"
+ },
+ "placementScale": 0.9587,
+ "presentation": {
+  "clips": {
+   "carry_sack_walk": {
+    "held": [
+     {
+      "bone": "spine_03",
+      "kit": "farm",
+      "matrix": [
+       0.919,
+       0.0513,
+       0.0057,
+       0,
+       -0.0163,
+       0.1924,
+       0.9,
+       0,
+       0.049,
+       -0.8986,
+       0.193,
+       0,
+       -0.1269,
+       0.304,
+       0.0092,
+       1
+      ],
+      "node": "prop_sack",
+      "prop": "sack"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_hoe": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       -0.6451,
+       0.0521,
+       0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       -0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       0.189,
+       0.1086,
+       0.2143,
+       1
+      ],
+      "node": "prop_hoe",
+      "prop": "hoe"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_hoe_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       -0.6451,
+       0.0521,
+       0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       -0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       0.189,
+       0.1086,
+       0.2143,
+       1
+      ],
+      "node": "prop_hoe",
+      "prop": "hoe"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_hoe_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       -0.6451,
+       0.0521,
+       0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       -0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       0.189,
+       0.1086,
+       0.2143,
+       1
+      ],
+      "node": "prop_hoe",
+      "prop": "hoe"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_reap": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       -0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       -0.016,
+       0.0802,
+       0.0146,
+       1
+      ],
+      "node": "prop_sickle",
+      "prop": "sickle"
+     }
+    ],
+    "hidesRest": [
+     "sickle"
+    ],
+    "placed": []
+   },
+   "work_reap_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       -0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       -0.016,
+       0.0802,
+       0.0146,
+       1
+      ],
+      "node": "prop_sickle",
+      "prop": "sickle"
+     }
+    ],
+    "hidesRest": [
+     "sickle"
+    ],
+    "placed": []
+   },
+   "work_reap_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       -0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       -0.016,
+       0.0802,
+       0.0146,
+       1
+      ],
+      "node": "prop_sickle",
+      "prop": "sickle"
+     }
+    ],
+    "hidesRest": [
+     "sickle"
+    ],
+    "placed": []
+   },
+   "work_sow": {
+    "held": [
+     {
+      "bone": "hips",
+      "kit": "farm",
+      "matrix": [
+       0.9182,
+       -0.0503,
+       0.0417,
+       0,
+       0.0162,
+       0.7448,
+       0.5405,
+       0,
+       -0.0632,
+       -0.5385,
+       0.7438,
+       0,
+       0.176,
+       -0.1235,
+       0.0395,
+       1
+      ],
+      "node": "prop_seed_bag",
+      "prop": "seed-bag"
+     }
+    ],
+    "hidesRest": [
+     "seed-bag"
+    ],
+    "placed": []
+   }
+  },
+  "kits": {
+   "farm": "crowd-v1/props/crowd-props-farm-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [
+   {
+    "bone": "hips",
+    "kit": "farm",
+    "matrix": [
+     0.91816,
+     -0.050257,
+     0.041697,
+     0,
+     0.0162,
+     0.744837,
+     0.540495,
+     0,
+     -0.063236,
+     -0.53847,
+     0.743825,
+     0,
+     0.176,
+     -0.1235,
+     0.0395,
+     1
+    ],
+    "node": "prop_seed_bag",
+    "prop": "seed-bag"
+   },
+   {
+    "bone": "hips",
+    "kit": "farm",
+    "matrix": [
+     0,
+     0.532605,
+     -0.846364,
+     0,
+     0,
+     -0.846364,
+     -0.532605,
+     0,
+     -1,
+     0,
+     0,
+     0,
+     -0.199694,
+     0.023461,
+     0.083694,
+     1
+    ],
+    "node": "prop_sickle",
+    "prop": "sickle"
+   }
+  ],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "hoe",
+   "kit": "farm",
+   "socket": "hand_r",
+   "source": "project-original"
+  },
+  {
+   "id": "seed-bag",
+   "kit": "farm",
+   "socket": "hips",
+   "source": "project-original"
+  },
+  {
+   "id": "sickle",
+   "kit": "farm",
+   "socket": "hips",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 233524,
+  "sha256": "4e2829fda68be36f7d69f4bdcd6659bbfd84a9f00587e5aa02dd15b9a7424c8b"
+ },
+ "recipeSha256": "c60821900dffbea55089eca39ba99dcacb3b19fd5e230da53d31f1ab6d1a71c3",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-west-farmer-partner",
+ "restRadiusMetres": 0.526,
+ "roleId": "field-farmer",
+ "statureCm": 153.2,
+ "status": "working-placeholder"
+}

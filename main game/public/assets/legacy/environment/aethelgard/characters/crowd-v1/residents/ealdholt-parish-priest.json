@@ -1,0 +1,581 @@
+{
+ "archetype": "adult-male",
+ "build": {
+  "seconds": 7.7,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.4,
+   "shape": 3.3,
+   "texture": 3.6
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-male-v1.glb",
+ "envelopeGate": {
+  "clips": 17,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0229,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.256,
+ "envelopes": {
+  "idle_b": {
+   "max": [
+    0.46,
+    1.765,
+    0.677
+   ],
+   "min": [
+    -0.348,
+    -0.167,
+    -0.638
+   ]
+  },
+  "sit": {
+   "max": [
+    0.497,
+    1.302,
+    0.485
+   ],
+   "min": [
+    -0.489,
+    -0.446,
+    -0.992
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.677,
+    1.808,
+    1.207
+   ],
+   "min": [
+    -0.645,
+    -0.757,
+    -1.295
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.69,
+    1.823,
+    1.21
+   ],
+   "min": [
+    -0.69,
+    -0.745,
+    -1.299
+   ]
+  },
+  "talk": {
+   "max": [
+    0.648,
+    1.765,
+    0.662
+   ],
+   "min": [
+    -0.525,
+    -0.167,
+    -0.637
+   ]
+  },
+  "walk": {
+   "max": [
+    0.527,
+    1.791,
+    0.869
+   ],
+   "min": [
+    -0.529,
+    -0.316,
+    -0.93
+   ]
+  },
+  "walk_start": {
+   "max": [
+    0.536,
+    1.783,
+    0.774
+   ],
+   "min": [
+    -0.48,
+    -0.18,
+    -0.713
+   ]
+  },
+  "walk_stop": {
+   "max": [
+    0.533,
+    1.776,
+    0.761
+   ],
+   "min": [
+    -0.474,
+    -0.276,
+    -0.838
+   ]
+  },
+  "work_address_b": {
+   "max": [
+    0.829,
+    1.862,
+    0.681
+   ],
+   "min": [
+    -0.685,
+    -0.167,
+    -0.659
+   ]
+  },
+  "work_address_b_enter": {
+   "max": [
+    0.456,
+    1.758,
+    0.674
+   ],
+   "min": [
+    -0.372,
+    -0.171,
+    -0.622
+   ]
+  },
+  "work_address_b_exit": {
+   "max": [
+    0.456,
+    1.758,
+    0.674
+   ],
+   "min": [
+    -0.372,
+    -0.171,
+    -0.622
+   ]
+  },
+  "work_pray": {
+   "max": [
+    0.423,
+    1.8,
+    0.643
+   ],
+   "min": [
+    -0.433,
+    -0.166,
+    -0.622
+   ]
+  },
+  "work_pray_enter": {
+   "max": [
+    0.543,
+    1.807,
+    0.643
+   ],
+   "min": [
+    -0.542,
+    -0.167,
+    -0.622
+   ]
+  },
+  "work_pray_exit": {
+   "max": [
+    0.543,
+    1.807,
+    0.643
+   ],
+   "min": [
+    -0.542,
+    -0.167,
+    -0.622
+   ]
+  },
+  "work_read": {
+   "max": [
+    0.458,
+    1.732,
+    0.643
+   ],
+   "min": [
+    -0.503,
+    -0.166,
+    -0.622
+   ]
+  },
+  "work_read_enter": {
+   "max": [
+    0.541,
+    1.848,
+    0.643
+   ],
+   "min": [
+    -0.511,
+    -0.167,
+    -0.622
+   ]
+  },
+  "work_read_exit": {
+   "max": [
+    0.541,
+    1.848,
+    0.643
+   ],
+   "min": [
+    -0.511,
+    -0.167,
+    -0.622
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.211,
+  "lipGapMm": {
+   "aa": 14.6,
+   "full": 17.9,
+   "rest": 0.4
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.43,
+   "r": 7.43
+  },
+  "upperLidClosed": 0.471,
+  "visibilityPasses": [
+   {
+    "l": 43,
+    "r": 42,
+    "upper": 0.471
+   },
+   {
+    "l": 9,
+    "r": 9,
+    "upper": 0.471
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.471
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "major",
+ "file": "ealdholt-parish-priest.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.216,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   905,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3485,
+   4500,
+   true
+  ]
+ },
+ "group": "leaders-clergy-specialists",
+ "hair": {
+  "colour": "greying-mid-brown",
+  "facialHair": "stubble",
+  "style": "tonsure"
+ },
+ "headwear": "none",
+ "headwearGate": {
+  "headwear": "none",
+  "pass": true
+ },
+ "headwearStyle": {
+  "colour": null,
+  "shape": "plain",
+  "tone": "none"
+ },
+ "householdId": "ealdholt-church-house-household",
+ "jointResidualCm": {
+  "allMaxCm": 2.39,
+  "coreMaxCm": 1.6,
+  "coreMeanCm": 0.77,
+  "coreWorstJoint": "hand_l"
+ },
+ "label": "Parish priest",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 226652,
+  "fileMiB": 0.216,
+  "headTriangles": 905,
+  "images": [
+   {
+    "bytes": 22646,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3485,
+  "vertices": 3091
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-male-v1",
+  "rate": 1.029,
+  "roleClips": [
+   "work_pray",
+   "work_read",
+   "work_address_b"
+  ],
+  "talk": "talk",
+  "walk": "walk"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "standard",
+  "kit": "clergy-cassock",
+  "palette": {
+   "accent": "undyed-grey",
+   "main": "walnut-brown",
+   "secondary": "undyed-cream"
+  },
+  "wear": "clean"
+ },
+ "placementScale": 1.0043,
+ "presentation": {
+  "clips": {
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_read": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.7583,
+       0.336,
+       -0.5587,
+       0,
+       0.1055,
+       -0.9089,
+       -0.4035,
+       0,
+       -0.6434,
+       0.247,
+       -0.7246,
+       0,
+       0.0602,
+       0.1046,
+       -0.0107,
+       1
+      ],
+      "node": "prop_book",
+      "prop": "book"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_read_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.7583,
+       0.336,
+       -0.5587,
+       0,
+       0.1055,
+       -0.9089,
+       -0.4035,
+       0,
+       -0.6434,
+       0.247,
+       -0.7246,
+       0,
+       0.0602,
+       0.1046,
+       -0.0107,
+       1
+      ],
+      "node": "prop_book",
+      "prop": "book"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_read_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.7583,
+       0.336,
+       -0.5587,
+       0,
+       0.1055,
+       -0.9089,
+       -0.4035,
+       0,
+       -0.6434,
+       0.247,
+       -0.7246,
+       0,
+       0.0602,
+       0.1046,
+       -0.0107,
+       1
+      ],
+      "node": "prop_book",
+      "prop": "book"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "letters-and-care": "crowd-v1/props/crowd-props-letters-and-care-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "book",
+   "kit": "letters-and-care",
+   "socket": "hand_l",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 226652,
+  "sha256": "452c843246272d29db3259716c6ae43774b7563c948831ee832efcd4e5e0dd79"
+ },
+ "recipeSha256": "2cfc1b83dfdac4aa4f58e0bda6071e37fe642226bb0d13e07abab2666227037b",
+ "referenceStatureCm": 173.5,
+ "residentId": "ealdholt-parish-priest",
+ "restRadiusMetres": 0.586,
+ "roleId": "parish-priest",
+ "statureCm": 173.3,
+ "status": "working-placeholder"
+}

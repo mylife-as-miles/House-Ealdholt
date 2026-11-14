@@ -1,0 +1,535 @@
+{
+ "archetype": "adult-male",
+ "build": {
+  "seconds": 8.4,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.3,
+   "lod": 0.5,
+   "shape": 3.2,
+   "texture": 4.4
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-male-v1.glb",
+ "envelopeGate": {
+  "clips": 12,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0248,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.267,
+ "envelopes": {
+  "carry_bundle_walk": {
+   "max": [
+    0.541,
+    1.821,
+    0.903
+   ],
+   "min": [
+    -0.612,
+    -0.42,
+    -0.898
+   ]
+  },
+  "idle": {
+   "max": [
+    0.46,
+    1.775,
+    0.515
+   ],
+   "min": [
+    -0.433,
+    -0.174,
+    -0.512
+   ]
+  },
+  "sit": {
+   "max": [
+    0.503,
+    1.328,
+    0.401
+   ],
+   "min": [
+    -0.454,
+    -0.174,
+    -0.859
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.707,
+    1.847,
+    0.901
+   ],
+   "min": [
+    -0.565,
+    -0.427,
+    -1.111
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.719,
+    1.865,
+    0.903
+   ],
+   "min": [
+    -0.62,
+    -0.42,
+    -1.114
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.519,
+    1.794,
+    0.615
+   ],
+   "min": [
+    -0.459,
+    -0.174,
+    -0.512
+   ]
+  },
+  "walk_c": {
+   "max": [
+    0.556,
+    1.802,
+    0.908
+   ],
+   "min": [
+    -0.514,
+    -0.403,
+    -0.914
+   ]
+  },
+  "walk_c_start": {
+   "max": [
+    0.528,
+    1.798,
+    0.916
+   ],
+   "min": [
+    -0.482,
+    -0.359,
+    -0.627
+   ]
+  },
+  "walk_c_stop": {
+   "max": [
+    0.529,
+    1.792,
+    0.799
+   ],
+   "min": [
+    -0.459,
+    -0.271,
+    -0.647
+   ]
+  },
+  "work_bundle_straw": {
+   "max": [
+    0.565,
+    1.124,
+    0.64
+   ],
+   "min": [
+    -0.549,
+    -0.228,
+    -0.577
+   ]
+  },
+  "work_bundle_straw_enter": {
+   "max": [
+    0.669,
+    1.923,
+    0.872
+   ],
+   "min": [
+    -0.522,
+    -0.544,
+    -0.794
+   ]
+  },
+  "work_bundle_straw_exit": {
+   "max": [
+    0.669,
+    1.923,
+    0.872
+   ],
+   "min": [
+    -0.522,
+    -0.544,
+    -0.794
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.215,
+  "lipGapMm": {
+   "aa": 15.2,
+   "full": 18.6,
+   "rest": 0.4
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.53,
+   "r": 7.53
+  },
+  "upperLidClosed": 0.464,
+  "visibilityPasses": [
+   {
+    "l": 32,
+    "r": 52,
+    "upper": 0.464
+   },
+   {
+    "l": 6,
+    "r": 17,
+    "upper": 0.464
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.464
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-thatcher.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.234,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   902,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3449,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "greying-fair",
+  "facialHair": "short-beard",
+  "style": "short-tousled"
+ },
+ "headwear": "hood",
+ "headwearGate": {
+  "headwear": "hood",
+  "pass": true,
+  "scalpCovered": 1,
+  "scalpRays": 938,
+  "shells": {
+   "Hood": {
+    "faces": 380,
+    "islands": 2,
+    "maxReachRadii": 1.756,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#6a5a48",
+  "shape": "liripipe",
+  "tone": "secondary"
+ },
+ "householdId": "ealdholt-healer-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.68,
+  "coreMaxCm": 1.68,
+  "coreMeanCm": 0.71,
+  "coreWorstJoint": "calf_l"
+ },
+ "label": "Thatcher",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 245608,
+  "fileMiB": 0.234,
+  "headTriangles": 902,
+  "images": [
+   {
+    "bytes": 25188,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3449,
+  "vertices": 3407
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-adult-male-v1",
+  "rate": 1.038,
+  "roleClips": [
+   "work_bundle_straw",
+   "carry_bundle_walk"
+  ],
+  "talk": "talk_b",
+  "walk": "walk_c"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "long-tunic",
+  "kit": "field-tunic",
+  "palette": {
+   "accent": "russet",
+   "main": "undyed-grey",
+   "secondary": "undyed-brown"
+  },
+  "wear": "worn"
+ },
+ "placementScale": 0.9647,
+ "presentation": {
+  "clips": {
+   "carry_bundle_walk": {
+    "held": [
+     {
+      "bone": "spine_03",
+      "kit": "textile",
+      "matrix": [
+       0.9993,
+       -0.0301,
+       0.0213,
+       0,
+       0.0312,
+       0.9981,
+       -0.0529,
+       0,
+       -0.0197,
+       0.0535,
+       0.9984,
+       0,
+       0,
+       0.0833,
+       0.2702,
+       1
+      ],
+      "node": "prop_linen_bundle",
+      "prop": "linen-bundle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_bundle_straw": {
+    "held": [],
+    "hidesRest": [
+     "osier-bundle"
+    ],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "farm",
+      "matrix": [
+       0,
+       0,
+       -1,
+       0,
+       0,
+       1,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.085,
+       0.38,
+       1
+      ],
+      "node": "prop_straw_bundle",
+      "prop": "straw-bundle"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "farm": "crowd-v1/props/crowd-props-farm-v1.glb",
+   "textile": "crowd-v1/props/crowd-props-textile-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [
+   {
+    "bone": "spine_03",
+    "kit": "textile",
+    "matrix": [
+     0.852525,
+     0.516656,
+     0.079172,
+     0,
+     -0.522687,
+     0.842688,
+     0.129133,
+     0,
+     0,
+     -0.151472,
+     0.988462,
+     0,
+     0,
+     -0.110636,
+     -0.136267,
+     1
+    ],
+    "node": "prop_osier_bundle",
+    "prop": "osier-bundle"
+   }
+  ],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "osier-bundle",
+   "kit": "textile",
+   "socket": "back",
+   "source": "project-original"
+  },
+  {
+   "id": "straw-bundle",
+   "kit": "farm",
+   "socket": "both-hands",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 245608,
+  "sha256": "798bb6ba5533cebc5b68a999d01cd5028bed04b6eb4ee727101aca3b8e216ec8"
+ },
+ "recipeSha256": "baf57e932eed752ebbad3ca7dc0155fc7d24a34f05faaf93f26aed21a2aef6d5",
+ "referenceStatureCm": 173.5,
+ "residentId": "ealdholt-thatcher",
+ "restRadiusMetres": 0.597,
+ "roleId": "thatcher",
+ "statureCm": 167,
+ "status": "working-placeholder"
+}

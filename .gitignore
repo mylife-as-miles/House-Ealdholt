@@ -1,0 +1,28 @@
+node_modules/
+test-node-modules
+**/node_modules/
+**/dist/
+private-assets/
+.env*
+*.tsbuildinfo
+# Restricted village imagery and user-supplied soundtrack are obtained from private Crownfall.
+main game/public/assets/legacy/ealdholt-loading.webp
+main game/public/audio/soundtrack/*.mp3
+# Unrelated Crownfall products and their media are not part of this standalone.
+main game/public/video/
+main game/public/models/
+main game/public/quest/
+main game/public/assets/chapters/
+main game/public/assets/chronicles/
+main game/public/assets/environments/
+main game/public/assets/home/
+main game/public/assets/launch/
+main game/public/assets/play/
+main game/public/assets/transitions/
+main game/public/fonts/locales/
+web/src/assets/audio/
+web/src/assets/chess/
+main game/artifacts/
+main game/public/assets/creature.webp
+main game/public/assets/reference.jpg
+main game/public/favicon.png

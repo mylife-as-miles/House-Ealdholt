@@ -1,0 +1,693 @@
+{
+ "archetype": "adolescent",
+ "build": {
+  "seconds": 8.2,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.4,
+   "shape": 3.9,
+   "texture": 3.7
+  }
+ },
+ "clipLibrary": "crowd-clips-adolescent-v1.glb",
+ "envelopeGate": {
+  "clips": 15,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0187,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.167,
+ "envelopes": {
+  "carry_bundle_walk": {
+   "max": [
+    0.428,
+    1.626,
+    0.772
+   ],
+   "min": [
+    -0.502,
+    -0.33,
+    -0.748
+   ]
+  },
+  "idle": {
+   "max": [
+    0.328,
+    1.57,
+    0.477
+   ],
+   "min": [
+    -0.305,
+    -0.107,
+    -0.42
+   ]
+  },
+  "sit": {
+   "max": [
+    0.381,
+    1.194,
+    0.327
+   ],
+   "min": [
+    -0.342,
+    -0.107,
+    -0.744
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.57,
+    1.636,
+    0.761
+   ],
+   "min": [
+    -0.554,
+    -0.306,
+    -0.921
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.616,
+    1.654,
+    0.763
+   ],
+   "min": [
+    -0.622,
+    -0.298,
+    -0.924
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.38,
+    1.593,
+    0.61
+   ],
+   "min": [
+    -0.427,
+    -0.107,
+    -0.419
+   ]
+  },
+  "walk_b": {
+   "max": [
+    0.412,
+    1.595,
+    0.766
+   ],
+   "min": [
+    -0.346,
+    -0.351,
+    -0.758
+   ]
+  },
+  "walk_b_start": {
+   "max": [
+    0.343,
+    1.588,
+    0.787
+   ],
+   "min": [
+    -0.322,
+    -0.324,
+    -0.51
+   ]
+  },
+  "walk_b_stop": {
+   "max": [
+    0.355,
+    1.581,
+    0.68
+   ],
+   "min": [
+    -0.315,
+    -0.216,
+    -0.61
+   ]
+  },
+  "work_read": {
+   "max": [
+    0.365,
+    1.547,
+    0.464
+   ],
+   "min": [
+    -0.429,
+    -0.106,
+    -0.41
+   ]
+  },
+  "work_read_enter": {
+   "max": [
+    0.456,
+    1.681,
+    0.491
+   ],
+   "min": [
+    -0.441,
+    -0.107,
+    -0.41
+   ]
+  },
+  "work_read_exit": {
+   "max": [
+    0.457,
+    1.681,
+    0.491
+   ],
+   "min": [
+    -0.441,
+    -0.107,
+    -0.41
+   ]
+  },
+  "work_write": {
+   "max": [
+    0.376,
+    1.059,
+    0.326
+   ],
+   "min": [
+    -0.484,
+    -0.106,
+    -0.744
+   ]
+  },
+  "work_write_enter": {
+   "max": [
+    0.453,
+    1.323,
+    0.326
+   ],
+   "min": [
+    -0.407,
+    -0.106,
+    -0.744
+   ]
+  },
+  "work_write_exit": {
+   "max": [
+    0.453,
+    1.323,
+    0.326
+   ],
+   "min": [
+    -0.407,
+    -0.106,
+    -0.744
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.66,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.227,
+  "lipGapMm": {
+   "aa": 15.5,
+   "full": 19,
+   "rest": 0.5
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 9.97,
+   "r": 9.93
+  },
+  "upperLidClosed": 0.569,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.569
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-hall-page.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.227,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   922,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3416,
+   4500,
+   true
+  ]
+ },
+ "group": "children-apprentices",
+ "hair": {
+  "colour": "mid-brown",
+  "facialHair": "none",
+  "style": "curly-short"
+ },
+ "headwear": "none",
+ "headwearGate": {
+  "headwear": "none",
+  "pass": true
+ },
+ "headwearStyle": {
+  "colour": null,
+  "shape": "plain",
+  "tone": "none"
+ },
+ "householdId": "ealdholt-hall-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.55,
+  "coreMaxCm": 1.55,
+  "coreMeanCm": 0.71,
+  "coreWorstJoint": "hips"
+ },
+ "label": "Hall page",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 237736,
+  "fileMiB": 0.227,
+  "headTriangles": 922,
+  "images": [
+   {
+    "bytes": 27262,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3416,
+  "vertices": 3229
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-adolescent-v1",
+  "rate": 1.007,
+  "roleClips": [
+   "work_write",
+   "work_read",
+   "carry_bundle_walk"
+  ],
+  "talk": "talk_b",
+  "walk": "walk_b"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "standard",
+  "kit": "hall-livery",
+  "palette": {
+   "accent": "ochre",
+   "main": "russet",
+   "secondary": "undyed-brown"
+  },
+  "wear": "clean"
+ },
+ "placementScale": 0.9494,
+ "presentation": {
+  "clips": {
+   "carry_bundle_walk": {
+    "held": [
+     {
+      "bone": "spine_03",
+      "kit": "textile",
+      "matrix": [
+       0.8682,
+       -0.0102,
+       0.0261,
+       0,
+       0.0122,
+       0.866,
+       -0.0659,
+       0,
+       -0.0253,
+       0.0663,
+       0.8657,
+       0,
+       0,
+       0.0633,
+       0.2254,
+       1
+      ],
+      "node": "prop_linen_bundle",
+      "prop": "linen-bundle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.8527,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3445,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.8527,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3445,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.8527,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3445,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_read": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.6479,
+       0.2916,
+       -0.4996,
+       0,
+       0.0786,
+       -0.7876,
+       -0.3577,
+       0,
+       -0.5731,
+       0.2216,
+       -0.6139,
+       0,
+       0.052,
+       0.0866,
+       -0.0097,
+       1
+      ],
+      "node": "prop_book",
+      "prop": "book"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_read_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.6479,
+       0.2916,
+       -0.4996,
+       0,
+       0.0786,
+       -0.7876,
+       -0.3577,
+       0,
+       -0.5731,
+       0.2216,
+       -0.6139,
+       0,
+       0.052,
+       0.0866,
+       -0.0097,
+       1
+      ],
+      "node": "prop_book",
+      "prop": "book"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_read_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.6479,
+       0.2916,
+       -0.4996,
+       0,
+       0.0786,
+       -0.7876,
+       -0.3577,
+       0,
+       -0.5731,
+       0.2216,
+       -0.6139,
+       0,
+       0.052,
+       0.0866,
+       -0.0097,
+       1
+      ],
+      "node": "prop_book",
+      "prop": "book"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_write": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       -0.3767,
+       0.4169,
+       0.6624,
+       0,
+       -0.0663,
+       -0.7494,
+       0.434,
+       0,
+       0.7798,
+       0.1377,
+       0.3568,
+       0,
+       -0.0208,
+       0.1143,
+       0.0946,
+       1
+      ],
+      "node": "prop_wax_tablet",
+      "prop": "wax-tablet"
+     }
+    ],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.8527,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3445,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_write_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       -0.3767,
+       0.4169,
+       0.6624,
+       0,
+       -0.0663,
+       -0.7494,
+       0.434,
+       0,
+       0.7798,
+       0.1377,
+       0.3568,
+       0,
+       -0.0208,
+       0.1143,
+       0.0946,
+       1
+      ],
+      "node": "prop_wax_tablet",
+      "prop": "wax-tablet"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_write_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       -0.3767,
+       0.4169,
+       0.6624,
+       0,
+       -0.0663,
+       -0.7494,
+       0.434,
+       0,
+       0.7798,
+       0.1377,
+       0.3568,
+       0,
+       -0.0208,
+       0.1143,
+       0.0946,
+       1
+      ],
+      "node": "prop_wax_tablet",
+      "prop": "wax-tablet"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "letters-and-care": "crowd-v1/props/crowd-props-letters-and-care-v1.glb",
+   "textile": "crowd-v1/props/crowd-props-textile-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "wax-tablet",
+   "kit": "letters-and-care",
+   "socket": "hand_l",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 237736,
+  "sha256": "6b1ef6e24d2c30c336455d07aa8ec573c320ff6ad0032b44d196a3784a479fa9"
+ },
+ "recipeSha256": "282569a99724a80062fdca327c8518cdba37f709916f50644850e8be43091590",
+ "referenceStatureCm": 150.7,
+ "residentId": "ealdholt-hall-page",
+ "restRadiusMetres": 0.497,
+ "roleId": "hall-page",
+ "statureCm": 142.9,
+ "status": "working-placeholder"
+}

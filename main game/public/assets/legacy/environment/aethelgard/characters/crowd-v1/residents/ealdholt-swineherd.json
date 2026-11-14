@@ -1,0 +1,557 @@
+{
+ "archetype": "adult-male",
+ "build": {
+  "seconds": 8.8,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.4,
+   "shape": 3.2,
+   "texture": 4.8
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-male-v1.glb",
+ "envelopeGate": {
+  "clips": 12,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0244,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.273,
+ "envelopes": {
+  "carry_bucket_walk": {
+   "max": [
+    0.486,
+    1.811,
+    0.899
+   ],
+   "min": [
+    -0.459,
+    -0.406,
+    -0.892
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.436,
+    1.8,
+    0.502
+   ],
+   "min": [
+    -0.32,
+    -0.175,
+    -0.427
+   ]
+  },
+  "sit": {
+   "max": [
+    0.49,
+    1.336,
+    0.39
+   ],
+   "min": [
+    -0.424,
+    -0.175,
+    -0.769
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.696,
+    1.846,
+    1.071
+   ],
+   "min": [
+    -0.646,
+    -0.522,
+    -1.139
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.708,
+    1.862,
+    1.074
+   ],
+   "min": [
+    -0.693,
+    -0.513,
+    -1.142
+   ]
+  },
+  "talk": {
+   "max": [
+    0.659,
+    1.8,
+    0.625
+   ],
+   "min": [
+    -0.514,
+    -0.175,
+    -0.427
+   ]
+  },
+  "walk_b": {
+   "max": [
+    0.507,
+    1.806,
+    0.903
+   ],
+   "min": [
+    -0.381,
+    -0.388,
+    -0.922
+   ]
+  },
+  "walk_b_start": {
+   "max": [
+    0.424,
+    1.802,
+    0.859
+   ],
+   "min": [
+    -0.362,
+    -0.266,
+    -0.631
+   ]
+  },
+  "walk_b_stop": {
+   "max": [
+    0.438,
+    1.789,
+    0.758
+   ],
+   "min": [
+    -0.343,
+    -0.252,
+    -0.717
+   ]
+  },
+  "work_herd": {
+   "max": [
+    0.915,
+    1.787,
+    0.852
+   ],
+   "min": [
+    -0.54,
+    -0.175,
+    -0.481
+   ]
+  },
+  "work_herd_enter": {
+   "max": [
+    0.533,
+    1.81,
+    0.698
+   ],
+   "min": [
+    -0.517,
+    -0.179,
+    -0.474
+   ]
+  },
+  "work_herd_exit": {
+   "max": [
+    0.533,
+    1.81,
+    0.701
+   ],
+   "min": [
+    -0.517,
+    -0.179,
+    -0.477
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.59,
+   "r": -0.59
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.199,
+  "lipGapMm": {
+   "aa": 14.3,
+   "full": 17.6,
+   "rest": 0.3
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 8.11,
+   "r": 8.11
+  },
+  "upperLidClosed": 0.535,
+  "visibilityPasses": [
+   {
+    "l": 27,
+    "r": 8,
+    "upper": 0.535
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.535
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-swineherd.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.228,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   932,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3371,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "light-brown",
+  "facialHair": "none",
+  "style": "short-tousled"
+ },
+ "headwear": "hood",
+ "headwearGate": {
+  "headwear": "hood",
+  "pass": true,
+  "scalpCovered": 0.9978,
+  "scalpRays": 913,
+  "shells": {
+   "Hood": {
+    "faces": 379,
+    "islands": 2,
+    "maxReachRadii": 1.748,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#6a5a48",
+  "shape": "plain",
+  "tone": "secondary"
+ },
+ "householdId": "ealdholt-butcher-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.25,
+  "coreMaxCm": 1.25,
+  "coreMeanCm": 0.58,
+  "coreWorstJoint": "calf_l"
+ },
+ "label": "Swineherd",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 239040,
+  "fileMiB": 0.228,
+  "headTriangles": 932,
+  "images": [
+   {
+    "bytes": 25302,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3371,
+  "vertices": 3291
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-male-v1",
+  "rate": 0.997,
+  "roleClips": [
+   "work_herd",
+   "carry_bucket_walk"
+  ],
+  "talk": "talk",
+  "walk": "walk_b"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "standard",
+  "kit": "herder-cloak",
+  "palette": {
+   "accent": "russet",
+   "main": "undyed-brown",
+   "secondary": "undyed-brown"
+  },
+  "wear": "muddy-hems"
+ },
+ "placementScale": 1.0239,
+ "presentation": {
+  "clips": {
+   "carry_bucket_walk": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.0521,
+       -0.9937,
+       0.099,
+       0,
+       -0.8146,
+       -0.0996,
+       -0.5714,
+       0,
+       -0.0228,
+       0.0914,
+       0.0109,
+       1
+      ],
+      "node": "prop_bucket",
+      "prop": "bucket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_herd": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.8146,
+       0.0996,
+       0.5714,
+       0,
+       0.0521,
+       -0.9937,
+       0.099,
+       0,
+       -0.0635,
+       0.0864,
+       -0.0177,
+       1
+      ],
+      "node": "prop_crook",
+      "prop": "crook"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_herd_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.8146,
+       0.0996,
+       0.5714,
+       0,
+       0.0521,
+       -0.9937,
+       0.099,
+       0,
+       -0.0635,
+       0.0864,
+       -0.0177,
+       1
+      ],
+      "node": "prop_crook",
+      "prop": "crook"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_herd_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.8146,
+       0.0996,
+       0.5714,
+       0,
+       0.0521,
+       -0.9937,
+       0.099,
+       0,
+       -0.0635,
+       0.0864,
+       -0.0177,
+       1
+      ],
+      "node": "prop_crook",
+      "prop": "crook"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "farm": "crowd-v1/props/crowd-props-farm-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "walking-staff",
+   "kit": "everyday",
+   "socket": "hand_r",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 239040,
+  "sha256": "c3412424009968e83dde87bc6d0119b2dd5f12cd27dd641edc84b984ef985678"
+ },
+ "recipeSha256": "40625c2e25deba59c9b31bf260b0b372b344820ac25540c19b689b7b13e71158",
+ "referenceStatureCm": 173.5,
+ "residentId": "ealdholt-swineherd",
+ "restRadiusMetres": 0.603,
+ "roleId": "swineherd",
+ "statureCm": 178.3,
+ "status": "working-placeholder"
+}

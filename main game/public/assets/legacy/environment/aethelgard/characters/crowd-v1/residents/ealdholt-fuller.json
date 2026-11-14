@@ -1,0 +1,506 @@
+{
+ "archetype": "adult-male",
+ "build": {
+  "seconds": 8,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.3,
+   "lod": 0.5,
+   "shape": 3.2,
+   "texture": 3.9
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-male-v1.glb",
+ "envelopeGate": {
+  "clips": 12,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0192,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.273,
+ "envelopes": {
+  "carry_bundle_walk": {
+   "max": [
+    0.531,
+    1.806,
+    0.837
+   ],
+   "min": [
+    -0.559,
+    -0.382,
+    -0.875
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.48,
+    1.78,
+    0.594
+   ],
+   "min": [
+    -0.305,
+    -0.102,
+    -0.42
+   ]
+  },
+  "sit": {
+   "max": [
+    0.472,
+    1.316,
+    0.378
+   ],
+   "min": [
+    -0.403,
+    -0.276,
+    -0.759
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.673,
+    1.817,
+    1.079
+   ],
+   "min": [
+    -0.635,
+    -0.53,
+    -1.139
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.685,
+    1.831,
+    1.082
+   ],
+   "min": [
+    -0.68,
+    -0.519,
+    -1.143
+   ]
+  },
+  "talk": {
+   "max": [
+    0.643,
+    1.779,
+    0.611
+   ],
+   "min": [
+    -0.509,
+    -0.102,
+    -0.42
+   ]
+  },
+  "walk_c": {
+   "max": [
+    0.529,
+    1.786,
+    0.856
+   ],
+   "min": [
+    -0.459,
+    -0.369,
+    -0.89
+   ]
+  },
+  "walk_c_start": {
+   "max": [
+    0.496,
+    1.782,
+    0.849
+   ],
+   "min": [
+    -0.445,
+    -0.33,
+    -0.599
+   ]
+  },
+  "walk_c_stop": {
+   "max": [
+    0.503,
+    1.777,
+    0.765
+   ],
+   "min": [
+    -0.441,
+    -0.245,
+    -0.624
+   ]
+  },
+  "work_tread_cloth": {
+   "max": [
+    0.548,
+    1.717,
+    0.803
+   ],
+   "min": [
+    -0.507,
+    -0.152,
+    -0.489
+   ]
+  },
+  "work_tread_cloth_enter": {
+   "max": [
+    0.686,
+    1.841,
+    0.825
+   ],
+   "min": [
+    -0.651,
+    -0.19,
+    -0.593
+   ]
+  },
+  "work_tread_cloth_exit": {
+   "max": [
+    0.679,
+    1.839,
+    0.825
+   ],
+   "min": [
+    -0.643,
+    -0.189,
+    -0.594
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.8,
+   "r": -0.8
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.216,
+  "lipGapMm": {
+   "aa": 15.2,
+   "full": 18.8,
+   "rest": 0.2
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.44,
+   "r": 7.44
+  },
+  "upperLidClosed": 0.493,
+  "visibilityPasses": [
+   {
+    "l": 60,
+    "r": 69,
+    "upper": 0.469
+   },
+   {
+    "l": 21,
+    "r": 28,
+    "upper": 0.469
+   },
+   {
+    "l": 0,
+    "r": 2,
+    "upper": 0.469
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.493
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-fuller.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.226,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   909,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3413,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "greying-black",
+  "facialHair": "moustache",
+  "style": "balding-crop"
+ },
+ "headwear": "coif",
+ "headwearGate": {
+  "headwear": "coif",
+  "pass": true,
+  "scalpCovered": 1,
+  "scalpRays": 929,
+  "shells": {
+   "Coif": {
+    "faces": 380,
+    "islands": 1,
+    "maxReachRadii": 0.981,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#3e5876",
+  "shape": "chin-tied",
+  "tone": "accent"
+ },
+ "householdId": "ealdholt-weaver-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.84,
+  "coreMaxCm": 1.84,
+  "coreMeanCm": 0.61,
+  "coreWorstJoint": "calf_l"
+ },
+ "label": "Fuller",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 237348,
+  "fileMiB": 0.226,
+  "headTriangles": 909,
+  "images": [
+   {
+    "bytes": 26840,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3413,
+  "vertices": 3222
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-male-v1",
+  "rate": 1.009,
+  "roleClips": [
+   "work_tread_cloth",
+   "carry_bundle_walk"
+  ],
+  "talk": "talk",
+  "walk": "walk_c"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "long-bib",
+  "kit": "workshop-apron-m",
+  "palette": {
+   "accent": "woad-blue",
+   "main": "weld-green",
+   "secondary": "walnut-brown"
+  },
+  "wear": "stained"
+ },
+ "placementScale": 0.9609,
+ "presentation": {
+  "clips": {
+   "carry_bundle_walk": {
+    "held": [
+     {
+      "bone": "spine_03",
+      "kit": "textile",
+      "matrix": [
+       0.9993,
+       -0.0301,
+       0.0213,
+       0,
+       0.0312,
+       0.9981,
+       -0.0529,
+       0,
+       -0.0197,
+       0.0535,
+       0.9984,
+       0,
+       0,
+       0.0833,
+       0.2702,
+       1
+      ],
+      "node": "prop_linen_bundle",
+      "prop": "linen-bundle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_tread_cloth": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1
+      ],
+      "node": "prop_fulling_trough",
+      "prop": "fulling-trough"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "textile": "crowd-v1/props/crowd-props-textile-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "fulling-trough",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 237348,
+  "sha256": "56e8518f033c952ea08001a39fe510e2b0ed1e8f20888841e229b67eaa467ac0"
+ },
+ "recipeSha256": "759ff634b1cadc4f6a70fa3173be40044d6caefbcdf619c098d7d8a3606b1d4e",
+ "referenceStatureCm": 173.5,
+ "residentId": "ealdholt-fuller",
+ "restRadiusMetres": 0.603,
+ "roleId": "fuller",
+ "statureCm": 166.6,
+ "status": "working-placeholder"
+}

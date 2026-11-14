@@ -1,0 +1,6 @@
+html:lang(zh-CN) .menu-shell,
+html:lang(ja) .menu-shell {
+  font-family: "Noto Sans CJK SC", "Noto Sans CJK JP", "Microsoft YaHei", "Yu Gothic", "Meiryo", sans-serif;
+}
+html:lang(zh-CN) .menu-shell :is(button, select, input, h1, h2, p, .nav-item),
+html:lang(ja) .menu-shell :is(button, select, input, h1, h2, p, .nav-item) { font-family: inherit; }

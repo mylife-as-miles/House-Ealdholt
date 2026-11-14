@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "set": "ealdholt-woodland-ground",
+  "layer": "bank",
+  "assetId": "brown_mud_rocks_01",
+  "name": "Brown Mud Rocks 01",
+  "sourceUrl": "https://polyhaven.com/a/brown_mud_rocks_01",
+  "licence": "CC0-1.0",
+  "authors": {
+    "Rob Tuytel": "All"
+  },
+  "tileMetres": 1.3,
+  "laasWeight": "soil-wet",
+  "modified": true,
+  "intakeDate": "2026-11-06",
+  "roles": [
+    "albedo",
+    "normal",
+    "orm"
+  ],
+  "colour": {
+    "albedo": "sRGB RGB; opaque, untinted source photograph",
+    "normal": "OpenGL tangent-space +Y; linear; vectors renormalized",
+    "orm": "Linear R=source AO, G=remapped roughness (provenance.json), B=source metallic",
+    "orientation": "Source rows preserved; configure flipY=false for every map"
+  },
+  "profiles": {
+    "desktop": {
+      "meanLuminance": 0.08185723354284011,
+      "files": {
+        "albedo": {
+          "file": "bank-desktop-albedo-1024.webp",
+          "size": 1024,
+          "bytes": 1849536,
+          "sha256": "5d9149257b26d326e0a95f041ee488ed6913b5c588caad5a48383f94481b183a"
+        },
+        "normal": {
+          "file": "bank-desktop-normal-1024.webp",
+          "size": 1024,
+          "bytes": 2508962,
+          "sha256": "3d2e16c93f5cf040da16e29ccdce4186683496f2201b5b3bea6f313f7940db9d"
+        },
+        "orm": {
+          "file": "bank-desktop-orm-1024.webp",
+          "size": 1024,
+          "bytes": 2010678,
+          "sha256": "c126cc9f1be82b4317ba99c4880794144f2762141eccdc9671d0a948721bbae8"
+        }
+      },
+      "gpuBytesWithMipsEstimate": 16777212,
+      "analysis": {
+        "meanLuminance": 0.08185723,
+        "meanSrgb8": [
+          90,
+          79,
+          63
+        ],
+        "meanColourHue": 35.56,
+        "meanSaturation": 0.3759,
+        "shares": {
+          "green": 0.0116,
+          "olive": 0.0212,
+          "warm": 0.9252,
+          "neutral": 0.0413,
+          "other": 0.0007
+        },
+        "luminanceWeightedShares": {
+          "green": 0.0156,
+          "olive": 0.0238,
+          "warm": 0.8954,
+          "neutral": 0.0651,
+          "other": 0.0001
+        },
+        "luminancePercentiles": {
+          "p05": 0.009644,
+          "p25": 0.029419,
+          "p50": 0.057495,
+          "p75": 0.10437,
+          "p95": 0.237915
+        },
+        "linearChromaticity": [
+          0.4456,
+          0.342,
+          0.2124
+        ],
+        "valleyGrassIndex": -0.2922,
+        "macroVariation": 0.1145,
+        "macroLuminanceVariation16": 0.1729,
+        "macroChromaVariation8": 0.0505,
+        "macroChromaVariation16": 0.0668
+      }
+    },
+    "quest": {
+      "meanLuminance": 0.08186397595916614,
+      "files": {
+        "albedo": {
+          "file": "bank-quest-albedo-512.webp",
+          "size": 512,
+          "bytes": 480556,
+          "sha256": "1d9865cf240ec006a6d4d7ce312504de4c98e0f63934bc81872b27de93c75903"
+        },
+        "normal": {
+          "file": "bank-quest-normal-256.webp",
+          "size": 256,
+          "bytes": 155200,
+          "sha256": "cbf6d759595f64c1be38ef980971551ff073c0469459db2d458741403d241013"
+        },
+        "orm": {
+          "file": "bank-quest-orm-256.webp",
+          "size": 256,
+          "bytes": 123098,
+          "sha256": "6a509a2c1016fea44aeff320c32dcc4c3ff72cf5ad5b1c6f70fdc6b48b3bed7f"
+        }
+      },
+      "gpuBytesWithMipsEstimate": 2097148
+    }
+  }
+}

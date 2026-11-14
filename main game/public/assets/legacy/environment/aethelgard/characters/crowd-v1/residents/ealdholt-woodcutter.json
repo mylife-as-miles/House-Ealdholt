@@ -1,0 +1,587 @@
+{
+ "archetype": "adult-male",
+ "build": {
+  "seconds": 7.5,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.3,
+   "lod": 0.5,
+   "shape": 3,
+   "texture": 3.5
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-male-v1.glb",
+ "envelopeGate": {
+  "clips": 12,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0224,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.262,
+ "envelopes": {
+  "carry_bundle_walk": {
+   "max": [
+    0.555,
+    1.797,
+    0.917
+   ],
+   "min": [
+    -0.569,
+    -0.371,
+    -0.908
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.438,
+    1.771,
+    0.528
+   ],
+   "min": [
+    -0.327,
+    -0.192,
+    -0.534
+   ]
+  },
+  "sit": {
+   "max": [
+    0.462,
+    1.307,
+    0.346
+   ],
+   "min": [
+    -0.49,
+    -0.192,
+    -0.883
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.689,
+    1.807,
+    0.949
+   ],
+   "min": [
+    -0.618,
+    -0.45,
+    -1.142
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.7,
+    1.821,
+    0.952
+   ],
+   "min": [
+    -0.66,
+    -0.441,
+    -1.145
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.509,
+    1.77,
+    0.6
+   ],
+   "min": [
+    -0.499,
+    -0.192,
+    -0.533
+   ]
+  },
+  "walk_c": {
+   "max": [
+    0.52,
+    1.777,
+    0.9
+   ],
+   "min": [
+    -0.466,
+    -0.402,
+    -0.92
+   ]
+  },
+  "walk_c_start": {
+   "max": [
+    0.489,
+    1.773,
+    0.811
+   ],
+   "min": [
+    -0.442,
+    -0.308,
+    -0.658
+   ]
+  },
+  "walk_c_stop": {
+   "max": [
+    0.509,
+    1.768,
+    0.714
+   ],
+   "min": [
+    -0.438,
+    -0.231,
+    -0.778
+   ]
+  },
+  "work_chop_wood": {
+   "max": [
+    0.659,
+    2.288,
+    1.068
+   ],
+   "min": [
+    -0.829,
+    -0.194,
+    -0.758
+   ]
+  },
+  "work_chop_wood_enter": {
+   "max": [
+    0.538,
+    1.83,
+    0.725
+   ],
+   "min": [
+    -0.428,
+    -0.196,
+    -0.592
+   ]
+  },
+  "work_chop_wood_exit": {
+   "max": [
+    0.538,
+    1.83,
+    0.725
+   ],
+   "min": [
+    -0.429,
+    -0.195,
+    -0.592
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.86,
+   "r": -0.74
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.197,
+  "lipGapMm": {
+   "aa": 13.4,
+   "full": 16.5,
+   "rest": 0.3
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.2,
+   "r": 7.2
+  },
+  "upperLidClosed": 0.495,
+  "visibilityPasses": [
+   {
+    "l": 28,
+    "r": 69,
+    "upper": 0.472
+   },
+   {
+    "l": 1,
+    "r": 28,
+    "upper": 0.472
+   },
+   {
+    "l": 0,
+    "r": 1,
+    "upper": 0.472
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.495
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-woodcutter.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.226,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   916,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3509,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "greying-fair",
+  "facialHair": "moustache",
+  "style": "cropped"
+ },
+ "headwear": "none",
+ "headwearGate": {
+  "headwear": "none",
+  "pass": true
+ },
+ "headwearStyle": {
+  "colour": null,
+  "shape": "plain",
+  "tone": "none"
+ },
+ "householdId": "ealdholt-cottage-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.96,
+  "coreMaxCm": 1.33,
+  "coreMeanCm": 0.81,
+  "coreWorstJoint": "foot_l"
+ },
+ "label": "Woodcutter",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 237228,
+  "fileMiB": 0.226,
+  "headTriangles": 916,
+  "images": [
+   {
+    "bytes": 24134,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3509,
+  "vertices": 3263
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-male-v1",
+  "rate": 0.982,
+  "roleClips": [
+   "work_chop_wood",
+   "carry_bundle_walk"
+  ],
+  "talk": "talk_b",
+  "walk": "walk_c"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "long-tunic",
+  "kit": "field-tunic",
+  "palette": {
+   "accent": "madder-rose",
+   "main": "undyed-grey",
+   "secondary": "undyed-grey"
+  },
+  "wear": "worn"
+ },
+ "placementScale": 1.0907,
+ "presentation": {
+  "clips": {
+   "carry_bundle_walk": {
+    "held": [
+     {
+      "bone": "spine_03",
+      "kit": "textile",
+      "matrix": [
+       0.9993,
+       -0.0301,
+       0.0213,
+       0,
+       0.0312,
+       0.9981,
+       -0.0529,
+       0,
+       -0.0197,
+       0.0535,
+       0.9984,
+       0,
+       0,
+       0.0833,
+       0.2702,
+       1
+      ],
+      "node": "prop_linen_bundle",
+      "prop": "linen-bundle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_chop_wood": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       -0.0521,
+       0.9937,
+       -0.099,
+       0,
+       0.8146,
+       0.0996,
+       0.5714,
+       0,
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.1646,
+       0.1143,
+       0.1423,
+       1
+      ],
+      "node": "prop_axe",
+      "prop": "axe"
+     }
+    ],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.9672,
+       1
+      ],
+      "node": "prop_chopping_block",
+      "prop": "chopping-block"
+     }
+    ]
+   },
+   "work_chop_wood_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       -0.0521,
+       0.9937,
+       -0.099,
+       0,
+       0.8146,
+       0.0996,
+       0.5714,
+       0,
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.1646,
+       0.1143,
+       0.1423,
+       1
+      ],
+      "node": "prop_axe",
+      "prop": "axe"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_chop_wood_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       -0.0521,
+       0.9937,
+       -0.099,
+       0,
+       0.8146,
+       0.0996,
+       0.5714,
+       0,
+       0.5777,
+       -0.0509,
+       -0.8147,
+       0,
+       0.1646,
+       0.1143,
+       0.1423,
+       1
+      ],
+      "node": "prop_axe",
+      "prop": "axe"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "craft": "crowd-v1/props/crowd-props-craft-v1.glb",
+   "textile": "crowd-v1/props/crowd-props-textile-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "axe",
+   "kit": "craft",
+   "socket": "hand_r",
+   "source": "project-original"
+  },
+  {
+   "id": "chopping-block",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 237228,
+  "sha256": "11ab351b793a9794f19a2350a05eec6998f94bcc69b5d0b89218c8e2183183e6"
+ },
+ "recipeSha256": "3797c8cd0fc4bd4fc39f7f24fea088a8296f02fdd61fa040d612bf1a144d1214",
+ "referenceStatureCm": 173.5,
+ "residentId": "ealdholt-woodcutter",
+ "restRadiusMetres": 0.592,
+ "roleId": "woodcutter",
+ "statureCm": 188,
+ "status": "working-placeholder"
+}

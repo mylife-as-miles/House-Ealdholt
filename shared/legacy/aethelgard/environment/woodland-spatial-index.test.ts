@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';import test from 'node:test';
+import {createWoodlandSpatialIndex,type WoodlandBounds} from './woodland-spatial-index';
+const identity=[1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1];
+const box=(min:number,max:number)=>new Float64Array([1,0,0,-min,-1,0,0,max,0,1,0,5,0,-1,0,5,0,0,1,5,0,0,-1,5]);
+const trees:readonly WoodlandBounds[]=[[-1,-1,-1,1,1,1],[99,-1,-1,101,1,1],[4,-1,-1,8,1,1]];
+test('cells reject distant actors while a crown crossing the view edge remains complete',()=>{const index=createWoodlandSpatialIndex(trees,16,0),r=index.select([box(-5,5)],identity);assert.deepEqual(Array.from(r.ids.slice(0,r.count)),[0,2]);assert.ok(r.testedActors<trees.length);assert.equal(index.total,3);});
+test('stereo views union source IDs once in stable order',()=>{const index=createWoodlandSpatialIndex(trees),r=index.select([box(-5,5),box(95,105)],identity);assert.deepEqual(Array.from(r.ids.slice(0,r.count)),[0,1,2]);});
+test('quality is a source prefix and repeated membership reuses result storage without upload changes',()=>{const index=createWoodlandSpatialIndex(trees),r=index.select([box(-5,5)],identity,1),ids=r.ids;assert.equal(r.count,1);assert.equal(r.changed,true);const next=index.select([box(-5,5)],identity,1);assert.equal(next,r);assert.equal(next.ids,ids);assert.equal(next.changed,false);index.invalidate();assert.equal(index.select([box(-5,5)],identity,1).changed,true);});
+test('root translation is transformed into the local frustum once',()=>{const index=createWoodlandSpatialIndex(trees),translated=[...identity];translated[12]=100;const r=index.select([box(95,105)],translated);assert.deepEqual(Array.from(r.ids.slice(0,r.count)),[0,2]);});
+test('invalid bounds, frame budgets and nonfinite planes are rejected',()=>{assert.throws(()=>createWoodlandSpatialIndex([[2,0,0,1,1,1]]),/bounds/);const index=createWoodlandSpatialIndex(trees);assert.throws(()=>index.select([],identity),/frame/);assert.throws(()=>index.select([box(-5,5)],identity,4),/frame/);const bad=box(-5,5);bad[0]=NaN;assert.throws(()=>index.select([bad],identity),/Nonfinite/);});

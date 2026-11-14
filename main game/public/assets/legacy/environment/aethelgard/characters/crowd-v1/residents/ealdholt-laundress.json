@@ -1,0 +1,580 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 8,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.5,
+   "shape": 3.5,
+   "texture": 3.6
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 12,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0144,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.188,
+ "envelopes": {
+  "carry_basket_walk": {
+   "max": [
+    0.517,
+    1.674,
+    0.759
+   ],
+   "min": [
+    -0.504,
+    -0.298,
+    -0.858
+   ]
+  },
+  "idle": {
+   "max": [
+    0.425,
+    1.63,
+    0.715
+   ],
+   "min": [
+    -0.368,
+    -0.167,
+    -0.611
+   ]
+  },
+  "sit": {
+   "max": [
+    0.448,
+    1.241,
+    0.422
+   ],
+   "min": [
+    -0.453,
+    -0.474,
+    -1.014
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.563,
+    1.691,
+    1.116
+   ],
+   "min": [
+    -0.527,
+    -0.685,
+    -1.212
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.566,
+    1.708,
+    1.119
+   ],
+   "min": [
+    -0.538,
+    -0.673,
+    -1.215
+   ]
+  },
+  "talk": {
+   "max": [
+    0.44,
+    1.653,
+    0.714
+   ],
+   "min": [
+    -0.416,
+    -0.167,
+    -0.611
+   ]
+  },
+  "walk_c": {
+   "max": [
+    0.526,
+    1.653,
+    0.78
+   ],
+   "min": [
+    -0.48,
+    -0.292,
+    -0.858
+   ]
+  },
+  "walk_c_start": {
+   "max": [
+    0.461,
+    1.646,
+    0.837
+   ],
+   "min": [
+    -0.43,
+    -0.217,
+    -0.714
+   ]
+  },
+  "walk_c_stop": {
+   "max": [
+    0.497,
+    1.646,
+    0.754
+   ],
+   "min": [
+    -0.419,
+    -0.25,
+    -0.743
+   ]
+  },
+  "work_wash_linen": {
+   "max": [
+    0.614,
+    1.258,
+    0.767
+   ],
+   "min": [
+    -0.541,
+    -0.599,
+    -0.75
+   ]
+  },
+  "work_wash_linen_enter": {
+   "max": [
+    0.718,
+    1.747,
+    1.096
+   ],
+   "min": [
+    -0.644,
+    -0.798,
+    -0.909
+   ]
+  },
+  "work_wash_linen_exit": {
+   "max": [
+    0.718,
+    1.747,
+    1.096
+   ],
+   "min": [
+    -0.644,
+    -0.798,
+    -0.909
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.59,
+   "r": -0.59
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.221,
+  "lipGapMm": {
+   "aa": 14.5,
+   "full": 17.7,
+   "rest": 0.8
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.66,
+   "r": 7.66
+  },
+  "upperLidClosed": 0.577,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.577
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-laundress.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.224,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   904,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3421,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "greying-auburn",
+  "facialHair": "none",
+  "style": "bun"
+ },
+ "headwear": "kerchief",
+ "headwearGate": {
+  "headwear": "kerchief",
+  "pass": true,
+  "shells": {
+   "Kerchief": {
+    "faces": 349,
+    "islands": 1,
+    "maxReachRadii": 1.054,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#3e5876",
+  "shape": "nape-tails",
+  "tone": "accent"
+ },
+ "householdId": "ealdholt-cottage-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.96,
+  "coreMaxCm": 1.75,
+  "coreMeanCm": 0.9,
+  "coreWorstJoint": "head"
+ },
+ "label": "Laundress",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 234912,
+  "fileMiB": 0.224,
+  "headTriangles": 904,
+  "images": [
+   {
+    "bytes": 29696,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3421,
+  "vertices": 3125
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 0.953,
+  "roleClips": [
+   "work_wash_linen",
+   "carry_basket_walk"
+  ],
+  "talk": "talk",
+  "walk": "walk_c"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "long-apron",
+  "kit": "field-kirtle",
+  "palette": {
+   "accent": "woad-blue",
+   "main": "weld-yellow",
+   "secondary": "undyed-cream"
+  },
+  "wear": "worn"
+ },
+ "placementScale": 1.0159,
+ "presentation": {
+  "clips": {
+   "carry_basket_walk": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.7116,
+       -0.3841,
+       0.4397,
+       0,
+       0.5259,
+       -0.1203,
+       0.7459,
+       0,
+       -0.2538,
+       0.8278,
+       0.3124,
+       0,
+       0.0519,
+       0.0759,
+       0.0796,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_wash_linen": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "workplace",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       -0.656,
+       -0.091,
+       -0.6393,
+       0,
+       -0.0226,
+       0.0792,
+       0.0082,
+       1
+      ],
+      "node": "prop_washing_board_beetle",
+      "prop": "washing-board"
+     }
+    ],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.4786,
+       1
+      ],
+      "node": "prop_washing_board",
+      "prop": "washing-board"
+     }
+    ]
+   },
+   "work_wash_linen_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "workplace",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       -0.656,
+       -0.091,
+       -0.6393,
+       0,
+       -0.0226,
+       0.0792,
+       0.0082,
+       1
+      ],
+      "node": "prop_washing_board_beetle",
+      "prop": "washing-board"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_wash_linen_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "workplace",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       -0.656,
+       -0.091,
+       -0.6393,
+       0,
+       -0.0226,
+       0.0792,
+       0.0082,
+       1
+      ],
+      "node": "prop_washing_board_beetle",
+      "prop": "washing-board"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "basket",
+   "kit": "everyday",
+   "socket": "hand_l",
+   "source": "polyhaven:wicker_basket_01"
+  },
+  {
+   "id": "washing-board",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 234912,
+  "sha256": "5f743e288b57b16c49640fe45e0f00278ee17338aad5e85d408ed6948fafbfb0"
+ },
+ "recipeSha256": "5c9f4965d49c62970501767783358d7b996d560b165b3ea89b12b5f854a18b93",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-laundress",
+ "restRadiusMetres": 0.518,
+ "roleId": "laundress",
+ "statureCm": 161,
+ "status": "working-placeholder"
+}

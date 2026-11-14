@@ -1,0 +1,617 @@
+/* Chronicles is a full-stage layer: it covers the menu stage, the main
+   navigation is hidden and inert, and its own header takes the navigation's
+   place. Its room background is opaque, so once its entrance has finished the
+   menu's stage layers beneath it stop compositing (see the end of this file). */
+.chronicles-screen {
+  --chronicles-accent: var(--menu-accent, #bf791a);
+  --chronicles-left: 8.229167cqw;
+  --chronicles-top: 19.5cqh;
+  --chronicles-bottom: 84.5cqh;
+  --chronicles-record-left: 66.40625cqw;
+  --chronicles-record-width: 27.34375cqw;
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  pointer-events: none;
+  color: #b5b2ac;
+  background: radial-gradient(ellipse 72% 64% at 52% 56%, #2a2116 0%, #16110b 58%, #0b0806 100%);
+}
+
+/* The stage fills the layer and fades in once its first frame is complete. */
+.chronicles-stage {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: auto;
+  transition: opacity 600ms cubic-bezier(.2, .65, .35, 1);
+}
+.chronicles-screen[data-load="ready"] .chronicles-stage { opacity: 1; }
+/* A stage that does not draw the shown collection rests behind it, receded. */
+.chronicles-screen[data-load="ready"] .chronicles-stage[data-stage-resting] { opacity: .34; }
+.chronicles-screen:is([data-load="flat"], [data-load="failed"]) .chronicles-stage { display: none; }
+.chronicles-screen:not([data-collection="atlas"]) .chronicles-stage { pointer-events: none; }
+.chronicles-stage-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: none;
+}
+.chronicles-stage-canvas[data-over="marker"] { cursor: pointer; }
+.chronicles-stage-canvas[data-dragging] { cursor: grabbing; }
+.chronicles-screen:has(.chronicles-stage:not([data-book-state="open"])) .chronicles-hotspots:not(.chronicles-hotspots--flat) { visibility: hidden; }
+.chronicles-book-replay { margin-left: 1cqw; }
+/* Light falls off toward the room's edges and the header. Behind the timeline
+   and the articles a scrim keeps their words legible over the stage; it is a
+   plain gradient whose opacity changes, never a filter on the stage. */
+.chronicles-shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, #0b0806e6 0%, #0b0806b3 14%, #0b080600 24%),
+    linear-gradient(0deg, #0b0806cc 0%, #0b080600 16%),
+    radial-gradient(ellipse 78% 72% at 50% 56%, #07050300 52%, #070503a6 100%);
+}
+.chronicles-shade:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background:
+    linear-gradient(90deg, #0b0806e0 0%, #0b0806b8 34%, #0b080600 62%),
+    linear-gradient(0deg, #0b0806d9 0%, #0b080600 42%);
+  transition: opacity 240ms ease;
+}
+.chronicles-screen:not([data-collection="atlas"]) .chronicles-shade:after { opacity: 1; }
+
+/* Loading: an orbit of two rings that turn on the compositor (transform only),
+   so they keep moving while the stage compiles, and a rule that fills with the
+   stage's reported progress. Its only name is the screen's approved title. */
+.chronicles-loading {
+  position: absolute;
+  left: 50%;
+  top: 53%;
+  display: grid;
+  justify-items: center;
+  gap: 3.2cqh;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: opacity 320ms ease, visibility 0s linear 320ms;
+}
+.chronicles-screen:not([data-load="loading"]) .chronicles-loading { opacity: 0; visibility: hidden; }
+.chronicles-failure {
+  position: absolute;
+  z-index: 2;
+  left: var(--chronicles-left);
+  right: var(--chronicles-left);
+  top: 16cqh;
+  margin: 0;
+  color: #dfd2b6;
+  font-size: max(1.05cqw, 11px);
+  line-height: 1.2;
+  pointer-events: none;
+}
+.chronicles-loading-orbit {
+  position: relative;
+  width: max(8.5cqw, 64px);
+  aspect-ratio: 1;
+}
+.chronicles-loading-ring {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+}
+.chronicles-loading-ring--outer {
+  inset: 0;
+  border: 1px dashed #b98a4a73;
+  box-shadow: inset 0 0 0 .3cqw #0b080699, 0 0 2.4cqw #c27a1f14;
+}
+.chronicles-loading-ring--inner {
+  inset: 17%;
+  border: 1px solid #b98a4a26;
+  border-top-color: #e2a654;
+  border-right-color: #e2a65480;
+  box-shadow: 0 -.2cqw .5cqw -.25cqw #f0a2406b;
+}
+.chronicles-loading-core {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 9%;
+  aspect-ratio: 1;
+  background: #d49130;
+  box-shadow: 0 0 .9cqw #f39422aa;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.chronicles-screen[data-load="loading"] .chronicles-loading-ring--outer { animation: chronicles-turn 16s linear infinite; }
+.chronicles-screen[data-load="loading"] .chronicles-loading-ring--inner { animation: chronicles-turn 2.6s linear infinite reverse; }
+.chronicles-loading-track {
+  position: relative;
+  width: max(13cqw, 110px);
+  height: 2px;
+  overflow: hidden;
+  background: #9d78332e;
+}
+.chronicles-loading-fill {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #9d6f2b, #e2a654);
+  box-shadow: 0 0 .5cqw #dc8d2066;
+  transform: scaleX(var(--chronicles-progress, 0));
+  transform-origin: left center;
+  transition: transform 260ms cubic-bezier(.2, .65, .35, 1);
+  will-change: transform;
+}
+
+/* The header stands where the main navigation stood. */
+.chronicles-header {
+  position: absolute;
+  z-index: 2;
+  left: var(--chronicles-left);
+  top: 10.78cqh;
+  width: calc(100cqw - 2 * var(--chronicles-left));
+  height: 4.48cqh;
+  display: flex;
+  align-items: center;
+  gap: 1.25cqw;
+  border-bottom: 1px solid #9d78333d;
+  pointer-events: auto;
+}
+.chronicles-title {
+  margin: 0;
+  font-family: var(--menu-font-primary, "Barlow"), Arial, sans-serif;
+  font-size: max(var(--menu-card-heading-size, 1.458333cqw), 11px);
+  font-weight: var(--menu-heading-weight, 600);
+  line-height: 1.1;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #dfd2b6;
+  text-shadow: 0 1px 2px #000, 0 0 6px #0009;
+}
+.chronicles-header-rule { flex: 0 0 1px; height: 44%; background: #9d78336b; }
+.chronicles-shoulder {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: max(1.72cqw, 20px);
+  height: max(2cqh, 12px);
+  cursor: pointer;
+  opacity: .6;
+  transition: opacity 140ms ease;
+}
+.chronicles-shoulder:hover { opacity: .95; }
+.chronicles-shoulder span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  font-size: max(.62cqw, 7px);
+  font-weight: 700;
+  line-height: max(2cqh, 12px);
+  text-align: center;
+  color: #170e06;
+  border-radius: .1cqw;
+  background: #ac5d18;
+  box-shadow: 0 0 .22cqw #92551a;
+}
+.hide-control-hints .chronicles-shoulder { display: none; }
+.chronicles-tabs { display: flex; align-items: stretch; gap: 1.875cqw; height: 100%; min-width: 0; }
+.chronicles-tab {
+  position: relative;
+  height: 100%;
+  padding: 0 .1cqw;
+  border: 0;
+  background: transparent;
+  font-size: max(1.015625cqw, 10px);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: .06cqw;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: rgba(193, 187, 172, .58);
+  text-shadow: 0 1px 2px #000b;
+  transition: color 140ms ease;
+}
+.chronicles-tab:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--chronicles-accent);
+  box-shadow: 0 0 .5cqw #dc8d2055;
+  transform: scaleX(0);
+  transition: transform 220ms cubic-bezier(.22, 1, .36, 1);
+}
+.chronicles-tab:hover { color: #e6dacc; }
+.chronicles-tab.is-active { color: var(--menu-modal-heading, #d49130); }
+.chronicles-tab.is-active:after { transform: scaleX(1); }
+.chronicles-tab:focus-visible { outline: 1px solid #ce9849; outline-offset: 3px; }
+
+.chronicles-collection {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.chronicles-collection[hidden] { display: none; }
+
+/* Atlas: each nation's place on the stage. The buttons stay in the focus order
+   for the keyboard and screen readers while the markers are drawn in 3D; the
+   stage moves each label over its marker and sets the pin height and ring size. */
+.chronicles-hotspots { position: absolute; inset: 0; pointer-events: none; }
+.chronicles-hotspots:not(.chronicles-hotspots--flat) .chronicles-hotspot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.chronicles-marker {
+  --chronicles-pin: -2.5cqh;
+  --chronicles-ring: 2cqw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+.chronicles-screen[data-load="loading"] .chronicles-hotspots:not(.chronicles-hotspots--flat) .chronicles-marker { visibility: hidden; }
+.chronicles-marker-caption {
+  position: absolute;
+  top: calc(var(--chronicles-pin) * .55);
+  padding: .4cqh .6cqw;
+  border: 1px solid #91714366;
+  background: linear-gradient(120deg, #1a1a12f0, #10120ef0);
+  box-shadow: 0 .4cqh 1.2cqh #0007;
+  color: #e3b76a;
+  font-size: max(.78125cqw, 8px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: .06cqw;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translate(var(--chronicles-caption-shift, 0), -50%);
+  transition: opacity 160ms ease, transform 160ms cubic-bezier(.2, .65, .35, 1);
+}
+.chronicles-marker[data-caption="east"] .chronicles-marker-caption { left: calc(var(--chronicles-ring) + max(.7cqw, 6px)); --chronicles-caption-shift: -4px; }
+.chronicles-marker[data-caption="west"] .chronicles-marker-caption { right: calc(var(--chronicles-ring) + max(.7cqw, 6px)); --chronicles-caption-shift: 4px; }
+.chronicles-marker.is-selected .chronicles-marker-caption { opacity: 1; transform: translate(0, -50%); }
+.chronicles-hotspot:focus-visible + .chronicles-marker .chronicles-marker-caption {
+  opacity: 1;
+  transform: translate(0, -50%);
+  outline: 2px solid var(--menu-focus, #df8a26);
+  outline-offset: 3px;
+}
+
+/* Without WebGL: the painting itself, framed like the Showcase gallery, with
+   rings placed by fraction so they stay on the artwork at every size. */
+.chronicles-flat {
+  position: absolute;
+  left: var(--chronicles-left);
+  top: var(--chronicles-top);
+  height: calc(var(--chronicles-bottom) - var(--chronicles-top));
+  max-width: calc(var(--chronicles-record-left) - var(--chronicles-left) - 1.2cqw);
+  aspect-ratio: 2048 / 1529;
+  background: #10120e;
+  box-shadow: 0 0 0 1px #91714366, 0 1.5cqh 4cqh #0004;
+  pointer-events: auto;
+}
+.chronicles-flat-image { position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: contain; user-select: none; pointer-events: none; }
+.chronicles-hotspots--flat .chronicles-hotspot {
+  position: absolute;
+  z-index: 1;
+  width: 6%;
+  min-width: 24px;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #dcab5f;
+  pointer-events: auto;
+  transform: translate(-50%, -50%);
+  transition: color 160ms cubic-bezier(.2, .65, .35, 1);
+}
+.chronicles-hotspots--flat .chronicles-hotspot:before {
+  content: "";
+  position: absolute;
+  inset: 9%;
+  border: max(2px, .17cqw) solid currentColor;
+  border-radius: 50%;
+  background: radial-gradient(circle, transparent 44%, #0b0a0773 100%);
+  box-shadow: 0 0 0 1px #0b0a07a6, inset 0 0 0 1px #0b0a07a6, 0 0 .5cqw #000b;
+  opacity: .84;
+  transition: transform 160ms cubic-bezier(.2, .65, .35, 1), opacity 160ms ease, box-shadow 160ms ease;
+}
+.chronicles-hotspots--flat .chronicles-hotspot:hover,
+.chronicles-hotspots--flat .chronicles-hotspot.is-selected,
+.chronicles-hotspots--flat .chronicles-hotspot.is-open { z-index: 2; color: #ffc366; }
+.chronicles-hotspots--flat .chronicles-hotspot:hover:before,
+.chronicles-hotspots--flat .chronicles-hotspot.is-selected:before,
+.chronicles-hotspots--flat .chronicles-hotspot.is-open:before {
+  opacity: 1;
+  transform: scale(1.14);
+  box-shadow: 0 0 0 1px #0b0a07b3, inset 0 0 0 1px #0b0a07b3, 0 0 .9cqw #f39422b8;
+}
+.chronicles-hotspots--flat .chronicles-hotspot:focus-visible { outline-offset: 3px; }
+.chronicles-hotspots--flat .chronicles-marker { --chronicles-pin: 0px; --chronicles-ring: max(1.4cqw, 12px); }
+
+/* The record: the Showcase library panel, at the right of every collection. */
+.chronicles-record-slot {
+  position: absolute;
+  z-index: 2;
+  left: var(--chronicles-record-left);
+  top: var(--chronicles-top);
+  width: var(--chronicles-record-width);
+  height: calc(var(--chronicles-bottom) - var(--chronicles-top));
+  pointer-events: none;
+}
+.chronicles-record {
+  position: relative;
+  max-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 3cqh 1.7cqw 3.3cqh;
+  border: 1px solid #9d783359;
+  background: linear-gradient(165deg, #1d1e16f5, #121410f0 70%);
+  box-shadow: 0 1.5cqh 4cqh #0007, inset 0 1px 0 #e0bd7a14;
+  pointer-events: auto;
+  animation: chronicles-record-enter 360ms cubic-bezier(.16, 1, .3, 1);
+}
+.chronicles-record:before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  width: 3.2cqw;
+  height: 2px;
+  background: var(--chronicles-accent);
+  box-shadow: 0 0 .6cqw #dc8d2066;
+}
+.chronicles-record h2 {
+  margin: 1.2cqh 0 1.4cqh;
+  font-size: max(1.5625cqw, 13px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: .025cqw;
+  text-transform: uppercase;
+  text-wrap: balance;
+  color: #dfd2b6;
+}
+.chronicles-record-rule { display: block; height: 1px; margin-bottom: 1.7cqh; background: linear-gradient(90deg, #9d824b99, #9d824b00 85%); }
+.chronicles-body { margin: 0; font-size: max(1.05cqw, 10px); line-height: 1.6; color: #b7b3a6; }
+.chronicles-canon-marker {
+  display: inline-block;
+  margin: 0 0 1.2cqh;
+  padding: .3cqh .55cqw;
+  border: 1px dashed #c9a05c99;
+  font-size: max(.75cqw, 8px);
+  font-weight: 600;
+  letter-spacing: .07cqw;
+  text-transform: uppercase;
+  color: #e0b56a;
+}
+
+/* Trust labels share the Showcase status idiom; each label keeps its own mark. */
+.chronicles-label {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .35cqh .65cqw;
+  margin: 0;
+  font-size: max(.8125cqw, 9px);
+  line-height: 1.3;
+}
+.chronicles-label-mark { flex: 0 0 auto; width: .38cqw; height: .38cqw; min-width: 4px; min-height: 4px; background: #b48a3d; transform: rotate(45deg); }
+.chronicles-label-name { font-weight: 600; letter-spacing: .07cqw; text-transform: uppercase; color: #c09a59; }
+.chronicles-label-meaning { letter-spacing: .015cqw; color: #a09c8c; }
+.chronicles-label--disputed .chronicles-label-mark { background: linear-gradient(135deg, #d49130 50%, transparent 50%); box-shadow: inset 0 0 0 1px #d49130; }
+.chronicles-label--disputed .chronicles-label-name { color: var(--menu-modal-heading, #d49130); }
+.chronicles-label--testimony .chronicles-label-mark { background: transparent; box-shadow: inset 0 0 0 1px #63edceb3; }
+.chronicles-label--testimony .chronicles-label-name { color: #8fcfbe; }
+.chronicles-label--rumor .chronicles-label-mark { background: transparent; outline: 1px dashed #98958e; outline-offset: -1px; }
+.chronicles-label--rumor .chronicles-label-name { color: #98958e; }
+
+/* The Interregnum: its four stops on one engraved rail, low across the stage,
+   leaving the mechanism above them clear. */
+.chronicles-timeline {
+  --chronicles-node: max(1.015625cqw, 9px);
+  position: absolute;
+  left: var(--chronicles-left);
+  top: 70cqh;
+  width: 54cqw;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  pointer-events: auto;
+}
+.chronicles-item {
+  border: 0;
+  background: transparent;
+  color: #a6a18e;
+  transition: color 140ms ease, background-color 140ms ease, border-color 140ms ease;
+}
+.chronicles-item--interregnum {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5cqh;
+  min-width: 0;
+  padding: 1cqh 0 1.2cqh;
+}
+.chronicles-item:focus-visible { outline: none; }
+.chronicles-stop-label {
+  font-size: max(1.015625cqw, 10px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: .06cqw;
+  text-transform: uppercase;
+  white-space: nowrap;
+  text-shadow: 0 1px 2px #000b;
+}
+.chronicles-stop-rail { position: relative; align-self: stretch; display: grid; place-items: center; height: calc(var(--chronicles-node) * 1.6); }
+.chronicles-stop-rail:before,
+.chronicles-stop-rail:after { content: ""; position: absolute; top: 50%; height: 1px; background: #b8995a; }
+.chronicles-stop-rail:before { left: 0; right: 50%; }
+.chronicles-stop-rail:after { left: 50%; right: 0; }
+.chronicles-item--interregnum:first-child .chronicles-stop-rail:before { background: linear-gradient(90deg, transparent, #9d824b80); }
+.chronicles-item--interregnum:last-child .chronicles-stop-rail:after { background: linear-gradient(90deg, #9d824b80, transparent); }
+.chronicles-stop-node {
+  position: relative;
+  z-index: 1;
+  width: var(--chronicles-node);
+  height: var(--chronicles-node);
+  border: 1px solid #b48a3d;
+  background: #171a12;
+  transform: rotate(45deg);
+  transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms cubic-bezier(.2, .65, .35, 1);
+}
+.chronicles-stop-era {
+  max-width: 100%;
+  padding: 0 .4cqw;
+  overflow: hidden;
+  font-size: max(.9375cqw, 9px);
+  line-height: 1.25;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #8f9380;
+  text-shadow: 0 1px 2px #000b;
+  transition: color 140ms ease;
+}
+.chronicles-item--interregnum:hover { color: #e6dacc; }
+.chronicles-item--interregnum:hover .chronicles-stop-node { border-color: #f39422; }
+.chronicles-item--interregnum.is-selected { color: #e3b76a; }
+.chronicles-item--interregnum.is-selected .chronicles-stop-era { color: #c9b48a; }
+.chronicles-item--interregnum.is-selected .chronicles-stop-node { border-color: #f0b25a; transform: rotate(45deg) scale(1.18); }
+.chronicles-item--interregnum.is-open .chronicles-stop-node {
+  border-color: #f0b25a;
+  background: var(--menu-modal-heading, #d49130);
+  box-shadow: 0 0 .9cqw #f39422aa;
+  transform: rotate(45deg) scale(1.3);
+}
+.chronicles-item--interregnum:focus-visible .chronicles-stop-node { box-shadow: 0 0 0 max(2px, .16cqw) #12140f, 0 0 0 calc(max(2px, .16cqw) + 2px) var(--menu-focus, #df8a26), 0 0 .9cqw #f39422aa; }
+.chronicles-item--interregnum:focus-visible .chronicles-stop-label { text-decoration: underline; text-decoration-color: #df8a2699; text-decoration-thickness: 1px; text-underline-offset: .45cqh; }
+
+/* The Laws: the approved articles as a column of titles beside the dais. */
+.chronicles-articles {
+  position: absolute;
+  left: var(--chronicles-left);
+  top: var(--chronicles-top);
+  width: 27cqw;
+  display: flex;
+  flex-direction: column;
+  gap: .55cqh;
+  pointer-events: auto;
+}
+.chronicles-item--laws {
+  display: flex;
+  align-items: center;
+  gap: .9cqw;
+  padding: 1.6cqh 1.2cqw 1.6cqh 1.3cqw;
+  border-left: 2px solid transparent;
+  background: rgba(27, 24, 19, .55);
+  text-align: left;
+}
+.chronicles-article-mark { flex: 0 0 auto; width: .5cqw; height: .5cqw; min-width: 5px; min-height: 5px; border: 1px solid #b48a3d; transform: rotate(45deg); }
+.chronicles-article-title {
+  font-size: max(1.17cqw, 11px);
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #ccc9bf;
+  transition: color 140ms ease;
+}
+.chronicles-item--laws:hover .chronicles-article-title { color: #e6dacc; }
+.chronicles-item--laws.is-selected { background: rgba(144, 133, 110, .17); }
+.chronicles-item--laws.is-selected .chronicles-article-title { color: #d4973e; }
+.chronicles-item--laws.is-open { border-left-color: var(--chronicles-accent); }
+.chronicles-item--laws.is-open .chronicles-article-mark { background: #d49130; border-color: #f0b25a; box-shadow: 0 0 .5cqw #f3942299; }
+.chronicles-item--laws:focus-visible { outline: 1px solid #b68230; outline-offset: -1px; }
+
+/* Recessed bronze rails and amber thumbs, as in the Settings lists. */
+.chronicles-record { scrollbar-width: thin; scrollbar-color: #bb8944 #211a11; }
+.chronicles-record::-webkit-scrollbar { width: clamp(9px, .78125cqw, 14px); }
+.chronicles-record::-webkit-scrollbar-track {
+  margin-block: .625cqh;
+  border: 1px solid #ad80372e;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #14110c, #2c2215, #14110c);
+  box-shadow: inset 0 0 3px #0009;
+}
+.chronicles-record::-webkit-scrollbar-thumb {
+  min-height: 36px;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #d5ad69, #b78035 45%, #795221);
+  background-clip: padding-box;
+  box-shadow: inset 0 0 0 1px #e3b86455;
+}
+@supports selector(::-webkit-scrollbar) {
+  .chronicles-record { scrollbar-width: auto; scrollbar-color: auto; }
+  .chronicles-record::-webkit-scrollbar-button { display: none; width: 0; height: 0; }
+}
+
+.chronicles-footer { position: absolute; z-index: 2; left: var(--chronicles-left); top: 87.55cqh; display: flex; align-items: center; gap: 1.95cqw; pointer-events: auto; }
+.chronicles-footer-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  gap: .65cqw;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(185, 179, 164, .7);
+  font-size: max(1.17cqw, 10px);
+  text-shadow: 0 1px 2px #000b;
+  transition: color 140ms ease, transform 100ms ease;
+}
+.chronicles-footer-button:hover { color: #e5d7bd; }
+.chronicles-footer-button:active { transform: scale(.98); }
+@keyframes chronicles-turn {
+  to { transform: rotate(360deg); }
+}
+@keyframes chronicles-record-enter {
+  from { opacity: 0; transform: translate3d(1.2cqw, 0, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@media (max-height: 450px) and (orientation: landscape) {
+  .chronicles-screen { --chronicles-top: 20cqh; --chronicles-bottom: 85cqh; --chronicles-record-left: 62.5cqw; --chronicles-record-width: 33cqw; }
+  .chronicles-header { top: 7.5cqh; height: 7cqh; }
+  .chronicles-record { padding: 2.2cqh 1.4cqw 2.4cqh; }
+  .chronicles-record h2 { margin: .8cqh 0 1cqh; }
+  .chronicles-record-rule { margin-bottom: 1cqh; }
+  .chronicles-body { line-height: 1.45; }
+  .chronicles-timeline { top: 66cqh; width: 56cqw; }
+  .chronicles-articles { width: 34cqw; gap: .4cqh; }
+  .chronicles-item--laws { padding-block: 1.2cqh; }
+  .chronicles-footer { top: 88.5cqh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .chronicles-screen *, .chronicles-screen *:before, .chronicles-screen *:after { transition: none !important; animation: none !important; }
+  .chronicles-footer-button:active { transform: none; }
+}
+.chronicles-screen--still *, .chronicles-screen--still *:before, .chronicles-screen--still *:after { transition: none !important; animation: none !important; }
+.chronicles-screen--still .chronicles-footer-button:active { transform: none; }
+
+/* While Chronicles is open the main navigation is hidden (and inert, from the
+   menu). Once Chronicles' entrance has finished, its opaque layer covers the
+   whole stage, so the menu's stage layers beneath it are hidden and stop
+   compositing; they return the moment Chronicles closes. */
+.main-nav.main-nav--hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+.menu-shell:has(.menu-transition[data-transition-state="idle"] > .menu-transition-live > .chronicles-screen) :is(.scene-wash, .creature-stage, .atmosphere, .film-grain) {
+  visibility: hidden;
+}

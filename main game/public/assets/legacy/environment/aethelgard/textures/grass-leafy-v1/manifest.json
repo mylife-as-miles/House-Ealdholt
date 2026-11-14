@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "assetId": "leafy_grass",
+  "sourceUrl": "https://polyhaven.com/a/leafy_grass",
+  "licence": "CC0-1.0",
+  "authors": {
+    "Charlotte Baglioni": "All"
+  },
+  "tileMetres": 2,
+  "colour": {
+    "albedo": "sRGB RGB; opaque, untinted source photograph",
+    "normal": "OpenGL tangent-space +Y; linear; vectors renormalized",
+    "orm": "Linear R=source AO,G=source roughness,B=source metallic",
+    "orientation": "Source rows preserved; configure flipY=false for all three maps"
+  },
+  "profiles": {
+    "desktop": {
+      "size": 1024,
+      "meanLuminance": 0.24424775183636332,
+      "files": {
+        "albedo": {
+          "file": "grass-desktop-albedo-1024.webp",
+          "size": 1024,
+          "bytes": 1787214,
+          "sha256": "41e00ced084f07771afcc19dbebd4250ff30082f93b8015fcb6d4d8a4ddb852c"
+        },
+        "normal": {
+          "file": "grass-desktop-normal-1024.webp",
+          "size": 1024,
+          "bytes": 2468848,
+          "sha256": "d1074cdeaec4f080e5944f86c72515fccfe5e81df9995bc8f394f453637ec1b2"
+        },
+        "orm": {
+          "file": "grass-desktop-orm-1024.webp",
+          "size": 1024,
+          "bytes": 1764930,
+          "sha256": "ff702c349cd5370e2b97dd6f6d161d7dc25f4883b83df78e126b6987e63f3ec1"
+        }
+      },
+      "gpuBytesWithMipsEstimate": 16777212
+    },
+    "quest": {
+      "size": 512,
+      "meanLuminance": 0.24429695950035504,
+      "files": {
+        "albedo": {
+          "file": "grass-quest-albedo-512.webp",
+          "size": 512,
+          "bytes": 524734,
+          "sha256": "b5e90958c017ff48bc87af25de92556405a51ae1ee757d1cc210a96eb4b5fa2a"
+        },
+        "normal": {
+          "file": "grass-quest-normal-512.webp",
+          "size": 512,
+          "bytes": 579494,
+          "sha256": "9d3d401b9ba2a1e5b522a9196e973d6ff72b338e9af7e70aec1cf8bf294edf4a"
+        },
+        "orm": {
+          "file": "grass-quest-orm-512.webp",
+          "size": 512,
+          "bytes": 418152,
+          "sha256": "302a1a3e1eadcc67e02d864bae5c26259e1ae4a13ee381c88e83d51a3cffb39c"
+        }
+      },
+      "gpuBytesWithMipsEstimate": 4194300
+    }
+  }
+}

@@ -1,0 +1,175 @@
+/* The four kingdoms' reveal (NationsReveal.tsx), in the match setup's look. One timeline, started once the crown's
+   pictures have loaded:
+     0.00s  the crown rises out of the dark and trembles, rays turning behind it
+     0.93s  it breaks open: light pours from inside
+     1.45s  it bursts: a flash and a ring; its four pieces fly out tumbling, 0.11s apart
+     2.50s  the first piece lands on its pedestal (each 0.11s after the last): a ripple and a beam in the kingdom's
+            colour, its flag raised from the pedestal and unfurled, its name
+     3.20s  the title
+     4.20s  Continue (set by the component)
+   .is-skipped (a key or click, or reduced motion) runs every animation to its end at once; the flags fly on. */
+
+.play-route .nations-reveal {
+  --nr-width: min(1180px, 86cqw);
+  --nr-crown: min(410px, 47cqh);
+  --nr-burst: 1.45s;
+  --nr-flight: 1.05s;
+  /* The pedestals' top edge; a flag's height (never wider than its column); and how far left the row stands, so that
+     the poles and the cloth flying from them sit centred together. */
+  --nr-ground: 72cqh;
+  --nr-flag: min(44cqh, calc(var(--nr-width) * .3625));
+  --nr-shift: calc(var(--nr-flag) * -.2);
+  /* From the crown's middle (37cqh) down to the middle of a pedestal. */
+  --nr-drop: calc(var(--nr-ground) + 13px - 37cqh);
+  --nr-active: var(--menu-active-tab, #f87b00);
+  --nr-text: var(--menu-text, #cdc6b8);
+  --nr-condensed: var(--menu-font-condensed, "Barlow Condensed"), "Arial Narrow", sans-serif;
+  position: relative;
+  container-type: size;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--nr-text);
+  outline: none;
+  background: #0d0906;
+}
+/* Nothing moves until the crown's pictures are in. */
+.nations-reveal:not([data-ready=true]) *, .nations-reveal:not([data-ready=true]) *::before, .nations-reveal:not([data-ready=true]) *::after { animation-play-state: paused !important; }
+.nations-reveal .nr-backdrop { position: absolute; inset: 0; z-index: -3; background:
+  radial-gradient(ellipse 56% 44% at 50% 37%, #8a6a3a59 0%, #4a371f4d 38%, transparent 72%),
+  radial-gradient(ellipse at 50% 30%, #33271a 0%, #1a130b 55%, #0b0705 100%);
+  animation: nr-dim .9s var(--nr-burst) both; }
+@keyframes nr-dim { from { filter: brightness(1); } to { filter: brightness(.8); } }
+.nations-reveal .nr-floor { position: absolute; left: 0; right: 0; bottom: 0; height: 34%; z-index: -2; background: linear-gradient(180deg, transparent, #080504e6 78%); }
+.nations-reveal .nr-floor::before { content: ""; position: absolute; left: 8%; right: 8%; top: 0; height: 1px; background: linear-gradient(90deg, transparent, #f8c98040 30%, #f8c98066 50%, #f8c98040 70%, transparent); }
+.nations-reveal .nr-motes { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.nations-reveal .nr-motes i { position: absolute; bottom: -12px; border-radius: 50%; background: #f8a13a; box-shadow: 0 0 6px #f8a13a, 0 0 14px #f8a13a; opacity: 0; animation: nr-mote linear infinite; }
+@keyframes nr-mote { 0% { opacity: 0; transform: translate3d(0, 0, 0); } 12% { opacity: .7; } 80% { opacity: .45; } 100% { opacity: 0; transform: translate3d(var(--mote-drift), -105cqh, 0); } }
+
+/* ------------------------------------------------------------------ the title */
+.nations-reveal .nr-header { position: absolute; left: clamp(28px, 5cqw, 100px); top: clamp(18px, 3.6cqh, 44px); animation: nr-rise .6s 3.2s both cubic-bezier(.2, .7, .2, 1); }
+.nations-reveal .nr-eyebrow { margin: 0 0 6px; color: #b5b2ac; font-size: 12px; font-weight: 500; letter-spacing: .22em; text-transform: uppercase; }
+.nations-reveal .nr-header h1 { margin: 0; font-family: var(--nr-condensed); font-size: clamp(40px, 4cqw, 68px); font-weight: 600; line-height: 1; letter-spacing: .02em; text-transform: uppercase; color: var(--nr-text); text-shadow: 0 2px 18px #0009; }
+.nations-reveal .nr-header h1::after { content: ""; display: block; width: 56px; height: 3px; margin-top: 12px; background: var(--nr-active); box-shadow: 0 0 12px #f87b0066; }
+.nations-reveal .nr-lead { margin: 14px 0 0; color: #b9b3a4; font-size: 16px; font-weight: 300; }
+@keyframes nr-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* ------------------------------------------------------------------ the crown */
+.nations-reveal .nr-crown { position: absolute; left: 50%; top: 37%; width: var(--nr-crown); aspect-ratio: 1; margin: calc(var(--nr-crown) * -.5) 0 0 calc(var(--nr-crown) * -.5); }
+/* The crown itself (its pieces fly from outside this, so its trembling does not carry them). */
+.nations-reveal .nr-crown-body { position: absolute; inset: 0; animation: nr-tremble var(--nr-burst) both; }
+@keyframes nr-tremble {
+  0% { transform: translate(0, 26px) scale(.9); opacity: 0; } 16% { transform: none; opacity: 1; }
+  40% { transform: translate(-1px, 1px) rotate(-.3deg); } 48% { transform: translate(2px, -1px) rotate(.4deg); } 56% { transform: translate(-2px, 1px) rotate(-.6deg); }
+  64% { transform: translate(3px, 0) rotate(.8deg); } 72% { transform: translate(-3px, -2px) rotate(-1deg); } 80% { transform: translate(4px, 1px) rotate(1.2deg) scale(1.01); }
+  88% { transform: translate(-5px, 1px) rotate(-1.4deg) scale(1.03); } 95% { transform: translate(5px, -2px) rotate(1.6deg) scale(1.05); } 100% { transform: scale(1.07); }
+}
+.nations-reveal .nr-crown-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; user-select: none; pointer-events: none;
+  filter: drop-shadow(0 22px 26px #000b); animation: nr-out .5s calc(var(--nr-burst) - .52s) forwards; }
+/* Breaking open: the same crown with its pieces eased apart and its inside ablaze, faded in over the whole one. */
+.nations-reveal .nr-crown-art--open { opacity: 0; animation: nr-in .5s calc(var(--nr-burst) - .52s) forwards, nr-out .1s var(--nr-burst) forwards; }
+@keyframes nr-in { to { opacity: 1; } }
+@keyframes nr-out { to { opacity: 0; } }
+/* The light inside it, swelling until it bursts. */
+.nations-reveal .nr-core { position: absolute; inset: 16%; border-radius: 50%; mix-blend-mode: screen; opacity: 0; pointer-events: none;
+  background: radial-gradient(circle, #fffdf2 0%, #ffe6aee6 20%, #f8a13a80 46%, transparent 70%);
+  animation: nr-core .62s calc(var(--nr-burst) - .6s) forwards, nr-out .1s var(--nr-burst) forwards; }
+@keyframes nr-core { from { opacity: 0; transform: scale(.25); } to { opacity: 1; transform: scale(1.25); } }
+.nations-reveal .nr-crown-glow { position: absolute; inset: -30%; border-radius: 50%; background: radial-gradient(circle, #ffd58a66 0%, #f8a13a33 34%, transparent 66%); animation: nr-glow var(--nr-burst) both, nr-out .3s var(--nr-burst) forwards; }
+@keyframes nr-glow { from { opacity: .2; transform: scale(.7); } to { opacity: 1; transform: scale(1.15); } }
+/* Rays turning slowly behind the crown. */
+.nations-reveal .nr-rays { position: absolute; inset: -62%; border-radius: 50%; pointer-events: none;
+  background: repeating-conic-gradient(from 0deg, #ffd58a30 0deg 4deg, transparent 4deg 15deg);
+  mask-image: radial-gradient(circle, transparent 10%, #000 22%, transparent 68%);
+  animation: nr-turn 22s linear infinite, nr-rays var(--nr-burst) both, nr-out .5s var(--nr-burst) forwards; }
+@keyframes nr-turn { to { rotate: 360deg; } }
+@keyframes nr-rays { from { opacity: 0; } to { opacity: .95; } }
+
+/* Each piece: shown as the crown bursts, across at an even pace, up and down in an arc, tumbling, shrinking to nothing
+   as it lands. Its picture is a strip of frames stepped through as it flies. */
+.nations-reveal .nr-piece {
+  --px: calc(var(--nr-crown) * var(--fx)); --py: calc(var(--nr-crown) * var(--fy)); --size: calc(var(--nr-crown) * var(--piece));
+  position: absolute; left: calc(50% + var(--px)); top: calc(50% + var(--py)); width: var(--size); aspect-ratio: 1; margin: calc(var(--size) * -.5) 0 0 calc(var(--size) * -.5); opacity: 0;
+  animation: nr-in .08s var(--nr-burst) forwards, nr-across var(--nr-flight) calc(var(--nr-burst) + var(--i) * .11s) both linear; }
+@keyframes nr-across { to { transform: translateX(calc((var(--i) - 1.5) * var(--nr-width) / 4 + var(--nr-shift) - var(--px))); } }
+.nations-reveal .nr-piece-lift { position: absolute; inset: 0; animation: nr-arc var(--nr-flight) calc(var(--nr-burst) + var(--i) * .11s) both; }
+/* Thrown up, then falling as things fall: slowly off the top of the arc and fastest at the pedestal. */
+@keyframes nr-arc {
+  0% { transform: translateY(0); animation-timing-function: cubic-bezier(.2, .6, .4, 1); }
+  40% { transform: translateY(-14cqh); animation-timing-function: cubic-bezier(.5, 0, .8, .55); }
+  100% { transform: translateY(calc(var(--nr-drop) - var(--py))); }
+}
+.nations-reveal .nr-piece-art { position: absolute; inset: 0; display: block; background-repeat: no-repeat; background-position: 0 0;
+  filter: drop-shadow(0 0 16px color-mix(in srgb, var(--tint) 60%, transparent)) drop-shadow(0 10px 14px #0009);
+  animation: nr-tumble .92s calc(var(--nr-burst) + var(--i) * .11s) steps(24, jump-none) infinite, nr-shrink var(--nr-flight) calc(var(--nr-burst) + var(--i) * .11s) both cubic-bezier(.3, .2, .4, 1); }
+@keyframes nr-tumble { to { background-position: 100% 0; } }
+@keyframes nr-shrink { 0% { transform: none; opacity: 1; } 91% { opacity: 1; } 100% { transform: scale(.3); opacity: 0; } }
+.nations-reveal .nr-flash { position: absolute; inset: -60%; border-radius: 50%; background: radial-gradient(circle, #fffdf2 0%, #ffe2a0cc 22%, #f8a13a55 46%, transparent 68%); opacity: 0; pointer-events: none; animation: nr-flash .8s calc(var(--nr-burst) - .06s) both cubic-bezier(.1, .7, .3, 1); }
+@keyframes nr-flash { 0% { opacity: 0; transform: scale(.2); } 16% { opacity: 1; transform: scale(1.4); } 100% { opacity: 0; transform: scale(4.2); } }
+.nations-reveal .nr-ring { position: absolute; inset: 0; border-radius: 50%; border: 2px solid #ffe2a0; opacity: 0; pointer-events: none; animation: nr-ring 1s var(--nr-burst) forwards cubic-bezier(.1, .7, .3, 1); }
+@keyframes nr-ring { 0% { opacity: .95; transform: scale(.3); } 100% { opacity: 0; transform: scale(5.5); border-width: 1px; } }
+
+/* ------------------------------------------------------------------ the kingdoms */
+/* The row hangs from the pedestals' top edge: pedestal, name and line of arms below it, beam and flag above. */
+.nations-reveal .nr-kingdoms { position: absolute; left: 50%; top: var(--nr-ground); width: var(--nr-width); margin: 0 0 0 calc(var(--nr-width) / -2 + var(--nr-shift)); padding: 0; list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+/* When this kingdom's piece lands (declared here, where --i is known). */
+.nations-reveal .nr-kingdom { --nr-land: calc(var(--nr-burst) + var(--nr-flight) + var(--i) * .11s); position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; }
+/* The beam: down from above onto the pedestal in the kingdom's colour, then a soft standing column. */
+.nations-reveal .nr-beam { position: absolute; left: 50%; bottom: calc(100% - 17px); width: 150px; height: 70cqh; margin-left: -75px; pointer-events: none; transform-origin: 50% 100%; mix-blend-mode: screen; opacity: 0;
+  background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--tint) 32%, transparent) 30%, color-mix(in srgb, var(--tint) 70%, transparent) 100%);
+  mask-image: linear-gradient(90deg, transparent, #000 32%, #000 68%, transparent); filter: blur(3px);
+  animation: nr-beam 1.5s var(--nr-land) forwards cubic-bezier(.1, .7, .3, 1); }
+@keyframes nr-beam { 0% { opacity: 0; transform: scaleX(.2) scaleY(0); } 16% { opacity: 1; transform: scaleX(1.25) scaleY(1); } 100% { opacity: .3; transform: scaleX(1) scaleY(1); } }
+.nations-reveal .nr-pedestal { display: block; width: min(190px, 78%); height: 26px; border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 40%, color-mix(in srgb, var(--tint) 46%, #1a140c) 0%, #1a140c 62%, #0b0806 100%);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--tint) 55%, transparent), 0 0 26px color-mix(in srgb, var(--tint) 36%, transparent), 0 10px 18px #000a;
+  animation: nr-pedestal .5s calc(var(--nr-land) - .08s) both; }
+@keyframes nr-pedestal { from { opacity: .22; filter: saturate(0) brightness(.5); } to { opacity: 1; filter: none; } }
+.nations-reveal .nr-ripple { position: absolute; left: 50%; top: 0; width: min(190px, 78%); height: 26px; border-radius: 50%; border: 2px solid var(--tint); opacity: 0; pointer-events: none; translate: -50% 0;
+  animation: nr-ripple 1s var(--nr-land) forwards cubic-bezier(.1, .7, .3, 1); }
+@keyframes nr-ripple { 0% { opacity: .9; transform: scale(.4); } 100% { opacity: 0; transform: scale(2.6); } }
+/* The flag (a rendered loop, 480 by 672, its pole 15.04% in from the left and its foot at the bottom): the pole stands
+   on the middle of the pedestal. It is raised out of the pedestal, then the cloth streams out from the pole. */
+.nations-reveal .nr-flag { position: absolute; left: 50%; bottom: calc(100% - 16px); height: var(--nr-flag); aspect-ratio: 480 / 672; margin-left: calc(var(--nr-flag) * -.1074); pointer-events: none;
+  transform-origin: 15.04% 100%; animation: nr-raise .52s calc(var(--nr-land) + .04s) both cubic-bezier(.2, 1.35, .4, 1); }
+@keyframes nr-raise { 0% { opacity: 0; transform: scaleY(.02); } 12% { opacity: 1; } 100% { opacity: 1; transform: none; } }
+/* The kingdom's light caught in the air round the cloth. */
+.nations-reveal .nr-flag::before { content: ""; position: absolute; left: 4%; right: -14%; top: 4%; height: 62%; border-radius: 50%; mix-blend-mode: screen; opacity: 0;
+  background: radial-gradient(ellipse at 50% 50%, color-mix(in srgb, var(--tint) 30%, transparent) 0%, color-mix(in srgb, var(--tint) 10%, transparent) 42%, transparent 70%);
+  animation: nr-in .9s calc(var(--nr-land) + .3s) both; }
+.nations-reveal .nr-flag-cloth { position: absolute; inset: 0; display: block; animation: nr-unfurl .62s calc(var(--nr-land) + .26s) both cubic-bezier(.25, .7, .3, 1); }
+.nations-reveal .nr-flag-cloth img { display: block; width: 100%; height: 100%; user-select: none; filter: drop-shadow(0 14px 12px #0009); }
+@keyframes nr-unfurl { from { clip-path: inset(-6% 79% -6% -6%); } to { clip-path: inset(-6% -6% -6% -6%); } }
+.nations-reveal .nr-kingdom strong { margin-top: 12px; font-family: var(--nr-condensed); font-size: clamp(24px, 2.7cqw, 40px); font-weight: 600; line-height: 1.05; letter-spacing: .07em; text-transform: uppercase; color: #ece6da; text-shadow: 0 2px 14px #000c;
+  animation: nr-rise .5s calc(var(--nr-land) + .36s) both cubic-bezier(.2, .7, .2, 1); }
+.nations-reveal .nr-kingdom small { margin-top: 6px; max-width: 86%; font-size: 12px; font-weight: 500; line-height: 1.4; letter-spacing: .18em; text-transform: uppercase; color: color-mix(in srgb, var(--tint) 70%, #b5b2ac);
+  animation: nr-rise .5s calc(var(--nr-land) + .5s) both cubic-bezier(.2, .7, .2, 1); }
+
+/* ------------------------------------------------------------------ the footer */
+.nations-reveal .nr-footer { position: absolute; left: clamp(28px, 5cqw, 100px); right: clamp(28px, 5cqw, 100px); bottom: clamp(16px, 2.5cqh, 30px); display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 56px; }
+.nations-reveal .nr-hint { display: flex; align-items: center; gap: 9px; color: #b9b3a4c4; font-size: 15px; font-weight: 300; }
+.nations-reveal .nr-hint kbd { display: inline-grid; place-items: center; min-width: 28px; height: 20px; padding: 0 6px; border-radius: 3px; background: #9a541e; color: #1e1007; font: 700 11px Arial, sans-serif; box-shadow: 0 0 3px #88551f33; }
+.play-route .nations-reveal .nr-continue { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 24px; min-width: min(340px, 42cqw); min-height: 52px; padding: 12px 22px; border: 0;
+  background: var(--nr-active); color: #19120a; font-size: 17px; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; text-align: left; box-shadow: 0 0 10px #d269001c;
+  opacity: 0; transform: translateY(8px); pointer-events: none; transition: opacity .4s, transform .4s cubic-bezier(.2, .7, .2, 1), filter .16s; }
+.nations-reveal[data-revealed=true] .nr-continue { opacity: 1; transform: none; pointer-events: auto; }
+.nations-reveal .nr-continue svg { width: 32px; height: 12px; flex: 0 0 auto; position: relative; z-index: 1; }
+.nations-reveal .nr-continue span { position: relative; z-index: 1; }
+.nations-reveal[data-revealed=true] .nr-continue::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(105deg, transparent 35%, #fff6 50%, transparent 65%); transform: translateX(-120%); animation: nr-shine 4.2s .6s ease-in-out infinite; }
+@keyframes nr-shine { 0%, 62% { transform: translateX(-120%); } 100% { transform: translateX(120%); } }
+.play-route .nations-reveal .nr-continue:hover { filter: brightness(1.08); }
+.play-route .nations-reveal .nr-continue:focus-visible { outline: 2px solid var(--menu-focus, #df8a26); outline-offset: 4px; }
+
+/* ------------------------------------------------------------------ skipped, small screens, reduced motion */
+.nations-reveal.is-skipped *, .nations-reveal.is-skipped *::before, .nations-reveal.is-skipped *::after { animation-duration: .01s !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; }
+.nations-reveal.is-skipped :is(.nr-motes, .nr-flash, .nr-ring, .nr-crown) { display: none; }
+@media (max-width: 760px) {
+  .nations-reveal .nr-kingdom small, .nations-reveal .nr-lead { display: none; }
+  .nations-reveal .nr-beam { width: 90px; margin-left: -45px; }
+}
+@media (max-height: 560px) {
+  .nations-reveal .nr-lead, .nations-reveal .nr-kingdom small { display: none; }
+  .play-route .nations-reveal { --nr-ground: 70cqh; }
+}
+@media (prefers-reduced-motion: reduce) { .nations-reveal *, .nations-reveal *::before, .nations-reveal *::after { animation-duration: .01s !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; transition: none !important; } }

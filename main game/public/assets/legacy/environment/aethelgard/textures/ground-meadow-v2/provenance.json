@@ -1,0 +1,228 @@
+{
+  "assetId": "forrest_ground_01",
+  "name": "Forest Ground 01",
+  "layer": "meadow",
+  "intakeDate": "2026-11-06",
+  "licence": {
+    "spdx": "CC0-1.0",
+    "officialUrl": "https://polyhaven.com/license",
+    "legalCodeUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt",
+    "officialPageSha256": "6f4f617c936d14d5a80db6a2ebec145c79277a760672501eef51bff7a0d4cbba",
+    "legalCodeSha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+    "quote": "Our assets are all licensed as CC0",
+    "credit": "Powered by Poly Haven",
+    "assetPage": {
+      "url": "https://polyhaven.com/a/forrest_ground_01",
+      "bytes": 201328,
+      "sha256": "ce3ae29df077ff0b4ce188b73209275c4412cc87b69aa77276bf15816356b951",
+      "statement": "\"license\":\"https://creativecommons.org/publicdomain/zero/1.0/\""
+    }
+  },
+  "sourceUrl": "https://polyhaven.com/a/forrest_ground_01",
+  "authors": {
+    "Rob Tuytel": "All"
+  },
+  "infoApi": "https://api.polyhaven.com/info/forrest_ground_01",
+  "filesApi": "https://api.polyhaven.com/files/forrest_ground_01",
+  "infoSha256": "6c72d93c31078542fab02d64b41c9457ec6cee46c86c9b97336617ea3285628c",
+  "filesSha256": "fb03acfb34c413580c5e32c53533e82d0f9a14f063cefcb19a0b28cf83acfcfb",
+  "sources": {
+    "albedo": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/forrest_ground_01/forrest_ground_01_diff_1k.jpg",
+      "bytes": 833711,
+      "md5": "236e7d928f5e357a194fd92de189cbe4",
+      "sha256": "3dd6875cb3908e022a3c45ebbffa5e84c670ff2691fbbb6dc9ea4bff88523800",
+      "decodedRgbSha256": "4d29791469a897c8337d3ac14d9331b2a6a1a704cdf667aa4138328817778f10"
+    },
+    "normal": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/forrest_ground_01/forrest_ground_01_nor_gl_1k.jpg",
+      "bytes": 1428763,
+      "md5": "ba4265df25aea293913d004b69ef9ab0",
+      "sha256": "32528a7cdee962cc0b248ee4023a74d0df175737ea90e1eb425122351e0bdab4",
+      "decodedRgbSha256": "ad26e1aae132d24a4ee1ac90bc03cb5a41cd1da9082a3e405a29d741308be83b"
+    },
+    "orm": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/forrest_ground_01/forrest_ground_01_arm_1k.jpg",
+      "bytes": 296969,
+      "md5": "0bca8bef07d3c48faea4aae3fac9a757",
+      "sha256": "22eb09a2ed951377f339c08be9f1665f0db7391ed9ba0b0e91e55aea2dbef315",
+      "decodedRgbSha256": "8af7277ac928dad297d31b72de3a6fb746bd832e74959927d7a6e7c6cfc2b926",
+      "note": "Verified for provenance; the valley shader samples no map of this role for this layer, so none is prepared."
+    }
+  },
+  "modifications": "Albedo chroma graded (living-sward v2): a hard vegetation mask selects blades and straw; they move by one linear-chromaticity offset toward the photo's own strongest living greens until the tile mean (G-R)/Y is 0.3889 (no lower than the village atlas olive 0.3889); per-pixel linear luminance preserved; litter, soil, twigs and crevices bit-identical. Normal map unmodified.",
+  "modificationRecord": {
+    "albedo": {
+      "method": "living-sward grade v2: hard vegetation mask; one linear-chromaticity offset toward the photo's own strongest living greens; per-pixel linear luminance preserved; masked-out pixels bit-identical",
+      "reference": [
+        0.3512,
+        0.511,
+        0.1378
+      ],
+      "referenceSelection": {
+        "hue": [
+          75,
+          150
+        ],
+        "saturation": 0.3,
+        "value": 0.1
+      },
+      "calibration": {
+        "quantity": "(G-R)/Y of the tile linear mean",
+        "target": 0.3889,
+        "minimum": 0.3889,
+        "minimumSource": "village ground atlas olive, shared/legacy/aethelgard/environment/ground-atlas.ts",
+        "source": -0.1755,
+        "achieved": 0.3889,
+        "strength": 2.535
+      },
+      "sourceVegetationCentre": [
+        0.4308,
+        0.4154,
+        0.1538
+      ],
+      "meanVegetationWeight": 0.6754,
+      "protectedPixelShare": 0.2961,
+      "clippedPixels": 6817,
+      "parameters": {
+        "mask": {
+          "hue": [
+            35,
+            38
+          ],
+          "hueEnd": [
+            150,
+            160
+          ],
+          "saturation": [
+            0.12,
+            0.15
+          ],
+          "value": [
+            0.04,
+            0.07
+          ]
+        },
+        "meanGrassIndex": 0.3889
+      }
+    }
+  },
+  "sourceAnalysis": {
+    "meanLuminance": 0.2482136,
+    "meanSrgb8": [
+      147,
+      137,
+      97
+    ],
+    "meanColourHue": 48,
+    "meanSaturation": 0.3751,
+    "shares": {
+      "green": 0.1076,
+      "olive": 0.2217,
+      "warm": 0.6686,
+      "neutral": 0.0021,
+      "other": 0
+    },
+    "luminanceWeightedShares": {
+      "green": 0.1043,
+      "olive": 0.208,
+      "warm": 0.6841,
+      "neutral": 0.0035,
+      "other": 0
+    },
+    "luminancePercentiles": {
+      "p05": 0.149048,
+      "p25": 0.199585,
+      "p50": 0.237183,
+      "p75": 0.285522,
+      "p95": 0.383423
+    },
+    "linearChromaticity": [
+      0.4422,
+      0.3762,
+      0.1815
+    ],
+    "valleyGrassIndex": -0.1755,
+    "macroVariation": 0.0255,
+    "macroLuminanceVariation16": 0.0415,
+    "macroChromaVariation8": 0.0632,
+    "macroChromaVariation16": 0.0842
+  },
+  "processing": "Decoded official 8-bit JPEG RGB directly. Linear-light box reduction for albedo; linear ARM reduction; normal vectors averaged and renormalized. Deterministic lossless WebP (effort 6) verified by exact decode. Opaque surface; no geometry, displacement or alpha blades.",
+  "tools": {
+    "generator": "scripts/prepare-ealdholt-woodland-ground.mjs",
+    "node": "v22.23.4",
+    "sharp": {
+      "aom": "3.15.0",
+      "archive": "3.8.9",
+      "cairo": "1.18.4",
+      "cgif": "0.5.3",
+      "exif": "0.6.26",
+      "expat": "2.8.3",
+      "ffi": "3.8.0",
+      "fontconfig": "2.18.3",
+      "freetype": "2.14.3",
+      "fribidi": "1.0.16",
+      "glib": "2.89.4",
+      "harfbuzz": "14.3.1",
+      "heif": "1.23.2",
+      "highway": "1.4.0",
+      "imagequant": "2.4.1",
+      "lcms": "2.19.1",
+      "mozjpeg": "0826579",
+      "pango": "1.58.2",
+      "pixman": "0.46.4",
+      "png": "1.6.58",
+      "proxy-libintl": "0.5",
+      "rsvg": "2.62.91",
+      "tiff": "4.7.2",
+      "uhdr": "2.0.2",
+      "vips": "8.18.6",
+      "webp": "1.6.0",
+      "xml2": "2.15.3",
+      "zlib-ng": "2.3.3",
+      "sharp": "0.35.4"
+    }
+  },
+  "files": [
+    {
+      "file": "meadow-desktop-albedo-1024.webp",
+      "size": 1024,
+      "bytes": 2135372,
+      "sha256": "0f5913480930b5b30478cfba249eca545903dde8f4a1692881a25c61c01d592a"
+    },
+    {
+      "file": "meadow-desktop-normal-1024.webp",
+      "size": 1024,
+      "bytes": 2541160,
+      "sha256": "e68b3f164e7f5cdfd665913c1155fffd7c8cf784f4e302d2f12450adc5f20f8b"
+    },
+    {
+      "file": "meadow-quest-albedo-512.webp",
+      "size": 512,
+      "bytes": 577350,
+      "sha256": "51690214cccece1209542d3caa22c222d52d9138c39cff2b492e1c6270b07fce"
+    },
+    {
+      "file": "meadow-quest-normal-256.webp",
+      "size": 256,
+      "bytes": 131810,
+      "sha256": "27ee5e7d45650b5948531307a62fda9332fbbf70d0263c7a9dc74d70b1dd9622"
+    },
+    {
+      "file": "CC0-1.0.txt",
+      "bytes": 7048,
+      "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+    },
+    {
+      "file": "manifest.json",
+      "bytes": 2941,
+      "sha256": "e66f73d5ef7ec43b2a6af0eced5ccba95610e1bc18ec0779b06e13266952392b"
+    },
+    {
+      "file": "SOURCES.md",
+      "bytes": 1676,
+      "sha256": "f1f47609974768aceddf71d8400954f59aae60196360681306cb5a1201716503"
+    }
+  ]
+}

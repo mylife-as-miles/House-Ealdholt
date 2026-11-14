@@ -1,0 +1,685 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 8.2,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.5,
+   "shape": 3.4,
+   "texture": 4.1
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 15,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0239,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.199,
+ "envelopes": {
+  "carry_basket_walk": {
+   "max": [
+    0.511,
+    1.751,
+    0.796
+   ],
+   "min": [
+    -0.497,
+    -0.323,
+    -0.885
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.424,
+    1.665,
+    0.732
+   ],
+   "min": [
+    -0.375,
+    -0.187,
+    -0.691
+   ]
+  },
+  "sit": {
+   "max": [
+    0.47,
+    1.26,
+    0.42
+   ],
+   "min": [
+    -0.473,
+    -0.489,
+    -1.066
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.578,
+    1.718,
+    1.111
+   ],
+   "min": [
+    -0.543,
+    -0.709,
+    -1.233
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.608,
+    1.737,
+    1.114
+   ],
+   "min": [
+    -0.567,
+    -0.697,
+    -1.237
+   ]
+  },
+  "talk": {
+   "max": [
+    0.467,
+    1.687,
+    0.733
+   ],
+   "min": [
+    -0.432,
+    -0.186,
+    -0.68
+   ]
+  },
+  "walk": {
+   "max": [
+    0.511,
+    1.738,
+    0.796
+   ],
+   "min": [
+    -0.497,
+    -0.323,
+    -0.885
+   ]
+  },
+  "walk_start": {
+   "max": [
+    0.504,
+    1.719,
+    0.786
+   ],
+   "min": [
+    -0.479,
+    -0.219,
+    -0.777
+   ]
+  },
+  "walk_stop": {
+   "max": [
+    0.501,
+    1.716,
+    0.758
+   ],
+   "min": [
+    -0.473,
+    -0.273,
+    -0.807
+   ]
+  },
+  "work_dig": {
+   "max": [
+    0.532,
+    1.472,
+    0.811
+   ],
+   "min": [
+    -0.634,
+    -0.284,
+    -0.806
+   ]
+  },
+  "work_dig_enter": {
+   "max": [
+    0.55,
+    1.777,
+    0.851
+   ],
+   "min": [
+    -0.587,
+    -0.356,
+    -0.801
+   ]
+  },
+  "work_dig_exit": {
+   "max": [
+    0.55,
+    1.777,
+    0.848
+   ],
+   "min": [
+    -0.587,
+    -0.356,
+    -0.801
+   ]
+  },
+  "work_sweep": {
+   "max": [
+    0.637,
+    1.462,
+    0.846
+   ],
+   "min": [
+    -0.643,
+    -0.346,
+    -0.69
+   ]
+  },
+  "work_sweep_enter": {
+   "max": [
+    0.53,
+    1.794,
+    0.814
+   ],
+   "min": [
+    -0.5,
+    -0.323,
+    -0.76
+   ]
+  },
+  "work_sweep_exit": {
+   "max": [
+    0.53,
+    1.794,
+    0.814
+   ],
+   "min": [
+    -0.5,
+    -0.323,
+    -0.76
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.227,
+  "lipGapMm": {
+   "aa": 15.4,
+   "full": 18.8,
+   "rest": 1
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.84,
+   "r": 7.84
+  },
+  "upperLidClosed": 0.57,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.57
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-church-keeper.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.239,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   905,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3698,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "greying-mid-brown",
+  "facialHair": "none",
+  "style": "long-braid"
+ },
+ "headwear": "veil-wimple",
+ "headwearGate": {
+  "headwear": "veil-wimple",
+  "pass": true,
+  "scalpCovered": 1,
+  "scalpRays": 880,
+  "shells": {
+   "Wimple": {
+    "faces": 342,
+    "islands": 2,
+    "maxReachRadii": 1.7,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#a19e96",
+  "shape": "folded-crown",
+  "tone": "greyed"
+ },
+ "householdId": "ealdholt-church-house-household",
+ "jointResidualCm": {
+  "allMaxCm": 2.56,
+  "coreMaxCm": 1.99,
+  "coreMeanCm": 1.32,
+  "coreWorstJoint": "hand_l"
+ },
+ "label": "Church-house keeper",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 250580,
+  "fileMiB": 0.239,
+  "headTriangles": 905,
+  "images": [
+   {
+    "bytes": 26106,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3698,
+  "vertices": 3464
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 1.055,
+  "roleClips": [
+   "work_sweep",
+   "work_dig",
+   "carry_basket_walk"
+  ],
+  "talk": "talk",
+  "walk": "walk"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "half-apron",
+  "kit": "workshop-apron-f",
+  "palette": {
+   "accent": "madder-red",
+   "main": "lichen-violet",
+   "secondary": "undyed-cream"
+  },
+  "wear": "clean"
+ },
+ "placementScale": 0.9575,
+ "presentation": {
+  "clips": {
+   "carry_basket_walk": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.7116,
+       -0.3841,
+       0.4397,
+       0,
+       0.5259,
+       -0.1203,
+       0.7459,
+       0,
+       -0.2538,
+       0.8278,
+       0.3124,
+       0,
+       0.0519,
+       0.0759,
+       0.0796,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_dig": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       -0.6451,
+       0.0521,
+       0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       -0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       0.189,
+       0.1086,
+       0.2143,
+       1
+      ],
+      "node": "prop_hoe",
+      "prop": "hoe"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_dig_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       -0.6451,
+       0.0521,
+       0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       -0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       0.189,
+       0.1086,
+       0.2143,
+       1
+      ],
+      "node": "prop_hoe",
+      "prop": "hoe"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_dig_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       -0.6451,
+       0.0521,
+       0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       -0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       0.189,
+       0.1086,
+       0.2143,
+       1
+      ],
+      "node": "prop_hoe",
+      "prop": "hoe"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_sweep": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       -0.656,
+       -0.091,
+       -0.6393,
+       0,
+       -0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       -0.1013,
+       0.0683,
+       -0.0685,
+       1
+      ],
+      "node": "prop_broom",
+      "prop": "broom"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_sweep_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       -0.656,
+       -0.091,
+       -0.6393,
+       0,
+       -0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       -0.1013,
+       0.0683,
+       -0.0685,
+       1
+      ],
+      "node": "prop_broom",
+      "prop": "broom"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_sweep_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       -0.656,
+       -0.091,
+       -0.6393,
+       0,
+       -0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       -0.1013,
+       0.0683,
+       -0.0685,
+       1
+      ],
+      "node": "prop_broom",
+      "prop": "broom"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "farm": "crowd-v1/props/crowd-props-farm-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "broom",
+   "kit": "everyday",
+   "socket": "hand_r",
+   "source": "project-original"
+  },
+  {
+   "id": "basket",
+   "kit": "everyday",
+   "socket": "hand_l",
+   "source": "polyhaven:wicker_basket_01"
+  }
+ ],
+ "published": {
+  "bytes": 250580,
+  "sha256": "75270008ed20599010a74111d89aedd495617987b24b3ff019f29b454487b975"
+ },
+ "recipeSha256": "f1df40d1147e59f421cca81993b049b7599fa1c11248fcc6954fe0ad17409526",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-church-keeper",
+ "restRadiusMetres": 0.529,
+ "roleId": "church-keeper",
+ "statureCm": 152.8,
+ "status": "working-placeholder"
+}

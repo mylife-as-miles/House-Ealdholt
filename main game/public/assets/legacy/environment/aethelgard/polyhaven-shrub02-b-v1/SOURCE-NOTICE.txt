@@ -1,0 +1,12 @@
+Poly Haven — Shrub 02, variant shrub_02_b (Verdant Trail)
+Original artist: Rico Cilliers (Poly Haven)
+Source: https://polyhaven.com/a/shrub_02
+Licence: CC0 1.0 Universal; https://creativecommons.org/publicdomain/zero/1.0/
+Poly Haven terms: https://polyhaven.com/license
+
+Crownfall derivatives retain original geometry/TRS and PBR factors, add the official
+alpha image and connect ARM occlusion. Desktop uses 1024px, Native uses 512px.
+Lossless Draco preserves vertex/index values; it reduces these files by only
+20–24 bytes and is not claimed as a material transfer-size improvement.
+Existing Crownfall Draco decoder notices remain applicable to the decoder.
+Raw acquisition files, offline encoder tooling and private reports are omitted.

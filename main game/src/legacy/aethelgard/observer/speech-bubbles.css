@@ -1,0 +1,74 @@
+/* The villagers' speech bubbles (speech-bubbles.ts): hello-world's bubble, in Crownfall's ivory and bronze. The wrapper
+   sits at the speaker's head and is moved every frame; the bubble hangs above it by its bottom centre, shifted and
+   scaled by the layout's --dx, --dy and --s, with its tail pointing back down at the speaker. */
+
+.ealdholt-preview .obs-bubbles { position: absolute; inset: 0; z-index: 2; overflow: hidden; pointer-events: none; }
+.ealdholt-preview .obs-bubble-wrap { position: absolute; left: 0; top: 0; transform: translate3d(-9999px, 0, 0); transition: opacity .28s ease; will-change: transform, opacity; }
+.ealdholt-preview .obs-bubble {
+  --s: 1; --dx: 0px; --dy: 0px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: max-content;
+  min-width: 72px;
+  max-width: 236px;
+  padding: 8px 13px 9px;
+  border-radius: 17px;
+  background: linear-gradient(180deg, #fffaf0f7, #f1e7d3f2);
+  color: #24190c;
+  font: 500 14px/1.32 var(--menu-font-primary, "Barlow"), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: .005em;
+  overflow-wrap: anywhere;
+  box-shadow: 0 10px 26px #000000a6, 0 2px 6px #00000066, inset 0 1px 0 #ffffffb3;
+  transform-origin: 50% 100%;
+  transform: translate(calc(-50% + var(--dx)), calc(-100% + var(--dy) - 9px)) scale(var(--s));
+  animation: obs-bubble-in .34s cubic-bezier(.2, 1.4, .4, 1) backwards;
+  user-select: none;
+}
+/* The tail, pointing back at the speaker however far the layout has slid the bubble aside. */
+.ealdholt-preview .obs-bubble::after {
+  content: "";
+  position: absolute;
+  left: calc(50% - var(--dx) / var(--s));
+  bottom: -6px;
+  width: 13px;
+  height: 13px;
+  margin-left: -6.5px;
+  background: #f1e7d3;
+  border-radius: 0 0 4px 0;
+  transform: rotate(45deg);
+  box-shadow: 3px 3px 6px #0000002e;
+}
+.ealdholt-preview .obs-bubble-name {
+  display: block;
+  margin-bottom: 2px;
+  color: #b25a08;
+  font: 700 10.5px/1.2 var(--menu-font-primary, "Barlow"), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@keyframes obs-bubble-in {
+  from { transform: translate(calc(-50% + var(--dx)), calc(-90% + var(--dy) - 9px)) scale(calc(var(--s) * .8)); }
+  to { transform: translate(calc(-50% + var(--dx)), calc(-100% + var(--dy) - 9px)) scale(var(--s)); }
+}
+
+/* A cry across the yard: bolder. */
+.ealdholt-preview .obs-bubble--call { font-weight: 600; }
+/* Prayer: candle gold, quietly said. */
+.ealdholt-preview .obs-bubble--pray { background: linear-gradient(180deg, #fff8dcf7, #f3e6b9f2); font-style: italic; }
+.ealdholt-preview .obs-bubble--pray::after { background: #f3e6b9; }
+.ealdholt-preview .obs-bubble--pray .obs-bubble-name { color: #8a6a12; font-style: normal; }
+/* Children at play. */
+.ealdholt-preview .obs-bubble--play .obs-bubble-name { color: #1f8a70; }
+/* Alarm: the raid's red around it. */
+.ealdholt-preview .obs-bubble--alarm { font-weight: 600; box-shadow: 0 0 0 2px #e0533d, 0 0 22px #e0533d8c, 0 10px 26px #000000a6; }
+.ealdholt-preview .obs-bubble--alarm .obs-bubble-name { color: #c23a25; }
+/* A sleeper's breath: small and faint, with no tail. */
+.ealdholt-preview .obs-bubble--sleep { min-width: 0; padding: 4px 10px 5px; border-radius: 12px; background: #1b150ecc; color: #d8cfbe; font-size: 12.5px; font-style: italic; letter-spacing: .12em; box-shadow: 0 6px 16px #0008, inset 0 0 0 1px #ffffff1f; }
+.ealdholt-preview .obs-bubble--sleep::after { display: none; }
+
+@media (prefers-reduced-motion: reduce) { .ealdholt-preview .obs-bubble { animation: none; } }
+.ealdholt-preview .obs.is-reduced .obs-bubble { animation: none; }

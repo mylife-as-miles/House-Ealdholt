@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="data:," />
+    <title>Match setup component boundary verification</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      // Development-only fixture: the real component emits onStart payloads
+      // into an observation callback. This does not launch or mock gameplay.
+      const source = await (await fetch('/src/main.tsx')).text();
+      const urls = [...source.matchAll(/from\s+["']([^"']+)["']/g)].map(match => match[1]);
+      const reactURL = urls.find(url => /\/react\.js(?:\?|$)/.test(url));
+      const domURL = urls.find(url => /react-dom_client\.js(?:\?|$)/.test(url));
+      if (!reactURL || !domURL) throw new Error('Cannot resolve the application React modules. Use the desktop Vite development server.');
+      if (!window.__vite_plugin_react_preamble_installed__) {
+        const { default: Refresh } = await import('/@react-refresh');
+        Refresh.injectIntoGlobalHook(window);
+        window.$RefreshReg$ = () => {};
+        window.$RefreshSig$ = () => type => type;
+        window.__vite_plugin_react_preamble_installed__ = true;
+      }
+      const ReactModule = await import(/* @vite-ignore */ reactURL);
+      const React = ReactModule.default || ReactModule;
+      const DOM = await import(/* @vite-ignore */ domURL);
+      const createRoot = (DOM.default || DOM).createRoot;
+      const { applyMenuTheme } = await import('/src/theme.ts');
+      applyMenuTheme();
+      await import('/src/styles.css');
+      await import('/src/play/play.css');
+      const { default: MatchSetup } = await import('/src/play/MatchSetup.tsx');
+      const root = createRoot(document.getElementById('root'));
+      let serial = 0;
+      window.__setupLaunches = [];
+      window.__setupBacks = 0;
+      window.__mountSetup = mode => root.render(React.createElement('div', { className: 'play-route' },
+        React.createElement(MatchSetup, {
+          key: ++serial,
+          mode,
+          reducedMotion: true,
+          onStart: config => window.__setupLaunches.push(config),
+          onBack: () => window.__setupBacks++,
+        })
+      ));
+      window.__mountSetup('classic');
+    </script>
+  </body>
+</html>

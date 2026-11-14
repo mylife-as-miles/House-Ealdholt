@@ -1,0 +1,683 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 8.2,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.6,
+   "shape": 3.3,
+   "texture": 4.1
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 15,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0268,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.187,
+ "envelopes": {
+  "carry_basket_walk": {
+   "max": [
+    0.51,
+    1.716,
+    0.769
+   ],
+   "min": [
+    -0.498,
+    -0.298,
+    -0.847
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.432,
+    1.656,
+    0.693
+   ],
+   "min": [
+    -0.382,
+    -0.095,
+    -0.557
+   ]
+  },
+  "sit": {
+   "max": [
+    0.463,
+    1.251,
+    0.412
+   ],
+   "min": [
+    -0.464,
+    -0.387,
+    -0.938
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.583,
+    1.727,
+    1.105
+   ],
+   "min": [
+    -0.542,
+    -0.655,
+    -1.193
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.583,
+    1.75,
+    1.107
+   ],
+   "min": [
+    -0.551,
+    -0.642,
+    -1.197
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.419,
+    1.671,
+    0.693
+   ],
+   "min": [
+    -0.4,
+    -0.096,
+    -0.546
+   ]
+  },
+  "walk_b": {
+   "max": [
+    0.51,
+    1.678,
+    0.753
+   ],
+   "min": [
+    -0.458,
+    -0.284,
+    -0.88
+   ]
+  },
+  "walk_b_start": {
+   "max": [
+    0.455,
+    1.666,
+    0.841
+   ],
+   "min": [
+    -0.418,
+    -0.199,
+    -0.711
+   ]
+  },
+  "walk_b_stop": {
+   "max": [
+    0.471,
+    1.659,
+    0.754
+   ],
+   "min": [
+    -0.414,
+    -0.241,
+    -0.822
+   ]
+  },
+  "work_dig": {
+   "max": [
+    0.54,
+    1.481,
+    0.812
+   ],
+   "min": [
+    -0.639,
+    -0.211,
+    -0.674
+   ]
+  },
+  "work_dig_enter": {
+   "max": [
+    0.543,
+    1.797,
+    0.872
+   ],
+   "min": [
+    -0.593,
+    -0.293,
+    -0.703
+   ]
+  },
+  "work_dig_exit": {
+   "max": [
+    0.543,
+    1.797,
+    0.869
+   ],
+   "min": [
+    -0.593,
+    -0.291,
+    -0.699
+   ]
+  },
+  "work_hoe": {
+   "max": [
+    0.493,
+    1.507,
+    0.855
+   ],
+   "min": [
+    -0.618,
+    -0.27,
+    -0.646
+   ]
+  },
+  "work_hoe_enter": {
+   "max": [
+    0.54,
+    1.788,
+    0.831
+   ],
+   "min": [
+    -0.581,
+    -0.253,
+    -0.707
+   ]
+  },
+  "work_hoe_exit": {
+   "max": [
+    0.54,
+    1.788,
+    0.832
+   ],
+   "min": [
+    -0.581,
+    -0.254,
+    -0.707
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.215,
+  "lipGapMm": {
+   "aa": 14.6,
+   "full": 17.7,
+   "rest": 1.2
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.8,
+   "r": 7.8
+  },
+  "upperLidClosed": 0.545,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.545
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-gardener.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.238,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   909,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3474,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "greying-fair",
+  "facialHair": "none",
+  "style": "long-braid"
+ },
+ "headwear": "straw-hat",
+ "headwearGate": {
+  "headwear": "straw-hat",
+  "pass": true,
+  "shells": {
+   "HatCrown": {
+    "faces": 196,
+    "islands": 1,
+    "maxReachRadii": 0.991,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#b49a5a",
+  "shape": "wide",
+  "tone": "straw"
+ },
+ "householdId": "ealdholt-orchard-household",
+ "jointResidualCm": {
+  "allMaxCm": 2.42,
+  "coreMaxCm": 2.23,
+  "coreMeanCm": 1.12,
+  "coreWorstJoint": "head"
+ },
+ "label": "Vegetable gardener",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 249372,
+  "fileMiB": 0.238,
+  "headTriangles": 909,
+  "images": [
+   {
+    "bytes": 31380,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3474,
+  "vertices": 3364
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 1.032,
+  "roleClips": [
+   "work_dig",
+   "work_hoe",
+   "carry_basket_walk"
+  ],
+  "talk": "talk_b",
+  "walk": "walk_b"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "kilted-half-apron",
+  "kit": "field-kirtle",
+  "palette": {
+   "accent": "madder-red",
+   "main": "russet",
+   "secondary": "undyed-cream"
+  },
+  "wear": "muddy-hems"
+ },
+ "placementScale": 1.016,
+ "presentation": {
+  "clips": {
+   "carry_basket_walk": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.7116,
+       -0.3841,
+       0.4397,
+       0,
+       0.5259,
+       -0.1203,
+       0.7459,
+       0,
+       -0.2538,
+       0.8278,
+       0.3124,
+       0,
+       0.0519,
+       0.0759,
+       0.0796,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_dig": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       -0.6451,
+       0.0521,
+       0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       -0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       0.189,
+       0.1086,
+       0.2143,
+       1
+      ],
+      "node": "prop_hoe",
+      "prop": "hoe"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_dig_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       -0.6451,
+       0.0521,
+       0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       -0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       0.189,
+       0.1086,
+       0.2143,
+       1
+      ],
+      "node": "prop_hoe",
+      "prop": "hoe"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_dig_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       -0.6451,
+       0.0521,
+       0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       -0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       0.189,
+       0.1086,
+       0.2143,
+       1
+      ],
+      "node": "prop_hoe",
+      "prop": "hoe"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_hoe": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       -0.6451,
+       0.0521,
+       0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       -0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       0.189,
+       0.1086,
+       0.2143,
+       1
+      ],
+      "node": "prop_hoe",
+      "prop": "hoe"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_hoe_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       -0.6451,
+       0.0521,
+       0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       -0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       0.189,
+       0.1086,
+       0.2143,
+       1
+      ],
+      "node": "prop_hoe",
+      "prop": "hoe"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_hoe_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       -0.6451,
+       0.0521,
+       0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       -0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       0.189,
+       0.1086,
+       0.2143,
+       1
+      ],
+      "node": "prop_hoe",
+      "prop": "hoe"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "farm": "crowd-v1/props/crowd-props-farm-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "hoe",
+   "kit": "farm",
+   "socket": "hand_r",
+   "source": "project-original"
+  },
+  {
+   "id": "basket",
+   "kit": "everyday",
+   "socket": "hand_l",
+   "source": "polyhaven:wicker_basket_01"
+  }
+ ],
+ "published": {
+  "bytes": 249372,
+  "sha256": "0c3b8e083524c3542a5cb0a70273cdd8b6c80d5c5aaf5226cd8640454e9e34c4"
+ },
+ "recipeSha256": "9ea0fead332e35bc401e0bd62cdff4ba11666b5d06d7a6449dd924c3e1704fff",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-gardener",
+ "restRadiusMetres": 0.517,
+ "roleId": "gardener",
+ "statureCm": 161,
+ "status": "working-placeholder"
+}

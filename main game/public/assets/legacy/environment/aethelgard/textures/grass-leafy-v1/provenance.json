@@ -1,0 +1,80 @@
+{
+  "assetId": "leafy_grass",
+  "licence": {
+    "spdx": "CC0-1.0",
+    "officialUrl": "https://polyhaven.com/license",
+    "legalCodeUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt",
+    "officialPageSha256": "46158a6b319ae8ef55acd18bd96d986c9261fb0cc8086124e97bcbefe779a623",
+    "legalCodeSha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+  },
+  "sourceUrl": "https://polyhaven.com/a/leafy_grass",
+  "authors": {
+    "Charlotte Baglioni": "All"
+  },
+  "infoApi": "https://api.polyhaven.com/info/leafy_grass",
+  "filesApi": "https://api.polyhaven.com/files/leafy_grass",
+  "infoSha256": "cd91eba66df7e497588d7ab2afb46165278ec608f8add47c2e7c8c2a919338e0",
+  "filesSha256": "705daf71157e399391d094d14cd9e932d5c337bb2c3044bb91823145162afc83",
+  "sources": {
+    "albedo": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/leafy_grass/leafy_grass_diff_1k.jpg",
+      "bytes": 1195394,
+      "md5": "0dbc071e91d6905edfcfbe8eb785a1ab",
+      "sha256": "cfa40bc9d9417d1852db8753a8d5917f110c40101179f63543c382e39bc05e4a",
+      "decodedRgbSha256": "791bf897e0ab63467106c6d0f7defdcea45b28bb80bc27ae0acce7a1152bcdda"
+    },
+    "normal": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/leafy_grass/leafy_grass_nor_gl_1k.jpg",
+      "bytes": 1466049,
+      "md5": "8279e096e204ea326d57a318869f99df",
+      "sha256": "832328216adc0a7e1f70a31d5ee48c9ab7f2152d83816122736cf42ac4b2ebd6",
+      "decodedRgbSha256": "f2c1b07603df47abbb8da72796fba456a21a2736afd95138870774af0d8fefbe"
+    },
+    "orm": {
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/leafy_grass/leafy_grass_arm_1k.jpg",
+      "bytes": 1010081,
+      "md5": "44fb4e40ef0f3425a7d1a14bc328e4d8",
+      "sha256": "95432451cb2693794459fe7ea339ea9ffdb5959c40373740f80a4aa1703f089d",
+      "decodedRgbSha256": "c4b0083cfc972a17ece6ff1d970f3a4b01a00dcda7736f990b03f4625ab3addb"
+    }
+  },
+  "processing": "No tint, source-geometry or material changes. Linear-light box reduction for albedo; linear ARM reduction; normal vectors averaged and renormalized. Deterministic lossless WebP from decoded RGB. Opaque surface, not an alpha blade or displaced grass mesh.",
+  "files": [
+    {
+      "file": "grass-desktop-albedo-1024.webp",
+      "size": 1024,
+      "bytes": 1787214,
+      "sha256": "41e00ced084f07771afcc19dbebd4250ff30082f93b8015fcb6d4d8a4ddb852c"
+    },
+    {
+      "file": "grass-desktop-normal-1024.webp",
+      "size": 1024,
+      "bytes": 2468848,
+      "sha256": "d1074cdeaec4f080e5944f86c72515fccfe5e81df9995bc8f394f453637ec1b2"
+    },
+    {
+      "file": "grass-desktop-orm-1024.webp",
+      "size": 1024,
+      "bytes": 1764930,
+      "sha256": "ff702c349cd5370e2b97dd6f6d161d7dc25f4883b83df78e126b6987e63f3ec1"
+    },
+    {
+      "file": "grass-quest-albedo-512.webp",
+      "size": 512,
+      "bytes": 524734,
+      "sha256": "b5e90958c017ff48bc87af25de92556405a51ae1ee757d1cc210a96eb4b5fa2a"
+    },
+    {
+      "file": "grass-quest-normal-512.webp",
+      "size": 512,
+      "bytes": 579494,
+      "sha256": "9d3d401b9ba2a1e5b522a9196e973d6ff72b338e9af7e70aec1cf8bf294edf4a"
+    },
+    {
+      "file": "grass-quest-orm-512.webp",
+      "size": 512,
+      "bytes": 418152,
+      "sha256": "302a1a3e1eadcc67e02d864bae5c26259e1ae4a13ee381c88e83d51a3cffb39c"
+    }
+  ]
+}

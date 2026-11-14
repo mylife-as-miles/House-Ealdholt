@@ -1,0 +1,2 @@
+import type { CombinedBuildingSpec } from './provenance';
+export function createMonolithKit(options:{THREE:any;profile?:'desktop'|'quest';quality?:'low'|'medium'|'high';groundAt:(x:number,z:number)=>number;shoreAt:(z:number)=>number;treeSites?:readonly {x:number;z:number;scale:number;yaw:number}[]}):{root:any;buildRuin(spec:CombinedBuildingSpec):any;update(delta:number,camera?:any):void;setReducedMotion(value:boolean):void;dispose():void};

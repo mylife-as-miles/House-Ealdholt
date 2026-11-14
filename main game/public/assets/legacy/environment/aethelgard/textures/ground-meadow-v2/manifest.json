@@ -1,0 +1,105 @@
+{
+  "version": 2,
+  "set": "ealdholt-woodland-ground",
+  "layer": "meadow",
+  "assetId": "forrest_ground_01",
+  "name": "Forest Ground 01",
+  "sourceUrl": "https://polyhaven.com/a/forrest_ground_01",
+  "licence": "CC0-1.0",
+  "authors": {
+    "Rob Tuytel": "All"
+  },
+  "tileMetres": 2,
+  "laasWeight": "grass",
+  "modified": true,
+  "intakeDate": "2026-11-06",
+  "roles": [
+    "albedo",
+    "normal"
+  ],
+  "colour": {
+    "albedo": "sRGB RGB; opaque; chroma graded as recorded in provenance.json, luminance photographic",
+    "normal": "OpenGL tangent-space +Y; linear; vectors renormalized",
+    "orm": "Linear R=source AO, G=source roughness, B=source metallic",
+    "orientation": "Source rows preserved; configure flipY=false for every map"
+  },
+  "profiles": {
+    "desktop": {
+      "meanLuminance": 0.24821197446375307,
+      "files": {
+        "albedo": {
+          "file": "meadow-desktop-albedo-1024.webp",
+          "size": 1024,
+          "bytes": 2135372,
+          "sha256": "0f5913480930b5b30478cfba249eca545903dde8f4a1692881a25c61c01d592a"
+        },
+        "normal": {
+          "file": "meadow-desktop-normal-1024.webp",
+          "size": 1024,
+          "bytes": 2541160,
+          "sha256": "e68b3f164e7f5cdfd665913c1155fffd7c8cf784f4e302d2f12450adc5f20f8b"
+        }
+      },
+      "gpuBytesWithMipsEstimate": 11184808,
+      "analysis": {
+        "meanLuminance": 0.24821197,
+        "meanSrgb8": [
+          119,
+          145,
+          85
+        ],
+        "meanColourHue": 86,
+        "meanSaturation": 0.4899,
+        "shares": {
+          "green": 0.6841,
+          "olive": 0.0019,
+          "warm": 0.3118,
+          "neutral": 0.0021,
+          "other": 0
+        },
+        "luminanceWeightedShares": {
+          "green": 0.6594,
+          "olive": 0.0022,
+          "warm": 0.3347,
+          "neutral": 0.0036,
+          "other": 0
+        },
+        "luminancePercentiles": {
+          "p05": 0.149048,
+          "p25": 0.199341,
+          "p50": 0.237183,
+          "p75": 0.285522,
+          "p95": 0.383179
+        },
+        "linearChromaticity": [
+          0.3325,
+          0.505,
+          0.1625
+        ],
+        "valleyGrassIndex": 0.3889,
+        "macroVariation": 0.0255,
+        "macroLuminanceVariation16": 0.0415,
+        "macroChromaVariation8": 0.1763,
+        "macroChromaVariation16": 0.2244
+      }
+    },
+    "quest": {
+      "meanLuminance": 0.24824408192603298,
+      "files": {
+        "albedo": {
+          "file": "meadow-quest-albedo-512.webp",
+          "size": 512,
+          "bytes": 577350,
+          "sha256": "51690214cccece1209542d3caa22c222d52d9138c39cff2b492e1c6270b07fce"
+        },
+        "normal": {
+          "file": "meadow-quest-normal-256.webp",
+          "size": 256,
+          "bytes": 131810,
+          "sha256": "27ee5e7d45650b5948531307a62fda9332fbbf70d0263c7a9dc74d70b1dd9622"
+        }
+      },
+      "gpuBytesWithMipsEstimate": 1747624
+    }
+  }
+}

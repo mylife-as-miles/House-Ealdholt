@@ -1,0 +1,367 @@
+{
+  "version": 1,
+  "generator": "scripts/generate-light-assets.ts",
+  "files": [
+    {
+      "path": "fonts/7cHqv4kjgoGqM7E3p-kc4A.woff2",
+      "app": "desktop",
+      "source": "fonts/7cHqv4kjgoGqM7E3p-kc4A.ttf",
+      "sourceSha256": "639ac4d54919fd167b6ab52cb5daec616b5c7f60ae0a1cbad4e81936d13d3b24",
+      "sha256": "8681e23e8a071590ec95c8d8c97e3abb826f425846464550dc0acb41d7b8097c",
+      "bytes": 36208,
+      "settings": {
+        "format": "woff2",
+        "transforms": "null (tables unchanged)",
+        "brotliQuality": 11
+      }
+    },
+    {
+      "path": "fonts/7cHpv4kjgoGqM7EPCw.woff2",
+      "app": "desktop",
+      "source": "fonts/7cHpv4kjgoGqM7EPCw.ttf",
+      "sourceSha256": "a35caa4687f434d66453c1fe423d7074cfa9fd7ab80c19b0780f3862887d2fc9",
+      "sha256": "9408e116bf6aead66c1f9b480d8c4306c90e2324c421cb74fc0bde0311e87f11",
+      "bytes": 36276,
+      "settings": {
+        "format": "woff2",
+        "transforms": "null (tables unchanged)",
+        "brotliQuality": 11
+      }
+    },
+    {
+      "path": "fonts/7cHqv4kjgoGqM7E3_-gc4A.woff2",
+      "app": "desktop",
+      "source": "fonts/7cHqv4kjgoGqM7E3_-gc4A.ttf",
+      "sourceSha256": "91c841fdfa8e7b94ffedbb983a363947ba6ed720f3bbf0c71d48b618053655bc",
+      "sha256": "78c7e9609c066462acd044a3f995c6fbca47912b6a44466bf0ac9ebaecbe0e5d",
+      "bytes": 36256,
+      "settings": {
+        "format": "woff2",
+        "transforms": "null (tables unchanged)",
+        "brotliQuality": 11
+      }
+    },
+    {
+      "path": "fonts/7cHqv4kjgoGqM7E30-8c4A.woff2",
+      "app": "desktop",
+      "source": "fonts/7cHqv4kjgoGqM7E30-8c4A.ttf",
+      "sourceSha256": "c15439e7a03af5714282ec1780ff7b0214ec6a7db96300b54928dbcd2569ca0c",
+      "sha256": "477cae861201535bf27b4c04e8a76c84381fbc4dbd7aab3448ccf444b34f4014",
+      "bytes": 37472,
+      "settings": {
+        "format": "woff2",
+        "transforms": "null (tables unchanged)",
+        "brotliQuality": 11
+      }
+    },
+    {
+      "path": "fonts/HTxwL3I-JCGChYJ8VI-L6OO_au7B47rx_3E.woff2",
+      "app": "desktop",
+      "source": "fonts/HTxwL3I-JCGChYJ8VI-L6OO_au7B47rx_3E.ttf",
+      "sourceSha256": "1e384bc40b3d8bd2d6d985b7fe38648c5f58681aaa2fddf402c4749bbd8bf02d",
+      "sha256": "8e8833bc9b4309fbee35f9cd8d31cb7e6c3ca5a2812ad42cc251f8dda6b24acc",
+      "bytes": 35044,
+      "settings": {
+        "format": "woff2",
+        "transforms": "null (tables unchanged)",
+        "brotliQuality": 11
+      }
+    },
+    {
+      "path": "fonts/HTx3L3I-JCGChYJ8VI-L6OO_au7B2xY.woff2",
+      "app": "desktop",
+      "source": "fonts/HTx3L3I-JCGChYJ8VI-L6OO_au7B2xY.ttf",
+      "sourceSha256": "c82d65280835cb3cd1b499863cf68cae8c6193c45ffae9495d28d01f749a9ae2",
+      "sha256": "d2988263e3ef32ffd98f2117b702dad0a7f569da74ce6cb4798b784ba3267dd4",
+      "bytes": 35156,
+      "settings": {
+        "format": "woff2",
+        "transforms": "null (tables unchanged)",
+        "brotliQuality": 11
+      }
+    },
+    {
+      "path": "fonts/HTxwL3I-JCGChYJ8VI-L6OO_au7B4-Lw_3E.woff2",
+      "app": "desktop",
+      "source": "fonts/HTxwL3I-JCGChYJ8VI-L6OO_au7B4-Lw_3E.ttf",
+      "sourceSha256": "cc9fb2539cf27df48255982e896d28f544483537cdb41f9fabd741af8992d719",
+      "sha256": "c87feb48a6f83ec9c2b4b7dcc0fd307a87a49c786215117e155974b9720338a6",
+      "bytes": 35780,
+      "settings": {
+        "format": "woff2",
+        "transforms": "null (tables unchanged)",
+        "brotliQuality": 11
+      }
+    },
+    {
+      "path": "assets/environments/card-new-1600.webp",
+      "app": "desktop",
+      "source": "assets/environments/card-new.webp",
+      "sourceSha256": "6680a64b955edbc989d8a0feabcc620fbdadfd78896767f333f6f572286e2f63",
+      "sha256": "032f21bef1b04e9f633e47753a85f48f38a0e791c5e9aa64030de5c1550c266a",
+      "bytes": 72970,
+      "settings": {
+        "from": [
+          2048,
+          1143
+        ],
+        "size": [
+          1600,
+          893
+        ],
+        "quality": 82
+      }
+    },
+    {
+      "path": "assets/environments/card-resume-1600.webp",
+      "app": "desktop",
+      "source": "assets/environments/card-resume.webp",
+      "sourceSha256": "50b356b5e3433c9ca6716a8c369da1276ac0a7e83042caa1235487aca45c9412",
+      "sha256": "c6f0bd9f60013fa736c0c16cd20d62a1be26444fe471dbd81c4702d23ea2fa39",
+      "bytes": 103678,
+      "settings": {
+        "from": [
+          2048,
+          1143
+        ],
+        "size": [
+          1600,
+          893
+        ],
+        "quality": 82
+      }
+    },
+    {
+      "path": "assets/environments/card-load-1600.webp",
+      "app": "desktop",
+      "source": "assets/environments/card-load.webp",
+      "sourceSha256": "0db6c8c014c8e1754326b4d4148112806ebf1772940bc3e508b6554df433338c",
+      "sha256": "5c7d37689a9e7928770397e73ba56e3146db2fe65d9b90beba822707d9e4bbd2",
+      "bytes": 115392,
+      "settings": {
+        "from": [
+          2048,
+          1143
+        ],
+        "size": [
+          1600,
+          893
+        ],
+        "quality": 82
+      }
+    },
+    {
+      "path": "assets/environments/card-browse-1600.webp",
+      "app": "desktop",
+      "source": "assets/environments/card-browse.webp",
+      "sourceSha256": "5a828742d27f8dc47f53209299e444fd97dc4d4750f97e1e1736d9d325ff8088",
+      "sha256": "a912dee36acfbe3a807eefd477fc399652c50b4cd1d7c731da48c39e76c3fef5",
+      "bytes": 146816,
+      "settings": {
+        "from": [
+          2048,
+          1143
+        ],
+        "size": [
+          1600,
+          893
+        ],
+        "quality": 82
+      }
+    },
+    {
+      "path": "models/crownfall-sorcerer-menu.glb",
+      "app": "desktop",
+      "source": "models/crownfall-sorcerer.glb",
+      "sourceSha256": "ef1d096a650c7e342a11a67c0d7c1038bbde21ee4416188a8ecb338eb677e2ca",
+      "sha256": "c1682710555e174aeafdf501a791a5cee593452d57a19b67ded7eb68cf9b31a0",
+      "bytes": 2997804,
+      "settings": {
+        "clips": [
+          "Idle"
+        ],
+        "images": {
+          "Crownfall_Normal_4K": {
+            "maxSize": 1024,
+            "quality": 92
+          },
+          "Crownfall_RoughnessMetallic_4K": {
+            "maxSize": 1024,
+            "quality": 90
+          }
+        },
+        "accessors": [
+          1289,
+          435
+        ],
+        "geometry": "unchanged (Draco mesh copied byte for byte)"
+      }
+    },
+    {
+      "path": "quest/assets/environments/card-new.webp",
+      "app": "quest",
+      "source": "assets/environments/card-new.webp",
+      "sourceSha256": "6680a64b955edbc989d8a0feabcc620fbdadfd78896767f333f6f572286e2f63",
+      "sha256": "69d7781b38a97d4e977359e4dcfd742dcf333eb03c7267da44ba5328a85be4a5",
+      "bytes": 49336,
+      "settings": {
+        "from": [
+          2048,
+          1143
+        ],
+        "size": [
+          1024,
+          572
+        ],
+        "quality": 85
+      }
+    },
+    {
+      "path": "quest/assets/environments/card-resume.webp",
+      "app": "quest",
+      "source": "assets/environments/card-resume.webp",
+      "sourceSha256": "50b356b5e3433c9ca6716a8c369da1276ac0a7e83042caa1235487aca45c9412",
+      "sha256": "70060ce5bf518f31e13a6831b4fc585d4ca266d25327138f2315b6fbac46350c",
+      "bytes": 69430,
+      "settings": {
+        "from": [
+          2048,
+          1143
+        ],
+        "size": [
+          1024,
+          572
+        ],
+        "quality": 85
+      }
+    },
+    {
+      "path": "quest/assets/environments/card-load.webp",
+      "app": "quest",
+      "source": "assets/environments/card-load.webp",
+      "sourceSha256": "0db6c8c014c8e1754326b4d4148112806ebf1772940bc3e508b6554df433338c",
+      "sha256": "6e866a55026be1ab84e04b2126a18ac8970daf5aa8a3f6005ecc57c5fce57750",
+      "bytes": 78458,
+      "settings": {
+        "from": [
+          2048,
+          1143
+        ],
+        "size": [
+          1024,
+          572
+        ],
+        "quality": 85
+      }
+    },
+    {
+      "path": "quest/assets/environments/card-browse.webp",
+      "app": "quest",
+      "source": "assets/environments/card-browse.webp",
+      "sourceSha256": "5a828742d27f8dc47f53209299e444fd97dc4d4750f97e1e1736d9d325ff8088",
+      "sha256": "d30cbe1e21ab5ccc479ace2edaf8c5dc60e93969cb84c46fdfa51e74c980d67f",
+      "bytes": 95762,
+      "settings": {
+        "from": [
+          2048,
+          1143
+        ],
+        "size": [
+          1024,
+          572
+        ],
+        "quality": 85
+      }
+    },
+    {
+      "path": "quest/assets/home/my-legacy.webp",
+      "app": "quest",
+      "source": "assets/home/my-legacy.webp",
+      "sourceSha256": "f1d29a294f03ae983888369df0c180e1960c7f24eeb83252e3250b2f617d05cf",
+      "sha256": "6d152fe087191cc460c893438481c3a544c43c4def72e61adbd50af613ef6f04",
+      "bytes": 55560,
+      "settings": {
+        "from": [
+          1529,
+          2048
+        ],
+        "size": [
+          764,
+          1024
+        ],
+        "quality": 85
+      }
+    },
+    {
+      "path": "quest/assets/home/herald-board.webp",
+      "app": "quest",
+      "source": "assets/home/herald-board.webp",
+      "sourceSha256": "8d8492b3336e5a97cee62fa57e6b99ce7be6a650e774df18394b22ea1b8b6d70",
+      "sha256": "b2405a8491acf8b37018500adf3ed23533214991b2c9935263f136637107f2c3",
+      "bytes": 84398,
+      "settings": {
+        "from": [
+          2048,
+          1143
+        ],
+        "size": [
+          1024,
+          572
+        ],
+        "quality": 85
+      }
+    },
+    {
+      "path": "quest/models/crownfall-sorcerer.glb",
+      "app": "quest",
+      "source": "models/crownfall-sorcerer.glb",
+      "sourceSha256": "ef1d096a650c7e342a11a67c0d7c1038bbde21ee4416188a8ecb338eb677e2ca",
+      "sha256": "cc4338e19a4d5afb4bc9cf83cf7aa68d6a9da88dbaa36daea7963bc07e587fc3",
+      "bytes": 2469828,
+      "settings": {
+        "clips": [
+          "Idle"
+        ],
+        "images": {
+          "Crownfall_Normal_4K": {
+            "maxSize": 1024,
+            "quality": 92
+          },
+          "Crownfall_RoughnessMetallic_4K": {
+            "maxSize": 1024,
+            "quality": 90
+          },
+          "Crownfall_BaseColor_4K": {
+            "maxSize": 1024,
+            "quality": 90
+          }
+        },
+        "accessors": [
+          1289,
+          435
+        ],
+        "geometry": "unchanged (Draco mesh copied byte for byte)"
+      }
+    },
+    {
+      "path": "quest/video/crownfall-end-credits-720p.mp4",
+      "app": "quest",
+      "source": "video/crownfall-end-credits.mp4",
+      "sourceSha256": "4e27cc61f5b61613eb6a85be023d1867a7ce6fca80f7b8ede9233497529d9b56",
+      "sha256": "97048eca2e4ad28c5674b44a9ab530bdb1a11b12deceb3ed3f1e8986cb4d530f",
+      "bytes": 7450546,
+      "settings": {
+        "width": 1280,
+        "height": 720,
+        "codec": "libx264",
+        "profile": "high",
+        "crf": 23,
+        "preset": "slow",
+        "audio": "copied from the source",
+        "framesPerSecond": 24,
+        "durationSeconds": 182.252993,
+        "codecs": "h264 High"
+      }
+    }
+  ]
+}

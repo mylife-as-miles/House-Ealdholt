@@ -1,0 +1,91 @@
+{
+ "budget": {
+  "clipsInResidentFile": 0,
+  "committed": {
+   "hardCapMiB": 60,
+   "residentsAndLibrariesTargetMiB": 45
+  },
+  "draws": {
+   "bodyMax": 2,
+   "heldPropsMax": 1
+  },
+  "faceTier": "face-joints-only",
+  "file": {
+   "maxMiB": 0.45,
+   "targetMiB": 0.3
+  },
+  "joints": 64,
+  "materials": {
+   "max": 2
+  },
+  "morphTargets": 0,
+  "questVisible": {
+   "drawsMax": 45,
+   "maxResidents": 15,
+   "residents": 12,
+   "trianglesMax": 67500
+  },
+  "textures": {
+   "albedoPx": 512,
+   "decodedMiBMax": 2.1,
+   "hairStrandPx": 256,
+   "normalPx": 256
+  },
+  "triangles": {
+   "headMin": 900,
+   "max": 4500,
+   "nominal": 3500
+  }
+ },
+ "clipLibraries": "published by the motion builder under clips/",
+ "description": "Crowd level of the Ealdholt village population (docs/legacy/characters/EALDHOLT_POPULATION_ART.md).",
+ "pairing": "template = { scene: residentGltf.scene, animations: clipLibraryGltf.animations }; placement.scale = placementScale",
+ "props": {
+  "index": "props/kits.json"
+ },
+ "residents": {
+  "index": "residents/index.json",
+  "measured": {
+   "bytesMax": 267932,
+   "bytesMin": 226652,
+   "bytesTotal": 23576580,
+   "trianglesMax": 3711,
+   "trianglesMin": 3191
+  },
+  "plannedCrowdResidents": 96,
+  "published": 96
+ },
+ "set": "crowd-v1",
+ "silhouetteOverlap": {
+  "household": {
+   "max": 0.881,
+   "median": 0.682,
+   "over0.85": 6,
+   "over0.9": 0,
+   "pairs": 151
+  },
+  "kit": {
+   "max": 0.95,
+   "median": 0.802,
+   "over0.85": 74,
+   "over0.9": 25,
+   "pairs": 282
+  },
+  "method": "IoU of white-on-black masks, idle t=0, front and isometric (30 deg azimuth, 54 deg elevation); max of the two",
+  "pass": false,
+  "residents": 96,
+  "role": {
+   "max": 0.95,
+   "median": 0.743,
+   "over0.85": 12,
+   "over0.9": 3,
+   "pairs": 85
+  },
+  "thresholds": {
+   "kitMedian": 0.8,
+   "pairMax": 0.9
+  },
+  "tool": "scripts/characters/review/silhouette_overlap.py"
+ },
+ "status": "working-placeholder"
+}

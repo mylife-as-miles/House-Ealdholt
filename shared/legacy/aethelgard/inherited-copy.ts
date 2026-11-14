@@ -1,0 +1,25 @@
+/** Shared copy for the explicit, separately saved inherited-house slice.
+ * Role names and dialogue remain replaceable working fiction. */
+export const EALDHOLT_INHERITED_COPY = {
+  label: "An inherited house",
+  introductoryNote: "Choose your banner, then take responsibility for House Ealdholt.",
+  bannerBody: "Choose the banner your house will carry.",
+  confirm: "Begin House Ealdholt",
+  confirmation: "This creates a separate Ealdholt save on this browser. Your earlier Legacy saves are retained unchanged.",
+  saved: "House Ealdholt · Saved on this browser",
+  saving: "Recording your choice…",
+  entryError: "Your house could not be saved. Try again, or return to the menu.",
+  unavailable: "Saving is unavailable here. You can return to the menu or to Play.",
+  people: "The household",
+  peopleHint: "Hear the people of your house.",
+  dialogueLabel: "A conversation",
+  recorded: "Your direction is recorded.",
+  close: "Back to the village",
+  retry: "Try again",
+  board: "Return to Play",
+  empty: "Choose someone to hear their concerns.",
+  contentUnavailable: "This conversation is unavailable in this version. Your saved choice is retained.",
+  responseLabel: "Your response",
+  choosePerson: "Choose someone to speak with.",
+  otherPeople: "The household",
+} as const;

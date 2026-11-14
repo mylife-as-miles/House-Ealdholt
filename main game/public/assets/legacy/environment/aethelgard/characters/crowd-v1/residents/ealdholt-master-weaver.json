@@ -1,0 +1,709 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 8.6,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.3,
+   "lod": 0.7,
+   "shape": 3.4,
+   "texture": 4.2
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 17,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0171,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.188,
+ "envelopes": {
+  "idle": {
+   "max": [
+    0.53,
+    1.633,
+    0.709
+   ],
+   "min": [
+    -0.493,
+    -0.179,
+    -0.644
+   ]
+  },
+  "sit": {
+   "max": [
+    0.555,
+    1.242,
+    0.472
+   ],
+   "min": [
+    -0.556,
+    -0.474,
+    -1.044
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.708,
+    1.699,
+    1.199
+   ],
+   "min": [
+    -0.671,
+    -0.767,
+    -1.314
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.709,
+    1.719,
+    1.202
+   ],
+   "min": [
+    -0.677,
+    -0.752,
+    -1.318
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.531,
+    1.661,
+    0.709
+   ],
+   "min": [
+    -0.494,
+    -0.178,
+    -0.644
+   ]
+  },
+  "walk_b": {
+   "max": [
+    0.637,
+    1.68,
+    0.868
+   ],
+   "min": [
+    -0.573,
+    -0.374,
+    -0.971
+   ]
+  },
+  "walk_b_start": {
+   "max": [
+    0.578,
+    1.665,
+    0.928
+   ],
+   "min": [
+    -0.527,
+    -0.274,
+    -0.841
+   ]
+  },
+  "walk_b_stop": {
+   "max": [
+    0.556,
+    1.657,
+    0.839
+   ],
+   "min": [
+    -0.54,
+    -0.311,
+    -0.908
+   ]
+  },
+  "work_address": {
+   "max": [
+    0.558,
+    1.676,
+    0.735
+   ],
+   "min": [
+    -0.499,
+    -0.154,
+    -0.675
+   ]
+  },
+  "work_address_enter": {
+   "max": [
+    0.506,
+    1.629,
+    0.692
+   ],
+   "min": [
+    -0.445,
+    -0.153,
+    -0.633
+   ]
+  },
+  "work_address_exit": {
+   "max": [
+    0.506,
+    1.629,
+    0.692
+   ],
+   "min": [
+    -0.445,
+    -0.153,
+    -0.633
+   ]
+  },
+  "work_card_wool": {
+   "max": [
+    0.555,
+    1.203,
+    0.471
+   ],
+   "min": [
+    -0.573,
+    -0.474,
+    -1.044
+   ]
+  },
+  "work_card_wool_enter": {
+   "max": [
+    0.555,
+    1.404,
+    0.471
+   ],
+   "min": [
+    -0.556,
+    -0.474,
+    -1.044
+   ]
+  },
+  "work_card_wool_exit": {
+   "max": [
+    0.555,
+    1.404,
+    0.471
+   ],
+   "min": [
+    -0.556,
+    -0.474,
+    -1.044
+   ]
+  },
+  "work_weave": {
+   "max": [
+    0.573,
+    1.702,
+    0.698
+   ],
+   "min": [
+    -0.559,
+    -0.166,
+    -0.634
+   ]
+  },
+  "work_weave_enter": {
+   "max": [
+    0.52,
+    1.705,
+    0.696
+   ],
+   "min": [
+    -0.47,
+    -0.165,
+    -0.633
+   ]
+  },
+  "work_weave_exit": {
+   "max": [
+    0.521,
+    1.706,
+    0.696
+   ],
+   "min": [
+    -0.47,
+    -0.165,
+    -0.633
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.209,
+  "lipGapMm": {
+   "aa": 13.5,
+   "full": 16.5,
+   "rest": 0.9
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.57,
+   "r": 7.57
+  },
+  "upperLidClosed": 0.533,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.533
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "major",
+ "file": "ealdholt-master-weaver.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.228,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   903,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3338,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "auburn",
+  "facialHair": "none",
+  "style": "tied-back"
+ },
+ "headwear": "veil-wimple",
+ "headwearGate": {
+  "headwear": "veil-wimple",
+  "pass": true,
+  "scalpCovered": 1,
+  "scalpRays": 933,
+  "shells": {
+   "Wimple": {
+    "faces": 342,
+    "islands": 2,
+    "maxReachRadii": 1.94,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#ddd8cc",
+  "shape": "plain",
+  "tone": "bleached"
+ },
+ "householdId": "ealdholt-weaver-household",
+ "jointResidualCm": {
+  "allMaxCm": 2.22,
+  "coreMaxCm": 2.03,
+  "coreMeanCm": 1.2,
+  "coreWorstJoint": "head"
+ },
+ "label": "Master weaver",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 239136,
+  "fileMiB": 0.228,
+  "headTriangles": 903,
+  "images": [
+   {
+    "bytes": 30704,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3338,
+  "vertices": 3199
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 0.971,
+  "roleClips": [
+   "work_weave",
+   "work_card_wool",
+   "work_address"
+  ],
+  "talk": "talk_b",
+  "walk": "walk_b"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "overgown",
+  "kit": "workshop-apron-f",
+  "palette": {
+   "accent": "walnut-brown",
+   "main": "weld-yellow",
+   "secondary": "undyed-grey"
+  },
+  "wear": "clean"
+ },
+ "placementScale": 1.0913,
+ "presentation": {
+  "clips": {
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_card_wool": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "textile",
+      "matrix": [
+       -0.2804,
+       0.8645,
+       0.146,
+       0,
+       -0.5052,
+       -0.0341,
+       -0.7687,
+       0,
+       -0.7165,
+       -0.3142,
+       0.4849,
+       0,
+       -0.0041,
+       0.0759,
+       0.0259,
+       1
+      ],
+      "node": "prop_carding_combs_left",
+      "prop": "carding-combs"
+     },
+     {
+      "bone": "hand_r",
+      "kit": "textile",
+      "matrix": [
+       -0.3592,
+       0.7227,
+       -0.4427,
+       0,
+       0.703,
+       -0.0146,
+       -0.5941,
+       0,
+       -0.4735,
+       -0.5699,
+       -0.5462,
+       0,
+       -0.0417,
+       0.066,
+       -0.0142,
+       1
+      ],
+      "node": "prop_carding_combs_right",
+      "prop": "carding-combs"
+     }
+    ],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_card_wool_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "textile",
+      "matrix": [
+       -0.2804,
+       0.8645,
+       0.146,
+       0,
+       -0.5052,
+       -0.0341,
+       -0.7687,
+       0,
+       -0.7165,
+       -0.3142,
+       0.4849,
+       0,
+       -0.0041,
+       0.0759,
+       0.0259,
+       1
+      ],
+      "node": "prop_carding_combs_left",
+      "prop": "carding-combs"
+     },
+     {
+      "bone": "hand_r",
+      "kit": "textile",
+      "matrix": [
+       -0.3592,
+       0.7227,
+       -0.4427,
+       0,
+       0.703,
+       -0.0146,
+       -0.5941,
+       0,
+       -0.4735,
+       -0.5699,
+       -0.5462,
+       0,
+       -0.0417,
+       0.066,
+       -0.0142,
+       1
+      ],
+      "node": "prop_carding_combs_right",
+      "prop": "carding-combs"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_card_wool_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "textile",
+      "matrix": [
+       -0.2804,
+       0.8645,
+       0.146,
+       0,
+       -0.5052,
+       -0.0341,
+       -0.7687,
+       0,
+       -0.7165,
+       -0.3142,
+       0.4849,
+       0,
+       -0.0041,
+       0.0759,
+       0.0259,
+       1
+      ],
+      "node": "prop_carding_combs_left",
+      "prop": "carding-combs"
+     },
+     {
+      "bone": "hand_r",
+      "kit": "textile",
+      "matrix": [
+       -0.3592,
+       0.7227,
+       -0.4427,
+       0,
+       0.703,
+       -0.0146,
+       -0.5941,
+       0,
+       -0.4735,
+       -0.5699,
+       -0.5462,
+       0,
+       -0.0417,
+       0.066,
+       -0.0142,
+       1
+      ],
+      "node": "prop_carding_combs_right",
+      "prop": "carding-combs"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_weave": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.3866,
+       1
+      ],
+      "node": "prop_loom",
+      "prop": "loom"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "textile": "crowd-v1/props/crowd-props-textile-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "loom",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 239136,
+  "sha256": "a11535973be005e38db14f4cd1ad7c3c1908b530e1547c7456ab3212dc21af67"
+ },
+ "recipeSha256": "b8a8cde945f59d539a8928b3e88dffddf54537b81234e5788816e33e179838b6",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-master-weaver",
+ "restRadiusMetres": 0.518,
+ "roleId": "master-weaver",
+ "statureCm": 171.9,
+ "status": "working-placeholder"
+}

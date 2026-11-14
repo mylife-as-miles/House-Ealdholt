@@ -1,0 +1,744 @@
+{
+ "archetype": "adult-male",
+ "build": {
+  "seconds": 7.4,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.4,
+   "shape": 2.9,
+   "texture": 3.7
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-male-v1.glb",
+ "envelopeGate": {
+  "clips": 17,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0199,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.273,
+ "envelopes": {
+  "idle_b": {
+   "max": [
+    0.46,
+    1.791,
+    0.655
+   ],
+   "min": [
+    -0.362,
+    -0.094,
+    -0.593
+   ]
+  },
+  "sit": {
+   "max": [
+    0.478,
+    1.327,
+    0.48
+   ],
+   "min": [
+    -0.475,
+    -0.448,
+    -0.944
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.685,
+    1.829,
+    1.239
+   ],
+   "min": [
+    -0.638,
+    -0.707,
+    -1.264
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.696,
+    1.843,
+    1.242
+   ],
+   "min": [
+    -0.685,
+    -0.694,
+    -1.267
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.503,
+    1.791,
+    0.641
+   ],
+   "min": [
+    -0.508,
+    -0.094,
+    -0.592
+   ]
+  },
+  "walk": {
+   "max": [
+    0.562,
+    1.816,
+    0.906
+   ],
+   "min": [
+    -0.529,
+    -0.393,
+    -0.929
+   ]
+  },
+  "walk_start": {
+   "max": [
+    0.538,
+    1.809,
+    0.861
+   ],
+   "min": [
+    -0.521,
+    -0.186,
+    -0.667
+   ]
+  },
+  "walk_stop": {
+   "max": [
+    0.536,
+    1.801,
+    0.853
+   ],
+   "min": [
+    -0.516,
+    -0.324,
+    -0.805
+   ]
+  },
+  "work_pray": {
+   "max": [
+    0.428,
+    1.823,
+    0.622
+   ],
+   "min": [
+    -0.402,
+    -0.094,
+    -0.577
+   ]
+  },
+  "work_pray_enter": {
+   "max": [
+    0.549,
+    1.828,
+    0.622
+   ],
+   "min": [
+    -0.532,
+    -0.094,
+    -0.577
+   ]
+  },
+  "work_pray_exit": {
+   "max": [
+    0.549,
+    1.828,
+    0.622
+   ],
+   "min": [
+    -0.532,
+    -0.094,
+    -0.577
+   ]
+  },
+  "work_read": {
+   "max": [
+    0.455,
+    1.732,
+    0.622
+   ],
+   "min": [
+    -0.474,
+    -0.094,
+    -0.577
+   ]
+  },
+  "work_read_enter": {
+   "max": [
+    0.546,
+    1.865,
+    0.622
+   ],
+   "min": [
+    -0.501,
+    -0.094,
+    -0.577
+   ]
+  },
+  "work_read_exit": {
+   "max": [
+    0.546,
+    1.865,
+    0.622
+   ],
+   "min": [
+    -0.501,
+    -0.094,
+    -0.577
+   ]
+  },
+  "work_write": {
+   "max": [
+    0.478,
+    1.22,
+    0.479
+   ],
+   "min": [
+    -0.569,
+    -0.448,
+    -0.944
+   ]
+  },
+  "work_write_enter": {
+   "max": [
+    0.557,
+    1.434,
+    0.479
+   ],
+   "min": [
+    -0.475,
+    -0.448,
+    -0.944
+   ]
+  },
+  "work_write_exit": {
+   "max": [
+    0.557,
+    1.434,
+    0.479
+   ],
+   "min": [
+    -0.475,
+    -0.448,
+    -0.944
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.21,
+  "lipGapMm": {
+   "aa": 15.3,
+   "full": 18.8,
+   "rest": 0.4
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.69,
+   "r": 7.69
+  },
+  "upperLidClosed": 0.483,
+  "visibilityPasses": [
+   {
+    "l": 32,
+    "r": 32,
+    "upper": 0.483
+   },
+   {
+    "l": 5,
+    "r": 3,
+    "upper": 0.483
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.483
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "major",
+ "file": "ealdholt-parish-clerk.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.233,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   922,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3583,
+   4500,
+   true
+  ]
+ },
+ "group": "leaders-clergy-specialists",
+ "hair": {
+  "colour": "black",
+  "facialHair": "none",
+  "style": "tied-back"
+ },
+ "headwear": "coif",
+ "headwearGate": {
+  "headwear": "coif",
+  "pass": true,
+  "scalpCovered": 1,
+  "scalpRays": 903,
+  "shells": {
+   "Coif": {
+    "faces": 380,
+    "islands": 1,
+    "maxReachRadii": 0.997,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#a19e96",
+  "shape": "chin-tied",
+  "tone": "greyed"
+ },
+ "householdId": "ealdholt-clerk-household",
+ "jointResidualCm": {
+  "allMaxCm": 0.84,
+  "coreMaxCm": 0.84,
+  "coreMeanCm": 0.35,
+  "coreWorstJoint": "calf_l"
+ },
+ "label": "Parish clerk",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 244216,
+  "fileMiB": 0.233,
+  "headTriangles": 922,
+  "images": [
+   {
+    "bytes": 32848,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3583,
+  "vertices": 3221
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-male-v1",
+  "rate": 1.013,
+  "roleClips": [
+   "work_read",
+   "work_write",
+   "work_pray"
+  ],
+  "talk": "talk_b",
+  "walk": "walk"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "standard",
+  "kit": "clerk-robe",
+  "palette": {
+   "accent": "ochre",
+   "main": "lichen-violet",
+   "secondary": "undyed-cream"
+  },
+  "wear": "clean"
+ },
+ "placementScale": 0.9608,
+ "presentation": {
+  "clips": {
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_read": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.7583,
+       0.336,
+       -0.5587,
+       0,
+       0.1055,
+       -0.9089,
+       -0.4035,
+       0,
+       -0.6434,
+       0.247,
+       -0.7246,
+       0,
+       0.0602,
+       0.1046,
+       -0.0107,
+       1
+      ],
+      "node": "prop_book",
+      "prop": "book"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_read_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.7583,
+       0.336,
+       -0.5587,
+       0,
+       0.1055,
+       -0.9089,
+       -0.4035,
+       0,
+       -0.6434,
+       0.247,
+       -0.7246,
+       0,
+       0.0602,
+       0.1046,
+       -0.0107,
+       1
+      ],
+      "node": "prop_book",
+      "prop": "book"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_read_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.7583,
+       0.336,
+       -0.5587,
+       0,
+       0.1055,
+       -0.9089,
+       -0.4035,
+       0,
+       -0.6434,
+       0.247,
+       -0.7246,
+       0,
+       0.0602,
+       0.1046,
+       -0.0107,
+       1
+      ],
+      "node": "prop_book",
+      "prop": "book"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_write": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       -0.455,
+       0.4825,
+       0.7484,
+       0,
+       -0.0842,
+       -0.86,
+       0.5033,
+       0,
+       0.8865,
+       0.166,
+       0.432,
+       0,
+       -0.0267,
+       0.1369,
+       0.1072,
+       1
+      ],
+      "node": "prop_wax_tablet",
+      "prop": "wax-tablet"
+     }
+    ],
+    "hidesRest": [
+     "wax-tablet"
+    ],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_write_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       -0.455,
+       0.4825,
+       0.7484,
+       0,
+       -0.0842,
+       -0.86,
+       0.5033,
+       0,
+       0.8865,
+       0.166,
+       0.432,
+       0,
+       -0.0267,
+       0.1369,
+       0.1072,
+       1
+      ],
+      "node": "prop_wax_tablet",
+      "prop": "wax-tablet"
+     }
+    ],
+    "hidesRest": [
+     "wax-tablet"
+    ],
+    "placed": []
+   },
+   "work_write_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       -0.455,
+       0.4825,
+       0.7484,
+       0,
+       -0.0842,
+       -0.86,
+       0.5033,
+       0,
+       0.8865,
+       0.166,
+       0.432,
+       0,
+       -0.0267,
+       0.1369,
+       0.1072,
+       1
+      ],
+      "node": "prop_wax_tablet",
+      "prop": "wax-tablet"
+     }
+    ],
+    "hidesRest": [
+     "wax-tablet"
+    ],
+    "placed": []
+   }
+  },
+  "kits": {
+   "letters-and-care": "crowd-v1/props/crowd-props-letters-and-care-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [
+   {
+    "bone": "hips",
+    "kit": "letters-and-care",
+    "matrix": [
+     0,
+     0.343836,
+     -0.93903,
+     0,
+     0,
+     0.93903,
+     0.343836,
+     0,
+     1,
+     0,
+     0,
+     0,
+     0.181246,
+     0.036924,
+     0.102745,
+     1
+    ],
+    "node": "prop_wax_tablet",
+    "prop": "wax-tablet"
+   }
+  ],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "book",
+   "kit": "letters-and-care",
+   "socket": "hand_l",
+   "source": "project-original"
+  },
+  {
+   "id": "wax-tablet",
+   "kit": "letters-and-care",
+   "socket": "hips",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 244216,
+  "sha256": "81fb05c8050e16796edca2bfbed88c60993245b47c6e213b9b76184afad9c7ef"
+ },
+ "recipeSha256": "c807a1132e907167f5caaaac5c5c7a79ac4051f25bc3080bfce9a3600d12b91f",
+ "referenceStatureCm": 173.5,
+ "residentId": "ealdholt-parish-clerk",
+ "restRadiusMetres": 0.603,
+ "roleId": "parish-clerk",
+ "statureCm": 167.3,
+ "status": "working-placeholder"
+}

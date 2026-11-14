@@ -1,0 +1,474 @@
+{
+ "archetype": "child",
+ "build": {
+  "seconds": 8.6,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.3,
+   "shape": 4.2,
+   "texture": 3.8
+  }
+ },
+ "clipLibrary": "crowd-clips-child-v1.glb",
+ "envelopeGate": {
+  "clips": 13,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0228,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.062,
+ "envelopes": {
+  "fetch_carry": {
+   "max": [
+    0.335,
+    1.295,
+    0.665
+   ],
+   "min": [
+    -0.327,
+    -0.265,
+    -0.589
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.31,
+    1.258,
+    0.406
+   ],
+   "min": [
+    -0.293,
+    -0.118,
+    -0.357
+   ]
+  },
+  "play_chase_b": {
+   "max": [
+    0.508,
+    1.306,
+    0.643
+   ],
+   "min": [
+    -0.533,
+    -0.26,
+    -0.539
+   ]
+  },
+  "play_skip": {
+   "max": [
+    0.384,
+    1.29,
+    0.388
+   ],
+   "min": [
+    -0.413,
+    -0.119,
+    -0.344
+   ]
+  },
+  "play_skip_enter": {
+   "max": [
+    0.362,
+    1.279,
+    0.447
+   ],
+   "min": [
+    -0.36,
+    -0.128,
+    -0.36
+   ]
+  },
+  "play_skip_exit": {
+   "max": [
+    0.362,
+    1.279,
+    0.447
+   ],
+   "min": [
+    -0.36,
+    -0.128,
+    -0.36
+   ]
+  },
+  "sit": {
+   "max": [
+    0.319,
+    0.961,
+    0.245
+   ],
+   "min": [
+    -0.307,
+    -0.118,
+    -0.615
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.473,
+    1.296,
+    0.618
+   ],
+   "min": [
+    -0.433,
+    -0.262,
+    -0.762
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.507,
+    1.312,
+    0.62
+   ],
+   "min": [
+    -0.474,
+    -0.253,
+    -0.764
+   ]
+  },
+  "talk": {
+   "max": [
+    0.303,
+    1.263,
+    0.452
+   ],
+   "min": [
+    -0.304,
+    -0.118,
+    -0.351
+   ]
+  },
+  "walk_b": {
+   "max": [
+    0.371,
+    1.295,
+    0.701
+   ],
+   "min": [
+    -0.359,
+    -0.276,
+    -0.625
+   ]
+  },
+  "walk_b_start": {
+   "max": [
+    0.293,
+    1.282,
+    0.626
+   ],
+   "min": [
+    -0.345,
+    -0.218,
+    -0.413
+   ]
+  },
+  "walk_b_stop": {
+   "max": [
+    0.327,
+    1.267,
+    0.546
+   ],
+   "min": [
+    -0.3,
+    -0.225,
+    -0.536
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.199,
+  "lipGapMm": {
+   "aa": 12,
+   "full": 14.7,
+   "rest": 0.8
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 8.9,
+   "r": 8.9
+  },
+  "upperLidClosed": 0.542,
+  "visibilityPasses": [
+   {
+    "l": 3,
+    "r": 0,
+    "upper": 0.542
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.542
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-serjeant-son.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.23,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   925,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3434,
+   4500,
+   true
+  ]
+ },
+ "group": "children-apprentices",
+ "hair": {
+  "colour": "auburn",
+  "facialHair": "none",
+  "style": "tousled-child"
+ },
+ "headwear": "none",
+ "headwearGate": {
+  "headwear": "none",
+  "pass": true
+ },
+ "headwearStyle": {
+  "colour": null,
+  "shape": "plain",
+  "tone": "none"
+ },
+ "householdId": "ealdholt-serjeant-household",
+ "jointResidualCm": {
+  "allMaxCm": 0.49,
+  "coreMaxCm": 0.49,
+  "coreMeanCm": 0.23,
+  "coreWorstJoint": "hips"
+ },
+ "label": "Serjeant's son",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 241248,
+  "fileMiB": 0.23,
+  "headTriangles": 925,
+  "images": [
+   {
+    "bytes": 32326,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3434,
+  "vertices": 3194
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-child-v1",
+  "rate": 1.015,
+  "roleClips": [
+   "play_chase_b",
+   "play_skip",
+   "fetch_carry"
+  ],
+  "talk": "talk",
+  "walk": "walk_b"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "knee-tunic",
+  "kit": "child-tunic",
+  "palette": {
+   "accent": "russet",
+   "main": "woad-pale",
+   "secondary": "undyed-brown"
+  },
+  "wear": "muddy-hems"
+ },
+ "placementScale": 1.0212,
+ "presentation": {
+  "clips": {
+   "fetch_carry": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.4083,
+       -0.0345,
+       -0.5536,
+       0,
+       0.0355,
+       -0.6844,
+       0.0688,
+       0,
+       -0.5536,
+       -0.0693,
+       -0.4039,
+       0,
+       -0.0202,
+       0.0644,
+       0.013,
+       1
+      ],
+      "node": "prop_small_bucket",
+      "prop": "small-bucket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "small-bucket",
+   "kit": "everyday",
+   "socket": "both-hands",
+   "source": "polyhaven:wooden_bucket_01"
+  },
+  {
+   "id": "pebbles",
+   "kit": "everyday",
+   "socket": "hand_r",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 241248,
+  "sha256": "8460a4d29253add89b23731f28b14979219b3052ae40339fe693a2ed606a5be7"
+ },
+ "recipeSha256": "fd1b3512e961c02945ef44b836350bcab89d52c0eee25dab1f306672058dff92",
+ "referenceStatureCm": 119.5,
+ "residentId": "ealdholt-serjeant-son",
+ "restRadiusMetres": 0.392,
+ "roleId": "village-child",
+ "statureCm": 121.6,
+ "status": "working-placeholder"
+}

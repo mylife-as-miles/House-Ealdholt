@@ -1,0 +1,521 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 8.4,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.3,
+   "shape": 3.6,
+   "texture": 4.1
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 12,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.022,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.189,
+ "envelopes": {
+  "carry_yoke_walk": {
+   "max": [
+    0.532,
+    1.712,
+    0.747
+   ],
+   "min": [
+    -0.596,
+    -0.326,
+    -0.898
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.434,
+    1.679,
+    0.693
+   ],
+   "min": [
+    -0.384,
+    -0.094,
+    -0.651
+   ]
+  },
+  "sit": {
+   "max": [
+    0.464,
+    1.278,
+    0.404
+   ],
+   "min": [
+    -0.461,
+    -0.398,
+    -1.02
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.61,
+    1.737,
+    1.094
+   ],
+   "min": [
+    -0.556,
+    -0.705,
+    -1.273
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.643,
+    1.756,
+    1.097
+   ],
+   "min": [
+    -0.586,
+    -0.692,
+    -1.277
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.426,
+    1.689,
+    0.693
+   ],
+   "min": [
+    -0.427,
+    -0.093,
+    -0.641
+   ]
+  },
+  "walk": {
+   "max": [
+    0.511,
+    1.709,
+    0.747
+   ],
+   "min": [
+    -0.513,
+    -0.326,
+    -0.898
+   ]
+  },
+  "walk_start": {
+   "max": [
+    0.504,
+    1.701,
+    0.772
+   ],
+   "min": [
+    -0.499,
+    -0.195,
+    -0.757
+   ]
+  },
+  "walk_stop": {
+   "max": [
+    0.501,
+    1.698,
+    0.718
+   ],
+   "min": [
+    -0.493,
+    -0.267,
+    -0.828
+   ]
+  },
+  "work_milk": {
+   "max": [
+    0.463,
+    1.134,
+    0.401
+   ],
+   "min": [
+    -0.461,
+    -0.397,
+    -1.02
+   ]
+  },
+  "work_milk_enter": {
+   "max": [
+    0.525,
+    1.297,
+    0.401
+   ],
+   "min": [
+    -0.466,
+    -0.397,
+    -1.02
+   ]
+  },
+  "work_milk_exit": {
+   "max": [
+    0.526,
+    1.296,
+    0.401
+   ],
+   "min": [
+    -0.467,
+    -0.397,
+    -1.02
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.233,
+  "lipGapMm": {
+   "aa": 16,
+   "full": 19.5,
+   "rest": 0.7
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 9.13,
+   "r": 9.13
+  },
+  "upperLidClosed": 0.562,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.562
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-milkmaid.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.223,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   919,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3433,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "mid-brown",
+  "facialHair": "none",
+  "style": "tied-back"
+ },
+ "headwear": "head-cloth",
+ "headwearGate": {
+  "headwear": "head-cloth",
+  "pass": true,
+  "scalpCovered": 1,
+  "scalpRays": 921,
+  "shells": {
+   "HeadCloth": {
+    "faces": 380,
+    "islands": 1,
+    "maxReachRadii": 1.034,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#d6ccab",
+  "shape": "plain-knot",
+  "tone": "yellowed"
+ },
+ "householdId": "ealdholt-butcher-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.04,
+  "coreMaxCm": 1.04,
+  "coreMeanCm": 0.59,
+  "coreWorstJoint": "calf_l"
+ },
+ "label": "Milkmaid",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 234080,
+  "fileMiB": 0.223,
+  "headTriangles": 919,
+  "images": [
+   {
+    "bytes": 26950,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3433,
+  "vertices": 3161
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 0.976,
+  "roleClips": [
+   "work_milk",
+   "carry_yoke_walk"
+  ],
+  "talk": "talk_b",
+  "walk": "walk"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "shawl",
+  "kit": "field-kirtle",
+  "palette": {
+   "accent": "walnut-brown",
+   "main": "russet",
+   "secondary": "undyed-cream"
+  },
+  "wear": "worn"
+ },
+ "placementScale": 0.9222,
+ "presentation": {
+  "clips": {
+   "carry_yoke_walk": {
+    "held": [
+     {
+      "bone": "spine_03",
+      "kit": "farm",
+      "matrix": [
+       -0.9198,
+       0.0277,
+       -0.0197,
+       0,
+       0.0317,
+       0.8925,
+       -0.2231,
+       0,
+       0.0124,
+       -0.2237,
+       -0.8928,
+       0,
+       0,
+       0.2851,
+       -0.0459,
+       1
+      ],
+      "node": "prop_water_yoke",
+      "prop": "water-yoke"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_milk": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "farm",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.3498,
+       1
+      ],
+      "node": "prop_milk_pail",
+      "prop": "milk-pail"
+     },
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "farm": "crowd-v1/props/crowd-props-farm-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "water-yoke",
+   "kit": "farm",
+   "socket": "shoulder_r",
+   "source": "project-original"
+  },
+  {
+   "id": "milk-pail",
+   "kit": "farm",
+   "socket": "hand_r",
+   "source": "polyhaven:wooden_bucket_01"
+  }
+ ],
+ "published": {
+  "bytes": 234080,
+  "sha256": "1764ba4a163fcb723596aa6df3b695447ea36577d4c27cf7f9525d62919fdaf1"
+ },
+ "recipeSha256": "e60173adc8e9b7be3d89a65ece393104c5c46179832a469c6eb6e927ad67ffaf",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-milkmaid",
+ "restRadiusMetres": 0.519,
+ "roleId": "milkmaid",
+ "statureCm": 148,
+ "status": "working-placeholder"
+}

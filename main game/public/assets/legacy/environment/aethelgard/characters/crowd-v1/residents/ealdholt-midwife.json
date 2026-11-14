@@ -1,0 +1,699 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 7.3,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.4,
+   "shape": 3,
+   "texture": 3.6
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 13,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0213,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.192,
+ "envelopes": {
+  "carry_basket_walk": {
+   "max": [
+    0.536,
+    1.695,
+    0.8
+   ],
+   "min": [
+    -0.536,
+    -0.341,
+    -0.914
+   ]
+  },
+  "carry_bundle_walk": {
+   "max": [
+    0.536,
+    1.685,
+    0.8
+   ],
+   "min": [
+    -0.573,
+    -0.341,
+    -0.914
+   ]
+  },
+  "idle_b": {
+   "max": [
+    0.458,
+    1.66,
+    0.728
+   ],
+   "min": [
+    -0.41,
+    -0.17,
+    -0.642
+   ]
+  },
+  "sit": {
+   "max": [
+    0.488,
+    1.259,
+    0.412
+   ],
+   "min": [
+    -0.48,
+    -0.44,
+    -1.016
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.616,
+    1.721,
+    1.122
+   ],
+   "min": [
+    -0.584,
+    -0.724,
+    -1.258
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.648,
+    1.74,
+    1.125
+   ],
+   "min": [
+    -0.585,
+    -0.71,
+    -1.262
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.441,
+    1.67,
+    0.728
+   ],
+   "min": [
+    -0.406,
+    -0.17,
+    -0.632
+   ]
+  },
+  "walk_b": {
+   "max": [
+    0.535,
+    1.675,
+    0.804
+   ],
+   "min": [
+    -0.478,
+    -0.339,
+    -0.894
+   ]
+  },
+  "walk_b_start": {
+   "max": [
+    0.479,
+    1.667,
+    0.837
+   ],
+   "min": [
+    -0.435,
+    -0.253,
+    -0.781
+   ]
+  },
+  "walk_b_stop": {
+   "max": [
+    0.496,
+    1.662,
+    0.747
+   ],
+   "min": [
+    -0.446,
+    -0.267,
+    -0.85
+   ]
+  },
+  "work_grind_herbs": {
+   "max": [
+    0.425,
+    1.665,
+    0.712
+   ],
+   "min": [
+    -0.352,
+    -0.17,
+    -0.622
+   ]
+  },
+  "work_grind_herbs_enter": {
+   "max": [
+    0.423,
+    1.765,
+    0.712
+   ],
+   "min": [
+    -0.438,
+    -0.17,
+    -0.622
+   ]
+  },
+  "work_grind_herbs_exit": {
+   "max": [
+    0.423,
+    1.765,
+    0.712
+   ],
+   "min": [
+    -0.438,
+    -0.17,
+    -0.622
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.64,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.228,
+  "lipGapMm": {
+   "aa": 15.3,
+   "full": 18.7,
+   "rest": 0.8
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 8.1,
+   "r": 8.07
+  },
+  "upperLidClosed": 0.538,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.538
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "major",
+ "file": "ealdholt-midwife.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.232,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   911,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3550,
+   4500,
+   true
+  ]
+ },
+ "group": "leaders-clergy-specialists",
+ "hair": {
+  "colour": "light-brown",
+  "facialHair": "none",
+  "style": "bun"
+ },
+ "headwear": "hood",
+ "headwearGate": {
+  "headwear": "hood",
+  "pass": true,
+  "scalpCovered": 1,
+  "scalpRays": 893,
+  "shells": {
+   "Hood": {
+    "faces": 379,
+    "islands": 2,
+    "maxReachRadii": 1.772,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#d8cdb5",
+  "shape": "liripipe",
+  "tone": "secondary"
+ },
+ "householdId": "ealdholt-midwife-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.33,
+  "coreMaxCm": 1.02,
+  "coreMeanCm": 0.72,
+  "coreWorstJoint": "forearm_l"
+ },
+ "label": "Midwife",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 243488,
+  "fileMiB": 0.232,
+  "headTriangles": 911,
+  "images": [
+   {
+    "bytes": 26778,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3550,
+  "vertices": 3333
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 0.972,
+  "roleClips": [
+   "work_grind_herbs",
+   "carry_bundle_walk",
+   "carry_basket_walk"
+  ],
+  "talk": "talk_b",
+  "walk": "walk_b"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "hooded-mantle",
+  "kit": "healer-kirtle",
+  "palette": {
+   "accent": "walnut-brown",
+   "main": "woad-pale",
+   "secondary": "undyed-cream"
+  },
+  "wear": "clean"
+ },
+ "placementScale": 0.9625,
+ "presentation": {
+  "clips": {
+   "carry_basket_walk": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.7116,
+       -0.3841,
+       0.4397,
+       0,
+       0.5259,
+       -0.1203,
+       0.7459,
+       0,
+       -0.2538,
+       0.8278,
+       0.3124,
+       0,
+       0.0519,
+       0.0759,
+       0.0796,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "carry_bundle_walk": {
+    "held": [
+     {
+      "bone": "spine_03",
+      "kit": "textile",
+      "matrix": [
+       0.9198,
+       -0.0277,
+       0.0197,
+       0,
+       0.0287,
+       0.9187,
+       -0.0487,
+       0,
+       -0.0182,
+       0.0492,
+       0.919,
+       0,
+       0,
+       0.0881,
+       0.2135,
+       1
+      ],
+      "node": "prop_linen_bundle",
+      "prop": "linen-bundle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_grind_herbs": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       -0.4418,
+       -0.6442,
+       0.4867,
+       0,
+       0.6451,
+       0.0521,
+       0.6545,
+       0,
+       -0.4856,
+       0.6554,
+       0.4265,
+       0,
+       0.028,
+       0.0678,
+       0.0153,
+       1
+      ],
+      "node": "prop_mortar_pestle_mortar",
+      "prop": "mortar-pestle"
+     },
+     {
+      "bone": "hand_r",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.6791,
+       0.4043,
+       -0.4718,
+       0,
+       -0.5232,
+       -0.0049,
+       -0.7573,
+       0,
+       -0.3351,
+       0.8269,
+       0.2262,
+       0,
+       -0.0669,
+       0.2175,
+       0.0339,
+       1
+      ],
+      "node": "prop_mortar_pestle_pestle",
+      "prop": "mortar-pestle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_grind_herbs_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       -0.4418,
+       -0.6442,
+       0.4867,
+       0,
+       0.6451,
+       0.0521,
+       0.6545,
+       0,
+       -0.4856,
+       0.6554,
+       0.4265,
+       0,
+       0.028,
+       0.0678,
+       0.0153,
+       1
+      ],
+      "node": "prop_mortar_pestle_mortar",
+      "prop": "mortar-pestle"
+     },
+     {
+      "bone": "hand_r",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.6791,
+       0.4043,
+       -0.4718,
+       0,
+       -0.5232,
+       -0.0049,
+       -0.7573,
+       0,
+       -0.3351,
+       0.8269,
+       0.2262,
+       0,
+       -0.0669,
+       0.2175,
+       0.0339,
+       1
+      ],
+      "node": "prop_mortar_pestle_pestle",
+      "prop": "mortar-pestle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_grind_herbs_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "letters-and-care",
+      "matrix": [
+       -0.4418,
+       -0.6442,
+       0.4867,
+       0,
+       0.6451,
+       0.0521,
+       0.6545,
+       0,
+       -0.4856,
+       0.6554,
+       0.4265,
+       0,
+       0.028,
+       0.0678,
+       0.0153,
+       1
+      ],
+      "node": "prop_mortar_pestle_mortar",
+      "prop": "mortar-pestle"
+     },
+     {
+      "bone": "hand_r",
+      "kit": "letters-and-care",
+      "matrix": [
+       0.6791,
+       0.4043,
+       -0.4718,
+       0,
+       -0.5232,
+       -0.0049,
+       -0.7573,
+       0,
+       -0.3351,
+       0.8269,
+       0.2262,
+       0,
+       -0.0669,
+       0.2175,
+       0.0339,
+       1
+      ],
+      "node": "prop_mortar_pestle_pestle",
+      "prop": "mortar-pestle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "letters-and-care": "crowd-v1/props/crowd-props-letters-and-care-v1.glb",
+   "textile": "crowd-v1/props/crowd-props-textile-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [
+   {
+    "bone": "hips",
+    "kit": "letters-and-care",
+    "matrix": [
+     0,
+     -0.532605,
+     0.846364,
+     0,
+     0,
+     0.846364,
+     0.532605,
+     0,
+     -1,
+     0,
+     0,
+     0,
+     -0.252103,
+     0.045452,
+     0.048748,
+     1
+    ],
+    "node": "prop_satchel",
+    "prop": "satchel"
+   }
+  ],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "satchel",
+   "kit": "letters-and-care",
+   "socket": "hips",
+   "source": "project-original"
+  },
+  {
+   "id": "linen-bundle",
+   "kit": "textile",
+   "socket": "hand_l",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 243488,
+  "sha256": "a153d160d4502dd6879b95c172262ab633d109d40c5088f285f0450741fa6f98"
+ },
+ "recipeSha256": "e173ae4ed740e5c9b1999ff79d0efcaf5acadd515500cb8c1dd178997b164036",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-midwife",
+ "restRadiusMetres": 0.522,
+ "roleId": "midwife",
+ "statureCm": 153.5,
+ "status": "working-placeholder"
+}

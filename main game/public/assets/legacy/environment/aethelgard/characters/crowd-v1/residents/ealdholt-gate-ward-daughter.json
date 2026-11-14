@@ -1,0 +1,733 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 8.3,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.3,
+   "shape": 3.7,
+   "texture": 4
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 17,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0197,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.186,
+ "envelopes": {
+  "idle_b": {
+   "max": [
+    0.408,
+    1.66,
+    0.69
+   ],
+   "min": [
+    -0.368,
+    -0.091,
+    -0.616
+   ]
+  },
+  "sit": {
+   "max": [
+    0.451,
+    1.259,
+    0.403
+   ],
+   "min": [
+    -0.447,
+    -0.386,
+    -0.985
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.567,
+    1.711,
+    1.069
+   ],
+   "min": [
+    -0.535,
+    -0.659,
+    -1.23
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.595,
+    1.728,
+    1.071
+   ],
+   "min": [
+    -0.56,
+    -0.646,
+    -1.233
+   ]
+  },
+  "talk": {
+   "max": [
+    0.46,
+    1.671,
+    0.69
+   ],
+   "min": [
+    -0.428,
+    -0.091,
+    -0.607
+   ]
+  },
+  "walk_b": {
+   "max": [
+    0.48,
+    1.675,
+    0.745
+   ],
+   "min": [
+    -0.431,
+    -0.285,
+    -0.867
+   ]
+  },
+  "walk_b_start": {
+   "max": [
+    0.426,
+    1.668,
+    0.783
+   ],
+   "min": [
+    -0.394,
+    -0.211,
+    -0.738
+   ]
+  },
+  "walk_b_stop": {
+   "max": [
+    0.451,
+    1.663,
+    0.707
+   ],
+   "min": [
+    -0.402,
+    -0.233,
+    -0.811
+   ]
+  },
+  "work_herd": {
+   "max": [
+    0.8,
+    1.645,
+    0.8
+   ],
+   "min": [
+    -0.493,
+    -0.178,
+    -0.618
+   ]
+  },
+  "work_herd_enter": {
+   "max": [
+    0.449,
+    1.675,
+    0.75
+   ],
+   "min": [
+    -0.441,
+    -0.165,
+    -0.662
+   ]
+  },
+  "work_herd_exit": {
+   "max": [
+    0.449,
+    1.676,
+    0.75
+   ],
+   "min": [
+    -0.44,
+    -0.162,
+    -0.662
+   ]
+  },
+  "work_scatter_feed": {
+   "max": [
+    0.529,
+    1.689,
+    0.703
+   ],
+   "min": [
+    -0.685,
+    -0.091,
+    -0.611
+   ]
+  },
+  "work_scatter_feed_enter": {
+   "max": [
+    0.532,
+    1.71,
+    0.685
+   ],
+   "min": [
+    -0.369,
+    -0.091,
+    -0.607
+   ]
+  },
+  "work_scatter_feed_exit": {
+   "max": [
+    0.532,
+    1.71,
+    0.685
+   ],
+   "min": [
+    -0.369,
+    -0.091,
+    -0.607
+   ]
+  },
+  "work_sell": {
+   "max": [
+    0.482,
+    1.813,
+    0.759
+   ],
+   "min": [
+    -0.473,
+    -0.203,
+    -0.6
+   ]
+  },
+  "work_sell_enter": {
+   "max": [
+    0.38,
+    1.759,
+    0.682
+   ],
+   "min": [
+    -0.393,
+    -0.124,
+    -0.597
+   ]
+  },
+  "work_sell_exit": {
+   "max": [
+    0.38,
+    1.759,
+    0.682
+   ],
+   "min": [
+    -0.393,
+    -0.124,
+    -0.597
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.61,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.228,
+  "lipGapMm": {
+   "aa": 15.5,
+   "full": 19,
+   "rest": 0.9
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 8.95,
+   "r": 9.01
+  },
+  "upperLidClosed": 0.572,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.572
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-gate-ward-daughter.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.233,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   902,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3434,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "red-brown",
+  "facialHair": "none",
+  "style": "bun"
+ },
+ "headwear": "none",
+ "headwearGate": {
+  "headwear": "none",
+  "pass": true
+ },
+ "headwearStyle": {
+  "colour": null,
+  "shape": "plain",
+  "tone": "none"
+ },
+ "householdId": "ealdholt-gate-ward-household",
+ "jointResidualCm": {
+  "allMaxCm": 0.87,
+  "coreMaxCm": 0.87,
+  "coreMeanCm": 0.45,
+  "coreWorstJoint": "forearm_l"
+ },
+ "label": "Gate-ward's daughter",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 244276,
+  "fileMiB": 0.233,
+  "headTriangles": 902,
+  "images": [
+   {
+    "bytes": 29998,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3434,
+  "vertices": 3299
+ },
+ "motion": {
+  "idle": "idle_b",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 0.973,
+  "roleClips": [
+   "work_scatter_feed",
+   "work_sell",
+   "work_herd"
+  ],
+  "talk": "talk",
+  "walk": "walk_b"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "shawl",
+  "kit": "field-kirtle",
+  "palette": {
+   "accent": "madder-red",
+   "main": "russet",
+   "secondary": "undyed-cream"
+  },
+  "wear": "muddy-hems"
+ },
+ "placementScale": 0.9504,
+ "presentation": {
+  "clips": {
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_herd": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       -0.0554,
+       0.0747,
+       -0.0238,
+       1
+      ],
+      "node": "prop_crook",
+      "prop": "crook"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_herd_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       -0.0554,
+       0.0747,
+       -0.0238,
+       1
+      ],
+      "node": "prop_crook",
+      "prop": "crook"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_herd_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       -0.0554,
+       0.0747,
+       -0.0238,
+       1
+      ],
+      "node": "prop_crook",
+      "prop": "crook"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_scatter_feed": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "farm",
+      "matrix": [
+       -0.6895,
+       -0.4027,
+       0.4578,
+       0,
+       0.52,
+       -0.0274,
+       0.759,
+       0,
+       -0.3185,
+       0.8272,
+       0.248,
+       0,
+       0.0574,
+       0.0632,
+       0.0683,
+       1
+      ],
+      "node": "prop_feed_basket",
+      "prop": "feed-basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_scatter_feed_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "farm",
+      "matrix": [
+       -0.6895,
+       -0.4027,
+       0.4578,
+       0,
+       0.52,
+       -0.0274,
+       0.759,
+       0,
+       -0.3185,
+       0.8272,
+       0.248,
+       0,
+       0.0574,
+       0.0632,
+       0.0683,
+       1
+      ],
+      "node": "prop_feed_basket",
+      "prop": "feed-basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_scatter_feed_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "farm",
+      "matrix": [
+       -0.6895,
+       -0.4027,
+       0.4578,
+       0,
+       0.52,
+       -0.0274,
+       0.759,
+       0,
+       -0.3185,
+       0.8272,
+       0.248,
+       0,
+       0.0574,
+       0.0632,
+       0.0683,
+       1
+      ],
+      "node": "prop_feed_basket",
+      "prop": "feed-basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_sell": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.6075,
+       1
+      ],
+      "node": "prop_market_trestle",
+      "prop": "market-trestle"
+     },
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.6075,
+       1
+      ],
+      "node": "prop_goods_eggs",
+      "prop": "goods-eggs"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "farm": "crowd-v1/props/crowd-props-farm-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "walking-staff",
+   "kit": "everyday",
+   "socket": "hand_r",
+   "source": "project-original"
+  },
+  {
+   "id": "feed-basket",
+   "kit": "farm",
+   "socket": "hand_l",
+   "source": "polyhaven:wicker_basket_01"
+  },
+  {
+   "id": "market-trestle",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  },
+  {
+   "id": "goods-eggs",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 244276,
+  "sha256": "6b07f47a2dd2c79de1e4bde6c6f75a541766597f7d2d165da1675d076567585e"
+ },
+ "recipeSha256": "ba273491ebc85b2ea8c9878897d624f45b03cd612ac889147032cb5ca2530e48",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-gate-ward-daughter",
+ "restRadiusMetres": 0.516,
+ "roleId": "goose-keeper",
+ "statureCm": 152.2,
+ "status": "working-placeholder"
+}

@@ -1,0 +1,138 @@
+{
+  "assetId": "Grass001",
+  "sourceUrl": "https://ambientcg.com/a/Grass001",
+  "sourcePublisher": "ambientCG",
+  "sourceTechnique": "Authored procedural PBR material; not a photograph or scan.",
+  "sourceDimensions": {
+    "api": {
+      "width": 140,
+      "height": 140,
+      "depth": 0
+    },
+    "verifiedOfficialPageText": "Dimensions ca. 1.4 m \u00d7 1.4 m",
+    "tileMetres": 1.4,
+    "basis": "The official asset page explicitly states metres. API values are centimetres. This is approximate authored tile scale, not a measured scan."
+  },
+  "api2": {
+    "url": "https://ambientcg.com/api/v2/full_json?id=Grass001&include=downloadData",
+    "sha256": "515b56cca6758b3b18515582b2ed25bb4ac0d232f622b531c2b325c5a98ca279"
+  },
+  "api3": {
+    "url": "https://ambientcg.com/api/v3/assets?id=Grass001&include=dimensions,technique,downloads,title,url",
+    "sha256": "f944b5c1048420b87d9904ef2241c84012380e1a34600371ebfe3501cbe77dbb"
+  },
+  "officialAssetPageSha256": "929b0c080b45b63baf0990d3d233a181a3bb5bb509d8de41facab34669a40c2f",
+  "apiTechniqueDiscrepancy": {
+    "v2CreationMethod": "PBRProcedural",
+    "v2CreationMethodName": "Height field photogrammetry",
+    "v2CreationMethodDescription": "Displacement generated using photogrammetry.",
+    "v3Technique": "surface-fully-procedural",
+    "resolution": "The v2 internal PBRProcedural code conflicts with its photogrammetry display label. The v3 surface-fully-procedural code agrees with the official asset page. Treat this material as authored procedural only."
+  },
+  "licence": {
+    "spdx": "CC0-1.0",
+    "officialUrl": "https://docs.ambientcg.com/license/",
+    "officialPageSha256": "86d690c1384e979c84fcb607c66dcd4802ff75f917a2fbef1658add632d1b11b",
+    "quote": "All ambientCG assets are provided under the Creative Commons CC0 1.0 Universal License.",
+    "legalCodeUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt",
+    "legalCodeSha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+  },
+  "sourceArchive": {
+    "officialDownloadUrl": "https://ambientcg.com/get?file=Grass001_1K-JPG.zip",
+    "officialSizeBytes": 10710313,
+    "sha256": "902f447a64171c8099589642d5bf2d1d6e52c40e94d957eb78eae722084b0cfb",
+    "downloadRedirect": "https://acg-download.struffelproductions.com/file/ambientCG-Web/download/Grass001_lmIxuoR7/Grass001_1K-JPG.zip",
+    "verification": "Public official API download URL and exact byte count verified. SHA256 was fixed locally after download; the official API publishes no independent checksum. Standard HTTPS curl followed the official redirect without authentication or an alternate host."
+  },
+  "sources": {
+    "albedo": {
+      "zipEntry": "Grass001_1K-JPG_Color.jpg",
+      "bytes": 1764300,
+      "sha256": "b9b6d61bc3b6137b868a3447eef18737896acd26d58fe2f4b83ce8c0e9d3f8ad",
+      "decodedRgbSha256": "dd4021ae1fc18e0f332ccd61c7e68a8b4942756f262fac87ca56b7dcbf8397f5"
+    },
+    "normal": {
+      "zipEntry": "Grass001_1K-JPG_NormalGL.jpg",
+      "bytes": 2338245,
+      "sha256": "eef0b56db5f00a6fcb3d0e0f8463e4e141e88aa85b26527a04d617b75a4ab5d2",
+      "decodedRgbSha256": "da11ff40459aad0702fef75a9b1e2f1cf37955cd0d097aba7f848e4dc414e3c7"
+    },
+    "ao": {
+      "zipEntry": "Grass001_1K-JPG_AmbientOcclusion.jpg",
+      "bytes": 902486,
+      "sha256": "a5e6e6a1c4329562e99f009313f09e44dd179dedbfb5dd679feeaf17ca122ab9",
+      "decodedRgbSha256": "24c2be9ebdf15f3a142eece42f35709c47850744142ca44bee2cd419b24c4e48"
+    },
+    "roughness": {
+      "zipEntry": "Grass001_1K-JPG_Roughness.jpg",
+      "bytes": 823623,
+      "sha256": "8810effd44756341170d551501b7d0c645dc2395dbce46a8c7f1e61045258a06",
+      "decodedRgbSha256": "9fa5fa5cce10c10e02f18758f49d45ba3d20316b348ac16b02b0a000aa4452bc"
+    }
+  },
+  "processing": "No tint, hue, saturation, scalar colour or per-channel edits. Desktop 1024px source RGB is exact. Quest 512px albedo is averaged in linear light. NormalGL vectors are averaged and renormalized. Source AO and roughness are reduced as linear data and packed into R/G; metallic B=0. Lossless WebP files preserve source row order. No displacement or grass geometry was synthesized.",
+  "sourceRgbEvidence": {
+    "assetId": "Grass001",
+    "sourceUrl": "https://ambientcg.com/a/Grass001",
+    "sourceRecord": {
+      "fullDownloadPath": "https://ambientcg.com/get?file=Grass001_1K-JPG.zip",
+      "downloadLink": "https://ambientcg.com/get?file=Grass001_1K-JPG.zip",
+      "fileName": "Grass001_1K-JPG.zip",
+      "size": 10710313,
+      "filetype": "zip",
+      "attribute": "1K-JPG",
+      "zipContent": []
+    },
+    "sourceZipSha256": "902f447a64171c8099589642d5bf2d1d6e52c40e94d957eb78eae722084b0cfb",
+    "meanLinearRGB": [
+      0.06031522809824032,
+      0.1091090478683437,
+      0.02262978954354716
+    ],
+    "meanLinearLuminance": 0.09249167933416941,
+    "greenToRedMean": 1.8089801084831998,
+    "greenGreaterThanRedFraction": 0.9936847686767578,
+    "strongGreenFraction": 0.9839439392089844,
+    "sourceRgbSha256": "dd4021ae1fc18e0f332ccd61c7e68a8b4942756f262fac87ca56b7dcbf8397f5"
+  },
+  "selection": "Selected first of three bounded ambientCG metadata candidates. Grass002 and Grass003 are procedural too; no extra source archives were needed. Grass001 has 99.37% green-dominant pixels and linear G:R 1.809, versus forrest_ground_01 at 23.24% and 0.851. Source-qualified for visual review; not rendered or tested on a physical device.",
+  "collectionRelationship": "Additional ambientCG CC0 material complements requested Poly Haven Verdant Trail and Namaqualand collections. It is not from either Poly Haven collection.",
+  "files": [
+    {
+      "file": "grass-desktop-albedo-1024.webp",
+      "size": 1024,
+      "bytes": 1799866,
+      "sha256": "aad615046dbc811777faa1fd602486fda48f5b34126e7f2fa9bec9699d50c853"
+    },
+    {
+      "file": "grass-desktop-normal-1024.webp",
+      "size": 1024,
+      "bytes": 2500656,
+      "sha256": "c492c14f91929aa84f25b29e807f5f336db8291d9e770ecb40603928a9513974"
+    },
+    {
+      "file": "grass-desktop-orm-1024.webp",
+      "size": 1024,
+      "bytes": 1714722,
+      "sha256": "b813951f6d7ec425ae25d9581354da8e511acc723857aa5b862f2e1a80d3f205"
+    },
+    {
+      "file": "grass-quest-albedo-512.webp",
+      "size": 512,
+      "bytes": 527292,
+      "sha256": "7df5f79f5627164890861c81654dd62626c901efc0a0c0af202cc3328109c6a9"
+    },
+    {
+      "file": "grass-quest-normal-512.webp",
+      "size": 512,
+      "bytes": 578700,
+      "sha256": "c17e11ca0b2c02a572d82c92265520962eb1fb6a0cc47116db219844768875e1"
+    },
+    {
+      "file": "grass-quest-orm-512.webp",
+      "size": 512,
+      "bytes": 403174,
+      "sha256": "97e5800c3134897f46a43932f5d52c50756b8b29de577d88102b1cd52fbf0333"
+    }
+  ]
+}

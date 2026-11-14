@@ -1,0 +1,53 @@
+/* ThreeUI Community SectionButton adaptation, copyright (c)2026 Meng To, MIT.
+   The original title/reflective-layer structure remains; the world-first game
+   composition uses restrained ink and brass instead of dashboard cards.
+   See LICENSE and PROVENANCE.json alongside this file. */
+.ealdholt-threeui .ealdholt-threeui-button {
+  position: relative; isolation: isolate; overflow: hidden; appearance: none;
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 44px; padding: 10px 16px; border: 1px solid transparent; border-radius: 2px;
+  background: transparent; color: var(--ealdholt-ui-ink); font: inherit; font-size: 16px; line-height: 1.4;
+  cursor: pointer; transition: color .15s, border-color .15s, background .15s;
+}
+.ealdholt-threeui-button__title { position: relative; z-index: 3; display: inline-flex; min-width: 0; width: 100%; align-items: center; justify-content: inherit; gap: inherit; pointer-events: none; }
+.ealdholt-threeui-button__title > :not(svg) { min-width: 0; }
+.ealdholt-threeui .ealdholt-threeui-button::before,
+.ealdholt-threeui .ealdholt-threeui-button::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; }
+.ealdholt-threeui .ealdholt-threeui-button::before { z-index: -2; background: linear-gradient(180deg, #202b2059, #121d1473); box-shadow: inset 0 1px #efdcaf0a; }
+.ealdholt-threeui .ealdholt-threeui-button::after { z-index: 2; border-bottom: 1px solid #d7bc7d30; }
+.ealdholt-threeui-button__circle { position: absolute; z-index: -1; width: 160px; height: 160px; left: calc(50% - 80px); top: calc(50% - 80px); pointer-events: none; opacity: .3; }
+.ealdholt-threeui-button__circle::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(from 180deg, transparent 180deg, #e2bd7c0c 360deg); filter: blur(12px); }
+.ealdholt-threeui .ealdholt-threeui-button:hover:not(:disabled),
+.ealdholt-threeui .ealdholt-threeui-button:focus-visible { color: var(--ealdholt-ui-ink); border-color: #d9bb7b88; background: #32412c80; }
+.ealdholt-threeui .ealdholt-threeui-button:focus-visible { outline: 2px solid var(--ealdholt-ui-accent); outline-offset: 3px; }
+.ealdholt-threeui .ealdholt-threeui-button.is-primary { color: var(--ealdholt-ui-accentInk); font-size: 18px; font-weight: 650; border-color: var(--ealdholt-ui-accent); background: var(--ealdholt-ui-accent); }
+.ealdholt-threeui .ealdholt-threeui-button.is-primary::before { background: var(--ealdholt-ui-accent); box-shadow: inset 0 1px #fff7df88, inset 0 -1px #604a2455; }
+.ealdholt-threeui .ealdholt-threeui-button.is-primary::after { border-bottom: 2px solid #604a2455; }
+.ealdholt-threeui .ealdholt-threeui-button.is-primary:hover:not(:disabled),
+.ealdholt-threeui .ealdholt-threeui-button.is-primary:focus-visible { color: var(--ealdholt-ui-accentInk); border-color: var(--ealdholt-ui-accent); background: color-mix(in srgb, var(--ealdholt-ui-accent) 80%, white); }
+.ealdholt-threeui .ealdholt-threeui-button.is-primary:hover:not(:disabled)::before,
+.ealdholt-threeui .ealdholt-threeui-button.is-primary:focus-visible::before { background: color-mix(in srgb, var(--ealdholt-ui-accent) 80%, white); }
+.ealdholt-threeui .ealdholt-threeui-button:disabled { opacity: .4; cursor: default; }
+.ealdholt-threeui .ealdholt-threeui-button.is-quiet { color: var(--ealdholt-ui-muted); }
+.ealdholt-threeui .ealdholt-threeui-button[aria-pressed=true],
+.ealdholt-threeui .ealdholt-threeui-button[aria-expanded=true] { color: var(--ealdholt-ui-ink); border-bottom-color: var(--ealdholt-ui-accent); }
+.ealdholt-threeui .wf-global-actions .ealdholt-threeui-button::before,
+.ealdholt-threeui .wf-banner-heading .ealdholt-threeui-button::before { background: linear-gradient(180deg, #13201955, #132019a6); }
+.ealdholt-threeui .ealdholt-presets .ealdholt-threeui-button { min-height: 102px; padding: 8px; border: 0; border-bottom: 2px solid transparent; border-radius: 0; color: var(--ealdholt-ui-ink); }
+.ealdholt-threeui .ealdholt-presets .ealdholt-threeui-button::before { background: linear-gradient(180deg, transparent 30%, #0b140c96); box-shadow: none; }
+.ealdholt-threeui .ealdholt-presets .ealdholt-threeui-button::after { border: 0; }
+.ealdholt-threeui .ealdholt-presets .ealdholt-threeui-button[aria-pressed=true] { color: #f4dfa9; border-bottom-color: var(--ealdholt-ui-accent); background: linear-gradient(180deg, transparent, #b19a5233); }
+.ealdholt-threeui .ealdholt-presets .ealdholt-threeui-button[aria-pressed=true] svg { filter: drop-shadow(0 0 7px #e2bd7c55) drop-shadow(0 4px 5px #0009); }
+.ealdholt-threeui .wf-village-dock .ealdholt-threeui-button { min-height: 52px; min-width: 112px; border: 0; border-bottom: 2px solid transparent; border-radius: 0; }
+.ealdholt-threeui .wf-village-dock .ealdholt-threeui-button::before { background: transparent; box-shadow: none; }
+.ealdholt-threeui .wf-village-dock .ealdholt-threeui-button[aria-expanded=true] { border-bottom-color: var(--ealdholt-ui-accent); color: #f4dfa9; }
+.ealdholt-threeui .ealdholt-role-picker .ealdholt-threeui-button,
+.ealdholt-threeui .ealdholt-view-picker .ealdholt-threeui-button { border: 0; border-bottom: 1px solid #b29c6540; border-radius: 0; }
+.ealdholt-threeui .ealdholt-view-picker .ealdholt-threeui-button[aria-pressed=true]::before { background: linear-gradient(90deg, #b19a5238, transparent); }
+.ealdholt-threeui .ealdholt-view-picker .ealdholt-threeui-button[aria-pressed=true] { color: #f4dfa9; box-shadow: inset 2px 0 var(--ealdholt-ui-accent); }
+.ealdholt-threeui .wf-commit-note .ealdholt-threeui-button { font-size: 12px; padding: 8px; color: var(--ealdholt-ui-muted); }
+.ealdholt-threeui .ealdholt-editor-sections .ealdholt-threeui-button { font-size: 14px; }
+@media (max-height: 560px) {
+  .ealdholt-threeui .ealdholt-presets .ealdholt-threeui-button { min-height: 82px; padding: 6px; }
+  .ealdholt-threeui .wf-village-dock .ealdholt-threeui-button { min-height: 48px; min-width: 100px; }
+}

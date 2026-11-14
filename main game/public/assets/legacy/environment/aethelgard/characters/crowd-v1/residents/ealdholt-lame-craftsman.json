@@ -1,0 +1,550 @@
+{
+ "archetype": "adult-male",
+ "build": {
+  "seconds": 7.8,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.3,
+   "lod": 0.5,
+   "shape": 3.3,
+   "texture": 3.7
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-male-v1.glb",
+ "envelopeGate": {
+  "clips": 9,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0277,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.27,
+ "envelopes": {
+  "idle": {
+   "max": [
+    0.453,
+    1.769,
+    0.585
+   ],
+   "min": [
+    -0.351,
+    -0.099,
+    -0.445
+   ]
+  },
+  "sit": {
+   "max": [
+    0.46,
+    1.322,
+    0.388
+   ],
+   "min": [
+    -0.407,
+    -0.285,
+    -0.787
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.669,
+    1.838,
+    1.091
+   ],
+   "min": [
+    -0.645,
+    -0.552,
+    -1.163
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.679,
+    1.855,
+    1.094
+   ],
+   "min": [
+    -0.692,
+    -0.54,
+    -1.166
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.495,
+    1.787,
+    0.623
+   ],
+   "min": [
+    -0.517,
+    -0.099,
+    -0.444
+   ]
+  },
+  "walk_crutch": {
+   "max": [
+    0.543,
+    1.793,
+    0.77
+   ],
+   "min": [
+    -0.426,
+    -0.324,
+    -0.728
+   ]
+  },
+  "work_mend_seated": {
+   "max": [
+    0.579,
+    1.423,
+    0.507
+   ],
+   "min": [
+    -0.854,
+    -0.285,
+    -0.882
+   ]
+  },
+  "work_mend_seated_enter": {
+   "max": [
+    0.531,
+    1.459,
+    0.388
+   ],
+   "min": [
+    -0.525,
+    -0.285,
+    -0.787
+   ]
+  },
+  "work_mend_seated_exit": {
+   "max": [
+    0.531,
+    1.459,
+    0.388
+   ],
+   "min": [
+    -0.525,
+    -0.285,
+    -0.787
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.84,
+   "r": -0.83
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.208,
+  "lipGapMm": {
+   "aa": 14.6,
+   "full": 17.9,
+   "rest": 0.4
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 6.93,
+   "r": 6.94
+  },
+  "upperLidClosed": 0.468,
+  "visibilityPasses": [
+   {
+    "l": 35,
+    "r": 17,
+    "upper": 0.445
+   },
+   {
+    "l": 6,
+    "r": 1,
+    "upper": 0.445
+   },
+   {
+    "l": 1,
+    "r": 1,
+    "upper": 0.445
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.468
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-lame-craftsman.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.231,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   914,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3392,
+   4500,
+   true
+  ]
+ },
+ "group": "elders-dependents",
+ "hair": {
+  "colour": "mid-brown",
+  "facialHair": "short-beard",
+  "style": "tied-back"
+ },
+ "headwear": "none",
+ "headwearGate": {
+  "headwear": "none",
+  "pass": true
+ },
+ "headwearStyle": {
+  "colour": null,
+  "shape": "plain",
+  "tone": "none"
+ },
+ "householdId": "ealdholt-carpenter-household",
+ "jointResidualCm": {
+  "allMaxCm": 0.87,
+  "coreMaxCm": 0.57,
+  "coreMeanCm": 0.28,
+  "coreWorstJoint": "hand_l"
+ },
+ "label": "Carpenter's lame brother",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 241956,
+  "fileMiB": 0.231,
+  "headTriangles": 914,
+  "images": [
+   {
+    "bytes": 29544,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3392,
+  "vertices": 3263
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-adult-male-v1",
+  "rate": 0.95,
+  "roleClips": [
+   "work_mend_seated",
+   "walk_crutch"
+  ],
+  "talk": "talk_b",
+  "walk": "walk_crutch"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "long-bib",
+  "kit": "workshop-apron-m",
+  "palette": {
+   "accent": "ochre",
+   "main": "ochre",
+   "secondary": "undyed-grey"
+  },
+  "wear": "worn"
+ },
+ "placementScale": 1.0039,
+ "presentation": {
+  "clips": {
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "walk_crutch": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       0.4429,
+       0.039,
+       0.6246,
+       0,
+       -0.6245,
+       0.0764,
+       0.4381,
+       0,
+       -0.0399,
+       -0.7618,
+       0.0759,
+       0,
+       0.0065,
+       0.0934,
+       0.0223,
+       1
+      ],
+      "node": "prop_crutch",
+      "prop": "crutch"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_mend_seated": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.387,
+       -0.0479,
+       -0.9208,
+       0,
+       -0.9214,
+       -0.019,
+       0.3883,
+       0,
+       -0.0361,
+       0.9987,
+       -0.0368,
+       0,
+       0.0654,
+       0.0834,
+       0.0768,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9821,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3975,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_mend_seated_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.387,
+       -0.0479,
+       -0.9208,
+       0,
+       -0.9214,
+       -0.019,
+       0.3883,
+       0,
+       -0.0361,
+       0.9987,
+       -0.0368,
+       0,
+       0.0654,
+       0.0834,
+       0.0768,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_mend_seated_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.387,
+       -0.0479,
+       -0.9208,
+       0,
+       -0.9214,
+       -0.019,
+       0.3883,
+       0,
+       -0.0361,
+       0.9987,
+       -0.0368,
+       0,
+       0.0654,
+       0.0834,
+       0.0768,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "crutch",
+   "kit": "everyday",
+   "socket": "hand_l",
+   "source": "project-original"
+  },
+  {
+   "id": "stool",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "polyhaven:wooden_stool_01"
+  }
+ ],
+ "published": {
+  "bytes": 241956,
+  "sha256": "480f751a03fbe12bee647d4d9ec3c4f7af9a4771805b4fc65d5b12a37e2a96fa"
+ },
+ "recipeSha256": "3f38fb64a7386e397c99ec584f237b1c2674bc4e9b636a821d8a35116f5c022c",
+ "referenceStatureCm": 173.5,
+ "residentId": "ealdholt-lame-craftsman",
+ "restRadiusMetres": 0.6,
+ "roleId": "lame-craftsman",
+ "statureCm": 173.8,
+ "status": "working-placeholder"
+}

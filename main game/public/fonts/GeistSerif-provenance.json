@@ -1,0 +1,48 @@
+{
+  "family": "Geist Serif",
+  "style": "Regular",
+  "weight": 400,
+  "sourceRepository": "https://github.com/vercel/geist-font",
+  "sourceRelease": "v1.9.2",
+  "sourceCommit": "ef2597cfc42f4797676df105517ccc0a1cfa6569",
+  "licence": "SIL Open Font License 1.1",
+  "copyright": "Copyright 2026 The Geist Project Authors",
+  "use": "Large Legacy masthead, including Native context titles; smaller headings/body/controls keep their existing styles.",
+  "unchangedUpstreamFiles": true,
+  "files": [
+    {
+      "file": "GeistSerif-Regular.ttf",
+      "source": "https://raw.githubusercontent.com/vercel/geist-font/ef2597cfc42f4797676df105517ccc0a1cfa6569/fonts/GeistSerif/ttf/GeistSerif-Regular.ttf",
+      "bytes": 167052,
+      "sha256": "22c4da0b51f73840378a0a6ea74d018c6e5b476475b01a5f15a3a306f798c9d5",
+      "gitBlobSha1": "78a327df070c4e4fbf75b5b91d919b77ac614fd6"
+    },
+    {
+      "file": "OFL-GeistSerif.txt",
+      "source": "https://raw.githubusercontent.com/vercel/geist-font/ef2597cfc42f4797676df105517ccc0a1cfa6569/OFL.txt",
+      "bytes": 4384,
+      "sha256": "021caa749f89fecd7c2e40a50499de29e84d2bc19251659b47d499c2fbfffc17",
+      "gitBlobSha1": "999fa2373263f4ce66077075c9ede594c6a49510"
+    }
+  ],
+  "fontMetadata": {
+    "versionNames": [
+      "Version 1.003"
+    ],
+    "familyNames": [
+      "Geist Serif"
+    ],
+    "styleNames": [
+      "Regular"
+    ],
+    "copyrightNames": [
+      "Copyright 2026 The Geist Project Authors (https://github.com/vercel/geist-font)"
+    ],
+    "weightClass": 400,
+    "glyphCount": 898,
+    "mappedCodepoints": 465,
+    "staticFont": true,
+    "unitsPerEm": 1000
+  },
+  "qualification": "Exact upstream bytes and static metadata only; Native font atlas, rendered legibility and physical headset acceptance remain unverified."
+}

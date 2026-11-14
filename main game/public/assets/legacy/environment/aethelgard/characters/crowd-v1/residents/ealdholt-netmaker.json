@@ -1,0 +1,745 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 8.5,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.5,
+   "shape": 3.6,
+   "texture": 4.1
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 14,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0155,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.18,
+ "envelopes": {
+  "idle": {
+   "max": [
+    0.414,
+    1.646,
+    0.701
+   ],
+   "min": [
+    -0.383,
+    -0.094,
+    -0.599
+   ]
+  },
+  "sit": {
+   "max": [
+    0.451,
+    1.257,
+    0.411
+   ],
+   "min": [
+    -0.449,
+    -0.378,
+    -0.968
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.598,
+    1.709,
+    1.103
+   ],
+   "min": [
+    -0.549,
+    -0.653,
+    -1.225
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.624,
+    1.726,
+    1.106
+   ],
+   "min": [
+    -0.581,
+    -0.639,
+    -1.228
+   ]
+  },
+  "talk": {
+   "max": [
+    0.481,
+    1.669,
+    0.7
+   ],
+   "min": [
+    -0.436,
+    -0.094,
+    -0.598
+   ]
+  },
+  "walk": {
+   "max": [
+    0.509,
+    1.686,
+    0.768
+   ],
+   "min": [
+    -0.511,
+    -0.303,
+    -0.844
+   ]
+  },
+  "walk_start": {
+   "max": [
+    0.498,
+    1.678,
+    0.809
+   ],
+   "min": [
+    -0.498,
+    -0.205,
+    -0.7
+   ]
+  },
+  "walk_stop": {
+   "max": [
+    0.495,
+    1.676,
+    0.741
+   ],
+   "min": [
+    -0.492,
+    -0.258,
+    -0.782
+   ]
+  },
+  "work_mend_seated": {
+   "max": [
+    0.559,
+    1.389,
+    0.409
+   ],
+   "min": [
+    -0.756,
+    -0.378,
+    -0.968
+   ]
+  },
+  "work_mend_seated_enter": {
+   "max": [
+    0.519,
+    1.379,
+    0.409
+   ],
+   "min": [
+    -0.467,
+    -0.378,
+    -0.968
+   ]
+  },
+  "work_mend_seated_exit": {
+   "max": [
+    0.52,
+    1.378,
+    0.409
+   ],
+   "min": [
+    -0.467,
+    -0.378,
+    -0.968
+   ]
+  },
+  "work_twist_rope": {
+   "max": [
+    0.423,
+    1.652,
+    0.759
+   ],
+   "min": [
+    -0.365,
+    -0.191,
+    -0.919
+   ]
+  },
+  "work_twist_rope_enter": {
+   "max": [
+    0.425,
+    1.689,
+    0.685
+   ],
+   "min": [
+    -0.373,
+    -0.094,
+    -0.589
+   ]
+  },
+  "work_twist_rope_exit": {
+   "max": [
+    0.425,
+    1.689,
+    0.685
+   ],
+   "min": [
+    -0.373,
+    -0.094,
+    -0.589
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.72,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.212,
+  "lipGapMm": {
+   "aa": 13.4,
+   "full": 16.4,
+   "rest": 0.6
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.09,
+   "r": 7.27
+  },
+  "upperLidClosed": 0.558,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.558
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-netmaker.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.223,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   909,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3379,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "fair",
+  "facialHair": "none",
+  "style": "bun"
+ },
+ "headwear": "head-cloth",
+ "headwearGate": {
+  "headwear": "head-cloth",
+  "pass": true,
+  "scalpCovered": 1,
+  "scalpRays": 876,
+  "shells": {
+   "HeadCloth": {
+    "faces": 379,
+    "islands": 1,
+    "maxReachRadii": 1.106,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#a19e96",
+  "shape": "plain-knot",
+  "tone": "greyed"
+ },
+ "householdId": "ealdholt-archer-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.12,
+  "coreMaxCm": 1.12,
+  "coreMeanCm": 0.66,
+  "coreWorstJoint": "calf_l"
+ },
+ "label": "Rope and net maker",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 234144,
+  "fileMiB": 0.223,
+  "headTriangles": 909,
+  "images": [
+   {
+    "bytes": 28150,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3379,
+  "vertices": 3145
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 0.985,
+  "roleClips": [
+   "work_twist_rope",
+   "work_mend_seated"
+  ],
+  "talk": "talk",
+  "walk": "walk"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "shawl-apron",
+  "kit": "workshop-apron-f",
+  "palette": {
+   "accent": "weld-green",
+   "main": "lichen-violet",
+   "secondary": "undyed-grey"
+  },
+  "wear": "worn"
+ },
+ "placementScale": 1.0939,
+ "presentation": {
+  "clips": {
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_mend_seated": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.4876,
+       -0.0491,
+       -0.7792,
+       0,
+       -0.7795,
+       -0.0192,
+       0.489,
+       0,
+       -0.0424,
+       0.919,
+       -0.0314,
+       0,
+       0.0698,
+       0.0712,
+       0.0605,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_mend_seated_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.4876,
+       -0.0491,
+       -0.7792,
+       0,
+       -0.7795,
+       -0.0192,
+       0.489,
+       0,
+       -0.0424,
+       0.919,
+       -0.0314,
+       0,
+       0.0698,
+       0.0712,
+       0.0605,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_mend_seated_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       -0.4876,
+       -0.0491,
+       -0.7792,
+       0,
+       -0.7795,
+       -0.0192,
+       0.489,
+       0,
+       -0.0424,
+       0.919,
+       -0.0314,
+       0,
+       0.0698,
+       0.0712,
+       0.0605,
+       1
+      ],
+      "node": "prop_basket",
+      "prop": "basket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_twist_rope": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "textile",
+      "matrix": [
+       -0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       -0.656,
+       0.091,
+       0.6393,
+       0,
+       0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       0.0226,
+       0.0792,
+       0.0082,
+       1
+      ],
+      "node": "prop_rope_coil",
+      "prop": "rope-coil"
+     },
+     {
+      "bone": "hand_r",
+      "kit": "textile",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       -0.656,
+       -0.091,
+       -0.6393,
+       0,
+       -0.0226,
+       0.0792,
+       0.0082,
+       1
+      ],
+      "node": "prop_twisting_stick",
+      "prop": "twisting-stick"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_twist_rope_enter": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "textile",
+      "matrix": [
+       -0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       -0.656,
+       0.091,
+       0.6393,
+       0,
+       0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       0.0226,
+       0.0792,
+       0.0082,
+       1
+      ],
+      "node": "prop_rope_coil",
+      "prop": "rope-coil"
+     },
+     {
+      "bone": "hand_r",
+      "kit": "textile",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       -0.656,
+       -0.091,
+       -0.6393,
+       0,
+       -0.0226,
+       0.0792,
+       0.0082,
+       1
+      ],
+      "node": "prop_twisting_stick",
+      "prop": "twisting-stick"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_twist_rope_exit": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "textile",
+      "matrix": [
+       -0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       -0.656,
+       0.091,
+       0.6393,
+       0,
+       0.0285,
+       0.9145,
+       -0.1009,
+       0,
+       0.0226,
+       0.0792,
+       0.0082,
+       1
+      ],
+      "node": "prop_rope_coil",
+      "prop": "rope-coil"
+     },
+     {
+      "bone": "hand_r",
+      "kit": "textile",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       -0.656,
+       -0.091,
+       -0.6393,
+       0,
+       -0.0226,
+       0.0792,
+       0.0082,
+       1
+      ],
+      "node": "prop_twisting_stick",
+      "prop": "twisting-stick"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "textile": "crowd-v1/props/crowd-props-textile-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "net-shuttle",
+   "kit": "textile",
+   "socket": "hand_r",
+   "source": "project-original"
+  },
+  {
+   "id": "rope-coil",
+   "kit": "textile",
+   "socket": "hand_l",
+   "source": "project-original"
+  },
+  {
+   "id": "twisting-stick",
+   "kit": "textile",
+   "socket": "hand_r",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 234144,
+  "sha256": "99bd477b5b181fc15e191f6d428ec59f9f29278d8af2460b8e415d254c7ef2be"
+ },
+ "recipeSha256": "63c8b2c18ff497aaccaf45edd54143c4ee0f61d2251db744262f02682c024403",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-netmaker",
+ "restRadiusMetres": 0.51,
+ "roleId": "netmaker",
+ "statureCm": 173.8,
+ "status": "working-placeholder"
+}

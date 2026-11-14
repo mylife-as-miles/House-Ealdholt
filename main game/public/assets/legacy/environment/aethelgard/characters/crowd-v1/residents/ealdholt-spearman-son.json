@@ -1,0 +1,600 @@
+{
+ "archetype": "child",
+ "build": {
+  "seconds": 9.5,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.4,
+   "lod": 0.4,
+   "shape": 4.4,
+   "texture": 4.2
+  }
+ },
+ "clipLibrary": "crowd-clips-child-v1.glb",
+ "envelopeGate": {
+  "clips": 13,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0176,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.068,
+ "envelopes": {
+  "fetch_carry": {
+   "max": [
+    0.526,
+    1.321,
+    0.908
+   ],
+   "min": [
+    -0.501,
+    -0.449,
+    -0.685
+   ]
+  },
+  "idle": {
+   "max": [
+    0.46,
+    1.265,
+    0.637
+   ],
+   "min": [
+    -0.457,
+    -0.142,
+    -0.465
+   ]
+  },
+  "play_chase_b": {
+   "max": [
+    0.516,
+    1.348,
+    0.93
+   ],
+   "min": [
+    -0.584,
+    -0.517,
+    -0.708
+   ]
+  },
+  "play_toss": {
+   "max": [
+    0.536,
+    1.42,
+    0.861
+   ],
+   "min": [
+    -0.668,
+    -0.555,
+    -0.557
+   ]
+  },
+  "play_toss_enter": {
+   "max": [
+    0.469,
+    1.34,
+    0.733
+   ],
+   "min": [
+    -0.485,
+    -0.326,
+    -0.476
+   ]
+  },
+  "play_toss_exit": {
+   "max": [
+    0.469,
+    1.34,
+    0.735
+   ],
+   "min": [
+    -0.486,
+    -0.326,
+    -0.476
+   ]
+  },
+  "sit": {
+   "max": [
+    0.404,
+    0.988,
+    0.508
+   ],
+   "min": [
+    -0.4,
+    -0.361,
+    -0.729
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.517,
+    1.345,
+    0.958
+   ],
+   "min": [
+    -0.519,
+    -0.503,
+    -0.93
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.517,
+    1.367,
+    0.961
+   ],
+   "min": [
+    -0.52,
+    -0.489,
+    -0.932
+   ]
+  },
+  "talk_b": {
+   "max": [
+    0.479,
+    1.298,
+    0.636
+   ],
+   "min": [
+    -0.471,
+    -0.146,
+    -0.465
+   ]
+  },
+  "walk_c": {
+   "max": [
+    0.521,
+    1.3,
+    0.889
+   ],
+   "min": [
+    -0.497,
+    -0.446,
+    -0.702
+   ]
+  },
+  "walk_c_start": {
+   "max": [
+    0.465,
+    1.297,
+    0.847
+   ],
+   "min": [
+    -0.466,
+    -0.26,
+    -0.531
+   ]
+  },
+  "walk_c_stop": {
+   "max": [
+    0.447,
+    1.294,
+    0.77
+   ],
+   "min": [
+    -0.482,
+    -0.399,
+    -0.649
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -1.09,
+   "r": -1.09
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.229,
+  "lipGapMm": {
+   "aa": 16.8,
+   "full": 20.5,
+   "rest": 1.3
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 10.87,
+   "r": 10.87
+  },
+  "upperLidClosed": 0.513,
+  "visibilityPasses": [
+   {
+    "l": 20,
+    "r": 0,
+    "upper": 0.466
+   },
+   {
+    "l": 18,
+    "r": 0,
+    "upper": 0.466
+   },
+   {
+    "l": 21,
+    "r": 0,
+    "upper": 0.466
+   },
+   {
+    "l": 9,
+    "r": 0,
+    "upper": 0.489
+   },
+   {
+    "l": 8,
+    "r": 0,
+    "upper": 0.489
+   },
+   {
+    "l": 2,
+    "r": 0,
+    "upper": 0.489
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.513
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-spearman-son.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.245,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   998,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3464,
+   4500,
+   true
+  ]
+ },
+ "group": "children-apprentices",
+ "hair": {
+  "colour": "red-brown",
+  "facialHair": "none",
+  "style": "tousled-child"
+ },
+ "headwear": "hood",
+ "headwearGate": {
+  "headwear": "hood",
+  "pass": true,
+  "scalpCovered": 1,
+  "scalpRays": 889,
+  "shells": {
+   "Hood": {
+    "faces": 379,
+    "islands": 2,
+    "maxReachRadii": 1.354,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#6a5a48",
+  "shape": "liripipe",
+  "tone": "secondary"
+ },
+ "householdId": "ealdholt-spearman-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.36,
+  "coreMaxCm": 1.31,
+  "coreMeanCm": 0.74,
+  "coreWorstJoint": "thigh_l"
+ },
+ "label": "Spearman's son",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 257128,
+  "fileMiB": 0.245,
+  "headTriangles": 998,
+  "images": [
+   {
+    "bytes": 30920,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3464,
+  "vertices": 3523
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-child-v1",
+  "rate": 0.979,
+  "roleClips": [
+   "play_chase_b",
+   "play_toss",
+   "fetch_carry"
+  ],
+  "talk": "talk_b",
+  "walk": "walk_c"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "long-smock",
+  "kit": "child-tunic",
+  "palette": {
+   "accent": "undyed-cream",
+   "main": "undyed-grey",
+   "secondary": "undyed-brown"
+  },
+  "wear": "muddy-hems"
+ },
+ "placementScale": 0.7308,
+ "presentation": {
+  "clips": {
+   "fetch_carry": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       0.4083,
+       -0.0345,
+       -0.5536,
+       0,
+       0.0355,
+       -0.6844,
+       0.0688,
+       0,
+       -0.5536,
+       -0.0693,
+       -0.4039,
+       0,
+       -0.0202,
+       0.0644,
+       0.013,
+       1
+      ],
+      "node": "prop_small_bucket",
+      "prop": "small-bucket"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "play_toss": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       -0.5536,
+       -0.0693,
+       -0.4039,
+       0,
+       -0.0453,
+       -0.6643,
+       0.176,
+       0,
+       -0.4073,
+       0.1681,
+       0.5294,
+       0,
+       -0.0127,
+       0.0519,
+       0.0049,
+       1
+      ],
+      "node": "prop_pebbles",
+      "prop": "pebbles"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "play_toss_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       -0.5536,
+       -0.0693,
+       -0.4039,
+       0,
+       -0.0453,
+       -0.6643,
+       0.176,
+       0,
+       -0.4073,
+       0.1681,
+       0.5294,
+       0,
+       -0.0127,
+       0.0519,
+       0.0049,
+       1
+      ],
+      "node": "prop_pebbles",
+      "prop": "pebbles"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "play_toss_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       -0.5536,
+       -0.0693,
+       -0.4039,
+       0,
+       -0.0453,
+       -0.6643,
+       0.176,
+       0,
+       -0.4073,
+       0.1681,
+       0.5294,
+       0,
+       -0.0127,
+       0.0519,
+       0.0049,
+       1
+      ],
+      "node": "prop_pebbles",
+      "prop": "pebbles"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.6763,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.2735,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "small-bucket",
+   "kit": "everyday",
+   "socket": "both-hands",
+   "source": "polyhaven:wooden_bucket_01"
+  },
+  {
+   "id": "pebbles",
+   "kit": "everyday",
+   "socket": "hand_r",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 257128,
+  "sha256": "24cc87a48b8fe1bcb9659a528423f425777b7ef7ca99d6dfec7919cd92a7ef3b"
+ },
+ "recipeSha256": "9df6ec1e1731400651b00e24d2e5393025801b9f253c122a1047917db1c85070",
+ "referenceStatureCm": 119.5,
+ "residentId": "ealdholt-spearman-son",
+ "restRadiusMetres": 0.398,
+ "roleId": "village-child",
+ "statureCm": 89.5,
+ "status": "working-placeholder"
+}

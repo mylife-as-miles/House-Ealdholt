@@ -1,0 +1,805 @@
+{
+ "archetype": "elder-male",
+ "build": {
+  "seconds": 9.1,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.3,
+   "lod": 0.5,
+   "shape": 4.1,
+   "texture": 4.1
+  }
+ },
+ "clipLibrary": "crowd-clips-elder-male-v1.glb",
+ "envelopeGate": {
+  "clips": 14,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0199,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.231,
+ "envelopes": {
+  "idle_stick": {
+   "max": [
+    0.43,
+    1.663,
+    0.593
+   ],
+   "min": [
+    -0.353,
+    -0.097,
+    -0.538
+   ]
+  },
+  "sit": {
+   "max": [
+    0.465,
+    1.295,
+    0.378
+   ],
+   "min": [
+    -0.506,
+    -0.295,
+    -0.883
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.676,
+    1.765,
+    1.026
+   ],
+   "min": [
+    -0.604,
+    -0.555,
+    -1.193
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.679,
+    1.78,
+    1.028
+   ],
+   "min": [
+    -0.627,
+    -0.545,
+    -1.195
+   ]
+  },
+  "talk": {
+   "max": [
+    0.619,
+    1.721,
+    0.573
+   ],
+   "min": [
+    -0.452,
+    -0.097,
+    -0.536
+   ]
+  },
+  "walk_stick": {
+   "max": [
+    0.539,
+    1.694,
+    0.991
+   ],
+   "min": [
+    -0.518,
+    -0.403,
+    -0.927
+   ]
+  },
+  "walk_stick_start": {
+   "max": [
+    0.518,
+    1.688,
+    0.881
+   ],
+   "min": [
+    -0.482,
+    -0.227,
+    -0.658
+   ]
+  },
+  "walk_stick_stop": {
+   "max": [
+    0.51,
+    1.686,
+    0.858
+   ],
+   "min": [
+    -0.498,
+    -0.276,
+    -0.739
+   ]
+  },
+  "work_herd": {
+   "max": [
+    0.894,
+    1.677,
+    0.849
+   ],
+   "min": [
+    -0.533,
+    -0.196,
+    -0.573
+   ]
+  },
+  "work_herd_enter": {
+   "max": [
+    0.544,
+    1.734,
+    0.688
+   ],
+   "min": [
+    -0.509,
+    -0.171,
+    -0.582
+   ]
+  },
+  "work_herd_exit": {
+   "max": [
+    0.544,
+    1.734,
+    0.685
+   ],
+   "min": [
+    -0.509,
+    -0.168,
+    -0.582
+   ]
+  },
+  "work_whittle": {
+   "max": [
+    0.538,
+    1.15,
+    0.378
+   ],
+   "min": [
+    -0.503,
+    -0.295,
+    -0.883
+   ]
+  },
+  "work_whittle_enter": {
+   "max": [
+    0.576,
+    1.413,
+    0.378
+   ],
+   "min": [
+    -0.503,
+    -0.295,
+    -0.883
+   ]
+  },
+  "work_whittle_exit": {
+   "max": [
+    0.576,
+    1.413,
+    0.378
+   ],
+   "min": [
+    -0.503,
+    -0.295,
+    -0.883
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.85,
+   "r": -0.81
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.224,
+  "lipGapMm": {
+   "aa": 15.1,
+   "full": 18.5,
+   "rest": 0.3
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 6.83,
+   "r": 6.83
+  },
+  "upperLidClosed": 0.469,
+  "visibilityPasses": [
+   {
+    "l": 102,
+    "r": 105,
+    "upper": 0.447
+   },
+   {
+    "l": 74,
+    "r": 75,
+    "upper": 0.447
+   },
+   {
+    "l": 55,
+    "r": 54,
+    "upper": 0.447
+   },
+   {
+    "l": 17,
+    "r": 13,
+    "upper": 0.469
+   },
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.469
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-elder-herdsman.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.23,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   901,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3416,
+   4500,
+   true
+  ]
+ },
+ "group": "elders-dependents",
+ "hair": {
+  "colour": "white",
+  "facialHair": "none",
+  "style": "thinning-white"
+ },
+ "headwear": "felt-cap",
+ "headwearGate": {
+  "headwear": "felt-cap",
+  "pass": true,
+  "shells": {
+   "Cap": {
+    "faces": 306,
+    "islands": 1,
+    "maxReachRadii": 0.919,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#86563a",
+  "shape": "peaked",
+  "tone": "main"
+ },
+ "householdId": "ealdholt-cottage-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.45,
+  "coreMaxCm": 1.45,
+  "coreMeanCm": 0.48,
+  "coreWorstJoint": "calf_l"
+ },
+ "label": "Old herdsman",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 240836,
+  "fileMiB": 0.23,
+  "headTriangles": 901,
+  "images": [
+   {
+    "bytes": 28148,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3416,
+  "vertices": 3268
+ },
+ "motion": {
+  "idle": "idle_stick",
+  "library": "crowd-clips-elder-male-v1",
+  "rate": 1.03,
+  "roleClips": [
+   "work_whittle",
+   "work_herd"
+  ],
+  "talk": "talk",
+  "walk": "walk_stick"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "short-cloak",
+  "kit": "elder-m",
+  "palette": {
+   "accent": "undyed-cream",
+   "main": "russet",
+   "secondary": "undyed-brown"
+  },
+  "wear": "worn"
+ },
+ "placementScale": 0.975,
+ "presentation": {
+  "clips": {
+   "idle_stick": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       0.693,
+       0.0862,
+       0.8346,
+       0,
+       -0.8386,
+       0.1071,
+       0.6853,
+       0,
+       -0.0279,
+       -1.0795,
+       0.1346,
+       0,
+       0.006,
+       0.0869,
+       0.0207,
+       1
+      ],
+      "node": "prop_walking_stick",
+      "prop": "walking-stick"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9531,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3855,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9531,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3855,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9531,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3855,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "walk_stick": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       0.693,
+       0.0862,
+       0.8346,
+       0,
+       -0.8386,
+       0.1071,
+       0.6853,
+       0,
+       -0.0279,
+       -1.0795,
+       0.1346,
+       0,
+       0.006,
+       0.0869,
+       0.0207,
+       1
+      ],
+      "node": "prop_walking_stick",
+      "prop": "walking-stick"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "walk_stick_start": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       0.693,
+       0.0862,
+       0.8346,
+       0,
+       -0.8386,
+       0.1071,
+       0.6853,
+       0,
+       -0.0279,
+       -1.0795,
+       0.1346,
+       0,
+       0.006,
+       0.0869,
+       0.0207,
+       1
+      ],
+      "node": "prop_walking_stick",
+      "prop": "walking-stick"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "walk_stick_stop": {
+    "held": [
+     {
+      "bone": "hand_l",
+      "kit": "everyday",
+      "matrix": [
+       0.693,
+       0.0862,
+       0.8346,
+       0,
+       -0.8386,
+       0.1071,
+       0.6853,
+       0,
+       -0.0279,
+       -1.0795,
+       0.1346,
+       0,
+       0.006,
+       0.0869,
+       0.0207,
+       1
+      ],
+      "node": "prop_walking_stick",
+      "prop": "walking-stick"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_herd": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       0.6173,
+       -0.0768,
+       -0.7435,
+       0,
+       0.7471,
+       0.0954,
+       0.6105,
+       0,
+       0.0248,
+       -0.9617,
+       0.1199,
+       0,
+       -0.0588,
+       0.0802,
+       -0.0224,
+       1
+      ],
+      "node": "prop_crook",
+      "prop": "crook"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_herd_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       0.6173,
+       -0.0768,
+       -0.7435,
+       0,
+       0.7471,
+       0.0954,
+       0.6105,
+       0,
+       0.0248,
+       -0.9617,
+       0.1199,
+       0,
+       -0.0588,
+       0.0802,
+       -0.0224,
+       1
+      ],
+      "node": "prop_crook",
+      "prop": "crook"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_herd_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "farm",
+      "matrix": [
+       0.6173,
+       -0.0768,
+       -0.7435,
+       0,
+       0.7471,
+       0.0954,
+       0.6105,
+       0,
+       0.0248,
+       -0.9617,
+       0.1199,
+       0,
+       -0.0588,
+       0.0802,
+       -0.0224,
+       1
+      ],
+      "node": "prop_crook",
+      "prop": "crook"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_whittle": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       -0.0248,
+       0.9617,
+       -0.1199,
+       0,
+       0.7471,
+       0.0954,
+       0.6105,
+       0,
+       0.6173,
+       -0.0768,
+       -0.7435,
+       0,
+       -0.0214,
+       0.085,
+       0.0081,
+       1
+      ],
+      "node": "prop_whittling_knife",
+      "prop": "whittling-knife"
+     }
+    ],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.9531,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3855,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_whittle_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       -0.0248,
+       0.9617,
+       -0.1199,
+       0,
+       0.7471,
+       0.0954,
+       0.6105,
+       0,
+       0.6173,
+       -0.0768,
+       -0.7435,
+       0,
+       -0.0214,
+       0.085,
+       0.0081,
+       1
+      ],
+      "node": "prop_whittling_knife",
+      "prop": "whittling-knife"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_whittle_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "everyday",
+      "matrix": [
+       -0.0248,
+       0.9617,
+       -0.1199,
+       0,
+       0.7471,
+       0.0954,
+       0.6105,
+       0,
+       0.6173,
+       -0.0768,
+       -0.7435,
+       0,
+       -0.0214,
+       0.085,
+       0.0081,
+       1
+      ],
+      "node": "prop_whittling_knife",
+      "prop": "whittling-knife"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "everyday": "crowd-v1/props/crowd-props-everyday-v1.glb",
+   "farm": "crowd-v1/props/crowd-props-farm-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "crook",
+   "kit": "farm",
+   "socket": "hand_r",
+   "source": "project-original"
+  },
+  {
+   "id": "whittling-knife",
+   "kit": "everyday",
+   "socket": "hand_r",
+   "source": "household-set"
+  }
+ ],
+ "published": {
+  "bytes": 240836,
+  "sha256": "ba046e2c6c6a2001f7f7c8c54e7b4488fb7284d8093265cbaab45f40a3e23d7f"
+ },
+ "recipeSha256": "9e5788274d25b6b9b6d441698e8ef74f151876bdc54bb1a8586c36019fa064dc",
+ "referenceStatureCm": 168.2,
+ "residentId": "ealdholt-elder-herdsman",
+ "restRadiusMetres": 0.561,
+ "roleId": "elder-herdsman",
+ "statureCm": 163.7,
+ "status": "working-placeholder"
+}

@@ -1,0 +1,142 @@
+/* Crownfall's motion language, shared by every screen (the creator's direction of 11 November 2026):
+     - a selection is struck by light: a bar wipes in from the left behind a row with a flare at its leading edge,
+       and a sweep of light crosses a tile as it is chosen;
+     - screens and panels swing in from the side in depth and settle flat, their contents arriving one after another;
+     - a press sinks slightly.
+   Original to Crownfall, in its bronze and orange. Everything here is switched off by the menu's reduced-motion
+   setting (.reduce-motion on the shell, .is-reduced / .is-reduced-motion on a screen) and by the system's. */
+
+:root {
+  --cf-ease-out: cubic-bezier(.16, 1, .3, 1);
+  --cf-ease-swing: cubic-bezier(.2, .9, .25, 1.06);
+  --cf-light: #fff3d6;
+  --cf-flare: #f8a13a;
+}
+
+/* ------------------------------------------------------------------ light across a chosen tile */
+:is(.game-card, .home-tile, .settings-tile, .chapter-tile, .showcase-tile).is-selected::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background: linear-gradient(102deg, transparent 0 36%, #ffe9c01f 44%, #fff6dc6b 50%, #f8a13a3d 55%, transparent 64% 100%);
+  transform: translateX(-125%);
+  animation: cf-sweep .7s var(--cf-ease-out) both;
+}
+@keyframes cf-sweep { to { transform: translateX(125%); } }
+:is(.game-card, .home-tile, .settings-tile, .chapter-tile, .showcase-tile):active { transform: scale(.985); }
+
+/* ------------------------------------------------------------------ a bar of light behind a chosen row */
+.settings-row { isolation: isolate; }
+.settings-row.is-selected::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(90deg, #f8a13a57 0%, #d99a2b2e 38%, #d99a2b14 78%, transparent 100%);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 1.1cqw) 100%, 0 100%);
+  transform-origin: 0 50%;
+  animation: cf-bar .34s var(--cf-ease-out) both;
+}
+@keyframes cf-bar { from { transform: scaleX(0); opacity: .2; } to { transform: scaleX(1); opacity: 1; } }
+/* The flare at the bar's leading edge: it flashes and streaks along the row as the bar opens. */
+.settings-row.is-selected::after {
+  content: "";
+  position: absolute;
+  left: -1.4cqw;
+  top: 50%;
+  z-index: 2;
+  width: 5.4cqw;
+  height: 5.4cqw;
+  margin-top: -2.7cqw;
+  border-radius: 50%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  background: radial-gradient(circle, #fff 0%, #ffe7b3e6 12%, #f8a13a80 30%, transparent 62%);
+  animation: cf-flare .62s var(--cf-ease-out) both;
+}
+@keyframes cf-flare {
+  0% { opacity: 0; transform: scale(.2, .2); }
+  22% { opacity: 1; transform: scale(1.5, .55); }
+  100% { opacity: 0; transform: translateX(9cqw) scale(3.4, .16); }
+}
+
+/* ------------------------------------------------------------------ screens and panels swing in */
+@keyframes cf-swing-from-left {
+  from { opacity: 0; transform: perspective(1500px) translate3d(-6%, 0, 0) rotateY(22deg) scale(1.05); }
+  to { opacity: 1; transform: perspective(1500px) translate3d(0, 0, 0) rotateY(0) scale(1); }
+}
+@keyframes cf-swing-from-right {
+  from { opacity: 0; transform: perspective(1500px) translate3d(6%, 0, 0) rotateY(-22deg) scale(1.05); }
+  to { opacity: 1; transform: perspective(1500px) translate3d(0, 0, 0) rotateY(0) scale(1); }
+}
+@keyframes cf-arrive { from { opacity: 0; transform: translate3d(-18px, 0, 0); } to { opacity: 1; transform: none; } }
+@keyframes cf-rise { from { opacity: 0; transform: translate3d(0, 10px, 0); } to { opacity: 1; transform: none; } }
+
+/* Settings: a category's rows arrive one after another. */
+.settings-detail-list > div { animation: cf-arrive .36s var(--cf-ease-out) both; }
+.settings-detail-list > div:nth-child(1) { animation-delay: 20ms; } .settings-detail-list > div:nth-child(2) { animation-delay: 45ms; }
+.settings-detail-list > div:nth-child(3) { animation-delay: 70ms; } .settings-detail-list > div:nth-child(4) { animation-delay: 95ms; }
+.settings-detail-list > div:nth-child(5) { animation-delay: 120ms; } .settings-detail-list > div:nth-child(6) { animation-delay: 145ms; }
+.settings-detail-list > div:nth-child(7) { animation-delay: 170ms; } .settings-detail-list > div:nth-child(8) { animation-delay: 195ms; }
+.settings-detail-list > div:nth-child(9) { animation-delay: 220ms; } .settings-detail-list > div:nth-child(10) { animation-delay: 245ms; }
+.settings-detail-list > div:nth-child(n + 11) { animation-delay: 270ms; }
+
+/* Match setup: the battlefields swing in from the left, the terms from the right; the choices arrive in turn.
+   (The doubled class outranks the screen's own entrance, whose stylesheet loads after this one.) */
+.setup-war-room.setup-war-room .setup-battlefields { transform-origin: 0 50%; animation: cf-swing-from-left .62s .04s var(--cf-ease-swing) both; }
+.setup-war-room.setup-war-room .setup-terms { transform-origin: 100% 50%; animation: cf-swing-from-right .62s .1s var(--cf-ease-swing) both; }
+.setup-war-room .setup-option-group { animation: cf-rise .4s var(--cf-ease-out) both; }
+.setup-war-room .setup-option-group:nth-of-type(1) { animation-delay: .3s; } .setup-war-room .setup-option-group:nth-of-type(2) { animation-delay: .37s; }
+.setup-war-room .setup-option-group:nth-of-type(3) { animation-delay: .44s; } .setup-war-room .setup-option-group:nth-of-type(4) { animation-delay: .51s; }
+/* A chosen term is struck by the same light as a chosen tile. */
+.setup-choice-face { overflow: hidden; }
+.setup-choice input:checked + .setup-choice-face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(102deg, transparent 0 34%, #ffe9c026 44%, #fff6dc73 50%, #f8a13a40 56%, transparent 66% 100%);
+  transform: translateX(-125%);
+  animation: cf-sweep .6s var(--cf-ease-out) both;
+}
+.setup-choice:active .setup-choice-face { transform: scale(.985); }
+
+/* My Legacy's observer: the chronicle swings in from the left, the panel from the right, its parts in turn. */
+.ealdholt-preview.ealdholt-preview .obs-chronicle { transform-origin: 0 50%; animation: cf-swing-from-left .6s .05s var(--cf-ease-swing) both; }
+.ealdholt-preview.ealdholt-preview .obs-panel { transform-origin: 100% 50%; animation: cf-swing-from-right .6s .1s var(--cf-ease-swing) both; }
+.ealdholt-preview .obs-panel > :is(.obs-readout, .obs-group, .obs-houses, .obs-watch-list, header, p) { animation: cf-rise .4s var(--cf-ease-out) both; }
+.ealdholt-preview .obs-panel > :nth-child(1) { animation-delay: .26s; } .ealdholt-preview .obs-panel > :nth-child(2) { animation-delay: .32s; }
+.ealdholt-preview .obs-panel > :nth-child(3) { animation-delay: .38s; } .ealdholt-preview .obs-panel > :nth-child(4) { animation-delay: .44s; }
+.ealdholt-preview .obs-panel > :nth-child(n + 5) { animation-delay: .5s; }
+.ealdholt-preview .obs-house { animation: cf-arrive .36s var(--cf-ease-out) both; }
+.ealdholt-preview .obs-house:nth-child(1) { animation-delay: .3s; } .ealdholt-preview .obs-house:nth-child(2) { animation-delay: .36s; }
+.ealdholt-preview .obs-house:nth-child(3) { animation-delay: .42s; } .ealdholt-preview .obs-house:nth-child(4) { animation-delay: .48s; }
+/* The observer's tiles and rows take the light when chosen. */
+.ealdholt-preview :is(.obs-tile, .obs-row, .obs-act) { position: relative; overflow: hidden; }
+.ealdholt-preview :is(.obs-tile, .obs-row)[aria-pressed=true]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(102deg, transparent 0 34%, #ffe9c026 44%, #fff6dc73 50%, #f8a13a40 56%, transparent 66% 100%);
+  transform: translateX(-125%);
+  animation: cf-sweep .6s var(--cf-ease-out) both;
+}
+.ealdholt-preview :is(.obs-tile, .obs-row, .obs-act, .obs-cta):active:not(:disabled) { transform: scale(.985); }
+
+/* ------------------------------------------------------------------ reduced motion */
+.reduce-motion :is(.game-card, .home-tile, .settings-tile, .chapter-tile, .showcase-tile, .settings-row)::after,
+.reduce-motion .settings-row::before,
+:is(.is-reduced-motion, .is-reduced) :is(.setup-choice-face, .obs-tile, .obs-row)::after { animation: none !important; display: none; }
+.reduce-motion .settings-detail-list > div,
+:is(.setup-war-room.is-reduced-motion, .reduce-motion .setup-war-room) :is(.setup-battlefields, .setup-terms, .setup-option-group),
+.ealdholt-preview.is-reduced :is(.obs-chronicle, .obs-panel, .obs-panel > *, .obs-house) { animation: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  :is(.game-card, .home-tile, .settings-tile, .chapter-tile, .showcase-tile, .settings-row)::after, .settings-row::before,
+  :is(.setup-choice-face, .obs-tile, .obs-row)::after { animation: none !important; display: none; }
+  .settings-detail-list > div, .setup-war-room :is(.setup-battlefields, .setup-terms, .setup-option-group),
+  .ealdholt-preview :is(.obs-chronicle, .obs-panel, .obs-panel > *, .obs-house) { animation: none !important; }
+}

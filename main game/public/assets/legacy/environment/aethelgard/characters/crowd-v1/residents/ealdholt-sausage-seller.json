@@ -1,0 +1,634 @@
+{
+ "archetype": "adult-female",
+ "build": {
+  "seconds": 8.6,
+  "stageSeconds": {
+   "export": 0.1,
+   "faceRig": 0.2,
+   "lod": 0.5,
+   "shape": 3.4,
+   "texture": 4.4
+  }
+ },
+ "clipLibrary": "crowd-clips-adult-female-v1.glb",
+ "envelopeGate": {
+  "clips": 14,
+  "method": "crowdClipEnvelope (joint ranges x per-joint vertex boxes) contains the skinned mesh sampled at 60 frames a second",
+  "minMarginMetres": 0.0139,
+  "pass": true,
+  "sampledFps": 60
+ },
+ "envelopeMarginMetres": 0.189,
+ "envelopes": {
+  "idle": {
+   "max": [
+    0.533,
+    1.637,
+    0.7
+   ],
+   "min": [
+    -0.494,
+    -0.173,
+    -0.642
+   ]
+  },
+  "sit": {
+   "max": [
+    0.56,
+    1.248,
+    0.466
+   ],
+   "min": [
+    -0.562,
+    -0.462,
+    -1.048
+   ]
+  },
+  "sit_down": {
+   "max": [
+    0.713,
+    1.695,
+    1.18
+   ],
+   "min": [
+    -0.675,
+    -0.771,
+    -1.328
+   ]
+  },
+  "stand_up": {
+   "max": [
+    0.713,
+    1.711,
+    1.183
+   ],
+   "min": [
+    -0.696,
+    -0.756,
+    -1.332
+   ]
+  },
+  "talk": {
+   "max": [
+    0.535,
+    1.658,
+    0.7
+   ],
+   "min": [
+    -0.496,
+    -0.173,
+    -0.642
+   ]
+  },
+  "walk": {
+   "max": [
+    0.642,
+    1.675,
+    0.861
+   ],
+   "min": [
+    -0.632,
+    -0.399,
+    -0.983
+   ]
+  },
+  "walk_start": {
+   "max": [
+    0.585,
+    1.668,
+    0.875
+   ],
+   "min": [
+    -0.616,
+    -0.242,
+    -0.831
+   ]
+  },
+  "walk_stop": {
+   "max": [
+    0.571,
+    1.665,
+    0.806
+   ],
+   "min": [
+    -0.61,
+    -0.353,
+    -0.905
+   ]
+  },
+  "work_sell": {
+   "max": [
+    0.535,
+    1.789,
+    0.754
+   ],
+   "min": [
+    -0.478,
+    -0.272,
+    -0.637
+   ]
+  },
+  "work_sell_enter": {
+   "max": [
+    0.522,
+    1.739,
+    0.69
+   ],
+   "min": [
+    -0.461,
+    -0.179,
+    -0.632
+   ]
+  },
+  "work_sell_exit": {
+   "max": [
+    0.522,
+    1.739,
+    0.69
+   ],
+   "min": [
+    -0.461,
+    -0.179,
+    -0.632
+   ]
+  },
+  "work_stir": {
+   "max": [
+    0.594,
+    1.632,
+    0.679
+   ],
+   "min": [
+    -0.556,
+    -0.165,
+    -0.664
+   ]
+  },
+  "work_stir_enter": {
+   "max": [
+    0.572,
+    1.719,
+    0.752
+   ],
+   "min": [
+    -0.556,
+    -0.212,
+    -0.725
+   ]
+  },
+  "work_stir_exit": {
+   "max": [
+    0.572,
+    1.719,
+    0.753
+   ],
+   "min": [
+    -0.557,
+    -0.213,
+    -0.727
+   ]
+  }
+ },
+ "faceCalibration": {
+  "closureAtBlinkMm": {
+   "l": -0.6,
+   "r": -0.6
+  },
+  "eyeballVisibleAtBlink": {
+   "l": 0,
+   "r": 0
+  },
+  "jawOpen": 0.218,
+  "lipGapMm": {
+   "aa": 14.6,
+   "full": 17.9,
+   "rest": 0.9
+  },
+  "lowerLidClosed": -0.15,
+  "openingAtRestMm": {
+   "l": 7.98,
+   "r": 7.98
+  },
+  "upperLidClosed": 0.554,
+  "visibilityPasses": [
+   {
+    "l": 0,
+    "r": 0,
+    "upper": 0.554
+   }
+  ]
+ },
+ "faceRigError": null,
+ "faceTier": "face-joints-only",
+ "fidelityTier": "persistent",
+ "file": "ealdholt-sausage-seller.glb",
+ "gates": {
+  "allPass": true,
+  "atlas512": true,
+  "faceRigCalibrated": true,
+  "fileAtMostMiB": [
+   0.243,
+   0.45,
+   true
+  ],
+  "headTrianglesAtLeast": [
+   905,
+   900,
+   true
+  ],
+  "headwearCovers": true,
+  "materialsAtMost": [
+   1,
+   2,
+   true
+  ],
+  "noClips": true,
+  "noMorphs": true,
+  "placementScaleInArchetypeRange": true,
+  "trianglesAtMost": [
+   3357,
+   4500,
+   true
+  ]
+ },
+ "group": "farmers-artisans-merchants",
+ "hair": {
+  "colour": "light-brown",
+  "facialHair": "none",
+  "style": "bun"
+ },
+ "headwear": "kerchief",
+ "headwearGate": {
+  "headwear": "kerchief",
+  "pass": true,
+  "shells": {
+   "Kerchief": {
+    "faces": 333,
+    "islands": 1,
+    "maxReachRadii": 1.001,
+    "pass": true,
+    "shardIslands": 0
+   }
+  }
+ },
+ "headwearStyle": {
+  "colour": "#2f2c29",
+  "shape": "knot-back",
+  "tone": "accent"
+ },
+ "householdId": "ealdholt-butcher-household",
+ "jointResidualCm": {
+  "allMaxCm": 1.18,
+  "coreMaxCm": 1.1,
+  "coreMeanCm": 0.56,
+  "coreWorstJoint": "head"
+ },
+ "label": "Sausage maker and market seller",
+ "measured": {
+  "clips": 0,
+  "fileBytes": 254904,
+  "fileMiB": 0.243,
+  "headTriangles": 905,
+  "images": [
+   {
+    "bytes": 47472,
+    "decodedRgba8WithMipsBytes": 1398101,
+    "height": 512,
+    "mime": "image/webp",
+    "width": 512
+   }
+  ],
+  "joints": 64,
+  "materials": 1,
+  "meshes": 1,
+  "morphTargets": 0,
+  "triangles": 3357,
+  "vertices": 3177
+ },
+ "motion": {
+  "idle": "idle",
+  "library": "crowd-clips-adult-female-v1",
+  "rate": 0.952,
+  "roleClips": [
+   "work_sell",
+   "work_stir"
+  ],
+  "talk": "talk",
+  "walk": "walk"
+ },
+ "motionPublished": {
+  "by": "scripts/characters/crowd_motion_publish.ts",
+  "clipLibraries": "crowd-v1/clips/manifest.json"
+ },
+ "outfit": {
+  "cut": "overgown",
+  "kit": "market-f",
+  "palette": {
+   "accent": "oak-gall-black",
+   "main": "weld-yellow",
+   "secondary": "undyed-cream"
+  },
+  "wear": "stained"
+ },
+ "placementScale": 1.0055,
+ "presentation": {
+  "clips": {
+   "sit": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "sit_down": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "stand_up": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       0.904,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       -0.3655,
+       1
+      ],
+      "node": "prop_stool",
+      "prop": "stool"
+     }
+    ]
+   },
+   "work_sell": {
+    "held": [],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.6075,
+       1
+      ],
+      "node": "prop_market_trestle",
+      "prop": "market-trestle"
+     },
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.6075,
+       1
+      ],
+      "node": "prop_goods_sausages",
+      "prop": "goods-sausages"
+     }
+    ]
+   },
+   "work_stir": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       0.043,
+       0.0883,
+       0.0721,
+       1
+      ],
+      "node": "prop_ladle",
+      "prop": "ladle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": [
+     {
+      "bone": null,
+      "kit": "workplace",
+      "matrix": [
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0,
+       1,
+       0,
+       0,
+       0,
+       0.4602,
+       1
+      ],
+      "node": "prop_brew_tub",
+      "prop": "brew-tub"
+     }
+    ]
+   },
+   "work_stir_enter": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       0.043,
+       0.0883,
+       0.0721,
+       1
+      ],
+      "node": "prop_ladle",
+      "prop": "ladle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   },
+   "work_stir_exit": {
+    "held": [
+     {
+      "bone": "hand_r",
+      "kit": "craft",
+      "matrix": [
+       0.6451,
+       -0.0521,
+       -0.6545,
+       0,
+       0.656,
+       0.091,
+       0.6393,
+       0,
+       0.0285,
+       -0.9145,
+       0.1009,
+       0,
+       0.043,
+       0.0883,
+       0.0721,
+       1
+      ],
+      "node": "prop_ladle",
+      "prop": "ladle"
+     }
+    ],
+    "hidesRest": [],
+    "placed": []
+   }
+  },
+  "kits": {
+   "craft": "crowd-v1/props/crowd-props-craft-v1.glb",
+   "workplace": "crowd-v1/props/crowd-props-workplace-v1.glb"
+  },
+  "rest": [],
+  "version": 1
+ },
+ "props": [
+  {
+   "id": "basket",
+   "kit": "everyday",
+   "socket": "hand_l",
+   "source": "polyhaven:wicker_basket_01"
+  },
+  {
+   "id": "market-trestle",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  },
+  {
+   "id": "goods-sausages",
+   "kit": "workplace",
+   "socket": "workplace",
+   "source": "project-original"
+  }
+ ],
+ "published": {
+  "bytes": 254904,
+  "sha256": "6fd0072fffe8b097be29c764ab49363823fed3ab1be9b7ecc3e884db626ac9e4"
+ },
+ "recipeSha256": "72639a2a7834e929f4c0e36a80c258d9f493a6b06a8e558b94b3b72dc2d32ebc",
+ "referenceStatureCm": 159.7,
+ "residentId": "ealdholt-sausage-seller",
+ "restRadiusMetres": 0.519,
+ "roleId": "sausage-seller",
+ "statureCm": 160,
+ "status": "working-placeholder"
+}

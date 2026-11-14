@@ -1,0 +1,41 @@
+.now-playing {
+  position: absolute;
+  z-index: 12;
+  right: max(20px, 4.8cqw);
+  bottom: max(18px, 4.5cqh);
+  width: min(360px, 38cqw);
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  padding: 15px 18px;
+  border: 1px solid #b08a484d;
+  border-left: 2px solid #c19a52;
+  background: linear-gradient(115deg, #22241ff2, #101412f5);
+  box-shadow: 0 8px 28px #0004;
+  color: #e7e0cf;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0;
+  transform: translateX(16px);
+  transition: opacity 260ms ease, transform 260ms ease;
+}
+.now-playing.is-shown { opacity: 1; transform: none; }
+.now-playing-glyph { display: block; width: 32px; height: 32px; color: #caa661; }
+.now-playing-glyph svg { display: block; width: 100%; height: 100%; }
+.now-playing-copy { min-width: 0; }
+.now-playing-copy p { margin: 0; overflow-wrap: anywhere; }
+.now-playing-label { color: #bcaa83; font-size: 12px; font-weight: 500; line-height: 1.35; letter-spacing: .1em; text-transform: uppercase; }
+.now-playing-title { margin-top: 5px !important; color: #eee7d8; font-size: clamp(14px, 1.2cqw, 18px); font-weight: 600; line-height: 1.3; }
+.now-playing-credit { margin-top: 3px !important; color: #aaa999; font-size: clamp(12px, .94cqw, 14px); font-weight: 400; line-height: 1.35; }
+.now-playing[data-now-playing-surface=legacy] { right: 6.6cqw; bottom: max(110px, 16cqh); width: min(300px, 26cqw); }
+.now-playing-announcement { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.now-playing.is-still { transform: none; transition: none; }
+@media (max-height: 560px) {
+  .now-playing { padding: 10px 12px; gap: 10px; grid-template-columns: 25px minmax(0, 1fr); bottom: 14px; }
+  .now-playing-glyph { width: 24px; height: 24px; }
+  .now-playing[data-now-playing-surface=legacy] { right: 2cqw; bottom: 100px; width: 19cqw; padding: 10px; grid-template-columns: minmax(0, 1fr); }
+  .now-playing[data-now-playing-surface=legacy] .now-playing-glyph { position: absolute; top: 10px; right: 8px; width: 17px; height: 17px; }
+  .now-playing[data-now-playing-surface=legacy] .now-playing-label { padding-right: 18px; letter-spacing: .02em; }
+}
+@media (prefers-reduced-motion: reduce) { .now-playing { transform: none; transition: none; } }

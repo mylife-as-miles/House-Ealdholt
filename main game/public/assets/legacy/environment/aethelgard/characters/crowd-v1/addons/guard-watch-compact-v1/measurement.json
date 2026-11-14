@@ -1,0 +1,238 @@
+{
+  "schemaVersion": 1,
+  "method": "actual-platform-animationmixer-full-skin-and-held-spear-v1",
+  "fps": 60,
+  "paddingMetres": 0.05,
+  "generator": {
+    "file": "scripts/characters/measure-guard-watch-addon.mts",
+    "sha256": "1a77d45aa37e740d0d32a3fa141ab880d3969a4ce368a62d531b0ac26ccf4262"
+  },
+  "sources": {
+    "crowd-v1/clips/crowd-clips-adult-male-v1.glb": "ecbb7f4646cb008ea06b02fa46029948e37ff826dd00bdcb6cac021a70d124e5",
+    "crowd-v1/residents/ealdholt-garrison-spearman.glb": "faee99f94a1b49f022dd8363945ea3d91c9db5536adcedecd035fb0246ffbce5",
+    "crowd-v1/residents/ealdholt-garrison-spearman.json": "36f23cef1d2ec6be40570f000df30c41303f48de4bf5b96f137561b95ce7f762",
+    "crowd-v1/props/crowd-props-guard-v1.glb": "d9c0148847ef17fa1479e2339224dacce8e7833d3f2ec199dd6c312abfe33ccd"
+  },
+  "addon": {
+    "file": "guard-watch-adult-male-compact-v1.glb",
+    "sha256": "3bcd07e9f86a1574e3ff139a37730f43fdbc91cff8f5e7e3a943ab612071cb0a",
+    "bytes": 98804
+  },
+  "seconds": 1.2,
+  "fadeSeconds": 0.12,
+  "platforms": {
+    "desktop": {
+      "threeRevision": "185",
+      "sourceModuleSha256": {
+        "main game/src/legacy/aethelgard/characters/crowd-residents.ts": "256ca0b38aeeba8737afb7f353868dc6c77524c3c6ebc7c05fdd0d05f0e01435",
+        "main game/src/legacy/aethelgard/characters/guard-watch-pose-correction.ts": "0d037895c582d8ce47bd4c2ef1cb26c6926c80fb0ef651548d8f9d914db35e8a",
+        "main game/src/legacy/aethelgard/resident-actors.ts": "8273c66d5bf5099b1087d9cee61db4636b23b693efd47ad1e48e3a936c525f67",
+        "shared/legacy/aethelgard/characters/guard-watch-ik.ts": "aa3423b1fee8e609d67dd951a1dbc6e60cbeba045c522614e7b1f18eb8ab9ad3"
+      },
+      "clips": {
+        "guard_patrol_walk": {
+          "radiusMetres": 0.5343557601088281,
+          "heightMetres": 3.1270282508522014,
+          "minimumBodyYMetres": 0.0008908239048367,
+          "minimumPropYMetres": 0.6700227722353413,
+          "samples": 85
+        },
+        "guard_stand_watch_d": {
+          "radiusMetres": 0.5506471427397078,
+          "heightMetres": 2.4377422734226464,
+          "minimumBodyYMetres": 0.0029731711637478657,
+          "minimumPropYMetres": -0.0007841988869330407,
+          "samples": 541
+        },
+        "guard_stand_watch_d_compact_enter_v1": {
+          "radiusMetres": 0.5748225724277701,
+          "heightMetres": 3.1066786379118247,
+          "minimumBodyYMetres": 0.0020512722420762395,
+          "minimumPropYMetres": -0.0003522549861878499,
+          "samples": 74
+        },
+        "guard_stand_watch_d_compact_exit_v1": {
+          "radiusMetres": 0.5748225664435662,
+          "heightMetres": 3.106750590891252,
+          "minimumBodyYMetres": 0.002051273506772371,
+          "minimumPropYMetres": -0.00034270537054470473,
+          "samples": 74
+        }
+      },
+      "blends": {
+        "radiusMetres": 0.5506471427397078,
+        "heightMetres": 3.1270282508522014,
+        "minimumBodyYMetres": 0.0005833790272337468,
+        "minimumPropYMetres": -0.0073956847635152645
+      },
+      "blendSamples": 5670,
+      "maximumHandGapMetres": 0.00003184363955492257,
+      "maximumGripAngleDegrees": 0.003648544713771318,
+      "seams": [
+        {
+          "from": "guard_patrol_walk",
+          "fromTime": 0,
+          "to": "guard_stand_watch_d_compact_enter_v1",
+          "toTime": 0,
+          "maximumPositionMetres": 0.00003370751602366803,
+          "maximumAngleDegrees": 0.004578519253084039
+        },
+        {
+          "from": "guard_stand_watch_d_compact_enter_v1",
+          "fromTime": 1.2,
+          "to": "guard_stand_watch_d",
+          "toTime": 0,
+          "maximumPositionMetres": 0.000009335235977920853,
+          "maximumAngleDegrees": 0.0019796880910194032
+        },
+        {
+          "from": "guard_stand_watch_d",
+          "fromTime": 0,
+          "to": "guard_stand_watch_d_compact_exit_v1",
+          "toTime": 0,
+          "maximumPositionMetres": 0.000009333469720483524,
+          "maximumAngleDegrees": 0.001979293336776205
+        },
+        {
+          "from": "guard_stand_watch_d_compact_exit_v1",
+          "fromTime": 1.2,
+          "to": "guard_patrol_walk",
+          "toTime": 0,
+          "maximumPositionMetres": 0.000033838859887589576,
+          "maximumAngleDegrees": 0.004596394439476677
+        }
+      ],
+      "ownerMatrixError": 0,
+      "vertexSamples": 21767832,
+      "worstHand": {
+        "context": "single-clip:guard_stand_watch_d_compact_enter_v1",
+        "name": "guard_stand_watch_d_compact_enter_v1",
+        "time": 0.4,
+        "side": "r",
+        "gap": 0.00003184363955492257,
+        "angle": 0.0036483041630734608
+      },
+      "worstAngle": {
+        "context": "single-clip:guard_stand_watch_d_compact_exit_v1",
+        "name": "guard_stand_watch_d_compact_exit_v1",
+        "time": 0.8,
+        "side": "r",
+        "gap": 0.00003183821162500322,
+        "angle": 0.003648544713771318
+      },
+      "maximumFootCorrectionMetres": 0.0635802212177056,
+      "fps": 60,
+      "includesActualSkinAndHeldSpear": true,
+      "pass": true
+    },
+    "quest": {
+      "threeRevision": "185",
+      "sourceModuleSha256": {
+        "main-game-vr/src/legacy/aethelgard/characters/crowd-residents.ts": "7ce33b29fb3fc0194e40579b1cd00bfb853356b0fac7bb41a303011f3800b713",
+        "main-game-vr/src/legacy/aethelgard/characters/guard-watch-pose-correction.ts": "9159a9715433b43458f1fef3c57d5e3b1b936adf84bf49237e720acbd3b48a20",
+        "main-game-vr/src/legacy/aethelgard/resident-actors.ts": "4f2b511dd8bb8761831bb310e966757d5eb64d4181215c3b4a81844ca19dcd1a",
+        "shared/legacy/aethelgard/characters/guard-watch-ik.ts": "aa3423b1fee8e609d67dd951a1dbc6e60cbeba045c522614e7b1f18eb8ab9ad3"
+      },
+      "clips": {
+        "guard_patrol_walk": {
+          "radiusMetres": 0.5343557601088281,
+          "heightMetres": 3.1270282508522014,
+          "minimumBodyYMetres": 0.0008908239048367,
+          "minimumPropYMetres": 0.6700227722353413,
+          "samples": 85
+        },
+        "guard_stand_watch_d": {
+          "radiusMetres": 0.5506471427397078,
+          "heightMetres": 2.4377422734226464,
+          "minimumBodyYMetres": 0.0029731711637478657,
+          "minimumPropYMetres": -0.0007841988869330407,
+          "samples": 541
+        },
+        "guard_stand_watch_d_compact_enter_v1": {
+          "radiusMetres": 0.5748225724277701,
+          "heightMetres": 3.1066786379118247,
+          "minimumBodyYMetres": 0.0020512722420762395,
+          "minimumPropYMetres": -0.0003522549861878499,
+          "samples": 74
+        },
+        "guard_stand_watch_d_compact_exit_v1": {
+          "radiusMetres": 0.5748225664435662,
+          "heightMetres": 3.106750590891252,
+          "minimumBodyYMetres": 0.002051273506772371,
+          "minimumPropYMetres": -0.00034270537054470473,
+          "samples": 74
+        }
+      },
+      "blends": {
+        "radiusMetres": 0.5506471427397078,
+        "heightMetres": 3.1270282508522014,
+        "minimumBodyYMetres": 0.0005833790272337468,
+        "minimumPropYMetres": -0.0073956847635152645
+      },
+      "blendSamples": 5670,
+      "maximumHandGapMetres": 0.00003184363955492257,
+      "maximumGripAngleDegrees": 0.003648544713771318,
+      "seams": [
+        {
+          "from": "guard_patrol_walk",
+          "fromTime": 0,
+          "to": "guard_stand_watch_d_compact_enter_v1",
+          "toTime": 0,
+          "maximumPositionMetres": 0.00003370751602366803,
+          "maximumAngleDegrees": 0.004578519253084039
+        },
+        {
+          "from": "guard_stand_watch_d_compact_enter_v1",
+          "fromTime": 1.2,
+          "to": "guard_stand_watch_d",
+          "toTime": 0,
+          "maximumPositionMetres": 0.000009335235977920853,
+          "maximumAngleDegrees": 0.0019796880910194032
+        },
+        {
+          "from": "guard_stand_watch_d",
+          "fromTime": 0,
+          "to": "guard_stand_watch_d_compact_exit_v1",
+          "toTime": 0,
+          "maximumPositionMetres": 0.000009333469720483524,
+          "maximumAngleDegrees": 0.001979293336776205
+        },
+        {
+          "from": "guard_stand_watch_d_compact_exit_v1",
+          "fromTime": 1.2,
+          "to": "guard_patrol_walk",
+          "toTime": 0,
+          "maximumPositionMetres": 0.000033838859887589576,
+          "maximumAngleDegrees": 0.004596394439476677
+        }
+      ],
+      "ownerMatrixError": 0,
+      "vertexSamples": 21767832,
+      "worstHand": {
+        "context": "single-clip:guard_stand_watch_d_compact_enter_v1",
+        "name": "guard_stand_watch_d_compact_enter_v1",
+        "time": 0.4,
+        "side": "r",
+        "gap": 0.00003184363955492257,
+        "angle": 0.0036483041630734608
+      },
+      "worstAngle": {
+        "context": "single-clip:guard_stand_watch_d_compact_exit_v1",
+        "name": "guard_stand_watch_d_compact_exit_v1",
+        "time": 0.8,
+        "side": "r",
+        "gap": 0.00003183821162500322,
+        "angle": 0.003648544713771318
+      },
+      "maximumFootCorrectionMetres": 0.0635802212177056,
+      "fps": 60,
+      "includesActualSkinAndHeldSpear": true,
+      "pass": true
+    }
+  },
+  "contactsOnlyDiagnostic": false,
+  "exactSourceSiteCapsule": "not-written-or-inferred; runtime compares measured bounds against its existing certificate",
+  "completed": true,
+  "pass": true,
+  "elapsedMilliseconds": 32484.10177
+}

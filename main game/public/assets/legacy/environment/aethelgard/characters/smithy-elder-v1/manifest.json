@@ -1,0 +1,3876 @@
+{
+ "version": 2,
+ "set": "smithy-elder-v1",
+ "status": "working-placeholder",
+ "residentId": "ealdholt-smithy-elder",
+ "label": "Household elder",
+ "levels": {
+  "desktop-lod0": {
+   "file": "smithy-elder-desktop-lod0.glb",
+   "bytes": 4047100,
+   "triangles": 24887,
+   "vertices": 20619,
+   "materialCount": 4,
+   "joints": 64,
+   "maxMorphTargets": 44,
+   "textureBytes": 1141438,
+   "decodedTextureBytesEstimate": 70254589,
+   "materials": [
+    {
+     "alphaMode": "OPAQUE",
+     "doubleSided": false,
+     "name": "skin"
+    },
+    {
+     "alphaMode": "OPAQUE",
+     "doubleSided": true,
+     "name": "cloth"
+    },
+    {
+     "alphaMode": "OPAQUE",
+     "doubleSided": false,
+     "name": "eyes_mouth"
+    },
+    {
+     "alphaMode": "BLEND",
+     "doubleSided": true,
+     "name": "hair.001"
+    }
+   ],
+   "morphTextureBytesEstimate": 5273808,
+   "morphNormals": false,
+   "doubleSidedMaterials": 2,
+   "textures": [
+    {
+     "name": "skin_normal_final",
+     "width": 1024,
+     "height": 1024,
+     "bytes": 169792
+    },
+    {
+     "name": "skin_albedo",
+     "width": 2048,
+     "height": 2048,
+     "bytes": 217598
+    },
+    {
+     "name": "skin_orm_final",
+     "width": 512,
+     "height": 512,
+     "bytes": 7496
+    },
+    {
+     "name": "cloth_normal_final",
+     "width": 1024,
+     "height": 1024,
+     "bytes": 53862
+    },
+    {
+     "name": "cloth_albedo",
+     "width": 2048,
+     "height": 2048,
+     "bytes": 298376
+    },
+    {
+     "name": "cloth_orm_final",
+     "width": 512,
+     "height": 512,
+     "bytes": 62452
+    },
+    {
+     "name": "eyes_mouth_albedo",
+     "width": 1024,
+     "height": 1024,
+     "bytes": 25688
+    },
+    {
+     "name": "eyes_mouth_orm_final",
+     "width": 256,
+     "height": 256,
+     "bytes": 362
+    },
+    {
+     "name": "strands",
+     "width": 1024,
+     "height": 1024,
+     "bytes": 305812
+    }
+   ],
+   "meshes": [
+    {
+     "mesh": "Body",
+     "material": "skin",
+     "triangles": 9602,
+     "vertices": 5539,
+     "morphTargets": 44
+    },
+    {
+     "mesh": "Clothes",
+     "material": "cloth",
+     "triangles": 9941,
+     "vertices": 9747,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "EyesMouth",
+     "material": "eyes_mouth",
+     "triangles": 2396,
+     "vertices": 1543,
+     "morphTargets": 9
+    },
+    {
+     "mesh": "Groom",
+     "material": "hair.001",
+     "triangles": 2948,
+     "vertices": 3790,
+     "morphTargets": 19
+    }
+   ]
+  },
+  "desktop-lod1": {
+   "file": "smithy-elder-desktop-lod1.glb",
+   "bytes": 1580816,
+   "triangles": 7507,
+   "vertices": 7070,
+   "materialCount": 2,
+   "joints": 64,
+   "maxMorphTargets": 44,
+   "textureBytes": 268852,
+   "decodedTextureBytesEstimate": 8738132,
+   "materials": [
+    {
+     "alphaMode": "OPAQUE",
+     "doubleSided": true,
+     "name": "lod1_body"
+    },
+    {
+     "alphaMode": "MASK",
+     "doubleSided": true,
+     "name": "lod1_hair"
+    }
+   ],
+   "morphTextureBytesEstimate": 4710880,
+   "morphNormals": false,
+   "doubleSidedMaterials": 2,
+   "textures": [
+    {
+     "name": "lod1_normal",
+     "width": 512,
+     "height": 512,
+     "bytes": 8378
+    },
+    {
+     "name": "lod1_albedo",
+     "width": 1024,
+     "height": 1024,
+     "bytes": 104830
+    },
+    {
+     "name": "lod1_orm",
+     "width": 256,
+     "height": 256,
+     "bytes": 11124
+    },
+    {
+     "name": "lod1_strands",
+     "width": 512,
+     "height": 512,
+     "bytes": 144520
+    }
+   ],
+   "meshes": [
+    {
+     "mesh": "Lod1Body",
+     "material": "lod1_body",
+     "triangles": 7063,
+     "vertices": 6404,
+     "morphTargets": 44
+    },
+    {
+     "mesh": "Lod1Hair",
+     "material": "lod1_hair",
+     "triangles": 444,
+     "vertices": 666,
+     "morphTargets": 19
+    }
+   ]
+  },
+  "props": {
+   "file": "smithy-elder-props.glb",
+   "bytes": 393436,
+   "triangles": 7024,
+   "vertices": 5385,
+   "materialCount": 1,
+   "joints": 0,
+   "maxMorphTargets": 0,
+   "textureBytes": 178152,
+   "decodedTextureBytesEstimate": 7340031,
+   "materials": [
+    {
+     "alphaMode": "OPAQUE",
+     "doubleSided": true,
+     "name": "props_desktop"
+    }
+   ],
+   "morphTextureBytesEstimate": 0,
+   "morphNormals": false,
+   "doubleSidedMaterials": 1,
+   "textures": [
+    {
+     "name": "props_desktop_normal",
+     "width": 512,
+     "height": 512,
+     "bytes": 26004
+    },
+    {
+     "name": "props_desktop_albedo",
+     "width": 1024,
+     "height": 1024,
+     "bytes": 145288
+    },
+    {
+     "name": "props_desktop_orm",
+     "width": 256,
+     "height": 256,
+     "bytes": 6860
+    }
+   ],
+   "meshes": [
+    {
+     "mesh": "prop_stick_rest",
+     "material": "props_desktop",
+     "triangles": 120,
+     "vertices": 111,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "Plane",
+     "material": "props_desktop",
+     "triangles": 1200,
+     "vertices": 791,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_stick",
+     "material": "props_desktop",
+     "triangles": 120,
+     "vertices": 111,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "knife_handle",
+     "material": "props_desktop",
+     "triangles": 72,
+     "vertices": 88,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_knife_rest",
+     "material": "props_desktop",
+     "triangles": 72,
+     "vertices": 88,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_spoon_rest",
+     "material": "props_desktop",
+     "triangles": 1200,
+     "vertices": 791,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "wood_root_bowl_50k_uv.002",
+     "material": "props_desktop",
+     "triangles": 4240,
+     "vertices": 3405,
+     "morphTargets": 0
+    }
+   ]
+  },
+  "props-quest": {
+   "file": "smithy-elder-props-quest.glb",
+   "bytes": 199776,
+   "triangles": 4904,
+   "vertices": 4013,
+   "materialCount": 1,
+   "joints": 0,
+   "maxMorphTargets": 0,
+   "textureBytes": 41126,
+   "decodedTextureBytesEstimate": 1835007,
+   "materials": [
+    {
+     "alphaMode": "OPAQUE",
+     "doubleSided": true,
+     "name": "props_quest"
+    }
+   ],
+   "morphTextureBytesEstimate": 0,
+   "morphNormals": false,
+   "doubleSidedMaterials": 1,
+   "textures": [
+    {
+     "name": "props_quest_normal",
+     "width": 256,
+     "height": 256,
+     "bytes": 2856
+    },
+    {
+     "name": "props_quest_albedo",
+     "width": 512,
+     "height": 512,
+     "bytes": 36052
+    },
+    {
+     "name": "props_quest_orm",
+     "width": 128,
+     "height": 128,
+     "bytes": 2218
+    }
+   ],
+   "meshes": [
+    {
+     "mesh": "prop_stick_rest",
+     "material": "props_quest",
+     "triangles": 120,
+     "vertices": 111,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "Plane",
+     "material": "props_quest",
+     "triangles": 1200,
+     "vertices": 791,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_stick",
+     "material": "props_quest",
+     "triangles": 120,
+     "vertices": 111,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "knife_handle",
+     "material": "props_quest",
+     "triangles": 72,
+     "vertices": 88,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_knife_rest",
+     "material": "props_quest",
+     "triangles": 72,
+     "vertices": 88,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "prop_spoon_rest",
+     "material": "props_quest",
+     "triangles": 1200,
+     "vertices": 791,
+     "morphTargets": 0
+    },
+    {
+     "mesh": "wood_root_bowl_50k_uv.002",
+     "material": "props_quest",
+     "triangles": 2120,
+     "vertices": 2033,
+     "morphTargets": 0
+    }
+   ]
+  },
+  "quest": {
+   "file": "smithy-elder-quest.glb",
+   "bytes": 1258972,
+   "triangles": 5554,
+   "vertices": 5098,
+   "materialCount": 2,
+   "joints": 64,
+   "maxMorphTargets": 44,
+   "textureBytes": 241784,
+   "decodedTextureBytesEstimate": 8738132,
+   "materials": [
+    {
+     "alphaMode": "OPAQUE",
+     "doubleSided": true,
+     "name": "quest_body"
+    },
+    {
+     "alphaMode": "MASK",
+     "doubleSided": true,
+     "name": "quest_hair"
+    }
+   ],
+   "morphTextureBytesEstimate": 3466592,
+   "morphNormals": false,
+   "doubleSidedMaterials": 2,
+   "textures": [
+    {
+     "name": "quest_normal",
+     "width": 512,
+     "height": 512,
+     "bytes": 6132
+    },
+    {
+     "name": "quest_albedo",
+     "width": 1024,
+     "height": 1024,
+     "bytes": 85970
+    },
+    {
+     "name": "quest_orm",
+     "width": 256,
+     "height": 256,
+     "bytes": 9320
+    },
+    {
+     "name": "quest_strands",
+     "width": 512,
+     "height": 512,
+     "bytes": 140362
+    }
+   ],
+   "meshes": [
+    {
+     "mesh": "QuestBody",
+     "material": "quest_body",
+     "triangles": 5350,
+     "vertices": 4792,
+     "morphTargets": 44
+    },
+    {
+     "mesh": "QuestHair",
+     "material": "quest_hair",
+     "triangles": 204,
+     "vertices": 306,
+     "morphTargets": 19
+    }
+   ]
+  }
+ },
+ "clips": {
+  "idle": {
+   "seconds": 6.0,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 54,
+   "sourceSeamDegrees": 1.95,
+   "swayCm": 0.4,
+   "swayCycles": 1,
+   "weightShifts": [
+    [
+     0.18,
+     0.86,
+     "l",
+     1.5
+    ]
+   ]
+  },
+  "walk": {
+   "seconds": 1.6,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 57,
+   "speedMetresPerSecond": 0.639,
+   "strideMetres": 1.022,
+   "sourceSeamDegrees": 7.47,
+   "contactFrames": {
+    "l": [
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32
+    ],
+    "r": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48
+    ]
+   },
+   "stanceWindows": {
+    "l": [
+     [
+      3,
+      32
+     ]
+    ],
+    "r": [
+     [
+      27,
+      56
+     ]
+    ]
+   },
+   "stanceShare": {
+    "l": 0.625,
+    "r": 0.625
+   },
+   "swingLiftCm": {
+    "l": 1.3,
+    "r": 1.41
+   },
+   "toeOutDegrees": 7.0,
+   "facingCorrectionDegrees": 4.9,
+   "pelvisDropCm": 0.93,
+   "freeArmSwingKept": 0.15
+  },
+  "walk_start": {
+   "seconds": 0.7,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 57,
+   "rootTravelMetres": [
+    0.0,
+    0.0004,
+    0.0015,
+    0.0034,
+    0.0061,
+    0.0096,
+    0.014,
+    0.0193,
+    0.0255,
+    0.0326,
+    0.0407,
+    0.0498,
+    0.0599,
+    0.071,
+    0.0832,
+    0.0965,
+    0.1109,
+    0.1265,
+    0.1432,
+    0.1611,
+    0.1802,
+    0.2006
+   ],
+   "endsOnWalkFrame": 0,
+   "startDistanceMetres": 0.201,
+   "accelerationSeconds": 0.7,
+   "firstStepLiftFrame": 7,
+   "lateralMismatchCm": 0.0
+  },
+  "walk_stop": {
+   "seconds": 1.1333,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 57,
+   "rootTravelMetres": [
+    0.0,
+    0.0209,
+    0.0409,
+    0.06,
+    0.0783,
+    0.0957,
+    0.1123,
+    0.128,
+    0.1429,
+    0.1568,
+    0.17,
+    0.1822,
+    0.1936,
+    0.2042,
+    0.2139,
+    0.2227,
+    0.2306,
+    0.2377,
+    0.244,
+    0.2494,
+    0.2539,
+    0.2575,
+    0.2603,
+    0.2623,
+    0.2633,
+    0.2636,
+    0.2636,
+    0.2636,
+    0.2636,
+    0.2636,
+    0.2636,
+    0.2636,
+    0.2636,
+    0.2636,
+    0.2636
+   ],
+   "stopDistanceMetres": 0.264,
+   "decelerationSeconds": 0.82,
+   "leftLandsFrame": 3,
+   "closingStepFrames": [
+    8,
+    23
+   ],
+   "lateralMismatchCm": 0.0
+  },
+  "work_carving": {
+   "seconds": 4.0,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 52,
+   "strokeSeconds": [
+    0.35,
+    0.95,
+    1.55,
+    2.15
+   ],
+   "bladeToSurfaceCm": 0.0,
+   "faceCues": [
+    {
+     "endSeconds": 3.35,
+     "expression": "blow",
+     "startSeconds": 2.85
+    }
+   ]
+  },
+  "sit": {
+   "seconds": 6.0,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 52
+  },
+  "sit_down": {
+   "seconds": 2.6,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 55
+  },
+  "stand_up": {
+   "seconds": 2.2,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 55
+  },
+  "work_enter": {
+   "seconds": 2.4,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 52,
+   "propSwaps": [
+    {
+     "angleDeg": 0.0,
+     "node": "prop_stick",
+     "offsetCm": 0.0,
+     "propAt": [
+      0.067,
+      0.061,
+      0.771
+     ],
+     "restAt": [
+      0.067,
+      0.061,
+      0.771
+     ],
+     "seconds": 0.85,
+     "shoulder": [
+      0.163,
+      0.274,
+      0.883
+     ],
+     "to": "rest"
+    },
+    {
+     "angleDeg": 0.0,
+     "node": "prop_knife",
+     "offsetCm": 0.0,
+     "propAt": [
+      0.03,
+      0.26,
+      0.561
+     ],
+     "restAt": [
+      0.03,
+      0.26,
+      0.561
+     ],
+     "seconds": 1.25,
+     "shoulder": [
+      -0.13,
+      0.24,
+      0.883
+     ],
+     "to": "hand"
+    },
+    {
+     "angleDeg": 0.0,
+     "node": "prop_spoon",
+     "offsetCm": 0.12,
+     "propAt": [
+      0.085,
+      0.286,
+      0.449
+     ],
+     "restAt": [
+      0.085,
+      0.287,
+      0.449
+     ],
+     "seconds": 1.55,
+     "shoulder": [
+      0.159,
+      0.269,
+      0.883
+     ],
+     "to": "hand"
+    }
+   ],
+   "from": "sit"
+  },
+  "work_exit": {
+   "seconds": 2.4,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 52,
+   "propSwaps": [
+    {
+     "angleDeg": 0.0,
+     "node": "prop_spoon",
+     "offsetCm": 0.0,
+     "propAt": [
+      0.085,
+      0.287,
+      0.449
+     ],
+     "restAt": [
+      0.085,
+      0.287,
+      0.449
+     ],
+     "seconds": 0.55,
+     "shoulder": [
+      0.158,
+      0.268,
+      0.883
+     ],
+     "to": "rest"
+    },
+    {
+     "angleDeg": 0.0,
+     "node": "prop_knife",
+     "offsetCm": 0.0,
+     "propAt": [
+      0.03,
+      0.26,
+      0.561
+     ],
+     "restAt": [
+      0.03,
+      0.26,
+      0.561
+     ],
+     "seconds": 0.8,
+     "shoulder": [
+      -0.13,
+      0.24,
+      0.883
+     ],
+     "to": "rest"
+    },
+    {
+     "angleDeg": 0.0,
+     "node": "prop_stick",
+     "offsetCm": 0.16,
+     "propAt": [
+      0.067,
+      0.06,
+      0.771
+     ],
+     "restAt": [
+      0.067,
+      0.061,
+      0.771
+     ],
+     "seconds": 1.35,
+     "shoulder": [
+      0.162,
+      0.273,
+      0.883
+     ],
+     "to": "hand"
+    }
+   ],
+   "from": "sit"
+  },
+  "talk": {
+   "seconds": 6.0,
+   "interpolations": [
+    "LINEAR",
+    "STEP"
+   ],
+   "paths": [
+    "rotation",
+    "translation"
+   ],
+   "channels": 54
+  },
+  "face_blink": {
+   "seconds": 0.6,
+   "interpolations": [
+    "LINEAR"
+   ],
+   "paths": [
+    "rotation"
+   ],
+   "channels": 4
+  },
+  "face_gaze": {
+   "seconds": 3.6,
+   "interpolations": [
+    "LINEAR"
+   ],
+   "paths": [
+    "rotation"
+   ],
+   "channels": 4
+  },
+  "face_jaw": {
+   "seconds": 1.2,
+   "interpolations": [
+    "LINEAR"
+   ],
+   "paths": [
+    "rotation"
+   ],
+   "channels": 1
+  }
+ },
+ "faceRig": {
+  "joints": [
+   "face_jaw",
+   "face_eye_l",
+   "face_eye_r",
+   "face_lid_upper_l",
+   "face_lid_upper_r",
+   "face_lid_lower_l",
+   "face_lid_lower_r"
+  ],
+  "convention": "Local +X points to the character's left: +X pitch looks down / closes the upper lid / opens the lower lid / opens the jaw; +Z yaws the eyes toward the character's right. Same frames in Blender and in the exported glTF.",
+  "morphTargets": [
+   "eyeBlinkLeft",
+   "eyeBlinkRight",
+   "eyeSquintLeft",
+   "eyeSquintRight",
+   "eyeWideLeft",
+   "eyeWideRight",
+   "browDownLeft",
+   "browDownRight",
+   "browInnerUp",
+   "browOuterUpLeft",
+   "browOuterUpRight",
+   "cheekSquintLeft",
+   "cheekSquintRight",
+   "noseSneerLeft",
+   "noseSneerRight",
+   "jawOpen",
+   "mouthClose",
+   "mouthFunnel",
+   "mouthPucker",
+   "mouthSmileLeft",
+   "mouthSmileRight",
+   "mouthFrownLeft",
+   "mouthFrownRight",
+   "mouthPressLeft",
+   "mouthPressRight",
+   "mouthStretchLeft",
+   "mouthStretchRight",
+   "mouthRollLower",
+   "mouthUpperUpLeft",
+   "mouthUpperUpRight",
+   "viseme_PP",
+   "viseme_FF",
+   "viseme_TH",
+   "viseme_DD",
+   "viseme_kk",
+   "viseme_CH",
+   "viseme_SS",
+   "viseme_nn",
+   "viseme_RR",
+   "viseme_aa",
+   "viseme_E",
+   "viseme_I",
+   "viseme_O",
+   "viseme_U"
+  ],
+  "morphLevels": [
+   "desktop-lod0",
+   "desktop-lod1",
+   "quest"
+  ],
+  "lodCalibration": {
+   "closureAtBlinkMm": {
+    "l": -0.6,
+    "r": -0.61
+   },
+   "eyeballVisibleAtBlink": {
+    "l": 0.0,
+    "r": 0.0
+   },
+   "jawOpen": 0.211,
+   "lipGapMm": {
+    "aa": 15.0,
+    "full": 18.0,
+    "rest": 2.4
+   },
+   "lowerLidClosed": -0.15,
+   "openingAtRestMm": {
+    "l": 7.04,
+    "r": 7.02
+   },
+   "upperLidClosed": 0.559,
+   "visibilityPasses": [
+    {
+     "l": 0,
+     "r": 0,
+     "upper": 0.559
+    }
+   ],
+   "method": "scripts/characters/lib/face_rig.py: LOD1/Quest head lid and jaw weights authored from the eye and mouth loops; upperLidClosed found by bisection so the closed lids overlap 0.6 mm everywhere with the lower lid at lowerLidClosed; jawOpen parts the lips lipGapMm.full at full opening. Radians. Since round 2 the LOD1 and Quest levels also carry the face morphs, so the shared adapters blink and speak by morph there and these joint angles drive only the face clips and joints-only consumers."
+  },
+  "calibration": "shared/legacy/aethelgard/characters/household-art-sets.ts (faceCalibration of this resident)",
+  "contract": "shared/legacy/aethelgard/characters/face-performance.ts"
+ },
+ "props": {
+  "file": "smithy-elder-props.glb",
+  "questFile": "smithy-elder-props-quest.glb",
+  "sockets": {
+   "socket_hand_l_spoon": "prop_spoon (attach to joint hand_l, keep the local transform)",
+   "socket_hand_l_stick": "prop_stick (attach to joint hand_l, keep the local transform)",
+   "socket_hand_r_knife": "prop_knife (attach to joint hand_r, keep the local transform)",
+   "socket_hips_knife_rest": "prop_knife_rest (attach to joint hips_knife, keep the local transform)",
+   "socket_hips_spoon_rest": "prop_spoon_rest (attach to joint hips_spoon, keep the local transform)"
+  },
+  "workplace": "node 'workplace' (already Y-up) holds workplace_static relative to the resident root in the work pose",
+  "loose": [],
+  "aside": [
+   "prop_stick_rest"
+  ],
+  "recipe": {
+   "stick": {
+    "length": 0.84,
+    "tipOut": 0.04,
+    "tipAhead": 0.06,
+    "liftBehindFrontEdge": 0.12
+   },
+   "knifeGrip": 0.05,
+   "spoonGrip": 0.07,
+   "seat": {
+    "height": 0.42,
+    "y": 0.4,
+    "hipAboveSeat": 0.085,
+    "feetAhead": 0.4,
+    "stoolBack": 0.03,
+    "stoolTopBelowSeat": 0.025
+   },
+   "bowlAt": [
+    -0.34,
+    0.25,
+    0.0
+   ],
+   "malletAt": [
+    0.38,
+    0.32,
+    0.0
+   ],
+   "malletYaw": 40.0,
+   "stickRestAt": [
+    0.36,
+    0.05,
+    0.012
+   ],
+   "stickRestTilt": 90.0,
+   "stickRestYaw": 15.0,
+   "spoonTris": 1200,
+   "stoolTris": 2400,
+   "bowlTris": 1600,
+   "malletTris": 1500
+  }
+ },
+ "actorMotions": {
+  "idle": "idle",
+  "walk": "walk",
+  "talk": "talk",
+  "sit": "sit",
+  "work": "work_carving",
+  "extra": {
+   "start": "walk_start",
+   "stop": "walk_stop",
+   "sitDown": "sit_down",
+   "standUp": "stand_up",
+   "workEnter": "work_enter",
+   "workExit": "work_exit"
+  }
+ },
+ "propsByClip": {
+  "idle": [
+   {
+    "node": "prop_stick",
+    "bone": "hand_l"
+   }
+  ],
+  "walk": [
+   {
+    "node": "prop_stick",
+    "bone": "hand_l"
+   }
+  ],
+  "walk_start": [
+   {
+    "node": "prop_stick",
+    "bone": "hand_l"
+   }
+  ],
+  "walk_stop": [
+   {
+    "node": "prop_stick",
+    "bone": "hand_l"
+   }
+  ],
+  "talk": [
+   {
+    "node": "prop_stick",
+    "bone": "hand_l"
+   }
+  ],
+  "sit_down": [
+   {
+    "node": "prop_stick",
+    "bone": "hand_l"
+   }
+  ],
+  "stand_up": [
+   {
+    "node": "prop_stick",
+    "bone": "hand_l"
+   }
+  ],
+  "sit": [
+   {
+    "node": "prop_stick",
+    "bone": "hand_l"
+   }
+  ],
+  "work_carving": [
+   {
+    "node": "prop_knife",
+    "bone": "hand_r"
+   },
+   {
+    "node": "prop_spoon",
+    "bone": "hand_l"
+   }
+  ],
+  "work_enter": [
+   {
+    "node": "prop_stick",
+    "bone": "hand_l"
+   },
+   {
+    "node": "prop_knife",
+    "bone": "hand_r"
+   },
+   {
+    "node": "prop_spoon",
+    "bone": "hand_l"
+   }
+  ],
+  "work_exit": [
+   {
+    "node": "prop_stick",
+    "bone": "hand_l"
+   },
+   {
+    "node": "prop_knife",
+    "bone": "hand_r"
+   },
+   {
+    "node": "prop_spoon",
+    "bone": "hand_l"
+   }
+  ]
+ },
+ "workstation": {
+  "node": "workplace"
+ },
+ "restingProps": {
+  "prop_stick": [
+   {
+    "node": "prop_stick_rest",
+    "bone": null
+   }
+  ],
+  "prop_knife": [
+   {
+    "node": "prop_knife_rest",
+    "bone": "hips"
+   }
+  ],
+  "prop_spoon": [
+   {
+    "node": "prop_spoon_rest",
+    "bone": "hips"
+   }
+  ]
+ },
+ "workTransitions": {
+  "enter": "work_enter",
+  "exit": "work_exit",
+  "from": "sit",
+  "swaps": {
+   "work_enter": [
+    {
+     "seconds": 0.85,
+     "node": "prop_stick",
+     "to": "rest"
+    },
+    {
+     "seconds": 1.25,
+     "node": "prop_knife",
+     "to": "hand"
+    },
+    {
+     "seconds": 1.55,
+     "node": "prop_spoon",
+     "to": "hand"
+    }
+   ],
+   "work_exit": [
+    {
+     "seconds": 0.55,
+     "node": "prop_spoon",
+     "to": "rest"
+    },
+    {
+     "seconds": 0.8,
+     "node": "prop_knife",
+     "to": "rest"
+    },
+    {
+     "seconds": 1.35,
+     "node": "prop_stick",
+     "to": "hand"
+    }
+   ]
+  }
+ },
+ "events": {
+  "work_carving": {
+   "strokeSeconds": [
+    0.35,
+    0.95,
+    1.55,
+    2.15
+   ]
+  }
+ },
+ "faceCues": {
+  "work_carving": [
+   {
+    "endSeconds": 3.35,
+    "expression": "blow",
+    "startSeconds": 2.85
+   }
+  ]
+ },
+ "propClips": {},
+ "mechanisms": [],
+ "stick": {
+  "cloakFrontYBlender": -0.1518,
+  "length": 0.84,
+  "liftAtYBlender": -0.0318,
+  "plantedTipHeightCm": {
+   "idle": 0.0,
+   "walk": 0.0,
+   "walk_start": 0.0,
+   "walk_stop": 0.0
+  },
+  "rule": "tip 19 cm outside the left ankle; lands 24 cm ahead of the right heel as the right heel strikes, comes down vertically and lifts straight up before the shaft can reach the cloak (liftAtYBlender); the fist 2 cm below the top; the hand stays in front of the cloak's opening",
+  "tipBlender": [
+   0.2788,
+   -0.2,
+   0.0
+  ],
+  "walkPlantFrames": [
+   [
+    27,
+    46
+   ]
+  ]
+ },
+ "animationPrune": {
+  "tool": "scripts/characters/lib/glb_prune.py",
+  "rotationToleranceDegrees": 0.03,
+  "positionToleranceMetres": 0.0001,
+  "files": {
+   "smithy-elder-desktop-lod0.glb": {
+    "face_blink": {
+     "channels": 4,
+     "channelsBefore": 192,
+     "keys": 42
+    },
+    "face_gaze": {
+     "channels": 4,
+     "channelsBefore": 192,
+     "keys": 80
+    },
+    "face_jaw": {
+     "channels": 1,
+     "channelsBefore": 192,
+     "keys": 20
+    },
+    "idle": {
+     "channels": 54,
+     "channelsBefore": 192,
+     "keys": 810
+    },
+    "sit": {
+     "channels": 52,
+     "channelsBefore": 192,
+     "keys": 427
+    },
+    "sit_down": {
+     "channels": 55,
+     "channelsBefore": 192,
+     "keys": 1031
+    },
+    "stand_up": {
+     "channels": 55,
+     "channelsBefore": 192,
+     "keys": 1032
+    },
+    "talk": {
+     "channels": 54,
+     "channelsBefore": 192,
+     "keys": 831
+    },
+    "walk": {
+     "channels": 57,
+     "channelsBefore": 192,
+     "keys": 1066
+    },
+    "walk_start": {
+     "channels": 57,
+     "channelsBefore": 192,
+     "keys": 520
+    },
+    "walk_stop": {
+     "channels": 57,
+     "channelsBefore": 192,
+     "keys": 727
+    },
+    "work_carving": {
+     "channels": 52,
+     "channelsBefore": 192,
+     "keys": 671
+    },
+    "work_enter": {
+     "channels": 52,
+     "channelsBefore": 192,
+     "keys": 962
+    },
+    "work_exit": {
+     "channels": 52,
+     "channelsBefore": 192,
+     "keys": 979
+    }
+   },
+   "smithy-elder-desktop-lod1.glb": {
+    "face_blink": {
+     "channels": 4,
+     "channelsBefore": 192,
+     "keys": 42
+    },
+    "face_gaze": {
+     "channels": 4,
+     "channelsBefore": 192,
+     "keys": 80
+    },
+    "face_jaw": {
+     "channels": 1,
+     "channelsBefore": 192,
+     "keys": 20
+    },
+    "idle": {
+     "channels": 54,
+     "channelsBefore": 192,
+     "keys": 810
+    },
+    "sit": {
+     "channels": 52,
+     "channelsBefore": 192,
+     "keys": 427
+    },
+    "sit_down": {
+     "channels": 55,
+     "channelsBefore": 192,
+     "keys": 1031
+    },
+    "stand_up": {
+     "channels": 55,
+     "channelsBefore": 192,
+     "keys": 1032
+    },
+    "talk": {
+     "channels": 54,
+     "channelsBefore": 192,
+     "keys": 831
+    },
+    "walk": {
+     "channels": 57,
+     "channelsBefore": 192,
+     "keys": 1066
+    },
+    "walk_start": {
+     "channels": 57,
+     "channelsBefore": 192,
+     "keys": 520
+    },
+    "walk_stop": {
+     "channels": 57,
+     "channelsBefore": 192,
+     "keys": 727
+    },
+    "work_carving": {
+     "channels": 52,
+     "channelsBefore": 192,
+     "keys": 671
+    },
+    "work_enter": {
+     "channels": 52,
+     "channelsBefore": 192,
+     "keys": 962
+    },
+    "work_exit": {
+     "channels": 52,
+     "channelsBefore": 192,
+     "keys": 979
+    }
+   },
+   "smithy-elder-quest.glb": {
+    "face_blink": {
+     "channels": 4,
+     "channelsBefore": 192,
+     "keys": 42
+    },
+    "face_gaze": {
+     "channels": 4,
+     "channelsBefore": 192,
+     "keys": 80
+    },
+    "face_jaw": {
+     "channels": 1,
+     "channelsBefore": 192,
+     "keys": 20
+    },
+    "idle": {
+     "channels": 54,
+     "channelsBefore": 192,
+     "keys": 810
+    },
+    "sit": {
+     "channels": 52,
+     "channelsBefore": 192,
+     "keys": 427
+    },
+    "sit_down": {
+     "channels": 55,
+     "channelsBefore": 192,
+     "keys": 1031
+    },
+    "stand_up": {
+     "channels": 55,
+     "channelsBefore": 192,
+     "keys": 1032
+    },
+    "talk": {
+     "channels": 54,
+     "channelsBefore": 192,
+     "keys": 831
+    },
+    "walk": {
+     "channels": 57,
+     "channelsBefore": 192,
+     "keys": 1066
+    },
+    "walk_start": {
+     "channels": 57,
+     "channelsBefore": 192,
+     "keys": 520
+    },
+    "walk_stop": {
+     "channels": 57,
+     "channelsBefore": 192,
+     "keys": 727
+    },
+    "work_carving": {
+     "channels": 52,
+     "channelsBefore": 192,
+     "keys": 671
+    },
+    "work_enter": {
+     "channels": 52,
+     "channelsBefore": 192,
+     "keys": 962
+    },
+    "work_exit": {
+     "channels": 52,
+     "channelsBefore": 192,
+     "keys": 979
+    }
+   }
+  }
+ },
+ "work": {
+  "bladeToSurfaceCm": 0.0,
+  "faceCues": [
+   {
+    "endSeconds": 3.35,
+    "expression": "blow",
+    "startSeconds": 2.85
+   }
+  ],
+  "feet": {
+   "l": [
+    0.08880205452442169,
+    -0.02500000037252903,
+    0.08320660144090652
+   ],
+   "r": [
+    -0.03017052821815014,
+    0.019999999552965164,
+    0.08320660144090652
+   ]
+  },
+  "seat": {
+   "feetAhead": 0.4,
+   "height": 0.42,
+   "hipAboveSeat": 0.085,
+   "stoolBack": 0.03,
+   "stoolTopBelowSeat": 0.025,
+   "y": 0.3974999995902181
+  },
+  "seconds": 4.0,
+  "strokeSeconds": [
+   0.35,
+   0.95,
+   1.55,
+   2.15
+  ]
+ },
+ "budgets": {
+  "desktop-lod0": {
+   "maxTriangles": 25000,
+   "maxMaterials": 4,
+   "maxMorphTargets": 45,
+   "maxTextureSize": 2048
+  },
+  "desktop-lod1": {
+   "maxTriangles": 8000,
+   "maxMaterials": 2,
+   "maxMorphTargets": 45,
+   "maxTextureSize": 1024
+  },
+  "quest": {
+   "maxTriangles": 6000,
+   "maxMaterials": 2,
+   "maxMorphTargets": 45,
+   "maxTextureSize": 1024
+  },
+  "props": {
+   "maxMaterials": 1,
+   "maxTextureSize": 1024,
+   "note": "desktop props atlas"
+  },
+  "props-quest": {
+   "maxMaterials": 1,
+   "maxTextureSize": 512,
+   "note": "Quest props atlas; with the household at work each set adds one draw per hand prop plus one for its static workplace"
+  }
+ },
+ "propsAtlas": {
+  "desktopAtlas": 1024,
+  "emission": false,
+  "materialsAfter": 1,
+  "materialsBefore": 9,
+  "mergedStatic": [
+   "workplace_static"
+  ],
+  "questAtlas": 512,
+  "questHalved": [
+   "workplace_static"
+  ]
+ },
+ "envelopes": {
+  "desktop-lod0": {
+   "idle": {
+    "frames": 181,
+    "marginMetres": 0.0066,
+    "max": [
+     0.3936,
+     1.5399,
+     0.3952
+    ],
+    "min": [
+     -0.2632,
+     -0.0046,
+     -0.2229
+    ]
+   },
+   "sit": {
+    "frames": 181,
+    "marginMetres": 0.0058,
+    "max": [
+     0.4199,
+     1.2259,
+     0.2468
+    ],
+    "min": [
+     -0.3348,
+     -0.1061,
+     -0.5966
+    ]
+   },
+   "sit_down": {
+    "frames": 79,
+    "marginMetres": 0.0158,
+    "max": [
+     0.4544,
+     1.5491,
+     0.4787
+    ],
+    "min": [
+     -0.3469,
+     -0.1188,
+     -0.6057
+    ]
+   },
+   "stand_up": {
+    "frames": 67,
+    "marginMetres": 0.0444,
+    "max": [
+     0.4896,
+     1.5778,
+     0.5691
+    ],
+    "min": [
+     -0.3743,
+     -0.1446,
+     -0.6343
+    ]
+   },
+   "talk": {
+    "frames": 181,
+    "marginMetres": 0.0066,
+    "max": [
+     0.399,
+     1.5402,
+     0.3991
+    ],
+    "min": [
+     -0.2626,
+     -0.0046,
+     -0.2226
+    ]
+   },
+   "walk": {
+    "frames": 49,
+    "marginMetres": 0.0481,
+    "max": [
+     0.4633,
+     1.5712,
+     0.5016
+    ],
+    "min": [
+     -0.3513,
+     -0.0481,
+     -0.4417
+    ]
+   },
+   "walk_start": {
+    "frames": 22,
+    "marginMetres": 0.0276,
+    "max": [
+     0.3997,
+     1.5608,
+     0.4933
+    ],
+    "min": [
+     -0.33,
+     -0.0267,
+     -0.2882
+    ]
+   },
+   "walk_stop": {
+    "frames": 35,
+    "marginMetres": 0.0264,
+    "max": [
+     0.437,
+     1.5597,
+     0.491
+    ],
+    "min": [
+     -0.3262,
+     -0.0265,
+     -0.3804
+    ]
+   },
+   "work_carving": {
+    "frames": 121,
+    "marginMetres": 0.0155,
+    "max": [
+     0.3653,
+     1.0981,
+     0.2565
+    ],
+    "min": [
+     -0.3445,
+     -0.1157,
+     -0.6063
+    ]
+   },
+   "work_enter": {
+    "frames": 73,
+    "marginMetres": 0.0604,
+    "max": [
+     0.4673,
+     1.2786,
+     0.3005
+    ],
+    "min": [
+     -0.3894,
+     -0.1606,
+     -0.6503
+    ]
+   },
+   "work_exit": {
+    "frames": 73,
+    "marginMetres": 0.0657,
+    "max": [
+     0.4726,
+     1.2839,
+     0.3059
+    ],
+    "min": [
+     -0.3947,
+     -0.166,
+     -0.6556
+    ]
+   }
+  },
+  "desktop-lod1": {
+   "idle": {
+    "frames": 181,
+    "marginMetres": 0.0066,
+    "max": [
+     0.3936,
+     1.5399,
+     0.395
+    ],
+    "min": [
+     -0.236,
+     -0.0047,
+     -0.2232
+    ]
+   },
+   "sit": {
+    "frames": 181,
+    "marginMetres": 0.0058,
+    "max": [
+     0.4199,
+     1.2259,
+     0.2439
+    ],
+    "min": [
+     -0.318,
+     -0.106,
+     -0.5933
+    ]
+   },
+   "sit_down": {
+    "frames": 79,
+    "marginMetres": 0.0158,
+    "max": [
+     0.4544,
+     1.5491,
+     0.4784
+    ],
+    "min": [
+     -0.3469,
+     -0.1188,
+     -0.6024
+    ]
+   },
+   "stand_up": {
+    "frames": 67,
+    "marginMetres": 0.0444,
+    "max": [
+     0.4896,
+     1.5778,
+     0.5688
+    ],
+    "min": [
+     -0.3743,
+     -0.1446,
+     -0.631
+    ]
+   },
+   "talk": {
+    "frames": 181,
+    "marginMetres": 0.0066,
+    "max": [
+     0.399,
+     1.5402,
+     0.3989
+    ],
+    "min": [
+     -0.2363,
+     -0.0047,
+     -0.2229
+    ]
+   },
+   "walk": {
+    "frames": 49,
+    "marginMetres": 0.0483,
+    "max": [
+     0.4635,
+     1.5714,
+     0.4987
+    ],
+    "min": [
+     -0.3309,
+     -0.048,
+     -0.4419
+    ]
+   },
+   "walk_start": {
+    "frames": 22,
+    "marginMetres": 0.0276,
+    "max": [
+     0.3997,
+     1.5608,
+     0.4942
+    ],
+    "min": [
+     -0.3085,
+     -0.0267,
+     -0.2878
+    ]
+   },
+   "walk_stop": {
+    "frames": 35,
+    "marginMetres": 0.0265,
+    "max": [
+     0.437,
+     1.5597,
+     0.4879
+    ],
+    "min": [
+     -0.3002,
+     -0.0262,
+     -0.3804
+    ]
+   },
+   "work_carving": {
+    "frames": 121,
+    "marginMetres": 0.0155,
+    "max": [
+     0.3652,
+     1.0981,
+     0.2535
+    ],
+    "min": [
+     -0.3276,
+     -0.1156,
+     -0.6029
+    ]
+   },
+   "work_enter": {
+    "frames": 73,
+    "marginMetres": 0.0604,
+    "max": [
+     0.4673,
+     1.2786,
+     0.2976
+    ],
+    "min": [
+     -0.3726,
+     -0.1606,
+     -0.647
+    ]
+   },
+   "work_exit": {
+    "frames": 73,
+    "marginMetres": 0.0657,
+    "max": [
+     0.4726,
+     1.2839,
+     0.3029
+    ],
+    "min": [
+     -0.3779,
+     -0.1659,
+     -0.6523
+    ]
+   }
+  },
+  "quest": {
+   "idle": {
+    "frames": 181,
+    "marginMetres": 0.0066,
+    "max": [
+     0.3936,
+     1.5396,
+     0.39
+    ],
+    "min": [
+     -0.236,
+     -0.0047,
+     -0.2232
+    ]
+   },
+   "sit": {
+    "frames": 181,
+    "marginMetres": 0.0058,
+    "max": [
+     0.4199,
+     1.2259,
+     0.2439
+    ],
+    "min": [
+     -0.318,
+     -0.106,
+     -0.5933
+    ]
+   },
+   "sit_down": {
+    "frames": 79,
+    "marginMetres": 0.0158,
+    "max": [
+     0.4544,
+     1.5488,
+     0.4738
+    ],
+    "min": [
+     -0.3469,
+     -0.1188,
+     -0.6024
+    ]
+   },
+   "stand_up": {
+    "frames": 67,
+    "marginMetres": 0.0444,
+    "max": [
+     0.4896,
+     1.5775,
+     0.5644
+    ],
+    "min": [
+     -0.3743,
+     -0.1446,
+     -0.631
+    ]
+   },
+   "talk": {
+    "frames": 181,
+    "marginMetres": 0.0066,
+    "max": [
+     0.399,
+     1.5397,
+     0.3939
+    ],
+    "min": [
+     -0.2363,
+     -0.0047,
+     -0.2229
+    ]
+   },
+   "walk": {
+    "frames": 49,
+    "marginMetres": 0.0483,
+    "max": [
+     0.4635,
+     1.5719,
+     0.4987
+    ],
+    "min": [
+     -0.3309,
+     -0.048,
+     -0.4406
+    ]
+   },
+   "walk_start": {
+    "frames": 22,
+    "marginMetres": 0.0276,
+    "max": [
+     0.3997,
+     1.5605,
+     0.4925
+    ],
+    "min": [
+     -0.3085,
+     -0.0266,
+     -0.2894
+    ]
+   },
+   "walk_stop": {
+    "frames": 35,
+    "marginMetres": 0.0265,
+    "max": [
+     0.437,
+     1.5594,
+     0.4879
+    ],
+    "min": [
+     -0.3003,
+     -0.0262,
+     -0.3814
+    ]
+   },
+   "work_carving": {
+    "frames": 121,
+    "marginMetres": 0.0154,
+    "max": [
+     0.3652,
+     1.098,
+     0.2534
+    ],
+    "min": [
+     -0.3276,
+     -0.1156,
+     -0.6029
+    ]
+   },
+   "work_enter": {
+    "frames": 73,
+    "marginMetres": 0.0604,
+    "max": [
+     0.4673,
+     1.2785,
+     0.2976
+    ],
+    "min": [
+     -0.3726,
+     -0.1606,
+     -0.647
+    ]
+   },
+   "work_exit": {
+    "frames": 73,
+    "marginMetres": 0.0658,
+    "max": [
+     0.4727,
+     1.2838,
+     0.303
+    ],
+    "min": [
+     -0.378,
+     -0.166,
+     -0.6523
+    ]
+   }
+  },
+  "note": "glTF model frame (Y up, +Z forward), metres. Every body clip skinned at every frame from Blender's own pose evaluation (scripts/characters/lib/envelopes.py), face-morph vertices padded by the sum of their 16 largest deltas, widened by half the largest per-frame vertex travel plus 5 mm. Pass envelopes[level][clip] to the owner (patch 5), which checks each at 9 times."
+ },
+ "penetration": {
+  "marginMetres": 0.003,
+  "backReachMetres": 0.025,
+  "check": "scripts/characters/review/penetration_check.py",
+  "note": "maxThroughMm is capped at backReach + margin; hand pairs (gloves, mitts and skin weighted to the hands) are listed under handClips because a swinging hand meets a skirt from beside, not from under it; inner shell faces (normal facing the body) are not paired",
+  "pairedVertices": 3112,
+  "clips": {
+   "idle": {
+    "Kirtle->Hood": {
+     "throughVertices": 6,
+     "maxThroughMm": 9.0,
+     "restCentre": [
+      -0.172,
+      -0.033,
+      1.259
+     ]
+    },
+    "Body->Shift": {
+     "throughVertices": 3,
+     "maxThroughMm": 5.3,
+     "restCentre": [
+      -0.132,
+      -0.024,
+      1.272
+     ]
+    },
+    "Shift->Kirtle": {
+     "throughVertices": 2,
+     "maxThroughMm": 10.8,
+     "restCentre": [
+      -0.207,
+      -0.054,
+      1.059
+     ]
+    },
+    "Shift->Hood": {
+     "throughVertices": 1,
+     "maxThroughMm": 5.6,
+     "restCentre": [
+      -0.091,
+      0.008,
+      1.289
+     ]
+    },
+    "Kirtle->Cloak": {
+     "throughVertices": 1,
+     "maxThroughMm": 10.5,
+     "restCentre": [
+      -0.112,
+      -0.046,
+      0.997
+     ]
+    },
+    "Cloak->HoodCape": {
+     "throughVertices": 1,
+     "maxThroughMm": 7.8,
+     "restCentre": [
+      -0.171,
+      0.061,
+      1.043
+     ]
+    },
+    "Kirtle->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.3,
+     "restCentre": [
+      -0.097,
+      -0.034,
+      1.292
+     ]
+    }
+   },
+   "walk": {
+    "Kirtle->Hood": {
+     "throughVertices": 8,
+     "maxThroughMm": 9.7,
+     "restCentre": [
+      -0.123,
+      -0.037,
+      1.253
+     ]
+    },
+    "LegWraps->KirtleSkirt": {
+     "throughVertices": 7,
+     "maxThroughMm": 25.2,
+     "restCentre": [
+      0.205,
+      -0.001,
+      0.163
+     ]
+    },
+    "Body->Shift": {
+     "throughVertices": 3,
+     "maxThroughMm": 5.4,
+     "restCentre": [
+      -0.132,
+      -0.024,
+      1.272
+     ]
+    },
+    "Body->Mitt_l": {
+     "throughVertices": 2,
+     "maxThroughMm": 3.5,
+     "restCentre": [
+      0.413,
+      -0.181,
+      0.943
+     ]
+    },
+    "Kirtle->Cloak": {
+     "throughVertices": 1,
+     "maxThroughMm": 6.2,
+     "restCentre": [
+      -0.12,
+      -0.034,
+      1.089
+     ]
+    },
+    "Cloak->HoodCape": {
+     "throughVertices": 1,
+     "maxThroughMm": 15.8,
+     "restCentre": [
+      -0.171,
+      0.061,
+      1.043
+     ]
+    },
+    "Kirtle->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.3,
+     "restCentre": [
+      -0.097,
+      -0.034,
+      1.292
+     ]
+    },
+    "Shift->Kirtle": {
+     "throughVertices": 1,
+     "maxThroughMm": 7.0,
+     "restCentre": [
+      -0.292,
+      -0.096,
+      1.012
+     ]
+    },
+    "Shoes->KirtleSkirt": {
+     "throughVertices": 1,
+     "maxThroughMm": 4.3,
+     "restCentre": [
+      -0.208,
+      -0.069,
+      0.081
+     ]
+    },
+    "Cloak->KirtleSkirt": {
+     "throughVertices": 1,
+     "maxThroughMm": 5.4,
+     "restCentre": [
+      -0.094,
+      -0.185,
+      0.57
+     ]
+    }
+   },
+   "walk_start": {
+    "Kirtle->Hood": {
+     "throughVertices": 7,
+     "maxThroughMm": 9.4,
+     "restCentre": [
+      -0.171,
+      -0.032,
+      1.26
+     ]
+    },
+    "Body->Shift": {
+     "throughVertices": 3,
+     "maxThroughMm": 5.4,
+     "restCentre": [
+      -0.132,
+      -0.024,
+      1.272
+     ]
+    },
+    "Shift->Hood": {
+     "throughVertices": 1,
+     "maxThroughMm": 5.6,
+     "restCentre": [
+      -0.091,
+      0.008,
+      1.289
+     ]
+    },
+    "Kirtle->Cloak": {
+     "throughVertices": 1,
+     "maxThroughMm": 9.6,
+     "restCentre": [
+      -0.112,
+      -0.046,
+      0.997
+     ]
+    },
+    "Cloak->HoodCape": {
+     "throughVertices": 1,
+     "maxThroughMm": 15.4,
+     "restCentre": [
+      -0.171,
+      0.061,
+      1.043
+     ]
+    },
+    "Kirtle->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.3,
+     "restCentre": [
+      -0.097,
+      -0.034,
+      1.292
+     ]
+    },
+    "Kirtle->HoodCape": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.7,
+     "restCentre": [
+      0.348,
+      -0.072,
+      1.065
+     ]
+    }
+   },
+   "walk_stop": {
+    "Kirtle->Hood": {
+     "throughVertices": 7,
+     "maxThroughMm": 9.6,
+     "restCentre": [
+      -0.171,
+      -0.032,
+      1.26
+     ]
+    },
+    "Body->Shift": {
+     "throughVertices": 3,
+     "maxThroughMm": 5.4,
+     "restCentre": [
+      -0.132,
+      -0.024,
+      1.272
+     ]
+    },
+    "Kirtle->Cloak": {
+     "throughVertices": 2,
+     "maxThroughMm": 11.1,
+     "restCentre": [
+      -0.116,
+      -0.04,
+      1.043
+     ]
+    },
+    "Cloak->HoodCape": {
+     "throughVertices": 1,
+     "maxThroughMm": 15.7,
+     "restCentre": [
+      -0.171,
+      0.061,
+      1.043
+     ]
+    },
+    "Kirtle->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.3,
+     "restCentre": [
+      -0.097,
+      -0.034,
+      1.292
+     ]
+    },
+    "Shift->Kirtle": {
+     "throughVertices": 1,
+     "maxThroughMm": 7.4,
+     "restCentre": [
+      -0.292,
+      -0.096,
+      1.012
+     ]
+    },
+    "Shift->Hood": {
+     "throughVertices": 1,
+     "maxThroughMm": 5.6,
+     "restCentre": [
+      -0.091,
+      0.008,
+      1.289
+     ]
+    }
+   },
+   "work_carving": {
+    "KirtleSkirt->Cloak": {
+     "throughVertices": 10,
+     "maxThroughMm": 19.7,
+     "restCentre": [
+      -0.017,
+      0.14,
+      0.434
+     ]
+    },
+    "Kirtle->Hood": {
+     "throughVertices": 5,
+     "maxThroughMm": 10.9,
+     "restCentre": [
+      -0.171,
+      -0.041,
+      1.258
+     ]
+    },
+    "Shift->Kirtle": {
+     "throughVertices": 4,
+     "maxThroughMm": 4.8,
+     "restCentre": [
+      0.043,
+      -0.047,
+      1.084
+     ]
+    },
+    "Body->Shift": {
+     "throughVertices": 3,
+     "maxThroughMm": 8.5,
+     "restCentre": [
+      -0.122,
+      0.008,
+      1.261
+     ]
+    },
+    "Hood->HeadClothHem": {
+     "throughVertices": 3,
+     "maxThroughMm": 3.4,
+     "restCentre": [
+      0.084,
+      -0.061,
+      1.426
+     ]
+    },
+    "Body->Mitt_r": {
+     "throughVertices": 2,
+     "maxThroughMm": 5.9,
+     "restCentre": [
+      -0.406,
+      -0.193,
+      0.956
+     ]
+    },
+    "Kirtle->KirtleSkirt": {
+     "throughVertices": 2,
+     "maxThroughMm": 5.9,
+     "restCentre": [
+      0.043,
+      0.068,
+      0.887
+     ]
+    },
+    "Toggle->HoodCape": {
+     "throughVertices": 1,
+     "maxThroughMm": 12.4,
+     "restCentre": [
+      -0.022,
+      -0.145,
+      1.293
+     ]
+    },
+    "Shift->Mitt_r": {
+     "throughVertices": 1,
+     "maxThroughMm": 6.3,
+     "restCentre": [
+      -0.409,
+      -0.189,
+      0.98
+     ]
+    },
+    "Shift->Hood": {
+     "throughVertices": 1,
+     "maxThroughMm": 4.8,
+     "restCentre": [
+      -0.051,
+      -0.073,
+      1.28
+     ]
+    },
+    "Kirtle->Cloak": {
+     "throughVertices": 1,
+     "maxThroughMm": 7.1,
+     "restCentre": [
+      -0.091,
+      -0.104,
+      1.074
+     ]
+    },
+    "Body->Kirtle": {
+     "throughVertices": 1,
+     "maxThroughMm": 6.9,
+     "restCentre": [
+      0.101,
+      -0.021,
+      1.293
+     ]
+    },
+    "Kirtle->HoodCape": {
+     "throughVertices": 1,
+     "maxThroughMm": 6.5,
+     "restCentre": [
+      -0.293,
+      -0.112,
+      1.058
+     ]
+    },
+    "Cloak->Kirtle": {
+     "throughVertices": 1,
+     "maxThroughMm": 14.0,
+     "restCentre": [
+      -0.199,
+      -0.021,
+      1.043
+     ]
+    }
+   },
+   "sit": {
+    "KirtleSkirt->Cloak": {
+     "throughVertices": 10,
+     "maxThroughMm": 19.7,
+     "restCentre": [
+      -0.017,
+      0.14,
+      0.434
+     ]
+    },
+    "Body->Shift": {
+     "throughVertices": 4,
+     "maxThroughMm": 8.9,
+     "restCentre": [
+      -0.142,
+      -0.009,
+      1.264
+     ]
+    },
+    "Kirtle->Hood": {
+     "throughVertices": 3,
+     "maxThroughMm": 10.6,
+     "restCentre": [
+      -0.169,
+      -0.033,
+      1.261
+     ]
+    },
+    "Kirtle->KirtleSkirt": {
+     "throughVertices": 2,
+     "maxThroughMm": 5.1,
+     "restCentre": [
+      0.043,
+      0.068,
+      0.887
+     ]
+    },
+    "Shift->Kirtle": {
+     "throughVertices": 2,
+     "maxThroughMm": 27.9,
+     "restCentre": [
+      0.294,
+      -0.075,
+      1.064
+     ]
+    },
+    "HoodCape->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.7,
+     "restCentre": [
+      -0.329,
+      -0.078,
+      1.051
+     ]
+    },
+    "Body->HeadClothHem": {
+     "throughVertices": 1,
+     "maxThroughMm": 5.0,
+     "restCentre": [
+      0.075,
+      -0.051,
+      1.405
+     ]
+    },
+    "Hood->HeadClothHem": {
+     "throughVertices": 1,
+     "maxThroughMm": 4.2,
+     "restCentre": [
+      0.084,
+      -0.061,
+      1.426
+     ]
+    },
+    "Kirtle->HoodCape": {
+     "throughVertices": 1,
+     "maxThroughMm": 5.4,
+     "restCentre": [
+      -0.313,
+      -0.097,
+      1.089
+     ]
+    },
+    "Hood->HoodCape": {
+     "throughVertices": 1,
+     "maxThroughMm": 23.9,
+     "restCentre": [
+      0.156,
+      -0.108,
+      1.226
+     ]
+    },
+    "Cloak->Kirtle": {
+     "throughVertices": 1,
+     "maxThroughMm": 20.0,
+     "restCentre": [
+      -0.199,
+      -0.021,
+      1.043
+     ]
+    }
+   },
+   "sit_down": {
+    "KirtleSkirt->Cloak": {
+     "throughVertices": 12,
+     "maxThroughMm": 27.9,
+     "restCentre": [
+      -0.022,
+      0.145,
+      0.417
+     ]
+    },
+    "Shift->Kirtle": {
+     "throughVertices": 8,
+     "maxThroughMm": 19.2,
+     "restCentre": [
+      0.269,
+      -0.077,
+      1.059
+     ]
+    },
+    "Kirtle->Hood": {
+     "throughVertices": 6,
+     "maxThroughMm": 9.0,
+     "restCentre": [
+      -0.172,
+      -0.033,
+      1.259
+     ]
+    },
+    "Cloak->KirtleSkirt": {
+     "throughVertices": 6,
+     "maxThroughMm": 27.0,
+     "restCentre": [
+      -0.099,
+      -0.187,
+      0.563
+     ]
+    },
+    "Body->Shift": {
+     "throughVertices": 4,
+     "maxThroughMm": 8.4,
+     "restCentre": [
+      -0.142,
+      -0.009,
+      1.264
+     ]
+    },
+    "Kirtle->KirtleSkirt": {
+     "throughVertices": 2,
+     "maxThroughMm": 5.9,
+     "restCentre": [
+      0.043,
+      0.068,
+      0.887
+     ]
+    },
+    "HoodCape->Shift": {
+     "throughVertices": 2,
+     "maxThroughMm": 9.6,
+     "restCentre": [
+      -0.342,
+      -0.081,
+      1.062
+     ]
+    },
+    "Body->Mitt_r": {
+     "throughVertices": 1,
+     "maxThroughMm": 4.8,
+     "restCentre": [
+      -0.407,
+      -0.183,
+      0.937
+     ]
+    },
+    "Shift->Hood": {
+     "throughVertices": 1,
+     "maxThroughMm": 5.6,
+     "restCentre": [
+      -0.091,
+      0.008,
+      1.289
+     ]
+    },
+    "Kirtle->Cloak": {
+     "throughVertices": 1,
+     "maxThroughMm": 4.5,
+     "restCentre": [
+      -0.112,
+      -0.046,
+      0.997
+     ]
+    },
+    "Cloak->HoodCape": {
+     "throughVertices": 1,
+     "maxThroughMm": 9.9,
+     "restCentre": [
+      -0.171,
+      0.061,
+      1.043
+     ]
+    },
+    "Kirtle->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.3,
+     "restCentre": [
+      -0.097,
+      -0.034,
+      1.292
+     ]
+    },
+    "Hood->HeadClothHem": {
+     "throughVertices": 1,
+     "maxThroughMm": 4.2,
+     "restCentre": [
+      0.084,
+      -0.061,
+      1.426
+     ]
+    },
+    "Kirtle->HoodCape": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.8,
+     "restCentre": [
+      -0.313,
+      -0.097,
+      1.089
+     ]
+    }
+   },
+   "stand_up": {
+    "Body->Shift": {
+     "throughVertices": 12,
+     "maxThroughMm": 10.1,
+     "restCentre": [
+      0.031,
+      -0.051,
+      1.268
+     ]
+    },
+    "KirtleSkirt->Cloak": {
+     "throughVertices": 12,
+     "maxThroughMm": 27.1,
+     "restCentre": [
+      -0.022,
+      0.145,
+      0.417
+     ]
+    },
+    "Shift->Kirtle": {
+     "throughVertices": 8,
+     "maxThroughMm": 19.5,
+     "restCentre": [
+      0.269,
+      -0.071,
+      1.061
+     ]
+    },
+    "Kirtle->Hood": {
+     "throughVertices": 6,
+     "maxThroughMm": 24.3,
+     "restCentre": [
+      0.001,
+      -0.031,
+      1.251
+     ]
+    },
+    "Cloak->KirtleSkirt": {
+     "throughVertices": 6,
+     "maxThroughMm": 26.7,
+     "restCentre": [
+      -0.099,
+      -0.187,
+      0.563
+     ]
+    },
+    "Kirtle->KirtleSkirt": {
+     "throughVertices": 2,
+     "maxThroughMm": 6.8,
+     "restCentre": [
+      0.043,
+      0.068,
+      0.887
+     ]
+    },
+    "HoodCape->Shift": {
+     "throughVertices": 2,
+     "maxThroughMm": 7.8,
+     "restCentre": [
+      -0.342,
+      -0.081,
+      1.062
+     ]
+    },
+    "Hood->HeadClothHem": {
+     "throughVertices": 2,
+     "maxThroughMm": 4.3,
+     "restCentre": [
+      0.084,
+      -0.061,
+      1.426
+     ]
+    },
+    "Kirtle->HoodCape": {
+     "throughVertices": 2,
+     "maxThroughMm": 7.3,
+     "restCentre": [
+      -0.285,
+      -0.097,
+      1.086
+     ]
+    },
+    "Cloak->HoodCape": {
+     "throughVertices": 2,
+     "maxThroughMm": 27.2,
+     "restCentre": [
+      0.148,
+      0.049,
+      1.076
+     ]
+    },
+    "Body->Mitt_r": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.1,
+     "restCentre": [
+      -0.407,
+      -0.183,
+      0.937
+     ]
+    },
+    "Kirtle->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.3,
+     "restCentre": [
+      -0.097,
+      -0.034,
+      1.292
+     ]
+    },
+    "Body->Kirtle": {
+     "throughVertices": 1,
+     "maxThroughMm": 5.6,
+     "restCentre": [
+      -0.101,
+      -0.021,
+      1.293
+     ]
+    },
+    "Kirtle->Cloak": {
+     "throughVertices": 1,
+     "maxThroughMm": 5.0,
+     "restCentre": [
+      -0.111,
+      -0.05,
+      1.028
+     ]
+    },
+    "Cloak->Kirtle": {
+     "throughVertices": 1,
+     "maxThroughMm": 20.5,
+     "restCentre": [
+      -0.199,
+      -0.021,
+      1.043
+     ]
+    },
+    "Shift->Hood": {
+     "throughVertices": 1,
+     "maxThroughMm": 6.1,
+     "restCentre": [
+      -0.091,
+      0.008,
+      1.289
+     ]
+    }
+   },
+   "work_enter": {
+    "KirtleSkirt->Cloak": {
+     "throughVertices": 10,
+     "maxThroughMm": 19.7,
+     "restCentre": [
+      -0.017,
+      0.14,
+      0.434
+     ]
+    },
+    "Kirtle->Hood": {
+     "throughVertices": 8,
+     "maxThroughMm": 14.1,
+     "restCentre": [
+      -0.133,
+      -0.029,
+      1.26
+     ]
+    },
+    "Body->Shift": {
+     "throughVertices": 7,
+     "maxThroughMm": 18.5,
+     "restCentre": [
+      -0.123,
+      -0.037,
+      1.226
+     ]
+    },
+    "Body->Mitt_r": {
+     "throughVertices": 6,
+     "maxThroughMm": 24.5,
+     "restCentre": [
+      -0.406,
+      -0.195,
+      0.958
+     ]
+    },
+    "Shift->Kirtle": {
+     "throughVertices": 5,
+     "maxThroughMm": 25.3,
+     "restCentre": [
+      -0.121,
+      -0.092,
+      1.029
+     ]
+    },
+    "Hood->HoodCape": {
+     "throughVertices": 4,
+     "maxThroughMm": 27.1,
+     "restCentre": [
+      0.04,
+      -0.092,
+      1.283
+     ]
+    },
+    "Body->Mitt_l": {
+     "throughVertices": 3,
+     "maxThroughMm": 21.7,
+     "restCentre": [
+      0.416,
+      -0.184,
+      0.948
+     ]
+    },
+    "Hood->HeadClothHem": {
+     "throughVertices": 3,
+     "maxThroughMm": 4.2,
+     "restCentre": [
+      0.084,
+      -0.061,
+      1.426
+     ]
+    },
+    "Toggle->HoodCape": {
+     "throughVertices": 3,
+     "maxThroughMm": 17.9,
+     "restCentre": [
+      0.007,
+      -0.146,
+      1.283
+     ]
+    },
+    "Body->Hood": {
+     "throughVertices": 3,
+     "maxThroughMm": 15.5,
+     "restCentre": [
+      0.042,
+      -0.07,
+      1.293
+     ]
+    },
+    "Shift->HoodCape": {
+     "throughVertices": 3,
+     "maxThroughMm": 10.3,
+     "restCentre": [
+      0.006,
+      -0.088,
+      1.272
+     ]
+    },
+    "Body->HoodCape": {
+     "throughVertices": 3,
+     "maxThroughMm": 5.6,
+     "restCentre": [
+      0.024,
+      -0.081,
+      1.271
+     ]
+    },
+    "Kirtle->KirtleSkirt": {
+     "throughVertices": 2,
+     "maxThroughMm": 5.6,
+     "restCentre": [
+      0.043,
+      0.068,
+      0.887
+     ]
+    },
+    "HoodCape->Shift": {
+     "throughVertices": 2,
+     "maxThroughMm": 9.0,
+     "restCentre": [
+      -0.342,
+      -0.081,
+      1.062
+     ]
+    },
+    "Kirtle->Shift": {
+     "throughVertices": 2,
+     "maxThroughMm": 14.6,
+     "restCentre": [
+      -0.232,
+      -0.109,
+      1.134
+     ]
+    },
+    "Cloak->Kirtle": {
+     "throughVertices": 2,
+     "maxThroughMm": 23.1,
+     "restCentre": [
+      -0.014,
+      -0.037,
+      1.108
+     ]
+    },
+    "Kirtle->Cloak": {
+     "throughVertices": 2,
+     "maxThroughMm": 7.9,
+     "restCentre": [
+      0.105,
+      -0.091,
+      1.086
+     ]
+    },
+    "Shift->Hood": {
+     "throughVertices": 2,
+     "maxThroughMm": 6.7,
+     "restCentre": [
+      0.003,
+      -0.07,
+      1.284
+     ]
+    },
+    "Shift->Mitt_r": {
+     "throughVertices": 1,
+     "maxThroughMm": 17.1,
+     "restCentre": [
+      -0.409,
+      -0.189,
+      0.98
+     ]
+    },
+    "Body->Kirtle": {
+     "throughVertices": 1,
+     "maxThroughMm": 24.3,
+     "restCentre": [
+      0.101,
+      -0.021,
+      1.293
+     ]
+    },
+    "HeadClothHem->HeadCloth": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.6,
+     "restCentre": [
+      -0.008,
+      0.006,
+      1.381
+     ]
+    },
+    "Kirtle->HoodCape": {
+     "throughVertices": 1,
+     "maxThroughMm": 7.4,
+     "restCentre": [
+      -0.313,
+      -0.097,
+      1.089
+     ]
+    },
+    "Cloak->HoodCape": {
+     "throughVertices": 1,
+     "maxThroughMm": 17.1,
+     "restCentre": [
+      -0.171,
+      0.061,
+      1.043
+     ]
+    },
+    "KirtleSkirt->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 16.0,
+     "restCentre": [
+      0.003,
+      -0.139,
+      0.902
+     ]
+    },
+    "Kirtle->Mitt_l": {
+     "throughVertices": 1,
+     "maxThroughMm": 4.8,
+     "restCentre": [
+      0.367,
+      -0.182,
+      0.962
+     ]
+    }
+   },
+   "work_exit": {
+    "KirtleSkirt->Cloak": {
+     "throughVertices": 10,
+     "maxThroughMm": 19.7,
+     "restCentre": [
+      -0.017,
+      0.14,
+      0.434
+     ]
+    },
+    "Kirtle->Hood": {
+     "throughVertices": 8,
+     "maxThroughMm": 14.2,
+     "restCentre": [
+      -0.127,
+      -0.034,
+      1.254
+     ]
+    },
+    "Body->Shift": {
+     "throughVertices": 7,
+     "maxThroughMm": 18.5,
+     "restCentre": [
+      -0.083,
+      -0.013,
+      1.267
+     ]
+    },
+    "Body->Mitt_r": {
+     "throughVertices": 4,
+     "maxThroughMm": 23.2,
+     "restCentre": [
+      -0.411,
+      -0.191,
+      0.955
+     ]
+    },
+    "Body->Mitt_l": {
+     "throughVertices": 4,
+     "maxThroughMm": 19.6,
+     "restCentre": [
+      0.415,
+      -0.188,
+      0.954
+     ]
+    },
+    "Hood->HoodCape": {
+     "throughVertices": 4,
+     "maxThroughMm": 24.8,
+     "restCentre": [
+      0.04,
+      -0.092,
+      1.283
+     ]
+    },
+    "Shift->Kirtle": {
+     "throughVertices": 4,
+     "maxThroughMm": 22.0,
+     "restCentre": [
+      0.043,
+      -0.047,
+      1.084
+     ]
+    },
+    "Toggle->HoodCape": {
+     "throughVertices": 3,
+     "maxThroughMm": 16.9,
+     "restCentre": [
+      0.007,
+      -0.146,
+      1.283
+     ]
+    },
+    "Hood->HeadClothHem": {
+     "throughVertices": 3,
+     "maxThroughMm": 4.2,
+     "restCentre": [
+      0.084,
+      -0.061,
+      1.426
+     ]
+    },
+    "Body->Hood": {
+     "throughVertices": 3,
+     "maxThroughMm": 14.9,
+     "restCentre": [
+      0.014,
+      -0.072,
+      1.29
+     ]
+    },
+    "Shift->HoodCape": {
+     "throughVertices": 3,
+     "maxThroughMm": 7.9,
+     "restCentre": [
+      0.006,
+      -0.088,
+      1.272
+     ]
+    },
+    "Kirtle->KirtleSkirt": {
+     "throughVertices": 2,
+     "maxThroughMm": 5.6,
+     "restCentre": [
+      0.043,
+      0.068,
+      0.887
+     ]
+    },
+    "Kirtle->Cloak": {
+     "throughVertices": 2,
+     "maxThroughMm": 10.4,
+     "restCentre": [
+      -0.111,
+      -0.048,
+      1.013
+     ]
+    },
+    "Kirtle->Shift": {
+     "throughVertices": 2,
+     "maxThroughMm": 14.5,
+     "restCentre": [
+      -0.232,
+      -0.109,
+      1.134
+     ]
+    },
+    "Cloak->HoodCape": {
+     "throughVertices": 2,
+     "maxThroughMm": 20.1,
+     "restCentre": [
+      0.022,
+      -0.038,
+      1.079
+     ]
+    },
+    "Shift->Mitt_r": {
+     "throughVertices": 1,
+     "maxThroughMm": 17.1,
+     "restCentre": [
+      -0.409,
+      -0.189,
+      0.98
+     ]
+    },
+    "KirtleSkirt->Kirtle": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.2,
+     "restCentre": [
+      0.003,
+      -0.143,
+      0.903
+     ]
+    },
+    "Shift->Hood": {
+     "throughVertices": 1,
+     "maxThroughMm": 5.8,
+     "restCentre": [
+      -0.051,
+      -0.073,
+      1.28
+     ]
+    },
+    "Body->Kirtle": {
+     "throughVertices": 1,
+     "maxThroughMm": 18.3,
+     "restCentre": [
+      -0.402,
+      -0.174,
+      0.987
+     ]
+    },
+    "HeadClothHem->HeadCloth": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.6,
+     "restCentre": [
+      -0.008,
+      0.006,
+      1.381
+     ]
+    },
+    "Kirtle->HoodCape": {
+     "throughVertices": 1,
+     "maxThroughMm": 7.0,
+     "restCentre": [
+      -0.336,
+      -0.09,
+      1.081
+     ]
+    },
+    "Cloak->Kirtle": {
+     "throughVertices": 1,
+     "maxThroughMm": 23.2,
+     "restCentre": [
+      0.195,
+      -0.058,
+      1.047
+     ]
+    },
+    "Kirtle->Mitt_l": {
+     "throughVertices": 1,
+     "maxThroughMm": 4.7,
+     "restCentre": [
+      0.391,
+      -0.159,
+      0.951
+     ]
+    },
+    "HoodCape->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 9.4,
+     "restCentre": [
+      -0.329,
+      -0.078,
+      1.051
+     ]
+    }
+   },
+   "talk": {
+    "Kirtle->Hood": {
+     "throughVertices": 6,
+     "maxThroughMm": 9.1,
+     "restCentre": [
+      -0.172,
+      -0.033,
+      1.259
+     ]
+    },
+    "Body->Shift": {
+     "throughVertices": 4,
+     "maxThroughMm": 5.3,
+     "restCentre": [
+      -0.126,
+      -0.027,
+      1.275
+     ]
+    },
+    "Shift->Kirtle": {
+     "throughVertices": 2,
+     "maxThroughMm": 10.9,
+     "restCentre": [
+      -0.207,
+      -0.054,
+      1.059
+     ]
+    },
+    "Shift->Hood": {
+     "throughVertices": 1,
+     "maxThroughMm": 5.6,
+     "restCentre": [
+      -0.091,
+      0.008,
+      1.289
+     ]
+    },
+    "Kirtle->Cloak": {
+     "throughVertices": 1,
+     "maxThroughMm": 10.5,
+     "restCentre": [
+      -0.112,
+      -0.046,
+      0.997
+     ]
+    },
+    "Cloak->HoodCape": {
+     "throughVertices": 1,
+     "maxThroughMm": 7.8,
+     "restCentre": [
+      -0.171,
+      0.061,
+      1.043
+     ]
+    },
+    "Kirtle->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.3,
+     "restCentre": [
+      -0.097,
+      -0.034,
+      1.292
+     ]
+    },
+    "Hood->HeadClothHem": {
+     "throughVertices": 1,
+     "maxThroughMm": 4.5,
+     "restCentre": [
+      0.084,
+      -0.061,
+      1.426
+     ]
+    }
+   }
+  },
+  "handClips": {
+   "idle": {
+    "Body->Mitt_l": {
+     "throughVertices": 9,
+     "maxThroughMm": 27.9,
+     "restCentre": [
+      0.426,
+      -0.254,
+      0.915
+     ]
+    }
+   },
+   "walk": {
+    "Body->Mitt_l": {
+     "throughVertices": 11,
+     "maxThroughMm": 27.9,
+     "restCentre": [
+      0.422,
+      -0.247,
+      0.925
+     ]
+    },
+    "Body->Mitt_r": {
+     "throughVertices": 1,
+     "maxThroughMm": 26.1,
+     "restCentre": [
+      -0.422,
+      -0.286,
+      0.906
+     ]
+    },
+    "Mitt_l->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.3,
+     "restCentre": [
+      0.408,
+      -0.186,
+      0.98
+     ]
+    }
+   },
+   "walk_start": {
+    "Body->Mitt_l": {
+     "throughVertices": 9,
+     "maxThroughMm": 27.9,
+     "restCentre": [
+      0.426,
+      -0.254,
+      0.915
+     ]
+    },
+    "Body->Mitt_r": {
+     "throughVertices": 1,
+     "maxThroughMm": 24.0,
+     "restCentre": [
+      -0.422,
+      -0.286,
+      0.906
+     ]
+    },
+    "Mitt_l->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.3,
+     "restCentre": [
+      0.408,
+      -0.186,
+      0.98
+     ]
+    }
+   },
+   "walk_stop": {
+    "Body->Mitt_l": {
+     "throughVertices": 9,
+     "maxThroughMm": 27.9,
+     "restCentre": [
+      0.426,
+      -0.254,
+      0.915
+     ]
+    },
+    "Mitt_l->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.3,
+     "restCentre": [
+      0.408,
+      -0.186,
+      0.98
+     ]
+    }
+   },
+   "work_carving": {
+    "Body->Mitt_r": {
+     "throughVertices": 13,
+     "maxThroughMm": 27.3,
+     "restCentre": [
+      -0.43,
+      -0.23,
+      0.924
+     ]
+    },
+    "Body->Mitt_l": {
+     "throughVertices": 9,
+     "maxThroughMm": 26.8,
+     "restCentre": [
+      0.433,
+      -0.265,
+      0.905
+     ]
+    },
+    "Mitt_l->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.5,
+     "restCentre": [
+      0.408,
+      -0.186,
+      0.98
+     ]
+    }
+   },
+   "sit": {
+    "Body->Mitt_l": {
+     "throughVertices": 8,
+     "maxThroughMm": 27.8,
+     "restCentre": [
+      0.427,
+      -0.262,
+      0.913
+     ]
+    },
+    "Mitt_l->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.6,
+     "restCentre": [
+      0.408,
+      -0.186,
+      0.98
+     ]
+    }
+   },
+   "sit_down": {
+    "Body->Mitt_l": {
+     "throughVertices": 9,
+     "maxThroughMm": 28.0,
+     "restCentre": [
+      0.426,
+      -0.254,
+      0.915
+     ]
+    },
+    "Body->Mitt_r": {
+     "throughVertices": 3,
+     "maxThroughMm": 27.1,
+     "restCentre": [
+      -0.434,
+      -0.207,
+      0.919
+     ]
+    },
+    "Mitt_l->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.6,
+     "restCentre": [
+      0.408,
+      -0.186,
+      0.98
+     ]
+    }
+   },
+   "stand_up": {
+    "Body->Mitt_l": {
+     "throughVertices": 11,
+     "maxThroughMm": 28.0,
+     "restCentre": [
+      0.425,
+      -0.242,
+      0.918
+     ]
+    },
+    "Body->Mitt_r": {
+     "throughVertices": 1,
+     "maxThroughMm": 23.6,
+     "restCentre": [
+      -0.42,
+      -0.286,
+      0.911
+     ]
+    },
+    "Mitt_l->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.7,
+     "restCentre": [
+      0.408,
+      -0.186,
+      0.98
+     ]
+    }
+   },
+   "work_enter": {
+    "Body->Mitt_l": {
+     "throughVertices": 25,
+     "maxThroughMm": 27.9,
+     "restCentre": [
+      0.423,
+      -0.225,
+      0.933
+     ]
+    },
+    "Body->Mitt_r": {
+     "throughVertices": 20,
+     "maxThroughMm": 26.5,
+     "restCentre": [
+      -0.429,
+      -0.241,
+      0.924
+     ]
+    },
+    "Mitt_l->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.6,
+     "restCentre": [
+      0.408,
+      -0.186,
+      0.98
+     ]
+    }
+   },
+   "work_exit": {
+    "Body->Mitt_l": {
+     "throughVertices": 26,
+     "maxThroughMm": 27.9,
+     "restCentre": [
+      0.416,
+      -0.225,
+      0.937
+     ]
+    },
+    "Body->Mitt_r": {
+     "throughVertices": 18,
+     "maxThroughMm": 26.5,
+     "restCentre": [
+      -0.426,
+      -0.228,
+      0.923
+     ]
+    },
+    "Mitt_l->Shift": {
+     "throughVertices": 1,
+     "maxThroughMm": 3.6,
+     "restCentre": [
+      0.408,
+      -0.186,
+      0.98
+     ]
+    }
+   },
+   "talk": {
+    "Body->Mitt_l": {
+     "throughVertices": 9,
+     "maxThroughMm": 27.8,
+     "restCentre": [
+      0.426,
+      -0.254,
+      0.915
+     ]
+    }
+   }
+  },
+  "posedHands": {
+   "note": "per frame, each hand's skin and mitt or glove vertices are tested against the posed outer garments (Cloak, HoodCape): a vertex is inside a garment when a horizontal ray from the body axis through it meets the garment beyond it; a hand with at least 3 vertices on each side crosses the cloth (it comes out through it). Counts are the vertices on the minority side.",
+   "clips": {
+    "idle": {
+     "left": {
+      "framesCrossing": 0,
+      "framesSampled": 61,
+      "minorityVertices": 0,
+      "frame": 0
+     },
+     "right": {
+      "framesCrossing": 0,
+      "framesSampled": 61,
+      "minorityVertices": 0,
+      "frame": 0
+     }
+    },
+    "walk": {
+     "left": {
+      "framesCrossing": 0,
+      "framesSampled": 17,
+      "minorityVertices": 0,
+      "frame": 0
+     },
+     "right": {
+      "framesCrossing": 0,
+      "framesSampled": 17,
+      "minorityVertices": 0,
+      "frame": 0
+     }
+    },
+    "walk_start": {
+     "left": {
+      "framesCrossing": 0,
+      "framesSampled": 8,
+      "minorityVertices": 0,
+      "frame": 0
+     },
+     "right": {
+      "framesCrossing": 0,
+      "framesSampled": 8,
+      "minorityVertices": 0,
+      "frame": 0
+     }
+    },
+    "walk_stop": {
+     "left": {
+      "framesCrossing": 0,
+      "framesSampled": 12,
+      "minorityVertices": 0,
+      "frame": 0
+     },
+     "right": {
+      "framesCrossing": 0,
+      "framesSampled": 12,
+      "minorityVertices": 0,
+      "frame": 0
+     }
+    },
+    "work_carving": {
+     "left": {
+      "framesCrossing": 0,
+      "framesSampled": 41,
+      "minorityVertices": 0,
+      "frame": 0
+     },
+     "right": {
+      "framesCrossing": 8,
+      "framesSampled": 41,
+      "minorityVertices": 35,
+      "frame": 9
+     }
+    },
+    "sit": {
+     "left": {
+      "framesCrossing": 0,
+      "framesSampled": 61,
+      "minorityVertices": 0,
+      "frame": 0
+     },
+     "right": {
+      "framesCrossing": 0,
+      "framesSampled": 61,
+      "minorityVertices": 0,
+      "frame": 0
+     }
+    },
+    "sit_down": {
+     "left": {
+      "framesCrossing": 0,
+      "framesSampled": 27,
+      "minorityVertices": 0,
+      "frame": 0
+     },
+     "right": {
+      "framesCrossing": 5,
+      "framesSampled": 27,
+      "minorityVertices": 169,
+      "frame": 45
+     }
+    },
+    "stand_up": {
+     "left": {
+      "framesCrossing": 8,
+      "framesSampled": 23,
+      "minorityVertices": 115,
+      "frame": 33
+     },
+     "right": {
+      "framesCrossing": 1,
+      "framesSampled": 23,
+      "minorityVertices": 137,
+      "frame": 39
+     }
+    },
+    "work_enter": {
+     "left": {
+      "framesCrossing": 0,
+      "framesSampled": 25,
+      "minorityVertices": 0,
+      "frame": 0
+     },
+     "right": {
+      "framesCrossing": 0,
+      "framesSampled": 25,
+      "minorityVertices": 0,
+      "frame": 0
+     }
+    },
+    "work_exit": {
+     "left": {
+      "framesCrossing": 0,
+      "framesSampled": 25,
+      "minorityVertices": 0,
+      "frame": 0
+     },
+     "right": {
+      "framesCrossing": 0,
+      "framesSampled": 25,
+      "minorityVertices": 0,
+      "frame": 0
+     }
+    },
+    "talk": {
+     "left": {
+      "framesCrossing": 0,
+      "framesSampled": 61,
+      "minorityVertices": 0,
+      "frame": 0
+     },
+     "right": {
+      "framesCrossing": 0,
+      "framesSampled": 61,
+      "minorityVertices": 0,
+      "frame": 0
+     }
+    }
+   }
+  },
+  "heldStick": {
+   "note": "round 2: the held stick (prop_stick in hand_l through its grip) sampled every centimetre along the shaft; a point is inside cloth when a horizontal ray from the body axis through it meets a garment beyond it. Fails when any sampled frame has more than limitMetres of shaft inside cloth.",
+   "limitMetres": 0.05,
+   "clips": {
+    "idle": {
+     "framesSampled": 61,
+     "framesOverLimit": 0,
+     "maxInsideCm": 0
+    },
+    "walk": {
+     "framesSampled": 17,
+     "framesOverLimit": 0,
+     "maxInsideCm": 0
+    },
+    "walk_start": {
+     "framesSampled": 8,
+     "framesOverLimit": 0,
+     "maxInsideCm": 0
+    },
+    "walk_stop": {
+     "framesSampled": 12,
+     "framesOverLimit": 0,
+     "maxInsideCm": 0
+    },
+    "sit": {
+     "framesSampled": 61,
+     "framesOverLimit": 0,
+     "maxInsideCm": 0
+    },
+    "sit_down": {
+     "framesSampled": 27,
+     "framesOverLimit": 0,
+     "maxInsideCm": 0
+    },
+    "stand_up": {
+     "framesSampled": 23,
+     "framesOverLimit": 0,
+     "maxInsideCm": 0
+    },
+    "talk": {
+     "framesSampled": 61,
+     "framesOverLimit": 0,
+     "maxInsideCm": 0
+    }
+   },
+   "pass": true
+  }
+ },
+ "textureMemoryNote": "decodedTextureBytesEstimate assumes RGBA8 with full mips; not a GPU measurement."
+}

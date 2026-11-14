@@ -1,0 +1,69 @@
+{
+    "totalResults": 1,
+    "nextPageHttp": null,
+    "currentPageHttp": "https://ambientcg.com/api/v3/assets?id=grass001&sort=popular&limit=100&include=dimensions%2Ctechnique%2Cdownloads%2Ctitle%2Curl",
+    "previousPageHttp": null,
+    "assets": [
+        {
+            "id": "Grass001",
+            "dimensions": {
+                "width": 140,
+                "height": 140,
+                "depth": 0
+            },
+            "technique": "surface-fully-procedural",
+            "downloads": [
+                {
+                    "attributes": "1K-JPG",
+                    "extension": "zip",
+                    "url": "https://ambientcg.com/get?file=Grass001_1K-JPG.zip",
+                    "size": 10710313
+                },
+                {
+                    "attributes": "2K-JPG",
+                    "extension": "zip",
+                    "url": "https://ambientcg.com/get?file=Grass001_2K-JPG.zip",
+                    "size": 38930280
+                },
+                {
+                    "attributes": "4K-JPG",
+                    "extension": "zip",
+                    "url": "https://ambientcg.com/get?file=Grass001_4K-JPG.zip",
+                    "size": 148824729
+                },
+                {
+                    "attributes": "8K-JPG",
+                    "extension": "zip",
+                    "url": "https://ambientcg.com/get?file=Grass001_8K-JPG.zip",
+                    "size": 583290774
+                },
+                {
+                    "attributes": "1K-PNG",
+                    "extension": "zip",
+                    "url": "https://ambientcg.com/get?file=Grass001_1K-PNG.zip",
+                    "size": 19229149
+                },
+                {
+                    "attributes": "2K-PNG",
+                    "extension": "zip",
+                    "url": "https://ambientcg.com/get?file=Grass001_2K-PNG.zip",
+                    "size": 72206077
+                },
+                {
+                    "attributes": "4K-PNG",
+                    "extension": "zip",
+                    "url": "https://ambientcg.com/get?file=Grass001_4K-PNG.zip",
+                    "size": 276813431
+                },
+                {
+                    "attributes": "8K-PNG",
+                    "extension": "zip",
+                    "url": "https://ambientcg.com/get?file=Grass001_8K-PNG.zip",
+                    "size": 995264599
+                }
+            ],
+            "title": "Grass 001",
+            "url": "https://ambientcg.com/a/Grass001"
+        }
+    ]
+}
