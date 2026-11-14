@@ -42,3 +42,13 @@ test('the commons regenerates gradually without exceeding its original capacity'
  const tomorrow=marketAction(gathered.state,'next-day');assert.equal(tomorrow.state.forest,24);
  const later=marketAction(tomorrow.state,'next-day');assert.equal(later.state.forest,24);
 });
+
+test('complete economic turns agree with the shared contract golden vectors',async()=>{
+ const {default:vectors}=await import('./market-turn-vectors.json');let s=createMarket();
+ for(const v of vectors){const result=marketAction(s,v.action as MarketAction);assert.equal(result.ok,true,result.message);s=result.state;const p=marketPrices(s);
+ assert.deepEqual({action:v.action,coins:s.coins,timber:s.timber,bread:s.bread,energy:s.energy,forest:s.forest,merchant_timber:s.merchantTimber,merchant_coins:s.merchantCoins,bakery_bread:s.bakeryBread,bakery_coins:s.bakeryCoins,timber_demand:s.timberDemand,bread_demand:s.breadDemand,day:s.day,supplier_coins:s.supplierCoins,fed:s.lastFed,unfed:s.lastUnfed,household_coins:s.households.reduce((n,h)=>n+h.coins,0),timber_bid:p.timberSell,timber_ask:p.timberBuy,bread_bid:p.breadSell,bread_ask:p.bread},v);}
+});
+test('full stalls refuse purchases without spending or taking goods',()=>{
+ const timber={...createMarket(),timber:1,merchantTimber:20};const a=marketAction(timber,'sell-timber');assert.equal(a.ok,false);assert.strictEqual(a.state,timber);
+ const bread={...createMarket(),bread:1,bakeryBread:20};const b=marketAction(bread,'sell-bread');assert.equal(b.ok,false);assert.strictEqual(b.state,bread);
+});

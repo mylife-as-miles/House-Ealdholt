@@ -10,6 +10,7 @@ export interface MarketState {
   timberDemand: number; breadDemand: number; day: number;
   supplierCoins:number; households:HouseholdWallet[]; lastFed:number; lastUnfed:number;
 }
+export const TIMBER_STALL_CAPACITY=20, BAKERY_STALL_CAPACITY=20;
 export type MarketAction = 'gather'|'sell-timber'|'buy-timber'|'buy-bread'|'sell-bread'|'bake'|'eat'|'donate-timber'|'next-day';
 export interface MarketPrices { timberBuy: number; timberSell: number; bread: number; breadSell:number }
 export type MarketResult = {ok:true; state:MarketState; message:string; timberDelivery:number}|{ok:false; state:MarketState; message:string; timberDelivery:0};
@@ -59,6 +60,7 @@ export function marketAction(old:MarketState,action:MarketAction):MarketResult {
       s.energy--;s.forest-=2;s.timber+=2;message='A supply run brings in 2 timber.';break;
     case 'sell-timber':
       if(s.timber<1)return fail('You have no timber to sell.');
+      if(s.merchantTimber>=TIMBER_STALL_CAPACITY)return fail('The timber merchant has no shelf space.');
       if(s.merchantCoins<p.timberSell)return fail('The timber merchant cannot afford another purchase.');
       s.timber--;s.merchantTimber++;s.coins+=p.timberSell;s.merchantCoins-=p.timberSell;s.trades++;message=`Sold 1 timber for ${p.timberSell} coins.`;break;
     case 'buy-timber':
@@ -71,6 +73,7 @@ export function marketAction(old:MarketState,action:MarketAction):MarketResult {
       s.coins-=p.bread;s.bakeryCoins+=p.bread;s.bakeryBread--;s.bread++;s.breadDemand++;s.trades++;message=`Bought 1 bread for ${p.bread} coins.`;break;
     case 'sell-bread':
       if(s.bread<1)return fail('You have no bread to sell.');
+      if(s.bakeryBread>=BAKERY_STALL_CAPACITY)return fail('The bakery has no shelf space.');
       if(s.bakeryCoins<p.breadSell)return fail('The baker cannot afford another purchase.');
       s.bread--;s.bakeryBread++;s.coins+=p.breadSell;s.bakeryCoins-=p.breadSell;s.trades++;message=`Sold 1 bread for ${p.breadSell} coins.`;break;
     case 'bake':

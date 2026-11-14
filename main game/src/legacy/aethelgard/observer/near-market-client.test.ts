@@ -21,3 +21,10 @@ test('rejects forged marketplace state and malformed wallet records',async()=>{
 });
 
 test('failed wallet execution outcomes are not reported as successful',()=>{assert.throws(()=>assertTransactionAccepted({status:{Failure:{ActionError:{}}}}),/failed on NEAR/);assert.doesNotThrow(()=>assertTransactionAccepted({status:{SuccessValue:''}}));assert.doesNotThrow(()=>assertTransactionAccepted(undefined));});
+
+test('accepts a valid expiring listing and rejects bad expiry data',async()=>{
+ const listing={id:1,seller:'alice.testnet',item:'timber',quantity:2,unit_price:5,expires_at_ms:86400000};
+ const mock=(listings:unknown[])=>async()=>new Response(JSON.stringify({result:{result:[...new TextEncoder().encode(JSON.stringify({...sample,listings}))]}}));
+ const market=await readNearMarket('market.testnet','alice.testnet',mock([listing]) as typeof fetch);assert.equal(market.listings[0].expires_at_ms,86400000);
+ await assert.rejects(()=>readNearMarket('market.testnet','alice.testnet',mock([{...listing,expires_at_ms:-1}]) as typeof fetch),/invalid market/);
+});
