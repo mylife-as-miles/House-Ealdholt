@@ -1,12 +1,89 @@
 # House Ealdholt
 
-A standalone desktop entry for Crownfall's My Legacy village, built from the existing Ealdholt source and authored Elderbloom environment. It uses the inherited village, the 100-resident roster and saved simulation, rather than a replacement scene.
+**A living village where the availability and price of essentials can affect what players do.** House Ealdholt brings Crownfall’s existing My Legacy experience into a standalone browser game and adds an economy for the NEAR Hackathon’s **Games With Real Economies** track.
 
-The source combines Crownfall's `codex/ealdholt-open-water-procedural-fire` at `54aa7b1dd50eb777b01caf75cbcbdd98af4e3aef` (including PR #14, `d678838bf89b8e91ccde15d031b6a27f164db739`) with later `main` work at `a8e9d8013eef0d24c7166f7a845d5cd2248d650b`. The standalone adds a production entry and source-qualified population loading. Original Crownfall source remains separate.
+The village is the authored Elderbloom environment, with its existing terrain, waterways, buildings, lighting and resident simulation. The roster contains **100 residents in 25 households**; a smaller, changing selection of character models is rendered at a time.
 
-## Setup and run
+> **Current status:** The local village market is playable. The NEAR testnet contract and wallet integration are implemented and unit-tested, but the contract is **not deployed** and no Ealdholt wallet transaction has been verified. The public Site is not live. Full 3D setup currently requires authorized access to Crownfall’s private assets.
 
-You need Node 20.19 or later, npm, the GitHub CLI, and an account authorized to read the private `mylife-as-miles/Crownfall` repository and its Elderbloom release. Authenticate with `gh auth login` using your own account; do not put credentials in this project.
+## Why an economy?
+
+A village cannot repair a damaged building without materials. Ealdholt’s local market turns that need into a player choice: gather or buy timber, trade with merchants that have finite budgets and shelf space, or deliver timber to the actual repair stores. Validated building damage can raise the player’s local timber price; filling the repair stores reduces that pressure. Prices and household demand respond to inventory and money, rather than staying fixed.
+
+The original resident routines, physical navigation, fire and rebuilding systems remain authoritative. A market ledger entry does **not** prove that a villager physically worked, ate, fought a fire or completed a repair.
+
+## The experience
+
+![The actual Ealdholt village in the standalone build](docs/screenshots/03-village.png)
+*The authored village. The roster registers 100 residents; not all are rendered simultaneously.*
+
+![The village market showing local stock, wallets and actions](docs/screenshots/04-market.png)
+*The local market uses game credits, not NEAR tokens. This screenshot shows the market before a trade.*
+
+<details>
+<summary>Opening film and loading screen</summary>
+
+![The original House Ealdholt opening film playing in the standalone](docs/screenshots/01-intro.png)
+*The original 30-second film plays on every visit and can be skipped.*
+
+![The village loading screen](docs/screenshots/02-loading.png)
+*The original loading screen tracks the village preparation.*
+
+</details>
+
+**Try the local loop:**
+
+1. Open the game, watch or skip the intro, and wait for the village to load. A new local save is created with the Ancestral Oak banner; returning players use their existing browser save.
+2. Open **Market** and select **Local market**. Gather two timber. In the verified browser run, timber changed from **0 to 2** and energy from **4 to 3**.
+3. Sell timber to the woodcutter, buy bread, or pay to bake it. Stalls can run out of stock, money or room, and quotes change with stock and demand.
+4. Deliver **12 timber** to the existing repair stores. A building still needs actual damage, qualified workers, and the original rebuilding conditions before repair work occurs.
+
+The browser verification recorded this actual local interaction:
+
+```text
+Before Gather: 16 coins · 0 timber · 0 bread · 4/8 energy
+After Gather:  16 coins · 2 timber · 0 bread · 3/8 energy
+```
+
+The market also simulates purchases by the 25 existing households. A player may broker a fuel purchase between the baker and woodcutter from the bakery’s own budget. These are ledger events, not claims of physical NPC work. Local market days are advanced by the player and do not advance the village clock.
+
+## Resident conversations
+
+The game includes a conversation integration for all **100 existing resident identities**, using Anthropic **Claude Haiku 5.5** (`claude-haiku-5-5`) with `output_config.effort` set to `low`. Choose **Watch**, follow a resident, and open their conversation panel when the service is configured. Calls are player-initiated: there are no continuous autonomous model loops. The model receives the selected resident’s authored identity, age, role and household context; it does not receive a verified live world state or control movement, work, money or transactions.
+
+**Status:** One live Anthropic response for the existing village smith succeeded through the loopback-only server and its quota guard using `claude-haiku-5-5` and low effort. All 100 resident identities are covered by mocked handler tests. The public AI service is **not deployed**; the panel reports unavailable until its server-side route, verified authentication and durable spending limits are running. The original village simulation continues without it. Never put API keys in this repository or the browser. Player messages and the supplied resident context are sent to the configured AI provider when the service is used.
+
+For a trusted local demo, after building the village, set `ANTHROPIC_API_KEY` in your terminal without saving it in source, then run `NPC_AI_ENABLED=true npm run npc-ai:local` and open the printed loopback URL. The local owner demo defaults to 20 calls per UTC day and must not be exposed through a public proxy. The public quota adapter is designed for **100 calls per day globally and 10 per verified player**, plus rate limits; it still needs a verified Sites identity resolver and deployed D1 database. See [resident AI setup and limits](server/npc-ai/README.md).
+
+## Where NEAR fits
+
+The optional testnet market uses a Rust `near-sdk` contract for a **shared game-credit ledger**. Players connect their own wallet, join, trade with bounded merchant accounts, and list timber or bread in escrow for other players. The contract checks ownership, quantity, price, funds and expiry; it emits structured market events. See [NEAR event format](docs/NEAR-EVENTS.md).
+
+Game credits are internal accounting units—not NEAR, a fungible token, or individual NPC NEAR wallets. Local fire and weather are not trusted as inputs to the shared contract. Applying a finalized, world-bound timber receipt to local repair stores is an explicit player action.
+
+**No Ealdholt testnet contract or transaction is deployed or verified yet.** Do not use another project’s transaction as evidence for this game. The contract is testnet-only prototype code and must not be used for real-value assets. Its fixed 32-player registration limit can be exhausted; the contract owner funds storage. Delivery replay protection is local to the browser save, so restoring an older save can reapply a receipt. Live wallet behavior and gas use remain unverified.
+
+## Run the public tests
+
+These checks do not require the licensed village assets. Use Node.js 20.19 or later, npm, and a current Rust toolchain:
+
+```sh
+npm ci
+npm run test:market
+node --import tsx --test 'main game/src/legacy/aethelgard/observer/near-market-client.test.ts'
+npm run test:npc-ai
+cargo test --locked --manifest-path contracts/ealdholt-market/Cargo.toml --lib
+rustup target add wasm32-unknown-unknown
+cargo build --locked --manifest-path contracts/ealdholt-market/Cargo.toml --target wasm32-unknown-unknown --release
+```
+
+The Rust and TypeScript suites check pricing, economic turns, budgets, inventory conservation, stale offers and escrow behavior. Node.js 22 or later is required to run the SQLite-backed quota assertions; on Node 20 that portion is skipped. Actual Sites D1 integration remains untested. Structured logs must be verified against a successful, finalized transaction; a log by itself is not settlement proof.
+
+A local NEAR Workspaces sandbox attempt could not start because its required 65,535 file-descriptor limit exceeded this environment’s hard limit of 16,384. These tests do not substitute for a deployed-contract or wallet test.
+
+## Run the actual village
+
+You need Node.js 20.19+, npm, the GitHub CLI, and an account authorized to read the private `mylife-as-miles/Crownfall` repository and its Elderbloom release. Authenticate with `gh auth login` using your own account; never put credentials in this project.
 
 ```sh
 npm ci
@@ -19,65 +96,42 @@ npm run build
 npm run preview
 ```
 
-Open the local URL printed by Vite. On every visit, the original 30-second House Ealdholt film plays first; Skip or Escape proceeds to the village loading screen, then the saved village opens. If browser autoplay blocks audio, use the on-screen sound control. The release installer verifies every downloaded file against the pinned SHA-256 manifest. The second installer obtains the exact source-qualified resident site, the original loading image, Ealdholt opening film and the user-supplied soundtrack from private Crownfall Git objects and verifies their hashes; it will not overwrite an existing file. The film is 13,820,923 bytes, SHA-256 `cabfcb4780ee7a27675122c9350d257d351e3c7b257da8c18a0d62dfa698fa9e`; the private source object is pinned to commit `28c967c2535db68fc396ee7350f715336d0aad51`. No credential is embedded in the client. The build checks the opening film, model, matching pond probe and resident site and fails if they are missing or changed.
+Open the printed local URL. The install scripts retrieve the exact resident placement, loading image, opening film and soundtrack from private Crownfall and verify the pinned hashes; they will not overwrite a mismatched file. The production build verifies the original film, model, pond probe and population site before it runs. If autoplay blocks sound, use the film’s sound control.
 
-The desktop GLB is 174,285,136 bytes (about 166 MiB), SHA-256 `3b02834505642a5a9e7535e92812df8e565b99005e9921d41be83be4f5da3b28`. The population site is SHA-256 `fc60a1d43098bdb633b696fc92ea4751120f5741e671a699384bf39f7b676475`. The latter is retrieved from Crownfall's private asset branch; the private release itself does not contain it. The download commands require authorized access to both.
+The desktop GLB is 174,285,136 bytes (about 166 MiB), SHA-256 `3b02834505642a5a9e7535e92812df8e565b99005e9921d41be83be4f5da3b28`. The population site is SHA-256 `fc60a1d43098bdb633b696fc92ea4751120f5741e671a699384bf39f7b676475`. The film is 13,820,923 bytes, SHA-256 `cabfcb4780ee7a27675122c9350d257d351e3c7b257da8c18a0d62dfa698fa9e`.
 
-The model, baked reflection, source-derived site, village loading image, opening film and soundtrack are excluded from the public Git repository. The `dist` output **does contain** these private assets and must only be shared or hosted in accordance with their licences and access terms. The Elderbloom release's `LICENSE-USE.md` states its Fab Standard License and NoAI restrictions; it is not a standalone open asset library. The user-supplied music has its own provenance and is not relicensed by the code licence.
+## Preparing a size-limited static host
 
-The original Ealdholt film shows the licensed village and contains a soundtrack generated with Stable Audio 3.0 Small under the Stability AI Community License. Its two camera moves are credited to Leonxlnx's [FIRST BLOOM](https://github.com/Leonxlnx/first-bloom), whose repository has no stated code licence. Crownfall's original `main game/public/video/SOURCES.md` says reuse of those moves requires the author's confirmation. The project owner confirmed permission for these camera moves and public browser delivery of the Elderbloom GLB for this game. The film is not covered by Crownfall's MIT code licence; this project-specific confirmation does not grant other projects a licence to reuse it.
-
-## Existing systems and limits
-
-The renderer uses the authored village model and existing terrain, pond, woodland and surrounding environment. My Legacy retains its views, observer controls, clock, weather, saves, households and resident simulation, plus source-bound fire response, building damage and rebuilding code. The roster and simulation represent 100 people; rendering uses a smaller, changing set of character models. Many jobs, interiors and physical interactions remain unqualified, and a simulated routine is not proof that a villager visibly performed it. The original source replay established a burn-to-rebuild sequence in a deterministic fixture; this standalone has not visually demonstrated that entire sequence. Quest hardware and physical-device performance are not verified by this desktop package.
-
-`npm run typecheck` and `npm run test:core` run the desktop typecheck and focused population, presentation and emergency-site tests. An optional actual-source test can be run after setup:
+A normal build serves the verified GLB as one file. For a host with a 25 MiB per-file limit, opt into the chunked loader **when building**, then split that same output:
 
 ```sh
-CROWNFALL_BUILDING_EMERGENCY_SOURCE_GLB="$PWD/private-assets/elderbloom/elderbloom-village-desktop-coastal-full-woodland-candidate-v5.glb" \
-CROWNFALL_BUILDING_EMERGENCY_SITE_JSON="$PWD/private-assets/elderbloom/ealdholt-population-desktop-fresh-exterior-v4-tall-commuting.json" \
-node --import tsx 'main game/src/legacy/aethelgard/building-emergency-sites.test.ts'
+VITE_EALDHOLT_CHUNKED_MODEL=1 npm run build
+node scripts/split-village-model.mjs \
+  --input "$PWD/private-assets/elderbloom/elderbloom-village-desktop-coastal-full-woodland-candidate-v5.glb" \
+  --output-dir "$PWD/main game/dist/legacy/elderbloom" --remove-model-copy
+npm run test:chunks
 ```
 
-## Credits
+The script produces 11 chunks of at most 16 MiB and verifies their reassembled SHA-256. It removes only the separately verified copy in the build output, not the source asset. The browser reconstructs the original bytes and verifies their hash before rendering; HTTPS or localhost is required for WebCrypto. This prepared build has not yet been deployed to Sites or tested on target devices.
 
-Crownfall code retains its [MIT licence](LICENSE). Third-party notices remain alongside the assets, including `main game/public/assets/legacy/environment/aethelgard/characters/crowd-v1/SOURCES.md`, its `clips/SOURCES.md`, and the regional and texture provenance files. The 100STYLE-derived motion clips are CC BY 4.0 and credit Ian Mason, Sebastian Starke and Taku Komura. MakeHuman and Poly Haven sources include CC0 material; the respective licence texts and notices are retained. Fonts retain their SIL Open Font License notices in `main game/public/fonts`.
+## What was verified
 
-## Verification (14 November 2026)
+- The production build and focused population, building-disaster, market, keyboard and film tests passed.
+- In a fresh headless browser, the actual film played before the village mounted. Skip opened the loading screen; reloading presented the film again.
+- The actual model and population loaded, with 100 residents registered and three resident draw calls reported in the observed frame. Opening Market and gathering timber changed the displayed wallet from 0 to 2 timber and energy from 4 to 3. No page errors or failed local asset requests were reported in that run.
+- The real desktop GLB was split into 11 parts and reassembled through the chunk loader to its pinned SHA-256. The chunk-enabled build has not yet been verified in a browser or on Sites.
+- The existing building-disaster source tests include a deterministic burn-to-rebuild fixture. A complete physical fire-and-rebuild sequence has not been visually verified in this standalone. Device performance, gamepad routing, a public Site, a deployed Ealdholt contract and a live NEAR transaction are also unverified.
 
-A clean copy of the public files, with the authenticated private assets installed locally, passed the desktop production build and `npm run test:core`. The original-source emergency test above passed all 10 tests against the pinned desktop model and site, including its source-bound long projection and checkpoint. Additional navigation, workplace, clock and reconstruction test modules passed; paired desktop/Quest fire presentation tests passed in the combined Crownfall checkout. The standalone omits the Quest runtime, so those paired Quest tests are not runnable in the desktop-only package.
+## New work and provenance
 
-A fresh headless Chromium session fetched the original model, pond probe, site, resident models and clip libraries successfully. The population reported 100 registered people in 25 households, with three character actors ready in the observed frame. Main-camera diagnostics recorded four resident draw calls, as well as authored architecture and terrain submissions. The clock advanced normally. These counts establish asset loading and render submissions; they do not establish completed work interactions, an end-to-end visible fire and rebuild, smooth animation, or physical-device performance.
+The Crownfall baseline for this standalone is [`8537296`](https://github.com/mylife-as-miles/House-Ealdholt/commit/8537296096c51f3eacdb56be09e847909f666376). The NEAR Hackathon additions are on [`hackathon/near-village-economy`](https://github.com/mylife-as-miles/House-Ealdholt/tree/hackathon/near-village-economy); [review the diff](https://github.com/mylife-as-miles/House-Ealdholt/compare/8537296096c51f3eacdb56be09e847909f666376...hackathon/near-village-economy). They include the market, contract, wallet integration, pricing, escrow, tests and documentation. The village, residents and inherited simulation predate this work.
 
-For an additional local visibility check, an instrumented copy rendered the same frame at 320×180 with the population on, off and on again. One RGB pixel differed between on and off while matching between both on renders; no pixels changed between the on renders. This establishes a small population contribution in that view, not a recognizable close-up or a motion/occupation proof. The comparison ran locally; no village image was uploaded.
+The source combines Crownfall’s `codex/ealdholt-open-water-procedural-fire` at `54aa7b1dd50eb777b01caf75cbcbdd98af4e3aef`, including building-disaster PR #14, with later `main` work at `a8e9d8013eef0d24c7166f7a845d5cd2248d650b`. The original Crownfall checkout remains separate.
 
-## NEAR Hackathon: Ealdholt market (new work)
+## Licences and credits
 
-The baseline is commit `8537296096c51f3eacdb56be09e847909f666376`; the new work is on `hackathon/near-village-economy` ([compare the branch](https://github.com/mylife-as-miles/House-Ealdholt/compare/8537296096c51f3eacdb56be09e847909f666376...hackathon/near-village-economy) once pushed). The authored village, villagers and pre-existing simulation are Crownfall work. The market, wallet integration, contract and tests on this branch are new. The game still opens the real village and its existing Market panel is available from the village controls.
+Crownfall code retains its [MIT licence](LICENSE). Market pricing adapts Apache-2.0 [Copper Acorn](https://github.com/san-npm/copper-acorn); the applicable [licence and notice](third_party/copper-acorn) are retained. See [economy research](docs/ECONOMY-RESEARCH.md) for the other sources and design references.
 
-The Market panel offers a local village ledger and a separate NEAR testnet ledger. Gather renewable timber, trade with the woodcutter, bake bread using timber and purchased supplies, and buy or sell bread to the bakery. Merchant wallets and stocks are finite; each stall holds up to 20 units and prices respond to stock and demand. Advancing a market day pays a wage when the merchant can afford it, allows the baker to purchase fuel for a batch, and lets the village's 25 existing households buy bread rations from their own finite wallets. Scarcity and missed meals are recorded. Market days rotate the first household buyer, regrow up to two units of timber and do not advance the village clock. Household transactions are abstract simulation events: they do not claim a resident physically worked or ate. The previous local save format is migrated with existing balances preserved.
+Elderbloom remains subject to its Fab Standard License and NoAI restrictions; the GLB, reflection, site file, opening film and soundtrack are not relicensed by this repository’s code licence. The project owner confirmed permission for public browser delivery of the GLB and for the two intro camera moves credited to Leonxlnx’s [FIRST BLOOM](https://github.com/Leonxlnx/first-bloom), whose repository states no code licence. This project-specific confirmation is not a general reuse licence. The intro soundtrack was generated using Stable Audio 3.0 Small under its community licence. The `dist` output contains the licensed assets: distribute it only under applicable terms.
 
-Delivering 12 timber adds it to the existing repair stores in the same local save; actual rebuilding retains its existing worker and site requirements. A verified local building shortage temporarily raises player timber quotes, and filling the stores lowers that premium. The player can also broker a simulated fuel purchase between the bakery and woodcutter, paid from the bakery’s existing funds. These actions do not prove physical NPC work; local fire conditions do not alter the shared NEAR ledger. In the NEAR mode, players can also list timber or bread at a fixed price: the contract holds listed goods in escrow, transfers game coins to the seller on purchase, and returns unsold goods when cancelled. Purchases check the expected price, available quantity and buyer funds. Listings expire after 24 hours; their owner can cancel at any time, and anyone can return expired escrow to the seller. Testnet market days have a 60-second cooldown. Household wallets are contract accounting records associated with immutable saved household IDs; they are not individual NEAR accounts. Game coins are ledger units, not NEAR or a transferable token.
-
-Connect My NEAR Wallet to an initialized testnet contract account, join, and approve actions in the wallet. A finalized delivery bound to this village can be applied to its local repair stores. Receipt use is recorded in that browser save; restoring an older backup can permit a receipt to be applied again. Trust only the contract you deploy and the configured testnet RPC. This prototype has no anti-Sybil protection: its 32-player registration limit and shared commons can be exhausted. Player transactions and listing storage cost gas, and the contract owner funds storage. Do not use real-value assets. The current contract state is not compatible with any previously deployed prototype; use a fresh testnet contract, not an upgrade over an existing state.
-Public reviewers can run the local market and contract tests from the source without the restricted village assets. Running the full 3D village requires the authorized private-asset setup above.
-
-**The contract has not been deployed and an end-to-end wallet transaction has not been verified.** A NEAR testnet account and testnet gas are needed. Build and test the contract with a current Rust toolchain:
-
-```sh
-rustup target add wasm32-unknown-unknown
-cargo test --locked --manifest-path contracts/ealdholt-market/Cargo.toml --lib
-cargo build --locked --manifest-path contracts/ealdholt-market/Cargo.toml --target wasm32-unknown-unknown --release
-npm run test:market
-```
-
-Deploy the resulting `contracts/ealdholt-market/target/wasm32-unknown-unknown/release/ealdholt_market.wasm` to an account you control on **testnet**, then initialize it with `new` and empty JSON arguments `{}`. See [NEAR's deployment guide](https://docs.near.org/smart-contracts/release/deploy). Transactions and gas are approved in the owner's wallet. No keys belong in this repository.
-
-The market pricing adapts [Copper Acorn](https://github.com/san-npm/copper-acorn) at `e8f3efef18818ca15bff3d18ce1bac890ab84f05`, Apache-2.0; its licence and notice are in [third_party/copper-acorn](third_party/copper-acorn). The market files containing the adapted algorithm and the contract are Apache-2.0. [Bazaar Sovereign](https://github.com/Automationbot24x7/bazaar-sovereign) (`685b68f0b4f7bf7694720e20769c2547a3f7f8f8`, MIT) informed separate merchant budgets and stock. [Hearthmarket](https://github.com/nguyenkhangph/hearthmarket) (`d3076b4e235c75e447b8c955b0ba29241704372e`, MIT) informed the distinction between local simulation and verified contract actions. Wallet connection uses NEAR Wallet Selector; the contract uses near-sdk.
-
-
-## Further inspiration
-
-The fixed-capacity stalls and expiring offers were informed by [FarmVerse](https://github.com/chanhduc321-cmd/farmverse) (`ddb13f7ba035982ab669fec97acc3d5d914b6a47`, MIT) and [Haggletown](https://github.com/bizgent-assist/haggletown) (`5b59fba08812f1635191e4def4bd30e21e4a01ca`, MIT). [Afterlight](https://github.com/GGGODLIN/near-afterlight) (`6d762aeb51ca1413ae821ff7b2b769ffdf64df2f`, MIT) informed the shared whole-turn golden vectors tested independently in Rust and TypeScript. [Haat](https://github.com/vinuah-dev/haat) (`0b8b71ce4477f33cad6b79eede847209377be46c`) was reviewed for ideas; no code was copied because no reuse licence was found. These are design inspirations, not claims that Ealdholt has their AI agents, tokens, relayers or deployed contracts.
-
-For the complete comparison, trust boundaries and next steps, see [Economy research](docs/ECONOMY-RESEARCH.md).
+The 100STYLE-derived motion clips are CC BY 4.0, credited to Ian Mason, Sebastian Starke and Taku Komura. MakeHuman and Poly Haven sources include CC0 material; their provenance and notices remain with the assets. Fonts retain their SIL Open Font License notices. Screenshots in this README are captures of the game and do not grant a licence to extract or reuse its assets.

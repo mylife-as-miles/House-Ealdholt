@@ -12,7 +12,10 @@
     "typecheck": "npm --prefix \"main game\" run typecheck",
     "test:core": "node --import tsx --test shared/legacy/aethelgard/characters/village-population-runtime.test.ts \"main game/src/legacy/aethelgard/characters/crowd-residents.test.ts\" \"main game/src/legacy/aethelgard/building-emergency-sites.test.ts\"",
     "assets:house:install": "node scripts/install-house-private.mjs",
-    "test:market": "node --import tsx --test shared/legacy/aethelgard/observer/market-economy.test.ts shared/legacy/aethelgard/observer/market-village.test.ts"
+    "test:market": "node --import tsx --test shared/legacy/aethelgard/observer/market-economy.test.ts shared/legacy/aethelgard/observer/market-village.test.ts",
+    "test:npc-ai": "node --import tsx --test server/npc-ai/handler.test.ts server/npc-ai/local-quota.test.ts server/npc-ai/d1-quota.test.ts server/npc-ai/site-handler.test.ts 'main game/src/legacy/aethelgard/observer/resident-conversation-client.test.ts'",
+    "npc-ai:local": "node --import tsx server/npc-ai/local-server.ts",
+    "test:chunks": "node --import tsx --test 'main game/src/legacy/aethelgard/chunked-village-model.test.ts' scripts/split-village-model.test.mjs"
   },
   "dependencies": {
     "chess.js": "1.4.0"

@@ -42,6 +42,7 @@ import {TextureLoader} from 'three';
 import {initialWoodlandProgress,initialWoodlandReadiness} from '../../../../shared/legacy/aethelgard/environment/initial-woodland';
 import type {EaldholtLoadingReport,EaldholtLoadingStage} from '../../../../shared/legacy/aethelgard/loading-progress';
 import {readResponseBytes} from './download-progress';
+import {loadChunkedVillageModel} from './chunked-village-model';
 import {loadEaldholtRegionalWoodland,type EaldholtRegionalWoodland} from './regional-woodland';
 import {
   ACESFilmicToneMapping, Box3, CanvasTexture, Color, DirectionalLight,
@@ -1701,7 +1702,11 @@ export function createEaldholtVillageView(options: VillageViewOptions): Ealdholt
       let bytes: ArrayBuffer;
       reportStage('download');
       if (residentInput) bytes = await loadVerifiedResidentPreviewGlb(residentInput.source, abort.signal);
-      else {
+      else if (!import.meta.env.DEV && import.meta.env.VITE_EALDHOLT_CHUNKED_MODEL === '1') {
+        if (!desktopReleaseVillage || options.modelUrl !== desktopReleaseVillage.urls.model) throw new Error('Chunked village requires the verified desktop release model.');
+        bytes = await loadChunkedVillageModel(options.modelUrl, {bytes:174285136,sha256:desktopReleaseVillage.village.modelSha256}, abort.signal,
+          options.onProgress ? fraction => reportStage('download', fraction) : undefined);
+      } else {
         const response = await fetch(options.modelUrl, { signal: abort.signal });
         if (!response.ok) throw new Error(`Model request failed (${response.status}).`);
         bytes = await readResponseBytes(response, options.onProgress ? fraction => reportStage('download', fraction) : undefined);

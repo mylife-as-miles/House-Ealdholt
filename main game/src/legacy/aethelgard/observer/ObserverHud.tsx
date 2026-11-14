@@ -1,5 +1,6 @@
 import {applyNearMarketDelivery,applyPracticeMarketAction,marketVillagePricing} from '../../../../../shared/legacy/aethelgard/observer/market-village';
 import {NearMarket} from './NearMarket';
+import {ResidentConversation} from './ResidentConversation';
 import {createMarket,marketPrices,quote,type MarketAction} from '../../../../../shared/legacy/aethelgard/observer/market-economy';
 import {advanceObserverRaidRecovery,projectObserverRecoveryResidents,type ObserverRecoveryStatus} from '../../../../../shared/legacy/aethelgard/observer/observer-recovery-runtime';
 import {buildingDamageKey,startBuildingRebuild} from '../../../../../shared/legacy/aethelgard/observer/building-damage';
@@ -651,6 +652,7 @@ export function ObserverHud({ view, sourceReady, worldKey, sky, panel, onPanel, 
             </p>}
             {followAvailabilityText && <p className="obs-quiet" data-observer-follow-availability={followAvailability?.body ?? "pending"}
               data-observer-follow-unplaced={followAvailability?.body === "held" && !followAvailability.position || undefined}>{followAvailabilityText}</p>}
+            <ResidentConversation key={followed.id} residentId={followed.id} residentLabel={followed.label} />
             <h4 className="obs-sub">Remembers</h4>
             {memories.length ? <ul className="obs-memories" data-observer-memories={memories.length}>{memories.map(memory => <li key={memory.key}>{memory.text}</li>)}</ul>
               : <p className="obs-quiet">Nothing yet. Prayer, the road, and weather that caught them out of doors will stay with them.</p>}
