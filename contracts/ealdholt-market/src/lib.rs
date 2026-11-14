@@ -12,6 +12,15 @@ fn quote(base: u32, stock: u32, target: u32, demand: u32) -> (u32, u32) {
     (bid, ((reference * 120 + 99)/100).max(bid+1))
 }
 
+/// NEP-297 log shape; applications must still verify transaction/receipt success
+/// and finality before treating a log as settled. This is not a token event.
+fn emit_event(event: &str, data: near_sdk::serde_json::Value) {
+    let value = near_sdk::serde_json::json!({
+        "standard": "ealdholt_market", "version": "1.0.0", "event": event, "data": data
+    });
+    env::log_str(&format!("EVENT_JSON:{}", value));
+}
+
 #[near(serializers = [borsh, json])]
 #[derive(Clone)]
 pub struct Player { pub coins:u32, pub timber:u32, pub bread:u32, pub energy:u32, pub next_delivery:u32 }
@@ -53,16 +62,16 @@ impl EaldholtMarket {
         Snapshot{player:self.players.get(&account_id).cloned(),town:self.town.clone(),timber_bid:bid,timber_ask:ask,bread_ask:bread,bread_bid,deliveries:self.deliveries.get(&account_id).cloned().unwrap_or_default(),households:self.households.clone(),household_ids:self.household_ids.clone(),last_fed:self.last_fed,last_unfed:self.last_unfed,next_day_at_ms:self.last_day_ns / 1_000_000 + 60_000,listings:self.listings.values().cloned().collect()}
     }
     /// One bounded starter wallet per NEAR account. This is game credit, not NEAR or a transferable token.
-    pub fn join(&mut self) {let id=env::predecessor_account_id();require!(!self.players.contains_key(&id),"Already joined");require!(self.players.len()<32,"Market is full");self.players.insert(id,Player::default());}
+    pub fn join(&mut self) {let id=env::predecessor_account_id();require!(!self.players.contains_key(&id),"Already joined");require!(self.players.len()<32,"Market is full");self.players.insert(id.clone(),Player::default());emit_event("player_joined",near_sdk::serde_json::json!({"actor":id,"starter_game_coins":16}));}
     pub fn act(&mut self,action:String,limit:u32,world_hash:Option<String>){
         let id=env::predecessor_account_id();let p=self.players.get_mut(&id).unwrap_or_else(||env::panic_str("Join the market first"));
         let t=&mut self.town;
-        match action.as_str() {
-            "gather"=>{require!(p.energy>0 && t.forest>=2,"Need energy and timber in the commons");p.energy-=1;t.forest-=2;p.timber+=2;},
-            "sell-timber"=>{let (price,_)=quote(5,t.merchant_timber,6,t.timber_demand);require!(price>=limit && p.timber>=1 && t.merchant_timber<20 && t.merchant_coins>=price,"Price changed, timber missing, stall full or merchant cannot pay");p.timber-=1;t.merchant_timber+=1;p.coins+=price;t.merchant_coins-=price;},
-            "buy-timber"=>{let (_,price)=quote(5,t.merchant_timber,6,t.timber_demand);require!(price<=limit && t.merchant_timber>=1 && p.coins>=price,"Price changed, stock missing or insufficient coins");p.coins-=price;t.merchant_coins+=price;t.merchant_timber-=1;p.timber+=1;t.timber_demand=t.timber_demand.saturating_add(1).min(1_000_000);},
-            "buy-bread"=>{let (_,price)=quote(4,t.bakery_bread,8,t.bread_demand);require!(price<=limit && t.bakery_bread>=1 && p.coins>=price,"Price changed, bread missing or insufficient coins");p.coins-=price;t.bakery_coins+=price;t.bakery_bread-=1;p.bread+=1;t.bread_demand=t.bread_demand.saturating_add(1).min(1_000_000);},
-            "sell-bread"=>{let (price,_)=quote(4,t.bakery_bread,8,t.bread_demand);require!(price>=limit && p.bread>=1 && t.bakery_bread<20 && t.bakery_coins>=price,"Price changed, bread missing, stall full or baker cannot pay");p.bread-=1;t.bakery_bread+=1;p.coins+=price;t.bakery_coins-=price;},
+        let (event,data)=match action.as_str() {
+            "gather"=>{require!(p.energy>0 && t.forest>=2,"Need energy and timber in the commons");p.energy-=1;t.forest-=2;p.timber+=2;("supply_gathered",near_sdk::serde_json::json!({"actor":id,"item":"timber","quantity":2}))},
+            "sell-timber"=>{let (price,_)=quote(5,t.merchant_timber,6,t.timber_demand);require!(price>=limit && p.timber>=1 && t.merchant_timber<20 && t.merchant_coins>=price,"Price changed, timber missing, stall full or merchant cannot pay");p.timber-=1;t.merchant_timber+=1;p.coins+=price;t.merchant_coins-=price;("stall_trade",near_sdk::serde_json::json!({"actor":id,"direction":"sell","stall":"woodcutter","item":"timber","quantity":1,"unit_price":price}))},
+            "buy-timber"=>{let (_,price)=quote(5,t.merchant_timber,6,t.timber_demand);require!(price<=limit && t.merchant_timber>=1 && p.coins>=price,"Price changed, stock missing or insufficient coins");p.coins-=price;t.merchant_coins+=price;t.merchant_timber-=1;p.timber+=1;t.timber_demand=t.timber_demand.saturating_add(1).min(1_000_000);("stall_trade",near_sdk::serde_json::json!({"actor":id,"direction":"buy","stall":"woodcutter","item":"timber","quantity":1,"unit_price":price}))},
+            "buy-bread"=>{let (_,price)=quote(4,t.bakery_bread,8,t.bread_demand);require!(price<=limit && t.bakery_bread>=1 && p.coins>=price,"Price changed, bread missing or insufficient coins");p.coins-=price;t.bakery_coins+=price;t.bakery_bread-=1;p.bread+=1;t.bread_demand=t.bread_demand.saturating_add(1).min(1_000_000);("stall_trade",near_sdk::serde_json::json!({"actor":id,"direction":"buy","stall":"baker","item":"bread","quantity":1,"unit_price":price}))},
+            "sell-bread"=>{let (price,_)=quote(4,t.bakery_bread,8,t.bread_demand);require!(price>=limit && p.bread>=1 && t.bakery_bread<20 && t.bakery_coins>=price,"Price changed, bread missing, stall full or baker cannot pay");p.bread-=1;t.bakery_bread+=1;p.coins+=price;t.bakery_coins-=price;("stall_trade",near_sdk::serde_json::json!({"actor":id,"direction":"sell","stall":"baker","item":"bread","quantity":1,"unit_price":price}))},
             // The player brokers a trade between two simulated merchant wallets.
             // No NPC signature or physical delivery is represented by this ledger action.
             "broker-bakery"=>{let (_,price)=quote(5,t.merchant_timber,6,t.timber_demand);
@@ -72,9 +81,10 @@ impl EaldholtMarket {
                 require!(t.bakery_coins>=price,"The bakery cannot afford timber");
                 t.merchant_timber-=1;t.merchant_coins+=price;t.bakery_coins-=price;t.bakery_bread+=2;
                 t.timber_demand=t.timber_demand.saturating_add(1).min(1_000_000);
+                ("merchant_brokered",near_sdk::serde_json::json!({"actor":id,"buyer":"baker","seller":"woodcutter","item":"timber","quantity":1,"unit_price":price,"produced_item":"bread","produced_quantity":2}))
             },
-            "bake"=>{require!(p.timber>=1 && p.coins>=3,"Baking needs timber and 3 coins");p.timber-=1;p.coins-=3;self.supplier_coins+=3;p.bread+=2;},
-            "eat"=>{require!(p.bread>=1 && p.energy<=6,"Need bread and room for energy");p.bread-=1;p.energy+=2;},
+            "bake"=>{require!(p.timber>=1 && p.coins>=3,"Baking needs timber and 3 coins");p.timber-=1;p.coins-=3;self.supplier_coins+=3;p.bread+=2;("player_baked",near_sdk::serde_json::json!({"actor":id,"timber_used":1,"supply_cost":3,"bread_produced":2}))},
+            "eat"=>{require!(p.bread>=1 && p.energy<=6,"Need bread and room for energy");p.bread-=1;p.energy+=2;("player_ate",near_sdk::serde_json::json!({"actor":id,"bread":1,"energy_restored":2}))},
             "next-day"=>{require!(t.day<u32::MAX,"Market day limit reached");let now=env::block_timestamp();require!(now.saturating_sub(self.last_day_ns)>=60_000_000_000,"Market day cooldown");self.last_day_ns=now;t.day+=1;t.forest=(t.forest+2).min(24);for player in self.players.values_mut(){player.energy=(player.energy+1).min(8);}t.timber_demand/=2;t.bread_demand/=2;
                 let start=((t.day-2) as usize)%self.households.len();
                 if t.merchant_coins>=2 {t.merchant_coins-=2;self.households[start].coins+=2;}
@@ -82,10 +92,12 @@ impl EaldholtMarket {
                 self.last_fed=0;self.last_unfed=0;
                 let count=self.households.len();for i in 0..count {let h=&mut self.households[(start+i)%count];let (_,price)=quote(4,t.bakery_bread,8,t.bread_demand);
                     if t.bakery_bread>0 && h.coins>=price {h.coins-=price;t.bakery_coins+=price;t.bakery_bread-=1;t.bread_demand=t.bread_demand.saturating_add(1).min(1_000_000);h.meals=h.meals.saturating_add(1).min(1_000_000);self.last_fed+=1;} else {h.missed=h.missed.saturating_add(1).min(1_000_000);self.last_unfed+=1;}}
+                ("market_day",near_sdk::serde_json::json!({"actor":id,"day":t.day,"households_fed":self.last_fed,"households_unfed":self.last_unfed}))
             },
-            "donate-timber"=>{let world=world_hash.unwrap_or_default();require!(world.len()==64 && world.bytes().all(|c|c.is_ascii_hexdigit() && !c.is_ascii_uppercase()),"Expected lowercase world hash");require!(p.timber>=12,"Need 12 timber");let records=self.deliveries.entry(id).or_default();require!(records.len()<64,"Delivery limit reached");p.timber-=12;p.next_delivery+=1;records.push(Delivery{id:p.next_delivery,world_hash:world,timber:12});},
+            "donate-timber"=>{let world=world_hash.unwrap_or_default();require!(world.len()==64 && world.bytes().all(|c|c.is_ascii_hexdigit() && !c.is_ascii_uppercase()),"Expected lowercase world hash");require!(p.timber>=12,"Need 12 timber");let records=self.deliveries.entry(id.clone()).or_default();require!(records.len()<64,"Delivery limit reached");p.timber-=12;p.next_delivery+=1;records.push(Delivery{id:p.next_delivery,world_hash:world.clone(),timber:12});("delivery_committed",near_sdk::serde_json::json!({"actor":id,"receipt_id":p.next_delivery,"world_hash":world,"timber":12}))},
             _=>env::panic_str("Unknown action"),
-        }
+        };
+        emit_event(event,data);
     }
     /// Escrow inventory at a fixed unit price; the contract cannot spend NEAR.
     pub fn create_listing(&mut self,item:String,quantity:u32,unit_price:u32) {
@@ -96,7 +108,8 @@ impl EaldholtMarket {
         let stock=if item=="timber" {&mut player.timber} else {&mut player.bread};require!(*stock>=quantity,"Insufficient inventory");*stock-=quantity;
         let id=self.next_listing;self.next_listing=self.next_listing.checked_add(1).unwrap_or_else(||env::panic_str("Listing IDs exhausted"));
         let expires_at_ms=env::block_timestamp() / 1_000_000 + 86_400_000;
-        self.listings.insert(id,Listing{id,seller,item,quantity,unit_price,expires_at_ms});
+        self.listings.insert(id,Listing{id,seller:seller.clone(),item:item.clone(),quantity,unit_price,expires_at_ms});
+        emit_event("listing_created",near_sdk::serde_json::json!({"actor":seller,"listing_id":id,"item":item,"quantity":quantity,"unit_price":unit_price,"expires_at_ms":expires_at_ms}));
     }
     pub fn buy_listing(&mut self,listing_id:u32,quantity:u32,expected_unit_price:u32) {
         let buyer=env::predecessor_account_id();let listing=self.listings.get(&listing_id).cloned().unwrap_or_else(||env::panic_str("Listing no longer exists"));
@@ -106,6 +119,7 @@ impl EaldholtMarket {
         if listing.item=="timber" {buyer_wallet.timber+=quantity;} else {buyer_wallet.bread+=quantity;}
         self.players.get_mut(&listing.seller).unwrap_or_else(||env::panic_str("Seller unavailable")).coins+=total;
         if quantity==listing.quantity {self.listings.remove(&listing_id);} else {self.listings.get_mut(&listing_id).unwrap().quantity-=quantity;}
+        emit_event("listing_filled",near_sdk::serde_json::json!({"actor":buyer,"seller":listing.seller,"listing_id":listing_id,"item":listing.item,"quantity":quantity,"unit_price":listing.unit_price,"total":total,"remaining_quantity":listing.quantity-quantity}));
     }
     /// Anyone can clear an expired listing; escrow always goes back to its seller.
     pub fn reclaim_expired(&mut self,listing_id:u32) {
@@ -113,19 +127,54 @@ impl EaldholtMarket {
         require!(env::block_timestamp() / 1_000_000 >= listing.expires_at_ms,"Listing has not expired");
         let player=self.players.get_mut(&listing.seller).unwrap_or_else(||env::panic_str("Seller unavailable"));
         if listing.item=="timber" {player.timber+=listing.quantity;} else {player.bread+=listing.quantity;}self.listings.remove(&listing_id);
+        emit_event("listing_expired",near_sdk::serde_json::json!({"actor":env::predecessor_account_id(),"seller":listing.seller,"listing_id":listing_id,"item":listing.item,"quantity_returned":listing.quantity}));
     }
     pub fn cancel_listing(&mut self,listing_id:u32) {
         let seller=env::predecessor_account_id();let listing=self.listings.get(&listing_id).cloned().unwrap_or_else(||env::panic_str("Listing no longer exists"));
         require!(listing.seller==seller,"Only the seller can cancel");let player=self.players.get_mut(&seller).unwrap_or_else(||env::panic_str("Seller unavailable"));
         if listing.item=="timber" {player.timber+=listing.quantity;} else {player.bread+=listing.quantity;}self.listings.remove(&listing_id);
+        emit_event("listing_cancelled",near_sdk::serde_json::json!({"actor":seller,"listing_id":listing_id,"item":listing.item,"quantity_returned":listing.quantity}));
     }
 }
 
 #[cfg(test)]
 mod tests {
  use super::*;
- use near_sdk::{testing_env,test_utils::VMContextBuilder};
+ use near_sdk::{testing_env,test_utils::{get_logs,VMContextBuilder}};
  fn caller(id:&str){let mut context=VMContextBuilder::new();context.predecessor_account_id(id.parse().unwrap());testing_env!(context.build());}
+ fn last_event(expected:&str)->near_sdk::serde_json::Value {
+  let logs=get_logs();let last=logs.last().expect("event log expected");
+  let parsed:near_sdk::serde_json::Value=near_sdk::serde_json::from_str(last.strip_prefix("EVENT_JSON:").expect("NEP-297 prefix")).unwrap();
+  assert_eq!(parsed["standard"],"ealdholt_market");assert_eq!(parsed["version"],"1.0.0");assert_eq!(parsed["event"],expected);
+  parsed["data"].clone()
+ }
+ #[test] fn event_logs_capture_actual_market_and_escrow_terms(){
+  caller("alice.testnet");let mut market=EaldholtMarket::new();market.join();
+  assert_eq!(last_event("player_joined"),near_sdk::serde_json::json!({"actor":"alice.testnet","starter_game_coins":16}));
+  market.act("gather".into(),0,None);
+  assert_eq!(last_event("supply_gathered"),near_sdk::serde_json::json!({"actor":"alice.testnet","item":"timber","quantity":2}));
+  market.act("sell-timber".into(),0,None);
+  assert_eq!(last_event("stall_trade"),near_sdk::serde_json::json!({"actor":"alice.testnet","direction":"sell","stall":"woodcutter","item":"timber","quantity":1,"unit_price":4}));
+  market.act("gather".into(),0,None);
+  market.create_listing("timber".into(),2,3);
+  assert_eq!(last_event("listing_created"),near_sdk::serde_json::json!({"actor":"alice.testnet","listing_id":1,"item":"timber","quantity":2,"unit_price":3,"expires_at_ms":86_400_000u64}));
+  caller("bob.testnet");market.join();market.buy_listing(1,1,3);
+  assert_eq!(last_event("listing_filled"),near_sdk::serde_json::json!({"actor":"bob.testnet","seller":"alice.testnet","listing_id":1,"item":"timber","quantity":1,"unit_price":3,"total":3,"remaining_quantity":1}));
+  caller("alice.testnet");market.cancel_listing(1);
+  assert_eq!(last_event("listing_cancelled"),near_sdk::serde_json::json!({"actor":"alice.testnet","listing_id":1,"item":"timber","quantity_returned":1}));
+ }
+ #[test] fn event_logs_describe_broker_and_world_bound_delivery_without_claiming_work(){
+  caller("alice.testnet");let mut market=EaldholtMarket::new();market.join();market.act("broker-bakery".into(),6,None);
+  assert_eq!(last_event("merchant_brokered"),near_sdk::serde_json::json!({"actor":"alice.testnet","buyer":"baker","seller":"woodcutter","item":"timber","quantity":1,"unit_price":6,"produced_item":"bread","produced_quantity":2}));
+  market.players.get_mut(&"alice.testnet".parse::<AccountId>().unwrap()).unwrap().timber=12;
+  let world="a".repeat(64);market.act("donate-timber".into(),0,Some(world.clone()));
+  assert_eq!(last_event("delivery_committed"),near_sdk::serde_json::json!({"actor":"alice.testnet","receipt_id":1,"world_hash":world,"timber":12}));
+ }
+ #[test] fn rejected_transactions_do_not_emit_success_events(){
+  caller("alice.testnet");let mut market=EaldholtMarket::new();market.join();
+  let before=get_logs();let rejected=std::panic::catch_unwind(std::panic::AssertUnwindSafe(||market.act("sell-timber".into(),0,None)));
+  assert!(rejected.is_err());assert_eq!(get_logs(),before);
+ }
  #[test] fn shared_pricing_vectors_match_browser(){
   let vectors:near_sdk::serde_json::Value=near_sdk::serde_json::from_str(include_str!("../../../shared/legacy/aethelgard/observer/market-quote-vectors.json")).unwrap();
   for row in vectors.as_array().unwrap(){let n=|key:&str| row[key].as_u64().unwrap() as u32;let (bid,ask)=quote(n("base"),n("stock"),n("target"),n("demand"));assert_eq!((bid,ask),(n("bid"),n("ask")));}
@@ -208,6 +257,7 @@ mod tests {
   caller("alice.testnet");let mut m=EaldholtMarket::new();m.join();m.act("gather".into(),0,None);m.create_listing("timber".into(),2,5);
   caller("bob.testnet");m.join();let mut context=VMContextBuilder::new();context.predecessor_account_id("bob.testnet".parse().unwrap()).block_timestamp(86_400_000_000_000);testing_env!(context.build());
   m.reclaim_expired(1);assert!(m.listings.is_empty());assert_eq!(m.players.get(&"alice.testnet".parse::<AccountId>().unwrap()).unwrap().timber,2);assert_eq!(m.players.get(&"bob.testnet".parse::<AccountId>().unwrap()).unwrap().timber,0);
+  assert_eq!(last_event("listing_expired"),near_sdk::serde_json::json!({"actor":"bob.testnet","seller":"alice.testnet","listing_id":1,"item":"timber","quantity_returned":2}));
  }
  #[test] #[should_panic(expected="Listing expired")] fn expired_listing_cannot_be_purchased(){
   caller("alice.testnet");let mut m=EaldholtMarket::new();m.join();m.act("gather".into(),0,None);m.create_listing("timber".into(),1,5);
