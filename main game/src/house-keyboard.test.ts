@@ -1,0 +1,15 @@
+import {strict as assert} from 'node:assert';
+import {test} from 'node:test';
+import {routeHouseKey,isFilmShortcutAvailable,type HouseKeyTarget} from './house-keyboard';
+import type {LegacyScreenHandle} from './legacy/legacy-handle';
+
+function setup(){const calls:string[]=[];const handle:LegacyScreenHandle={move:d=>calls.push(d),edge:last=>calls.push(last?'end':'home'),activate:()=>calls.push('activate'),cancel:()=>{calls.push('cancel');return true;},reset:()=>{},focus:()=>{},cycle:delta=>calls.push(delta===1?'next':'previous'),orbit:()=>{}};return{handle,calls};}
+function key(key:string,overrides:Partial<Parameters<typeof routeHouseKey>[0]>={}){return {key,altKey:false,ctrlKey:false,metaKey:false,isComposing:false,repeat:false,defaultPrevented:false,...overrides};}
+test('arrows and edges route to the actual village handle',()=>{const {handle,calls}=setup();for(const name of ['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'])assert.equal(routeHouseKey(key(name),'other',handle),true);assert.deepEqual(calls,['left','right','up','down','home','end']);});
+test('editable controls and native button activation retain their normal input',()=>{const {handle,calls}=setup();for(const target of ['editable','native-activation'] as HouseKeyTarget[])for(const name of ['Enter',' '])assert.equal(routeHouseKey(key(name),target,handle),false);for(const name of ['ArrowLeft','Home','End'])assert.equal(routeHouseKey(key(name),'editable',handle),false);assert.deepEqual(calls,[]);});
+test('custom controls activate once; Escape unwinds only when the village handles it',()=>{const {handle,calls}=setup();assert.equal(routeHouseKey(key('Enter'),'other',handle),true);assert.equal(routeHouseKey(key(' ',{repeat:true}),'other',handle),false);assert.equal(routeHouseKey(key('Escape'),'editable',handle),false);assert.equal(routeHouseKey(key('Escape'),'other',handle),true);assert.deepEqual(calls,['activate','cancel']);handle.cancel=()=>false;assert.equal(routeHouseKey(key('Escape'),'other',handle),false);});
+test('modified, composing and already-handled keys are not captured',()=>{const {handle,calls}=setup();for(const flag of ['altKey','ctrlKey','metaKey','isComposing','defaultPrevented'] as const)assert.equal(routeHouseKey(key('ArrowLeft',{[flag]:true}),'other',handle),false);assert.equal(routeHouseKey(key('ArrowLeft'),'other',null),false);assert.deepEqual(calls,[]);});
+
+test('Q and E cycle village choices while form fields retain text input',()=>{const {handle,calls}=setup();assert.equal(routeHouseKey(key('q'),'other',handle),true);assert.equal(routeHouseKey(key('E'),'other',handle),true);assert.equal(routeHouseKey(key('q'),'editable',handle),false);assert.deepEqual(calls,['previous','next']);});
+
+test('film ignores repeated, modified, composed and already handled shortcuts',()=>{assert.equal(isFilmShortcutAvailable(key(' ')),true);for(const flag of ['repeat','altKey','ctrlKey','metaKey','isComposing','defaultPrevented'] as const)assert.equal(isFilmShortcutAvailable(key(' ',{[flag]:true})),false);});

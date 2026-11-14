@@ -67,6 +67,8 @@ export interface AethelgardPreviewProps {
   entryMode?: "intro" | "village";
   /** The saved slice is selected explicitly by the development-only host. */
   mode?: "preview" | "inherited";
+  /** A standalone host has no Crownfall Home or Play destination. */
+  standalone?: boolean;
   /** Read-only layout safety for the host's brief music notification. */
   onAudioToastSafetyChange?(safe: boolean): void;
   onAudioSuspensionChange?(paused: boolean): void;
@@ -130,7 +132,7 @@ function loadLocalHeroFace(): void {
 /** The original preview stays visit-only. The explicit inherited mode uses the
  * separate saved contract; the renderer and host input surface are shared. */
 export const AethelgardPreview = forwardRef<LegacyScreenHandle, AethelgardPreviewProps>(function AethelgardPreview({
-  active, reducedMotion, quality, onBack, onPlay, modelBaseUrl, modelFiles = DEFAULT_MODELS, entryMode = "intro", mode = "preview", onAudioToastSafetyChange, onAudioSuspensionChange, environmentAudioOutput,
+  active, reducedMotion, quality, onBack, onPlay, modelBaseUrl, modelFiles = DEFAULT_MODELS, entryMode = "intro", mode = "preview", standalone = false, onAudioToastSafetyChange, onAudioSuspensionChange, environmentAudioOutput,
 }, ref) {
   const inherited = mode === "inherited";
   const [step, setStep] = useState<Step>(inherited ? "intro" : entryMode);
@@ -447,8 +449,13 @@ export const AethelgardPreview = forwardRef<LegacyScreenHandle, AethelgardPrevie
     if (previous?.type === "entry") { if (inherited && visit.current && !session) void foundHouse(visit.current); else void confirmBanner(); }
     else if (previous) void chooseResponse(previous.personId, previous.optionId);
   };
+  const visitError = standalone && visitSnapshot?.error === HOUSE_COPY.unavailable
+    ? "Saving is unavailable here. Check your browser's storage settings and try again."
+    : standalone && visitSnapshot?.error === HOUSE_COPY.entryError
+      ? "Your house could not be saved. Try again."
+      : visitSnapshot?.error;
   const saveStatus = inherited && (busy || visitSnapshot?.error) ? <div className="ealdholt-save-status" role={visitSnapshot?.error ? "alert" : "status"}>
-    <p>{busy ? HOUSE_COPY.saving : visitSnapshot?.error}</p>
+    <p>{busy ? HOUSE_COPY.saving : visitError}</p>
     {!busy && lastSave.current && <LegacyGlassButton data-nav onClick={retrySave}>{HOUSE_COPY.retry}</LegacyGlassButton>}
   </div> : null;
   const enterBanner = (from: "intro" | "village") => {
@@ -538,15 +545,15 @@ export const AethelgardPreview = forwardRef<LegacyScreenHandle, AethelgardPrevie
       </div>
       <nav className="wf-global-actions" aria-label={UI.legacy}>
         {!inherited && step === "village" && !session && <LegacyGlassButton data-nav data-ealdholt-banner-edit onClick={() => enterBanner("village")}><InterfaceIcon kind="banner" />{UI.chooseBanner}</LegacyGlassButton>}
-        <LegacyGlassButton data-nav data-ealdholt-home aria-label={UI.accessible.home} onClick={goHome}><InterfaceIcon kind="home" />{UI.home}</LegacyGlassButton>
-        <LegacyGlassButton data-nav data-ealdholt-play aria-label={UI.accessible.play} onClick={onPlay}><InterfaceIcon kind="play" />{UI.play}</LegacyGlassButton>
+        {!standalone && <LegacyGlassButton data-nav data-ealdholt-home aria-label={UI.accessible.home} onClick={goHome}><InterfaceIcon kind="home" />{UI.home}</LegacyGlassButton>}
+        {!standalone && <LegacyGlassButton data-nav data-ealdholt-play aria-label={UI.accessible.play} onClick={onPlay}><InterfaceIcon kind="play" />{UI.play}</LegacyGlassButton>}
         <LegacyGlassButton data-nav data-ealdholt-pause aria-label={UI.pause} onClick={() => setPaused(true)}><InterfaceIcon kind="pause" /><span className="ealdholt-sr-only">{UI.pause}</span></LegacyGlassButton>
       </nav>
     </header>
 
     <div className="ealdholt-panels" inert={paused || loadingCover}>
       {inherited && !visitLoaded && <section className="wf-cinematic wf-intro" aria-live="polite">
-        <p>{visitSnapshot?.error ?? COPY.loading.title}</p>
+        <p>{visitError ?? COPY.loading.title}</p>
         {visitSnapshot?.error && <LegacyGlassButton data-nav data-nav-default disabled={busy} onClick={() => { if (visit.current) loadVisit(visit.current); }}>{UI.retry}</LegacyGlassButton>}
       </section>}
       {step === "intro" && !inherited && <section className="wf-cinematic wf-intro" data-ealdholt-intro data-ealdholt-ui-region="intro" aria-label={UI.introSpeaker}>
@@ -651,9 +658,9 @@ export const AethelgardPreview = forwardRef<LegacyScreenHandle, AethelgardPrevie
       </section>}
     </div>
 
-    {inherited && <EaldholtLoadingScreen state={loadState} progress={loadProgress} reducedMotion={reducedMotion} onRetry={() => setRetry(value => value + 1)} onHome={goHome} />}
+    {inherited && <EaldholtLoadingScreen state={loadState} progress={loadProgress} reducedMotion={reducedMotion} standalone={standalone} onRetry={() => setRetry(value => value + 1)} onHome={goHome} />}
     {!inherited && loadState !== "ready" && !paused && <aside className={`ealdholt-load-state${loadState === "error" ? " is-error" : ""}`} role="status"><span aria-hidden="true">◇</span><p>{loadState === "error" ? COPY.error.title : COPY.loading.title}</p>{loadState === "error" && <LegacyGlassButton data-nav onClick={() => setRetry(value => value + 1)}>{UI.retry}</LegacyGlassButton>}</aside>}
-    {paused && <div className="ealdholt-pause" role="dialog" aria-modal="true" aria-labelledby="ealdholt-pause-title"><section><h2 id="ealdholt-pause-title">{UI.pause}</h2><LegacyGlassButton data-nav data-nav-default className="is-primary" onClick={() => setPaused(false)}>{UI.resume}</LegacyGlassButton><LegacyGlassButton data-nav data-ealdholt-home onClick={goHome}>{UI.home}</LegacyGlassButton><LegacyGlassButton data-nav data-ealdholt-play onClick={onPlay}>{UI.play}</LegacyGlassButton></section></div>}
+    {paused && <div className="ealdholt-pause" role="dialog" aria-modal="true" aria-labelledby="ealdholt-pause-title"><section><h2 id="ealdholt-pause-title">{UI.pause}</h2><LegacyGlassButton data-nav data-nav-default className="is-primary" onClick={() => setPaused(false)}>{UI.resume}</LegacyGlassButton>{!standalone && <LegacyGlassButton data-nav data-ealdholt-home onClick={goHome}>{UI.home}</LegacyGlassButton>}{!standalone && <LegacyGlassButton data-nav data-ealdholt-play onClick={onPlay}>{UI.play}</LegacyGlassButton>}</section></div>}
     <span className="ealdholt-sr-only" role="status" aria-live="polite"><span key={announcementId}>{announcementId ? COPY.banner.updated : ""}</span></span>
   </section>;
 });

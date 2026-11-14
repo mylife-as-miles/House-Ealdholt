@@ -15,6 +15,8 @@ export interface EaldholtLoadingScreenProps {
   state: "loading" | "ready" | "error";
   progress: EaldholtLoadingProgress;
   reducedMotion: boolean;
+  /** Hide navigation that does not exist when hosted as a standalone game. */
+  standalone?: boolean;
   onRetry(): void;
   onHome(): void;
 }
@@ -28,7 +30,7 @@ export interface EaldholtLoadingScreenProps {
  * loading screen (src/LoadingScreen.tsx) is a different screen; only its
  * accessibility pattern is followed here.
  */
-export function EaldholtLoadingScreen({ state, progress, reducedMotion, onRetry, onHome }: EaldholtLoadingScreenProps) {
+export function EaldholtLoadingScreen({ state, progress, reducedMotion, standalone = false, onRetry, onHome }: EaldholtLoadingScreenProps) {
   const { t } = useMenuLocale();
   // Present from the first frame of a load; gone once a ready village has been uncovered.
   const [gone, setGone] = useState(state === "ready");
@@ -65,10 +67,10 @@ export function EaldholtLoadingScreen({ state, progress, reducedMotion, onRetry,
     </div>
     {failed ? <div className="ealdholt-loading-lower ealdholt-loading-failure" role="alert">
       <p className="ealdholt-loading-status">{t(COPY.error.title)}</p>
-      <p className="ealdholt-loading-note">{t(COPY.error.body)}</p>
+      <p className="ealdholt-loading-note">{standalone ? t("The village could not be loaded. Try again.") : t(COPY.error.body)}</p>
       <div className="ealdholt-loading-actions">
         <LegacyGlassButton data-nav data-nav-default data-ealdholt-loading-retry className="is-primary" onClick={onRetry}>{t(UI.retry)}</LegacyGlassButton>
-        <LegacyGlassButton data-nav data-ealdholt-loading-home onClick={onHome}>{t(UI.home)}</LegacyGlassButton>
+        {!standalone && <LegacyGlassButton data-nav data-ealdholt-loading-home onClick={onHome}>{t(UI.home)}</LegacyGlassButton>}
       </div>
     </div> : <div className="ealdholt-loading-lower">
       <div className="ealdholt-loading-status-line">
@@ -89,7 +91,7 @@ export function EaldholtLoadingScreen({ state, progress, reducedMotion, onRetry,
       </div>
     </div>}
     {/* Reachable by pointer and Tab (Back and Esc also leave); kept out of Select, so a second press on the Home tile cannot leave again. */}
-    {state === "loading" && <LegacyGlassButton data-ealdholt-loading-home className="is-quiet ealdholt-loading-leave" onClick={onHome}>{t(UI.home)}</LegacyGlassButton>}
+    {!standalone && state === "loading" && <LegacyGlassButton data-ealdholt-loading-home className="is-quiet ealdholt-loading-leave" onClick={onHome}>{t(UI.home)}</LegacyGlassButton>}
   </section>;
 }
 
